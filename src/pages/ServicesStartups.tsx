@@ -66,7 +66,7 @@ const services = [
   },
 ];
 
-export default function Services() {
+export default function ServicesStartups() {
   return (
     <Layout>
       {/* Hero */}
@@ -74,15 +74,15 @@ export default function Services() {
         <div className="container-wide">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Our Services
+              Global Startups
             </p>
             <h1 className="mb-6">
-              Advisory Services for High-Stakes Compliance
+              Compliance Foundations for High-Growth Startups
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We support organizations in architecting, implementing, and 
-              monitoring compliance frameworks that meet the rigorous demands 
-              of U.S. Government contracting and international regulatory environments.
+              We support high-growth startups in architecting, implementing, and 
+              monitoring compliance frameworks that scale with your ambitions 
+              and meet the demands of enterprise customers and regulatory environments.
             </p>
           </div>
         </div>
@@ -177,35 +177,13 @@ export default function Services() {
         </div>
       </section>
 
-      {/* GovCon Coming Soon */}
-      <section className="py-24 bg-secondary/30">
-        <div className="container-wide">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Coming Soon
-            </p>
-            <h2 className="mb-6">GovCon Advisory Services</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We are expanding our service offerings to include specialized 
-              advisory support for organizations entering or scaling within the 
-              U.S. Government contracting ecosystem. Contact us for early access.
-            </p>
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/contact">
-                Express Interest
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-secondary/30">
         <div className="container-narrow text-center">
           <h2 className="mb-6">Start a Confidential Conversation</h2>
           <p className="text-lg mb-10 max-w-2xl mx-auto">
             Every engagement begins with a comprehensive understanding of your 
-            organizational context, compliance objectives, and risk landscape.
+            organizational context, compliance objectives, and growth trajectory.
           </p>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
