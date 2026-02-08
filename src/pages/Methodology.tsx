@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search, Compass, Wrench, Users, BarChart3, CheckCircle } from "lucide-react";
 import methodologyRipples from "@/assets/methodology-ripples.jpg";
-import servicesFramework from "@/assets/services-framework.jpg";
+import methodologyNavigation from "@/assets/methodology-navigation.jpg";
 import methodologyCompass from "@/assets/methodology-compass.jpg";
 
 const phases = [
@@ -161,7 +161,7 @@ export default function Methodology() {
             <div className="relative">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
-                  src={servicesFramework} 
+                  src={methodologyNavigation} 
                   alt="Interconnected compliance framework" 
                   className="w-full h-[400px] object-cover"
                 />

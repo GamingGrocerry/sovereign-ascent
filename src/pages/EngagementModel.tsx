@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageSquare, FileSignature, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
 import engagementGateway from "@/assets/engagement-gateway.jpg";
-import partnershipLinks from "@/assets/partnership-links.jpg";
+import engagementPartnership from "@/assets/engagement-partnership.jpg";
 const phases = [
   {
     step: "01",
@@ -200,7 +200,7 @@ export default function EngagementModel() {
       {/* Partnership Image Break */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src={partnershipLinks} 
+          src={engagementPartnership} 
           alt="Connected links representing partnership" 
           className="w-full h-full object-cover"
         />

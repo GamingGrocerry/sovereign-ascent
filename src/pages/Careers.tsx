@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Handshake, Globe, Award } from "lucide-react";
-import partnershipLinks from "@/assets/partnership-links.jpg";
-import ethicsBalance from "@/assets/ethics-balance.jpg";
+import careersHero from "@/assets/careers-hero.jpg";
+import governanceEthics from "@/assets/governance-ethics.jpg";
 const collaborationTypes = [
   {
     icon: Users,
@@ -53,7 +53,7 @@ export default function Careers() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${partnershipLinks})` }}
+          style={{ backgroundImage: `url(${careersHero})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
@@ -139,7 +139,7 @@ export default function Careers() {
       {/* Ethics Image Break */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src={ethicsBalance} 
+          src={governanceEthics} 
           alt="Balance and integrity in collaboration" 
           className="w-full h-full object-cover"
         />

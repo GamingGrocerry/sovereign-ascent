@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, ChevronRight, BookOpen, TrendingUp, AlertCircle } from "lucide-react";
 import insightsLibrary from "@/assets/insights-library.jpg";
-import methodologyRipples from "@/assets/methodology-ripples.jpg";
+import insightsFeatured from "@/assets/insights-featured.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 
 const featuredArticle = {
@@ -124,7 +124,7 @@ export default function Insights() {
         <div className="container-wide">
           <div className="relative rounded-sm overflow-hidden group cursor-pointer">
             <img 
-              src={methodologyRipples} 
+              src={insightsFeatured} 
               alt="Abstract ripples representing methodical thinking"
               className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
             />

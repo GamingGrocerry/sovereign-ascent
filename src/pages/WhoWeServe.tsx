@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Building2, Rocket, AlertTriangle, CheckCircle } from "lucide-react";
-import servicesHero from "@/assets/services-hero.jpg";
-import partnershipLinks from "@/assets/partnership-links.jpg";
+import whoWeServeHero from "@/assets/who-we-serve-hero.jpg";
+import whoWeServeQuote from "@/assets/who-we-serve-quote.jpg";
 const audiences = [
   {
     icon: Building2,
@@ -71,7 +71,7 @@ export default function WhoWeServe() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${servicesHero})` }}
+          style={{ backgroundImage: `url(${whoWeServeHero})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
@@ -177,7 +177,7 @@ export default function WhoWeServe() {
       {/* Partnership Visual */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src={partnershipLinks} 
+          src={whoWeServeQuote} 
           alt="Connected partnership links" 
           className="w-full h-full object-cover"
         />
