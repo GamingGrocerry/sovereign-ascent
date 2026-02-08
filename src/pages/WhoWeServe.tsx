@@ -174,6 +174,24 @@ export default function WhoWeServe() {
         </div>
       </section>
 
+      {/* Partnership Visual */}
+      <section className="relative h-[300px] overflow-hidden">
+        <img 
+          src={partnershipLinks} 
+          alt="Connected partnership links" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-secondary/40" />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="max-w-2xl px-6">
+            <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
+              We serve organizations where compliance is not optional—it's 
+              fundamental to operational viability.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-28 bg-secondary/30">
         <div className="container-narrow text-center">

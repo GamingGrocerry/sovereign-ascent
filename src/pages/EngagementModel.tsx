@@ -197,6 +197,24 @@ export default function EngagementModel() {
         </div>
       </section>
 
+      {/* Partnership Image Break */}
+      <section className="relative h-[300px] overflow-hidden">
+        <img 
+          src={partnershipLinks} 
+          alt="Connected links representing partnership" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-secondary/30" />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="max-w-2xl px-6">
+            <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
+              Every engagement is built on trust, transparency, and a shared 
+              commitment to practical outcomes.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQs */}
       <section className="py-24 bg-secondary/30">
         <div className="container-wide">

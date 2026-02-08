@@ -126,6 +126,30 @@ export default function Governance() {
         </div>
       </section>
 
+      {/* Image Break */}
+      <section className="relative h-[350px] overflow-hidden">
+        <img 
+          src={ethicsBalance} 
+          alt="Scales of justice representing balance and ethics" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-wide">
+            <div className="max-w-xl">
+              <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
+              <p className="text-primary-foreground text-2xl md:text-3xl font-serif font-light leading-relaxed mb-4">
+                "Independence is not a marketing claim—it is the foundation of 
+                every recommendation we make."
+              </p>
+              <p className="text-accent text-sm uppercase tracking-widest">
+                Our Governance Philosophy
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Disclaimer Section */}
       <section className="py-20 bg-background">
         <div className="container-wide">
