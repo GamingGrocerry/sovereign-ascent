@@ -207,21 +207,34 @@ export default function Index() {
               <Link
                 key={index}
                 to={service.href}
-                className="card-elevated p-10 group"
+                className="card-elevated group overflow-hidden"
               >
-                <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8 group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-500">
-                  <service.icon className="w-7 h-7 text-accent" />
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="w-12 h-12 rounded-sm bg-card/90 backdrop-blur-sm flex items-center justify-center">
+                      <service.icon className="w-6 h-6 text-accent" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl mb-4 group-hover:text-accent transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  {service.description}
-                </p>
-                <span className="inline-flex items-center text-accent text-sm font-medium">
-                  Learn more
-                  <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </span>
+                <div className="p-8">
+                  <h3 className="text-xl mb-4 group-hover:text-accent transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center text-accent text-sm font-medium">
+                    Learn more
+                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
@@ -257,19 +270,30 @@ export default function Index() {
                 ))}
               </div>
             </div>
-            <div className="bg-primary p-12 lg:p-16 rounded-sm relative overflow-hidden">
-              {/* Decorative accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent" />
-              <blockquote className="text-primary-foreground relative z-10">
-                <p className="text-2xl lg:text-3xl font-serif leading-relaxed mb-8 font-light">
-                  "In high-stakes regulatory environments, compliance is not a 
-                  checkbox—it's the architecture upon which operational 
-                  credibility is built."
-                </p>
-                <footer className="text-primary-foreground/60 text-sm uppercase tracking-wider">
-                  — ElevateQCS Founding Principles
-                </footer>
-              </blockquote>
+            
+            {/* Trust Image with Quote Overlay */}
+            <div className="relative">
+              <div className="image-frame rounded-sm overflow-hidden">
+                <img 
+                  src={trustVault} 
+                  alt="Security vault representing trust and confidentiality"
+                  className="w-full h-[500px] object-cover"
+                />
+              </div>
+              {/* Quote Overlay */}
+              <div className="absolute -bottom-8 -left-8 right-8 bg-primary p-8 rounded-sm shadow-2xl">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent" />
+                <blockquote className="text-primary-foreground">
+                  <p className="text-lg font-serif leading-relaxed mb-4 font-light">
+                    "In high-stakes regulatory environments, compliance is not a 
+                    checkbox—it's the architecture upon which operational 
+                    credibility is built."
+                  </p>
+                  <footer className="text-primary-foreground/60 text-xs uppercase tracking-wider">
+                    — ElevateQCS Founding Principles
+                  </footer>
+                </blockquote>
+              </div>
             </div>
           </div>
         </div>
