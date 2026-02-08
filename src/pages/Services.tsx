@@ -2,13 +2,13 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Target, FileCheck, BookOpen, CheckCircle2 } from "lucide-react";
-import servicesFramework from "@/assets/services-framework.jpg";
+import servicesHero from "@/assets/services-hero.jpg";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import qmsStructure from "@/assets/qms-structure.jpg";
 import ctipProtection from "@/assets/ctip-protection.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 import insightsLibrary from "@/assets/insights-library.jpg";
-
+import advisoryApproach from "@/assets/advisory-approach.jpg";
 const services = [
   {
     id: "compliance-architecture",
@@ -86,7 +86,7 @@ export default function Services() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${servicesFramework})` }}
+          style={{ backgroundImage: `url(${servicesHero})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
@@ -224,21 +224,29 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Advisory Approach */}
-      <section className="py-24 bg-secondary/30">
-        <div className="container-wide">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="section-divider mx-auto mb-8" />
-            <h2 className="mb-6">Our Advisory Approach</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Across all services, ElevateQCS operates as an independent, vendor-neutral advisor. 
-              We do not certify, approve, or authorize compliance programs, nor do we replace 
-              legal or regulatory counsel.
-            </p>
-            <p className="text-muted-foreground">
-              Our role is to support organizations in building internal systems that are 
-              operationally effective, auditable, and aligned with applicable requirements.
-            </p>
+      {/* Advisory Approach with Image */}
+      <section className="relative h-[450px] overflow-hidden">
+        <img 
+          src={advisoryApproach} 
+          alt="Precision and methodology in advisory approach" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-wide">
+            <div className="max-w-2xl">
+              <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
+              <h2 className="text-primary-foreground mb-6">Our Advisory Approach</h2>
+              <p className="text-primary-foreground/80 text-lg leading-relaxed mb-4">
+                Across all services, ElevateQCS operates as an independent, vendor-neutral advisor. 
+                We do not certify, approve, or authorize compliance programs, nor do we replace 
+                legal or regulatory counsel.
+              </p>
+              <p className="text-primary-foreground/70">
+                Our role is to support organizations in building internal systems that are 
+                operationally effective, auditable, and aligned with applicable requirements.
+              </p>
+            </div>
           </div>
         </div>
       </section>

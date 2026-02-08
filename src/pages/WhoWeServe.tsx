@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Building2, Rocket, AlertTriangle, CheckCircle } from "lucide-react";
-import servicesFramework from "@/assets/services-framework.jpg";
-
+import servicesHero from "@/assets/services-hero.jpg";
+import partnershipLinks from "@/assets/partnership-links.jpg";
 const audiences = [
   {
     icon: Building2,
@@ -71,7 +71,7 @@ export default function WhoWeServe() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${servicesFramework})` }}
+          style={{ backgroundImage: `url(${servicesHero})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
@@ -170,6 +170,24 @@ export default function WhoWeServe() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partnership Visual */}
+      <section className="relative h-[300px] overflow-hidden">
+        <img 
+          src={partnershipLinks} 
+          alt="Connected partnership links" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-secondary/40" />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="max-w-2xl px-6">
+            <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
+              We serve organizations where compliance is not optional—it's 
+              fundamental to operational viability.
+            </p>
           </div>
         </div>
       </section>

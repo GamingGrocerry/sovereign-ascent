@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageSquare, FileSignature, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
-import methodologyCompass from "@/assets/methodology-compass.jpg";
-
+import engagementGateway from "@/assets/engagement-gateway.jpg";
+import partnershipLinks from "@/assets/partnership-links.jpg";
 const phases = [
   {
     step: "01",
@@ -121,7 +121,7 @@ export default function EngagementModel() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${methodologyCompass})` }}
+          style={{ backgroundImage: `url(${engagementGateway})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
@@ -193,6 +193,24 @@ export default function EngagementModel() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partnership Image Break */}
+      <section className="relative h-[300px] overflow-hidden">
+        <img 
+          src={partnershipLinks} 
+          alt="Connected links representing partnership" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-secondary/30" />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="max-w-2xl px-6">
+            <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
+              Every engagement is built on trust, transparency, and a shared 
+              commitment to practical outcomes.
+            </p>
           </div>
         </div>
       </section>

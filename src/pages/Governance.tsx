@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Scale, Eye, Lock, FileCheck, Users } from "lucide-react";
-import trustVault from "@/assets/trust-vault.jpg";
-
+import governanceBoardroom from "@/assets/governance-boardroom.jpg";
+import ethicsBalance from "@/assets/ethics-balance.jpg";
 const principles = [
   {
     icon: Scale,
@@ -44,7 +44,7 @@ export default function Governance() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${trustVault})` }}
+          style={{ backgroundImage: `url(${governanceBoardroom})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
@@ -122,6 +122,30 @@ export default function Governance() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image Break */}
+      <section className="relative h-[350px] overflow-hidden">
+        <img 
+          src={ethicsBalance} 
+          alt="Scales of justice representing balance and ethics" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-wide">
+            <div className="max-w-xl">
+              <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
+              <p className="text-primary-foreground text-2xl md:text-3xl font-serif font-light leading-relaxed mb-4">
+                "Independence is not a marketing claim—it is the foundation of 
+                every recommendation we make."
+              </p>
+              <p className="text-accent text-sm uppercase tracking-widest">
+                Our Governance Philosophy
+              </p>
+            </div>
           </div>
         </div>
       </section>

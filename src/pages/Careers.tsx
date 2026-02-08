@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Handshake, Globe, Award } from "lucide-react";
-import aboutPrecision from "@/assets/about-precision.jpg";
-
+import partnershipLinks from "@/assets/partnership-links.jpg";
+import ethicsBalance from "@/assets/ethics-balance.jpg";
 const collaborationTypes = [
   {
     icon: Users,
@@ -53,7 +53,7 @@ export default function Careers() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${aboutPrecision})` }}
+          style={{ backgroundImage: `url(${partnershipLinks})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
@@ -132,6 +132,24 @@ export default function Careers() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ethics Image Break */}
+      <section className="relative h-[300px] overflow-hidden">
+        <img 
+          src={ethicsBalance} 
+          alt="Balance and integrity in collaboration" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="max-w-2xl px-6">
+            <p className="text-primary-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
+              We seek collaborators who share our commitment to excellence, 
+              independence, and practical impact.
+            </p>
           </div>
         </div>
       </section>
