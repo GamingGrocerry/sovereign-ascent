@@ -1,22 +1,40 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  { 
+    label: "Services", 
+    href: "/services",
+    dropdown: [
+      { label: "Our Services", href: "/services" },
+      { label: "Who We Serve", href: "/who-we-serve" },
+      { label: "Engagement Model", href: "/engagement" },
+    ]
+  },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
-  { label: "Contact", href: "/contact" },
+  { 
+    label: "About Us", 
+    href: "/about",
+    dropdown: [
+      { label: "Our Firm", href: "/about" },
+      { label: "Governance & Independence", href: "/governance" },
+      { label: "FAQs", href: "/faq" },
+      { label: "Careers & Collaborations", href: "/careers" },
+    ]
+  },
 ];
 
 export function Header() {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +47,9 @@ export function Header() {
   // Determine if we're on the homepage (dark header) or other pages (light header)
   const isHomePage = location.pathname === "/";
   const showDarkHeader = isHomePage && !isScrolled;
+
+  // Filter out duplicate About link for desktop
+  const desktopNavItems = navItems.filter(item => item.label !== "About");
 
   return (
     <header
@@ -64,25 +85,54 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={cn(
-                  "text-xs font-medium tracking-widest uppercase transition-colors relative",
-                  location.pathname === item.href
-                    ? showDarkHeader 
-                      ? "text-primary-foreground" 
-                      : "text-accent"
-                    : showDarkHeader
-                    ? "text-primary-foreground/70 hover:text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground",
-                  location.pathname === item.href && "after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-0.5 after:bg-accent"
-                )}
+          <div className="hidden lg:flex items-center gap-6">
+            {desktopNavItems.map((item) => (
+              <div 
+                key={item.href + item.label}
+                className="relative"
+                onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {item.label}
-              </Link>
+                <Link
+                  to={item.href}
+                  className={cn(
+                    "text-xs font-medium tracking-widest uppercase transition-colors relative flex items-center gap-1 py-2",
+                    location.pathname === item.href
+                      ? showDarkHeader 
+                        ? "text-primary-foreground" 
+                        : "text-accent"
+                      : showDarkHeader
+                      ? "text-primary-foreground/70 hover:text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground",
+                    location.pathname === item.href && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent"
+                  )}
+                >
+                  {item.label}
+                  {item.dropdown && <ChevronDown className="w-3 h-3" />}
+                </Link>
+                
+                {/* Dropdown Menu */}
+                {item.dropdown && openDropdown === item.label && (
+                  <div className="absolute top-full left-0 pt-2 min-w-[220px]">
+                    <div className="bg-card border border-border rounded-sm shadow-lg py-2">
+                      {item.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          to={subItem.href}
+                          className={cn(
+                            "block px-4 py-2.5 text-sm transition-colors hover:bg-secondary",
+                            location.pathname === subItem.href
+                              ? "text-accent"
+                              : "text-muted-foreground hover:text-foreground"
+                          )}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -113,23 +163,106 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-card border-t border-border">
-          <div className="container-wide py-6 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={cn(
-                  "block text-sm font-medium tracking-wide uppercase py-2 transition-colors",
-                  location.pathname === item.href
-                    ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+        <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
+          <div className="container-wide py-6 space-y-1">
+            <Link
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
+                location.pathname === "/"
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
+                location.pathname === "/about"
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              About
+            </Link>
+            
+            {/* Services Group */}
+            <div className="py-2">
+              <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Services</p>
+              {[
+                { label: "Our Services", href: "/services" },
+                { label: "Who We Serve", href: "/who-we-serve" },
+                { label: "Engagement Model", href: "/engagement" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "block text-sm py-2 pl-4 transition-colors",
+                    location.pathname === item.href
+                      ? "text-accent"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            <Link
+              to="/methodology"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
+                location.pathname === "/methodology"
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Methodology
+            </Link>
+            <Link
+              to="/insights"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
+                location.pathname === "/insights"
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Insights
+            </Link>
+
+            {/* About Group */}
+            <div className="py-2">
+              <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">About Us</p>
+              {[
+                { label: "Governance & Independence", href: "/governance" },
+                { label: "FAQs", href: "/faq" },
+                { label: "Careers & Collaborations", href: "/careers" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "block text-sm py-2 pl-4 transition-colors",
+                    location.pathname === item.href
+                      ? "text-accent"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
             <div className="pt-4">
               <Button variant="cta" size="lg" className="w-full" asChild>
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
