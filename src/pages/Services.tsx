@@ -86,7 +86,7 @@ export default function Services() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${servicesFramework})` }}
+          style={{ backgroundImage: `url(${servicesHero})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">

@@ -44,7 +44,7 @@ export default function Governance() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${trustVault})` }}
+          style={{ backgroundImage: `url(${governanceBoardroom})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
