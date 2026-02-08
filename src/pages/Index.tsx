@@ -20,23 +20,23 @@ const stats = [
 const services = [
   {
     icon: Shield,
-    title: "QMS Architecture",
-    description: "We architect enterprise-grade quality management systems designed to withstand regulatory scrutiny and scale with organizational growth.",
-    href: "/services/startups",
+    title: "Compliance & Management System Architecture",
+    description: "We support organizations in designing and structuring internal management and compliance systems that are understandable, maintainable, and aligned with regulatory, contractual, and customer expectations.",
+    href: "/services",
     image: qmsStructure,
   },
   {
     icon: Target,
-    title: "CTIP as a Service",
-    description: "Comprehensive Combating Trafficking in Persons program development, implementation, and ongoing monitoring for FAR 52.222-50 compliance.",
-    href: "/services/startups",
+    title: "Human Rights & Ethical Labor Compliance",
+    description: "We advise on the development and operational implementation of human rights and ethical labor compliance programs, with a focus on preventing forced labor, trafficking in persons, and related risks.",
+    href: "/services",
     image: ctipProtection,
   },
   {
     icon: FileCheck,
-    title: "Audit & CAPA Advisory",
-    description: "Strategic audit readiness support and Corrective Action Plan development to transform compliance gaps into operational strengths.",
-    href: "/services/startups",
+    title: "Audit Readiness & Corrective Action Advisory",
+    description: "We support organizations in preparing for external assessments by strengthening internal controls, organizing evidence, and structuring corrective actions in a controlled and practical manner.",
+    href: "/services",
     image: auditPrecision,
   },
 ];
