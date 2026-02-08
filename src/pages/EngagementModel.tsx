@@ -200,7 +200,7 @@ export default function EngagementModel() {
       {/* Partnership Image Break */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src={partnershipLinks} 
+          src={engagementPartnership} 
           alt="Connected links representing partnership" 
           className="w-full h-full object-cover"
         />

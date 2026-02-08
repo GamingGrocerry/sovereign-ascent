@@ -177,7 +177,7 @@ export default function WhoWeServe() {
       {/* Partnership Visual */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src={partnershipLinks} 
+          src={whoWeServeQuote} 
           alt="Connected partnership links" 
           className="w-full h-full object-cover"
         />

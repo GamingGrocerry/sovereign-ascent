@@ -243,7 +243,7 @@ export default function About() {
       {/* Image Break */}
       <section className="relative h-[350px] overflow-hidden">
         <img 
-          src={methodologyRipples} 
+          src={aboutHeritage} 
           alt="Concentric ripples representing methodical process" 
           className="w-full h-full object-cover"
         />

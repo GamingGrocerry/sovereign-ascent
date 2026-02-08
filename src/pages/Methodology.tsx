@@ -161,7 +161,7 @@ export default function Methodology() {
             <div className="relative">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
-                  src={servicesFramework} 
+                  src={methodologyNavigation} 
                   alt="Interconnected compliance framework" 
                   className="w-full h-[400px] object-cover"
                 />

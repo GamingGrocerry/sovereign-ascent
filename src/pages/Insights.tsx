@@ -124,7 +124,7 @@ export default function Insights() {
         <div className="container-wide">
           <div className="relative rounded-sm overflow-hidden group cursor-pointer">
             <img 
-              src={methodologyRipples} 
+              src={insightsFeatured} 
               alt="Abstract ripples representing methodical thinking"
               className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
             />

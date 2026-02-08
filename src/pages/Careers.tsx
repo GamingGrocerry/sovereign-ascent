@@ -139,7 +139,7 @@ export default function Careers() {
       {/* Ethics Image Break */}
       <section className="relative h-[300px] overflow-hidden">
         <img 
-          src={ethicsBalance} 
+          src={governanceEthics} 
           alt="Balance and integrity in collaboration" 
           className="w-full h-full object-cover"
         />
