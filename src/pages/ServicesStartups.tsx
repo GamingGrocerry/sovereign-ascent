@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Target, FileCheck, CheckCircle2 } from "lucide-react";
+import servicesFramework from "@/assets/services-framework.jpg";
+import heroArchitecture from "@/assets/hero-architecture.jpg";
 
 const services = [
   {
@@ -70,27 +72,44 @@ export default function ServicesStartups() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-secondary/30">
-        <div className="container-wide">
-          <div className="max-w-3xl">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Global Startups
-            </p>
-            <h1 className="mb-6">
-              Compliance Foundations for High-Growth Startups
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              We support high-growth startups in architecting, implementing, and 
-              monitoring compliance frameworks that scale with your ambitions 
-              and meet the demands of enterprise customers and regulatory environments.
-            </p>
+      <section className="page-hero pt-32 pb-24 bg-secondary/30">
+        <div 
+          className="page-hero-bg" 
+          style={{ backgroundImage: `url(${servicesFramework})` }}
+        />
+        <div className="page-hero-overlay" />
+        <div className="container-wide relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                Global Startups
+              </p>
+              <h1 className="mb-6 gold-accent pb-4">
+                Compliance Foundations for High-Growth Startups
+              </h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                We support high-growth startups in architecting, implementing, and 
+                monitoring compliance frameworks that scale with your ambitions 
+                and meet the demands of enterprise customers and regulatory environments.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <div className="image-frame rounded-sm overflow-hidden">
+                <img 
+                  src={heroArchitecture} 
+                  alt="Modern architectural structure" 
+                  className="w-full h-[350px] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Independence Doctrine */}
-      <section className="py-12 bg-primary">
-        <div className="container-wide">
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
+        <div className="container-wide relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-primary-foreground">
               <h3 className="text-xl font-serif mb-2">Vendor-Neutral Advisory</h3>
@@ -111,28 +130,28 @@ export default function ServicesStartups() {
       </section>
 
       {/* Services Detail */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-background section-luxury">
         <div className="container-wide">
-          <div className="space-y-24">
+          <div className="space-y-28">
             {services.map((service, index) => (
               <div
                 key={service.id}
                 id={service.id}
                 className="scroll-mt-24"
               >
-                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                   <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    <div className="w-14 h-14 rounded-sm bg-secondary flex items-center justify-center mb-6">
-                      <service.icon className="w-7 h-7 text-accent" />
+                    <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8">
+                      <service.icon className="w-8 h-8 text-accent" />
                     </div>
-                    <h2 className="mb-2">{service.title}</h2>
+                    <h2 className="mb-2 gold-accent pb-4">{service.title}</h2>
                     <p className="text-accent text-sm uppercase tracking-wide mb-6">
                       {service.subtitle}
                     </p>
-                    <p className="text-lg text-muted-foreground mb-8">
+                    <p className="text-lg text-muted-foreground mb-10">
                       {service.description}
                     </p>
-                    <Button variant="cta" asChild>
+                    <Button variant="cta" size="lg" asChild>
                       <Link to="/contact">
                         Discuss Your Requirements
                         <ArrowRight className="ml-2" size={16} />
@@ -140,27 +159,28 @@ export default function ServicesStartups() {
                     </Button>
                   </div>
                   <div className="space-y-8">
-                    <div className="card-elevated p-8">
-                      <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-4">
+                    <div className="card-elevated p-10">
+                      <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-6">
                         Capabilities
                       </h4>
-                      <ul className="space-y-3">
+                      <ul className="space-y-4">
                         {service.capabilities.map((cap, i) => (
-                          <li key={i} className="flex items-start gap-3 text-foreground">
+                          <li key={i} className="flex items-start gap-4 text-foreground">
                             <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                             {cap}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-secondary/50 p-8 rounded-sm">
-                      <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-4">
+                    <div className="bg-secondary/50 p-10 rounded-sm relative overflow-hidden">
+                      <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+                      <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-6">
                         Expected Outcomes
                       </h4>
-                      <ul className="space-y-3">
+                      <ul className="space-y-4">
                         {service.outcomes.map((outcome, i) => (
-                          <li key={i} className="flex items-start gap-3 text-foreground font-medium">
-                            <div className="w-2 h-2 bg-accent rounded-full mt-2 shrink-0" />
+                          <li key={i} className="flex items-start gap-4 text-foreground font-medium">
+                            <div className="w-2 h-2 bg-gradient-to-br from-accent to-accent/60 rounded-full mt-2 shrink-0" />
                             {outcome}
                           </li>
                         ))}
@@ -169,7 +189,7 @@ export default function ServicesStartups() {
                   </div>
                 </div>
                 {index < services.length - 1 && (
-                  <div className="border-b border-border mt-24" />
+                  <div className="border-b border-border/50 mt-28" />
                 )}
               </div>
             ))}
@@ -178,10 +198,11 @@ export default function ServicesStartups() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-28 bg-secondary/30">
         <div className="container-narrow text-center">
+          <div className="section-divider mx-auto mb-8" />
           <h2 className="mb-6">Start a Confidential Conversation</h2>
-          <p className="text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-lg mb-12 max-w-2xl mx-auto">
             Every engagement begins with a comprehensive understanding of your 
             organizational context, compliance objectives, and growth trajectory.
           </p>
