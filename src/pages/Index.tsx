@@ -183,12 +183,13 @@ export default function Index() {
                 Our Services
               </p>
               <h2 className="mb-6">
-                Compliance Frameworks Built for Scrutiny
+                Independent, Vendor-Neutral Advisory
               </h2>
               <p className="text-lg">
-                We support organizations in architecting, implementing, and 
-                monitoring compliance frameworks that meet the rigorous demands 
-                of U.S. Government contracting and international regulatory environments.
+                Elevate Quality Compliance Solutions provides independent, vendor-neutral advisory services 
+                to organizations operating in regulated and high-scrutiny environments. Our work focuses on 
+                building practical, auditable internal systems that support compliance, operational stability, 
+                and long-term scalability.
               </p>
             </div>
             <div className="relative hidden lg:block">
