@@ -7,27 +7,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { 
-    label: "Services", 
-    href: "/services",
-    dropdown: [
-      { 
-        label: "GovCon Primes", 
-        href: "/services/govcon-primes",
-        description: "Enterprise compliance for prime contractors managing complex programs"
-      },
-      { 
-        label: "GovCon Subs", 
-        href: "/services/govcon-subs",
-        description: "Right-sized compliance frameworks for subcontractor organizations"
-      },
-      { 
-        label: "Global Startups", 
-        href: "/services/startups",
-        description: "Scalable compliance foundations for high-growth companies"
-      },
-    ]
-  },
+  { label: "Services", href: "/services" },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
