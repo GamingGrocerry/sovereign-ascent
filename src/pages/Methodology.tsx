@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search, Compass, Wrench, Users, BarChart3, CheckCircle } from "lucide-react";
 import methodologyRipples from "@/assets/methodology-ripples.jpg";
-import servicesFramework from "@/assets/services-framework.jpg";
+import methodologyNavigation from "@/assets/methodology-navigation.jpg";
 import methodologyCompass from "@/assets/methodology-compass.jpg";
 
 const phases = [

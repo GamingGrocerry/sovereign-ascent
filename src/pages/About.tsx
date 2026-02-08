@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, Users, Globe, Shield, Target, Eye } from "lucide-react";
 import aboutPrecision from "@/assets/about-precision.jpg";
-import methodologyRipples from "@/assets/methodology-ripples.jpg";
-import trustVault from "@/assets/trust-vault.jpg";
+import aboutHeritage from "@/assets/about-heritage.jpg";
+import governanceEthics from "@/assets/governance-ethics.jpg";
 
 const stats = [
   { value: "9+", label: "Years Collective Industry Pedigree", subtext: "US, EU, Middle East" },

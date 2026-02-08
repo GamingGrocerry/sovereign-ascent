@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Building2, Rocket, AlertTriangle, CheckCircle } from "lucide-react";
-import servicesHero from "@/assets/services-hero.jpg";
-import partnershipLinks from "@/assets/partnership-links.jpg";
+import whoWeServeHero from "@/assets/who-we-serve-hero.jpg";
+import whoWeServeQuote from "@/assets/who-we-serve-quote.jpg";
 const audiences = [
   {
     icon: Building2,
