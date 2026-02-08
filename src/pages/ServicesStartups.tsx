@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Target, FileCheck, CheckCircle2 } from "lucide-react";
 import servicesFramework from "@/assets/services-framework.jpg";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
+import qmsStructure from "@/assets/qms-structure.jpg";
+import ctipProtection from "@/assets/ctip-protection.jpg";
+import auditPrecision from "@/assets/audit-precision.jpg";
 
 const services = [
   {
@@ -12,6 +15,7 @@ const services = [
     title: "QMS Architecture",
     subtitle: "Quality Management System Design & Implementation",
     description: "We architect enterprise-grade quality management systems that are designed from the ground up to withstand regulatory scrutiny, support operational excellence, and scale with organizational growth.",
+    image: qmsStructure,
     capabilities: [
       "ISO 9001/AS9100 framework architecture",
       "Process mapping and documentation",
@@ -32,6 +36,7 @@ const services = [
     title: "CTIP as a Service",
     subtitle: "Combating Trafficking in Persons Program Development",
     description: "Comprehensive CTIP program development, implementation, and ongoing monitoring designed to meet FAR 52.222-50 requirements and demonstrate organizational commitment to human rights compliance.",
+    image: ctipProtection,
     capabilities: [
       "CTIP compliance plan development",
       "Awareness training program design",
@@ -52,6 +57,7 @@ const services = [
     title: "Audit & CAPA Advisory",
     subtitle: "Audit Readiness & Corrective Action Support",
     description: "Strategic audit preparation and Corrective Action Plan (CAPA) development that transforms compliance gaps into documented improvements and operational strengths.",
+    image: auditPrecision,
     capabilities: [
       "Pre-audit readiness assessments",
       "Mock audit execution",
