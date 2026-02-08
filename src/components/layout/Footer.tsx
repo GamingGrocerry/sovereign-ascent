@@ -2,11 +2,18 @@ import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
 
 const footerLinks = {
+  services: [
+    { label: "Our Services", href: "/services" },
+    { label: "Who We Serve", href: "/who-we-serve" },
+    { label: "Methodology", href: "/methodology" },
+    { label: "Engagement Model", href: "/engagement" },
+  ],
   company: [
     { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Methodology", href: "/methodology" },
+    { label: "Governance & Independence", href: "/governance" },
     { label: "Insights", href: "/insights" },
+    { label: "Careers & Collaborations", href: "/careers" },
+    { label: "FAQs", href: "/faq" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
@@ -20,7 +27,7 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="container-wide py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
@@ -32,10 +39,9 @@ export function Footer() {
               </span>
             </div>
             <p className="text-primary-foreground/70 max-w-md leading-relaxed mb-6">
-              Elevate Quality Compliance Solutions LLC is an independent, 
-              vendor-neutral advisory firm specializing in quality management 
-              system architecture and compliance program development for 
-              high-stakes regulatory environments.
+              Elevate Quality Compliance Solutions LLC provides independent, 
+              vendor-neutral advisory services to organizations operating in 
+              regulated and high-scrutiny environments.
             </p>
             <a
               href="https://linkedin.com"
@@ -47,6 +53,23 @@ export function Footer() {
               <Linkedin size={20} />
               <span className="text-sm">Follow on LinkedIn</span>
             </a>
+          </div>
+
+          {/* Services Links */}
+          <div>
+            <h4 className="font-serif text-lg mb-4">Services</h4>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Company Links */}
@@ -103,9 +126,9 @@ export function Footer() {
       <div className="bg-navy-light/50">
         <div className="container-wide py-4">
           <p className="text-primary-foreground/50 text-xs leading-relaxed text-center">
-            ElevateQCS is an independent advisory firm. We are not a certification body or a government 
-            regulatory agency. All services are advisory in nature and do not constitute legal, 
-            certification, or regulatory services.
+            ElevateQCS is an independent advisory firm. We are not a certification body, 
+            accredited registrar, or government regulatory agency. All services are advisory 
+            in nature and do not constitute legal, certification, or regulatory services.
           </p>
         </div>
       </div>

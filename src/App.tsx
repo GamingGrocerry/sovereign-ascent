@@ -10,6 +10,14 @@ import Methodology from "./pages/Methodology";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Accessibility from "./pages/Accessibility";
+import WhoWeServe from "./pages/WhoWeServe";
+import Governance from "./pages/Governance";
+import EngagementModel from "./pages/EngagementModel";
+import FAQ from "./pages/FAQ";
+import Careers from "./pages/Careers";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +34,14 @@ const App = () => (
           <Route path="/methodology" element={<Methodology />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/who-we-serve" element={<WhoWeServe />} />
+          <Route path="/governance" element={<Governance />} />
+          <Route path="/engagement" element={<EngagementModel />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/careers" element={<Careers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

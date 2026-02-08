@@ -1,9 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Users, Globe } from "lucide-react";
+import { ArrowRight, Award, Users, Globe, Shield, Target, Eye } from "lucide-react";
 import aboutPrecision from "@/assets/about-precision.jpg";
 import methodologyRipples from "@/assets/methodology-ripples.jpg";
+import trustVault from "@/assets/trust-vault.jpg";
 
 const stats = [
   { value: "9+", label: "Years Collective Industry Pedigree", subtext: "US, EU, Middle East" },
@@ -27,6 +28,24 @@ const values = [
     icon: Globe,
     title: "Discretion & Confidentiality",
     description: "Every engagement begins with comprehensive NDAs. Your competitive intelligence and compliance posture remain protected.",
+  },
+];
+
+const differentiators = [
+  {
+    icon: Shield,
+    title: "Independence",
+    description: "We maintain strict independence from certification bodies, vendors, and regulatory agencies. Our recommendations serve only your interests.",
+  },
+  {
+    icon: Target,
+    title: "Practical Focus",
+    description: "We design systems for operational reality, not theoretical perfection. Every framework is built to function under real-world pressure.",
+  },
+  {
+    icon: Eye,
+    title: "Capability Transfer",
+    description: "Our goal is your independence. We transfer knowledge and capability, not create dependency on external advisors.",
   },
 ];
 
@@ -149,14 +168,28 @@ export default function About() {
         </div>
       </section>
 
-      {/* Image Break */}
-      <section className="relative h-[400px] overflow-hidden">
+      {/* Image with Quote */}
+      <section className="relative h-[450px] overflow-hidden">
         <img 
-          src={methodologyRipples} 
-          alt="Concentric ripples representing methodical process" 
+          src={trustVault} 
+          alt="Secure vault representing trust and protection" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/60" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-wide">
+            <div className="max-w-2xl">
+              <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
+              <p className="text-primary-foreground text-2xl md:text-3xl font-serif font-light leading-relaxed mb-6">
+                "We don't certify. We architect. We don't approve. We advise. 
+                We don't authorize. We support."
+              </p>
+              <p className="text-accent text-sm uppercase tracking-widest">
+                Our Operational Philosophy
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Values */}
@@ -182,8 +215,43 @@ export default function About() {
         </div>
       </section>
 
+      {/* Differentiators */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-16">
+            <div className="section-divider mb-8" />
+            <h2>What Sets Us Apart</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {differentiators.map((item, index) => (
+              <div key={index} className="flex gap-6">
+                <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center shrink-0">
+                  <item.icon className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <div>
+                  <h3 className="text-lg mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image Break */}
+      <section className="relative h-[350px] overflow-hidden">
+        <img 
+          src={methodologyRipples} 
+          alt="Concentric ripples representing methodical process" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+      </section>
+
       {/* CTA */}
-      <section className="py-28 bg-secondary/30">
+      <section className="py-28 bg-background">
         <div className="container-narrow text-center">
           <div className="section-divider mx-auto mb-8" />
           <h2 className="mb-6">Work With Us</h2>
@@ -192,12 +260,19 @@ export default function About() {
             and delivered with complete discretion, we'd welcome the opportunity 
             to discuss your compliance objectives.
           </p>
-          <Button variant="cta" size="xl" asChild>
-            <Link to="/contact">
-              Request a Consultation
-              <ArrowRight className="ml-2" size={18} />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="cta" size="xl" asChild>
+              <Link to="/contact">
+                Request a Consultation
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </Button>
+            <Button variant="outline" size="xl" asChild>
+              <Link to="/governance">
+                Learn About Our Governance
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>
