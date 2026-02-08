@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Target, FileCheck, CheckCircle2 } from "lucide-react";
 import servicesFramework from "@/assets/services-framework.jpg";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
+import qmsStructure from "@/assets/qms-structure.jpg";
+import ctipProtection from "@/assets/ctip-protection.jpg";
+import auditPrecision from "@/assets/audit-precision.jpg";
 
 const services = [
   {
@@ -12,6 +15,7 @@ const services = [
     title: "QMS Architecture",
     subtitle: "Quality Management System Design & Implementation",
     description: "We architect enterprise-grade quality management systems that are designed from the ground up to withstand regulatory scrutiny, support operational excellence, and scale with organizational growth.",
+    image: qmsStructure,
     capabilities: [
       "ISO 9001/AS9100 framework architecture",
       "Process mapping and documentation",
@@ -32,6 +36,7 @@ const services = [
     title: "CTIP as a Service",
     subtitle: "Combating Trafficking in Persons Program Development",
     description: "Comprehensive CTIP program development, implementation, and ongoing monitoring designed to meet FAR 52.222-50 requirements and demonstrate organizational commitment to human rights compliance.",
+    image: ctipProtection,
     capabilities: [
       "CTIP compliance plan development",
       "Awareness training program design",
@@ -52,6 +57,7 @@ const services = [
     title: "Audit & CAPA Advisory",
     subtitle: "Audit Readiness & Corrective Action Support",
     description: "Strategic audit preparation and Corrective Action Plan (CAPA) development that transforms compliance gaps into documented improvements and operational strengths.",
+    image: auditPrecision,
     capabilities: [
       "Pre-audit readiness assessments",
       "Mock audit execution",
@@ -132,7 +138,7 @@ export default function ServicesStartups() {
       {/* Services Detail */}
       <section className="py-28 bg-background section-luxury">
         <div className="container-wide">
-          <div className="space-y-28">
+          <div className="space-y-32">
             {services.map((service, index) => (
               <div
                 key={service.id}
@@ -141,6 +147,14 @@ export default function ServicesStartups() {
               >
                 <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                   <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                    {/* Service Image */}
+                    <div className="image-frame rounded-sm overflow-hidden mb-10">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-[300px] object-cover"
+                      />
+                    </div>
                     <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8">
                       <service.icon className="w-8 h-8 text-accent" />
                     </div>
@@ -189,7 +203,7 @@ export default function ServicesStartups() {
                   </div>
                 </div>
                 {index < services.length - 1 && (
-                  <div className="border-b border-border/50 mt-28" />
+                  <div className="border-b border-border/50 mt-32" />
                 )}
               </div>
             ))}

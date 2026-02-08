@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
 import methodologyRipples from "@/assets/methodology-ripples.jpg";
 import servicesFramework from "@/assets/services-framework.jpg";
+import methodologyCompass from "@/assets/methodology-compass.jpg";
 
 const phases = [
   {
@@ -106,8 +107,8 @@ export default function Methodology() {
             <div className="hidden lg:block">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
-                  src={methodologyRipples} 
-                  alt="Concentric ripples representing methodical process" 
+                  src={methodologyCompass} 
+                  alt="Brass compass representing guidance and direction" 
                   className="w-full h-[350px] object-cover"
                 />
               </div>
