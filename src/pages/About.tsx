@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, Users, Globe } from "lucide-react";
+import aboutPrecision from "@/assets/about-precision.jpg";
+import methodologyRipples from "@/assets/methodology-ripples.jpg";
 
 const stats = [
   { value: "9+", label: "Years Collective Industry Pedigree", subtext: "US, EU, Middle East" },
@@ -32,32 +34,48 @@ export default function About() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-secondary/30">
-        <div className="container-wide">
-          <div className="max-w-3xl">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              About ElevateQCS
-            </p>
-            <h1 className="mb-6">
-              Institutional Authority Earned Through Field Experience
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              ElevateQCS was founded in 2026 by senior quality and compliance 
-              architects with hands-on experience designing, implementing, 
-              monitoring, and supporting QMS frameworks across major billion-dollar 
-              U.S. Government contracting programs.
-            </p>
+      <section className="page-hero pt-32 pb-24 bg-secondary/30">
+        <div 
+          className="page-hero-bg" 
+          style={{ backgroundImage: `url(${aboutPrecision})` }}
+        />
+        <div className="page-hero-overlay" />
+        <div className="container-wide relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                About ElevateQCS
+              </p>
+              <h1 className="mb-6 gold-accent pb-4">
+                Institutional Authority Earned Through Field Experience
+              </h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                ElevateQCS was founded in 2026 by senior quality and compliance 
+                architects with hands-on experience designing, implementing, 
+                monitoring, and supporting QMS frameworks across major billion-dollar 
+                U.S. Government contracting programs.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <div className="image-frame rounded-sm overflow-hidden">
+                <img 
+                  src={aboutPrecision} 
+                  alt="Precision engineering and architectural planning" 
+                  className="w-full h-[350px] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="stats-gradient py-16">
-        <div className="container-wide">
+      <section className="stats-gradient py-20">
+        <div className="container-wide relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="font-serif text-3xl md:text-4xl text-primary-foreground font-semibold mb-2">
+              <div key={index} className="text-center group">
+                <div className="font-serif text-4xl md:text-5xl text-primary-foreground font-semibold mb-3 transition-transform duration-300 group-hover:scale-105">
                   {stat.value}
                 </div>
                 <div className="text-primary-foreground/70 text-sm leading-tight">
@@ -75,11 +93,12 @@ export default function About() {
       </section>
 
       {/* Narrative */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-background section-luxury">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-20">
             <div>
-              <h2 className="mb-6">Our Heritage</h2>
+              <div className="section-divider mb-8" />
+              <h2 className="mb-8">Our Heritage</h2>
               <div className="prose prose-lg text-muted-foreground space-y-6">
                 <p>
                   Our founding team has spent nearly a decade embedded within 
@@ -103,7 +122,8 @@ export default function About() {
               </div>
             </div>
             <div>
-              <h2 className="mb-6">Our Position</h2>
+              <div className="section-divider mb-8" />
+              <h2 className="mb-8">Our Position</h2>
               <div className="prose prose-lg text-muted-foreground space-y-6">
                 <p>
                   ElevateQCS occupies a deliberate position in the market: we 
@@ -129,20 +149,30 @@ export default function About() {
         </div>
       </section>
 
+      {/* Image Break */}
+      <section className="relative h-[400px] overflow-hidden">
+        <img 
+          src={methodologyRipples} 
+          alt="Concentric ripples representing methodical process" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+      </section>
+
       {/* Values */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-28 bg-background section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               Our Values
             </p>
-            <h2>Principles That Guide Every Engagement</h2>
+            <h2 className="gold-accent pb-4">Principles That Guide Every Engagement</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="card-elevated p-8">
-                <div className="w-12 h-12 rounded-sm bg-secondary flex items-center justify-center mb-6">
-                  <value.icon className="w-6 h-6 text-accent" />
+              <div key={index} className="card-elevated p-10">
+                <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8">
+                  <value.icon className="w-7 h-7 text-accent" />
                 </div>
                 <h3 className="text-xl mb-4">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
@@ -153,10 +183,11 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-secondary/30">
         <div className="container-narrow text-center">
+          <div className="section-divider mx-auto mb-8" />
           <h2 className="mb-6">Work With Us</h2>
-          <p className="text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-lg mb-12 max-w-2xl mx-auto">
             If you're seeking advisory support grounded in real-world experience 
             and delivered with complete discretion, we'd welcome the opportunity 
             to discuss your compliance objectives.

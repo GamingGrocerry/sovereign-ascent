@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Shield, Target, FileCheck, ChevronRight, ArrowRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroArchitecture from "@/assets/hero-architecture.jpg";
+import aboutPrecision from "@/assets/about-precision.jpg";
+import servicesFramework from "@/assets/services-framework.jpg";
 
 const stats = [
   { value: "9+", label: "Years Collective Industry Pedigree", subtext: "US, EU, Middle East" },
@@ -16,19 +18,19 @@ const services = [
     icon: Shield,
     title: "QMS Architecture",
     description: "We architect enterprise-grade quality management systems designed to withstand regulatory scrutiny and scale with organizational growth.",
-    href: "/services#qms",
+    href: "/services/startups",
   },
   {
     icon: Target,
     title: "CTIP as a Service",
     description: "Comprehensive Combating Trafficking in Persons program development, implementation, and ongoing monitoring for FAR 52.222-50 compliance.",
-    href: "/services#ctip",
+    href: "/services/startups",
   },
   {
     icon: FileCheck,
     title: "Audit & CAPA Advisory",
     description: "Strategic audit readiness support and Corrective Action Plan development to transform compliance gaps into operational strengths.",
-    href: "/services#audit",
+    href: "/services/startups",
   },
 ];
 
@@ -46,11 +48,15 @@ export default function Index() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+          style={{ backgroundImage: `url(${heroArchitecture})` }}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 image-overlay" />
+        
+        {/* Decorative Corner Accents */}
+        <div className="absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
+        <div className="absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
         
         {/* Content */}
         <div className="relative z-10 container-wide py-32 text-center">
@@ -92,12 +98,12 @@ export default function Index() {
       </section>
 
       {/* Stats Bar */}
-      <section className="stats-gradient py-16">
-        <div className="container-wide">
+      <section className="stats-gradient py-20">
+        <div className="container-wide relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="font-serif text-3xl md:text-4xl text-primary-foreground font-semibold mb-2">
+              <div key={index} className="text-center group">
+                <div className="font-serif text-4xl md:text-5xl text-primary-foreground font-semibold mb-3 transition-transform duration-300 group-hover:scale-105">
                   {stat.value}
                 </div>
                 <div className="text-primary-foreground/70 text-sm leading-tight">
@@ -114,21 +120,79 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-24 lg:py-32 bg-background">
+      {/* About Preview Section */}
+      <section className="py-28 lg:py-36 bg-background section-luxury">
         <div className="container-wide">
-          <div className="max-w-3xl mb-16">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Our Services
-            </p>
-            <h2 className="mb-6">
-              Compliance Frameworks Built for Scrutiny
-            </h2>
-            <p className="text-lg">
-              We support organizations in architecting, implementing, and 
-              monitoring compliance frameworks that meet the rigorous demands 
-              of U.S. Government contracting and international regulatory environments.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image */}
+            <div className="relative order-2 lg:order-1">
+              <div className="image-frame rounded-sm overflow-hidden">
+                <img 
+                  src={aboutPrecision} 
+                  alt="Precision engineering and architectural planning" 
+                  className="w-full h-[400px] lg:h-[500px] object-cover"
+                />
+              </div>
+              {/* Decorative element */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-accent/20 rounded-sm -z-10" />
+              <div className="absolute -top-6 -left-6 w-32 h-32 border border-accent/10 rounded-sm -z-10" />
+            </div>
+            
+            {/* Content */}
+            <div className="order-1 lg:order-2">
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                Our Distinction
+              </p>
+              <h2 className="mb-6 gold-accent pb-4">
+                Institutional Pedigree in High-Stakes Compliance
+              </h2>
+              <p className="text-lg mb-6">
+                ElevateQCS was founded by senior quality and compliance architects 
+                with hands-on experience designing, implementing, and monitoring 
+                QMS frameworks across major Government Contracting programs.
+              </p>
+              <p className="mb-8">
+                Our team has supported organizations navigating FAR requirements, 
+                DCAA audits, and international compliance mandates across sectors 
+                including defense, aerospace, and regulated technology.
+              </p>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/about">
+                  Learn About Our Heritage
+                  <ChevronRight className="ml-2" size={16} />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                Our Services
+              </p>
+              <h2 className="mb-6">
+                Compliance Frameworks Built for Scrutiny
+              </h2>
+              <p className="text-lg">
+                We support organizations in architecting, implementing, and 
+                monitoring compliance frameworks that meet the rigorous demands 
+                of U.S. Government contracting and international regulatory environments.
+              </p>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="image-frame rounded-sm overflow-hidden">
+                <img 
+                  src={servicesFramework} 
+                  alt="Interconnected compliance framework visualization" 
+                  className="w-full h-[280px] object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -136,10 +200,10 @@ export default function Index() {
               <Link
                 key={index}
                 to={service.href}
-                className="card-elevated p-8 group"
+                className="card-elevated p-10 group"
               >
-                <div className="w-12 h-12 rounded-sm bg-secondary flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors">
-                  <service.icon className="w-6 h-6 text-accent" />
+                <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8 group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-500">
+                  <service.icon className="w-7 h-7 text-accent" />
                 </div>
                 <h3 className="text-xl mb-4 group-hover:text-accent transition-colors">
                   {service.title}
@@ -158,7 +222,7 @@ export default function Index() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-24 lg:py-32 bg-secondary/30">
+      <section className="py-28 lg:py-36 bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -174,26 +238,28 @@ export default function Index() {
                 that could compromise our advisory objectivity. Our recommendations 
                 serve your organizational interests—nothing else.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-6">
                 {trustSignals.map((signal, index) => (
                   <div
                     key={index}
                     className="flex items-center gap-3 text-sm text-foreground"
                   >
-                    <div className="w-2 h-2 bg-accent rounded-full" />
+                    <div className="w-2 h-2 bg-gradient-to-br from-accent to-accent/60 rounded-full" />
                     {signal}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-primary p-10 lg:p-12 rounded-sm">
-              <blockquote className="text-primary-foreground">
-                <p className="text-xl lg:text-2xl font-serif leading-relaxed mb-6 font-light">
+            <div className="bg-primary p-12 lg:p-16 rounded-sm relative overflow-hidden">
+              {/* Decorative accent */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent" />
+              <blockquote className="text-primary-foreground relative z-10">
+                <p className="text-2xl lg:text-3xl font-serif leading-relaxed mb-8 font-light">
                   "In high-stakes regulatory environments, compliance is not a 
                   checkbox—it's the architecture upon which operational 
                   credibility is built."
                 </p>
-                <footer className="text-primary-foreground/60 text-sm">
+                <footer className="text-primary-foreground/60 text-sm uppercase tracking-wider">
                   — ElevateQCS Founding Principles
                 </footer>
               </blockquote>
@@ -203,12 +269,13 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-background">
+      <section className="py-28 lg:py-36 bg-secondary/30">
         <div className="container-narrow text-center">
+          <div className="section-divider mx-auto mb-8" />
           <h2 className="mb-6">
             Ready to Elevate Your Compliance Posture?
           </h2>
-          <p className="text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-lg mb-12 max-w-2xl mx-auto">
             Whether you're facing an upcoming audit, expanding into government 
             contracting, or building compliance infrastructure from the ground up, 
             we're here to support your mission.
@@ -219,7 +286,7 @@ export default function Index() {
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>
-          <p className="text-muted-foreground text-sm mt-6">
+          <p className="text-muted-foreground text-sm mt-8">
             All initial consultations are protected by NDA
           </p>
         </div>
