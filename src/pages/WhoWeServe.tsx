@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Building2, Rocket, AlertTriangle, CheckCircle } from "lucide-react";
-import servicesFramework from "@/assets/services-framework.jpg";
-
+import servicesHero from "@/assets/services-hero.jpg";
+import partnershipLinks from "@/assets/partnership-links.jpg";
 const audiences = [
   {
     icon: Building2,

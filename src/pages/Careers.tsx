@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Handshake, Globe, Award } from "lucide-react";
-import aboutPrecision from "@/assets/about-precision.jpg";
-
+import partnershipLinks from "@/assets/partnership-links.jpg";
+import ethicsBalance from "@/assets/ethics-balance.jpg";
 const collaborationTypes = [
   {
     icon: Users,

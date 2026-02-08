@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Scale, Eye, Lock, FileCheck, Users } from "lucide-react";
-import trustVault from "@/assets/trust-vault.jpg";
-
+import governanceBoardroom from "@/assets/governance-boardroom.jpg";
+import ethicsBalance from "@/assets/ethics-balance.jpg";
 const principles = [
   {
     icon: Scale,

@@ -2,13 +2,13 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Target, FileCheck, BookOpen, CheckCircle2 } from "lucide-react";
-import servicesFramework from "@/assets/services-framework.jpg";
+import servicesHero from "@/assets/services-hero.jpg";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import qmsStructure from "@/assets/qms-structure.jpg";
 import ctipProtection from "@/assets/ctip-protection.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 import insightsLibrary from "@/assets/insights-library.jpg";
-
+import advisoryApproach from "@/assets/advisory-approach.jpg";
 const services = [
   {
     id: "compliance-architecture",

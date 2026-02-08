@@ -2,8 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageSquare, FileSignature, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
-import methodologyCompass from "@/assets/methodology-compass.jpg";
-
+import engagementGateway from "@/assets/engagement-gateway.jpg";
+import partnershipLinks from "@/assets/partnership-links.jpg";
 const phases = [
   {
     step: "01",
