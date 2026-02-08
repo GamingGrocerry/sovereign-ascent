@@ -5,6 +5,10 @@ import { Shield, Target, FileCheck, ChevronRight, ArrowRight } from "lucide-reac
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import aboutPrecision from "@/assets/about-precision.jpg";
 import servicesFramework from "@/assets/services-framework.jpg";
+import trustVault from "@/assets/trust-vault.jpg";
+import qmsStructure from "@/assets/qms-structure.jpg";
+import auditPrecision from "@/assets/audit-precision.jpg";
+import ctipProtection from "@/assets/ctip-protection.jpg";
 
 const stats = [
   { value: "9+", label: "Years Collective Industry Pedigree", subtext: "US, EU, Middle East" },
@@ -19,18 +23,21 @@ const services = [
     title: "QMS Architecture",
     description: "We architect enterprise-grade quality management systems designed to withstand regulatory scrutiny and scale with organizational growth.",
     href: "/services/startups",
+    image: qmsStructure,
   },
   {
     icon: Target,
     title: "CTIP as a Service",
     description: "Comprehensive Combating Trafficking in Persons program development, implementation, and ongoing monitoring for FAR 52.222-50 compliance.",
     href: "/services/startups",
+    image: ctipProtection,
   },
   {
     icon: FileCheck,
     title: "Audit & CAPA Advisory",
     description: "Strategic audit readiness support and Corrective Action Plan development to transform compliance gaps into operational strengths.",
     href: "/services/startups",
+    image: auditPrecision,
   },
 ];
 
