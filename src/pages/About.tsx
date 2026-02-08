@@ -171,7 +171,7 @@ export default function About() {
       {/* Image with Quote */}
       <section className="relative h-[450px] overflow-hidden">
         <img 
-          src={trustVault} 
+          src={governanceEthics} 
           alt="Secure vault representing trust and protection" 
           className="w-full h-full object-cover"
         />
