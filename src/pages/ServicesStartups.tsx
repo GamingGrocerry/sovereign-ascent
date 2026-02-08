@@ -138,7 +138,7 @@ export default function ServicesStartups() {
       {/* Services Detail */}
       <section className="py-28 bg-background section-luxury">
         <div className="container-wide">
-          <div className="space-y-28">
+          <div className="space-y-32">
             {services.map((service, index) => (
               <div
                 key={service.id}
@@ -147,6 +147,14 @@ export default function ServicesStartups() {
               >
                 <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                   <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                    {/* Service Image */}
+                    <div className="image-frame rounded-sm overflow-hidden mb-10">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-[300px] object-cover"
+                      />
+                    </div>
                     <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8">
                       <service.icon className="w-8 h-8 text-accent" />
                     </div>
@@ -195,7 +203,7 @@ export default function ServicesStartups() {
                   </div>
                 </div>
                 {index < services.length - 1 && (
-                  <div className="border-b border-border/50 mt-28" />
+                  <div className="border-b border-border/50 mt-32" />
                 )}
               </div>
             ))}
