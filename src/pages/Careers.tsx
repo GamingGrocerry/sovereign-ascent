@@ -53,7 +53,7 @@ export default function Careers() {
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
           className="page-hero-bg" 
-          style={{ backgroundImage: `url(${partnershipLinks})` }}
+          style={{ backgroundImage: `url(${careersHero})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
