@@ -196,10 +196,14 @@ export default function Contact() {
                   {isSubmitting ? "Submitting..." : "Submit Confidential Inquiry"}
                 </Button>
 
-                <p className="text-muted-foreground text-sm">
-                  We typically respond within 48 business hours. All inquiries are 
-                  treated with strict confidentiality.
-                </p>
+                <div className="flex items-center gap-3 mt-4 text-muted-foreground text-sm">
+                  <Lock className="w-4 h-4 text-accent shrink-0" />
+                  <p>
+                    This form is privacy-compliant. All inquiries are treated with 
+                    discretion and confidentiality. We typically respond within 48 
+                    business hours.
+                  </p>
+                </div>
               </form>
             </div>
 
