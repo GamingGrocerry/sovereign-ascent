@@ -7,10 +7,10 @@ import aboutHeritage from "@/assets/about-heritage.jpg";
 import governanceEthics from "@/assets/governance-ethics.jpg";
 
 const stats = [
-  { value: "9+", label: "Years Collective Industry Pedigree", subtext: "US, EU, Middle East" },
-  { value: "10,000+", label: "Audits Observed & Supported" },
-  { value: "125+", label: "High-Value Contracts Supported", subtext: "Including CTIP Plans" },
-  { value: "€500K–€25M", label: "Project Exposure Range" },
+  { value: "9+", label: "Years of Regulatory & Operational Advisory Experience" },
+  { value: "10,000+", label: "Support across thousands of audit interactions, providing insight into real compliance expectations" },
+  { value: "125+", label: "Compliance & Control Frameworks Delivered" },
+  { value: "€500K–€25M", label: "Advisory Exposure Across Project Environments" },
 ];
 
 const values = [
@@ -22,7 +22,7 @@ const values = [
   {
     icon: Users,
     title: "Risk Reduction",
-    description: "Our methodologies are designed to identify, quantify, and systematically address compliance risks before they become audit findings.",
+    description: "Our methodologies identify, quantify, and systematically address compliance risks before they become audit findings.",
   },
   {
     icon: Globe,
@@ -66,20 +66,20 @@ export default function About() {
                 About ElevateQCS
               </p>
               <h1 className="mb-6 gold-accent pb-4">
-                Institutional Authority Earned Through Field Experience
+                We Build Compliance Systems for Clarity and Control
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 ElevateQCS was founded in 2026 by senior quality and compliance 
                 architects with hands-on experience designing, implementing, 
                 monitoring, and supporting QMS frameworks across major billion-dollar 
-                U.S. Government contracting programs.
+                Government Contracting programs.
               </p>
             </div>
             <div className="hidden lg:block">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
                   src={aboutPrecision} 
-                  alt="Precision engineering and architectural planning" 
+                  alt="Precision engineering representing structured compliance architecture" 
                   className="w-full h-[350px] object-cover"
                 />
               </div>
@@ -100,11 +100,6 @@ export default function About() {
                 <div className="text-primary-foreground/70 text-sm leading-tight">
                   {stat.label}
                 </div>
-                {stat.subtext && (
-                  <div className="text-primary-foreground/50 text-xs mt-1">
-                    {stat.subtext}
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -117,26 +112,25 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-20">
             <div>
               <div className="section-divider mb-8" />
-              <h2 className="mb-8">Our Heritage</h2>
+              <h2 className="mb-8">Why We Exist</h2>
               <div className="prose prose-lg text-muted-foreground space-y-6">
                 <p>
-                  Our founding team has spent nearly a decade embedded within 
-                  the quality and compliance ecosystems of major defense, 
-                  aerospace, and government services contractors. This isn't 
-                  theoretical knowledge—it's field-tested experience gained 
-                  through direct participation in high-value program execution.
+                  We observed a gap: compliance advisory that worked in theory 
+                  but failed under real operational pressure. Organizations needed 
+                  more than documentation — they needed systems that functioned 
+                  when scrutiny arrived.
                 </p>
                 <p>
-                  We've observed thousands of internal and external audits, 
-                  architected quality management systems for contracts spanning 
-                  multiple continents, and supported organizations through the 
-                  most demanding regulatory environments in the world.
+                  Our founding team spent nearly a decade embedded within the 
+                  quality and compliance ecosystems of major defense, aerospace, 
+                  and government services contractors. This isn't theoretical 
+                  knowledge — it's field-tested experience gained through direct 
+                  participation in high-value program execution.
                 </p>
                 <p>
-                  This operational experience informs every aspect of our 
-                  advisory practice. We understand not just what compliance 
-                  frameworks should look like on paper, but how they function 
-                  under the pressure of real-world program execution.
+                  That experience exposed the distance between what compliance 
+                  frameworks look like on paper and how they perform under pressure. 
+                  ElevateQCS was built to close that gap.
                 </p>
               </div>
             </div>
@@ -151,10 +145,10 @@ export default function About() {
                   their own compliance capabilities.
                 </p>
                 <p>
-                  This distinction is fundamental to how we operate. We don't 
-                  certify—we architect. We don't approve—we advise. We don't 
-                  authorize—we support. Our role is to transfer knowledge and 
-                  capability to your organization, not to create dependency.
+                  This distinction is fundamental. We don't certify — we architect. 
+                  We don't approve — we advise. We don't authorize — we support. 
+                  Our role is to transfer knowledge and capability to your 
+                  organization, not to create dependency.
                 </p>
                 <p>
                   Our vendor-neutral stance means we recommend solutions based 
@@ -168,11 +162,22 @@ export default function About() {
         </div>
       </section>
 
+      {/* Operational Edge Note */}
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
+        <div className="container-wide relative z-10 text-center">
+          <p className="text-primary-foreground/80 text-lg font-serif leading-relaxed max-w-3xl mx-auto">
+            We work with leadership, quality functions, and operations teams who 
+            must make compliance work in practice — not just in documents.
+          </p>
+        </div>
+      </section>
+
       {/* Image with Quote */}
       <section className="relative h-[450px] overflow-hidden">
         <img 
           src={governanceEthics} 
-          alt="Secure vault representing trust and protection" 
+          alt="Marble scales representing ethics, balance, and independent advisory governance" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/60" />
@@ -244,7 +249,7 @@ export default function About() {
       <section className="relative h-[350px] overflow-hidden">
         <img 
           src={aboutHeritage} 
-          alt="Concentric ripples representing methodical process" 
+          alt="Ancient canyon formations representing depth of experience and enduring methodology" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
@@ -263,7 +268,7 @@ export default function About() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>
               <Link to="/contact">
-                Request a Consultation
+                Request a Confidential Consultation
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>

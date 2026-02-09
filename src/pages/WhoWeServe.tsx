@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Building2, Rocket, AlertTriangle, CheckCircle } from "lucide-react";
 import whoWeServeHero from "@/assets/who-we-serve-hero.jpg";
 import whoWeServeQuote from "@/assets/who-we-serve-quote.jpg";
+
 const audiences = [
   {
     icon: Building2,
-    title: "Government Contracting Primes",
-    description: "Prime contractors operating in the federal marketplace face significant compliance obligations—from DCMA oversight to FAR/DFARS requirements, ISO certifications, and CTIP mandates.",
+    title: "Government Contracting Organizations",
+    description: "Close the gap between contractual compliance expectations and operational systems. Teams needing defensible compliance systems before audits, contract milestones, or regulatory assessments.",
     risks: [
       "DCMA quality system reviews and surveillance audits",
       "FAR 52.222-50 CTIP compliance requirements",
@@ -26,8 +27,8 @@ const audiences = [
   },
   {
     icon: Shield,
-    title: "Government Contracting Subcontractors",
-    description: "Subcontractors must meet prime contractor flow-down requirements while building their own compliance infrastructure—often with limited resources and competing priorities.",
+    title: "Subcontractors & Suppliers",
+    description: "Prepare internal controls and evidence structures to satisfy prime and customer requirements. Organizations needing structured compliance readiness to meet prime contractor expectations.",
     risks: [
       "Prime contractor audit exposure and flow-down compliance",
       "Quality requirements without internal QMS infrastructure",
@@ -46,7 +47,7 @@ const audiences = [
   {
     icon: Rocket,
     title: "High-Growth Regulated Companies",
-    description: "Companies entering regulated markets or scaling rapidly often lack the compliance infrastructure required for their next phase of growth. We help build systems designed for scalability.",
+    description: "Establish scalable compliance foundations that support growth, funding, and enterprise footprints. Companies preparing for enterprise customers or regulated markets.",
     risks: [
       "Scaling operations without scalable compliance systems",
       "Entering regulated markets without regulatory experience",
@@ -79,10 +80,12 @@ export default function WhoWeServe() {
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               Our Clients
             </p>
-            <h1 className="mb-6 gold-accent pb-4">Who We Serve</h1>
+            <h1 className="mb-6 gold-accent pb-4">
+              We Serve Organizations Where Compliance Risk Meets Operational Demand
+            </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               We work with organizations operating in regulated and high-scrutiny 
-              environments—those where compliance is not optional but fundamental 
+              environments — those where compliance is not optional but fundamental 
               to operational viability and competitive positioning.
             </p>
           </div>
@@ -99,7 +102,7 @@ export default function WhoWeServe() {
               discipline directly impact their ability to win and execute contracts. 
               Whether navigating government contracting requirements or building 
               compliance infrastructure for the first time, they need practical, 
-              implementable solutions—not theoretical frameworks.
+              implementable solutions — not theoretical frameworks.
             </p>
           </div>
         </div>
@@ -162,6 +165,16 @@ export default function WhoWeServe() {
                         ))}
                       </ul>
                     </div>
+
+                    {/* Per-section CTA */}
+                    <div className="pt-4">
+                      <Button variant="outline" size="lg" asChild>
+                        <Link to="/contact">
+                          Discuss Your Requirements
+                          <ArrowRight className="ml-2" size={16} />
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
 
@@ -178,14 +191,14 @@ export default function WhoWeServe() {
       <section className="relative h-[300px] overflow-hidden">
         <img 
           src={whoWeServeQuote} 
-          alt="Connected partnership links" 
+          alt="Abstract ocean waves representing flowing, adaptive compliance structures" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-secondary/40" />
         <div className="absolute inset-0 flex items-center justify-center text-center">
           <div className="max-w-2xl px-6">
             <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
-              We serve organizations where compliance is not optional—it's 
+              We serve organizations where compliance is not optional — it's 
               fundamental to operational viability.
             </p>
           </div>
@@ -204,7 +217,7 @@ export default function WhoWeServe() {
           </p>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
-              Start the Conversation
+              Request a Confidential Consultation
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>
