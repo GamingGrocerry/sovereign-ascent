@@ -9,13 +9,14 @@ import ctipProtection from "@/assets/ctip-protection.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 import insightsLibrary from "@/assets/insights-library.jpg";
 import advisoryApproach from "@/assets/advisory-approach.jpg";
+
 const services = [
   {
     id: "compliance-architecture",
     icon: Shield,
-    title: "Compliance & Management System Architecture",
-    subtitle: "Practical Systems for Real Operations",
-    description: "We support organizations in designing and structuring internal management and compliance systems that are understandable, maintainable, and aligned with regulatory, contractual, and customer expectations.",
+    title: "Designing Compliance Systems That Work in Operations — Not Just on Paper",
+    subtitle: "Compliance & Management System Architecture",
+    description: "Our work focuses on how systems function within real workflows, aligning requirements to operational reality. We help identify gaps, define controls, and structure documentation so internal teams can use it under scrutiny.",
     approach: "Our approach focuses on how compliance systems function in real operations — not on producing standalone documentation.",
     image: qmsStructure,
     capabilities: [
@@ -30,9 +31,9 @@ const services = [
   {
     id: "human-rights",
     icon: Target,
-    title: "Human Rights & Ethical Labor Compliance Programs",
-    subtitle: "Beyond Policy to Operational Implementation",
-    description: "We advise on the development and operational implementation of human rights and ethical labor compliance programs, with a focus on preventing forced labor, trafficking in persons, and related risks across operations and supply chains.",
+    title: "Embedding Human Rights and Ethical Labor Considerations Into Operations",
+    subtitle: "Human Rights & Ethical Labor Compliance",
+    description: "We support the design and operational integration of human rights and ethical labor programs. These frameworks help organizations align with global and contractual expectations related to forced labor, supply chain conduct, and human rights risk.",
     approach: "Our support moves beyond policy drafting to focus on how programs are understood, applied, and monitored internally.",
     image: ctipProtection,
     capabilities: [
@@ -42,14 +43,14 @@ const services = [
       "Internal monitoring and review mechanisms",
       "Support in aligning programs with contractual and regulatory expectations",
     ],
-    frameworks: "Programs may be aligned, where applicable, with frameworks such as FAR 52.222-50 (CTIP), the UK Modern Slavery Act, EU due-diligence requirements, and international labor standards.",
+    frameworks: "Programs may be aligned, where applicable, with frameworks such as FAR 52.222-50 (CTIP), the UK Modern Slavery Act, EU due-diligence requirements, ILO and OECD guidelines, and international labor standards.",
   },
   {
     id: "audit-readiness",
     icon: FileCheck,
-    title: "Audit Readiness & Corrective Action Advisory",
-    subtitle: "Strengthening Controls & Organizing Evidence",
-    description: "We support organizations in preparing for external assessments by strengthening internal controls, organizing evidence, and structuring corrective actions in a controlled and practical manner.",
+    title: "Preparing Organizations for Scrutiny and Structuring Effective Improvement",
+    subtitle: "Audit Readiness & Corrective Action Advisory",
+    description: "We help organizations get ready for assessments by organizing evidence, strengthening control narratives, and structuring corrective action so it is understandable and sustainable.",
     approach: "We do not act as an audit or certification body. Our role is to help organizations understand expectations and respond effectively.",
     image: auditPrecision,
     capabilities: [
@@ -64,9 +65,9 @@ const services = [
   {
     id: "education",
     icon: BookOpen,
-    title: "Education & Capability Development",
-    subtitle: "Building Internal Ownership",
-    description: "We provide practical training and advisory support to help organizations build internal understanding and ownership of their compliance systems.",
+    title: "Practical Training for Teams Who Must Operate Compliance Systems",
+    subtitle: "Education & Capability Development",
+    description: "We help internal teams build confidence and capability through role-based and practical training — focused on how the work is done day-to-day.",
     approach: "The objective is to reduce long-term dependency by enabling teams to operate, maintain, and improve systems internally.",
     image: insightsLibrary,
     capabilities: [
@@ -96,25 +97,24 @@ export default function Services() {
                 Our Services
               </p>
               <h1 className="mb-6 gold-accent pb-4">
-                Independent, Vendor-Neutral Advisory
+                Compliance Challenges Are Rarely Abstract
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                Elevate Quality Compliance Solutions (ElevateQCS) provides independent, 
-                vendor-neutral advisory services to organizations operating in regulated 
-                and high-scrutiny environments.
+                They appear when contracts tighten, audits occur, or systems break 
+                under pressure.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Our work focuses on building practical, auditable internal systems that 
-                support compliance, operational stability, and long-term scalability. 
-                All services are advisory in nature and tailored to the client's 
-                operational and regulatory context.
+                Our services help organizations anticipate, structure, and operate 
+                compliance systems that hold up in real environments. All services 
+                are advisory in nature and tailored to the client's operational 
+                and regulatory context.
               </p>
             </div>
             <div className="hidden lg:block">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
                   src={heroArchitecture} 
-                  alt="Modern architectural structure" 
+                  alt="Modern architectural structure representing structured compliance frameworks" 
                   className="w-full h-[350px] object-cover"
                 />
               </div>
@@ -164,7 +164,7 @@ export default function Services() {
                     <div className="image-frame rounded-sm overflow-hidden mb-10">
                       <img 
                         src={service.image} 
-                        alt={service.title}
+                        alt={service.subtitle}
                         className="w-full h-[300px] object-cover"
                       />
                     </div>
@@ -228,7 +228,7 @@ export default function Services() {
       <section className="relative h-[450px] overflow-hidden">
         <img 
           src={advisoryApproach} 
-          alt="Precision and methodology in advisory approach" 
+          alt="Precision instruments representing methodical advisory approach" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
@@ -255,14 +255,13 @@ export default function Services() {
       <section className="py-28 bg-background">
         <div className="container-narrow text-center">
           <div className="section-divider mx-auto mb-8" />
-          <h2 className="mb-6">Start a Confidential Conversation</h2>
-          <p className="text-lg mb-12 max-w-2xl mx-auto">
-            Every engagement begins with a comprehensive understanding of your 
-            organizational context, compliance objectives, and operational requirements.
+          <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
+            Interested in how these apply to your organization?
           </p>
+          <h2 className="mb-12">Start a Confidential Conversation</h2>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
-              Request a Consultation
+              Request a Confidential Consultation
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>

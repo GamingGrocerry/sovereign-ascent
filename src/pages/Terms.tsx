@@ -17,6 +17,22 @@ export default function Terms() {
         </div>
       </section>
 
+      {/* Plain Language Summary */}
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
+        <div className="container-narrow relative z-10">
+          <div className="text-primary-foreground">
+            <h3 className="text-lg font-serif mb-3">In Plain Language</h3>
+            <p className="text-primary-foreground/80 text-sm leading-relaxed">
+              Our services are advisory only — we don't certify, audit, or replace 
+              legal counsel. Specific engagements are governed by separate agreements. 
+              All content on this site is our intellectual property. We protect your 
+              confidentiality through NDAs executed at the start of every engagement.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="py-20 bg-background">
         <div className="container-narrow">

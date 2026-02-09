@@ -11,8 +11,8 @@ const phases = [
     number: "01",
     name: "Diagnose",
     icon: Search,
-    title: "Current State Assessment",
-    description: "We begin with a comprehensive assessment of your existing compliance infrastructure, organizational context, and risk landscape.",
+    title: "Identify Gaps With Real Operational Impact",
+    description: "We begin with a comprehensive assessment of your existing compliance infrastructure, organizational context, and risk landscape — focused on what matters most to real operations.",
     activities: [
       "Stakeholder interviews and documentation review",
       "Gap analysis against applicable standards",
@@ -25,8 +25,8 @@ const phases = [
     number: "02",
     name: "Architect",
     icon: Compass,
-    title: "Framework Design",
-    description: "Based on diagnostic findings, we design a compliance framework tailored to your organizational structure, culture, and operational requirements.",
+    title: "Structure Systems That Operational Teams Can Use",
+    description: "Based on diagnostic findings, we design a compliance framework tailored to your organizational structure, culture, and operational requirements — built for use, not for filing.",
     activities: [
       "Process architecture and workflow design",
       "Policy and procedure framework development",
@@ -39,8 +39,8 @@ const phases = [
     number: "03",
     name: "Implement",
     icon: Wrench,
-    title: "Controlled Deployment",
-    description: "We support the phased implementation of your compliance framework with hands-on guidance and change management support.",
+    title: "Guide Deployment With Internal Clarity",
+    description: "We support the phased implementation of your compliance framework with hands-on guidance and change management support — ensuring teams understand what's expected.",
     activities: [
       "Pilot program execution",
       "Documentation development and refinement",
@@ -53,8 +53,8 @@ const phases = [
     number: "04",
     name: "Embed",
     icon: Users,
-    title: "Organizational Integration",
-    description: "We work to embed compliance practices into your organizational culture, ensuring sustainable adoption beyond initial implementation.",
+    title: "Support Adoption Through Role-Based Expectation Setting",
+    description: "We work to embed compliance practices into your organizational culture, ensuring sustainable adoption beyond initial implementation through clear role-based expectations.",
     activities: [
       "Training program execution",
       "Competency assessment and development",
@@ -67,8 +67,8 @@ const phases = [
     number: "05",
     name: "Monitor",
     icon: BarChart3,
-    title: "Continuous Improvement",
-    description: "We establish monitoring mechanisms that provide ongoing visibility into compliance performance and support continuous improvement.",
+    title: "Enable Ongoing Control and Evidence Maintenance",
+    description: "We establish monitoring mechanisms that provide ongoing visibility into compliance performance and support continuous improvement — so your systems stay effective over time.",
     activities: [
       "KPI development and tracking",
       "Internal audit program support",
@@ -104,19 +104,20 @@ export default function Methodology() {
                 Our Methodology
               </p>
               <h1 className="mb-6 gold-accent pb-4">
-                The ECAM Framework
+                A Repeatable Approach to Compliance Complexity
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                ECAM—Elevate Compliance Architecture Methodology—is our structured 
-                approach to building compliance systems that are designed for 
-                operational reality, not theoretical perfection.
+                ECAM — Elevate Compliance Architecture Methodology — is not a 
+                certifiable standard. It is a structured, repeatable architecture 
+                approach that brings order to compliance complexity and is designed 
+                for operational reality.
               </p>
             </div>
             <div className="hidden lg:block">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
                   src={methodologyCompass} 
-                  alt="Brass compass representing guidance and direction" 
+                  alt="Brass compass representing methodical guidance and direction in compliance navigation" 
                   className="w-full h-[350px] object-cover"
                 />
               </div>
@@ -145,7 +146,8 @@ export default function Methodology() {
               <h2 className="mb-6">Guiding Principles</h2>
               <p className="text-lg text-muted-foreground mb-8">
                 ECAM is built on principles that differentiate our approach from 
-                traditional consulting methodologies.
+                traditional consulting methodologies — focusing on what works in 
+                practice, not just in documentation.
               </p>
               <ul className="space-y-4">
                 {principles.map((principle, index) => (
@@ -162,7 +164,7 @@ export default function Methodology() {
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
                   src={methodologyNavigation} 
-                  alt="Interconnected compliance framework" 
+                  alt="Antique navigation instruments representing structured methodology and precision" 
                   className="w-full h-[400px] object-cover"
                 />
               </div>
@@ -179,10 +181,11 @@ export default function Methodology() {
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               The Framework
             </p>
-            <h2 className="mb-6">Five Phases of Compliance Excellence</h2>
+            <h2 className="mb-6">Five Phases of Compliance Architecture</h2>
             <p className="text-lg text-muted-foreground">
               Each phase builds upon the previous, creating a structured path 
-              from current state to sustainable compliance maturity.
+              from current state to sustainable compliance maturity. The focus 
+              is on real use — not checklists.
             </p>
           </div>
 
@@ -207,7 +210,7 @@ export default function Methodology() {
 
           {/* Phase Details */}
           <div className="space-y-16">
-            {phases.map((phase, index) => (
+            {phases.map((phase) => (
               <div
                 key={phase.number}
                 className="grid lg:grid-cols-12 gap-8 items-start"
@@ -272,14 +275,14 @@ export default function Methodology() {
       <section className="relative h-[350px] overflow-hidden">
         <img 
           src={methodologyRipples} 
-          alt="Abstract ripples representing methodical process"
+          alt="Concentric ripples representing systematic, methodical compliance process"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/90" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center max-w-3xl px-6">
             <p className="text-primary-foreground text-2xl md:text-3xl font-serif font-light mb-6">
-              "Structured methodology transforms compliance from burden to competitive advantage"
+              "Structured methodology transforms compliance from burden to operational advantage"
             </p>
             <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
           </div>
@@ -299,7 +302,7 @@ export default function Methodology() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>
               <Link to="/contact">
-                Start the Conversation
+                Request a Confidential Consultation
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Shield, Target, FileCheck, ChevronRight, ArrowRight } from "lucide-react";
+import { Shield, Target, FileCheck, BookOpen, ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import aboutPrecision from "@/assets/about-precision.jpg";
 import servicesFramework from "@/assets/services-framework.jpg";
@@ -11,33 +11,63 @@ import auditPrecision from "@/assets/audit-precision.jpg";
 import ctipProtection from "@/assets/ctip-protection.jpg";
 
 const stats = [
-  { value: "9+", label: "Years Collective Industry Pedigree", subtext: "US, EU, Middle East" },
-  { value: "10,000+", label: "Audits Observed & Supported" },
-  { value: "125+", label: "High-Value Contracts Supported", subtext: "Including CTIP Plans" },
-  { value: "€500K–€25M", label: "Project Exposure Range" },
+  { value: "9+", label: "Years of Regulatory & Operational Advisory Experience" },
+  { value: "10,000+", label: "Audits Observed, Supported, and Prepared For" },
+  { value: "125+", label: "Compliance & Control Frameworks Delivered" },
+  { value: "€500K–€25M", label: "Advisory Exposure Across Project Environments" },
 ];
 
 const services = [
   {
     icon: Shield,
-    title: "Compliance & Management System Architecture",
-    description: "We support organizations in designing and structuring internal management and compliance systems that are understandable, maintainable, and aligned with regulatory, contractual, and customer expectations.",
+    title: "Turn Compliance Risk Into Structured Control",
+    description: "Design and align compliance systems so operations are understandable, auditable, and ready to withstand scrutiny.",
     href: "/services",
     image: qmsStructure,
   },
   {
     icon: Target,
-    title: "Human Rights & Ethical Labor Compliance",
-    description: "We advise on the development and operational implementation of human rights and ethical labor compliance programs, with a focus on preventing forced labor, trafficking in persons, and related risks.",
+    title: "Embed Ethical & Human Rights Safeguards",
+    description: "Structure human rights and ethical labor programs that are understood, applied, and monitored across operations and supply chains.",
     href: "/services",
     image: ctipProtection,
   },
   {
     icon: FileCheck,
-    title: "Audit Readiness & Corrective Action Advisory",
-    description: "We support organizations in preparing for external assessments by strengthening internal controls, organizing evidence, and structuring corrective actions in a controlled and practical manner.",
+    title: "Prepare for Scrutiny — Before It Arrives",
+    description: "Organize evidence, strengthen control narratives, and structure corrective action so it is understandable and sustainable.",
     href: "/services",
     image: auditPrecision,
+  },
+  {
+    icon: BookOpen,
+    title: "Build Internal Capability Across Teams",
+    description: "Practical training for teams who must operate compliance systems day-to-day, focused on confidence and internal ownership.",
+    href: "/services",
+    image: servicesFramework,
+  },
+];
+
+const ecamPhases = [
+  { icon: Search, name: "Diagnose", description: "Identify gaps with real operational impact" },
+  { icon: Compass, name: "Architect", description: "Structure systems teams can use" },
+  { icon: Wrench, name: "Implement", description: "Guide deployment with internal clarity" },
+  { icon: Users, name: "Embed", description: "Support adoption through role-based expectations" },
+  { icon: BarChart3, name: "Monitor", description: "Enable ongoing control and evidence maintenance" },
+];
+
+const audiences = [
+  {
+    title: "Government Contracting Organizations",
+    description: "Teams needing defensible compliance systems before audits, contract milestones, or regulatory assessments.",
+  },
+  {
+    title: "Subcontractors & Suppliers",
+    description: "Organizations needing structured compliance readiness to meet prime contractor and customer expectations.",
+  },
+  {
+    title: "High-Growth Regulated Companies",
+    description: "Scalable compliance foundations for companies preparing for enterprise customers or regulated markets.",
   },
 ];
 
@@ -72,23 +102,22 @@ export default function Index() {
               Quality & Compliance Advisory
             </p>
             <h1 className="text-primary-foreground mb-8 animate-fade-up-delay-1 text-balance">
-              Architecting Compliance Excellence for High-Stakes Environments
+              Operational Risk That Survives Scrutiny — Before It Costs You
             </h1>
             <p className="text-primary-foreground/80 text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-12 animate-fade-up-delay-2">
-              ElevateQCS is an independent advisory firm specializing in quality 
-              management system architecture and CTIP program development for 
-              U.S. Government Contractors and regulated enterprises.
+              Empowering regulated leaders and government contracting teams with 
+              operational compliance systems built for real-world execution.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delay-3">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/contact">
-                  Request Confidential Consultation
+                  Request a Confidential Consultation
                   <ArrowRight className="ml-2" size={18} />
                 </Link>
               </Button>
               <Button variant="hero-outline" size="xl" asChild>
-                <Link to="/methodology">
-                  Explore Our Methodology
+                <Link to="/services">
+                  Explore Our Services
                 </Link>
               </Button>
             </div>
@@ -116,11 +145,6 @@ export default function Index() {
                 <div className="text-primary-foreground/70 text-sm leading-tight">
                   {stat.label}
                 </div>
-                {stat.subtext && (
-                  <div className="text-primary-foreground/50 text-xs mt-1">
-                    {stat.subtext}
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -136,7 +160,7 @@ export default function Index() {
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
                   src={aboutPrecision} 
-                  alt="Precision engineering and architectural planning" 
+                  alt="Architectural precision representing structured compliance readiness for risk-exposed organizations" 
                   className="w-full h-[400px] lg:h-[500px] object-cover"
                 />
               </div>
@@ -151,17 +175,16 @@ export default function Index() {
                 Our Distinction
               </p>
               <h2 className="mb-6 gold-accent pb-4">
-                Institutional Pedigree in High-Stakes Compliance
+                We Build Compliance Systems for Clarity and Control
               </h2>
               <p className="text-lg mb-6">
-                ElevateQCS was founded by senior quality and compliance architects 
-                with hands-on experience designing, implementing, and monitoring 
-                QMS frameworks across major Government Contracting programs.
+                We form compliance systems not to check boxes, but to give 
+                operational leaders clarity and control — grounded in field-tested 
+                experience across major government contracting programs.
               </p>
               <p className="mb-8">
-                Our team has supported organizations navigating FAR requirements, 
-                DCAA audits, and international compliance mandates across sectors 
-                including defense, aerospace, and regulated technology.
+                We work with leadership, quality functions, and operations teams 
+                who must make compliance work in practice — not just in documents.
               </p>
               <Button variant="outline" size="lg" asChild>
                 <Link to="/about">
@@ -177,33 +200,21 @@ export default function Index() {
       {/* Services Overview */}
       <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
-            <div>
-              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-                Our Services
-              </p>
-              <h2 className="mb-6">
-                Independent, Vendor-Neutral Advisory
-              </h2>
-              <p className="text-lg">
-                Elevate Quality Compliance Solutions provides independent, vendor-neutral advisory services 
-                to organizations operating in regulated and high-scrutiny environments. Our work focuses on 
-                building practical, auditable internal systems that support compliance, operational stability, 
-                and long-term scalability.
-              </p>
-            </div>
-            <div className="relative hidden lg:block">
-              <div className="image-frame rounded-sm overflow-hidden">
-                <img 
-                  src={servicesFramework} 
-                  alt="Interconnected compliance framework visualization" 
-                  className="w-full h-[280px] object-cover"
-                />
-              </div>
-            </div>
+          <div className="max-w-3xl mb-16">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Our Services
+            </p>
+            <h2 className="mb-6">
+              Compliance Challenges Are Rarely Abstract
+            </h2>
+            <p className="text-lg">
+              They appear when contracts tighten, audits occur, or systems break 
+              under pressure. Our services help organizations anticipate, structure, 
+              and operate compliance systems that hold up in real environments.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Link
                 key={index}
@@ -224,11 +235,11 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-xl mb-4 group-hover:text-accent transition-colors">
+                <div className="p-6">
+                  <h3 className="text-lg mb-3 group-hover:text-accent transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground mb-6">
+                  <p className="text-muted-foreground text-sm mb-4">
                     {service.description}
                   </p>
                   <span className="inline-flex items-center text-accent text-sm font-medium">
@@ -238,6 +249,96 @@ export default function Index() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/services">
+                View All Services
+                <ChevronRight className="ml-2" size={16} />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ECAM Methodology Preview */}
+      <section className="py-28 lg:py-36 bg-background section-luxury">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Our Methodology
+            </p>
+            <h2 className="mb-6">A Repeatable Approach to Compliance Complexity</h2>
+            <p className="text-lg text-muted-foreground">
+              The EQCS Compliance Architecture Model is a five-phase structure that 
+              brings order to compliance complexity: diagnose, architect, implement, 
+              embed, monitor.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-4 lg:gap-8 mb-12">
+            {ecamPhases.map((phase, index) => (
+              <div key={phase.name} className="flex items-center">
+                <div className="flex flex-col items-center text-center group flex-1 md:flex-initial">
+                  <div className="w-16 h-16 rounded-sm bg-primary text-primary-foreground flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:scale-110 mb-3">
+                    <phase.icon className="w-7 h-7" />
+                  </div>
+                  <h4 className="text-sm font-semibold uppercase tracking-wide mb-1 group-hover:text-accent transition-colors">
+                    {phase.name}
+                  </h4>
+                  <p className="text-xs text-muted-foreground max-w-[160px]">
+                    {phase.description}
+                  </p>
+                </div>
+                {index < ecamPhases.length - 1 && (
+                  <div className="hidden md:block w-8 lg:w-12 h-px bg-gradient-to-r from-border to-accent/30 mx-2" />
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/methodology">
+                Learn About Our Methodology
+                <ChevronRight className="ml-2" size={16} />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve */}
+      <section className="py-28 lg:py-36 bg-secondary/30">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-16">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Who We Serve
+            </p>
+            <h2 className="mb-6">
+              We Serve Organizations Where Compliance Risk Meets Operational Demand
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {audiences.map((audience, index) => (
+              <div key={index} className="card-elevated p-8">
+                <h3 className="text-xl mb-4">{audience.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {audience.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/who-we-serve">
+                Learn More About Who We Serve
+                <ChevronRight className="ml-2" size={16} />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -277,7 +378,7 @@ export default function Index() {
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
                   src={trustVault} 
-                  alt="Security vault representing trust and confidentiality"
+                  alt="Reinforced vault representing trust, confidentiality, and structured protection for compliance-sensitive organizations"
                   className="w-full h-[500px] object-cover"
                 />
               </div>
@@ -300,18 +401,16 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Final CTA Section */}
       <section className="py-28 lg:py-36 bg-secondary/30">
         <div className="container-narrow text-center">
           <div className="section-divider mx-auto mb-8" />
-          <h2 className="mb-6">
-            Ready to Elevate Your Compliance Posture?
-          </h2>
-          <p className="text-lg mb-12 max-w-2xl mx-auto">
-            Whether you're facing an upcoming audit, expanding into government 
-            contracting, or building compliance infrastructure from the ground up, 
-            we're here to support your mission.
+          <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
+            Your compliance system shouldn't fail you when scrutiny arrives.
           </p>
+          <h2 className="mb-12">
+            Ready to Build Compliance That Holds?
+          </h2>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
               Request a Confidential Consultation
