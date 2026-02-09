@@ -17,6 +17,23 @@ export default function Privacy() {
         </div>
       </section>
 
+      {/* Plain Language Summary */}
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
+        <div className="container-narrow relative z-10">
+          <div className="text-primary-foreground">
+            <h3 className="text-lg font-serif mb-3">In Plain Language</h3>
+            <p className="text-primary-foreground/80 text-sm leading-relaxed">
+              We collect only the information needed to respond to your inquiry and 
+              deliver our services. We never sell your data. All client information 
+              is protected under NDA. We use encryption and secure access controls 
+              to protect your information. You can request access to, correction of, 
+              or deletion of your data at any time.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="py-20 bg-background">
         <div className="container-narrow">

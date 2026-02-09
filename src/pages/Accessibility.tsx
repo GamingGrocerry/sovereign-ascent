@@ -15,8 +15,25 @@ export default function Accessibility() {
           </p>
           <h1 className="mb-6 gold-accent pb-4">Accessibility Statement</h1>
           <p className="text-muted-foreground">
-            Our commitment to digital accessibility
+            Our commitment to digital accessibility and inclusivity
           </p>
+        </div>
+      </section>
+
+      {/* Plain Language Summary */}
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
+        <div className="container-narrow relative z-10">
+          <div className="text-primary-foreground">
+            <h3 className="text-lg font-serif mb-3">In Plain Language</h3>
+            <p className="text-primary-foreground/80 text-sm leading-relaxed">
+              We believe everyone deserves equal access to information. Our website 
+              is designed to work with screen readers, keyboard navigation, and other 
+              assistive technologies. We follow WCAG 2.2 AA standards and are always 
+              working to improve. If you encounter any barrier, please let us know — 
+              we take accessibility feedback seriously.
+            </p>
+          </div>
         </div>
       </section>
 

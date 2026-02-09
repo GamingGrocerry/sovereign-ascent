@@ -101,9 +101,9 @@ export default function Insights() {
                 Perspectives on Compliance Excellence
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Analytical thought leadership on quality management, regulatory 
-                compliance, and the operational realities of high-stakes 
-                contracting environments.
+                Analysis and interpretation of recurring compliance risks — not 
+                generic marketing content. Grounded in operational experience 
+                and focused on actionable intelligence.
               </p>
             </div>
             <div className="hidden lg:block">
