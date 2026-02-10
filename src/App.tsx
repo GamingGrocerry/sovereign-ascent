@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Methodology from "./pages/Methodology";
 import Insights from "./pages/Insights";
+import InsightArticle from "./pages/InsightArticle";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
