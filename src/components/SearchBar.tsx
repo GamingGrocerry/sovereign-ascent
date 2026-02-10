@@ -111,85 +111,74 @@ export function SearchBar({ isDark = false }: SearchBarProps) {
         </kbd>
       </button>
 
-      {/* Search overlay */}
+      {/* Dropdown */}
       {isOpen && (
-        <>
-          <div className="fixed inset-0 bg-background/60 backdrop-blur-sm z-[60]" onClick={() => setIsOpen(false)} />
-          <div className="fixed top-[15vh] left-1/2 -translate-x-1/2 w-full max-w-xl z-[70]">
-            <div className="bg-card border border-border rounded-sm shadow-2xl overflow-hidden mx-4">
-              {/* Input */}
-              <div className="flex items-center gap-3 px-5 border-b border-border">
-                <Search className="w-4 h-4 text-muted-foreground shrink-0" />
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Search pages, articles, topics..."
-                  className="flex-1 bg-transparent py-4 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none"
-                />
-                {query && (
-                  <button onClick={() => setQuery("")} className="text-muted-foreground hover:text-foreground">
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
-              </div>
-
-              {/* Results */}
-              <div className="max-h-[50vh] overflow-y-auto py-2">
-                {!showingResults && (
-                  <p className="px-5 py-2 text-xs text-muted-foreground/60 uppercase tracking-wider">
-                    Popular
-                  </p>
-                )}
-                {showingResults && results.length === 0 && (
-                  <p className="px-5 py-8 text-sm text-muted-foreground text-center">
-                    No results found for "{query}"
-                  </p>
-                )}
-                {displayItems.map((item, index) => {
-                  const Icon = getCategoryIcon(item.category);
-                  return (
-                    <button
-                      key={item.href}
-                      onClick={() => goTo(item.href)}
-                      onMouseEnter={() => setActiveIndex(index)}
-                      className={cn(
-                        "w-full flex items-start gap-4 px-5 py-3 text-left transition-colors",
-                        activeIndex === index ? "bg-secondary" : "hover:bg-secondary/50"
-                      )}
-                    >
-                      <div className="w-8 h-8 rounded-sm bg-secondary flex items-center justify-center shrink-0 mt-0.5">
-                        <Icon className="w-4 h-4 text-accent" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium text-foreground truncate">
-                            {item.title}
-                          </span>
-                          <span className="text-[10px] text-muted-foreground/50 uppercase tracking-wider shrink-0">
-                            {item.category}
-                          </span>
-                        </div>
-                        <p className="text-xs text-muted-foreground truncate mt-0.5">
-                          {item.description}
-                        </p>
-                      </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/40 shrink-0 mt-2" />
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Footer */}
-              <div className="px-5 py-3 border-t border-border flex items-center justify-between text-[10px] text-muted-foreground/50">
-                <span>↑↓ Navigate · ↵ Select · Esc Close</span>
-                <span>ElevateQCS Search</span>
-              </div>
-            </div>
+        <div className="absolute top-full right-0 mt-2 w-[360px] bg-card border border-border rounded-sm shadow-2xl overflow-hidden z-50 animate-fade-in">
+          {/* Input */}
+          <div className="flex items-center gap-3 px-4 border-b border-border">
+            <Search className="w-4 h-4 text-muted-foreground shrink-0" />
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Search pages, articles..."
+              className="flex-1 bg-transparent py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none"
+            />
+            {query && (
+              <button onClick={() => setQuery("")} className="text-muted-foreground hover:text-foreground">
+                <X className="w-4 h-4" />
+              </button>
+            )}
           </div>
-        </>
+
+          {/* Results */}
+          <div className="max-h-[360px] overflow-y-auto py-1">
+            {!showingResults && (
+              <p className="px-4 py-2 text-[10px] text-muted-foreground/60 uppercase tracking-wider">
+                Popular
+              </p>
+            )}
+            {showingResults && results.length === 0 && (
+              <p className="px-4 py-6 text-sm text-muted-foreground text-center">
+                No results for "{query}"
+              </p>
+            )}
+            {displayItems.map((item, index) => {
+              const Icon = getCategoryIcon(item.category);
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => goTo(item.href)}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  className={cn(
+                    "w-full flex items-start gap-3 px-4 py-2.5 text-left transition-colors",
+                    activeIndex === index ? "bg-secondary" : "hover:bg-secondary/50"
+                  )}
+                >
+                  <div className="w-7 h-7 rounded-sm bg-secondary flex items-center justify-center shrink-0 mt-0.5">
+                    <Icon className="w-3.5 h-3.5 text-accent" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-sm font-medium text-foreground truncate block">
+                      {item.title}
+                    </span>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {item.description}
+                    </p>
+                  </div>
+                  <ArrowRight className="w-3 h-3 text-muted-foreground/40 shrink-0 mt-1.5" />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Footer */}
+          <div className="px-4 py-2 border-t border-border text-[10px] text-muted-foreground/50 text-right">
+            ⌘K to toggle
+          </div>
+        </div>
       )}
     </div>
   );
