@@ -1,93 +1,19 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, ChevronRight, BookOpen, TrendingUp, AlertCircle } from "lucide-react";
+import { ArrowRight, Clock, ChevronRight } from "lucide-react";
+import { featuredArticle, articles, categories } from "@/data/insights-data";
 import insightsLibrary from "@/assets/insights-library.jpg";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
-
-const featuredArticle = {
-  slug: "cost-of-non-compliance",
-  category: "Risk Analysis",
-  title: "The True Cost of Non-Compliance in Government Contracting",
-  excerpt: "Beyond immediate penalties, non-compliance creates cascading risks that can permanently alter an organization's competitive position in the federal marketplace.",
-  readTime: "8 min read",
-  date: "January 2026",
-};
-
-const articles = [
-  {
-    slug: "audit-failure-patterns",
-    category: "Audit Insights",
-    icon: AlertCircle,
-    title: "Common Patterns in Failed Quality Audits",
-    excerpt: "Analysis of recurring themes in audit findings reveals that most failures stem from systemic issues rather than isolated non-conformances.",
-    readTime: "6 min read",
-    date: "January 2026",
-  },
-  {
-    slug: "ctip-enforcement-trends",
-    category: "Regulatory Landscape",
-    icon: TrendingUp,
-    title: "CTIP Enforcement: What 2025 Trends Mean for 2026 Compliance",
-    excerpt: "Recent enforcement actions signal increased scrutiny of contractor CTIP programs. Organizations should prepare for heightened oversight.",
-    readTime: "7 min read",
-    date: "January 2026",
-  },
-  {
-    slug: "qms-scalability",
-    category: "System Architecture",
-    icon: BookOpen,
-    title: "Designing QMS for Scalability: Lessons from High-Growth Contractors",
-    excerpt: "Quality management systems that work at $10M often fail at $100M. Here's how to architect for growth from the beginning.",
-    readTime: "10 min read",
-    date: "December 2025",
-  },
-  {
-    slug: "compliance-decision-framework",
-    category: "Decision Making",
-    icon: TrendingUp,
-    title: "A Framework for Compliance Investment Decisions",
-    excerpt: "How to evaluate compliance initiatives against organizational priorities using a structured risk-benefit analysis approach.",
-    readTime: "5 min read",
-    date: "December 2025",
-  },
-  {
-    slug: "documentation-best-practices",
-    category: "Operations",
-    icon: BookOpen,
-    title: "Documentation as Competitive Advantage",
-    excerpt: "In regulated environments, documentation quality often determines audit outcomes. Best practices for building defensible records.",
-    readTime: "6 min read",
-    date: "November 2025",
-  },
-  {
-    slug: "supply-chain-compliance",
-    category: "Risk Management",
-    icon: AlertCircle,
-    title: "Supply Chain Compliance: Beyond First-Tier Visibility",
-    excerpt: "Extending compliance oversight into sub-tier supply chains requires systematic approaches that balance thoroughness with practicality.",
-    readTime: "8 min read",
-    date: "November 2025",
-  },
-];
-
-const categories = [
-  { name: "All", count: 7 },
-  { name: "Risk Analysis", count: 2 },
-  { name: "Audit Insights", count: 1 },
-  { name: "Regulatory Landscape", count: 1 },
-  { name: "System Architecture", count: 2 },
-  { name: "Operations", count: 1 },
-];
 
 export default function Insights() {
   return (
     <Layout>
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
-        <div 
-          className="page-hero-bg" 
+        <div
+          className="page-hero-bg"
           style={{ backgroundImage: `url(${insightsLibrary})` }}
         />
         <div className="page-hero-overlay" />
@@ -101,16 +27,16 @@ export default function Insights() {
                 Perspectives on Compliance Excellence
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Analysis and interpretation of recurring compliance risks — not 
-                generic marketing content. Grounded in operational experience 
+                Analysis and interpretation of recurring compliance risks — not
+                generic marketing content. Grounded in operational experience
                 and focused on actionable intelligence.
               </p>
             </div>
             <div className="hidden lg:block">
               <div className="image-frame rounded-sm overflow-hidden">
-                <img 
-                  src={insightsLibrary} 
-                  alt="Legal books representing knowledge and expertise" 
+                <img
+                  src={insightsLibrary}
+                  alt="Legal books representing knowledge and expertise"
                   className="w-full h-[350px] object-cover"
                 />
               </div>
@@ -122,9 +48,12 @@ export default function Insights() {
       {/* Featured Article */}
       <section className="py-16 bg-background">
         <div className="container-wide">
-          <div className="relative rounded-sm overflow-hidden group cursor-pointer">
-            <img 
-              src={insightsFeatured} 
+          <Link
+            to={`/insights/${featuredArticle.slug}`}
+            className="relative rounded-sm overflow-hidden group block"
+          >
+            <img
+              src={insightsFeatured}
               alt="Abstract ripples representing methodical thinking"
               className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -154,7 +83,7 @@ export default function Insights() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -166,8 +95,8 @@ export default function Insights() {
               <button
                 key={index}
                 className={`px-4 py-2 text-sm rounded-sm transition-colors ${
-                  index === 0 
-                    ? "bg-primary text-primary-foreground" 
+                  index === 0
+                    ? "bg-primary text-primary-foreground"
                     : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
                 }`}
               >
@@ -189,13 +118,16 @@ export default function Insights() {
               <h2 className="mb-12">Recent Publications</h2>
               <div className="space-y-8">
                 {articles.map((article) => (
-                  <article
+                  <Link
                     key={article.slug}
-                    className="card-elevated p-6 md:p-8 flex gap-6 group cursor-pointer"
+                    to={`/insights/${article.slug}`}
+                    className="card-elevated p-6 md:p-8 flex gap-6 group block"
                   >
-                    <div className="hidden md:flex w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 items-center justify-center shrink-0">
-                      <article.icon className="w-8 h-8 text-accent" />
-                    </div>
+                    {article.icon && (
+                      <div className="hidden md:flex w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 items-center justify-center shrink-0">
+                        <article.icon className="w-8 h-8 text-accent" />
+                      </div>
+                    )}
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="text-accent text-xs uppercase tracking-wide">
@@ -223,7 +155,7 @@ export default function Insights() {
                         </span>
                       </div>
                     </div>
-                  </article>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -231,24 +163,22 @@ export default function Insights() {
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-32 space-y-8">
-                {/* About Insights */}
                 <div className="card-elevated p-6">
                   <h3 className="text-lg mb-4">About Our Insights</h3>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Our publications are grounded in operational experience—not 
-                    theoretical research. Each analysis reflects lessons learned 
+                    Our publications are grounded in operational experience—not
+                    theoretical research. Each analysis reflects lessons learned
                     from real-world compliance challenges.
                   </p>
                   <p className="text-muted-foreground text-sm">
-                    We publish substantive analysis, not promotional content. 
-                    No sales pitches, just actionable intelligence.
+                    We publish substantive analysis, not promotional content. No
+                    sales pitches, just actionable intelligence.
                   </p>
                 </div>
 
-                {/* Image */}
                 <div className="relative rounded-sm overflow-hidden">
-                  <img 
-                    src={auditPrecision} 
+                  <img
+                    src={auditPrecision}
                     alt="Precision measurement representing audit accuracy"
                     className="w-full h-[200px] object-cover"
                   />
@@ -260,30 +190,21 @@ export default function Insights() {
                   </div>
                 </div>
 
-                {/* Topics */}
                 <div className="card-elevated p-6">
                   <h3 className="text-lg mb-4">Topics We Cover</h3>
                   <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                      Quality Management Systems
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                      CTIP & Ethical Labor Compliance
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                      Audit Preparation & Response
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                      Regulatory Trends & Analysis
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                      Risk Management Frameworks
-                    </li>
+                    {[
+                      "Quality Management Systems",
+                      "CTIP & Ethical Labor Compliance",
+                      "Audit Preparation & Response",
+                      "Regulatory Trends & Analysis",
+                      "Risk Management Frameworks",
+                    ].map((topic) => (
+                      <li key={topic} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-accent rounded-full" />
+                        {topic}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -298,9 +219,9 @@ export default function Insights() {
           <div className="section-divider mx-auto mb-8" />
           <h2 className="mb-6">Stay Informed</h2>
           <p className="text-lg mb-12 max-w-2xl mx-auto">
-            Receive our quarterly analysis of regulatory developments, 
-            enforcement trends, and compliance best practices. 
-            No promotional content—only substantive insights.
+            Receive our quarterly analysis of regulatory developments,
+            enforcement trends, and compliance best practices. No promotional
+            content—only substantive insights.
           </p>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">

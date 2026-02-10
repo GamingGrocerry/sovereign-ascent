@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Methodology from "./pages/Methodology";
 import Insights from "./pages/Insights";
+import InsightArticle from "./pages/InsightArticle";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/methodology" element={<Methodology />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/:slug" element={<InsightArticle />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
