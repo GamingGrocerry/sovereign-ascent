@@ -1,10 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Clock, ChevronRight } from "lucide-react";
 import { getArticleBySlug, articles } from "@/data/insights-data";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import NotFound from "./NotFound";
+
+const BASE_URL = "https://elevateqcs.com";
 
 export default function InsightArticle() {
   const { slug } = useParams<{ slug: string }>();
@@ -12,13 +15,56 @@ export default function InsightArticle() {
 
   if (!article) return <NotFound />;
 
-  // Find related articles (same category, excluding current)
-  const related = articles
-    .filter((a) => a.slug !== article.slug)
-    .slice(0, 3);
+  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+
+  // Build keyword-rich terms from title and category
+  const keywords = [
+    article.category.toLowerCase(),
+    "government contractor compliance",
+    "GovCon advisory",
+    ...article.title.toLowerCase().split(/\s+/).filter((w) => w.length > 4),
+  ];
 
   return (
     <Layout>
+      <SEOHead
+        title={`${article.title} | ElevateQCS Insights`}
+        description={article.excerpt}
+        url={`${BASE_URL}/insights/${article.slug}`}
+        type="article"
+        publishedDate={article.date}
+        keywords={keywords}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: article.title,
+          description: article.excerpt,
+          url: `${BASE_URL}/insights/${article.slug}`,
+          datePublished: article.date,
+          author: {
+            "@type": "Organization",
+            name: "Elevate Quality Compliance Solutions LLC",
+            url: BASE_URL,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "ElevateQCS",
+            url: BASE_URL,
+            logo: {
+              "@type": "ImageObject",
+              url: `${BASE_URL}/logos/elevatequcs-logo-blue-hd.png`,
+            },
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${BASE_URL}/insights/${article.slug}`,
+          },
+          articleSection: article.category,
+          inLanguage: "en-US",
+          isAccessibleForFree: true,
+        }}
+      />
+
       {/* Hero */}
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div
@@ -43,7 +89,7 @@ export default function InsightArticle() {
               <Clock className="w-4 h-4" />
               {article.readTime}
             </span>
-            <span>{article.date}</span>
+            <time>{article.date}</time>
           </div>
         </div>
       </section>
@@ -108,11 +154,8 @@ export default function InsightArticle() {
   );
 }
 
-/**
- * Simple markdown-to-JSX renderer for article content.
- * Handles headings, paragraphs, lists, bold, italic, links, and horizontal rules.
- * Content files are editable via GitHub without needing a CMS.
- */
+/* ─── Markdown Renderer ─── */
+
 function renderMarkdown(md: string) {
   const lines = md.trim().split("\n");
   const elements: React.ReactNode[] = [];
@@ -121,82 +164,55 @@ function renderMarkdown(md: string) {
 
   const parseInline = (text: string): React.ReactNode[] => {
     const parts: React.ReactNode[] = [];
-    // Match bold, italic, links, and inline code
     const regex = /(\*\*(.+?)\*\*)|(\*(.+?)\*)|(\[(.+?)\]\((.+?)\))|(`(.+?)`)/g;
     let lastIndex = 0;
     let match;
     let inlineKey = 0;
 
     while ((match = regex.exec(text)) !== null) {
-      if (match.index > lastIndex) {
-        parts.push(text.slice(lastIndex, match.index));
-      }
-      if (match[1]) {
-        parts.push(<strong key={inlineKey++}>{match[2]}</strong>);
-      } else if (match[3]) {
-        parts.push(<em key={inlineKey++}>{match[4]}</em>);
-      } else if (match[5]) {
+      if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
+      if (match[1]) parts.push(<strong key={inlineKey++}>{match[2]}</strong>);
+      else if (match[3]) parts.push(<em key={inlineKey++}>{match[4]}</em>);
+      else if (match[5])
         parts.push(
           <Link key={inlineKey++} to={match[7]} className="text-link">
             {match[6]}
           </Link>
         );
-      } else if (match[8]) {
+      else if (match[8])
         parts.push(
           <code key={inlineKey++} className="bg-secondary px-1.5 py-0.5 rounded text-sm">
             {match[9]}
           </code>
         );
-      }
       lastIndex = match.index + match[0].length;
     }
-    if (lastIndex < text.length) {
-      parts.push(text.slice(lastIndex));
-    }
+    if (lastIndex < text.length) parts.push(text.slice(lastIndex));
     return parts.length ? parts : [text];
   };
 
   while (i < lines.length) {
     const line = lines[i];
 
-    // Empty line
-    if (line.trim() === "") {
-      i++;
-      continue;
-    }
+    if (line.trim() === "") { i++; continue; }
 
-    // Horizontal rule
     if (/^---+$/.test(line.trim())) {
       elements.push(<hr key={key++} className="my-10 border-border" />);
-      i++;
-      continue;
+      i++; continue;
     }
 
-    // Headings
     const headingMatch = line.match(/^(#{1,4})\s+(.+)/);
     if (headingMatch) {
       const level = headingMatch[1].length;
-      const text = headingMatch[2];
       const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-      const className =
-        level === 2
-          ? "mt-12 mb-6"
-          : level === 3
-          ? "mt-8 mb-4"
-          : "mt-6 mb-3";
-      elements.push(
-        <Tag key={key++} className={className}>
-          {parseInline(text)}
-        </Tag>
-      );
-      i++;
-      continue;
+      const className = level === 2 ? "mt-12 mb-6" : level === 3 ? "mt-8 mb-4" : "mt-6 mb-3";
+      elements.push(<Tag key={key++} className={className}>{parseInline(headingMatch[2])}</Tag>);
+      i++; continue;
     }
 
-    // Table detection
     if (line.includes("|") && i + 1 < lines.length && lines[i + 1]?.includes("---")) {
       const headerCells = line.split("|").map((c) => c.trim()).filter(Boolean);
-      i += 2; // skip header + separator
+      i += 2;
       const rows: string[][] = [];
       while (i < lines.length && lines[i].includes("|")) {
         rows.push(lines[i].split("|").map((c) => c.trim()).filter(Boolean));
@@ -208,10 +224,7 @@ function renderMarkdown(md: string) {
             <thead>
               <tr>
                 {headerCells.map((cell, ci) => (
-                  <th
-                    key={ci}
-                    className="text-left py-3 px-4 border-b-2 border-border font-semibold text-foreground"
-                  >
+                  <th key={ci} className="text-left py-3 px-4 border-b-2 border-border font-semibold text-foreground">
                     {parseInline(cell)}
                   </th>
                 ))}
@@ -234,50 +247,27 @@ function renderMarkdown(md: string) {
       continue;
     }
 
-    // Ordered list
     if (/^\d+\.\s/.test(line)) {
       const items: React.ReactNode[] = [];
       while (i < lines.length && /^\d+\.\s/.test(lines[i])) {
-        items.push(
-          <li key={items.length} className="text-muted-foreground">
-            {parseInline(lines[i].replace(/^\d+\.\s/, ""))}
-          </li>
-        );
+        items.push(<li key={items.length} className="text-muted-foreground">{parseInline(lines[i].replace(/^\d+\.\s/, ""))}</li>);
         i++;
       }
-      elements.push(
-        <ol key={key++} className="list-decimal list-inside space-y-2 my-6 pl-4">
-          {items}
-        </ol>
-      );
+      elements.push(<ol key={key++} className="list-decimal list-inside space-y-2 my-6 pl-4">{items}</ol>);
       continue;
     }
 
-    // Unordered list
     if (/^[-*]\s/.test(line)) {
       const items: React.ReactNode[] = [];
       while (i < lines.length && /^[-*]\s/.test(lines[i])) {
-        items.push(
-          <li key={items.length} className="text-muted-foreground">
-            {parseInline(lines[i].replace(/^[-*]\s/, ""))}
-          </li>
-        );
+        items.push(<li key={items.length} className="text-muted-foreground">{parseInline(lines[i].replace(/^[-*]\s/, ""))}</li>);
         i++;
       }
-      elements.push(
-        <ul key={key++} className="list-disc list-inside space-y-2 my-6 pl-4">
-          {items}
-        </ul>
-      );
+      elements.push(<ul key={key++} className="list-disc list-inside space-y-2 my-6 pl-4">{items}</ul>);
       continue;
     }
 
-    // Paragraph
-    elements.push(
-      <p key={key++} className="my-4 text-muted-foreground leading-relaxed">
-        {parseInline(line)}
-      </p>
-    );
+    elements.push(<p key={key++} className="my-4 text-muted-foreground leading-relaxed">{parseInline(line)}</p>);
     i++;
   }
 

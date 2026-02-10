@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, ChevronRight } from "lucide-react";
@@ -7,9 +9,65 @@ import insightsLibrary from "@/assets/insights-library.jpg";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 
+const BASE_URL = "https://elevateqcs.com";
+
 export default function Insights() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredArticles =
+    activeCategory === "All"
+      ? articles
+      : articles.filter((a) => a.category === activeCategory);
+
   return (
     <Layout>
+      <SEOHead
+        title="Compliance Insights & Analysis | ElevateQCS"
+        description="Expert analysis of government contractor compliance risks, audit failure patterns, CTIP enforcement trends, and QMS architecture. Actionable intelligence for GovCon primes and subcontractors."
+        url={`${BASE_URL}/insights`}
+        keywords={[
+          "government contractor compliance",
+          "GovCon audit readiness",
+          "CTIP compliance advisory",
+          "FAR 52.222-50",
+          "quality management system",
+          "compliance risk analysis",
+          "audit failure patterns",
+          "supply chain compliance",
+          "QMS scalability",
+          "regulatory compliance",
+        ]}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "ElevateQCS Compliance Insights",
+          description:
+            "Analysis and interpretation of recurring compliance risks for government contractors — grounded in operational experience.",
+          url: `${BASE_URL}/insights`,
+          publisher: {
+            "@type": "Organization",
+            name: "Elevate Quality Compliance Solutions LLC",
+            url: BASE_URL,
+            logo: {
+              "@type": "ImageObject",
+              url: `${BASE_URL}/logos/elevatequcs-logo-blue-hd.png`,
+            },
+          },
+          inLanguage: "en-US",
+          blogPost: [featuredArticle, ...articles].map((a) => ({
+            "@type": "BlogPosting",
+            headline: a.title,
+            description: a.excerpt,
+            url: `${BASE_URL}/insights/${a.slug}`,
+            datePublished: a.date,
+            author: {
+              "@type": "Organization",
+              name: "ElevateQCS",
+            },
+          })),
+        }}
+      />
+
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div
@@ -36,8 +94,9 @@ export default function Insights() {
               <div className="image-frame rounded-sm overflow-hidden">
                 <img
                   src={insightsLibrary}
-                  alt="Legal books representing knowledge and expertise"
+                  alt="Legal books representing compliance knowledge and expertise"
                   className="w-full h-[350px] object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -54,8 +113,9 @@ export default function Insights() {
           >
             <img
               src={insightsFeatured}
-              alt="Abstract ripples representing methodical thinking"
+              alt="Abstract ripples representing methodical compliance analysis"
               className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60" />
             <div className="absolute inset-0 flex items-center">
@@ -90,21 +150,25 @@ export default function Insights() {
       {/* Categories */}
       <section className="py-8 bg-background border-b border-border">
         <div className="container-wide">
-          <div className="flex flex-wrap gap-4">
-            {categories.map((category, index) => (
-              <button
-                key={index}
-                className={`px-4 py-2 text-sm rounded-sm transition-colors ${
-                  index === 0
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
-                }`}
-              >
-                {category.name}
-                <span className="ml-2 opacity-60">({category.count})</span>
-              </button>
-            ))}
-          </div>
+          <nav aria-label="Article categories" className="flex flex-wrap gap-4">
+            {categories
+              .filter((c) => c.count > 0)
+              .map((category) => (
+                <button
+                  key={category.name}
+                  onClick={() => setActiveCategory(category.name)}
+                  aria-pressed={activeCategory === category.name}
+                  className={`px-4 py-2 text-sm rounded-sm transition-colors ${
+                    activeCategory === category.name
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                  }`}
+                >
+                  {category.name}
+                  <span className="ml-2 opacity-60">({category.count})</span>
+                </button>
+              ))}
+          </nav>
         </div>
       </section>
 
@@ -115,53 +179,65 @@ export default function Insights() {
             {/* Main Content */}
             <div className="lg:col-span-2">
               <div className="section-divider mb-8" />
-              <h2 className="mb-12">Recent Publications</h2>
-              <div className="space-y-8">
-                {articles.map((article) => (
-                  <Link
-                    key={article.slug}
-                    to={`/insights/${article.slug}`}
-                    className="card-elevated p-6 md:p-8 flex gap-6 group block"
-                  >
-                    {article.icon && (
-                      <div className="hidden md:flex w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 items-center justify-center shrink-0">
-                        <article.icon className="w-8 h-8 text-accent" />
-                      </div>
-                    )}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-accent text-xs uppercase tracking-wide">
-                          {article.category}
-                        </span>
-                        <span className="text-muted-foreground/50">•</span>
-                        <span className="text-muted-foreground text-xs flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {article.readTime}
-                        </span>
-                      </div>
-                      <h3 className="text-xl mb-3 group-hover:text-accent transition-colors">
-                        {article.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                        {article.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
-                          Read article
-                          <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                        </span>
-                        <span className="text-muted-foreground text-xs">
-                          {article.date}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <h2 className="mb-12">
+                {activeCategory === "All"
+                  ? "Recent Publications"
+                  : activeCategory}
+              </h2>
+
+              {filteredArticles.length === 0 ? (
+                <p className="text-muted-foreground">
+                  No articles in this category yet.
+                </p>
+              ) : (
+                <div className="space-y-8">
+                  {filteredArticles.map((article) => (
+                    <article key={article.slug}>
+                      <Link
+                        to={`/insights/${article.slug}`}
+                        className="card-elevated p-6 md:p-8 flex gap-6 group block"
+                      >
+                        {article.icon && (
+                          <div className="hidden md:flex w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 items-center justify-center shrink-0">
+                            <article.icon className="w-8 h-8 text-accent" />
+                          </div>
+                        )}
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <span className="text-accent text-xs uppercase tracking-wide">
+                              {article.category}
+                            </span>
+                            <span className="text-muted-foreground/50">•</span>
+                            <span className="text-muted-foreground text-xs flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              {article.readTime}
+                            </span>
+                          </div>
+                          <h3 className="text-xl mb-3 group-hover:text-accent transition-colors">
+                            {article.title}
+                          </h3>
+                          <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                            {article.excerpt}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
+                              Read article
+                              <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                            </span>
+                            <time className="text-muted-foreground text-xs">
+                              {article.date}
+                            </time>
+                          </div>
+                        </div>
+                      </Link>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <aside className="lg:col-span-1">
               <div className="sticky top-32 space-y-8">
                 <div className="card-elevated p-6">
                   <h3 className="text-lg mb-4">About Our Insights</h3>
@@ -181,6 +257,7 @@ export default function Insights() {
                     src={auditPrecision}
                     alt="Precision measurement representing audit accuracy"
                     className="w-full h-[200px] object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -207,8 +284,21 @@ export default function Insights() {
                     ))}
                   </ul>
                 </div>
+
+                {/* Vendor Neutrality Disclaimer */}
+                <div className="card-elevated p-6 border-l-2 border-accent">
+                  <h3 className="text-lg mb-3">Vendor Neutrality</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    ElevateQCS maintains a vendor-neutral advisory posture. In
+                    the event we identify a vendor, product, or service from
+                    which we may receive referral benefits or compensation, we
+                    will disclose this transparently to clients during the
+                    initial engagement meeting—prior to any recommendation being
+                    formalized.
+                  </p>
+                </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
