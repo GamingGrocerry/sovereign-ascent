@@ -130,6 +130,12 @@ export function Footer() {
             accredited registrar, or government regulatory agency. All services are advisory 
             in nature and do not constitute legal, certification, or regulatory services.
           </p>
+          <p className="text-primary-foreground/50 text-xs leading-relaxed text-center mt-2">
+            ElevateQCS maintains a vendor-neutral advisory posture. In the event we identify a 
+            vendor, product, or service from which we may receive referral benefits or compensation, 
+            we will disclose this transparently to clients during the initial engagement meeting — 
+            prior to any recommendation being formalized.
+          </p>
         </div>
       </div>
     </footer>
