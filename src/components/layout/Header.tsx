@@ -66,14 +66,11 @@ export function Header() {
         <nav className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className={cn(
-              "w-10 h-10 rounded-sm flex items-center justify-center font-serif font-bold text-lg transition-colors",
-              showDarkHeader 
-                ? "bg-primary-foreground text-primary" 
-                : "bg-primary text-primary-foreground"
-            )}>
-              E
-            </div>
+            <img 
+              src={showDarkHeader ? "/logos/elevatequcs-icon-dark.png" : "/logos/elevatequcs-icon-light.png"}
+              alt="ElevateQCS"
+              className="w-10 h-10 object-contain transition-opacity"
+            />
             <div className="hidden sm:block">
               <span className={cn(
                 "font-serif font-semibold text-lg tracking-tight transition-colors",

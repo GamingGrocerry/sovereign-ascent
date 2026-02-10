@@ -31,9 +31,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-sm bg-primary-foreground text-primary flex items-center justify-center font-serif font-bold text-lg">
-                E
-              </div>
+              <img 
+                src="/logos/elevatequcs-icon-dark.png"
+                alt="ElevateQCS"
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-serif font-semibold text-xl tracking-tight">
                 ElevateQCS
               </span>
