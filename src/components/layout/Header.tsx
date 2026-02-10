@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SearchBar } from "@/components/SearchBar";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -134,8 +135,9 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Search + CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <SearchBar isDark={showDarkHeader} />
             <Button
               variant={showDarkHeader ? "hero" : "cta"}
               size="default"
