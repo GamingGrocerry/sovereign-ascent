@@ -133,23 +133,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="stats-gradient py-20">
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="font-serif text-4xl md:text-5xl text-primary-foreground font-semibold mb-3 transition-transform duration-300 group-hover:scale-105">
-                  {stat.value}
-                </div>
-                <div className="text-primary-foreground/70 text-sm leading-tight">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* About Preview Section */}
       <section className="py-28 lg:py-36 bg-background section-luxury">
@@ -397,6 +380,32 @@ export default function Index() {
                 </blockquote>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="stats-gradient py-20">
+        <div className="container-wide relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="font-serif text-4xl md:text-5xl text-primary-foreground font-semibold mb-3 transition-transform duration-300 group-hover:scale-105">
+                  {stat.value}
+                </div>
+                <div className="text-primary-foreground/70 text-sm leading-tight">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Button variant="hero-outline" size="lg" asChild>
+              <Link to="/credentials">
+                See Our Full Credentials
+                <ChevronRight className="ml-2" size={16} />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

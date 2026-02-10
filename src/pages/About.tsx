@@ -6,12 +6,6 @@ import aboutPrecision from "@/assets/about-precision.jpg";
 import aboutHeritage from "@/assets/about-heritage.jpg";
 import governanceEthics from "@/assets/governance-ethics.jpg";
 
-const stats = [
-  { value: "9+", label: "Years of Regulatory & Operational Advisory Experience" },
-  { value: "10,000+", label: "Support across thousands of audit interactions, providing insight into real compliance expectations" },
-  { value: "125+", label: "Compliance & Control Frameworks Delivered" },
-  { value: "€500K–€25M", label: "Advisory Exposure Across Project Environments" },
-];
 
 const values = [
   {
@@ -88,23 +82,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="stats-gradient py-20">
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="font-serif text-4xl md:text-5xl text-primary-foreground font-semibold mb-3 transition-transform duration-300 group-hover:scale-105">
-                  {stat.value}
-                </div>
-                <div className="text-primary-foreground/70 text-sm leading-tight">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Narrative */}
       <section className="py-28 bg-background section-luxury">
