@@ -16,9 +16,10 @@ import { useToast } from "@/hooks/use-toast";
 import contactInterior from "@/assets/contact-interior.jpg";
 
 const inquiryTypes = [
-  { value: "qms", label: "QMS Architecture" },
-  { value: "ctip", label: "CTIP Program Development" },
-  { value: "audit", label: "Audit & CAPA Advisory" },
+  { value: "compliance-architecture", label: "Compliance & Management System Architecture" },
+  { value: "human-rights", label: "Human Rights & Ethical Labor Compliance" },
+  { value: "audit-readiness", label: "Audit Readiness & Corrective Action Advisory" },
+  { value: "education", label: "Education & Capability Development" },
   { value: "general", label: "General Inquiry" },
 ];
 
