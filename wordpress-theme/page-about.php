@@ -17,12 +17,12 @@ get_header();
         <div class="container">
             <div class="page-hero-content">
                 <p class="badge-label">About ElevateQCS</p>
-                <h1>Institutional Authority Earned Through Field Experience</h1>
+                <h1>We Build Compliance Systems for Clarity and Control</h1>
                 <p class="page-lead">
-                    ElevateQCS was founded in 2026 by senior quality and compliance 
-                    architects with hands-on experience designing, implementing, 
-                    monitoring, and supporting QMS frameworks across major billion-dollar 
-                    U.S. Government contracting programs.
+                    ElevateQCS is a principal-led advisory firm established in 2026, 
+                    built on hands-on experience designing, implementing, monitoring, 
+                    and supporting QMS frameworks across major billion-dollar 
+                    Government Contracting programs.
                 </p>
             </div>
         </div>
@@ -59,26 +59,25 @@ get_header();
         <div class="container">
             <div class="content-grid-2">
                 <div>
-                    <h2>Our Heritage</h2>
+                    <h2>Why We Exist</h2>
                     <div class="prose">
                         <p>
-                            Our founding team has spent nearly a decade embedded within 
-                            the quality and compliance ecosystems of major defense, 
-                            aerospace, and government services contractors. This isn't 
-                            theoretical knowledge—it's field-tested experience gained 
-                            through direct participation in high-value program execution.
+                            The founding insight came from observing a gap: compliance 
+                            advisory that worked in theory but failed under real operational 
+                            pressure. Organizations needed more than documentation — they 
+                            needed systems that functioned when scrutiny arrived.
                         </p>
                         <p>
-                            We've observed thousands of internal and external audits, 
-                            architected quality management systems for contracts spanning 
-                            multiple continents, and supported organizations through the 
-                            most demanding regulatory environments in the world.
+                            ElevateQCS's methodologies are built on nearly a decade of 
+                            experience embedded within the quality and compliance ecosystems 
+                            of major defense, aerospace, and government services contractors. 
+                            This isn't theoretical knowledge — it's field-tested experience 
+                            gained through direct participation in high-value program execution.
                         </p>
                         <p>
-                            This operational experience informs every aspect of our 
-                            advisory practice. We understand not just what compliance 
-                            frameworks should look like on paper, but how they function 
-                            under the pressure of real-world program execution.
+                            That experience exposed the distance between what compliance 
+                            frameworks look like on paper and how they perform under pressure. 
+                            ElevateQCS was built to close that gap.
                         </p>
                     </div>
                 </div>

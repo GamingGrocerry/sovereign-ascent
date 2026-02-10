@@ -35,17 +35,17 @@ const differentiators = [
   {
     icon: Shield,
     title: "Independence",
-    description: "We maintain strict independence from certification bodies, vendors, and regulatory agencies. Our recommendations serve only your interests.",
+    description: "ElevateQCS maintains strict independence from certification bodies, vendors, and regulatory agencies. Recommendations serve only client interests.",
   },
   {
     icon: Target,
-    title: "Practical Focus",
-    description: "We design systems for operational reality, not theoretical perfection. Every framework is built to function under real-world pressure.",
+    title: "Principal-Led Delivery",
+    description: "Initial consultations and strategic direction are conducted by ElevateQCS leadership, ensuring senior-level insight guides every engagement from day one.",
   },
   {
     icon: Eye,
     title: "Capability Transfer",
-    description: "Our goal is your independence. We transfer knowledge and capability, not create dependency on external advisors.",
+    description: "The goal is client independence. ElevateQCS transfers knowledge and capability to your organization, not dependency on external advisors.",
   },
 ];
 
@@ -69,9 +69,9 @@ export default function About() {
                 We Build Compliance Systems for Clarity and Control
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                ElevateQCS was founded in 2026 by senior quality and compliance 
-                architects with hands-on experience designing, implementing, 
-                monitoring, and supporting QMS frameworks across major billion-dollar 
+                ElevateQCS is a principal-led advisory firm established in 2026, 
+                built on hands-on experience designing, implementing, monitoring, 
+                and supporting QMS frameworks across major billion-dollar 
                 Government Contracting programs.
               </p>
             </div>
@@ -115,17 +115,17 @@ export default function About() {
               <h2 className="mb-8">Why We Exist</h2>
               <div className="prose prose-lg text-muted-foreground space-y-6">
                 <p>
-                  We observed a gap: compliance advisory that worked in theory 
-                  but failed under real operational pressure. Organizations needed 
-                  more than documentation — they needed systems that functioned 
-                  when scrutiny arrived.
+                  The founding insight came from observing a gap: compliance 
+                  advisory that worked in theory but failed under real operational 
+                  pressure. Organizations needed more than documentation — they 
+                  needed systems that functioned when scrutiny arrived.
                 </p>
                 <p>
-                  Our founding team spent nearly a decade embedded within the 
-                  quality and compliance ecosystems of major defense, aerospace, 
-                  and government services contractors. This isn't theoretical 
-                  knowledge — it's field-tested experience gained through direct 
-                  participation in high-value program execution.
+                  ElevateQCS's methodologies are built on nearly a decade of 
+                  experience embedded within the quality and compliance ecosystems 
+                  of major defense, aerospace, and government services contractors. 
+                  This isn't theoretical knowledge — it's field-tested experience 
+                  gained through direct participation in high-value program execution.
                 </p>
                 <p>
                   That experience exposed the distance between what compliance 
@@ -167,8 +167,10 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
         <div className="container-wide relative z-10 text-center">
           <p className="text-primary-foreground/80 text-lg font-serif leading-relaxed max-w-3xl mx-auto">
-            We work with leadership, quality functions, and operations teams who 
-            must make compliance work in practice — not just in documents.
+            ElevateQCS works with leadership, quality functions, and operations 
+            teams who must make compliance work in practice — not just in documents. 
+            For specialized needs, we engage vetted specialists to ensure every 
+            engagement receives the depth of expertise it requires.
           </p>
         </div>
       </section>
