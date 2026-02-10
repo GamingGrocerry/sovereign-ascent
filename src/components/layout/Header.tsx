@@ -67,12 +67,19 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className={cn(
-              "w-10 h-10 rounded-sm flex items-center justify-center font-serif font-bold text-lg transition-colors",
+              "w-10 h-10 rounded-sm flex items-center justify-center font-serif font-bold text-lg transition-colors relative",
               showDarkHeader 
                 ? "bg-primary-foreground text-primary" 
                 : "bg-primary text-primary-foreground"
             )}>
               E
+              {/* Two upward arrows top-right */}
+              <svg className="absolute -top-0.5 -right-0.5 w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 8L13 4L15 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="13" y1="4" x2="13" y2="12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M5 10L7 6L9 10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
+                <line x1="7" y1="6" x2="7" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6"/>
+              </svg>
             </div>
             <div className="hidden sm:block">
               <span className={cn(
