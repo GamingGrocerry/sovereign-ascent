@@ -136,6 +136,40 @@ export default function Careers() {
         </div>
       </section>
 
+      {/* Remote Work */}
+      <section className="py-20 bg-background">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              How We Work
+            </p>
+            <h2 className="mb-6">Fully Remote, Fully Committed</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              All collaboration with ElevateQCS is remote by design. We work with 
+              specialists across time zones using secure, structured workflows — 
+              ensuring flexibility without compromising rigor or confidentiality.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="card-elevated p-6 text-center">
+              <Globe className="w-8 h-8 text-accent mx-auto mb-3" />
+              <h4 className="text-sm font-semibold mb-2">Location-Independent</h4>
+              <p className="text-xs text-muted-foreground">Collaborate from anywhere with a secure connection</p>
+            </div>
+            <div className="card-elevated p-6 text-center">
+              <Handshake className="w-8 h-8 text-accent mx-auto mb-3" />
+              <h4 className="text-sm font-semibold mb-2">Structured Engagement</h4>
+              <p className="text-xs text-muted-foreground">Clear deliverables, timelines, and communication protocols</p>
+            </div>
+            <div className="card-elevated p-6 text-center">
+              <Award className="w-8 h-8 text-accent mx-auto mb-3" />
+              <h4 className="text-sm font-semibold mb-2">Merit-Based Selection</h4>
+              <p className="text-xs text-muted-foreground">Expertise and track record drive every collaboration</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Ethics Image Break */}
       <section className="relative h-[300px] overflow-hidden">
         <img 

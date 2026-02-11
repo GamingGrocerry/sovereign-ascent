@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Users, Globe, Shield, Target, Eye } from "lucide-react";
+import { ArrowRight, Award, Users, Globe, Shield, Target, Eye, Wifi } from "lucide-react";
 import aboutPrecision from "@/assets/about-precision.jpg";
 import aboutHeritage from "@/assets/about-heritage.jpg";
 import governanceEthics from "@/assets/governance-ethics.jpg";
@@ -199,8 +199,57 @@ export default function About() {
         </div>
       </section>
 
+      {/* Remote by Design */}
+      <section className="py-20 bg-secondary/30">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                How We Work
+              </p>
+              <h2 className="mb-6">Remote by Design</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                ElevateQCS operates as a fully remote advisory practice. This is 
+                a deliberate structural decision — not a temporary arrangement. 
+                It allows us to deploy the right expertise to every engagement 
+                regardless of geography.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Our remote model enables us to support clients across the US, 
+                EU, and Middle East without the overhead that inflates advisory 
+                fees. Secure communications, structured workflows, and 
+                disciplined project management ensure every engagement 
+                receives the same rigor as in-person delivery.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="card-elevated p-6 text-center">
+                <Globe className="w-8 h-8 text-accent mx-auto mb-3" />
+                <h4 className="text-sm font-semibold mb-1">Global Reach</h4>
+                <p className="text-xs text-muted-foreground">US, EU & Middle East</p>
+              </div>
+              <div className="card-elevated p-6 text-center">
+                <Shield className="w-8 h-8 text-accent mx-auto mb-3" />
+                <h4 className="text-sm font-semibold mb-1">Secure Delivery</h4>
+                <p className="text-xs text-muted-foreground">Encrypted communications</p>
+              </div>
+              <div className="card-elevated p-6 text-center">
+                <Target className="w-8 h-8 text-accent mx-auto mb-3" />
+                <h4 className="text-sm font-semibold mb-1">Right Expertise</h4>
+                <p className="text-xs text-muted-foreground">No geographic limits</p>
+              </div>
+              <div className="card-elevated p-6 text-center">
+                <Users className="w-8 h-8 text-accent mx-auto mb-3" />
+                <h4 className="text-sm font-semibold mb-1">Lean Model</h4>
+                <p className="text-xs text-muted-foreground">Lower overhead, higher value</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Differentiators */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-24 bg-background section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <div className="section-divider mb-8" />
