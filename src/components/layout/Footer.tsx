@@ -47,7 +47,7 @@ export function Footer() {
               regulated and high-scrutiny environments.
             </p>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/elevate-quality-compliance-solutions"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
