@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Shield, Target, FileCheck, BookOpen, ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
+import { Shield, Target, FileCheck, BookOpen, ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3, Clock } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import aboutPrecision from "@/assets/about-precision.jpg";
 import servicesFramework from "@/assets/services-framework.jpg";
@@ -9,6 +9,7 @@ import trustVault from "@/assets/trust-vault.jpg";
 import qmsStructure from "@/assets/qms-structure.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 import ctipProtection from "@/assets/ctip-protection.jpg";
+import { featuredArticle, articles } from "@/data/insights-data";
 
 const stats = [
   { value: "9+", label: "Years of Regulatory & Operational Advisory Experience" },
@@ -403,6 +404,87 @@ export default function Index() {
             <Button variant="hero-outline" size="lg" asChild>
               <Link to="/credentials">
                 See Our Full Credentials
+                <ChevronRight className="ml-2" size={16} />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Insights Section */}
+      <section className="py-28 lg:py-36 bg-background section-luxury">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-16">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Insights
+            </p>
+            <h2 className="mb-6">Analytical Perspectives on Compliance Risk</h2>
+            <p className="text-lg text-muted-foreground">
+              Field-informed analysis on regulatory trends, audit patterns, and decision frameworks for compliance leaders.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Featured Article */}
+            <Link
+              to={`/insights/${featuredArticle.slug}`}
+              className="card-elevated group overflow-hidden row-span-2"
+            >
+              <div className="p-8 h-full flex flex-col">
+                <span className="text-accent text-xs font-semibold uppercase tracking-wider mb-3">
+                  Featured
+                </span>
+                <span className="text-xs text-muted-foreground uppercase tracking-wider mb-4">
+                  {featuredArticle.category}
+                </span>
+                <h3 className="text-2xl mb-4 group-hover:text-accent transition-colors">
+                  {featuredArticle.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
+                  {featuredArticle.excerpt}
+                </p>
+                <div className="flex items-center justify-between text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    {featuredArticle.readTime}
+                  </div>
+                  <span className="inline-flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform">
+                    Read Article <ChevronRight className="w-4 h-4 ml-1" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Recent Articles */}
+            <div className="flex flex-col gap-4">
+              {articles.slice(0, 3).map((article) => (
+                <Link
+                  key={article.slug}
+                  to={`/insights/${article.slug}`}
+                  className="card-elevated group p-6 flex flex-col"
+                >
+                  <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
+                    {article.category}
+                  </span>
+                  <h4 className="text-lg mb-2 group-hover:text-accent transition-colors">
+                    {article.title}
+                  </h4>
+                  <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
+                    {article.excerpt}
+                  </p>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground mt-auto">
+                    <Clock className="w-3 h-3" />
+                    {article.readTime}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/insights">
+                View All Insights
                 <ChevronRight className="ml-2" size={16} />
               </Link>
             </Button>
