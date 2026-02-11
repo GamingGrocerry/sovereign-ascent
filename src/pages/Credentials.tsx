@@ -16,7 +16,7 @@ const credentials = [
   },
   {
     icon: Search,
-    value: "10,000+",
+    value: "1,000+",
     headline: "Audit Interactions Observed, Supported & Prepared For",
     description:
       "Across internal assessments, customer audits, and third-party certification reviews, ElevateQCS has supported organizations through thousands of audit interactions — providing direct insight into what auditors look for and where organizations typically fall short.",

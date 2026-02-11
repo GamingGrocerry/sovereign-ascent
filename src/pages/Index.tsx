@@ -13,7 +13,7 @@ import InsightsCarousel from "@/components/InsightsCarousel";
 
 const stats = [
   { value: "9+", label: "Years of Regulatory & Operational Advisory Experience" },
-  { value: "10,000+", label: "Audits Observed, Supported, and Prepared For" },
+  { value: "1,000+", label: "Audits Observed, Supported, and Prepared For" },
   { value: "125+", label: "Compliance & Control Frameworks Delivered" },
   { value: "€500K–€25M", label: "Advisory Exposure Across Project Environments" },
 ];
