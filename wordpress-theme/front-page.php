@@ -51,7 +51,7 @@ get_header();
                     <div class="stat-label">Years Collective Industry Pedigree</div>
                 </div>
                 <div class="stat-item animate-fade-up animate-delay-1">
-                    <div class="stat-value">10,000+</div>
+                    <div class="stat-value">1,000+</div>
                     <div class="stat-label">Audits Observed & Supported</div>
                 </div>
                 <div class="stat-item animate-fade-up animate-delay-2">

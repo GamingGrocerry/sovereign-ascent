@@ -38,7 +38,7 @@ get_header();
                     <div class="stat-subtext">US, EU, Middle East</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">10,000+</div>
+                    <div class="stat-value">1,000+</div>
                     <div class="stat-label">Audits Observed & Supported</div>
                 </div>
                 <div class="stat-item">
