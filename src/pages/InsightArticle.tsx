@@ -65,32 +65,39 @@ export default function InsightArticle() {
         }}
       />
 
-      {/* Hero */}
-      <section className="page-hero pt-32 pb-16 bg-secondary/30">
-        <div
-          className="page-hero-bg"
-          style={{ backgroundImage: `url(${article.image || insightsFeatured})` }}
-        />
-        <div className="page-hero-overlay" />
-        <div className="container-narrow relative z-10">
+      {/* Hero with Cover Image */}
+      <section className="relative pt-24 pb-0 bg-primary">
+        {/* Cover Image */}
+        <div className="container-wide relative z-10 pt-8">
           <Link
             to="/insights"
-            className="inline-flex items-center text-accent text-sm mb-6 hover:underline"
+            className="inline-flex items-center text-primary-foreground/70 text-sm mb-6 hover:text-accent transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Insights
           </Link>
-          <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-            {article.category}
-          </p>
-          <h1 className="mb-6 gold-accent pb-4">{article.title}</h1>
-          <div className="flex items-center gap-6 text-muted-foreground text-sm">
-            <span className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              {article.readTime}
-            </span>
-            <time>{article.date}</time>
+          <div className="max-w-3xl mb-8">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              {article.category}
+            </p>
+            <h1 className="text-primary-foreground mb-6 gold-accent pb-4">{article.title}</h1>
+            <div className="flex items-center gap-6 text-primary-foreground/60 text-sm">
+              <span className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                {article.readTime}
+              </span>
+              <time>{article.date}</time>
+            </div>
           </div>
+        </div>
+        {/* Full-width cover image */}
+        <div className="relative w-full h-[300px] md:h-[420px] mt-4 overflow-hidden">
+          <img
+            src={article.image || insightsFeatured}
+            alt={article.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-primary/40" />
         </div>
       </section>
 
