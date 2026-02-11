@@ -43,8 +43,8 @@ const faqCategories = [
         answer: "Our goal is to transfer capability, not create dependency. At engagement conclusion, your teams should be equipped to operate, maintain, and improve systems independently. We provide comprehensive documentation, training, and knowledge transfer. Optional ongoing support is available but not required.",
       },
       {
-        question: "Can you work remotely?",
-        answer: "Yes. While certain activities benefit from on-site presence (particularly initial diagnostics and training), we conduct most advisory work remotely. We've developed effective remote methodologies and leverage secure collaboration tools. On-site visits are incorporated when they add meaningful value.",
+        question: "How does your remote model work?",
+        answer: "ElevateQCS operates as a fully remote advisory practice by design — not as a temporary arrangement. This allows us to deploy the right expertise to every engagement regardless of geography, using secure communications, structured workflows, and disciplined project management. Our remote model supports clients across the US, EU, and Middle East without the overhead that inflates advisory fees.",
       },
     ],
   },
