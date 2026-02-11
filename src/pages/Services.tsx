@@ -27,6 +27,7 @@ const services = [
       "Supporting management system scalability as the organization grows",
     ],
     applicability: "This service is applicable to organizations preparing for audits, entering regulated markets, or formalizing internal controls for the first time.",
+    frameworks: "Systems may be aligned, where applicable, with frameworks such as ISO 9001 (Quality Management Systems) — for process consistency and operational alignment; ISO/IEC 27001 (Information Security Management Systems) — for handling sensitive client data securely; ISO 14001 (Environmental Management Systems) — where sustainability plays a role in client operations; and ISO 45001 (Occupational Health and Safety Management Systems) — for risk controls in operational environments.",
   },
   {
     id: "human-rights",
@@ -61,6 +62,7 @@ const services = [
       "Support during and after assessments to stabilize operations",
     ],
     applicability: "This service is commonly used by organizations facing government assessments, customer audits, or third-party certification reviews.",
+    frameworks: "Corrective action support may be aligned, where applicable, with ISO 9001:2015 (Clause 10.2 — Nonconformity and Corrective Action), ISO 37301:2021 (Compliance Management Systems), and related standards such as ISO/IEC 27001, ISO 14001, and ISO 45001 for sector-specific risk and control integration. To help ensure corrective actions address root causes rather than symptoms, we draw on established methodologies including 5 Whys for rapid iterative cause exploration, Ishikawa (fishbone) diagrams to map contributing factors, Pareto charts to focus effort on vital issues, Six Sigma DMAIC for data-driven problem solving, and Lean tools (e.g., Kaizen, value stream mapping) to eliminate waste and support continuous improvement.",
   },
   {
     id: "education",
@@ -202,14 +204,25 @@ export default function Services() {
                         ))}
                       </ul>
                     </div>
-                    {(service.applicability || service.frameworks) && (
+                    {service.applicability && (
                       <div className="bg-secondary/50 p-10 rounded-sm relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
                         <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-4">
-                          {service.frameworks ? "Applicable Frameworks" : "Applicability"}
+                          Applicability
                         </h4>
                         <p className="text-foreground text-sm leading-relaxed">
-                          {service.frameworks || service.applicability}
+                          {service.applicability}
+                        </p>
+                      </div>
+                    )}
+                    {service.frameworks && (
+                      <div className="bg-secondary/50 p-10 rounded-sm relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+                        <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-4">
+                          Applicable Frameworks
+                        </h4>
+                        <p className="text-foreground text-sm leading-relaxed">
+                          {service.frameworks}
                         </p>
                       </div>
                     )}
