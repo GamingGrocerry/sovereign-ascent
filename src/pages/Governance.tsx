@@ -13,7 +13,7 @@ const principles = [
   {
     icon: Shield,
     title: "Vendor Neutrality",
-    description: "We do not resell software, accept referral fees, or maintain partnerships that could influence our recommendations. When we suggest tools or systems, it is because they serve your organizational objectives.",
+    description: "We recommend solutions based solely on your organizational needs. In the event we identify a vendor, product, or service from which we may receive referral benefits or compensation, we disclose this transparently to clients during the initial engagement meeting — prior to any recommendation being formalized.",
   },
   {
     icon: Eye,

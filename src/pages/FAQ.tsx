@@ -53,7 +53,7 @@ const faqCategories = [
     faqs: [
       {
         question: "Are you truly vendor-neutral?",
-        answer: "Yes. We do not resell software, accept referral fees, or maintain partnerships that could influence our recommendations. When we recommend tools, platforms, or service providers, it is based solely on our assessment of what serves your organizational needs. We have no financial incentive to recommend one solution over another.",
+        answer: "Yes. Our recommendations are based solely on our assessment of what serves your organizational needs. We maintain a vendor-neutral advisory posture across all engagements. In the event we identify a vendor, product, or service from which we may receive referral benefits or compensation, we disclose this transparently to clients during the initial engagement meeting — prior to any recommendation being formalized.",
       },
       {
         question: "How do you handle confidentiality?",

@@ -339,10 +339,11 @@ export default function Index() {
                 Independence & Discretion as Doctrine
               </h2>
               <p className="text-lg mb-8">
-                ElevateQCS operates with complete vendor neutrality. We do not 
-                resell software, take referral fees, or maintain partnerships 
-                that could compromise our advisory objectivity. Our recommendations 
-                serve your organizational interests—nothing else.
+               ElevateQCS operates with complete vendor neutrality. Our recommendations 
+                serve your organizational interests — nothing else. In the event we 
+                identify a vendor or service from which we may receive referral 
+                benefits, we disclose this transparently during initial consultations — 
+                before any recommendation is formalized.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {trustSignals.map((signal, index) => (

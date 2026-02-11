@@ -129,9 +129,10 @@ export default function About() {
                 </p>
                 <p>
                   Our vendor-neutral stance means we recommend solutions based 
-                  solely on your organizational needs. We don't resell software, 
-                  take referral fees, or maintain partnerships that could 
-                  compromise our objectivity.
+                  solely on your organizational needs. In the event we identify 
+                  a vendor or service from which we may receive referral benefits, 
+                  we disclose this transparently during initial consultations — 
+                  before any recommendation is formalized.
                 </p>
               </div>
             </div>
