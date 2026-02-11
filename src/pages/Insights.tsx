@@ -112,8 +112,8 @@ export default function Insights() {
             className="relative rounded-sm overflow-hidden group block"
           >
             <img
-              src={insightsFeatured}
-              alt="Abstract ripples representing methodical compliance analysis"
+              src={featuredArticle.image || insightsFeatured}
+              alt={featuredArticle.title}
               className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
@@ -195,38 +195,50 @@ export default function Insights() {
                     <article key={article.slug}>
                       <Link
                         to={`/insights/${article.slug}`}
-                        className="card-elevated p-6 md:p-8 flex gap-6 group block"
+                        className="card-elevated overflow-hidden flex flex-col md:flex-row gap-0 group block"
                       >
-                        {article.icon && (
-                          <div className="hidden md:flex w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 items-center justify-center shrink-0">
-                            <article.icon className="w-8 h-8 text-accent" />
+                        {article.image && (
+                          <div className="md:w-48 h-48 md:h-auto shrink-0 overflow-hidden">
+                            <img
+                              src={article.image}
+                              alt={article.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              loading="lazy"
+                            />
                           </div>
                         )}
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-3">
-                            <span className="text-accent text-xs uppercase tracking-wide">
-                              {article.category}
-                            </span>
-                            <span className="text-muted-foreground/50">•</span>
-                            <span className="text-muted-foreground text-xs flex items-center gap-1">
-                              <Clock className="w-3 h-3" />
-                              {article.readTime}
-                            </span>
-                          </div>
-                          <h3 className="text-xl mb-3 group-hover:text-accent transition-colors">
-                            {article.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                            {article.excerpt}
-                          </p>
-                          <div className="flex items-center justify-between">
-                            <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
-                              Read article
-                              <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                            </span>
-                            <time className="text-muted-foreground text-xs">
-                              {article.date}
-                            </time>
+                        <div className="p-6 md:p-8 flex-1 flex gap-6">
+                          {article.icon && !article.image && (
+                            <div className="hidden md:flex w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 items-center justify-center shrink-0">
+                              <article.icon className="w-8 h-8 text-accent" />
+                            </div>
+                          )}
+                          <div className="flex-1">
+                            <div className="flex items-center gap-3 mb-3">
+                              <span className="text-accent text-xs uppercase tracking-wide">
+                                {article.category}
+                              </span>
+                              <span className="text-muted-foreground/50">•</span>
+                              <span className="text-muted-foreground text-xs flex items-center gap-1">
+                                <Clock className="w-3 h-3" />
+                                {article.readTime}
+                              </span>
+                            </div>
+                            <h3 className="text-xl mb-3 group-hover:text-accent transition-colors">
+                              {article.title}
+                            </h3>
+                            <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                              {article.excerpt}
+                            </p>
+                            <div className="flex items-center justify-between">
+                              <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
+                                Read article
+                                <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                              </span>
+                              <time className="text-muted-foreground text-xs">
+                                {article.date}
+                              </time>
+                            </div>
                           </div>
                         </div>
                       </Link>
