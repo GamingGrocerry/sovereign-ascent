@@ -180,12 +180,13 @@ export default function Privacy() {
                 For privacy-related inquiries or to exercise your rights, please contact 
                 us through our secure contact form or at the address below:
               </p>
-              <div className="mt-4 p-6 bg-secondary/30 rounded-sm">
-                <p className="text-foreground font-medium">Elevate Quality Compliance Solutions LLC</p>
-                <p className="text-muted-foreground text-sm mt-1">
-                  Jurisdiction: Delaware, USA<br />
-                  Global Operations
-                </p>
+              <div className="mt-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-medium text-sm rounded-sm hover:bg-accent/90 transition-colors"
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
 
