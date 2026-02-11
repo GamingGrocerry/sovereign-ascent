@@ -69,7 +69,7 @@ export default function InsightArticle() {
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div
           className="page-hero-bg"
-          style={{ backgroundImage: `url(${insightsFeatured})` }}
+          style={{ backgroundImage: `url(${article.image || insightsFeatured})` }}
         />
         <div className="page-hero-overlay" />
         <div className="container-narrow relative z-10">
@@ -113,21 +113,33 @@ export default function InsightArticle() {
               <Link
                 key={a.slug}
                 to={`/insights/${a.slug}`}
-                className="card-elevated p-6 group"
+                className="card-elevated group overflow-hidden"
               >
-                <span className="text-accent text-xs uppercase tracking-wide">
-                  {a.category}
-                </span>
-                <h3 className="text-lg mt-3 mb-3 group-hover:text-accent transition-colors">
-                  {a.title}
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
-                  {a.excerpt}
-                </p>
-                <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
-                  Read article
-                  <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                </span>
+                {a.image && (
+                  <div className="h-40 overflow-hidden">
+                    <img
+                      src={a.image}
+                      alt={a.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <span className="text-accent text-xs uppercase tracking-wide">
+                    {a.category}
+                  </span>
+                  <h3 className="text-lg mt-3 mb-3 group-hover:text-accent transition-colors">
+                    {a.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
+                    {a.excerpt}
+                  </p>
+                  <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
+                    Read article
+                    <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

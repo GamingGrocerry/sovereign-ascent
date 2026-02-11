@@ -9,6 +9,7 @@ export interface Article {
   date: string;
   featured?: boolean;
   icon?: LucideIcon;
+  image?: string;
   content: string;
 }
 
@@ -21,13 +22,29 @@ import complianceDecisionFramework from "./articles/compliance-decision-framewor
 import documentationBestPractices from "./articles/documentation-best-practices";
 import supplyChainCompliance from "./articles/supply-chain-compliance";
 
-// Assign icons (kept separate from content files for simplicity)
+// Import article images
+import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
+import imgAuditFailures from "@/assets/insight-audit-failures.jpg";
+import imgCtipTrends from "@/assets/insight-ctip-trends.jpg";
+import imgQmsScalability from "@/assets/insight-qms-scalability.jpg";
+import imgDecisionFramework from "@/assets/insight-decision-framework.jpg";
+import imgDocumentation from "@/assets/insight-documentation.jpg";
+import imgSupplyChain from "@/assets/insight-supply-chain.jpg";
+
+// Assign icons and images
+costOfNonCompliance.image = imgCostNoncompliance;
 auditFailurePatterns.icon = AlertCircle;
+auditFailurePatterns.image = imgAuditFailures;
 ctipEnforcementTrends.icon = TrendingUp;
+ctipEnforcementTrends.image = imgCtipTrends;
 qmsScalability.icon = BookOpen;
+qmsScalability.image = imgQmsScalability;
 complianceDecisionFramework.icon = TrendingUp;
+complianceDecisionFramework.image = imgDecisionFramework;
 documentationBestPractices.icon = BookOpen;
+documentationBestPractices.image = imgDocumentation;
 supplyChainCompliance.icon = AlertCircle;
+supplyChainCompliance.image = imgSupplyChain;
 
 export const featuredArticle = costOfNonCompliance;
 
