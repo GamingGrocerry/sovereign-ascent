@@ -45,6 +45,7 @@ const services = [
       "Support in aligning programs with contractual and regulatory expectations",
     ],
     frameworks: "Programs may be aligned, where applicable, with frameworks such as FAR 52.222-50 (CTIP), the UK Modern Slavery Act, EU due-diligence requirements, ILO and OECD guidelines, and international labor standards.",
+    applicability: "This service is applicable to organizations operating under government contracts with human rights clauses, those entering global supply chains subject to ethical labor scrutiny, or firms seeking to formalize internal human rights and anti-trafficking programs proactively.",
   },
   {
     id: "audit-readiness",
@@ -79,6 +80,7 @@ const services = [
       "Ongoing advisory support during system adoption",
     ],
     applicability: "Training is designed to be accessible, practical, and directly connected to the organization's internal processes.",
+    frameworks: "Training content may be aligned, where applicable, with ISO 9001 (Quality Management Systems), ISO 37301:2021 (Compliance Management Systems), FAR/DFARS regulatory requirements, ISO 19011 (Guidelines for Auditing Management Systems), and relevant sector-specific standards such as ISO/IEC 27001, ISO 14001, and ISO 45001 to support role-based competency in compliance operations.",
   },
 ];
 
