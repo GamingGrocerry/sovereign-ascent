@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -46,16 +46,25 @@ export function Footer() {
               vendor-neutral advisory services to organizations operating in 
               regulated and high-scrutiny environments.
             </p>
-            <a
-              href="https://www.linkedin.com/company/elevate-quality-compliance-solutions"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-              <span className="text-sm">Follow on LinkedIn</span>
-            </a>
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:info@elevateqcs.com"
+                className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              >
+                <Mail size={20} />
+                <span className="text-sm">info@elevateqcs.com</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/elevate-quality-compliance-solutions"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+                <span className="text-sm">Follow on LinkedIn</span>
+              </a>
+            </div>
           </div>
 
           {/* Services Links */}

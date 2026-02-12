@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Shield, Lock, FileText } from "lucide-react";
+import { Shield, Lock, FileText, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactInterior from "@/assets/contact-interior.jpg";
 
@@ -253,6 +253,18 @@ export default function Contact() {
                       Represent clients before regulators
                     </li>
                   </ul>
+                </div>
+
+                {/* Direct Contact */}
+                <div className="bg-secondary/50 p-8 rounded-sm">
+                  <h4 className="font-serif text-lg mb-3">Direct Contact</h4>
+                  <a
+                    href="mailto:info@elevateqcs.com"
+                    className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm"
+                  >
+                    <Mail className="w-4 h-4" />
+                    info@elevateqcs.com
+                  </a>
                 </div>
 
                 {/* Disclaimer */}

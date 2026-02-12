@@ -162,7 +162,13 @@ export default function Accessibility() {
               <div className="mt-4 p-6 bg-secondary/30 rounded-sm">
                 <p className="text-foreground font-medium">Elevate Quality Compliance Solutions LLC</p>
                 <p className="text-muted-foreground text-sm mt-2">
-                  Please use our contact form for accessibility feedback.
+                  Email:{" "}
+                  <a href="mailto:info@elevateqcs.com" className="text-accent hover:text-accent/80 transition-colors">
+                    info@elevateqcs.com
+                  </a>
+                </p>
+                <p className="text-muted-foreground text-sm mt-1">
+                  Or use our <Link to="/contact" className="text-accent hover:text-accent/80 transition-colors">contact form</Link> for accessibility feedback.
                 </p>
               </div>
             </div>
