@@ -161,8 +161,11 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl mb-4">Contact</h2>
               <p className="text-muted-foreground leading-relaxed">
-                For questions about these Terms of Use, please contact us through 
-                our secure contact form.
+                For questions about these Terms of Use, please contact us at{" "}
+                <a href="mailto:info@elevateqcs.com" className="text-accent hover:text-accent/80 transition-colors">
+                  info@elevateqcs.com
+                </a>{" "}
+                or through our secure contact form.
               </p>
               <div className="mt-4 p-6 bg-secondary/30 rounded-sm">
                 <p className="text-foreground font-medium">Elevate Quality Compliance Solutions LLC</p>

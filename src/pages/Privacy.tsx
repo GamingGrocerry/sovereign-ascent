@@ -179,7 +179,11 @@ export default function Privacy() {
               <h2 className="text-2xl mb-4">Contact</h2>
               <p className="text-muted-foreground leading-relaxed">
                 For privacy-related inquiries or to exercise your rights, please contact 
-                us through our secure contact form or at the address below:
+                us at{" "}
+                <a href="mailto:info@elevateqcs.com" className="text-accent hover:text-accent/80 transition-colors">
+                  info@elevateqcs.com
+                </a>{" "}
+                or through our secure contact form.
               </p>
               <div className="mt-4">
                 <Link
