@@ -86,37 +86,37 @@ export default function Index() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:scale-105"
           style={{ backgroundImage: `url(${heroArchitecture})` }}
         />
         {/* Overlay */}
         <div className="absolute inset-0 image-overlay" />
         
         {/* Decorative Corner Accents */}
-        <div className="absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
-        <div className="absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
+        <div className="absolute top-8 left-4 sm:left-8 w-16 sm:w-24 h-16 sm:h-24 border-l border-t border-primary-foreground/20" />
+        <div className="absolute bottom-8 right-4 sm:right-8 w-16 sm:w-24 h-16 sm:h-24 border-r border-b border-primary-foreground/20" />
         
         {/* Content */}
-        <div className="relative z-10 container-wide py-32 text-center">
+        <div className="relative z-10 container-wide px-6 sm:px-8 py-24 sm:py-32 text-center">
           <div className="max-w-4xl mx-auto">
-            <p className="text-primary-foreground/60 uppercase tracking-[0.3em] text-xs mb-6 animate-fade-up">
+            <p className="text-primary-foreground/60 uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs mb-4 sm:mb-6 animate-fade-up">
               Quality & Compliance Advisory
             </p>
-            <h1 className="text-primary-foreground mb-8 animate-fade-up-delay-1 text-balance">
+            <h1 className="text-primary-foreground mb-6 sm:mb-8 animate-fade-up-delay-1 text-balance !text-2xl sm:!text-3xl md:!text-5xl lg:!text-6xl">
               Operational Risk That Survives Scrutiny — Before It Costs You
             </h1>
-            <p className="text-primary-foreground/80 text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-12 animate-fade-up-delay-2">
+            <p className="text-primary-foreground/80 !text-sm sm:!text-lg md:!text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 animate-fade-up-delay-2">
               Empowering regulated leaders and government contracting teams with 
               operational compliance systems built for real-world execution.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delay-3">
-              <Button variant="hero" size="xl" asChild>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-up-delay-3">
+              <Button variant="hero" size="xl" asChild className="w-full sm:w-auto text-sm sm:text-base">
                 <Link to="/contact">
                   Request a Confidential Consultation
                   <ArrowRight className="ml-2" size={18} />
                 </Link>
               </Button>
-              <Button variant="hero-outline" size="xl" asChild>
+              <Button variant="hero-outline" size="xl" asChild className="w-full sm:w-auto text-sm sm:text-base">
                 <Link to="/services">
                   Explore Our Services
                 </Link>
