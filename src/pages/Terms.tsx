@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 
 export default function Terms() {
@@ -173,6 +174,14 @@ export default function Terms() {
                   Jurisdiction: Delaware, USA<br />
                   Global Operations
                 </p>
+                <div className="mt-4">
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-medium text-sm rounded-sm hover:bg-accent/90 transition-colors"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
               </div>
             </div>
 
