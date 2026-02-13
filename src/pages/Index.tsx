@@ -450,10 +450,10 @@ export default function Index() {
           <h2 className="mb-12">
             Ready to Build Compliance That Holds?
           </h2>
-          <Button variant="cta" size="xl" asChild className="mx-4 sm:mx-0">
+          <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
               Request a Confidential Consultation
-              <ArrowRight className="ml-2 shrink-0" size={18} />
+              <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>
           <p className="text-muted-foreground text-sm mt-8">

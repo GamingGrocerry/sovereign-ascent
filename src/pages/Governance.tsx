@@ -197,10 +197,10 @@ export default function Governance() {
             about how we operate is part of building the trust that effective 
             advisory relationships require.
           </p>
-          <Button variant="cta" size="xl" asChild className="mx-4 sm:mx-0">
+          <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
               Start a Confidential Conversation
-              <ArrowRight className="ml-2 shrink-0" size={18} />
+              <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>
         </div>
