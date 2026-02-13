@@ -92,31 +92,31 @@ export default function Index() {
         {/* Overlay */}
         <div className="absolute inset-0 image-overlay" />
         
-        {/* Decorative Corner Accents */}
-        <div className="absolute top-8 left-4 sm:left-8 w-16 sm:w-24 h-16 sm:h-24 border-l border-t border-primary-foreground/20" />
-        <div className="absolute bottom-8 right-4 sm:right-8 w-16 sm:w-24 h-16 sm:h-24 border-r border-b border-primary-foreground/20" />
+        {/* Decorative Corner Accents - hidden on very small screens */}
+        <div className="hidden sm:block absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
+        <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
         
         {/* Content */}
-        <div className="relative z-10 container-wide px-6 sm:px-8 py-24 sm:py-32 text-center">
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-20 sm:py-32 text-center max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto">
-            <p className="text-primary-foreground/60 uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs mb-4 sm:mb-6 animate-fade-up">
+            <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-6 animate-fade-up">
               Quality & Compliance Advisory
             </p>
-            <h1 className="text-primary-foreground mb-6 sm:mb-8 animate-fade-up-delay-1 text-balance !text-2xl sm:!text-3xl md:!text-5xl lg:!text-6xl">
+            <h1 className="text-primary-foreground mb-4 sm:mb-8 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-6xl !leading-tight">
               Operational Risk That Survives Scrutiny — Before It Costs You
             </h1>
-            <p className="text-primary-foreground/80 !text-sm sm:!text-lg md:!text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 animate-fade-up-delay-2">
+            <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-2xl font-light !leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
               Empowering regulated leaders and government contracting teams with 
               operational compliance systems built for real-world execution.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-up-delay-3">
-              <Button variant="hero" size="xl" asChild className="w-full sm:w-auto text-sm sm:text-base">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 animate-fade-up-delay-3 px-2 sm:px-0">
+              <Button variant="hero" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
                 <Link to="/contact">
                   Request a Confidential Consultation
-                  <ArrowRight className="ml-2" size={18} />
+                  <ArrowRight className="ml-2 shrink-0" size={16} />
                 </Link>
               </Button>
-              <Button variant="hero-outline" size="xl" asChild className="w-full sm:w-auto text-sm sm:text-base">
+              <Button variant="hero-outline" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
                 <Link to="/services">
                   Explore Our Services
                 </Link>
@@ -126,10 +126,10 @@ export default function Index() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/40">
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/40">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-primary-foreground/40 to-transparent" />
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
+            <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-primary-foreground/40 to-transparent" />
           </div>
         </div>
       </section>
