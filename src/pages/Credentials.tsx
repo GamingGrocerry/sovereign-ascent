@@ -147,10 +147,10 @@ export default function Credentials() {
             discuss how ElevateQCS's operational depth can support your specific
             objectives.
           </p>
-          <Button variant="cta" size="xl" asChild>
+          <Button variant="cta" size="xl" asChild className="mx-4 sm:mx-0">
             <Link to="/contact">
               Request a Confidential Consultation
-              <ArrowRight className="ml-2" size={18} />
+              <ArrowRight className="ml-2 shrink-0" size={18} />
             </Link>
           </Button>
         </div>
