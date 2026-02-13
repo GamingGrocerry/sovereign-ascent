@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Recent enforcement actions signal increased scrutiny of contractor CTIP programs. Organizations should prepare for heightened oversight.",
   readTime: "7 min read",
-  date: "January 2026",
+  date: "February 7, 2026",
   content: `
 ## A Shifting Enforcement Landscape
 

@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Extending compliance oversight into sub-tier supply chains requires systematic approaches that balance thoroughness with practicality.",
   readTime: "8 min read",
-  date: "November 2025",
+  date: "January 28, 2026",
   content: `
 ## The Visibility Challenge
 
