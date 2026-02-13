@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "How to evaluate compliance initiatives against organizational priorities using a structured risk-benefit analysis approach.",
   readTime: "5 min read",
-  date: "December 2025",
+  date: "February 1, 2026",
   content: `
 ## The Decision Challenge
 

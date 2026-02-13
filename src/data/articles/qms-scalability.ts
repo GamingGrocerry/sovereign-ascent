@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Quality management systems that work at $10M often fail at $100M. Here's how to architect for growth from the beginning.",
   readTime: "10 min read",
-  date: "December 2025",
+  date: "February 4, 2026",
   content: `
 ## The Scalability Challenge
 

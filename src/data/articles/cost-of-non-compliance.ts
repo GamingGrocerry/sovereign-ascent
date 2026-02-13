@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Beyond immediate penalties, non-compliance creates cascading risks that can permanently alter an organization's competitive position in the federal marketplace.",
   readTime: "8 min read",
-  date: "January 2026",
+  date: "February 13, 2026",
   featured: true,
   content: `
 ## The Visible and Invisible Costs

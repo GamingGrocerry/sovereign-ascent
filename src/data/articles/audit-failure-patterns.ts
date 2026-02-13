@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Analysis of recurring themes in audit findings reveals that most failures stem from systemic issues rather than isolated non-conformances.",
   readTime: "6 min read",
-  date: "January 2026",
+  date: "February 10, 2026",
   content: `
 ## Beyond Individual Findings
 

@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "In regulated environments, documentation quality often determines audit outcomes. Best practices for building defensible records.",
   readTime: "6 min read",
-  date: "November 2025",
+  date: "January 30, 2026",
   content: `
 ## The Documentation Paradox
 
