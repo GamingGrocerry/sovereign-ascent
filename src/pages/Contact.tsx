@@ -56,21 +56,36 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const form = e.target as HTMLFormElement;
+      const body = new URLSearchParams(new FormData(form) as any).toString();
+      
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+      
+      toast({
+        title: "Inquiry Received",
+        description: "We will respond within 48 business hours. Thank you for your interest in ElevateQCS.",
+      });
+      
+      setFormData({
+        name: "",
+        email: "",
+        organization: "",
+        inquiryType: "",
+        message: "",
+      });
+    } catch {
+      toast({
+        title: "Submission Error",
+        description: "Please try again or email us directly at info@elevateqcs.com.",
+        variant: "destructive",
+      });
+    }
     
-    toast({
-      title: "Inquiry Received",
-      description: "We will respond within 48 business hours. Thank you for your interest in ElevateQCS.",
-    });
-    
-    setFormData({
-      name: "",
-      email: "",
-      organization: "",
-      inquiryType: "",
-      message: "",
-    });
     setIsSubmitting(false);
   };
 
@@ -119,12 +134,20 @@ export default function Contact() {
             <div className="lg:col-span-7">
               <div className="section-divider mb-8" />
               <h2 className="mb-8">Start the Conversation</h2>
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true" 
+                onSubmit={handleSubmit} 
+                className="space-y-8"
+              >
+                <input type="hidden" name="form-name" value="contact" />
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
                     <Input
                       id="name"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -135,6 +158,7 @@ export default function Contact() {
                     <Label htmlFor="email">Business Email *</Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       required
                       value={formData.email}
@@ -149,6 +173,7 @@ export default function Contact() {
                     <Label htmlFor="organization">Organization</Label>
                     <Input
                       id="organization"
+                      name="organization"
                       value={formData.organization}
                       onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                       className="h-14 bg-secondary/30 border-border/50 focus:border-accent transition-colors"
@@ -159,6 +184,7 @@ export default function Contact() {
                     <Select
                       value={formData.inquiryType}
                       onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}
+                      name="inquiry-type"
                     >
                       <SelectTrigger className="h-14 bg-secondary/30 border-border/50 focus:border-accent transition-colors">
                         <SelectValue placeholder="Select a service area" />
@@ -171,6 +197,7 @@ export default function Contact() {
                         ))}
                       </SelectContent>
                     </Select>
+                    <input type="hidden" name="inquiry-type" value={formData.inquiryType} />
                   </div>
                 </div>
 
@@ -178,6 +205,7 @@ export default function Contact() {
                   <Label htmlFor="message">How Can We Support Your Organization? *</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     required
                     rows={6}
                     value={formData.message}
