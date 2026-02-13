@@ -21,6 +21,7 @@ import EngagementModel from "./pages/EngagementModel";
 import FAQ from "./pages/FAQ";
 import Careers from "./pages/Careers";
 import Credentials from "./pages/Credentials";
+import CookiePolicy from "./pages/CookiePolicy";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/credentials" element={<Credentials />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
