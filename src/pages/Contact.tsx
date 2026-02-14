@@ -21,6 +21,7 @@ const inquiryTypes = [
   { value: "audit-readiness", label: "Audit Readiness & Corrective Action Advisory" },
   { value: "education", label: "Education & Capability Development" },
   { value: "general", label: "General Inquiry" },
+  { value: "work-with-us", label: "Work With ElevateQCS" },
 ];
 
 const trustPoints = [
