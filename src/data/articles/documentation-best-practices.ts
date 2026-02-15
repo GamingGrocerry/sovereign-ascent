@@ -78,6 +78,22 @@ If your organization's documentation practices need improvement, focus on these 
 ---
 
 *For guidance on building documentation systems that support both operational excellence and audit readiness, [contact our advisory team](/contact).*
+
+---
+
+## Frequently Asked Questions
+
+### Why is documentation important in regulated industries?
+
+Documentation provides the verifiable evidence that required processes were executed correctly. Auditors interpret gaps in documentation as gaps in execution regardless of what actually occurred. Strong documentation also preserves institutional knowledge, supports dispute resolution, and enables operational improvement.
+
+### What makes documentation audit-ready?
+
+Audit-ready documentation demonstrates four qualities: completeness (all required steps are evidenced), contemporaneity (records created at or near the time of activity), traceability (clear links from requirement to action to evidence), and consistency (common formats across the organization).
+
+### How should organizations structure their document control system?
+
+An effective document control system includes clear revision identification, automated distribution of updated versions, systematic withdrawal of superseded documents, records organized by both project and process type, efficient retrieval indexes, and retention periods aligned with contractual and regulatory requirements.
   `,
 };
 

@@ -99,6 +99,26 @@ If your organization is approaching or anticipating a growth phase, consider the
 ---
 
 *This analysis draws from patterns observed across contractor organizations at various stages of growth. For guidance specific to your organization's QMS scalability planning, [contact our advisory team](/contact).*
+
+---
+
+## Frequently Asked Questions
+
+### What is a Quality Management System (QMS)?
+
+A Quality Management System is a formalized framework of policies, procedures, and processes designed to ensure consistent quality outcomes across an organization. It provides the structure for process documentation, internal audits, corrective and preventive actions, and continuous improvement.
+
+### How do you design a QMS for scalability?
+
+Scalable QMS design uses a tiered process hierarchy (policy, core processes, work instructions, records), delegation frameworks that distribute approval authority, standardized metrics architecture for aggregation, and technology-enabled workflows for document management and routine approvals.
+
+### When should a growing company redesign its QMS?
+
+Organizations should conduct QMS architecture reviews during periods of relative stability—before growth pressure creates operational crises. Key triggers include approval bottlenecks, documentation gaps that new hires cannot navigate, and quality data volumes that overwhelm manual analysis.
+
+### How does ISO 9001 support QMS scalability?
+
+ISO 9001 provides a recognized framework for quality management that emphasizes risk-based thinking, process approach, and continuous improvement. These principles naturally support scalability by establishing systematic practices that can expand with organizational growth.
   `,
 };
 

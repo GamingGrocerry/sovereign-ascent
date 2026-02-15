@@ -99,6 +99,26 @@ Organizations that develop meaningful sub-tier supply chain oversight gain advan
 ---
 
 *For assistance developing a supply chain compliance oversight program tailored to your organization's specific supply chain profile, [contact our advisory team](/contact).*
+
+---
+
+## Frequently Asked Questions
+
+### What is supply chain quality assurance?
+
+Supply chain quality assurance is the systematic process of ensuring that suppliers and subcontractors at all tiers meet applicable quality, compliance, and regulatory requirements. It includes contractual flow-down mechanisms, risk-based monitoring, supplier assessments, and response protocols for identified compliance issues.
+
+### How far does supply chain compliance responsibility extend?
+
+Regulatory requirements—particularly in government contracting—increasingly extend compliance obligations to the entire supply chain, not just direct subcontractors. Prime contractors bear responsibility for quality and compliance outcomes regardless of where in the supply chain a failure occurs.
+
+### What are flow-down clauses in government contracting?
+
+Flow-down clauses are contractual provisions that require compliance requirements to cascade through all tiers of the supply chain. They ensure that sub-tier suppliers are bound by the same quality, CTIP, cybersecurity, and regulatory standards as the prime contractor.
+
+### How do you assess supply chain compliance risk?
+
+Apply a risk-based scoping approach that evaluates suppliers based on criticality of function, sensitivity of information handled, geographic risk, labor force vulnerability, and compliance track record. Allocate monitoring resources proportionally to the risk profile of each supply chain relationship.
   `,
 };
 

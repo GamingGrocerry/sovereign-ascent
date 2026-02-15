@@ -61,6 +61,26 @@ The question is not whether to invest in compliance, but whether your current in
 ---
 
 *This analysis reflects patterns observed across multiple sectors of government contracting. Individual organizational circumstances will vary. For a confidential assessment of your compliance posture, [contact our advisory team](/contact).*
+
+---
+
+## Frequently Asked Questions
+
+### What are the main costs of non-compliance in government contracting?
+
+Non-compliance costs include direct financial penalties, corrective action expenses, lost contract opportunities, increased audit frequency, damaged partner relationships, and long-term erosion of competitive position in the federal marketplace. Reactive remediation typically costs three to five times more than proactive compliance investment.
+
+### How does non-compliance affect future contract awards?
+
+Past performance evaluations reference compliance history for years. Organizations with documented non-compliance findings face reduced win probability on competitive procurements, diminished teaming attractiveness, and increased proposal costs to address and contextualize prior findings.
+
+### What is a proactive compliance program?
+
+A proactive compliance program integrates regulatory compliance requirements into operational workflows through a structured quality management system, continuous self-assessment cycles, leadership engagement with compliance metrics, and a continuous improvement orientation that identifies gaps before external audits.
+
+### How can organizations measure the return on compliance investment?
+
+Organizations can measure compliance ROI by comparing the cost of proactive investment against the quantified risk of non-compliance—including potential penalties, lost revenue from disqualified bids, remediation costs, and the competitive advantage gained through strong past performance records.
   `,
 };
 

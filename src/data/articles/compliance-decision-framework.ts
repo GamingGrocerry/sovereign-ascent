@@ -98,6 +98,22 @@ This analysis provides a structured basis for the investment decision and helps 
 ---
 
 *For assistance applying this framework to your organization's specific compliance investment decisions, [contact our advisory team](/contact).*
+
+---
+
+## Frequently Asked Questions
+
+### How should organizations prioritize compliance investments?
+
+Use a structured framework that categorizes investments into tiers: mandatory (required for contract eligibility), risk reduction (addressing identified gaps), capability building (positioning for future requirements), and excellence (creating competitive differentiation). Ensure mandatory investments are fully funded before allocating to higher tiers.
+
+### What is the ROI of compliance investment?
+
+Proactive compliance investment typically costs 20–30% of reactive remediation for equivalent outcomes. Organizations with mature compliance programs report 40% fewer audit findings and win disproportionately more competitive awards, making compliance investment a measurable competitive advantage.
+
+### How do you quantify compliance risk?
+
+Assess compliance risk across three dimensions: probability of occurrence (considering enforcement trends and current gaps), impact severity (financial penalties, contract impacts, reputational effects), and detection difficulty (effectiveness of internal audit and monitoring systems).
   `,
 };
 

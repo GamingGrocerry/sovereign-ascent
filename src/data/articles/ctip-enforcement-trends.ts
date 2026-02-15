@@ -66,6 +66,26 @@ The cost of developing a robust CTIP program is modest compared to the cost of d
 ---
 
 *This analysis reflects publicly available enforcement trends and regulatory guidance. For a confidential assessment of your organization's CTIP compliance posture, [contact our advisory team](/contact).*
+
+---
+
+## Frequently Asked Questions
+
+### What is CTIP compliance in government contracting?
+
+Combating Trafficking in Persons (CTIP) compliance refers to the regulatory requirements under FAR 52.222-50 that obligate federal contractors to maintain anti-trafficking policies, training programs, reporting mechanisms, and supply chain due diligence to prevent human trafficking in their operations and supply chains.
+
+### What are the consequences of CTIP non-compliance?
+
+Consequences can include suspension and debarment proceedings, negative past performance evaluations affecting unrelated procurements, mandatory compliance agreements as conditions for future awards, and contract termination. Enforcement actions in 2025 demonstrated that agencies apply consequences beyond the specific contract under review.
+
+### How can contractors build a defensible CTIP program?
+
+A defensible CTIP program demonstrates risk-based design scaled to the organization's trafficking risk profile, active monitoring across operations and supply chain, documented responsiveness to reports received through reporting mechanisms, and continuous improvement reflecting evolving regulatory expectations.
+
+### Does CTIP apply to domestic contractors?
+
+Yes. While CTIP compliance was historically associated with overseas operations, domestic contractors also face heightened scrutiny—particularly those with complex supply chains, subcontracting arrangements, or labor-intensive operations.
   `,
 };
 
