@@ -23,7 +23,7 @@ export default function Insights() {
     <Layout>
       <SEOHead
         title="Compliance Insights & Analysis | ElevateQCS"
-        description="Expert analysis of government contractor compliance risks, audit failure patterns, CTIP enforcement trends, and QMS architecture. Actionable intelligence for GovCon primes and subcontractors."
+        description="Expert analysis of compliance risks for regulated industries, audit failure patterns, CTIP enforcement trends, and QMS architecture. Actionable intelligence for government contractors, primes, and subcontractors."
         url={`${BASE_URL}/insights`}
         keywords={[
           "government contractor compliance",
@@ -42,7 +42,7 @@ export default function Insights() {
           "@type": "Blog",
           name: "ElevateQCS Compliance Insights",
           description:
-            "Analysis and interpretation of recurring compliance risks for government contractors — grounded in operational experience.",
+            "Analysis and interpretation of recurring compliance risks for regulated organizations and government contractors — grounded in operational experience.",
           url: `${BASE_URL}/insights`,
           publisher: {
             "@type": "Organization",

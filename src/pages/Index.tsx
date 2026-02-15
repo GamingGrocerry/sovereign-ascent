@@ -59,7 +59,7 @@ const ecamPhases = [
 
 const audiences = [
   {
-    title: "Government Contracting Organizations",
+    title: "Prime Contractors",
     description: "Teams needing defensible compliance systems before audits, contract milestones, or regulatory assessments.",
   },
   {
@@ -106,7 +106,7 @@ export default function Index() {
               Operational Risk That Survives Scrutiny — Before It Costs You
             </h1>
             <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-2xl font-light !leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
-              Empowering regulated leaders and government contracting teams with 
+              Empowering regulated organizations and government contracting teams with 
               operational compliance systems built for real-world execution.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 animate-fade-up-delay-3 px-2 sm:px-0">

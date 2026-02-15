@@ -62,7 +62,7 @@ const services = [
       "Corrective Action Plan (CAPA) structuring",
       "Support during and after assessments to stabilize operations",
     ],
-    applicability: "This service is commonly used by organizations facing government assessments, customer audits, or third-party certification reviews.",
+    applicability: "This service is commonly used by organizations facing regulatory assessments, customer audits, or third-party certification reviews.",
     frameworks: "Corrective action support may be aligned, where applicable, with ISO 9001:2015 (Clause 10.2 — Nonconformity and Corrective Action), ISO 37301:2021 (Compliance Management Systems), and related standards such as ISO/IEC 27001, ISO 14001, and ISO 45001 for sector-specific risk and control integration. To help ensure corrective actions address root causes rather than symptoms, we draw on established methodologies including 5 Whys for rapid iterative cause exploration, Ishikawa (fishbone) diagrams to map contributing factors, Pareto charts to focus effort on vital issues, Six Sigma DMAIC for data-driven problem solving, and Lean tools (e.g., Kaizen, value stream mapping) to eliminate waste and support continuous improvement.",
   },
   {
