@@ -20,7 +20,7 @@ export default function InsightArticle() {
   // Build keyword-rich terms from title and category
   const keywords = [
     article.category.toLowerCase(),
-    "government contractor compliance",
+    "regulated industry compliance",
     "GovCon advisory",
     ...article.title.toLowerCase().split(/\s+/).filter((w) => w.length > 4),
   ];

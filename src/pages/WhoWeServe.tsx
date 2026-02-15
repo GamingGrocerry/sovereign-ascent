@@ -8,7 +8,7 @@ import whoWeServeQuote from "@/assets/who-we-serve-quote.jpg";
 const audiences = [
   {
     icon: Building2,
-    title: "Government Contracting Organizations",
+    title: "Prime Contractors",
     description: "Close the gap between contractual compliance expectations and operational systems. Teams needing defensible compliance systems before audits, contract milestones, or regulatory assessments.",
     risks: [
       "DCMA quality system reviews and surveillance audits",
@@ -100,7 +100,7 @@ export default function WhoWeServe() {
               Our clients share common characteristics: they operate in environments 
               where regulatory compliance, customer oversight, and operational 
               discipline directly impact their ability to win and execute contracts. 
-              Whether navigating government contracting requirements or building 
+              Whether navigating regulatory requirements or building 
               compliance infrastructure for the first time, they need practical, 
               implementable solutions — not theoretical frameworks.
             </p>

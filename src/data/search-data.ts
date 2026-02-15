@@ -12,7 +12,7 @@ const sitePages: SearchResult[] = [
   { title: "About ElevateQCS", description: "Principal-led advisory firm built on field-tested compliance experience", href: "/about", category: "Pages" },
   { title: "Our Credentials", description: "Experience measured in outcomes — advisory depth behind every engagement", href: "/credentials", category: "Pages" },
   { title: "Services", description: "Compliance & management system architecture, audit readiness, CTIP, and training", href: "/services", category: "Pages" },
-  { title: "Who We Serve", description: "Government contractors, subcontractors, and high-growth regulated companies", href: "/who-we-serve", category: "Pages" },
+  { title: "Who We Serve", description: "Prime contractors, subcontractors, and high-growth regulated companies", href: "/who-we-serve", category: "Pages" },
   { title: "Methodology", description: "EQCS Compliance Architecture Model — diagnose, architect, implement, embed, monitor", href: "/methodology", category: "Pages" },
   { title: "Engagement Model", description: "Seven-phase engagement structure from diagnosis through monitoring", href: "/engagement", category: "Pages" },
   { title: "Governance & Independence", description: "Vendor-neutral advisory posture and ethical governance framework", href: "/governance", category: "Pages" },
