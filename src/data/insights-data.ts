@@ -73,13 +73,20 @@ export function getArticleBySlug(slug: string): Article | undefined {
   return allArticles.find((a) => a.slug === slug);
 }
 
+// Build categories dynamically — counts reflect the filterable article list (excludes featured)
+const categoryOrder = [
+  "Risk Analysis",
+  "Audit Insights",
+  "Regulatory Landscape",
+  "System Architecture",
+  "Operations",
+  "Decision Making",
+  "Risk Management",
+];
+
 export const categories = [
-  { name: "All", count: allArticles.length },
-  { name: "Risk Analysis", count: allArticles.filter((a) => a.category === "Risk Analysis").length },
-  { name: "Audit Insights", count: allArticles.filter((a) => a.category === "Audit Insights").length },
-  { name: "Regulatory Landscape", count: allArticles.filter((a) => a.category === "Regulatory Landscape").length },
-  { name: "System Architecture", count: allArticles.filter((a) => a.category === "System Architecture").length },
-  { name: "Operations", count: allArticles.filter((a) => a.category === "Operations").length },
-  { name: "Decision Making", count: allArticles.filter((a) => a.category === "Decision Making").length },
-  { name: "Risk Management", count: allArticles.filter((a) => a.category === "Risk Management").length },
+  { name: "All", count: articles.length },
+  ...categoryOrder
+    .map((name) => ({ name, count: articles.filter((a) => a.category === name).length }))
+    .filter((c) => c.count > 0),
 ];
