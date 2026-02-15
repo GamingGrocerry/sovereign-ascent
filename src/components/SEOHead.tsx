@@ -27,7 +27,7 @@ export function SEOHead({
   modifiedDate,
   author = "Elevate Quality Compliance Solutions LLC",
   keywords = [],
-  image = "https://elevateqcs.com/logos/elevatequcs-logo-blue-hd.png",
+  image = "https://elevateqcs.com/og-image.png",
   jsonLd,
 }: SEOHeadProps) {
   useEffect(() => {
