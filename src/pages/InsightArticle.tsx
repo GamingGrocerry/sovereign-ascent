@@ -6,8 +6,39 @@ import { ArrowLeft, ArrowRight, Clock, ChevronRight } from "lucide-react";
 import { getArticleBySlug, articles } from "@/data/insights-data";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import NotFound from "./NotFound";
+import { ArticleContent } from "@/components/ArticleContent";
 
 const BASE_URL = "https://elevateqcs.com";
+
+/** Extract FAQ pairs from article content (### Question / paragraph answer after the "## Frequently Asked Questions" heading) */
+function extractFAQs(content: string): { question: string; answer: string }[] {
+  const faqSectionMatch = content.split(/^## Frequently Asked Questions$/m);
+  if (faqSectionMatch.length < 2) return [];
+
+  const faqContent = faqSectionMatch[1];
+  const faqs: { question: string; answer: string }[] = [];
+  const lines = faqContent.trim().split("\n");
+  let currentQuestion = "";
+  let currentAnswer: string[] = [];
+
+  for (const line of lines) {
+    const qMatch = line.match(/^###\s+(.+)/);
+    if (qMatch) {
+      if (currentQuestion && currentAnswer.length) {
+        faqs.push({ question: currentQuestion, answer: currentAnswer.join(" ").trim() });
+      }
+      currentQuestion = qMatch[1];
+      currentAnswer = [];
+    } else if (currentQuestion && line.trim()) {
+      currentAnswer.push(line.trim());
+    }
+  }
+  if (currentQuestion && currentAnswer.length) {
+    faqs.push({ question: currentQuestion, answer: currentAnswer.join(" ").trim() });
+  }
+
+  return faqs;
+}
 
 export default function InsightArticle() {
   const { slug } = useParams<{ slug: string }>();
@@ -16,6 +47,7 @@ export default function InsightArticle() {
   if (!article) return <NotFound />;
 
   const related = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  const faqs = extractFAQs(article.content);
 
   // Build keyword-rich terms from title and category
   const keywords = [
@@ -24,6 +56,57 @@ export default function InsightArticle() {
     "GovCon advisory",
     ...article.title.toLowerCase().split(/\s+/).filter((w) => w.length > 4),
   ];
+
+  // Build JSON-LD — include FAQPage schema when FAQs exist
+  const jsonLdItems: Record<string, unknown>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.title,
+      description: article.excerpt,
+      url: `${BASE_URL}/insights/${article.slug}`,
+      datePublished: article.date,
+      author: {
+        "@type": "Organization",
+        name: "Elevate Quality Compliance Solutions LLC",
+        url: BASE_URL,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "ElevateQCS",
+        url: BASE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${BASE_URL}/logos/elevatequcs-logo-blue-hd.png`,
+        },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${BASE_URL}/insights/${article.slug}`,
+      },
+      articleSection: article.category,
+      inLanguage: "en-US",
+      isAccessibleForFree: true,
+    },
+  ];
+
+  if (faqs.length > 0) {
+    jsonLdItems.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
+  // Combine into a single JSON-LD graph
+  const jsonLd = jsonLdItems.length === 1 ? jsonLdItems[0] : { "@context": "https://schema.org", "@graph": jsonLdItems };
 
   return (
     <Layout>
@@ -34,40 +117,11 @@ export default function InsightArticle() {
         type="article"
         publishedDate={article.date}
         keywords={keywords}
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: article.title,
-          description: article.excerpt,
-          url: `${BASE_URL}/insights/${article.slug}`,
-          datePublished: article.date,
-          author: {
-            "@type": "Organization",
-            name: "Elevate Quality Compliance Solutions LLC",
-            url: BASE_URL,
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "ElevateQCS",
-            url: BASE_URL,
-            logo: {
-              "@type": "ImageObject",
-              url: `${BASE_URL}/logos/elevatequcs-logo-blue-hd.png`,
-            },
-          },
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": `${BASE_URL}/insights/${article.slug}`,
-          },
-          articleSection: article.category,
-          inLanguage: "en-US",
-          isAccessibleForFree: true,
-        }}
+        jsonLd={jsonLd}
       />
 
       {/* Hero with Cover Image */}
       <section className="relative pt-24 pb-0 bg-primary">
-        {/* Cover Image */}
         <div className="container-wide relative z-10 pt-8">
           <Link
             to="/insights"
@@ -90,7 +144,6 @@ export default function InsightArticle() {
             </div>
           </div>
         </div>
-        {/* Full-width cover image */}
         <div className="relative w-full h-[300px] md:h-[420px] mt-4 overflow-hidden">
           <img
             src={article.image || insightsFeatured}
@@ -105,7 +158,7 @@ export default function InsightArticle() {
       <section className="py-16 bg-background">
         <div className="container-narrow">
           <div className="prose prose-lg max-w-none article-content">
-            {renderMarkdown(article.content)}
+            <ArticleContent content={article.content} />
           </div>
         </div>
       </section>
@@ -171,124 +224,4 @@ export default function InsightArticle() {
       </section>
     </Layout>
   );
-}
-
-/* ─── Markdown Renderer ─── */
-
-function renderMarkdown(md: string) {
-  const lines = md.trim().split("\n");
-  const elements: React.ReactNode[] = [];
-  let i = 0;
-  let key = 0;
-
-  const parseInline = (text: string): React.ReactNode[] => {
-    const parts: React.ReactNode[] = [];
-    const regex = /(\*\*(.+?)\*\*)|(\*(.+?)\*)|(\[(.+?)\]\((.+?)\))|(`(.+?)`)/g;
-    let lastIndex = 0;
-    let match;
-    let inlineKey = 0;
-
-    while ((match = regex.exec(text)) !== null) {
-      if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
-      if (match[1]) parts.push(<strong key={inlineKey++}>{match[2]}</strong>);
-      else if (match[3]) parts.push(<em key={inlineKey++}>{match[4]}</em>);
-      else if (match[5])
-        parts.push(
-          <Link key={inlineKey++} to={match[7]} className="text-link">
-            {match[6]}
-          </Link>
-        );
-      else if (match[8])
-        parts.push(
-          <code key={inlineKey++} className="bg-secondary px-1.5 py-0.5 rounded text-sm">
-            {match[9]}
-          </code>
-        );
-      lastIndex = match.index + match[0].length;
-    }
-    if (lastIndex < text.length) parts.push(text.slice(lastIndex));
-    return parts.length ? parts : [text];
-  };
-
-  while (i < lines.length) {
-    const line = lines[i];
-
-    if (line.trim() === "") { i++; continue; }
-
-    if (/^---+$/.test(line.trim())) {
-      elements.push(<hr key={key++} className="my-10 border-border" />);
-      i++; continue;
-    }
-
-    const headingMatch = line.match(/^(#{1,4})\s+(.+)/);
-    if (headingMatch) {
-      const level = headingMatch[1].length;
-      const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-      const className = level === 2 ? "mt-12 mb-6" : level === 3 ? "mt-8 mb-4" : "mt-6 mb-3";
-      elements.push(<Tag key={key++} className={className}>{parseInline(headingMatch[2])}</Tag>);
-      i++; continue;
-    }
-
-    if (line.includes("|") && i + 1 < lines.length && lines[i + 1]?.includes("---")) {
-      const headerCells = line.split("|").map((c) => c.trim()).filter(Boolean);
-      i += 2;
-      const rows: string[][] = [];
-      while (i < lines.length && lines[i].includes("|")) {
-        rows.push(lines[i].split("|").map((c) => c.trim()).filter(Boolean));
-        i++;
-      }
-      elements.push(
-        <div key={key++} className="overflow-x-auto my-8">
-          <table className="w-full border-collapse text-sm">
-            <thead>
-              <tr>
-                {headerCells.map((cell, ci) => (
-                  <th key={ci} className="text-left py-3 px-4 border-b-2 border-border font-semibold text-foreground">
-                    {parseInline(cell)}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, ri) => (
-                <tr key={ri}>
-                  {row.map((cell, ci) => (
-                    <td key={ci} className="py-3 px-4 border-b border-border text-muted-foreground">
-                      {parseInline(cell)}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
-      continue;
-    }
-
-    if (/^\d+\.\s/.test(line)) {
-      const items: React.ReactNode[] = [];
-      while (i < lines.length && /^\d+\.\s/.test(lines[i])) {
-        items.push(<li key={items.length} className="text-muted-foreground">{parseInline(lines[i].replace(/^\d+\.\s/, ""))}</li>);
-        i++;
-      }
-      elements.push(<ol key={key++} className="list-decimal list-inside space-y-2 my-6 pl-4">{items}</ol>);
-      continue;
-    }
-
-    if (/^[-*]\s/.test(line)) {
-      const items: React.ReactNode[] = [];
-      while (i < lines.length && /^[-*]\s/.test(lines[i])) {
-        items.push(<li key={items.length} className="text-muted-foreground">{parseInline(lines[i].replace(/^[-*]\s/, ""))}</li>);
-        i++;
-      }
-      elements.push(<ul key={key++} className="list-disc list-inside space-y-2 my-6 pl-4">{items}</ul>);
-      continue;
-    }
-
-    elements.push(<p key={key++} className="my-4 text-muted-foreground leading-relaxed">{parseInline(line)}</p>);
-    i++;
-  }
-
-  return <>{elements}</>;
 }
