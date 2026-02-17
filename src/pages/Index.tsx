@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Shield, Target, FileCheck, BookOpen, ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
@@ -82,6 +83,56 @@ const trustSignals = [
 export default function Index() {
   return (
     <Layout>
+      <SEOHead
+        title="ElevateQCS | Quality & Compliance Advisory for Regulated Industries"
+        description="ElevateQCS is an independent advisory firm specializing in QMS architecture, CTIP program development, and audit readiness for organizations in regulated environments and government contracting."
+        url="https://elevateqcs.com"
+        keywords={["CTIP as a Service", "FAR 52.222-50 implementation", "GovCon QMS architecture", "quality management system", "compliance advisory", "ISO 9001 alignment"]}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://elevateqcs.com/#organization",
+              name: "Elevate Quality Compliance Solutions LLC",
+              alternateName: "ElevateQCS",
+              url: "https://elevateqcs.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://elevateqcs.com/logos/elevatequcs-logo-blue-hd.png",
+              },
+              description: "Independent advisory firm specializing in QMS architecture, CTIP program development, and audit readiness for regulated industries and government contractors.",
+              foundingDate: "2024",
+              areaServed: ["US", "EU", "Middle East"],
+              serviceType: [
+                "Quality Management System Architecture",
+                "CTIP Program Development",
+                "Audit Readiness Advisory",
+                "Regulatory Compliance Consulting",
+              ],
+              sameAs: [],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://elevateqcs.com/#website",
+              url: "https://elevateqcs.com",
+              name: "ElevateQCS",
+              publisher: { "@id": "https://elevateqcs.com/#organization" },
+              inLanguage: "en-US",
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://elevateqcs.com/#webpage",
+              url: "https://elevateqcs.com",
+              name: "ElevateQCS | Quality & Compliance Advisory for Regulated Industries",
+              isPartOf: { "@id": "https://elevateqcs.com/#website" },
+              about: { "@id": "https://elevateqcs.com/#organization" },
+              description: "Architecting compliance excellence for organizations in regulated environments and government contracting.",
+              inLanguage: "en-US",
+            },
+          ],
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
