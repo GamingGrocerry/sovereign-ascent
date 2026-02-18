@@ -193,14 +193,20 @@ export default function Methodology() {
           <div className="flex justify-center gap-4 md:gap-8 mb-24 overflow-x-auto pb-4">
             {phases.map((phase, index) => (
               <div key={phase.number} className="flex items-center">
-                <div className="flex flex-col items-center group">
+                <button
+                  className="flex flex-col items-center group cursor-pointer"
+                  onClick={() => {
+                    const el = document.getElementById(`phase-${phase.number}`);
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                >
                   <div className="w-16 h-16 rounded-sm bg-primary text-primary-foreground flex items-center justify-center font-serif text-lg font-semibold transition-all duration-300 group-hover:bg-accent group-hover:scale-110">
                     {phase.number}
                   </div>
                   <span className="text-xs uppercase tracking-wide mt-3 text-muted-foreground group-hover:text-accent transition-colors">
                     {phase.name}
                   </span>
-                </div>
+                </button>
                 {index < phases.length - 1 && (
                   <div className="w-8 md:w-16 h-px bg-gradient-to-r from-border to-accent/30 mx-2 md:mx-4" />
                 )}
@@ -213,7 +219,8 @@ export default function Methodology() {
             {phases.map((phase) => (
               <div
                 key={phase.number}
-                className="grid lg:grid-cols-12 gap-8 items-start"
+                id={`phase-${phase.number}`}
+                className="grid lg:grid-cols-12 gap-8 items-start scroll-mt-28"
               >
                 <div className="lg:col-span-4">
                   <div className="lg:sticky lg:top-32">
