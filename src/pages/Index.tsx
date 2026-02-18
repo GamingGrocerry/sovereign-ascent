@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -51,11 +51,11 @@ const services = [
 ];
 
 const ecamPhases = [
-  { icon: Search, name: "Diagnose", description: "Identify gaps with real operational impact" },
-  { icon: Compass, name: "Architect", description: "Structure systems teams can use" },
-  { icon: Wrench, name: "Implement", description: "Guide deployment with internal clarity" },
-  { icon: Users, name: "Embed", description: "Support adoption through role-based expectations" },
-  { icon: BarChart3, name: "Monitor", description: "Enable ongoing control and evidence maintenance" },
+  { icon: Search, name: "Diagnose", description: "Identify gaps with real operational impact", phaseId: "phase-01" },
+  { icon: Compass, name: "Architect", description: "Structure systems teams can use", phaseId: "phase-02" },
+  { icon: Wrench, name: "Implement", description: "Guide deployment with internal clarity", phaseId: "phase-03" },
+  { icon: Users, name: "Embed", description: "Support adoption through role-based expectations", phaseId: "phase-04" },
+  { icon: BarChart3, name: "Monitor", description: "Enable ongoing control and evidence maintenance", phaseId: "phase-05" },
 ];
 
 const audiences = [
@@ -81,6 +81,7 @@ const trustSignals = [
 ];
 
 export default function Index() {
+  const navigate = useNavigate();
   return (
     <Layout>
       <SEOHead
@@ -341,7 +342,12 @@ export default function Index() {
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-4 lg:gap-8 mb-12">
             {ecamPhases.map((phase, index) => (
               <div key={phase.name} className="flex items-center">
-                <div className="flex flex-col items-center text-center group flex-1 md:flex-initial">
+                <button
+                  className="flex flex-col items-center text-center group flex-1 md:flex-initial cursor-pointer"
+                  onClick={() => {
+                    navigate(`/methodology#${phase.phaseId}`);
+                  }}
+                >
                   <div className="w-16 h-16 rounded-sm bg-primary text-primary-foreground flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:scale-110 mb-3">
                     <phase.icon className="w-7 h-7" />
                   </div>
@@ -351,7 +357,7 @@ export default function Index() {
                   <p className="text-xs text-muted-foreground max-w-[160px]">
                     {phase.description}
                   </p>
-                </div>
+                </button>
                 {index < ecamPhases.length - 1 && (
                   <div className="hidden md:block w-8 lg:w-12 h-px bg-gradient-to-r from-border to-accent/30 mx-2" />
                 )}
