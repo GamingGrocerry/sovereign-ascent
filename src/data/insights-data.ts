@@ -25,6 +25,7 @@ import qmsEarlyStage from "./articles/qms-early-stage";
 import subcontractorQmsFailures from "./articles/subcontractor-qms-failures";
 import iso9001OperationalMaturity from "./articles/iso9001-operational-maturity";
 import govconPrimeExpectations from "./articles/govcon-prime-expectations";
+import multiJurisdictionalCompliance from "./articles/multi-jurisdictional-compliance";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
