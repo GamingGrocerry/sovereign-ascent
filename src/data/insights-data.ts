@@ -39,6 +39,7 @@ import imgQmsEarlyStage from "@/assets/insight-qms-early-stage.jpg";
 import imgSubcontractorQms from "@/assets/insight-subcontractor-qms.jpg";
 import imgIso9001Maturity from "@/assets/insight-iso9001-maturity.jpg";
 import imgGovconPrime from "@/assets/insight-govcon-prime-expectations.jpg";
+import imgMultiJurisdictional from "@/assets/insight-multi-jurisdictional.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
