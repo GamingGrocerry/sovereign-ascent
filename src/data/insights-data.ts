@@ -25,6 +25,7 @@ import qmsEarlyStage from "./articles/qms-early-stage";
 import subcontractorQmsFailures from "./articles/subcontractor-qms-failures";
 import iso9001OperationalMaturity from "./articles/iso9001-operational-maturity";
 import govconPrimeExpectations from "./articles/govcon-prime-expectations";
+import multiJurisdictionalCompliance from "./articles/multi-jurisdictional-compliance";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -38,6 +39,7 @@ import imgQmsEarlyStage from "@/assets/insight-qms-early-stage.jpg";
 import imgSubcontractorQms from "@/assets/insight-subcontractor-qms.jpg";
 import imgIso9001Maturity from "@/assets/insight-iso9001-maturity.jpg";
 import imgGovconPrime from "@/assets/insight-govcon-prime-expectations.jpg";
+import imgMultiJurisdictional from "@/assets/insight-multi-jurisdictional.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -61,10 +63,13 @@ iso9001OperationalMaturity.icon = BookOpen;
 iso9001OperationalMaturity.image = imgIso9001Maturity;
 govconPrimeExpectations.icon = TrendingUp;
 govconPrimeExpectations.image = imgGovconPrime;
+multiJurisdictionalCompliance.icon = TrendingUp;
+multiJurisdictionalCompliance.image = imgMultiJurisdictional;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  multiJurisdictionalCompliance,
   govconPrimeExpectations,
   iso9001OperationalMaturity,
   qmsEarlyStage,
