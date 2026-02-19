@@ -63,6 +63,8 @@ iso9001OperationalMaturity.icon = BookOpen;
 iso9001OperationalMaturity.image = imgIso9001Maturity;
 govconPrimeExpectations.icon = TrendingUp;
 govconPrimeExpectations.image = imgGovconPrime;
+multiJurisdictionalCompliance.icon = TrendingUp;
+multiJurisdictionalCompliance.image = imgMultiJurisdictional;
 
 export const featuredArticle = costOfNonCompliance;
 
