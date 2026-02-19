@@ -69,6 +69,7 @@ multiJurisdictionalCompliance.image = imgMultiJurisdictional;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  multiJurisdictionalCompliance,
   govconPrimeExpectations,
   iso9001OperationalMaturity,
   qmsEarlyStage,
