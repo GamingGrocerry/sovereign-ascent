@@ -2,12 +2,14 @@ import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Clock, ChevronRight } from "lucide-react";
-import { getArticleBySlug, articles } from "@/data/insights-data";
+import { ArrowLeft, ArrowRight, Clock, ChevronRight, ChevronLeft } from "lucide-react";
+import { getArticleBySlug, articles, type Article } from "@/data/insights-data";
 import { ShareButton } from "@/components/ShareButton";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import NotFound from "./NotFound";
 import { ArticleContent } from "@/components/ArticleContent";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
 
 const BASE_URL = "https://elevateqcs.com";
 
@@ -41,13 +43,106 @@ function extractFAQs(content: string): { question: string; answer: string }[] {
   return faqs;
 }
 
+function RelatedCarousel({ articles: relatedArticles }: { articles: Article[] }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    slidesToScroll: 1,
+    containScroll: "trimSnaps",
+    loop: true,
+  });
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
+
+  return (
+    <section className="py-20 bg-secondary/30">
+      <div className="container-wide">
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <div className="section-divider mb-8" />
+            <h2>Continue Reading</h2>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => emblaApi?.scrollPrev()}
+              disabled={!canScrollPrev}
+              className="w-10 h-10 rounded-sm border border-border flex items-center justify-center hover:bg-secondary transition-colors disabled:opacity-30"
+              aria-label="Previous articles"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => emblaApi?.scrollNext()}
+              disabled={!canScrollNext}
+              className="w-10 h-10 rounded-sm border border-border flex items-center justify-center hover:bg-secondary transition-colors disabled:opacity-30"
+              aria-label="Next articles"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-8">
+            {relatedArticles.map((a) => (
+              <Link
+                key={a.slug}
+                to={`/insights/${a.slug}`}
+                className="card-elevated group overflow-hidden flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(33.333%-1.35rem)]"
+              >
+                {a.image && (
+                  <div className="h-40 overflow-hidden">
+                    <img
+                      src={a.image}
+                      alt={a.imageAlt || a.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <span className="text-accent text-xs uppercase tracking-wide">
+                    {a.category}
+                  </span>
+                  <h3 className="text-lg mt-3 mb-3 group-hover:text-accent transition-colors">
+                    {a.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
+                    {a.excerpt}
+                  </p>
+                  <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
+                    Read article
+                    <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function InsightArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
 
   if (!article) return <NotFound />;
 
-  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  const related = articles.filter((a) => a.slug !== article.slug);
   const faqs = extractFAQs(article.content);
 
   // Build keyword-rich terms from title and category
@@ -171,48 +266,8 @@ export default function InsightArticle() {
         </div>
       </section>
 
-      {/* Related Articles */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container-wide">
-          <div className="section-divider mb-8" />
-          <h2 className="mb-12">Continue Reading</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {related.map((a) => (
-              <Link
-                key={a.slug}
-                to={`/insights/${a.slug}`}
-                className="card-elevated group overflow-hidden"
-              >
-                {a.image && (
-                  <div className="h-40 overflow-hidden">
-                     <img
-                      src={a.image}
-                      alt={a.imageAlt || a.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <span className="text-accent text-xs uppercase tracking-wide">
-                    {a.category}
-                  </span>
-                  <h3 className="text-lg mt-3 mb-3 group-hover:text-accent transition-colors">
-                    {a.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
-                    {a.excerpt}
-                  </p>
-                  <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
-                    Read article
-                    <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Related Articles Carousel */}
+      <RelatedCarousel articles={related} />
 
       {/* CTA */}
       <section className="py-20 bg-background">
