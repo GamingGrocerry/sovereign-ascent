@@ -10,6 +10,8 @@ export interface Article {
   featured?: boolean;
   icon?: LucideIcon;
   image?: string;
+  imageAlt?: string;
+  metaDescription?: string;
   content: string;
 }
 
