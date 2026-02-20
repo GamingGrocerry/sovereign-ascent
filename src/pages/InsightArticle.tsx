@@ -177,9 +177,9 @@ export default function InsightArticle() {
               >
                 {a.image && (
                   <div className="h-40 overflow-hidden">
-                    <img
+                     <img
                       src={a.image}
-                      alt={a.title}
+                      alt={a.imageAlt || a.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
                     />

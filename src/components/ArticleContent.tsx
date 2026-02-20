@@ -1,6 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Map of inline image paths to their ES6 imports
+const imageImports: Record<string, string> = {};
+
+// Dynamically import all mjc- images and other article inline images
+const assetModules = import.meta.glob("@/assets/mjc-*.jpg", { eager: true, import: "default" });
+for (const [path, mod] of Object.entries(assetModules)) {
+  // Extract the filename part after /assets/
+  const filename = path.split("/assets/")[1];
+  if (filename) {
+    imageImports[`/assets/${filename}`] = mod as string;
+  }
+}
+
 const parseInline = (text: string): React.ReactNode[] => {
   const parts: React.ReactNode[] = [];
   const regex = /(\*\*(.+?)\*\*)|(\*(.+?)\*)|(\[(.+?)\]\((.+?)\))|(`(.+?)`)/g;
@@ -43,6 +56,33 @@ export function ArticleContent({ content }: { content: string }) {
 
     if (/^---+$/.test(line.trim())) {
       elements.push(<hr key={key++} className="my-10 border-border" />);
+      i++; continue;
+    }
+
+    // Inline image: ![alt](src "title")
+    const imgMatch = line.trim().match(/^!\[(.+?)\]\((.+?)(?:\s+"(.+?)")?\)$/);
+    if (imgMatch) {
+      const alt = imgMatch[1];
+      const rawSrc = imgMatch[2];
+      const title = imgMatch[3] || alt;
+      // Resolve the src — check if we have an imported version
+      const resolvedSrc = imageImports[rawSrc] || rawSrc;
+      elements.push(
+        <figure key={key++} className="my-10">
+          <img
+            src={resolvedSrc}
+            alt={alt}
+            title={title}
+            className="w-full rounded-sm shadow-md"
+            loading="lazy"
+          />
+          {title && (
+            <figcaption className="mt-3 text-xs text-muted-foreground/70 text-center italic">
+              {title}
+            </figcaption>
+          )}
+        </figure>
+      );
       i++; continue;
     }
 
