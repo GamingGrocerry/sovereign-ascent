@@ -140,7 +140,7 @@ As of February 2026, the DIS (Draft International Standard) has been approved an
 
 ### What are the key changes expected in ISO 9001:2026?
 
-The anticipated ISO 9001:2026 revision is expected to incorporate climate-related risk considerations into organizational context analysis, strengthen supply chain resilience requirements, improve alignment with Annex SL (the common framework for ISO management system standards), and reinforce genuine leadership accountability. The core structure — Plan-Do-Check-Act, risk-based thinking, and customer focus — is expected to remain stable.
+The ISO 9001:2026 revision incorporates climate-related risk considerations into organizational context analysis, strengthens supply chain resilience requirements, improves alignment with Annex SL (the common framework for ISO management system standards), and reinforces genuine leadership accountability. The core structure — Plan-Do-Check-Act, risk-based thinking, and customer focus — remains stable. For the latest confirmed changes, refer to [ISO/TC 176](https://www.iso.org/committee/53882.html).
 
 ### How does ISO 9001 relate to operational maturity?
 
