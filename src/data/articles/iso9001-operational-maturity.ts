@@ -136,7 +136,7 @@ ISO 9001 is the internationally recognized standard for Quality Management Syste
 
 ### What is the ISO 9001:2026 publication date and status?
 
-As of February 2026, ISO 9001:2026 remains in committee draft status. The ISO technical committee (ISO/TC 176) is working toward a final international standard, with publication anticipated in mid-to-late 2026. No official publication date has been confirmed. The revision is expected to refine — not replace — the core ISO 9001:2015 framework.
+As of February 2026, the DIS (Draft International Standard) has been approved and the FDIS (Final Draft International Standard) ballot closed in January 2026. Publication of ISO 9001:2026 is anticipated in September 2026. For the latest timeline, refer to [ISO/TC 176](https://www.iso.org/committee/53882.html). The revision refines — not replaces — the core ISO 9001:2015 framework.
 
 ### What are the key changes expected in ISO 9001:2026?
 
