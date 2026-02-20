@@ -55,7 +55,7 @@ That is governance. And every high-performing company eventually builds it — e
 
 ## ISO 9001:2026 — What's Changing and Why It Matters Now
 
-ISO 9001 is currently in revision. The ISO 9001:2026 update — anticipated for publication in mid-to-late 2026 — reflects evolving expectations around:
+ISO 9001 is currently in revision. The DIS was approved and the FDIS ballot closed in January 2026, with publication of ISO 9001:2026 anticipated in September 2026. According to updates from [ISO/TC 176](https://www.iso.org/committee/53882.html), the revision reflects evolving expectations around:
 
 - **Climate-related risks** integrated into organizational context and risk-based thinking
 - **Strengthened resilience requirements** across supply chain and operational continuity
@@ -64,7 +64,7 @@ ISO 9001 is currently in revision. The ISO 9001:2026 update — anticipated for 
 
 Organizations aligning with ISO 9001 today are building systems compatible with the 2026 revision. The core architecture — Plan-Do-Check-Act, risk-based thinking, process approach, customer focus — remains stable. The 2026 revision refines the framework; it does not replace it.
 
-As of February 2026, ISO 9001:2026 remains in committee draft status. Organizations should continue implementing against ISO 9001:2015 while designing systems flexible enough to accommodate the anticipated updates.
+As of February 2026, the FDIS has been balloted and publication is on track for September 2026. Organizations should continue implementing against ISO 9001:2015 while designing systems flexible enough to accommodate the confirmed updates. For the latest timeline, refer to [ISO/TC 176](https://www.iso.org/committee/53882.html).
 
 ## The Government Contracting Dimension
 
