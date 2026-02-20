@@ -136,12 +136,19 @@ export default function InsightArticle() {
               {article.category}
             </p>
             <h1 className="text-primary-foreground mb-6 gold-accent pb-4">{article.title}</h1>
-            <div className="flex items-center gap-6 text-primary-foreground/60 text-sm">
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                {article.readTime}
-              </span>
-              <time>{article.date}</time>
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-6 text-primary-foreground/60 text-sm">
+                <span className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  {article.readTime}
+                </span>
+                <time>{article.date}</time>
+              </div>
+              <ShareButton
+                title={article.title}
+                url={`${BASE_URL}/insights/${article.slug}`}
+                description={article.metaDescription || article.excerpt}
+              />
             </div>
           </div>
         </div>
