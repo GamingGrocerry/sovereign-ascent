@@ -23,14 +23,24 @@ const parseInline = (text: string): React.ReactNode[] => {
 
   while ((match = regex.exec(text)) !== null) {
     if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
-    if (match[1]) parts.push(<strong key={inlineKey++}>{match[2]}</strong>);
-    else if (match[3]) parts.push(<em key={inlineKey++}>{match[4]}</em>);
-    else if (match[5])
-      parts.push(
-        <Link key={inlineKey++} to={match[7]} className="text-link">
-          {match[6]}
-        </Link>
-      );
+    if (match[1]) parts.push(<strong key={inlineKey++}>{parseInline(match[2])}</strong>);
+    else if (match[3]) parts.push(<em key={inlineKey++}>{parseInline(match[4])}</em>);
+    else if (match[5]) {
+      const href = match[7];
+      if (href.startsWith("mailto:") || href.startsWith("http")) {
+        parts.push(
+          <a key={inlineKey++} href={href} className="text-link">
+            {match[6]}
+          </a>
+        );
+      } else {
+        parts.push(
+          <Link key={inlineKey++} to={href} className="text-link">
+            {match[6]}
+          </Link>
+        );
+      }
+    }
     else if (match[8])
       parts.push(
         <code key={inlineKey++} className="bg-secondary px-1.5 py-0.5 rounded text-sm">
