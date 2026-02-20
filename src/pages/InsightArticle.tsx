@@ -112,7 +112,7 @@ export default function InsightArticle() {
     <Layout>
       <SEOHead
         title={`${article.title} | ElevateQCS Insights`}
-        description={article.excerpt}
+        description={article.metaDescription || article.excerpt}
         url={`${BASE_URL}/insights/${article.slug}`}
         type="article"
         publishedDate={article.date}
