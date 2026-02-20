@@ -19,7 +19,7 @@ When founders hear "ISO 9001," most picture three-ring binders, auditors with cl
 
 But that version is a failure of execution, not a failure of the standard.
 
-ISO 9001:2015 — and its forthcoming revision, ISO 9001:2026, currently in the final stages of the ISO committee review process — is not a documentation exercise. It is a framework for building operational maturity. The certificate is a third-party confirmation that your operations meet a defined threshold. The operations themselves — the processes, the governance, the embedded accountability structures — are the actual asset.
+ISO 9001:2015 — and its forthcoming revision, ISO 9001:2026, which received DIS (Draft International Standard) approval with the FDIS (Final Draft International Standard) ballot closing in January 2026 and publication anticipated in September 2026 — is not a documentation exercise. It is a framework for building operational maturity. The certificate is a third-party confirmation that your operations meet a defined threshold. The operations themselves — the processes, the governance, the embedded accountability structures — are the actual asset.
 
 Founders who understand this distinction build something competitors cannot easily replicate: a business that runs on systems rather than heroics.
 
