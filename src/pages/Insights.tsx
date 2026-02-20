@@ -113,7 +113,7 @@ export default function Insights() {
           >
             <img
               src={featuredArticle.image || insightsFeatured}
-              alt={featuredArticle.title}
+              alt={featuredArticle.imageAlt || featuredArticle.title}
               className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
