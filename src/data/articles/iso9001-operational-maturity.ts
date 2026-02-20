@@ -114,7 +114,7 @@ The goal for most growth-stage companies is reaching Level 3 before [scaling for
 
 Companies that defer QMS development and ISO 9001 alignment until forced by a client requirement or failed audit face a compounding problem: by the time the organization recognizes the need, the technical debt is substantial. Processes have calcified around informal practices. Institutional knowledge is locked in individual contributors. Documentation, if it exists, is inconsistent and unreliable.
 
-Building operational maturity proactively — before a contract demands it, before an auditor requires it, before an investor's due diligence exposes it — costs a fraction of reactive remediation. Studies across regulated industries — including analyses by [Deloitte](https://www.deloitte.com) and [ISO](https://www.iso.org) — consistently show a 2–4x cost variance between proactive QMS investment and reactive implementation for equivalent outcomes.
+Building operational maturity proactively — before a contract demands it, before an auditor requires it, before an investor's due diligence exposes it — costs a fraction of reactive remediation. Studies across regulated industries consistently show a 2–4x cost variance between proactive QMS investment and reactive implementation for equivalent outcomes.
 
 For founders who see governance as overhead: the real overhead is rebuilding systems under pressure, losing contracts to better-prepared competitors, and explaining to a [prime contractor](/insights/govcon-prime-expectations) why your quality management system doesn't meet their subcontractor requirements.
 
@@ -148,7 +148,7 @@ ISO 9001 is a structured path toward operational maturity, not the destination i
 
 ### Do startups and founders need ISO 9001?
 
-Not immediately — and not in a form that overwhelms their operational velocity. Early-stage companies benefit most from building ISO 9001-aligned governance infrastructure: documented processes for high-risk operations, a corrective action mechanism, a quality policy, and a management review rhythm. This foundation scales naturally. Studies — including analyses by [Deloitte](https://www.deloitte.com) and [ISO](https://www.iso.org) — indicate that companies deferring this investment face 2–4x higher costs for reactive implementation.
+Not immediately — and not in a form that overwhelms their operational velocity. Early-stage companies benefit most from building ISO 9001-aligned governance infrastructure: documented processes for high-risk operations, a corrective action mechanism, a quality policy, and a management review rhythm. This foundation scales naturally. Industry studies indicate that companies deferring this investment face 2–4x higher costs for reactive implementation.
 
 ### How does ISO 9001 support government contracting compliance?
 
