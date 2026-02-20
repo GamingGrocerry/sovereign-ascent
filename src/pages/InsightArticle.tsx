@@ -49,7 +49,7 @@ export default function InsightArticle() {
 
   if (!article) return <NotFound />;
 
-  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  const related = articles.filter((a) => a.slug !== article.slug);
   const faqs = extractFAQs(article.content);
 
   // Build keyword-rich terms from title and category
