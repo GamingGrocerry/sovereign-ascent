@@ -147,7 +147,7 @@ export default function InsightArticle() {
         <div className="relative w-full h-[300px] md:h-[420px] mt-4 overflow-hidden">
           <img
             src={article.image || insightsFeatured}
-            alt={article.title}
+            alt={article.imageAlt || article.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-primary/40" />
