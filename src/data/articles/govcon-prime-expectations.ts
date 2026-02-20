@@ -8,6 +8,10 @@ const article: Article = {
     "Primes ghost you without this. Before your first subcontract award, prime contractors run a quiet vetting process most defense-tech founders never see coming. Here's exactly what they're checking — and how to not be the subcontractor that gets disqualified on day one.",
   readTime: "12 min read",
   date: "February 19, 2026",
+  metaDescription:
+    "What prime contractors expect from subcontractors entering GovCon: document control, supplier oversight, internal audits, management review, and traceability. Defense-tech founder compliance checklist 2026.",
+  imageAlt:
+    "Prime contractor subcontractor evaluation process for defense-tech founders entering government contracting showing compliance vetting criteria and audit expectations",
   content: `
 ## The Call You Don't Get
 
@@ -19,13 +23,13 @@ This is one of the most common experiences for defense-tech founders entering go
 
 It has to do with your compliance posture.
 
-Prime contractors don't advertise what they're actually evaluating when they assess subcontractors. The technical capability conversation is visible — it happens in meetings and proposals. The compliance evaluation is quieter. It happens when someone on the prime's quality or contracts team reviews your documentation package, your quality management system, your certifications, and your ability to flow down regulatory requirements — and decides whether you represent acceptable risk.
+Prime contractors don't advertise what they're actually evaluating when they assess subcontractors. The technical capability conversation is visible — it happens in meetings and proposals. The compliance evaluation is quieter. It happens when someone on the prime's quality or contracts team reviews your [documentation package](/insights/documentation-best-practices), your quality management system, your certifications, and your ability to flow down regulatory requirements — and decides whether you represent acceptable risk.
 
 **Primes ghost you without this.** Understanding what they're looking for — and building it before you need it — is the difference between entering GovCon and actually staying in it.
 
 ## Why Prime Contractors Vet Subcontractors This Carefully
 
-Prime contractors bear ultimate responsibility for every deliverable under a federal contract. When the government audits a prime — whether through the Defense Contract Audit Agency (DCAA), the Defense Contract Management Agency (DCMA), or a customer's Contracting Officer Representative — the prime's entire supply chain is in scope.
+Prime contractors bear ultimate responsibility for every deliverable under a federal contract. When the government audits a prime — whether through the Defense Contract Audit Agency (DCAA), the Defense Contract Management Agency (DCMA), or a customer's Contracting Officer Representative — the prime's entire [supply chain is in scope](/insights/supply-chain-compliance).
 
 A subcontractor's compliance failures become the prime's audit findings. A subcontractor's missing records become the prime's contractual liability. A subcontractor's inability to produce traceability documentation can halt delivery on a program worth hundreds of millions of dollars.
 
@@ -65,13 +69,13 @@ Primes are not just evaluating your operations — they are evaluating your supp
 
 This is where defense-tech founders frequently underestimate complexity. If you are procuring components, materials, or services that become part of a deliverable under a federal contract, those procurements are subject to FAR and DFARS requirements — including counterfeit parts prevention under DFARS 252.246-7007, which mandates specific supplier qualification and receiving inspection practices for electronic components.
 
-A subcontractor who cannot demonstrate that they manage their supply chain with appropriate oversight is a liability the prime cannot carry.
+A [subcontractor who cannot demonstrate](/insights/subcontractor-qms-failures) that they manage their supply chain with appropriate oversight is a liability the prime cannot carry.
 
 ### 3. Internal Audits
 
 Internal audit structure is the single clearest signal of quality system maturity. It is also the area where the most cosmetic compliance exists — organizations that run internal audits to check a box rather than to actually assess their quality system.
 
-Experienced prime contractor quality evaluators can distinguish between a functioning audit program and a performative one within minutes of reviewing the audit records.
+Experienced prime contractor quality evaluators can distinguish between a functioning audit program and a performative one within minutes of reviewing the [audit records](/insights/audit-failure-patterns).
 
 A functioning internal audit program produces **findings**. Audits that consistently produce zero findings are not demonstrating operational excellence — they are demonstrating that the audit program cannot assess itself. Primes recognize this pattern, and they interpret it as a system incapable of self-correction.
 
@@ -83,7 +87,7 @@ A functioning internal audit program produces **findings**. Audits that consiste
 - Linkage between audit findings and the corrective action process
 - Management review of audit results
 
-For defense-tech founders entering GovCon, the internal audit program is often the fastest way to demonstrate operational maturity because it is inherently forward-looking. An organization that has been running structured internal audits — even for six months — has a track record of identifying and resolving its own compliance gaps. That track record is more credible to a prime than a perfect-looking quality manual that was assembled in the three weeks before a proposal.
+For defense-tech founders entering GovCon, the internal audit program is often the fastest way to demonstrate [operational maturity](/insights/iso9001-operational-maturity) because it is inherently forward-looking. An organization that has been running structured internal audits — even for six months — has a track record of identifying and resolving its own compliance gaps. That track record is more credible to a prime than a perfect-looking quality manual that was assembled in the three weeks before a proposal.
 
 ### 4. Management Review
 
@@ -140,7 +144,7 @@ When a prime flows down these clauses to a subcontract, they are contractually o
 
 ### Mistake 1: Waiting Until You Have a Contract
 
-The most common and most costly mistake. By the time you receive a subcontract award, the compliance clock is already running. Building document control, supplier oversight, internal audit programs, and traceability infrastructure under the pressure of a program delivery schedule is significantly more expensive and disruptive than building it beforehand.
+The most common and most costly mistake. By the time you receive a subcontract award, the compliance clock is already running. Building document control, supplier oversight, internal audit programs, and traceability infrastructure under the pressure of a program delivery schedule is significantly more expensive and disruptive than [building it beforehand](/insights/qms-early-stage).
 
 The founders who navigate GovCon most effectively build their compliance infrastructure six to twelve months before their first contract award — when they have control of the timeline and the resources.
 
@@ -152,7 +156,7 @@ Primes can identify organizations that assembled documentation packages for prop
 
 ### Mistake 3: Treating CTIP and HR Compliance as Separate From Quality
 
-For defense contractors, FAR 52.222-50 — Combating Trafficking in Persons (CTIP) — is a mandatory compliance requirement that flows down to subcontractors. Many defense-tech founders treat this as an HR checkbox rather than a compliance program element.
+For defense contractors, [FAR 52.222-50 — Combating Trafficking in Persons (CTIP)](/insights/ctip-enforcement-trends) — is a mandatory compliance requirement that flows down to subcontractors. Many defense-tech founders treat this as an HR checkbox rather than a compliance program element.
 
 A CTIP compliance program must be documented, implemented, and maintained. It requires an awareness program, a reporting mechanism, a policy signed by leadership, and evidence of ongoing implementation. Primes evaluate CTIP compliance as part of their subcontractor assessment — and non-compliance is a disqualifier.
 
@@ -241,15 +245,15 @@ The most defensible position entering GovCon is a quality management system with
 
 5. **Get leadership on record.** Management review minutes signed by your executive team are evidence that quality is a leadership priority. That signal matters in a prime's evaluation.
 
-6. **Align with ISO 9001.** Even without pursuing certification, structuring your QMS around ISO 9001 principles provides a recognized, auditable framework that primes can evaluate against established expectations. It also positions the organization for formal certification when contractually required.
+6. **Align with [ISO 9001](/insights/iso9001-operational-maturity).** Even without pursuing certification, structuring your QMS around ISO 9001 principles provides a recognized, auditable framework that primes can evaluate against established expectations. It also positions the organization for formal certification when contractually required.
 
 ## The Competitive Reality Entering GovCon in 2026
 
 The defense technology sector is increasingly competitive. Prime contractors have expanding networks of qualified subcontractors, and their threshold for compliance risk has increased as regulatory scrutiny from DoD and GSA has intensified.
 
-Defense-tech founders entering GovCon in 2026 are competing not just on technology and price, but on compliance posture and operational maturity. The organizations that build compliance infrastructure before they need it — not as a response to a failed audit or a lost opportunity, but as a deliberate competitive investment — are the ones that build durable GovCon businesses.
+Defense-tech founders entering GovCon in 2026 are competing not just on technology and price, but on compliance posture and operational maturity. The organizations that build compliance infrastructure before they need it — not as a response to a failed audit or a lost opportunity, but as a [deliberate competitive investment](/insights/compliance-decision-framework) — are the ones that build durable GovCon businesses.
 
-The founders who wait until a prime requires it will find that the cost of reactive implementation — in time, in distraction, and in relationship credibility — far exceeds the cost of building it right the first time.
+The founders who wait until a prime requires it will find that the [cost of reactive implementation](/insights/cost-of-non-compliance) — in time, in distraction, and in relationship credibility — far exceeds the cost of building it right the first time.
 
 Primes don't tell you what they're evaluating. They just decide you're not the right fit.
 
@@ -257,7 +261,7 @@ Build the infrastructure. Then let them decide.
 
 ---
 
-*This analysis reflects compliance patterns observed across defense-tech subcontractors entering government contracting. For a structured assessment of your organization's prime contractor readiness, [contact the ElevateQCS advisory team](/contact).*
+*This analysis reflects compliance patterns observed across defense-tech subcontractors entering government contracting. For a structured assessment of your organization's prime contractor readiness, [contact the ElevateQCS advisory team](/contact) or email us at [info@elevateqcs.com](mailto:info@elevateqcs.com).*
 
 ---
 

@@ -8,12 +8,16 @@ const article: Article = {
     "Extending compliance oversight into sub-tier supply chains requires systematic approaches that balance thoroughness with practicality.",
   readTime: "8 min read",
   date: "January 28, 2026",
+  metaDescription:
+    "Extend compliance oversight beyond first-tier suppliers. A practical framework for sub-tier supply chain quality assurance, flow-down clauses, and risk-based monitoring in government contracting.",
+  imageAlt:
+    "Supply chain compliance oversight framework for government contractors showing sub-tier supplier quality assurance and flow-down clause management",
   content: `
 ## The Visibility Challenge
 
 Most organizations have reasonable oversight of their direct suppliers and subcontractors—first-tier relationships where contracts, communications, and performance monitoring are well-established. The challenge lies deeper in the supply chain, where sub-tier suppliers operate beyond the reach of standard oversight mechanisms.
 
-This gap matters because compliance risk doesn't stop at your first-tier relationships. Regulatory requirements—particularly in areas like CTIP, quality management, and cybersecurity—increasingly extend to the entire supply chain.
+This gap matters because compliance risk doesn't stop at your first-tier relationships. Regulatory requirements—particularly in areas like [CTIP](/insights/ctip-enforcement-trends), quality management, and cybersecurity—increasingly extend to the entire supply chain.
 
 ## Why Sub-Tier Visibility Matters
 
@@ -27,11 +31,11 @@ Federal acquisition regulations increasingly require contractors to ensure compl
 
 ### Risk Concentrates in Lower Tiers
 
-Sub-tier suppliers are often smaller organizations with less mature compliance programs. They may operate in higher-risk geographies or industries. Without visibility into these relationships, prime contractors carry risk they cannot manage.
+Sub-tier suppliers are often smaller organizations with [less mature compliance programs](/insights/qms-early-stage). They may operate in higher-risk geographies or industries. Without visibility into these relationships, prime contractors carry risk they cannot manage.
 
 ### Incidents Have Upstream Consequences
 
-When a sub-tier supplier experiences a compliance failure, the consequences flow upstream. Prime contractors bear responsibility for the performance of their supply chain, regardless of where in the chain the failure occurred.
+When a sub-tier supplier experiences a compliance failure, the consequences flow upstream. [Prime contractors bear responsibility](/insights/govcon-prime-expectations) for the performance of their supply chain, regardless of where in the chain the failure occurred.
 
 ## A Practical Framework for Sub-Tier Oversight
 
@@ -98,7 +102,7 @@ Organizations that develop meaningful sub-tier supply chain oversight gain advan
 
 ---
 
-*For assistance developing a supply chain compliance oversight program tailored to your organization's specific supply chain profile, [contact our advisory team](/contact).*
+*For assistance developing a supply chain compliance oversight program tailored to your organization's specific supply chain profile, [contact our advisory team](/contact) or email us at [info@elevateqcs.com](mailto:info@elevateqcs.com).*
 
 ---
 

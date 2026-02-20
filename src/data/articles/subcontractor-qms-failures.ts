@@ -8,10 +8,14 @@ const article: Article = {
     "Prime contractors are increasingly disqualifying subcontractors with inadequate QMS programs. Understanding the evaluation criteria is essential for contract retention.",
   readTime: "10 min read",
   date: "February 12, 2026",
+  metaDescription:
+    "Why subcontractors lose government contracts due to weak QMS programs. Prime contractor evaluation criteria, ISO 9001 alignment, CAPA processes, and steps to build audit-ready quality systems.",
+  imageAlt:
+    "Subcontractor quality management system failure analysis showing prime contractor evaluation criteria and QMS compliance requirements for government contract retention",
   content: `
 ## The Subcontractor Quality Gap
 
-In government contracting, prime contractors bear ultimate responsibility for the quality of work performed across their entire supply chain. This creates a direct incentive for primes to evaluate—and, when necessary, replace—subcontractors whose quality management systems cannot withstand scrutiny.
+In government contracting, prime contractors bear ultimate responsibility for the quality of work performed across their entire [supply chain](/insights/supply-chain-compliance). This creates a direct incentive for primes to evaluate—and, when necessary, replace—subcontractors whose quality management systems cannot withstand scrutiny.
 
 The pattern is consistent: subcontractors with weak or undocumented quality management systems lose contracts not because of poor technical performance, but because they represent unacceptable compliance risk to their prime partners.
 
@@ -19,7 +23,7 @@ The pattern is consistent: subcontractors with weak or undocumented quality mana
 
 ### Pre-Award Assessment
 
-Before awarding a subcontract, experienced prime contractors now conduct quality system assessments that go beyond checking for ISO 9001 certification:
+Before awarding a subcontract, experienced [prime contractors](/insights/govcon-prime-expectations) now conduct quality system assessments that go beyond checking for ISO 9001 certification:
 
 - **Process documentation review**: Do documented procedures exist for the work being subcontracted? Are they current, controlled, and aligned with the prime's flow-down requirements?
 - **Internal audit structure**: Does the subcontractor conduct meaningful internal audits, or are they superficial exercises that check boxes without assessing effectiveness?
@@ -31,9 +35,9 @@ Before awarding a subcontract, experienced prime contractors now conduct quality
 Post-award, primes monitor subcontractor quality through:
 
 - Receiving inspection results and non-conformance rates
-- Audit findings from government and third-party assessments
+- [Audit findings](/insights/audit-failure-patterns) from government and third-party assessments
 - Responsiveness to corrective action requests
-- Documentation quality and timeliness
+- [Documentation quality](/insights/documentation-best-practices) and timeliness
 
 Subcontractors who consistently generate quality issues create upstream risk that primes cannot tolerate—especially in contracts with high regulatory compliance requirements.
 
@@ -59,7 +63,7 @@ When non-conformances occur, subcontractors with weak QMS programs default to "r
 
 ### 5. No Supply Chain Quality Assurance
 
-Subcontractors who rely on sub-tier suppliers without oversight create cascading quality risk. Prime contractors expect their subcontractors to demonstrate supply chain quality assurance practices proportional to the risk profile of the materials and services being procured.
+Subcontractors who rely on sub-tier suppliers without oversight create cascading quality risk. Prime contractors expect their subcontractors to demonstrate [supply chain quality assurance](/insights/supply-chain-compliance) practices proportional to the risk profile of the materials and services being procured.
 
 ## The Regulatory Context
 
@@ -75,7 +79,7 @@ Subcontractors who do not understand—or cannot demonstrate compliance with—t
 
 ### ISO 9001 as the Baseline Expectation
 
-While ISO 9001 certification is not always contractually required, ISO-compliant management systems have become the baseline expectation for subcontractors in regulated industries. Organizations without at least ISO 9001 alignment face increasing difficulty winning and retaining subcontract positions.
+While ISO 9001 certification is not always contractually required, [ISO-compliant management systems](/insights/iso9001-operational-maturity) have become the baseline expectation for subcontractors in regulated industries. Organizations without at least ISO 9001 alignment face increasing difficulty winning and retaining subcontract positions.
 
 ## Building a QMS That Retains Contracts
 
@@ -115,11 +119,11 @@ The government contracting marketplace is increasingly competitive. Prime contra
 
 Subcontractors who invest in management system implementation position themselves not just to retain existing contracts, but to compete for new opportunities that require demonstrated quality system maturity.
 
-The operational maturity model for subcontractors is clear: organizations that treat quality as infrastructure—investing in QMS development before it becomes a crisis—sustain growth. Organizations that treat it as overhead—deferring investment until forced—cycle through contracts and relationships without building lasting competitive position.
+The [operational maturity model](/insights/iso9001-operational-maturity) for subcontractors is clear: organizations that treat quality as infrastructure—investing in QMS development before it becomes a crisis—sustain growth. Organizations that treat it as overhead—deferring investment until forced—cycle through contracts and relationships without building lasting competitive position.
 
 ---
 
-*This analysis reflects patterns observed across prime-subcontractor relationships in regulated industries. For a confidential assessment of your organization's quality system readiness, [contact our advisory team](/contact).*
+*This analysis reflects patterns observed across prime-subcontractor relationships in regulated industries. For a confidential assessment of your organization's quality system readiness, [contact our advisory team](/contact) or email us at [info@elevateqcs.com](mailto:info@elevateqcs.com).*
 
 ---
 
