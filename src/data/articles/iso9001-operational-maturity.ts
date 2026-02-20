@@ -132,7 +132,7 @@ ISO 9001 is simply one of the most battle-tested roads to that destination.
 
 ### What is ISO 9001 and what is the current version?
 
-ISO 9001 is the internationally recognized standard for Quality Management Systems (QMS). The current published version is ISO 9001:2015. As of early 2026, a revision — anticipated as ISO 9001:2026 — is in the final stages of the ISO committee process and is expected to be published in mid-to-late 2026. Organizations should continue implementing against ISO 9001:2015 while designing systems flexible enough to accommodate the anticipated updates.
+ISO 9001 is the internationally recognized standard for Quality Management Systems (QMS). The current published version is ISO 9001:2015. The revision — ISO 9001:2026 — received DIS approval, with the FDIS ballot closing in January 2026 and publication anticipated in September 2026. Organizations should continue implementing against ISO 9001:2015 while designing systems flexible enough to accommodate the confirmed updates.
 
 ### What is the ISO 9001:2026 publication date and status?
 
