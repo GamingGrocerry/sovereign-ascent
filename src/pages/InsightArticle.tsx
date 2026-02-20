@@ -112,7 +112,7 @@ export default function InsightArticle() {
     <Layout>
       <SEOHead
         title={`${article.title} | ElevateQCS Insights`}
-        description={article.excerpt}
+        description={article.metaDescription || article.excerpt}
         url={`${BASE_URL}/insights/${article.slug}`}
         type="article"
         publishedDate={article.date}
@@ -147,7 +147,7 @@ export default function InsightArticle() {
         <div className="relative w-full h-[300px] md:h-[420px] mt-4 overflow-hidden">
           <img
             src={article.image || insightsFeatured}
-            alt={article.title}
+            alt={article.imageAlt || article.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-primary/40" />
@@ -177,9 +177,9 @@ export default function InsightArticle() {
               >
                 {a.image && (
                   <div className="h-40 overflow-hidden">
-                    <img
+                     <img
                       src={a.image}
-                      alt={a.title}
+                      alt={a.imageAlt || a.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
                     />

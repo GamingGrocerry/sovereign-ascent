@@ -113,7 +113,7 @@ export default function Insights() {
           >
             <img
               src={featuredArticle.image || insightsFeatured}
-              alt={featuredArticle.title}
+              alt={featuredArticle.imageAlt || featuredArticle.title}
               className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
@@ -201,7 +201,7 @@ export default function Insights() {
                           <div className="md:w-48 h-48 md:h-auto shrink-0 overflow-hidden">
                             <img
                               src={article.image}
-                              alt={article.title}
+                              alt={article.imageAlt || article.title}
                               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                               loading="lazy"
                             />
