@@ -173,48 +173,8 @@ export default function InsightArticle() {
         </div>
       </section>
 
-      {/* Related Articles */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container-wide">
-          <div className="section-divider mb-8" />
-          <h2 className="mb-12">Continue Reading</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {related.map((a) => (
-              <Link
-                key={a.slug}
-                to={`/insights/${a.slug}`}
-                className="card-elevated group overflow-hidden"
-              >
-                {a.image && (
-                  <div className="h-40 overflow-hidden">
-                     <img
-                      src={a.image}
-                      alt={a.imageAlt || a.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <span className="text-accent text-xs uppercase tracking-wide">
-                    {a.category}
-                  </span>
-                  <h3 className="text-lg mt-3 mb-3 group-hover:text-accent transition-colors">
-                    {a.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
-                    {a.excerpt}
-                  </p>
-                  <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
-                    Read article
-                    <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Related Articles Carousel */}
+      <RelatedCarousel articles={related} />
 
       {/* CTA */}
       <section className="py-20 bg-background">
