@@ -4,6 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Clock, ChevronRight } from "lucide-react";
 import { getArticleBySlug, articles } from "@/data/insights-data";
+import { ShareButton } from "@/components/ShareButton";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import NotFound from "./NotFound";
 import { ArticleContent } from "@/components/ArticleContent";
