@@ -148,7 +148,7 @@ ISO 9001 is a structured path toward operational maturity, not the destination i
 
 ### Do startups and founders need ISO 9001?
 
-Not immediately — and not in a form that overwhelms their operational velocity. Early-stage companies benefit most from building ISO 9001-aligned governance infrastructure: documented processes for high-risk operations, a corrective action mechanism, a quality policy, and a management review rhythm. This foundation scales naturally. Studies — including analyses by [Deloitte](https://www.deloitte.com) and [ISO](https://www.iso.org) — indicate that companies deferring this investment face 2–4x higher costs for reactive implementation.
+Not immediately — and not in a form that overwhelms their operational velocity. Early-stage companies benefit most from building ISO 9001-aligned governance infrastructure: documented processes for high-risk operations, a corrective action mechanism, a quality policy, and a management review rhythm. This foundation scales naturally. Industry studies indicate that companies deferring this investment face 2–4x higher costs for reactive implementation.
 
 ### How does ISO 9001 support government contracting compliance?
 
