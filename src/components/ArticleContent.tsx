@@ -5,10 +5,12 @@ import { ExternalLink } from "lucide-react";
 // Map of inline image paths to their ES6 imports
 const imageImports: Record<string, string> = {};
 
-// Dynamically import all mjc- images and other article inline images
-const assetModules = import.meta.glob("@/assets/mjc-*.jpg", { eager: true, import: "default" });
+// Dynamically import all article inline images
+const assetModules = import.meta.glob(
+  ["@/assets/mjc-*.jpg", "@/assets/govcon-*.jpg", "@/assets/startup-*.jpg"],
+  { eager: true, import: "default" }
+);
 for (const [path, mod] of Object.entries(assetModules)) {
-  // Extract the filename part after /assets/
   const filename = path.split("/assets/")[1];
   if (filename) {
     imageImports[`/assets/${filename}`] = mod as string;
