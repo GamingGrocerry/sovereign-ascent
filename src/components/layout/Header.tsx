@@ -19,6 +19,15 @@ const navItems = [
   },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
+  {
+    label: "Resources",
+    href: "/resources",
+    dropdown: [
+      { label: "All Resources", href: "/resources" },
+      { label: "GovCon Resources", href: "/resources/govcon" },
+      { label: "Startup Resources", href: "/resources/startup" },
+    ]
+  },
   { 
     label: "About Us", 
     href: "/about",
