@@ -193,7 +193,10 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
           <div className="section-divider mb-8" />
           <h2 className="mb-4">Professional Frameworks</h2>
           <p className="text-lg text-muted-foreground">
-            Download our field-tested frameworks to support your compliance operations.
+            These Professional Frameworks are provided for informational purposes and not for official use. 
+            For customized versions or implementation support, contact{" "}
+            <a href="mailto:info@elevateqcs.com" className="text-accent hover:underline">info@elevateqcs.com</a>{" "}
+            or use the <a href="/contact" className="text-accent hover:underline">contact form</a>.
           </p>
         </div>
 
