@@ -28,10 +28,18 @@ const parseInline = (text: string): React.ReactNode[] => {
     else if (match[3]) parts.push(<em key={inlineKey++}>{parseInline(match[4])}</em>);
     else if (match[5]) {
       const href = match[7];
-      if (href.startsWith("mailto:") || href.startsWith("http")) {
+      const isExternal = href.startsWith("http");
+      const isMail = href.startsWith("mailto:");
+      if (isMail || isExternal) {
         parts.push(
-          <a key={inlineKey++} href={href} className="text-link">
+          <a
+            key={inlineKey++}
+            href={href}
+            className="text-link inline-flex items-center gap-1"
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer nofollow" } : {})}
+          >
             {match[6]}
+            {isExternal && <ExternalLink className="inline w-3 h-3 shrink-0" />}
           </a>
         );
       } else {
