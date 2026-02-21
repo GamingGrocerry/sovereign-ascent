@@ -35,7 +35,7 @@ export default function ResourcesStartup() {
 
       <ResourceGate
         type="startup"
-        bucketName="ElevateQCS.com Resources Docs - Startup"
+        bucketName="elevateqcs-resourcesdocs-startups"
         title="Access Startup Frameworks"
         subtitle="Enter your business email to access our curated library of startup operations Professional Frameworks."
       />

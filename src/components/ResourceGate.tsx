@@ -114,6 +114,25 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
       .replace(/\b\w/g, (c) => c.toUpperCase());
   };
 
+  const getFileExtension = (name: string) => {
+    const ext = name.split(".").pop()?.toLowerCase() || "";
+    return ext;
+  };
+
+  const getFileIcon = (name: string) => {
+    const ext = getFileExtension(name);
+    const colorMap: Record<string, string> = {
+      pdf: "from-red-500/20 to-red-600/10 text-red-400",
+      doc: "from-blue-500/20 to-blue-600/10 text-blue-400",
+      docx: "from-blue-500/20 to-blue-600/10 text-blue-400",
+      xls: "from-green-500/20 to-green-600/10 text-green-400",
+      xlsx: "from-green-500/20 to-green-600/10 text-green-400",
+      ppt: "from-orange-500/20 to-orange-600/10 text-orange-400",
+      pptx: "from-orange-500/20 to-orange-600/10 text-orange-400",
+    };
+    return colorMap[ext] || "from-secondary to-secondary/50 text-accent";
+  };
+
   if (!isUnlocked) {
     return (
       <section className="py-28 bg-background section-luxury">
@@ -196,18 +215,33 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
                 href={file.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-elevated p-8 group"
+                className="group relative card-elevated p-0 overflow-hidden hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-6">
-                  <FileText className="w-6 h-6 text-accent" />
+                {/* Top color bar */}
+                <div className={`h-1.5 w-full bg-gradient-to-r ${getFileIcon(file.name).split(" ").slice(0, 2).join(" ")}`} />
+
+                <div className="p-8">
+                  {/* Icon + Extension badge */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${getFileIcon(file.name)} flex items-center justify-center`}>
+                      <FileText className="w-7 h-7" />
+                    </div>
+                    <span className="uppercase text-[10px] font-bold tracking-widest text-muted-foreground bg-secondary/60 px-2.5 py-1 rounded-sm">
+                      {getFileExtension(file.name)}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-base font-semibold leading-snug mb-4 group-hover:text-accent transition-colors line-clamp-2">
+                    {formatFileName(file.name)}
+                  </h3>
+
+                  {/* Download CTA */}
+                  <div className="flex items-center text-accent text-sm font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+                    <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                    Download Framework
+                  </div>
                 </div>
-                <h3 className="text-lg mb-3 group-hover:text-accent transition-colors">
-                  {formatFileName(file.name)}
-                </h3>
-                <span className="inline-flex items-center text-accent text-sm font-medium">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Framework
-                </span>
               </a>
             ))}
           </div>
