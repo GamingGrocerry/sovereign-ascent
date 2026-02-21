@@ -22,6 +22,7 @@ import FAQ from "./pages/FAQ";
 import Careers from "./pages/Careers";
 import Credentials from "./pages/Credentials";
 import CookiePolicy from "./pages/CookiePolicy";
+import Acronyms from "./pages/Acronyms";
 import Resources from "./pages/Resources";
 import ResourcesGovcon from "./pages/ResourcesGovcon";
 import ResourcesStartup from "./pages/ResourcesStartup";
