@@ -79,6 +79,8 @@ startupComplianceFunding.image = imgStartupComplianceFunding;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  govconOperationalMaturity,
+  startupComplianceFunding,
   multiJurisdictionalCompliance,
   govconPrimeExpectations,
   iso9001OperationalMaturity,
