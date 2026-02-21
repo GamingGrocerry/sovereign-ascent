@@ -22,6 +22,9 @@ import FAQ from "./pages/FAQ";
 import Careers from "./pages/Careers";
 import Credentials from "./pages/Credentials";
 import CookiePolicy from "./pages/CookiePolicy";
+import Resources from "./pages/Resources";
+import ResourcesGovcon from "./pages/ResourcesGovcon";
+import ResourcesStartup from "./pages/ResourcesStartup";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +53,9 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/credentials" element={<Credentials />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/govcon" element={<ResourcesGovcon />} />
+          <Route path="/resources/startup" element={<ResourcesStartup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
