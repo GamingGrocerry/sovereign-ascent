@@ -71,6 +71,10 @@ govconPrimeExpectations.icon = TrendingUp;
 govconPrimeExpectations.image = imgGovconPrime;
 multiJurisdictionalCompliance.icon = TrendingUp;
 multiJurisdictionalCompliance.image = imgMultiJurisdictional;
+govconOperationalMaturity.icon = TrendingUp;
+govconOperationalMaturity.image = imgGovconOperationalMaturity;
+startupComplianceFunding.icon = BookOpen;
+startupComplianceFunding.image = imgStartupComplianceFunding;
 
 export const featuredArticle = costOfNonCompliance;
 
