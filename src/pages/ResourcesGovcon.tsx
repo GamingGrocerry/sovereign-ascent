@@ -35,7 +35,7 @@ export default function ResourcesGovcon() {
 
       <ResourceGate
         type="govcon"
-        bucketName="ElevateQCS.com Resources Docs - GovCon"
+        bucketName="elevateqcs-resourcesdocs-govcon"
         title="Access GovCon Frameworks"
         subtitle="Enter your business email to access our curated library of government contracting Professional Frameworks."
       />
