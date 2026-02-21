@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ExternalLink } from "lucide-react";
 
 // Map of inline image paths to their ES6 imports
 const imageImports: Record<string, string> = {};
