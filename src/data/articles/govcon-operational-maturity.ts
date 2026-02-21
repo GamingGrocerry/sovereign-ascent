@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Government contractors are often overwhelmed by the transition from winning a bid to passing an audit. Operational maturity — not proposal skill — determines whether your contract becomes profitable or a liability.",
   readTime: "10 min read",
-  date: "February 18, 2026",
+  date: "February 21, 2026",
   metaDescription:
     "Why operational maturity determines government contractor profitability in 2026. Explore FAR compliance matrices, CTIP audit readiness, CMMC gap assessments, and proposal compliance checklists that bridge the gap between contract award and sustained performance.",
   imageAlt:

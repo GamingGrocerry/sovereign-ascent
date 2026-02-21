@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Startups care about speed and funding. This reframes compliance from a bureaucratic burden into a due diligence asset that makes your company more attractive to investors and acquirers.",
   readTime: "9 min read",
-  date: "February 20, 2026",
+  date: "February 21, 2026",
   metaDescription:
     "How compliance-first operations help startups secure Seed and Series A funding faster. SOPs, risk registers, pre-ISO self-assessments, and investor compliance packs transform due diligence from a bottleneck into a competitive advantage for high-growth regulated companies.",
   imageAlt:
