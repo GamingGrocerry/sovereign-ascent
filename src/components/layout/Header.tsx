@@ -6,7 +6,6 @@ import { SearchBar } from "@/components/SearchBar";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { 
     label: "Services", 
@@ -47,7 +46,6 @@ const navItems = [
       { label: "Careers & Collaborations", href: "/careers" },
     ]
   },
-  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -184,16 +182,16 @@ export function Header() {
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
           <div className="container-wide py-6 space-y-1">
             <Link
-              to="/"
+              to="/about"
               onClick={() => setIsMobileMenuOpen(false)}
               className={cn(
                 "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/"
+                location.pathname === "/about"
                   ? "text-accent"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              Home
+              About
             </Link>
             <Link
               to="/about"
@@ -329,18 +327,6 @@ export function Header() {
               ))}
             </div>
 
-            <Link
-              to="/contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={cn(
-                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/contact"
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Contact
-            </Link>
             <div className="pt-4">
               <Button variant="cta" size="lg" className="w-full" asChild>
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
