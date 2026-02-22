@@ -182,16 +182,16 @@ export function Header() {
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
           <div className="container-wide py-6 space-y-1">
             <Link
-              to="/"
+              to="/about"
               onClick={() => setIsMobileMenuOpen(false)}
               className={cn(
                 "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/"
+                location.pathname === "/about"
                   ? "text-accent"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              Home
+              About
             </Link>
             <Link
               to="/about"
