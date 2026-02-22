@@ -257,6 +257,29 @@ export function Header() {
               Insights
             </Link>
 
+            {/* Industries Group */}
+            <div className="py-2">
+              <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Industries</p>
+              {[
+                { label: "Defense & Government Contracting", href: "/industries/defense" },
+                { label: "Growth-Stage & Commercial", href: "/industries/growth-stage" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "block text-sm py-2 pl-4 transition-colors",
+                    location.pathname === item.href
+                      ? "text-accent"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
             {/* Resources Group */}
             <div className="py-2">
               <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Resources</p>
