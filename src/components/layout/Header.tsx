@@ -327,18 +327,6 @@ export function Header() {
               ))}
             </div>
 
-            <Link
-              to="/contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={cn(
-                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/contact"
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Contact
-            </Link>
             <div className="pt-4">
               <Button variant="cta" size="lg" className="w-full" asChild>
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
