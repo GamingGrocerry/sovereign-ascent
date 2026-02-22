@@ -26,6 +26,8 @@ import Acronyms from "./pages/Acronyms";
 import Resources from "./pages/Resources";
 import ResourcesGovcon from "./pages/ResourcesGovcon";
 import ResourcesStartup from "./pages/ResourcesStartup";
+import IndustryDefense from "./pages/IndustryDefense";
+import IndustryGrowth from "./pages/IndustryGrowth";
 
 const queryClient = new QueryClient();
 
