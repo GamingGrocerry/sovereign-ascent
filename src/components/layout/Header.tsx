@@ -17,6 +17,14 @@ const navItems = [
       { label: "Engagement Model", href: "/engagement" },
     ]
   },
+  {
+    label: "Industries",
+    href: "/industries/defense",
+    dropdown: [
+      { label: "Defense & Government Contracting", href: "/industries/defense" },
+      { label: "Growth-Stage & Commercial", href: "/industries/growth-stage" },
+    ]
+  },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
   {
