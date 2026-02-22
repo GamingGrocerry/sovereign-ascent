@@ -26,6 +26,8 @@ import Acronyms from "./pages/Acronyms";
 import Resources from "./pages/Resources";
 import ResourcesGovcon from "./pages/ResourcesGovcon";
 import ResourcesStartup from "./pages/ResourcesStartup";
+import IndustryDefense from "./pages/IndustryDefense";
+import IndustryGrowth from "./pages/IndustryGrowth";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +60,8 @@ const App = () => (
           <Route path="/resources/govcon" element={<ResourcesGovcon />} />
           <Route path="/resources/startup" element={<ResourcesStartup />} />
           <Route path="/acronyms" element={<Acronyms />} />
+          <Route path="/industries/defense" element={<IndustryDefense />} />
+          <Route path="/industries/growth-stage" element={<IndustryGrowth />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
