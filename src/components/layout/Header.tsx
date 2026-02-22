@@ -6,7 +6,6 @@ import { SearchBar } from "@/components/SearchBar";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { 
     label: "Services", 
@@ -47,7 +46,6 @@ const navItems = [
       { label: "Careers & Collaborations", href: "/careers" },
     ]
   },
-  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
