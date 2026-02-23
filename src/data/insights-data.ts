@@ -30,6 +30,7 @@ import govconPrimeExpectations from "./articles/govcon-prime-expectations";
 import multiJurisdictionalCompliance from "./articles/multi-jurisdictional-compliance";
 import govconOperationalMaturity from "./articles/govcon-operational-maturity";
 import startupComplianceFunding from "./articles/startup-compliance-funding";
+import alliant3OperationalReadiness from "./articles/alliant3-operational-readiness";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
