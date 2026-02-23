@@ -83,6 +83,7 @@ alliant3OperationalReadiness.image = imgAlliant3Readiness;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  alliant3OperationalReadiness,
   govconOperationalMaturity,
   startupComplianceFunding,
   multiJurisdictionalCompliance,
