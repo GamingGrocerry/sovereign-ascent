@@ -13,7 +13,7 @@ const article: Article = {
   imageAlt:
     "Abstract geometric steel and glass government framework structure ascending against twilight sky representing Alliant 3 operational readiness and federal growth governance infrastructure",
   content: `
-## Why Winning Alliant 3 Is the Easy Part
+## The Real Challenge Starts After the Alliant 3 Award
 
 The [GSA Alliant 3 GWAC vehicle](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/governmentwide-acquisition-contracts/alliant-3) award is not the finish line. It is the starting gate.
 
