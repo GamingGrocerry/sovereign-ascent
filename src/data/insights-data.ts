@@ -77,6 +77,8 @@ govconOperationalMaturity.icon = TrendingUp;
 govconOperationalMaturity.image = imgGovconOperationalMaturity;
 startupComplianceFunding.icon = BookOpen;
 startupComplianceFunding.image = imgStartupComplianceFunding;
+alliant3OperationalReadiness.icon = TrendingUp;
+alliant3OperationalReadiness.image = imgAlliant3Readiness;
 
 export const featuredArticle = costOfNonCompliance;
 
