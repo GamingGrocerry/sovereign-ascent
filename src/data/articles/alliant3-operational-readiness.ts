@@ -15,9 +15,7 @@ const article: Article = {
   content: `
 ## Why Winning Alliant 3 Is the Easy Part
 
-Securing a position on the [GSA Alliant 3 GWAC vehicle](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/governmentwide-acquisition-contracts/alliant-3) is a significant milestone. It validates your technical credentials, your past performance, and your organizational capacity to compete at the highest tier of federal IT.
-
-But the vehicle award is not the finish line. It is the starting gate.
+The [GSA Alliant 3 GWAC vehicle](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/governmentwide-acquisition-contracts/alliant-3) award is not the finish line. It is the starting gate.
 
 **Operational Readiness for Alliant 3** is a contractor's ability to scale task order execution while maintaining governance, compliance alignment, and delivery discipline — simultaneously, under pressure, across multiple programs.
 
