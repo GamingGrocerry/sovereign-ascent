@@ -35,7 +35,7 @@ The most common failure patterns we observe across federal IT contractors:
 - **CTIP policies siloed in HR or Legal.** Combating Trafficking in Persons compliance under [FAR 52.222-50](https://www.acquisition.gov/far/52.222-50) is treated as a human resources function rather than an operational control. Training records exist, but [CTIP enforcement trends](/insights/ctip-enforcement-trends) show that auditors are looking for evidence of ongoing program integration — not just annual checkboxes.
 - **No executive-level visibility into compliance risk.** Leadership sees financial dashboards. They see pipeline reports. They do not see compliance risk exposure across active programs. When a finding surfaces, it is a surprise — not a managed event.
 
-This section should feel painfully accurate to any COO or VP of Growth who has lived through a post-award governance failure. These are not theoretical risks. They are the operational reality of scaling under a major GWAC vehicle.
+These are not theoretical risks. They are the operational reality of scaling under a major GWAC vehicle.
 
 ## The Financial Cost of Governance Gaps
 
