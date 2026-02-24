@@ -157,9 +157,13 @@ export default function Index() {
             <h1 className="text-primary-foreground mb-4 sm:mb-8 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-6xl !leading-tight">
               Operational Risk That Survives Scrutiny — Before It Costs You
             </h1>
-            <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-2xl font-light !leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
-              Empowering regulated organizations and government contracting teams with 
-              operational compliance systems built for real-world execution.
+            <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-2xl font-light !leading-relaxed max-w-3xl mx-auto mb-3 sm:mb-6 animate-fade-up-delay-2">
+              We architect governance infrastructure that strengthens internal controls, 
+              institutionalizes compliance discipline, and aligns operations with contractual 
+              and regulatory requirements — so growth doesn't create hidden risk.
+            </p>
+            <p className="text-primary-foreground/50 !text-[10px] sm:!text-sm md:!text-base font-light tracking-wide max-w-2xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
+              Built for regulated, contract-driven environments where operational gaps carry financial consequence.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 animate-fade-up-delay-3 px-2 sm:px-0">
               <Button variant="hero" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
