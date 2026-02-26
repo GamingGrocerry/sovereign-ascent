@@ -43,6 +43,8 @@ On the EU side, CS3D creates exposure to civil liability under national tort law
 
 The scale of enforcement is accelerating across both jurisdictions. The US Department of Justice recovered **$6.8 billion in False Claims Act settlements in FY 2025** — the largest annual recovery in FCA history — alongside **1,297 qui tam whistleblower suits**, also an all-time record. Supply chain and labour compliance violations are within the scope of FCA exposure. On the EU side, member state transposition of CS3D will create new supervisory bodies with independent investigative authority.
 
+![Fortified government enforcement courtyard with geometric security barriers representing CTIP and CS3D regulatory authority and debarment enforcement infrastructure](/assets/ctip-enforcement-stakes.jpg "Enforcement infrastructure: the regulatory authority behind CTIP debarment actions and CS3D supervisory sanctions")
+
 ## Why Most Programs Fail
 
 Most organisations that have any anti-trafficking compliance documentation fall into one of three categories:
