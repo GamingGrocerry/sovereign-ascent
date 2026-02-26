@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, Users, Globe, Shield, Target, Eye, Wifi } from "lucide-react";
@@ -46,6 +47,12 @@ const differentiators = [
 export default function About() {
   return (
     <Layout>
+      <SEOHead
+        title="About ElevateQCS | Independent Quality & Compliance Advisory"
+        description="ElevateQCS is a principal-led advisory firm built on hands-on experience designing QMS frameworks across major government contracting programs. Vendor-neutral, NDA-first."
+        url="https://elevateqcs.com/about"
+        keywords={["about ElevateQCS", "compliance advisory firm", "quality management advisory", "GovCon compliance"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

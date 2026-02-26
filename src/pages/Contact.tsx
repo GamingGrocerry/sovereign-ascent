@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -92,6 +93,12 @@ export default function Contact() {
 
   return (
     <Layout>
+      <SEOHead
+        title="Request a Consultation | Contact ElevateQCS"
+        description="Start a confidential conversation with ElevateQCS about your compliance objectives. NDA-first engagement, secure communications, project-based pricing."
+        url="https://elevateqcs.com/contact"
+        keywords={["contact ElevateQCS", "compliance consultation", "GovCon advisory consultation"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

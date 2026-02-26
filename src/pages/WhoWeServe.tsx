@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Building2, Rocket, AlertTriangle, CheckCircle } from "lucide-react";
@@ -68,6 +69,12 @@ const audiences = [
 export default function WhoWeServe() {
   return (
     <Layout>
+      <SEOHead
+        title="Who We Serve | ElevateQCS"
+        description="ElevateQCS serves prime contractors, subcontractors, and high-growth companies needing defensible compliance systems, audit readiness, and operational governance."
+        url="https://elevateqcs.com/who-we-serve"
+        keywords={["GovCon compliance advisory", "prime contractor compliance", "subcontractor quality systems"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

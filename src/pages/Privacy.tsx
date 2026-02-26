@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Privacy() {
   return (
     <Layout>
+      <SEOHead
+        title="Privacy Policy | ElevateQCS"
+        description="ElevateQCS privacy policy. How we collect, use, and protect your personal information. GDPR and privacy compliance."
+        url="https://elevateqcs.com/privacy"
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div className="page-hero-overlay" />

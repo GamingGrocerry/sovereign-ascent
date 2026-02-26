@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Plus, Minus } from "lucide-react";
@@ -120,6 +121,12 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 export default function FAQ() {
   return (
     <Layout>
+      <SEOHead
+        title="Frequently Asked Questions | ElevateQCS"
+        description="Common questions about ElevateQCS advisory services, engagement process, confidentiality, pricing, and compliance expertise for government contractors."
+        url="https://elevateqcs.com/faq"
+        keywords={["ElevateQCS FAQ", "compliance advisory questions", "GovCon advisory FAQ"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div className="page-hero-overlay" />

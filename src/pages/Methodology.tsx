@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search, Compass, Wrench, Users, BarChart3, CheckCircle } from "lucide-react";
@@ -104,6 +105,12 @@ export default function Methodology() {
 
   return (
     <Layout>
+      <SEOHead
+        title="ECAM Compliance Architecture Methodology | ElevateQCS"
+        description="A five-phase compliance architecture methodology: Diagnose, Architect, Implement, Embed, Monitor. Built for operational reality, not theoretical perfection."
+        url="https://elevateqcs.com/methodology"
+        keywords={["ECAM methodology", "compliance architecture", "quality management methodology"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

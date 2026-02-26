@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Target, FileCheck, BookOpen, CheckCircle2 } from "lucide-react";
@@ -87,6 +88,12 @@ const services = [
 export default function Services() {
   return (
     <Layout>
+      <SEOHead
+        title="Compliance Advisory Services | ElevateQCS"
+        description="QMS architecture, CTIP program development, audit readiness advisory, and capability training for government contractors and regulated organisations."
+        url="https://elevateqcs.com/services"
+        keywords={["compliance advisory services", "QMS architecture", "CTIP program development", "audit readiness"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
