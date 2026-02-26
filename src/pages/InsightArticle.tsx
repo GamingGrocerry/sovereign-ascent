@@ -231,6 +231,9 @@ export default function InsightArticle() {
               {article.category}
             </p>
             <h1 className="text-primary-foreground mb-6 gold-accent pb-4">{article.title}</h1>
+            <p className="text-accent text-sm font-medium mb-4">
+              Published by ElevateQCS
+            </p>
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-6 text-primary-foreground/60 text-sm">
                 <span className="flex items-center gap-2">

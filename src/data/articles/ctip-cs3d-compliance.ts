@@ -74,6 +74,32 @@ This is not a documentation exercise. It is not a training webinar. It is the op
 If your organisation operates under US federal contracts, has EU operations, or both — and you do not have a current, implemented, and evidenced compliance program under FAR 52.222-50 or CS3D — the gap is already a risk.
 
 [Contact ElevateQCS to schedule a compliance posture assessment.](/contact)
+
+## Frequently Asked Questions
+
+### Does FAR 52.222-50 apply to all federal contractors regardless of contract size?
+
+Yes. FAR 52.222-50 is included in every federal solicitation without exception. The clause applies to all federal contractors. However, the requirement for a formal, written compliance plan is triggered at contracts above $550,000 where any performance occurs outside the United States. Below that threshold, the prohibitions still apply — only the documentation requirement differs.
+
+### What is the difference between CTIP compliance under FAR 52.222-50 and CS3D due diligence?
+
+Both frameworks address human trafficking and forced labour, but they differ in structure and scope. FAR 52.222-50 is contract-specific: it applies per federal contract and requires compliance plans, employee awareness programs, and subcontractor flow-down clauses. CS3D is enterprise-wide: it requires companies above the size threshold to conduct ongoing human rights due diligence across their entire operations and supply chain, with annual public reporting. A program built for one does not automatically satisfy the other.
+
+### What happens if a subcontractor violates FAR 52.222-50?
+
+The violation is posted to FAPIIS — the Federal Awardee Performance and Integrity Information System — against the prime contractor's record, not just the subcontractor's. That record is visible to every contracting officer at every federal agency and has no expiration. The prime contractor bears responsibility for ensuring flow-down compliance across all tiers.
+
+### When does CS3D company compliance begin?
+
+Member states must transpose the directive into national law by 26 July 2028. Company compliance is required by 26 July 2029 for companies meeting the scope thresholds established under the December 2025 Omnibus agreement: 5,000 or more employees and €1.5 billion or more in global turnover, or €1.5 billion or more in EU net turnover for non-EU companies. The infrastructure window between now and 2029 is the period to build.
+
+### Can a company face civil liability under CS3D?
+
+The harmonised EU-wide civil liability regime was removed in the December 2025 Omnibus agreement. However, civil liability may still arise under national tort law in individual member states where companies fail to conduct adequate due diligence. The exposure varies by jurisdiction, which adds complexity for companies operating across multiple EU member states.
+
+### What is the most common reason CTIP compliance programs fail during enforcement?
+
+The most common failure is the gap between documentation and operational reality. Organisations build a compliance plan for contract award and never operationalise it — no training delivery, no subcontractor flow-down, no internal monitoring. The FAR is explicit: the mitigating factor in enforcement is demonstrated compliance with the plan at the time of the violation, not the existence of the plan itself.
   `,
 };
 
