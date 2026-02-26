@@ -4,7 +4,7 @@ const article: Article = {
   slug: "ctip-cs3d-compliance",
   category: "Regulatory Landscape",
   title:
-    "Your Business May Already Be Non-Compliant. Here Is What CTIP and the EU's New Directive Mean for You.",
+    "Your Business May Already Be Non-Compliant. Here Is What CTIP and the EU's New Directive Mean for You",
   excerpt:
     "FAR 52.222-50 and the EU's CS3D share the same prohibitions but differ in trigger thresholds, documentation, and evidence. A program built for one does not satisfy the other — and most companies are exposed.",
   readTime: "9 min read",
