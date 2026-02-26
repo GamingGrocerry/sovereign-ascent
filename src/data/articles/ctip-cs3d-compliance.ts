@@ -21,6 +21,8 @@ Most companies subject to anti-trafficking compliance obligations under US feder
 
 Both frameworks now carry enforcement mechanisms — debarment in the US, civil liability and public reporting obligations in the EU — that have real and lasting consequences for companies that cannot demonstrate active compliance. This is not a future risk. For any organisation holding a federal contract above the threshold or operating within EU scope, the compliance obligation is current, and the enforcement infrastructure is live.
 
+![Two converging regulatory structures in deep navy representing FAR 52.222-50 and EU CS3D dual compliance frameworks for government contractors and international operators](/assets/ctip-dual-frameworks.jpg "Dual regulatory frameworks: FAR 52.222-50 and EU CS3D converging on a single anti-trafficking compliance obligation")
+
 ## Two Frameworks. One Problem.
 
 **FAR 52.222-50** applies to every US federal contractor — no exceptions. It is included in every federal solicitation without exception and was updated October 1, 2025 under FAC 2025-06. For contracts above $550,000 where any performance occurs outside the United States, a formal compliance plan is mandatory before contract award, not after. It covers the contractor's own operations and every [subcontractor at every tier](/insights/subcontractor-qms-failures).
@@ -41,6 +43,8 @@ On the EU side, CS3D creates exposure to civil liability under national tort law
 
 The scale of enforcement is accelerating across both jurisdictions. The US Department of Justice recovered **$6.8 billion in False Claims Act settlements in FY 2025** — the largest annual recovery in FCA history — alongside **1,297 qui tam whistleblower suits**, also an all-time record. Supply chain and labour compliance violations are within the scope of FCA exposure. On the EU side, member state transposition of CS3D will create new supervisory bodies with independent investigative authority.
 
+![Fortified government enforcement courtyard with geometric security barriers representing CTIP and CS3D regulatory authority and debarment enforcement infrastructure](/assets/ctip-enforcement-stakes.jpg "Enforcement infrastructure: the regulatory authority behind CTIP debarment actions and CS3D supervisory sanctions")
+
 ## Why Most Programs Fail
 
 Most organisations that have any anti-trafficking compliance documentation fall into one of three categories:
@@ -54,6 +58,8 @@ The FAR is explicit on this point. The mitigating factor that reduces penalties 
 CS3D adds a further dimension: the directive requires annual public reporting. A company that cannot evidence its due diligence activities has not just failed an audit — it has failed publicly. The gap between [documented policy and operational reality](/insights/documentation-best-practices) is precisely where enforcement actions originate.
 
 The pattern is the same one that drives [audit failures](/insights/audit-failure-patterns) across regulated industries: the system exists on paper but not in practice, and the distance between those two states is where financial and reputational exposure concentrates.
+
+![Fractured glass panels with stress patterns representing structural compliance program failure modes and governance gaps in anti-trafficking programs](/assets/ctip-program-failures.jpg "Compliance program failures: the structural gaps between documented policy and operational reality where enforcement exposure concentrates")
 
 ## Who Solves This
 
