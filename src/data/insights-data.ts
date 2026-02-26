@@ -49,6 +49,7 @@ import imgMultiJurisdictional from "@/assets/insight-multi-jurisdictional.jpg";
 import imgGovconOperationalMaturity from "@/assets/insight-govcon-operational-maturity.jpg";
 import imgStartupComplianceFunding from "@/assets/insight-startup-compliance-funding.jpg";
 import imgAlliant3Readiness from "@/assets/insight-alliant3-readiness.jpg";
+import imgCtipCs3d from "@/assets/insight-ctip-cs3d-compliance.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
