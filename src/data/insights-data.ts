@@ -87,6 +87,7 @@ ctipCs3dCompliance.image = imgCtipCs3d;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  ctipCs3dCompliance,
   alliant3OperationalReadiness,
   govconOperationalMaturity,
   startupComplianceFunding,
