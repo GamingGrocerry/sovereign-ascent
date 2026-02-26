@@ -5,6 +5,11 @@ import { SEOHead } from "@/components/SEOHead";
 export default function Terms() {
   return (
     <Layout>
+      <SEOHead
+        title="Terms of Use | ElevateQCS"
+        description="Terms of use for the ElevateQCS website and advisory services. Governing terms for engagement and use of published content."
+        url="https://elevateqcs.com/terms"
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div className="page-hero-overlay" />

@@ -4,6 +4,11 @@ import { SEOHead } from "@/components/SEOHead";
 export default function CookiePolicy() {
   return (
     <Layout>
+      <SEOHead
+        title="Cookie Policy | ElevateQCS"
+        description="ElevateQCS cookie policy. How we use cookies and similar technologies on our website."
+        url="https://elevateqcs.com/cookie-policy"
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div className="page-hero-overlay" />

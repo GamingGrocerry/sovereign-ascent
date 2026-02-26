@@ -50,6 +50,12 @@ const values = [
 export default function Careers() {
   return (
     <Layout>
+      <SEOHead
+        title="Careers & Collaborations | ElevateQCS"
+        description="Work with ElevateQCS as a subject matter expert, strategic partner, or regional specialist. Collaborate with an independent compliance advisory firm."
+        url="https://elevateqcs.com/careers"
+        keywords={["compliance careers", "advisory collaboration", "compliance consulting careers"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

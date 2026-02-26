@@ -118,6 +118,12 @@ const faqs = [
 export default function EngagementModel() {
   return (
     <Layout>
+      <SEOHead
+        title="Engagement Model | ElevateQCS"
+        description="How ElevateQCS engagements work: from initial conversation and NDA through diagnostic, architecture, implementation, and capability transfer. Project-based pricing."
+        url="https://elevateqcs.com/engagement"
+        keywords={["compliance engagement model", "advisory engagement process", "compliance consulting process"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

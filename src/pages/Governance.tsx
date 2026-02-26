@@ -41,6 +41,12 @@ const principles = [
 export default function Governance() {
   return (
     <Layout>
+      <SEOHead
+        title="Governance & Ethics | ElevateQCS"
+        description="ElevateQCS governance framework: independence, vendor neutrality, conflict of interest management, NDA-first engagement, and advisory-only scope boundaries."
+        url="https://elevateqcs.com/governance"
+        keywords={["compliance governance", "advisory ethics", "vendor neutral advisory"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

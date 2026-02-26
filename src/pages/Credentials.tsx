@@ -47,6 +47,12 @@ const credentials = [
 export default function Credentials() {
   return (
     <Layout>
+      <SEOHead
+        title="Credentials & Experience | ElevateQCS"
+        description="9+ years of advisory experience, 1,000+ audit interactions, 125+ compliance frameworks delivered. Experience measured in outcomes across defense, aerospace, and government services."
+        url="https://elevateqcs.com/credentials"
+        keywords={["compliance credentials", "advisory experience", "audit readiness experience"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div

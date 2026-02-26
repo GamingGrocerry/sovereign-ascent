@@ -7,6 +7,11 @@ import { ArrowRight } from "lucide-react";
 export default function Accessibility() {
   return (
     <Layout>
+      <SEOHead
+        title="Accessibility Statement | ElevateQCS"
+        description="ElevateQCS commitment to digital accessibility and inclusivity. WCAG 2.1 AA compliance efforts."
+        url="https://elevateqcs.com/accessibility"
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div className="page-hero-overlay" />
