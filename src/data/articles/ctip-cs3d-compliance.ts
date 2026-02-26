@@ -21,6 +21,8 @@ Most companies subject to anti-trafficking compliance obligations under US feder
 
 Both frameworks now carry enforcement mechanisms — debarment in the US, civil liability and public reporting obligations in the EU — that have real and lasting consequences for companies that cannot demonstrate active compliance. This is not a future risk. For any organisation holding a federal contract above the threshold or operating within EU scope, the compliance obligation is current, and the enforcement infrastructure is live.
 
+![Two converging regulatory structures in deep navy representing FAR 52.222-50 and EU CS3D dual compliance frameworks for government contractors and international operators](/assets/ctip-dual-frameworks.jpg "Dual regulatory frameworks: FAR 52.222-50 and EU CS3D converging on a single anti-trafficking compliance obligation")
+
 ## Two Frameworks. One Problem.
 
 **FAR 52.222-50** applies to every US federal contractor — no exceptions. It is included in every federal solicitation without exception and was updated October 1, 2025 under FAC 2025-06. For contracts above $550,000 where any performance occurs outside the United States, a formal compliance plan is mandatory before contract award, not after. It covers the contractor's own operations and every [subcontractor at every tier](/insights/subcontractor-qms-failures).
