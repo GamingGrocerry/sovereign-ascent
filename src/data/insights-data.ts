@@ -81,6 +81,8 @@ startupComplianceFunding.icon = BookOpen;
 startupComplianceFunding.image = imgStartupComplianceFunding;
 alliant3OperationalReadiness.icon = TrendingUp;
 alliant3OperationalReadiness.image = imgAlliant3Readiness;
+ctipCs3dCompliance.icon = AlertCircle;
+ctipCs3dCompliance.image = imgCtipCs3d;
 
 export const featuredArticle = costOfNonCompliance;
 
