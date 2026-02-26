@@ -31,6 +31,7 @@ import multiJurisdictionalCompliance from "./articles/multi-jurisdictional-compl
 import govconOperationalMaturity from "./articles/govcon-operational-maturity";
 import startupComplianceFunding from "./articles/startup-compliance-funding";
 import alliant3OperationalReadiness from "./articles/alliant3-operational-readiness";
+import ctipCs3dCompliance from "./articles/ctip-cs3d-compliance";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -48,6 +49,7 @@ import imgMultiJurisdictional from "@/assets/insight-multi-jurisdictional.jpg";
 import imgGovconOperationalMaturity from "@/assets/insight-govcon-operational-maturity.jpg";
 import imgStartupComplianceFunding from "@/assets/insight-startup-compliance-funding.jpg";
 import imgAlliant3Readiness from "@/assets/insight-alliant3-readiness.jpg";
+import imgCtipCs3d from "@/assets/insight-ctip-cs3d-compliance.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -79,10 +81,13 @@ startupComplianceFunding.icon = BookOpen;
 startupComplianceFunding.image = imgStartupComplianceFunding;
 alliant3OperationalReadiness.icon = TrendingUp;
 alliant3OperationalReadiness.image = imgAlliant3Readiness;
+ctipCs3dCompliance.icon = AlertCircle;
+ctipCs3dCompliance.image = imgCtipCs3d;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  ctipCs3dCompliance,
   alliant3OperationalReadiness,
   govconOperationalMaturity,
   startupComplianceFunding,
