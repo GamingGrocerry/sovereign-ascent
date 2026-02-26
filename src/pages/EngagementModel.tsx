@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageSquare, FileSignature, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
