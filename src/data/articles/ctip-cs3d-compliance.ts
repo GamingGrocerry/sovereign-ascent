@@ -59,6 +59,8 @@ CS3D adds a further dimension: the directive requires annual public reporting. A
 
 The pattern is the same one that drives [audit failures](/insights/audit-failure-patterns) across regulated industries: the system exists on paper but not in practice, and the distance between those two states is where financial and reputational exposure concentrates.
 
+![Fractured glass panels with stress patterns representing structural compliance program failure modes and governance gaps in anti-trafficking programs](/assets/ctip-program-failures.jpg "Compliance program failures: the structural gaps between documented policy and operational reality where enforcement exposure concentrates")
+
 ## Who Solves This
 
 Building a CTIP and CS3D compliance program that is operational — not just documented — requires expertise across regulatory interpretation, governance architecture, internal controls design, [supply chain management](/insights/supply-chain-compliance), and audit preparation. These are not four separate projects. They are one integrated system, and it has to be built correctly from the start, because retrofitting a compliance program under enforcement pressure is exponentially more expensive than building it right the first time. The [cost differential between proactive and reactive compliance](/insights/cost-of-non-compliance) is well established: reactive programs cost two to four times more than those built ahead of enforcement.
