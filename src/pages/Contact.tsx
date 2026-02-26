@@ -93,6 +93,12 @@ export default function Contact() {
 
   return (
     <Layout>
+      <SEOHead
+        title="Request a Consultation | Contact ElevateQCS"
+        description="Start a confidential conversation with ElevateQCS about your compliance objectives. NDA-first engagement, secure communications, project-based pricing."
+        url="https://elevateqcs.com/contact"
+        keywords={["contact ElevateQCS", "compliance consultation", "GovCon advisory consultation"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 

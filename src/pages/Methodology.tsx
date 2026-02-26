@@ -105,6 +105,12 @@ export default function Methodology() {
 
   return (
     <Layout>
+      <SEOHead
+        title="ECAM Compliance Architecture Methodology | ElevateQCS"
+        description="A five-phase compliance architecture methodology: Diagnose, Architect, Implement, Embed, Monitor. Built for operational reality, not theoretical perfection."
+        url="https://elevateqcs.com/methodology"
+        keywords={["ECAM methodology", "compliance architecture", "quality management methodology"]}
+      />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
         <div 
