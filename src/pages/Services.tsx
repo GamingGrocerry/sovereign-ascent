@@ -243,7 +243,7 @@ export default function Services() {
               </Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <Link to="/contact">
+              <Link to="/rfp">
                 Submit a Request for Proposal
               </Link>
             </Button>
