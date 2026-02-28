@@ -125,14 +125,14 @@ export function Header() {
                   to={item.href}
                   className={cn(
                     "text-xs font-medium tracking-widest uppercase transition-colors relative flex items-center gap-1 py-2",
-                    location.pathname === item.href || (item.megaMenu && location.pathname.startsWith("/services"))
+                    location.pathname === item.href || (item.megaMenu === true && location.pathname.startsWith("/services")) || (item.megaMenu === "industries" && location.pathname.startsWith("/industries"))
                       ? showDarkHeader 
                         ? "text-primary-foreground" 
                         : "text-accent"
                       : showDarkHeader
                       ? "text-primary-foreground/70 hover:text-primary-foreground"
                       : "text-muted-foreground hover:text-foreground",
-                    (location.pathname === item.href || (item.megaMenu && location.pathname.startsWith("/services"))) && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent"
+                    (location.pathname === item.href || (item.megaMenu === true && location.pathname.startsWith("/services")) || (item.megaMenu === "industries" && location.pathname.startsWith("/industries"))) && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent"
                   )}
                 >
                   {item.label}
