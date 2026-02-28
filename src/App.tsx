@@ -15,7 +15,7 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Accessibility from "./pages/Accessibility";
-import WhoWeServe from "./pages/WhoWeServe";
+// WhoWeServe removed — content integrated into Services page
 import Governance from "./pages/Governance";
 import EngagementModel from "./pages/EngagementModel";
 import FAQ from "./pages/FAQ";
@@ -49,7 +49,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/accessibility" element={<Accessibility />} />
-          <Route path="/who-we-serve" element={<WhoWeServe />} />
+          {/* /who-we-serve removed — content integrated into /services */}
           <Route path="/governance" element={<Governance />} />
           <Route path="/engagement" element={<EngagementModel />} />
           <Route path="/faq" element={<FAQ />} />
