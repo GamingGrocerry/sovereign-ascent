@@ -161,16 +161,17 @@ export default function RFP() {
         e.target.value = "";
         return;
       }
-      if (file.size > 20 * 1024 * 1024) {
+      if (file.size > 15 * 1024 * 1024) {
         toast({
           title: "File Too Large",
-          description: "Maximum file size is 20MB.",
+          description: "Maximum file size is 15MB.",
           variant: "destructive",
         });
         e.target.value = "";
         return;
       }
       setFileName(file.name);
+      setSelectedFile(file);
     }
   };
 
