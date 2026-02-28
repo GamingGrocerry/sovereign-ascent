@@ -17,6 +17,18 @@ const servicesMegaMenu = [
   { label: "Digital Governance", href: "/services/digital-governance" },
 ];
 
+const industriesMegaMenu = [
+  { label: "Defense & Aerospace", href: "/industries/defense" },
+  { label: "Federal IT & Systems Integration", href: "/industries/federal-it" },
+  { label: "Medical Devices & Life Sciences", href: "/industries/medical-devices" },
+  { label: "AI & Deep Tech", href: "/industries/ai-deep-tech" },
+  { label: "Advanced Manufacturing", href: "/industries/advanced-manufacturing" },
+  { label: "Cybersecurity", href: "/industries/cybersecurity" },
+  { label: "Infrastructure & Engineering", href: "/industries/infrastructure" },
+  { label: "International Development", href: "/industries/international-development" },
+  { label: "Climate & Energy", href: "/industries/climate-energy" },
+];
+
 const navItems = [
   {
     label: "Services",
@@ -25,11 +37,8 @@ const navItems = [
   },
   {
     label: "Industries",
-    href: "/industries/defense",
-    dropdown: [
-      { label: "Defense & Government Contracting", href: "/industries/defense" },
-      { label: "Growth-Stage & Commercial", href: "/industries/growth-stage" },
-    ]
+    href: "/industries",
+    megaMenu: "industries",
   },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
@@ -116,14 +125,14 @@ export function Header() {
                   to={item.href}
                   className={cn(
                     "text-xs font-medium tracking-widest uppercase transition-colors relative flex items-center gap-1 py-2",
-                    location.pathname === item.href || (item.megaMenu && location.pathname.startsWith("/services"))
+                    location.pathname === item.href || (item.megaMenu === true && location.pathname.startsWith("/services")) || (item.megaMenu === "industries" && location.pathname.startsWith("/industries"))
                       ? showDarkHeader 
                         ? "text-primary-foreground" 
                         : "text-accent"
                       : showDarkHeader
                       ? "text-primary-foreground/70 hover:text-primary-foreground"
                       : "text-muted-foreground hover:text-foreground",
-                    (location.pathname === item.href || (item.megaMenu && location.pathname.startsWith("/services"))) && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent"
+                    (location.pathname === item.href || (item.megaMenu === true && location.pathname.startsWith("/services")) || (item.megaMenu === "industries" && location.pathname.startsWith("/industries"))) && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent"
                   )}
                 >
                   {item.label}
@@ -153,7 +162,7 @@ export function Header() {
                 )}
 
                 {/* Services Mega Menu */}
-                {item.megaMenu && openDropdown === item.label && (
+                {item.megaMenu === true && openDropdown === item.label && (
                   <div className="absolute top-full -left-20 pt-2 w-[680px]">
                     <div className="bg-card border border-border rounded-sm shadow-lg p-6">
                       <div className="grid grid-cols-3 gap-x-6 gap-y-1">
@@ -178,6 +187,39 @@ export function Header() {
                           className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
                         >
                           Choosing the Right Service
+                          <ChevronDown className="w-3 h-3 ml-1 -rotate-90" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Industries Mega Menu */}
+                {item.megaMenu === "industries" && openDropdown === item.label && (
+                  <div className="absolute top-full -left-20 pt-2 w-[680px]">
+                    <div className="bg-card border border-border rounded-sm shadow-lg p-6">
+                      <div className="grid grid-cols-3 gap-x-6 gap-y-1">
+                        {industriesMegaMenu.map((industry) => (
+                          <Link
+                            key={industry.href}
+                            to={industry.href}
+                            className={cn(
+                              "block py-2.5 text-sm transition-colors hover:text-accent",
+                              location.pathname === industry.href
+                                ? "text-accent"
+                                : "text-muted-foreground hover:text-foreground"
+                            )}
+                          >
+                            {industry.label}
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="border-t border-border mt-4 pt-4">
+                        <Link
+                          to="/industries"
+                          className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+                        >
+                          All Industries
                           <ChevronDown className="w-3 h-3 ml-1 -rotate-90" />
                         </Link>
                       </div>
@@ -278,10 +320,7 @@ export function Header() {
             {/* Industries Group */}
             <div className="py-2">
               <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Industries</p>
-              {[
-                { label: "Defense & Government Contracting", href: "/industries/defense" },
-                { label: "Growth-Stage & Commercial", href: "/industries/growth-stage" },
-              ].map((item) => (
+              {industriesMegaMenu.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
@@ -296,6 +335,18 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                to="/industries"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  "block text-sm py-2 pl-4 font-medium transition-colors",
+                  location.pathname === "/industries"
+                    ? "text-accent"
+                    : "text-accent/70 hover:text-accent"
+                )}
+              >
+                All Industries →
+              </Link>
             </div>
 
             {/* Resources Group */}
