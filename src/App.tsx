@@ -52,6 +52,7 @@ import SectorMedicalLifeSciences from "./pages/sectors/MedicalLifeSciences";
 import SectorAIDeepTech from "./pages/sectors/AIDeepTech";
 import SectorAdvancedManufacturing from "./pages/sectors/AdvancedManufacturing";
 import SectorEUExposed from "./pages/sectors/EUExposed";
+import RFP from "./pages/RFP";
 
 const queryClient = new QueryClient();
 
@@ -110,6 +111,7 @@ const App = () => (
           <Route path="/sectors/ai-deep-tech" element={<SectorAIDeepTech />} />
           <Route path="/sectors/advanced-manufacturing" element={<SectorAdvancedManufacturing />} />
           <Route path="/sectors/eu-exposed" element={<SectorEUExposed />} />
+          <Route path="/rfp" element={<RFP />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
