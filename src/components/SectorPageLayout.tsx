@@ -1,0 +1,175 @@
+import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/SEOHead";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight, ChevronRight } from "lucide-react";
+
+interface ServiceCard {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface SectorPageLayoutProps {
+  seoTitle: string;
+  seoDescription: string;
+  seoUrl: string;
+  seoKeywords?: string[];
+  heroImage: string;
+  heroLabel: string;
+  heroTitle: string;
+  heroDescription: string;
+  overviewTitle: string;
+  overviewParagraphs: string[];
+  challengesTitle: string;
+  challenges: string[];
+  services: ServiceCard[];
+}
+
+export function SectorPageLayout({
+  seoTitle,
+  seoDescription,
+  seoUrl,
+  seoKeywords,
+  heroImage,
+  heroLabel,
+  heroTitle,
+  heroDescription,
+  overviewTitle,
+  overviewParagraphs,
+  challengesTitle,
+  challenges,
+  services,
+}: SectorPageLayoutProps) {
+  return (
+    <Layout>
+      <SEOHead
+        title={seoTitle}
+        description={seoDescription}
+        url={seoUrl}
+        keywords={seoKeywords}
+      />
+
+      {/* Hero */}
+      <section className="relative min-h-[65vh] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+        <div className="absolute inset-0 image-overlay" />
+        <div className="hidden sm:block absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
+        <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-20 sm:py-32 text-center max-w-5xl mx-auto">
+          <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-6 animate-fade-up">
+            {heroLabel}
+          </p>
+          <h1 className="text-primary-foreground mb-4 sm:mb-8 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-6xl !leading-tight">
+            {heroTitle}
+          </h1>
+          <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-xl font-light !leading-relaxed max-w-4xl mx-auto animate-fade-up-delay-2">
+            {heroDescription}
+          </p>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="py-28 lg:py-36 bg-background section-luxury">
+        <div className="container-wide">
+          <div className="max-w-4xl mx-auto">
+            <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
+            <h2 className="mb-8">{overviewTitle}</h2>
+            {overviewParagraphs.map((p, i) => (
+              <p key={i} className="text-lg text-muted-foreground leading-relaxed mb-6">
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges */}
+      <section className="py-20 bg-secondary/30">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-12">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Key Challenges
+            </p>
+            <h2 className="mb-6">{challengesTitle}</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {challenges.map((challenge, i) => (
+              <div key={i} className="card-elevated p-6">
+                <div className="w-2 h-2 bg-accent rounded-full mb-4" />
+                <p className="text-foreground font-medium leading-relaxed">{challenge}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Applicable Services */}
+      <section className="py-28 lg:py-36 bg-background section-luxury">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-16">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Applicable Services
+            </p>
+            <h2 className="mb-6">
+              How We Support This Sector
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              The following service lines are most frequently engaged by organizations
+              in this sector. Each is tailored to the specific regulatory, operational,
+              and strategic requirements of your environment.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <Link
+                key={service.href}
+                to={service.href}
+                className="card-elevated group p-6"
+              >
+                <h3 className="text-lg font-serif mb-3 group-hover:text-accent transition-colors text-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
+                  {service.description}
+                </p>
+                <span className="inline-flex items-center text-accent text-sm font-medium">
+                  Learn More
+                  <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
+        <div className="container-narrow relative z-10 text-center">
+          <h2 className="text-primary-foreground mb-6">Start a Confidential Conversation</h2>
+          <p className="text-primary-foreground/70 text-lg mb-8 max-w-2xl mx-auto">
+            Ready to discuss how our services apply to your organization?
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button variant="hero" size="xl" asChild>
+              <Link to="/contact">
+                Contact
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </Button>
+            <Button variant="hero-outline" size="xl" asChild>
+              <Link to="/contact">
+                Submit a Request for Proposal
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}
