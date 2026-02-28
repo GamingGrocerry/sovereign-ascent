@@ -46,9 +46,9 @@ const navItems = [
     label: "Resources",
     href: "/resources",
     dropdown: [
-      { label: "All Resources", href: "/resources" },
-      { label: "GovCon Resources", href: "/resources/govcon" },
-      { label: "Startup Resources", href: "/resources/startup" },
+      { label: "All Frameworks", href: "/resources" },
+      { label: "Enterprise & Federal Compliance", href: "/resources/enterprise-federal" },
+      { label: "High-Growth & Regulated Markets", href: "/resources/high-growth" },
     ]
   },
   { 
