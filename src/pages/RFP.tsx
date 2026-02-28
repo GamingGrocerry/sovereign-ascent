@@ -82,7 +82,7 @@ export default function RFP() {
   const [selectedEngagements, setSelectedEngagements] = useState<string[]>([]);
   const [selectedRegulatory, setSelectedRegulatory] = useState<string[]>([]);
   const [fileName, setFileName] = useState<string | null>(null);
-
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const toggleCheckbox = (value: string, list: string[], setList: (v: string[]) => void) => {
     setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
   };
