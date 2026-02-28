@@ -4,7 +4,6 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
-import aboutPrecision from "@/assets/about-precision.jpg";
 import trustVault from "@/assets/trust-vault.jpg";
 import governanceBoardroom from "@/assets/governance-boardroom.jpg";
 import ethicsBalance from "@/assets/ethics-balance.jpg";
@@ -130,8 +129,8 @@ export default function Index() {
         }}
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section — Compact */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:scale-105"
           style={{ backgroundImage: `url(${heroArchitecture})` }}
@@ -140,20 +139,20 @@ export default function Index() {
         <div className="hidden sm:block absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
         <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
         
-        <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-20 sm:py-32 text-center max-w-7xl mx-auto">
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-16 sm:py-24 text-center max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto">
-            <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-6 animate-fade-up">
+            <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-4 animate-fade-up">
               Quality & Compliance Advisory
             </p>
-            <h1 className="text-primary-foreground mb-4 sm:mb-8 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-6xl !leading-tight">
+            <h1 className="text-primary-foreground mb-3 sm:mb-5 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-5xl !leading-tight">
               Operational Risk That Survives Scrutiny — Before It Costs You
             </h1>
-            <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-2xl font-light !leading-relaxed max-w-3xl mx-auto mb-3 sm:mb-6 animate-fade-up-delay-2">
+            <p className="text-primary-foreground/80 !text-xs sm:!text-base md:!text-xl font-light !leading-relaxed max-w-3xl mx-auto mb-2 sm:mb-4 animate-fade-up-delay-2">
               We architect governance infrastructure that strengthens internal controls, 
               institutionalizes compliance discipline, and aligns operations with contractual 
               and regulatory requirements — so growth doesn't create hidden risk.
             </p>
-            <p className="text-primary-foreground/50 !text-[10px] sm:!text-sm md:!text-base font-light tracking-wide max-w-2xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
+            <p className="text-primary-foreground/50 !text-[10px] sm:!text-sm font-light tracking-wide max-w-2xl mx-auto mb-5 sm:mb-8 animate-fade-up-delay-2">
               Built for regulated, contract-driven environments where operational gaps carry financial consequence.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 animate-fade-up-delay-3 px-2 sm:px-0">
@@ -171,86 +170,32 @@ export default function Index() {
             </div>
           </div>
         </div>
-
-        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/40">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
-            <div className="w-px h-8 sm:h-12 bg-gradient-to-b from-primary-foreground/40 to-transparent" />
-          </div>
-        </div>
       </section>
 
-      {/* About Preview Section */}
-      <section className="py-28 lg:py-36 bg-background section-luxury">
+      {/* Insights — Immediately below hero */}
+      <section className="py-14 lg:py-20 bg-background">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative order-2 lg:order-1">
-              <div className="image-frame rounded-sm overflow-hidden">
-                <img 
-                  src={aboutPrecision} 
-                  alt="Architectural precision representing structured compliance readiness for risk-exposed organizations" 
-                  className="w-full h-[400px] lg:h-[500px] object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-accent/20 rounded-sm -z-10" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 border border-accent/10 rounded-sm -z-10" />
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-2">
+                Latest Insights
+              </p>
+              <h2 className="!text-2xl lg:!text-3xl">What Compliance Leaders Are Reading</h2>
             </div>
-            
-            <div className="order-1 lg:order-2">
-              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-                Our Distinction
-              </p>
-              <h2 className="mb-6 gold-accent pb-4">
-                We Build Compliance Systems for Clarity and Control
-              </h2>
-              <p className="text-lg mb-6">
-                We form compliance systems not to check boxes, but to give 
-                operational leaders clarity and control — grounded in field-tested 
-                experience across major government contracting programs.
-              </p>
-              <p className="mb-8">
-                We work with leadership, quality functions, and operations teams 
-                who must make compliance work in practice — not just in documents.
-              </p>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/about">
-                  Learn About Our Heritage
-                  <ChevronRight className="ml-2" size={16} />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Insights Section */}
-      <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
-        <div className="container-wide">
-          <div className="max-w-3xl mb-16">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Insights
-            </p>
-            <h2 className="mb-6">Analytical Perspectives on Compliance Risk</h2>
-            <p className="text-lg text-muted-foreground">
-              Field-informed analysis on regulatory trends, audit patterns, and decision frameworks for compliance leaders.
-            </p>
-          </div>
-
-          <InsightsCarousel />
-
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="sm" asChild className="self-start sm:self-auto">
               <Link to="/insights">
-                View All Insights
-                <ChevronRight className="ml-2" size={16} />
+                View All
+                <ChevronRight className="ml-1" size={14} />
               </Link>
             </Button>
           </div>
+
+          <InsightsCarousel />
         </div>
       </section>
 
       {/* Services Overview — 6-card grid */}
-      <section className="py-28 lg:py-36 bg-background section-luxury">
+      <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
@@ -310,7 +255,7 @@ export default function Index() {
       </section>
 
       {/* Choosing the Right Service — brief reference */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -346,7 +291,7 @@ export default function Index() {
       </section>
 
       {/* ECAM Methodology Preview */}
-      <section className="py-28 lg:py-36 bg-background section-luxury">
+      <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
