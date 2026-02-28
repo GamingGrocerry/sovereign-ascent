@@ -89,8 +89,43 @@ export default function About() {
         </div>
       </section>
 
+      {/* Our Distinction */}
+      <section className="py-20 bg-background">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="image-frame rounded-sm overflow-hidden">
+                <img 
+                  src={aboutPrecision} 
+                  alt="Architectural precision representing structured compliance readiness for risk-exposed organizations" 
+                  className="w-full h-[400px] lg:h-[500px] object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-accent/20 rounded-sm -z-10" />
+              <div className="absolute -top-6 -left-6 w-32 h-32 border border-accent/10 rounded-sm -z-10" />
+            </div>
+            
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                Our Distinction
+              </p>
+              <h2 className="mb-6 gold-accent pb-4">
+                Compliance Systems for Clarity and Control
+              </h2>
+              <p className="text-lg mb-6">
+                We structure compliance systems not to check boxes, but to give 
+                operational leaders clarity and control — grounded in field-tested 
+                experience across high-value government contracting programs.
+              </p>
+              <p className="text-muted-foreground">
+                We work with leadership, quality functions, and operations teams 
+                who must make compliance work in practice — not just in documents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* Narrative */}
       <section className="py-28 bg-background section-luxury">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-20">

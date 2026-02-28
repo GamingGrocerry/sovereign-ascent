@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight, Clock, ArrowLeft, ArrowRight } from "lucide-react";
-import { allArticles, type Article } from "@/data/insights-data";
+import { allArticles } from "@/data/insights-data";
 
 const carouselArticles = allArticles.slice(0, 4);
 
@@ -16,126 +16,96 @@ export default function InsightsCarousel() {
     setActiveIndex((i) => (i - 1 + carouselArticles.length) % carouselArticles.length);
   }, []);
 
-  // Auto-rotate every 6 seconds
   useEffect(() => {
     const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   }, [next]);
 
-  const featured = carouselArticles[activeIndex];
-  const sideArticles = carouselArticles.filter((_, i) => i !== activeIndex);
-
   return (
     <div>
-      <div className="grid lg:grid-cols-2 gap-8 mb-8">
-        {/* Featured / Expanded (left) */}
-        <Link
-          to={`/insights/${featured.slug}`}
-          className="card-elevated group overflow-hidden relative"
-        >
-          {featured.image && (
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src={featured.image}
-                alt={featured.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
-              <span className="absolute top-4 left-4 inline-block bg-accent/20 text-accent text-xs uppercase tracking-wide px-3 py-1 rounded-sm backdrop-blur-sm">
-                Featured
-              </span>
-            </div>
-          )}
-          <div className="p-8 flex flex-col">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3">
-              {featured.category}
-            </span>
-            <h3 className="text-2xl mb-4 group-hover:text-accent transition-colors">
-              {featured.title}
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
-              {featured.excerpt}
-            </p>
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                {featured.readTime}
-              </div>
-              <span className="inline-flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform">
-                Read Article <ChevronRight className="w-4 h-4 ml-1" />
-              </span>
-            </div>
-          </div>
-        </Link>
-
-        {/* Summarized (right) */}
-        <div className="flex flex-col gap-4">
-          {sideArticles.map((article) => (
-            <Link
-              key={article.slug}
-              to={`/insights/${article.slug}`}
-              className="card-elevated group overflow-hidden flex"
-            >
+      {/* Horizontal 4-card row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {carouselArticles.map((article, i) => (
+          <Link
+            key={article.slug}
+            to={`/insights/${article.slug}`}
+            className={`group relative overflow-hidden rounded-sm transition-all duration-500 ${
+              i === activeIndex
+                ? "ring-2 ring-accent/60 shadow-xl shadow-accent/10 scale-[1.02]"
+                : "ring-1 ring-border/40 hover:ring-accent/30"
+            }`}
+          >
+            {/* Image */}
+            <div className="relative h-44 overflow-hidden">
               {article.image && (
-                <div className="hidden sm:block w-32 shrink-0 overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
               )}
-              <div className="p-5 flex flex-col flex-1">
-                <span className="text-xs text-muted-foreground uppercase tracking-wider mb-2">
-                  {article.category}
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-transparent" />
+              {i === activeIndex && (
+                <span className="absolute top-3 left-3 inline-block bg-accent text-accent-foreground text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 rounded-sm">
+                  Latest
                 </span>
-                <h4 className="text-lg mb-2 group-hover:text-accent transition-colors">
-                  {article.title}
-                </h4>
-                <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
-                  {article.excerpt}
-                </p>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mt-auto">
+              )}
+            </div>
+
+            {/* Content */}
+            <div className="p-5 bg-card">
+              <span className="text-[10px] text-accent uppercase tracking-widest font-medium mb-2 block">
+                {article.category}
+              </span>
+              <h4 className="text-sm font-semibold leading-snug mb-2 group-hover:text-accent transition-colors line-clamp-2">
+                {article.title}
+              </h4>
+              <p className="text-muted-foreground text-xs line-clamp-2 mb-3 leading-relaxed">
+                {article.excerpt}
+              </p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
                   <Clock className="w-3 h-3" />
                   {article.readTime}
                 </div>
+                <span className="text-accent text-xs font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  Read <ChevronRight className="w-3 h-3 ml-0.5" />
+                </span>
               </div>
-            </Link>
-          ))}
-        </div>
+            </div>
+          </Link>
+        ))}
       </div>
 
-      {/* Carousel Controls */}
-      <div className="flex items-center justify-center gap-6">
+      {/* Minimal controls */}
+      <div className="flex items-center justify-center gap-4 mt-6">
         <button
           onClick={prev}
-          className="w-10 h-10 rounded-sm border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
+          className="w-8 h-8 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
           aria-label="Previous insight"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-3.5 h-3.5" />
         </button>
-
-        <div className="flex gap-2">
+        <div className="flex gap-1.5">
           {carouselArticles.map((_, i) => (
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+              className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === activeIndex
-                  ? "bg-accent w-8"
-                  : "bg-border hover:bg-muted-foreground"
+                  ? "bg-accent w-6"
+                  : "bg-border/60 w-1.5 hover:bg-muted-foreground"
               }`}
               aria-label={`Go to insight ${i + 1}`}
             />
           ))}
         </div>
-
         <button
           onClick={next}
-          className="w-10 h-10 rounded-sm border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
+          className="w-8 h-8 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors"
           aria-label="Next insight"
         >
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-3.5 h-3.5" />
         </button>
       </div>
     </div>
