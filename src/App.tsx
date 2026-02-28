@@ -27,6 +27,15 @@ import ResourcesGovcon from "./pages/ResourcesGovcon";
 import ResourcesStartup from "./pages/ResourcesStartup";
 import IndustryDefense from "./pages/IndustryDefense";
 import IndustryGrowth from "./pages/IndustryGrowth";
+import Industries from "./pages/Industries";
+import IndustryFederalIT from "./pages/industries/FederalIT";
+import IndustryMedicalDevices from "./pages/industries/MedicalDevices";
+import IndustryAIDeepTech from "./pages/industries/AIDeepTech";
+import IndustryManufacturing from "./pages/industries/Manufacturing";
+import IndustryCybersecurity from "./pages/industries/Cybersecurity";
+import IndustryInfrastructure from "./pages/industries/Infrastructure";
+import IndustryInternationalDev from "./pages/industries/InternationalDev";
+import IndustryClimateEnergy from "./pages/industries/ClimateEnergy";
 import ChoosingService from "./pages/ChoosingService";
 import GovernanceStrategy from "./pages/services/GovernanceStrategy";
 import RiskRegulatoryCompliance from "./pages/services/RiskRegulatoryCompliance";
@@ -74,8 +83,17 @@ const App = () => (
           <Route path="/resources/govcon" element={<ResourcesGovcon />} />
           <Route path="/resources/startup" element={<ResourcesStartup />} />
           <Route path="/acronyms" element={<Acronyms />} />
+          <Route path="/industries" element={<Industries />} />
           <Route path="/industries/defense" element={<IndustryDefense />} />
           <Route path="/industries/growth-stage" element={<IndustryGrowth />} />
+          <Route path="/industries/federal-it" element={<IndustryFederalIT />} />
+          <Route path="/industries/medical-devices" element={<IndustryMedicalDevices />} />
+          <Route path="/industries/ai-deep-tech" element={<IndustryAIDeepTech />} />
+          <Route path="/industries/advanced-manufacturing" element={<IndustryManufacturing />} />
+          <Route path="/industries/cybersecurity" element={<IndustryCybersecurity />} />
+          <Route path="/industries/infrastructure" element={<IndustryInfrastructure />} />
+          <Route path="/industries/international-development" element={<IndustryInternationalDev />} />
+          <Route path="/industries/climate-energy" element={<IndustryClimateEnergy />} />
           <Route path="/choosing-the-right-service" element={<ChoosingService />} />
           <Route path="/services/governance-strategy" element={<GovernanceStrategy />} />
           <Route path="/services/risk-regulatory-compliance" element={<RiskRegulatoryCompliance />} />
