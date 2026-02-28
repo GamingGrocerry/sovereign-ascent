@@ -52,6 +52,7 @@ import SectorMedicalLifeSciences from "./pages/sectors/MedicalLifeSciences";
 import SectorAIDeepTech from "./pages/sectors/AIDeepTech";
 import SectorAdvancedManufacturing from "./pages/sectors/AdvancedManufacturing";
 import SectorEUExposed from "./pages/sectors/EUExposed";
+import RFP from "./pages/RFP";
 
 const queryClient = new QueryClient();
 
