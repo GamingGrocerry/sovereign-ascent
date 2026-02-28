@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Rocket } from "lucide-react";
+import { ArrowRight, Shield, Rocket, CheckCircle } from "lucide-react";
 import { ResourceDisclaimer } from "@/components/ResourceDisclaimer";
 import resourcesHero from "@/assets/resources-hero.jpg";
 import resourcesGovcon from "@/assets/resources-govcon.jpg";
@@ -10,18 +10,30 @@ import resourcesStartup from "@/assets/resources-startup.jpg";
 
 const categories = [
   {
-    title: "Government Contracting (GovCon)",
-    description: "Professional Frameworks for organizations navigating federal compliance, FAR/DFARS requirements, CTIP obligations, and audit readiness in government contracting environments.",
-    href: "/resources/govcon",
+    title: "Enterprise & Federal Compliance",
+    description: "Professional frameworks for organizations navigating complex regulatory landscapes, federal and state compliance obligations, audit readiness, and operational governance.",
+    href: "/resources/enterprise-federal",
     image: resourcesGovcon,
     icon: Shield,
+    includes: [
+      "Federal contracting compliance (FAR/DFARS)",
+      "Anti-trafficking & human rights compliance (CTIP)",
+      "Internal audit & certification preparation",
+      "Risk mapping & governance architecture",
+    ],
   },
   {
-    title: "Startup Operations",
-    description: "Professional Frameworks for high-growth companies building compliance foundations, quality management systems, and operational controls for regulated markets.",
-    href: "/resources/startup",
+    title: "High-Growth & Regulated Market Operations",
+    description: "Professional frameworks for companies building scalable operations, compliance foundations, and quality management systems in regulated or rapidly evolving industries.",
+    href: "/resources/high-growth",
     image: resourcesStartup,
     icon: Rocket,
+    includes: [
+      "Quality management & operational controls",
+      "Sustainability & corporate due diligence (CS3D)",
+      "Investor-ready governance structures",
+      "Risk & escalation management",
+    ],
   },
 ];
 
@@ -30,7 +42,7 @@ export default function Resources() {
     <Layout>
       <SEOHead
         title="Resource Center | ElevateQCS Professional Frameworks"
-        description="Access field-tested Professional Frameworks for government contracting compliance and startup operations. Download templates, checklists, and guides from ElevateQCS."
+        description="Access field-tested Professional Frameworks for enterprise compliance and high-growth operations. Download templates, checklists, and guides from ElevateQCS."
         url="https://elevateqcs.com/resources"
       />
 
@@ -48,7 +60,8 @@ export default function Resources() {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Field-tested templates, checklists, and operational guides designed to accelerate 
-              compliance readiness across government contracting and high-growth environments.
+              compliance readiness, operational maturity, and audit preparedness across regulated 
+              and high-growth environments.
             </p>
           </div>
         </div>
@@ -61,7 +74,7 @@ export default function Resources() {
             <div className="section-divider mb-8" />
             <h2 className="mb-4">Choose Your Focus Area</h2>
             <p className="text-lg text-muted-foreground">
-              Select a resource category to access our curated collection of Professional Frameworks.
+              Select a framework category to access our curated collection of Professional Frameworks.
             </p>
           </div>
 
@@ -72,7 +85,7 @@ export default function Resources() {
                 to={cat.href}
                 className="card-elevated group overflow-hidden"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={cat.image}
                     alt={cat.title}
@@ -90,6 +103,16 @@ export default function Resources() {
                     {cat.title}
                   </h3>
                   <p className="text-muted-foreground mb-6">{cat.description}</p>
+                  
+                  <ul className="space-y-2 mb-6">
+                    {cat.includes.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
                   <span className="inline-flex items-center text-accent font-medium">
                     Access Frameworks
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
