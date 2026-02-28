@@ -326,7 +326,7 @@ export default function Index() {
                 regulated markets — our services are structured to meet you where you are.
               </p>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/services">
+                  <Link to="/choosing-the-right-service">
                   Explore How We Can Help
                   <ChevronRight className="ml-2" size={16} />
                 </Link>

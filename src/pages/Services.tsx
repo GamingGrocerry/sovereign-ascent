@@ -71,14 +71,6 @@ const serviceGrid = [
   },
 ];
 
-const audiences = [
-  { name: "Federal contractors", detail: "navigating FAR/DFARS and agency-specific requirements" },
-  { name: "Defense & aerospace companies", detail: "requiring CMMC, AS9100, and ITAR compliance" },
-  { name: "Medical device & life sciences startups", detail: "entering FDA and EU MDR regulated markets" },
-  { name: "AI & deep tech companies", detail: "preparing for enterprise procurement and regulatory scrutiny" },
-  { name: "Advanced manufacturing firms", detail: "scaling quality systems across operations" },
-  { name: "EU-exposed companies", detail: "with human rights due diligence obligations under CS3D" },
-];
 
 export default function Services() {
   return (
