@@ -62,6 +62,7 @@ const budgetRanges = [
   "$25,000 – $75,000",
   "$75,000 – $150,000",
   "$150,000+",
+  "Not Yet Determined",
 ];
 
 const contactMethods = ["Email", "Phone", "Virtual Meeting"];
