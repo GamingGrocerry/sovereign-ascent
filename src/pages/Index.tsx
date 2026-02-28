@@ -178,7 +178,7 @@ export default function Index() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
             <div>
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-2">
-                Latest Insights
+                Insights
               </p>
               <h2 className="!text-2xl lg:!text-3xl">What Compliance Leaders Are Reading</h2>
             </div>

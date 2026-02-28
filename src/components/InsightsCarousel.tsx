@@ -47,7 +47,7 @@ export default function InsightsCarousel() {
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-transparent" />
               {i === activeIndex && (
                 <span className="absolute top-3 left-3 inline-block bg-accent text-accent-foreground text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 rounded-sm">
-                  Latest
+                  Read More
                 </span>
               )}
             </div>
