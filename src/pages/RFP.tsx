@@ -475,9 +475,9 @@ export default function RFP() {
                     </p>
                   </div>
                   <div className="text-center space-y-6">
-                    <Button type="submit" variant="cta" size="xl" className="min-w-[280px]">
-                      Submit RFP
-                      <ArrowRight className="ml-2" size={18} />
+                    <Button type="submit" variant="cta" size="xl" className="min-w-[280px]" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Submit RFP"}
+                      {!isSubmitting && <ArrowRight className="ml-2" size={18} />}
                     </Button>
                     <p className="text-muted-foreground text-sm">
                       Prefer to speak directly?{" "}
