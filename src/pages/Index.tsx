@@ -97,7 +97,7 @@ export default function Index() {
                 url: "https://elevateqcs.com/logos/elevatequcs-logo-blue-hd.png",
               },
               description: "Independent advisory firm specializing in QMS architecture, CTIP program development, and audit readiness for regulated industries and government contractors.",
-              foundingDate: "2025",
+              foundingDate: "2026",
               areaServed: ["US", "EU", "Middle East"],
               serviceType: [
                 "Governance & Strategy",
