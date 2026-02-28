@@ -17,6 +17,18 @@ const servicesMegaMenu = [
   { label: "Digital Governance", href: "/services/digital-governance" },
 ];
 
+const industriesMegaMenu = [
+  { label: "Defense & Aerospace", href: "/industries/defense" },
+  { label: "Federal IT & Systems Integration", href: "/industries/federal-it" },
+  { label: "Medical Devices & Life Sciences", href: "/industries/medical-devices" },
+  { label: "AI & Deep Tech", href: "/industries/ai-deep-tech" },
+  { label: "Advanced Manufacturing", href: "/industries/advanced-manufacturing" },
+  { label: "Cybersecurity", href: "/industries/cybersecurity" },
+  { label: "Infrastructure & Engineering", href: "/industries/infrastructure" },
+  { label: "International Development", href: "/industries/international-development" },
+  { label: "Climate & Energy", href: "/industries/climate-energy" },
+];
+
 const navItems = [
   {
     label: "Services",
