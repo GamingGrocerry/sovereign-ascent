@@ -185,22 +185,8 @@ export function Header() {
               )}
             >
               Services
-            </Link>
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    "block text-sm py-2 pl-4 transition-colors",
-                    location.pathname === item.href
-                      ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+
+
 
             <Link
               to="/methodology"
