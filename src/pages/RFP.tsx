@@ -251,7 +251,10 @@ export default function RFP() {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-16">
+              <form name="rfp" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-16">
+                <input type="hidden" name="form-name" value="rfp" />
+                <input type="hidden" name="engagement-types" value="" />
+                <input type="hidden" name="regulatory-context" value="" />
                 {/* Section A */}
                 <div className="space-y-6">
                   <div className="border-b border-border pb-3 mb-2">
