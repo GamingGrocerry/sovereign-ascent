@@ -15,7 +15,6 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Accessibility from "./pages/Accessibility";
-// WhoWeServe removed — content integrated into Services page
 import Governance from "./pages/Governance";
 import EngagementModel from "./pages/EngagementModel";
 import FAQ from "./pages/FAQ";
@@ -28,6 +27,7 @@ import ResourcesGovcon from "./pages/ResourcesGovcon";
 import ResourcesStartup from "./pages/ResourcesStartup";
 import IndustryDefense from "./pages/IndustryDefense";
 import IndustryGrowth from "./pages/IndustryGrowth";
+import ChoosingService from "./pages/ChoosingService";
 import GovernanceStrategy from "./pages/services/GovernanceStrategy";
 import RiskRegulatoryCompliance from "./pages/services/RiskRegulatoryCompliance";
 import FederalPublicSector from "./pages/services/FederalPublicSector";
@@ -37,6 +37,12 @@ import RegulatoryDocumentation from "./pages/services/RegulatoryDocumentation";
 import AuditCertificationReadiness from "./pages/services/AuditCertificationReadiness";
 import ManagedCompliance from "./pages/services/ManagedCompliance";
 import DigitalGovernance from "./pages/services/DigitalGovernance";
+import SectorFederalContractors from "./pages/sectors/FederalContractors";
+import SectorDefenseAerospace from "./pages/sectors/DefenseAerospace";
+import SectorMedicalLifeSciences from "./pages/sectors/MedicalLifeSciences";
+import SectorAIDeepTech from "./pages/sectors/AIDeepTech";
+import SectorAdvancedManufacturing from "./pages/sectors/AdvancedManufacturing";
+import SectorEUExposed from "./pages/sectors/EUExposed";
 
 const queryClient = new QueryClient();
 
@@ -58,7 +64,6 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/accessibility" element={<Accessibility />} />
-          {/* /who-we-serve removed — content integrated into /services */}
           <Route path="/governance" element={<Governance />} />
           <Route path="/engagement" element={<EngagementModel />} />
           <Route path="/faq" element={<FAQ />} />
@@ -71,6 +76,7 @@ const App = () => (
           <Route path="/acronyms" element={<Acronyms />} />
           <Route path="/industries/defense" element={<IndustryDefense />} />
           <Route path="/industries/growth-stage" element={<IndustryGrowth />} />
+          <Route path="/choosing-the-right-service" element={<ChoosingService />} />
           <Route path="/services/governance-strategy" element={<GovernanceStrategy />} />
           <Route path="/services/risk-regulatory-compliance" element={<RiskRegulatoryCompliance />} />
           <Route path="/services/federal-public-sector" element={<FederalPublicSector />} />
@@ -80,6 +86,12 @@ const App = () => (
           <Route path="/services/audit-certification-readiness" element={<AuditCertificationReadiness />} />
           <Route path="/services/managed-compliance" element={<ManagedCompliance />} />
           <Route path="/services/digital-governance" element={<DigitalGovernance />} />
+          <Route path="/sectors/federal-contractors" element={<SectorFederalContractors />} />
+          <Route path="/sectors/defense-aerospace" element={<SectorDefenseAerospace />} />
+          <Route path="/sectors/medical-life-sciences" element={<SectorMedicalLifeSciences />} />
+          <Route path="/sectors/ai-deep-tech" element={<SectorAIDeepTech />} />
+          <Route path="/sectors/advanced-manufacturing" element={<SectorAdvancedManufacturing />} />
+          <Route path="/sectors/eu-exposed" element={<SectorEUExposed />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

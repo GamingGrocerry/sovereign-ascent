@@ -132,38 +132,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Choosing the Right Service */}
-      <section className="py-28 lg:py-36 bg-background section-luxury">
-        <div className="container-wide">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Choosing the Right Service
-            </p>
-            <h2 className="mb-8">
-              Multidisciplinary Advisory for Regulated, Contract-Driven Environments
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Whether you're a regulated startup entering a complex market, a federal 
-              contractor stabilizing operations, or a scaling organization preparing 
-              for audit or certification, our multidisciplinary services are designed 
-              to support sustainable and compliant growth.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {audiences.map((audience, index) => (
-              <div key={index} className="card-elevated p-8">
-                <div className="w-2 h-2 bg-accent rounded-full mb-4" />
-                <h4 className="text-lg font-serif mb-2 text-foreground">{audience.name}</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {audience.detail}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Independence Doctrine Banner */}
       <section className="py-12 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
