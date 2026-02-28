@@ -28,6 +28,15 @@ import ResourcesGovcon from "./pages/ResourcesGovcon";
 import ResourcesStartup from "./pages/ResourcesStartup";
 import IndustryDefense from "./pages/IndustryDefense";
 import IndustryGrowth from "./pages/IndustryGrowth";
+import GovernanceStrategy from "./pages/services/GovernanceStrategy";
+import RiskRegulatoryCompliance from "./pages/services/RiskRegulatoryCompliance";
+import FederalPublicSector from "./pages/services/FederalPublicSector";
+import SupplyChainHumanRights from "./pages/services/SupplyChainHumanRights";
+import QualityOperationalInfrastructure from "./pages/services/QualityOperationalInfrastructure";
+import RegulatoryDocumentation from "./pages/services/RegulatoryDocumentation";
+import AuditCertificationReadiness from "./pages/services/AuditCertificationReadiness";
+import ManagedCompliance from "./pages/services/ManagedCompliance";
+import DigitalGovernance from "./pages/services/DigitalGovernance";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +71,15 @@ const App = () => (
           <Route path="/acronyms" element={<Acronyms />} />
           <Route path="/industries/defense" element={<IndustryDefense />} />
           <Route path="/industries/growth-stage" element={<IndustryGrowth />} />
+          <Route path="/services/governance-strategy" element={<GovernanceStrategy />} />
+          <Route path="/services/risk-regulatory-compliance" element={<RiskRegulatoryCompliance />} />
+          <Route path="/services/federal-public-sector" element={<FederalPublicSector />} />
+          <Route path="/services/supply-chain-human-rights" element={<SupplyChainHumanRights />} />
+          <Route path="/services/quality-operational-infrastructure" element={<QualityOperationalInfrastructure />} />
+          <Route path="/services/regulatory-documentation" element={<RegulatoryDocumentation />} />
+          <Route path="/services/audit-certification-readiness" element={<AuditCertificationReadiness />} />
+          <Route path="/services/managed-compliance" element={<ManagedCompliance />} />
+          <Route path="/services/digital-governance" element={<DigitalGovernance />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
