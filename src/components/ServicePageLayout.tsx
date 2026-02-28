@@ -84,7 +84,7 @@ export default function ServicePageLayout({
               </Link>
             </Button>
             <Button variant="hero-outline" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
-              <Link to="/contact">
+              <Link to="/rfp">
                 Submit a Request for Proposal
               </Link>
             </Button>
