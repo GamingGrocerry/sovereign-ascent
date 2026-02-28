@@ -275,10 +275,7 @@ export function Header() {
             {/* Industries Group */}
             <div className="py-2">
               <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Industries</p>
-              {[
-                { label: "Defense & Government Contracting", href: "/industries/defense" },
-                { label: "Growth-Stage & Commercial", href: "/industries/growth-stage" },
-              ].map((item) => (
+              {industriesMegaMenu.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
@@ -293,6 +290,18 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                to="/industries"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  "block text-sm py-2 pl-4 font-medium transition-colors",
+                  location.pathname === "/industries"
+                    ? "text-accent"
+                    : "text-accent/70 hover:text-accent"
+                )}
+              >
+                All Industries →
+              </Link>
             </div>
 
             {/* Resources Group */}
