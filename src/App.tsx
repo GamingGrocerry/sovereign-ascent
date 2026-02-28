@@ -49,7 +49,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/accessibility" element={<Accessibility />} />
-          <Route path="/who-we-serve" element={<WhoWeServe />} />
+          {/* /who-we-serve removed — content integrated into /services */}
           <Route path="/governance" element={<Governance />} />
           <Route path="/engagement" element={<EngagementModel />} />
           <Route path="/faq" element={<FAQ />} />

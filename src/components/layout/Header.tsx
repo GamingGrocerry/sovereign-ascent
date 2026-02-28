@@ -278,8 +278,10 @@ export function Header() {
             <div className="py-2">
               <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">About Us</p>
               {[
+                { label: "Our Firm", href: "/about" },
                 { label: "Credentials", href: "/credentials" },
                 { label: "Governance & Independence", href: "/governance" },
+                { label: "Engagement Model", href: "/engagement" },
                 { label: "FAQs", href: "/faq" },
                 { label: "Careers & Collaborations", href: "/careers" },
               ].map((item) => (

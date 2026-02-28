@@ -2,14 +2,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { Shield, Target, FileCheck, BookOpen, ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
+import { ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3 } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import aboutPrecision from "@/assets/about-precision.jpg";
-import servicesFramework from "@/assets/services-framework.jpg";
 import trustVault from "@/assets/trust-vault.jpg";
-import qmsStructure from "@/assets/qms-structure.jpg";
+import governanceBoardroom from "@/assets/governance-boardroom.jpg";
+import ethicsBalance from "@/assets/ethics-balance.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 import ctipProtection from "@/assets/ctip-protection.jpg";
+import qmsStructure from "@/assets/qms-structure.jpg";
+import advisoryApproach from "@/assets/advisory-approach.jpg";
 import InsightsCarousel from "@/components/InsightsCarousel";
 
 const stats = [
@@ -19,34 +21,42 @@ const stats = [
   { value: "€500K–€25M", label: "Advisory Exposure Across Project Environments" },
 ];
 
-const services = [
+const coreServices = [
   {
-    icon: Shield,
-    title: "Turn Compliance Risk Into Structured Control",
-    description: "Design and align compliance systems so operations are understandable, auditable, and ready to withstand scrutiny.",
-    href: "/services",
-    image: qmsStructure,
+    title: "Governance & Strategy",
+    description: "Governance frameworks that align organizational structure with regulatory obligations and strategic objectives.",
+    href: "/services/governance-strategy",
+    image: governanceBoardroom,
   },
   {
-    icon: Target,
-    title: "Embed Ethical & Human Rights Safeguards",
-    description: "Structure human rights and ethical labor programs that are understood, applied, and monitored across operations and supply chains.",
-    href: "/services",
+    title: "Risk, Regulatory & Compliance",
+    description: "Structured control environments that transform regulatory exposure into defensible operational discipline.",
+    href: "/services/risk-regulatory-compliance",
+    image: ethicsBalance,
+  },
+  {
+    title: "Federal & Public Sector Advisory",
+    description: "Operational stability, contractual compliance, and institutional maturity for government contractors.",
+    href: "/services/federal-public-sector",
+    image: heroArchitecture,
+  },
+  {
+    title: "Supply Chain, Human Rights & Due Diligence",
+    description: "Human rights programs and supply chain due diligence aligned with FAR 52.222-50, EU CS3D, and international standards.",
+    href: "/services/supply-chain-human-rights",
     image: ctipProtection,
   },
   {
-    icon: FileCheck,
-    title: "Prepare for Scrutiny — Before It Arrives",
-    description: "Organize evidence, strengthen control narratives, and structure corrective action so it is understandable and sustainable.",
-    href: "/services",
-    image: auditPrecision,
+    title: "Quality & Operational Infrastructure",
+    description: "Quality management systems designed for scalability, auditability, and internal ownership.",
+    href: "/services/quality-operational-infrastructure",
+    image: qmsStructure,
   },
   {
-    icon: BookOpen,
-    title: "Build Internal Capability Across Teams",
-    description: "Practical training for teams who must operate compliance systems day-to-day, focused on confidence and internal ownership.",
-    href: "/services",
-    image: servicesFramework,
+    title: "Audit, Inspection & Certification Readiness",
+    description: "Organized evidence, strengthened control narratives, and structured corrective action for assessment readiness.",
+    href: "/services/audit-certification-readiness",
+    image: auditPrecision,
   },
 ];
 
@@ -56,21 +66,6 @@ const ecamPhases = [
   { icon: Wrench, name: "Implement", description: "Guide deployment with internal clarity", phaseId: "phase-03" },
   { icon: Users, name: "Embed", description: "Support adoption through role-based expectations", phaseId: "phase-04" },
   { icon: BarChart3, name: "Monitor", description: "Enable ongoing control and evidence maintenance", phaseId: "phase-05" },
-];
-
-const audiences = [
-  {
-    title: "Prime Contractors",
-    description: "Teams needing defensible compliance systems before audits, contract milestones, or regulatory assessments.",
-  },
-  {
-    title: "Subcontractors & Suppliers",
-    description: "Organizations needing structured compliance readiness to meet prime contractor and customer expectations.",
-  },
-  {
-    title: "High-Growth Regulated Companies",
-    description: "Scalable compliance foundations for companies preparing for enterprise customers or regulated markets.",
-  },
 ];
 
 const trustSignals = [
@@ -106,10 +101,10 @@ export default function Index() {
               foundingDate: "2024",
               areaServed: ["US", "EU", "Middle East"],
               serviceType: [
-                "Quality Management System Architecture",
-                "CTIP Program Development",
-                "Audit Readiness Advisory",
-                "Regulatory Compliance Consulting",
+                "Governance & Strategy",
+                "Risk, Regulatory & Compliance",
+                "Federal & Public Sector Advisory",
+                "Quality & Operational Infrastructure",
               ],
               sameAs: [],
             },
@@ -134,21 +129,17 @@ export default function Index() {
           ],
         }}
       />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:scale-105"
           style={{ backgroundImage: `url(${heroArchitecture})` }}
         />
-        {/* Overlay */}
         <div className="absolute inset-0 image-overlay" />
-        
-        {/* Decorative Corner Accents - hidden on very small screens */}
         <div className="hidden sm:block absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
         <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
         
-        {/* Content */}
         <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-20 sm:py-32 text-center max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto">
             <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-6 animate-fade-up">
@@ -181,7 +172,6 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
         <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/40">
           <div className="flex flex-col items-center gap-2">
             <span className="text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
@@ -190,12 +180,10 @@ export default function Index() {
         </div>
       </section>
 
-
       {/* About Preview Section */}
       <section className="py-28 lg:py-36 bg-background section-luxury">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Image */}
             <div className="relative order-2 lg:order-1">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
@@ -204,12 +192,10 @@ export default function Index() {
                   className="w-full h-[400px] lg:h-[500px] object-cover"
                 />
               </div>
-              {/* Decorative element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-accent/20 rounded-sm -z-10" />
               <div className="absolute -top-6 -left-6 w-32 h-32 border border-accent/10 rounded-sm -z-10" />
             </div>
             
-            {/* Content */}
             <div className="order-1 lg:order-2">
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
                 Our Distinction
@@ -237,7 +223,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Insights Section — above Services */}
+      {/* Insights Section */}
       <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
@@ -263,7 +249,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Services Overview */}
+      {/* Services Overview — 6-card grid */}
       <section className="py-28 lg:py-36 bg-background section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
@@ -271,35 +257,30 @@ export default function Index() {
               Our Services
             </p>
             <h2 className="mb-6">
-              Compliance Challenges Are Rarely Abstract
+              A Wide Range of Services for Regulated Environments
             </h2>
             <p className="text-lg">
-              They appear when contracts tighten, audits occur, or systems break 
-              under pressure. Our services help organizations anticipate, structure, 
-              and operate compliance systems that hold up in real environments.
+              From governance strategy to audit readiness, our multidisciplinary 
+              capabilities are designed for organizations where compliance is 
+              fundamental to operational viability.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreServices.map((service, index) => (
               <Link
                 key={index}
                 to={service.href}
                 className="card-elevated group overflow-hidden"
               >
-                {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <div className="w-12 h-12 rounded-sm bg-card/90 backdrop-blur-sm flex items-center justify-center">
-                      <service.icon className="w-6 h-6 text-accent" />
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg mb-3 group-hover:text-accent transition-colors">
@@ -324,6 +305,42 @@ export default function Index() {
                 <ChevronRight className="ml-2" size={16} />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Choosing the Right Service — brief reference */}
+      <section className="py-20 bg-secondary/30">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                Choosing the Right Service
+              </p>
+              <h2 className="mb-6">
+                Advisory for Every Stage of Compliance Maturity
+              </h2>
+              <p className="text-lg mb-6">
+                Whether you're a federal contractor stabilizing operations, a defence 
+                firm preparing for certification, or a growth-stage company entering 
+                regulated markets — our services are structured to meet you where you are.
+              </p>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/services">
+                  Explore How We Can Help
+                  <ChevronRight className="ml-2" size={16} />
+                </Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="image-frame rounded-sm overflow-hidden">
+                <img 
+                  src={advisoryApproach} 
+                  alt="Institutional advisory environment representing tailored compliance services" 
+                  className="w-full h-[350px] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -380,40 +397,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Who We Serve */}
-      <section className="py-28 lg:py-36 bg-secondary/30">
-        <div className="container-wide">
-          <div className="max-w-3xl mb-16">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Who We Serve
-            </p>
-            <h2 className="mb-6">
-              We Serve Organizations Where Compliance Risk Meets Operational Demand
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {audiences.map((audience, index) => (
-              <div key={index} className="card-elevated p-8">
-                <h3 className="text-xl mb-4">{audience.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {audience.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/who-we-serve">
-                Learn More About Who We Serve
-                <ChevronRight className="ml-2" size={16} />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Trust Section */}
       <section className="py-28 lg:py-36 bg-background">
         <div className="container-wide">
@@ -445,7 +428,6 @@ export default function Index() {
               </div>
             </div>
             
-            {/* Trust Image with Quote Overlay */}
             <div className="relative">
               <div className="image-frame rounded-sm overflow-hidden">
                 <img 
@@ -454,7 +436,6 @@ export default function Index() {
                   className="w-full h-[500px] object-cover"
                 />
               </div>
-              {/* Quote Overlay */}
               <div className="absolute -bottom-8 -left-8 right-8 bg-primary p-8 rounded-sm shadow-2xl">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent" />
                 <blockquote className="text-primary-foreground">
@@ -498,8 +479,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      {/* (Insights section moved above Services) */}
 
       {/* Final CTA Section */}
       <section className="py-28 lg:py-36 bg-secondary/30">

@@ -2,139 +2,169 @@ import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Target, FileCheck, BookOpen, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import servicesHero from "@/assets/services-hero.jpg";
-import heroArchitecture from "@/assets/hero-architecture.jpg";
-import qmsStructure from "@/assets/qms-structure.jpg";
-import ctipProtection from "@/assets/ctip-protection.jpg";
+import governanceBoardroom from "@/assets/governance-boardroom.jpg";
+import ethicsBalance from "@/assets/ethics-balance.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
-import insightsLibrary from "@/assets/insights-library.jpg";
+import ctipProtection from "@/assets/ctip-protection.jpg";
+import qmsStructure from "@/assets/qms-structure.jpg";
+import servicesFramework from "@/assets/services-framework.jpg";
 import advisoryApproach from "@/assets/advisory-approach.jpg";
+import methodologyCompass from "@/assets/methodology-compass.jpg";
+import heroArchitecture from "@/assets/hero-architecture.jpg";
 
-const services = [
+const serviceGrid = [
   {
-    id: "compliance-architecture",
-    icon: Shield,
-    title: "Designing Compliance Systems That Work in Operations — Not Just on Paper",
-    subtitle: "Compliance & Management System Architecture",
-    description: "Our work focuses on how systems function within real workflows, aligning requirements to operational reality. We help identify gaps, define controls, and structure documentation so internal teams can use it under scrutiny.",
-    approach: "Our approach focuses on how compliance systems function in real operations — not on producing standalone documentation.",
-    image: qmsStructure,
-    capabilities: [
-      "Structuring internal Quality Management and compliance frameworks",
-      "Defining governance, roles, and internal controls",
-      "Mapping processes and evidence flows",
-      "Aligning compliance requirements with day-to-day operations",
-      "Supporting management system scalability as the organization grows",
-    ],
-    applicability: "This service is applicable to organizations preparing for audits, entering regulated markets, or formalizing internal controls for the first time.",
-    frameworks: "Systems may be aligned, where applicable, with frameworks such as ISO 9001 (Quality Management Systems) — for process consistency and operational alignment; ISO/IEC 27001 (Information Security Management Systems) — for handling sensitive client data securely; ISO 14001 (Environmental Management Systems) — where sustainability plays a role in client operations; and ISO 45001 (Occupational Health and Safety Management Systems) — for risk controls in operational environments.",
+    title: "Governance & Strategy",
+    description: "We design governance frameworks that align organizational structure with regulatory obligations and strategic objectives — establishing the control architecture that sustains long-term operational integrity.",
+    href: "/services/governance-strategy",
+    image: governanceBoardroom,
   },
   {
-    id: "human-rights",
-    icon: Target,
-    title: "Embedding Human Rights and Ethical Labor Considerations Into Operations",
-    subtitle: "Human Rights & Ethical Labor Compliance",
-    description: "We support the design and operational integration of human rights and ethical labor programs. These frameworks help organizations align with global and contractual expectations related to forced labor, supply chain conduct, and human rights risk.",
-    approach: "Our support moves beyond policy drafting to focus on how programs are understood, applied, and monitored internally.",
+    title: "Risk, Regulatory & Compliance",
+    description: "We map regulatory landscapes, quantify compliance risk, and build structured control environments that transform regulatory exposure into defensible operational discipline.",
+    href: "/services/risk-regulatory-compliance",
+    image: ethicsBalance,
+  },
+  {
+    title: "Federal & Public Sector Advisory",
+    description: "We support government contractors and public-sector-aligned organizations in stabilizing operations, meeting contractual compliance obligations, and scaling with institutional maturity.",
+    href: "/services/federal-public-sector",
+    image: heroArchitecture,
+  },
+  {
+    title: "Supply Chain, Human Rights & Due Diligence",
+    description: "We structure human rights programs, supply chain due diligence frameworks, and ethical labor compliance systems aligned with FAR 52.222-50, EU CS3D, and international standards.",
+    href: "/services/supply-chain-human-rights",
     image: ctipProtection,
-    capabilities: [
-      "Program and policy framework development",
-      "Operational implementation planning",
-      "Training for management and workforce awareness",
-      "Internal monitoring and review mechanisms",
-      "Support in aligning programs with contractual and regulatory expectations",
-    ],
-    frameworks: "Programs may be aligned, where applicable, with frameworks such as FAR 52.222-50 (CTIP), the UK Modern Slavery Act, EU due-diligence requirements, ILO and OECD guidelines, and international labor standards.",
-    applicability: "This service is applicable to organizations operating under government contracts with human rights clauses, those entering global supply chains subject to ethical labor scrutiny, or firms seeking to formalize internal human rights and anti-trafficking programs proactively.",
   },
   {
-    id: "audit-readiness",
-    icon: FileCheck,
-    title: "Preparing Organizations for Scrutiny and Structuring Effective Improvement",
-    subtitle: "Audit Readiness & Corrective Action Advisory",
-    description: "We help organizations get ready for assessments by organizing evidence, strengthening control narratives, and structuring corrective action so it is understandable and sustainable.",
-    approach: "We do not act as an audit or certification body. Our role is to help organizations understand expectations and respond effectively.",
+    title: "Quality & Operational Infrastructure",
+    description: "We architect quality management systems and operational control frameworks that function in real workflows — designed for scalability, auditability, and internal ownership.",
+    href: "/services/quality-operational-infrastructure",
+    image: qmsStructure,
+  },
+  {
+    title: "Regulatory Documentation & Administrative Solutions",
+    description: "We develop documentation systems, standard operating procedures, and administrative frameworks that ensure regulatory evidence is organized, accessible, and audit-ready.",
+    href: "/services/regulatory-documentation",
+    image: servicesFramework,
+  },
+  {
+    title: "Audit, Inspection & Certification Readiness",
+    description: "We prepare organizations for third-party assessments, customer audits, and certification reviews by organizing evidence, strengthening control narratives, and structuring corrective action.",
+    href: "/services/audit-certification-readiness",
     image: auditPrecision,
-    capabilities: [
-      "Pre-assessment readiness reviews",
-      "Evidence and documentation organization",
-      "Gap identification and risk prioritization",
-      "Corrective Action Plan (CAPA) structuring",
-      "Support during and after assessments to stabilize operations",
-    ],
-    applicability: "This service is commonly used by organizations facing regulatory assessments, customer audits, or third-party certification reviews.",
-    frameworks: "Corrective action support may be aligned, where applicable, with ISO 9001:2015 (Clause 10.2 — Nonconformity and Corrective Action), ISO 37301:2021 (Compliance Management Systems), and related standards such as ISO/IEC 27001, ISO 14001, and ISO 45001 for sector-specific risk and control integration. To help ensure corrective actions address root causes rather than symptoms, we draw on established methodologies including 5 Whys for rapid iterative cause exploration, Ishikawa (fishbone) diagrams to map contributing factors, Pareto charts to focus effort on vital issues, Six Sigma DMAIC for data-driven problem solving, and Lean tools (e.g., Kaizen, value stream mapping) to eliminate waste and support continuous improvement.",
   },
   {
-    id: "education",
-    icon: BookOpen,
-    title: "Practical Training for Teams Who Must Operate Compliance Systems",
-    subtitle: "Education & Capability Development",
-    description: "We help internal teams build confidence and capability through role-based and practical training — focused on how the work is done day-to-day.",
-    approach: "The objective is to reduce long-term dependency by enabling teams to operate, maintain, and improve systems internally.",
-    image: insightsLibrary,
-    capabilities: [
-      "Executive and leadership briefings",
-      "Role-based training for managers and staff",
-      "Practical workshops focused on real operational scenarios",
-      "Ongoing advisory support during system adoption",
-    ],
-    applicability: "Training is designed to be accessible, practical, and directly connected to the organization's internal processes.",
-    frameworks: "Training content may be aligned, where applicable, with ISO 9001 (Quality Management Systems), ISO 37301:2021 (Compliance Management Systems), FAR/DFARS regulatory requirements, ISO 19011 (Guidelines for Auditing Management Systems), and relevant sector-specific standards such as ISO/IEC 27001, ISO 14001, and ISO 45001 to support role-based competency in compliance operations.",
+    title: "Managed Compliance & Governance Services",
+    description: "We provide ongoing compliance management, governance monitoring, and regulatory maintenance services for organizations requiring sustained advisory support beyond project-based engagements.",
+    href: "/services/managed-compliance",
+    image: advisoryApproach,
   },
+  {
+    title: "Digital Governance & Technology Enablement",
+    description: "We advise on the integration of governance, risk, and compliance technologies — ensuring digital transformation efforts are aligned with regulatory requirements and operational controls.",
+    href: "/services/digital-governance",
+    image: methodologyCompass,
+  },
+];
+
+const audiences = [
+  { name: "Federal contractors", detail: "navigating FAR/DFARS and agency-specific requirements" },
+  { name: "Defense & aerospace companies", detail: "requiring CMMC, AS9100, and ITAR compliance" },
+  { name: "Medical device & life sciences startups", detail: "entering FDA and EU MDR regulated markets" },
+  { name: "AI & deep tech companies", detail: "preparing for enterprise procurement and regulatory scrutiny" },
+  { name: "Advanced manufacturing firms", detail: "scaling quality systems across operations" },
+  { name: "EU-exposed companies", detail: "with human rights due diligence obligations under CS3D" },
 ];
 
 export default function Services() {
   return (
     <Layout>
       <SEOHead
-        title="Compliance Advisory Services | ElevateQCS"
-        description="QMS architecture, CTIP program development, audit readiness advisory, and capability training for government contractors and regulated organisations."
+        title="Advisory Services | ElevateQCS"
+        description="A wide range of governance, regulatory compliance, and operational advisory services for federal contractors, defense firms, and growth-stage companies in regulated industries."
         url="https://elevateqcs.com/services"
-        keywords={["compliance advisory services", "QMS architecture", "CTIP program development", "audit readiness"]}
+        keywords={["compliance advisory services", "governance strategy", "federal contractor advisory", "audit readiness", "CTIP compliance", "QMS architecture", "managed compliance"]}
       />
-      {/* Hero */}
-      <section className="page-hero pt-32 pb-24 bg-secondary/30">
-        <div 
-          className="page-hero-bg" 
+
+      {/* Hero Section */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${servicesHero})` }}
         />
-        <div className="page-hero-overlay" />
-        <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-                Our Services
-              </p>
-              <h1 className="mb-6 gold-accent pb-4">
-                Compliance Challenges Are Rarely Abstract
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-                They appear when contracts tighten, audits occur, or systems break 
-                under pressure.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Our services help organizations anticipate, structure, and operate 
-                compliance systems that hold up in real environments. All services 
-                are advisory in nature and tailored to the client's operational 
-                and regulatory context.
-              </p>
-            </div>
-            <div className="hidden lg:block">
-              <div className="image-frame rounded-sm overflow-hidden">
-                <img 
-                  src={heroArchitecture} 
-                  alt="Modern architectural structure representing structured compliance frameworks" 
-                  className="w-full h-[350px] object-cover"
-                />
-              </div>
-            </div>
+        <div className="absolute inset-0 image-overlay" />
+        <div className="hidden sm:block absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
+        <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
+
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-20 sm:py-32 text-center max-w-5xl mx-auto">
+          <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-6 animate-fade-up">
+            Our Services
+          </p>
+          <h1 className="text-primary-foreground mb-4 sm:mb-8 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-6xl !leading-tight">
+            A Wide Range of Services. Extensive Experience. Measurable Results.
+          </h1>
+          <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-xl font-light !leading-relaxed max-w-4xl mx-auto mb-3 sm:mb-4 animate-fade-up-delay-2">
+            We treat regulatory complexity as an opportunity for institutional growth.
+            Our specialists combine governance expertise, regulatory depth, and operational 
+            infrastructure design to help organizations solve their most complex compliance 
+            and structural challenges.
+          </p>
+          <p className="text-primary-foreground/60 !text-[10px] sm:!text-base font-light tracking-wide max-w-3xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
+            With deep industry experience, we help companies build sustainable, defensible, and scalable systems.
+          </p>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 animate-fade-up-delay-3 px-2 sm:px-0">
+            <Button variant="hero" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
+              <Link to="/contact">
+                Request a Consultation
+                <ArrowRight className="ml-2 shrink-0" size={16} />
+              </Link>
+            </Button>
+            <Button variant="hero-outline" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
+              <Link to="/contact">
+                Submit a Request for Proposal
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Independence Doctrine */}
+      {/* Choosing the Right Service */}
+      <section className="py-28 lg:py-36 bg-background section-luxury">
+        <div className="container-wide">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Choosing the Right Service
+            </p>
+            <h2 className="mb-8">
+              Multidisciplinary Advisory for Regulated, Contract-Driven Environments
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Whether you're a regulated startup entering a complex market, a federal 
+              contractor stabilizing operations, or a scaling organization preparing 
+              for audit or certification, our multidisciplinary services are designed 
+              to support sustainable and compliant growth.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {audiences.map((audience, index) => (
+              <div key={index} className="card-elevated p-8">
+                <div className="w-2 h-2 bg-accent rounded-full mb-4" />
+                <h4 className="text-lg font-serif mb-2 text-foreground">{audience.name}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {audience.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Independence Doctrine Banner */}
       <section className="py-12 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
         <div className="container-wide relative z-10">
@@ -159,98 +189,62 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Detail */}
-      <section className="py-28 bg-background section-luxury">
+      {/* Services Grid */}
+      <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
         <div className="container-wide">
-          <div className="space-y-32">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                id={service.id}
-                className="scroll-mt-24"
+          <div className="max-w-3xl mb-16">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Our Capabilities
+            </p>
+            <h2 className="mb-6">
+              Services Built for Institutional Resilience
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Each practice area is led by specialists with deep regulatory and 
+              operational experience. Select a service to learn more about our 
+              approach and capabilities.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceGrid.map((service, index) => (
+              <Link
+                key={index}
+                to={service.href}
+                className="card-elevated group overflow-hidden"
               >
-                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    {/* Service Image */}
-                    <div className="image-frame rounded-sm overflow-hidden mb-10">
-                      <img 
-                        src={service.image} 
-                        alt={service.subtitle}
-                        className="w-full h-[300px] object-cover"
-                      />
-                    </div>
-                    <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8">
-                      <service.icon className="w-8 h-8 text-accent" />
-                    </div>
-                    <h2 className="mb-2 gold-accent pb-4">{service.title}</h2>
-                    <p className="text-accent text-sm uppercase tracking-wide mb-6">
-                      {service.subtitle}
-                    </p>
-                    <p className="text-lg text-muted-foreground mb-6">
-                      {service.description}
-                    </p>
-                    <p className="text-muted-foreground mb-10 italic border-l-2 border-accent/30 pl-4">
-                      {service.approach}
-                    </p>
-                    <Button variant="cta" size="lg" asChild>
-                      <Link to="/contact">
-                        Discuss Your Requirements
-                        <ArrowRight className="ml-2" size={16} />
-                      </Link>
-                    </Button>
-                  </div>
-                  <div className="space-y-8">
-                    <div className="card-elevated p-10">
-                      <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-6">
-                        Typical Support Includes
-                      </h4>
-                      <ul className="space-y-4">
-                        {service.capabilities.map((cap, i) => (
-                          <li key={i} className="flex items-start gap-4 text-foreground">
-                            <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                            {cap}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {service.applicability && (
-                      <div className="bg-secondary/50 p-10 rounded-sm relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-                        <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-4">
-                          Applicability
-                        </h4>
-                        <p className="text-foreground text-sm leading-relaxed">
-                          {service.applicability}
-                        </p>
-                      </div>
-                    )}
-                    {service.frameworks && (
-                      <div className="bg-secondary/50 p-10 rounded-sm relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-                        <h4 className="text-sm uppercase tracking-wide text-muted-foreground mb-4">
-                          Applicable Frameworks
-                        </h4>
-                        <p className="text-foreground text-sm leading-relaxed">
-                          {service.frameworks}
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                <div className="relative h-52 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 </div>
-                {index < services.length - 1 && (
-                  <div className="border-b border-border/50 mt-32" />
-                )}
-              </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-serif mb-3 group-hover:text-accent transition-colors text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center text-accent text-sm font-medium">
+                    Learn More
+                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Advisory Approach with Image */}
+      {/* Credibility Section */}
       <section className="relative h-[450px] overflow-hidden">
         <img 
           src={advisoryApproach} 
-          alt="Precision instruments representing methodical advisory approach" 
+          alt="Executive advisory environment representing institutional depth and measured counsel" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
@@ -258,15 +252,15 @@ export default function Services() {
           <div className="container-wide">
             <div className="max-w-2xl">
               <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
-              <h2 className="text-primary-foreground mb-6">Our Advisory Approach</h2>
+              <h2 className="text-primary-foreground mb-6">Meeting Expectations Is Only the Beginning</h2>
               <p className="text-primary-foreground/80 text-lg leading-relaxed mb-4">
-                Across all services, ElevateQCS operates as an independent, vendor-neutral advisor. 
-                We do not certify, approve, or authorize compliance programs, nor do we replace 
-                legal or regulatory counsel.
+                Our advisory relationships are built on long-term trust, measurable impact, 
+                and a commitment to public interest. We approach every engagement with the 
+                institutional rigour of a firm that understands what is at stake.
               </p>
               <p className="text-primary-foreground/70">
-                Our role is to support organizations in building internal systems that are 
-                operationally effective, auditable, and aligned with applicable requirements.
+                Integrity is not a differentiator — it is a baseline. Strategic impact 
+                is where we measure ourselves.
               </p>
             </div>
           </div>
@@ -278,15 +272,22 @@ export default function Services() {
         <div className="container-narrow text-center">
           <div className="section-divider mx-auto mb-8" />
           <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Interested in how these apply to your organization?
+            Ready to discuss how our services apply to your organization?
           </p>
           <h2 className="mb-12">Start a Confidential Conversation</h2>
-          <Button variant="cta" size="xl" asChild>
-            <Link to="/contact">
-              Request a Confidential Consultation
-              <ArrowRight className="ml-2" size={18} />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button variant="cta" size="xl" asChild>
+              <Link to="/contact">
+                Contact
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </Button>
+            <Button variant="outline" size="xl" asChild>
+              <Link to="/contact">
+                Submit a Request for Proposal
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>
