@@ -85,15 +85,17 @@ export default function RFP() {
     setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const formData = new FormData(form);
+    const formDataObj = new FormData(form);
 
     // Basic validation
-    const orgName = formData.get("org-name") as string;
-    const contactName = formData.get("contact-name") as string;
-    const email = formData.get("email") as string;
+    const orgName = formDataObj.get("org-name") as string;
+    const contactName = formDataObj.get("contact-name") as string;
+    const email = formDataObj.get("email") as string;
 
     if (!orgName?.trim() || !contactName?.trim() || !email?.trim()) {
       toast({
@@ -113,8 +115,31 @@ export default function RFP() {
       return;
     }
 
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Append multi-select values as hidden fields
+    formDataObj.set("engagement-types", selectedEngagements.join(", "));
+    formDataObj.set("regulatory-context", selectedRegulatory.join(", "));
+
+    setIsSubmitting(true);
+
+    try {
+      const body = new URLSearchParams(formDataObj as any).toString();
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch {
+      toast({
+        title: "Submission Error",
+        description: "Please try again or email us directly at info@elevateqcs.com.",
+        variant: "destructive",
+      });
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -226,7 +251,10 @@ export default function RFP() {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-16">
+              <form name="rfp" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-16">
+                <input type="hidden" name="form-name" value="rfp" />
+                <input type="hidden" name="engagement-types" value="" />
+                <input type="hidden" name="regulatory-context" value="" />
                 {/* Section A */}
                 <div className="space-y-6">
                   <div className="border-b border-border pb-3 mb-2">
@@ -447,9 +475,9 @@ export default function RFP() {
                     </p>
                   </div>
                   <div className="text-center space-y-6">
-                    <Button type="submit" variant="cta" size="xl" className="min-w-[280px]">
-                      Submit RFP
-                      <ArrowRight className="ml-2" size={18} />
+                    <Button type="submit" variant="cta" size="xl" className="min-w-[280px]" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Submit RFP"}
+                      {!isSubmitting && <ArrowRight className="ml-2" size={18} />}
                     </Button>
                     <p className="text-muted-foreground text-sm">
                       Prefer to speak directly?{" "}
