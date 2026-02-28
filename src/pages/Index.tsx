@@ -98,7 +98,7 @@ export default function Index() {
                 url: "https://elevateqcs.com/logos/elevatequcs-logo-blue-hd.png",
               },
               description: "Independent advisory firm specializing in QMS architecture, CTIP program development, and audit readiness for regulated industries and government contractors.",
-              foundingDate: "2024",
+              foundingDate: "2025",
               areaServed: ["US", "EU", "Middle East"],
               serviceType: [
                 "Governance & Strategy",
@@ -354,9 +354,9 @@ export default function Index() {
             </p>
             <h2 className="mb-6">A Repeatable Approach to Compliance Complexity</h2>
             <p className="text-lg text-muted-foreground">
-              The EQCS Compliance Architecture Model is a five-phase structure that 
-              brings order to compliance complexity: diagnose, architect, implement, 
-              embed, monitor.
+              The Elevate Compliance Architecture Methodology (ECAM) is a five-phase 
+              structure that brings order to compliance complexity: diagnose, architect, 
+              implement, embed, monitor.
             </p>
           </div>
 
