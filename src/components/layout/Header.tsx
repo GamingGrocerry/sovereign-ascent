@@ -175,38 +175,17 @@ export function Header() {
         <div className="lg:hidden bg-card border-t border-border max-h-[80vh] overflow-y-auto">
           <div className="container-wide py-6 space-y-1">
             <Link
-              to="/about"
+              to="/services"
               onClick={() => setIsMobileMenuOpen(false)}
               className={cn(
                 "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/about"
+                location.pathname === "/services"
                   ? "text-accent"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              About
+              Services
             </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={cn(
-                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/about"
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              About
-            </Link>
-            
-            {/* Services Group */}
-            <div className="py-2">
-              <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Services</p>
-              {[
-                { label: "Our Services", href: "/services" },
-                { label: "Who We Serve", href: "/who-we-serve" },
-                { label: "Engagement Model", href: "/engagement" },
-              ].map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
