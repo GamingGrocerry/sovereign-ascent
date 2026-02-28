@@ -25,11 +25,8 @@ const navItems = [
   },
   {
     label: "Industries",
-    href: "/industries/defense",
-    dropdown: [
-      { label: "Defense & Government Contracting", href: "/industries/defense" },
-      { label: "Growth-Stage & Commercial", href: "/industries/growth-stage" },
-    ]
+    href: "/industries",
+    megaMenu: "industries",
   },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
