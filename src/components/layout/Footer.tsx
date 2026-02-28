@@ -7,6 +7,7 @@ const footerLinks = {
     { label: "Methodology", href: "/methodology" },
     { label: "Industries", href: "/industries/defense" },
     { label: "Resources", href: "/resources" },
+    { label: "Request for Proposal", href: "/rfp" },
   ],
   company: [
     { label: "About", href: "/about" },
