@@ -15,7 +15,7 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Accessibility from "./pages/Accessibility";
-import WhoWeServe from "./pages/WhoWeServe";
+// WhoWeServe removed — content integrated into Services page
 import Governance from "./pages/Governance";
 import EngagementModel from "./pages/EngagementModel";
 import FAQ from "./pages/FAQ";
