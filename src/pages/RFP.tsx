@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
+import { supabase } from "@/integrations/supabase/client";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -81,7 +82,7 @@ export default function RFP() {
   const [selectedEngagements, setSelectedEngagements] = useState<string[]>([]);
   const [selectedRegulatory, setSelectedRegulatory] = useState<string[]>([]);
   const [fileName, setFileName] = useState<string | null>(null);
-
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const toggleCheckbox = (value: string, list: string[], setList: (v: string[]) => void) => {
     setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
   };
@@ -123,6 +124,35 @@ export default function RFP() {
     setIsSubmitting(true);
 
     try {
+      // Upload file to backend storage if one was selected
+      let uploadedFileName = "";
+      if (selectedFile) {
+        const timestamp = Date.now();
+        const sanitizedName = selectedFile.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+        const filePath = `${timestamp}_${sanitizedName}`;
+        const { error: uploadError } = await supabase.storage
+          .from("RFP-Files")
+          .upload(filePath, selectedFile, {
+            contentType: selectedFile.type,
+            upsert: false,
+          });
+        if (uploadError) {
+          toast({
+            title: "File Upload Failed",
+            description: "Your form was submitted but the file could not be uploaded. Please email it to info@elevateqcs.com.",
+            variant: "destructive",
+          });
+        } else {
+          uploadedFileName = filePath;
+        }
+      }
+
+      // Remove file from Netlify form data, append backend reference
+      formDataObj.delete("file-upload");
+      if (uploadedFileName) {
+        formDataObj.set("uploaded-file", uploadedFileName);
+      }
+
       const body = new URLSearchParams(formDataObj as any).toString();
       await fetch("/", {
         method: "POST",
@@ -160,16 +190,17 @@ export default function RFP() {
         e.target.value = "";
         return;
       }
-      if (file.size > 20 * 1024 * 1024) {
+      if (file.size > 15 * 1024 * 1024) {
         toast({
           title: "File Too Large",
-          description: "Maximum file size is 20MB.",
+          description: "Maximum file size is 15MB.",
           variant: "destructive",
         });
         e.target.value = "";
         return;
       }
       setFileName(file.name);
+      setSelectedFile(file);
     }
   };
 
@@ -452,7 +483,7 @@ export default function RFP() {
                       >
                         <Upload className="w-5 h-5 text-muted-foreground" />
                         <span className="text-sm text-muted-foreground">
-                          {fileName || "PDF, DOCX, or XLSX — Max 20MB"}
+                          {fileName || "PDF, DOCX, or XLSX — Max 15MB"}
                         </span>
                       </label>
                       <input
