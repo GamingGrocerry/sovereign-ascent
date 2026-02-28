@@ -173,7 +173,7 @@ export default function Industries() {
               </Link>
             </Button>
             <Button variant="hero-outline" size="xl" asChild>
-              <Link to="/contact">
+              <Link to="/rfp">
                 Submit a Request for Proposal
               </Link>
             </Button>
