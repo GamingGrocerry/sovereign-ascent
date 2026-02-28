@@ -483,7 +483,7 @@ export default function RFP() {
                       >
                         <Upload className="w-5 h-5 text-muted-foreground" />
                         <span className="text-sm text-muted-foreground">
-                          {fileName || "PDF, DOCX, or XLSX — Max 20MB"}
+                          {fileName || "PDF, DOCX, or XLSX — Max 15MB"}
                         </span>
                       </label>
                       <input
