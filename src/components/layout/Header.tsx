@@ -162,7 +162,7 @@ export function Header() {
                 )}
 
                 {/* Services Mega Menu */}
-                {item.megaMenu && openDropdown === item.label && (
+                {item.megaMenu === true && openDropdown === item.label && (
                   <div className="absolute top-full -left-20 pt-2 w-[680px]">
                     <div className="bg-card border border-border rounded-sm shadow-lg p-6">
                       <div className="grid grid-cols-3 gap-x-6 gap-y-1">
@@ -187,6 +187,39 @@ export function Header() {
                           className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
                         >
                           Choosing the Right Service
+                          <ChevronDown className="w-3 h-3 ml-1 -rotate-90" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Industries Mega Menu */}
+                {item.megaMenu === "industries" && openDropdown === item.label && (
+                  <div className="absolute top-full -left-20 pt-2 w-[680px]">
+                    <div className="bg-card border border-border rounded-sm shadow-lg p-6">
+                      <div className="grid grid-cols-3 gap-x-6 gap-y-1">
+                        {industriesMegaMenu.map((industry) => (
+                          <Link
+                            key={industry.href}
+                            to={industry.href}
+                            className={cn(
+                              "block py-2.5 text-sm transition-colors hover:text-accent",
+                              location.pathname === industry.href
+                                ? "text-accent"
+                                : "text-muted-foreground hover:text-foreground"
+                            )}
+                          >
+                            {industry.label}
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="border-t border-border mt-4 pt-4">
+                        <Link
+                          to="/industries"
+                          className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+                        >
+                          All Industries
                           <ChevronDown className="w-3 h-3 ml-1 -rotate-90" />
                         </Link>
                       </div>
