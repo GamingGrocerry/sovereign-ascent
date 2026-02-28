@@ -7,15 +7,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "About", href: "/about" },
-  { 
-    label: "Services", 
-    href: "/services",
-    dropdown: [
-      { label: "Our Services", href: "/services" },
-      { label: "Who We Serve", href: "/who-we-serve" },
-      { label: "Engagement Model", href: "/engagement" },
-    ]
-  },
+  { label: "Services", href: "/services" },
   {
     label: "Industries",
     href: "/industries/defense",
@@ -42,6 +34,7 @@ const navItems = [
       { label: "Our Firm", href: "/about" },
       { label: "Credentials", href: "/credentials" },
       { label: "Governance & Independence", href: "/governance" },
+      { label: "Engagement Model", href: "/engagement" },
       { label: "FAQs", href: "/faq" },
       { label: "Careers & Collaborations", href: "/careers" },
     ]
