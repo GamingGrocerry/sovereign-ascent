@@ -8,9 +8,9 @@ export default function ResourcesGovcon() {
   return (
     <Layout>
       <SEOHead
-        title="GovCon Professional Frameworks | ElevateQCS Resource Center"
-        description="Access Professional Frameworks for government contracting compliance including FAR/DFARS templates, CTIP program guides, and audit readiness checklists."
-        url="https://elevateqcs.com/resources/govcon"
+        title="Enterprise & Federal Compliance Frameworks | ElevateQCS Resource Center"
+        description="Access Professional Frameworks for enterprise and federal compliance including FAR/DFARS templates, CTIP program guides, audit readiness checklists, and governance architecture."
+        url="https://elevateqcs.com/resources/enterprise-federal"
       />
 
       {/* Hero */}
@@ -20,14 +20,14 @@ export default function ResourcesGovcon() {
         <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              GovCon Resources
+              Enterprise & Federal Compliance
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Government Contracting Professional Frameworks
+              Enterprise & Federal Compliance Frameworks
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Field-tested frameworks for federal compliance, FAR/DFARS alignment, 
-              CTIP program development, and audit readiness in government contracting environments.
+              Professional frameworks for organizations navigating complex regulatory landscapes, 
+              federal and state compliance obligations, audit readiness, and operational governance.
             </p>
           </div>
         </div>
@@ -36,8 +36,8 @@ export default function ResourcesGovcon() {
       <ResourceGate
         type="govcon"
         bucketName="elevateqcs-resourcesdocs-govcon"
-        title="Access GovCon Frameworks"
-        subtitle="Enter your business email to access our curated library of government contracting Professional Frameworks."
+        title="Access Enterprise & Federal Frameworks"
+        subtitle="Enter your business email to access our curated library of enterprise and federal compliance Professional Frameworks."
       />
 
       <ResourceDisclaimer />

@@ -81,7 +81,9 @@ const App = () => (
           <Route path="/credentials" element={<Credentials />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/enterprise-federal" element={<ResourcesGovcon />} />
           <Route path="/resources/govcon" element={<ResourcesGovcon />} />
+          <Route path="/resources/high-growth" element={<ResourcesStartup />} />
           <Route path="/resources/startup" element={<ResourcesStartup />} />
           <Route path="/acronyms" element={<Acronyms />} />
           <Route path="/industries" element={<Industries />} />

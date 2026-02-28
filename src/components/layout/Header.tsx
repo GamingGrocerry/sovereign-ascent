@@ -46,9 +46,9 @@ const navItems = [
     label: "Resources",
     href: "/resources",
     dropdown: [
-      { label: "All Resources", href: "/resources" },
-      { label: "GovCon Resources", href: "/resources/govcon" },
-      { label: "Startup Resources", href: "/resources/startup" },
+      { label: "All Frameworks", href: "/resources" },
+      { label: "Enterprise & Federal Compliance", href: "/resources/enterprise-federal" },
+      { label: "High-Growth & Regulated Markets", href: "/resources/high-growth" },
     ]
   },
   { 
@@ -353,9 +353,9 @@ export function Header() {
             <div className="py-2">
               <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Resources</p>
               {[
-                { label: "All Resources", href: "/resources" },
-                { label: "GovCon Resources", href: "/resources/govcon" },
-                { label: "Startup Resources", href: "/resources/startup" },
+                { label: "All Frameworks", href: "/resources" },
+                { label: "Enterprise & Federal Compliance", href: "/resources/enterprise-federal" },
+                { label: "High-Growth & Regulated Markets", href: "/resources/high-growth" },
               ].map((item) => (
                 <Link
                   key={item.href}
