@@ -124,6 +124,35 @@ export default function RFP() {
     setIsSubmitting(true);
 
     try {
+      // Upload file to backend storage if one was selected
+      let uploadedFileName = "";
+      if (selectedFile) {
+        const timestamp = Date.now();
+        const sanitizedName = selectedFile.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+        const filePath = `${timestamp}_${sanitizedName}`;
+        const { error: uploadError } = await supabase.storage
+          .from("RFP-Files")
+          .upload(filePath, selectedFile, {
+            contentType: selectedFile.type,
+            upsert: false,
+          });
+        if (uploadError) {
+          toast({
+            title: "File Upload Failed",
+            description: "Your form was submitted but the file could not be uploaded. Please email it to info@elevateqcs.com.",
+            variant: "destructive",
+          });
+        } else {
+          uploadedFileName = filePath;
+        }
+      }
+
+      // Remove file from Netlify form data, append backend reference
+      formDataObj.delete("file-upload");
+      if (uploadedFileName) {
+        formDataObj.set("uploaded-file", uploadedFileName);
+      }
+
       const body = new URLSearchParams(formDataObj as any).toString();
       await fetch("/", {
         method: "POST",
