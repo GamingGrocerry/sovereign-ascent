@@ -54,6 +54,29 @@
       <input name="inquiry-type" />
       <textarea name="message"></textarea>
     </form>
+    <!-- Hidden form for Netlify RFP detection -->
+    <form name="rfp" netlify netlify-honeypot="bot-field" hidden>
+      <input name="form-name" type="hidden" value="rfp" />
+      <input name="bot-field" />
+      <input name="org-name" />
+      <input name="website" />
+      <input name="industry" />
+      <input name="org-size" />
+      <input name="hq-location" />
+      <input name="regions" />
+      <input name="contact-name" />
+      <input name="title" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="contact-method" />
+      <input name="engagement-types" />
+      <input name="scope" />
+      <input name="regulatory-context" />
+      <input name="reg-notes" />
+      <input name="start-date" />
+      <input name="timeline" />
+      <input name="budget" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
