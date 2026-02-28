@@ -70,10 +70,10 @@ export default function About() {
                 We Build Compliance Systems for Clarity and Control
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                ElevateQCS is a principal-led advisory firm established in 2026, 
-                built on hands-on experience designing, implementing, monitoring, 
-                and supporting QMS frameworks across major billion-dollar 
-                Government Contracting programs.
+              ElevateQCS is a principal-led advisory firm built on hands-on 
+                experience designing, implementing, monitoring, and supporting 
+                QMS frameworks across high-value, highly regulated government 
+                contracting programs.
               </p>
             </div>
             <div className="hidden lg:block">
