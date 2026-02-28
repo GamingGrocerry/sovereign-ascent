@@ -28,6 +28,15 @@ import ResourcesGovcon from "./pages/ResourcesGovcon";
 import ResourcesStartup from "./pages/ResourcesStartup";
 import IndustryDefense from "./pages/IndustryDefense";
 import IndustryGrowth from "./pages/IndustryGrowth";
+import GovernanceStrategy from "./pages/services/GovernanceStrategy";
+import RiskRegulatoryCompliance from "./pages/services/RiskRegulatoryCompliance";
+import FederalPublicSector from "./pages/services/FederalPublicSector";
+import SupplyChainHumanRights from "./pages/services/SupplyChainHumanRights";
+import QualityOperationalInfrastructure from "./pages/services/QualityOperationalInfrastructure";
+import RegulatoryDocumentation from "./pages/services/RegulatoryDocumentation";
+import AuditCertificationReadiness from "./pages/services/AuditCertificationReadiness";
+import ManagedCompliance from "./pages/services/ManagedCompliance";
+import DigitalGovernance from "./pages/services/DigitalGovernance";
 
 const queryClient = new QueryClient();
 
