@@ -127,6 +127,8 @@ For every control gap identified, create a POA&M entry with:
 
 Prioritize POA&M items based on risk severity and Prime contractor expectations. Controls related to access management, incident response, and CUI protection typically carry the highest assessment weight.
 
+![Overhead view of interconnected steel bridges and pathways forming a branching industrial network representing CMMC flow-down pathways and sub-tier defense contractor supply chain connections](/assets/cmmc-flowdown-network.jpg "CMMC supply chain flow-down network: interconnected pathways representing how cybersecurity requirements cascade through sub-tier defense contractors")
+
 ### Phase 4 — Evidence Collection Infrastructure
 
 Build the [documentation infrastructure](/insights/documentation-best-practices) to collect, organize, and present evidence of control implementation. CMMC assessors evaluate evidence — not assertions. Every control must be supported by:
