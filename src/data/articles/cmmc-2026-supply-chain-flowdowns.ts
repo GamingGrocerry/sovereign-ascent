@@ -42,6 +42,8 @@ Beyond contractual requirements, Prime contractors are implementing their own su
 
 These vetting mechanisms mean that sub-tier organizations face pressure from two directions: the government's regulatory framework and the Prime's own risk management requirements. Meeting one without the other is insufficient.
 
+![Concentric rings of polished dark metal and frosted glass descending inward like a security vault representing tiered CMMC cybersecurity maturity assessment levels for defense contractors](/assets/cmmc-tiered-assessment.jpg "CMMC tiered assessment architecture: concentric layers of cybersecurity maturity validation cascading through the defense supply chain")
+
 ## The Sub-tier Gap: Where Most Organizations Fall Short
 
 The gap between CMMC awareness and CMMC readiness is significant across the defense supply chain. Most sub-tier organizations fall into one of three postures:
@@ -124,6 +126,8 @@ For every control gap identified, create a POA&M entry with:
 - Interim risk mitigations that reduce exposure while remediation is in progress
 
 Prioritize POA&M items based on risk severity and Prime contractor expectations. Controls related to access management, incident response, and CUI protection typically carry the highest assessment weight.
+
+![Overhead view of interconnected steel bridges and pathways forming a branching industrial network representing CMMC flow-down pathways and sub-tier defense contractor supply chain connections](/assets/cmmc-flowdown-network.jpg "CMMC supply chain flow-down network: interconnected pathways representing how cybersecurity requirements cascade through sub-tier defense contractors")
 
 ### Phase 4 — Evidence Collection Infrastructure
 
