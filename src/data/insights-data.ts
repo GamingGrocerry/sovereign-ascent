@@ -91,6 +91,7 @@ cmmc2026SupplyChainFlowdowns.image = imgCmmcFlowdowns;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  cmmc2026SupplyChainFlowdowns,
   ctipCs3dCompliance,
   alliant3OperationalReadiness,
   govconOperationalMaturity,
