@@ -5,7 +5,7 @@ import { ExternalLink } from "lucide-react";
 // Map of inline image paths to their ES6 imports
 const imageImports: Record<string, string> = {};
 
-// Dynamically import all article inline images
+// Dynamically import all article inline images (glob patterns must cover all asset prefixes)
 const assetModules = import.meta.glob(
   ["@/assets/mjc-*.jpg", "@/assets/govcon-*.jpg", "@/assets/startup-*.jpg", "@/assets/alliant3-*.jpg", "@/assets/ctip-*.jpg", "@/assets/cmmc-*.jpg"],
   { eager: true, import: "default" }
