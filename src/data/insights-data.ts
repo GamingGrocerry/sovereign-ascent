@@ -34,6 +34,7 @@ import alliant3OperationalReadiness from "./articles/alliant3-operational-readin
 import ctipCs3dCompliance from "./articles/ctip-cs3d-compliance";
 import cmmc2026SupplyChainFlowdowns from "./articles/cmmc-2026-supply-chain-flowdowns";
 import oversoldUnderDelivered from "./articles/oversold-under-delivered-compliance-gap";
+import logisticsCtipComplianceMistakes from "./articles/logistics-ctip-compliance-mistakes";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
