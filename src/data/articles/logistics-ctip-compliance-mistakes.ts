@@ -70,7 +70,7 @@ A logistics company that trains its corporate office staff identically to its fi
 
 ### 5. Incident Response Without Operational Teeth
 
-Having a written incident response procedure is insufficient. Enforcement reviews in 2025–2026 evaluate whether organizations have *tested* their response protocols. This includes:
+Having a written incident response procedure is insufficient. Under the [mitigating factors framework in FAR 22.17](https://www.acquisition.gov/far/subpart-22.17), agencies consider the adequacy of a contractor's compliance program when evaluating violations — meaning organizations that can demonstrate *tested* response protocols are better positioned to mitigate enforcement consequences. Key elements include:
 
 - Functional, accessible reporting channels available to all tiers of workers
 - Clear escalation procedures with defined timelines
