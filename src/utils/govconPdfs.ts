@@ -391,7 +391,7 @@ export function generateCtipAuditChecklist(): Blob {
   y = pdf.sectionHeading("3  CTIP Audit Readiness Checklist", y);
 
   const headers = ["✓", "Checklist Item", "Requirement", "Status", "Evidence Ref", "Owner"];
-  const widths = [8, 60, 28, 22, 24, 32];
+  const widths = [8, 56, 30, 22, 26, 32];
 
   y = pdf.subHeading("Section A — Policy & Governance", y);
   y = pdf.table(headers, [
