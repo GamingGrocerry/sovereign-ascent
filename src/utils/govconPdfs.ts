@@ -243,7 +243,7 @@ export function generateCmmcGapAssessment(): Blob {
   y = pdf.sectionHeading("4  CMMC Level 2 Practice Assessment", y);
 
   const headers = ["ID", "Practice Name", "Core Requirement", "Status", "Gap Description", "Owner / Target"];
-  const widths = [14, 30, 48, 22, 30, 30];
+  const widths = [16, 28, 46, 22, 32, 30];
 
   const families = [
     {
