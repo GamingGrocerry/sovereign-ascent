@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight, Clock } from "lucide-react";
 import { allArticles, type Article } from "@/data/insights-data";
+import { GlossaryCallout } from "@/components/GlossaryCallout";
 
 interface Capability {
   title: string;
