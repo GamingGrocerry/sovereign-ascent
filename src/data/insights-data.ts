@@ -93,10 +93,13 @@ cmmc2026SupplyChainFlowdowns.icon = Shield;
 cmmc2026SupplyChainFlowdowns.image = imgCmmcFlowdowns;
 oversoldUnderDelivered.icon = Target;
 oversoldUnderDelivered.image = imgComplianceGap;
+logisticsCtipComplianceMistakes.icon = AlertCircle;
+logisticsCtipComplianceMistakes.image = imgLogisticsCtip;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  logisticsCtipComplianceMistakes,
   oversoldUnderDelivered,
   cmmc2026SupplyChainFlowdowns,
   ctipCs3dCompliance,
