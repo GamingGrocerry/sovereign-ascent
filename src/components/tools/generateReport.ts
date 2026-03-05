@@ -10,6 +10,7 @@ interface ReportData {
 }
 
 export function generateReport(data: ReportData): void {
+  const logoUrl = window.location.origin + '/logos/elevatequcs-report-logo.png';
   const html = `
 <!DOCTYPE html>
 <html lang="en">
