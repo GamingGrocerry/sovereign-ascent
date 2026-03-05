@@ -194,6 +194,47 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Diagnostic Tools Section */}
+      <section className="py-20 bg-secondary/30 section-luxury">
+        <div className="container-wide">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
+            <div>
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-2">
+                <Activity className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
+                Diagnostic Tools
+              </p>
+              <h2 className="!text-2xl lg:!text-3xl">Assess Your Compliance Readiness</h2>
+            </div>
+            <Button variant="outline" size="sm" asChild className="self-start sm:self-auto">
+              <Link to="/tools">
+                All Tools
+                <ChevronRight className="ml-1" size={14} />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "GovCon Readiness Score", desc: "Evaluate governance structures for U.S. government supply chain participation.", time: "3–5 min", href: "/tools/govcon-readiness", icon: Shield },
+              { title: "Compliance Framework Builder", desc: "Receive a tailored compliance roadmap based on your regulatory environment.", time: "2–4 min", href: "/tools/compliance-framework-builder", icon: Layers },
+              { title: "QMS Gap Analysis", desc: "Assess quality management system maturity and identify contract risk implications.", time: "3–5 min", href: "/tools/qms-gap-analysis", icon: BarChart3 },
+            ].map((tool) => (
+              <Link key={tool.href} to={tool.href} className="card-elevated group p-6">
+                <div className="w-12 h-12 rounded-sm bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                  <tool.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="!text-base mb-2 group-hover:text-accent transition-colors">{tool.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{tool.desc}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="w-3 h-3" />{tool.time}</span>
+                  <span className="text-accent text-xs font-medium inline-flex items-center">Run Diagnostic <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview — 6-card grid */}
       <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
         <div className="container-wide">

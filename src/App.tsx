@@ -118,6 +118,10 @@ const App = () => (
           <Route path="/sectors/advanced-manufacturing" element={<SectorAdvancedManufacturing />} />
           <Route path="/sectors/eu-exposed" element={<SectorEUExposed />} />
           <Route path="/rfp" element={<RFP />} />
+          <Route path="/tools" element={<Tools />} />
+          <Route path="/tools/govcon-readiness" element={<GovConReadiness />} />
+          <Route path="/tools/compliance-framework-builder" element={<ComplianceFrameworkBuilder />} />
+          <Route path="/tools/qms-gap-analysis" element={<QMSGapAnalysis />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
