@@ -50,7 +50,7 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
     e.preventDefault();
     setErrors({});
 
-    const result = leadSchema.safeParse({ name, email, company, industry });
+    const result = leadSchema.safeParse({ email });
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.errors.forEach((err) => {
@@ -68,10 +68,10 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
     setIsSubmitting(true);
     try {
       const validData = {
-        name: result.data.name as string,
+        name: name.trim() || "",
         email: result.data.email as string,
-        company: result.data.company as string,
-        industry: result.data.industry as string,
+        company: company.trim() || "",
+        industry: industry || "",
       };
 
       await supabase.from("assessment_leads").insert({
