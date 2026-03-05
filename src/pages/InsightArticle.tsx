@@ -266,6 +266,9 @@ export default function InsightArticle() {
         <div className="container-narrow">
           <div className="prose prose-lg max-w-none article-content">
             <ArticleContent content={article.content} />
+            {article.slug === "oversold-under-delivered-compliance-gap" && (
+              <ReadinessScorecard />
+            )}
           </div>
         </div>
       </section>
