@@ -86,14 +86,11 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
       });
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        name: validData.name,
-        email: result.data.email,
-        company: result.data.company,
-        industry: result.data.industry,
+        ...validData,
         ts: Date.now(),
       }));
 
-      onUnlock(result.data);
+      onUnlock(validData);
       toast({ title: "Access Granted", description: "All diagnostic tools are now unlocked." });
     } catch {
       toast({ title: "Submission Error", description: "Please try again or contact info@elevateqcs.com.", variant: "destructive" });
