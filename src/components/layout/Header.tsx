@@ -233,7 +233,6 @@ export function Header() {
 
           {/* Search + CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <SearchBar isDark={showDarkHeader} />
             <Button
               variant={showDarkHeader ? "hero" : "cta"}
               size="default"
@@ -241,6 +240,7 @@ export function Header() {
             >
               <Link to="/contact">Request Consultation</Link>
             </Button>
+            <SearchBar isDark={showDarkHeader} />
           </div>
 
           {/* Mobile Menu Button */}
