@@ -41,7 +41,7 @@ export function ResultsPage({
   relatedInsights,
   userData,
 }: ResultsPageProps) {
-  const handleDownload = () => {
+  const handleDownload = async () => {
     generateReport({
       toolName,
       companyName: userData.company,
