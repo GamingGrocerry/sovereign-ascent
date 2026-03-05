@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "International subcontracting extends legal exposure across borders. In 2026, cross-jurisdictional compliance liability is becoming harder for primes to manage — and riskier for suppliers to ignore.",
   readTime: "11 min read",
-  date: "March 6, 2026",
+  date: "March 5, 2026",
   metaDescription:
     "Cross-jurisdictional compliance liability is reshaping how U.S. primes evaluate EU subcontractors. Learn the four risk domains driving supplier reassessment in federal contracting.",
   imageAlt:
