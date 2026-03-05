@@ -58,6 +58,7 @@ import GovConReadiness from "./pages/tools/GovConReadiness";
 import ComplianceFrameworkBuilder from "./pages/tools/ComplianceFrameworkBuilder";
 import QMSGapAnalysis from "./pages/tools/QMSGapAnalysis";
 import Capabilities from "./pages/Capabilities";
+import GenerateResources from "./pages/admin/GenerateResources";
 
 const queryClient = new QueryClient();
 
@@ -124,6 +125,7 @@ const App = () => (
           <Route path="/tools/compliance-framework-builder" element={<ComplianceFrameworkBuilder />} />
           <Route path="/tools/qms-gap-analysis" element={<QMSGapAnalysis />} />
           <Route path="/capabilities" element={<Capabilities />} />
+          <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
