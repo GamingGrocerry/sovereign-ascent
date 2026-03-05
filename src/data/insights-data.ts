@@ -59,6 +59,9 @@ import imgCtipCs3d from "@/assets/insight-ctip-cs3d-compliance.jpg";
 import imgCmmcFlowdowns from "@/assets/insight-cmmc-supply-chain-flowdowns.jpg";
 import imgComplianceGap from "@/assets/insight-compliance-capability-gap.jpg";
 import imgLogisticsCtip from "@/assets/insight-logistics-ctip-compliance.jpg";
+import imgDecisionMatrix from "@/assets/insight-subcontractor-decision-matrix.jpg";
+import imgCrossJurisdictional from "@/assets/insight-cross-jurisdictional-liability.jpg";
+import imgAuditReview from "@/assets/insight-subcontractor-audit-review.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
