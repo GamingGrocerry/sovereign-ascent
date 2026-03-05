@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { allArticles, type Article } from "@/data/insights-data";
+import { GlossaryCallout } from "@/components/GlossaryCallout";
 
 interface ServiceLink {
   title: string;
@@ -88,14 +89,21 @@ export function IndustryPageLayout({
       {/* Overview */}
       <section className="py-28 lg:py-36 bg-background section-luxury">
         <div className="container-wide">
-          <div className="max-w-4xl">
-            <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
-            <h2 className="mb-8">{overviewTitle}</h2>
-            {overviewParagraphs.map((p, i) => (
-              <p key={i} className="text-lg text-muted-foreground leading-relaxed mb-6">
-                {p}
-              </p>
-            ))}
+          <div className="flex flex-col lg:flex-row gap-12">
+            <div className="flex-1 min-w-0 max-w-4xl">
+              <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
+              <h2 className="mb-8">{overviewTitle}</h2>
+              {overviewParagraphs.map((p, i) => (
+                <p key={i} className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  {p}
+                </p>
+              ))}
+            </div>
+            <aside className="lg:w-72 shrink-0 lg:pt-16">
+              <div className="lg:sticky lg:top-24">
+                <GlossaryCallout />
+              </div>
+            </aside>
           </div>
         </div>
       </section>

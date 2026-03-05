@@ -9,6 +9,7 @@ import insightsFeatured from "@/assets/insights-featured.jpg";
 import NotFound from "./NotFound";
 import { ArticleContent } from "@/components/ArticleContent";
 import { ReadinessScorecard } from "@/components/ReadinessScorecard";
+import { GlossaryCallout } from "@/components/GlossaryCallout";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
@@ -263,12 +264,21 @@ export default function InsightArticle() {
 
       {/* Article Content */}
       <section className="py-16 bg-background">
-        <div className="container-narrow">
-          <div className="prose prose-lg max-w-none article-content">
-            <ArticleContent content={article.content} />
-            {article.slug === "oversold-under-delivered-compliance-gap" && (
-              <ReadinessScorecard />
-            )}
+        <div className="container-wide">
+          <div className="flex flex-col lg:flex-row gap-12">
+            <div className="flex-1 min-w-0">
+              <div className="prose prose-lg max-w-none article-content">
+                <ArticleContent content={article.content} />
+                {article.slug === "oversold-under-delivered-compliance-gap" && (
+                  <ReadinessScorecard />
+                )}
+              </div>
+            </div>
+            <aside className="lg:w-72 shrink-0">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                <GlossaryCallout />
+              </div>
+            </aside>
           </div>
         </div>
       </section>
