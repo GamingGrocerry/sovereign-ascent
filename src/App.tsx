@@ -125,6 +125,7 @@ const App = () => (
           <Route path="/tools/compliance-framework-builder" element={<ComplianceFrameworkBuilder />} />
           <Route path="/tools/qms-gap-analysis" element={<QMSGapAnalysis />} />
           <Route path="/capabilities" element={<Capabilities />} />
+          <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
