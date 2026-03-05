@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { allArticles, type Article } from "@/data/insights-data";
 import { GlossaryCallout } from "@/components/GlossaryCallout";
+import { ToolsCallout } from "@/components/ToolsCallout";
 
 interface ServiceLink {
   title: string;
