@@ -111,6 +111,9 @@ subcontractorAuditReview.image = imgAuditReview;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  subcontractorDecisionMatrix,
+  crossJurisdictionalLiability,
+  subcontractorAuditReview,
   logisticsCtipComplianceMistakes,
   oversoldUnderDelivered,
   cmmc2026SupplyChainFlowdowns,
