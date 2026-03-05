@@ -41,7 +41,7 @@ export function generateFarComplianceMatrix(): Blob {
   y = pdf.sectionHeading("4  FAR Compliance Matrix", y);
 
   const headers = ["#", "FAR Clause / Title", "Core Requirement", "Status", "Evidence", "Notes / Owner"];
-  const widths = [8, 38, 50, 22, 18, 38];
+  const widths = [10, 36, 48, 24, 16, 40];
 
   const rows = [
     ["", "PART 3 — ETHICS & IMPROPER BUSINESS PRACTICES", "", "", "", ""],
@@ -243,7 +243,7 @@ export function generateCmmcGapAssessment(): Blob {
   y = pdf.sectionHeading("4  CMMC Level 2 Practice Assessment", y);
 
   const headers = ["ID", "Practice Name", "Core Requirement", "Status", "Gap Description", "Owner / Target"];
-  const widths = [14, 30, 48, 22, 30, 30];
+  const widths = [16, 28, 46, 22, 32, 30];
 
   const families = [
     {
@@ -391,7 +391,7 @@ export function generateCtipAuditChecklist(): Blob {
   y = pdf.sectionHeading("3  CTIP Audit Readiness Checklist", y);
 
   const headers = ["✓", "Checklist Item", "Requirement", "Status", "Evidence Ref", "Owner"];
-  const widths = [8, 60, 28, 22, 24, 32];
+  const widths = [8, 56, 30, 22, 26, 32];
 
   y = pdf.subHeading("Section A — Policy & Governance", y);
   y = pdf.table(headers, [

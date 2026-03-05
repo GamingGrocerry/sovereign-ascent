@@ -17,87 +17,60 @@ import {
   generatePreIsoAssessment,
   generateInvestorCompliancePack,
 } from "@/utils/startupPdfs";
+import {
+  generateFarComplianceMatrixDocx,
+  generateProposalChecklistDocx,
+  generateCmmcGapAssessmentDocx,
+  generateCtipAuditChecklistDocx,
+} from "@/utils/govconDocx";
+import {
+  generateStartupSopDocx,
+  generateRiskRegisterDocx,
+  generateComplianceRoadmapDocx,
+  generatePreIsoAssessmentDocx,
+  generateInvestorCompliancePackDocx,
+} from "@/utils/startupDocx";
 
-interface PdfTask {
+interface FileTask {
   name: string;
   bucket: string;
   fileName: string;
-  generator: () => Blob;
+  generator: () => Blob | Promise<Blob>;
+  contentType: string;
   status: "pending" | "uploading" | "done" | "error";
   error?: string;
 }
 
-const PDF_TASKS: PdfTask[] = [
-  {
-    name: "FAR Compliance Matrix Framework",
-    bucket: "elevateqcs-resourcesdocs-govcon",
-    fileName: "EFC-DLV-001-FAR-Compliance-Matrix-Framework.pdf",
-    generator: generateFarComplianceMatrix,
-    status: "pending",
-  },
-  {
-    name: "Proposal Compliance Checklist Framework",
-    bucket: "elevateqcs-resourcesdocs-govcon",
-    fileName: "EFC-DLV-002-Proposal-Compliance-Checklist-Framework.pdf",
-    generator: generateProposalChecklist,
-    status: "pending",
-  },
-  {
-    name: "CMMC 2.0 Gap Assessment Checklist Framework",
-    bucket: "elevateqcs-resourcesdocs-govcon",
-    fileName: "EFC-DLV-006-CMMC-2.0-Gap-Assessment-Checklist-Framework.pdf",
-    generator: generateCmmcGapAssessment,
-    status: "pending",
-  },
-  {
-    name: "CTIP 2026 Audit Readiness Checklist Framework",
-    bucket: "elevateqcs-resourcesdocs-govcon",
-    fileName: "EFC-DLV-009-CTIP-2026-Audit-Readiness-Checklist-Framework.pdf",
-    generator: generateCtipAuditChecklist,
-    status: "pending",
-  },
-  {
-    name: "Standard Operating Procedure Framework",
-    bucket: "elevateqcs-resourcesdocs-startups",
-    fileName: "RMO-DLV-001-Startup-SOP-Framework.pdf",
-    generator: generateStartupSop,
-    status: "pending",
-  },
-  {
-    name: "Operational Risk Register Framework",
-    bucket: "elevateqcs-resourcesdocs-startups",
-    fileName: "RMO-DLV-004-Startup-Risk-Register-Framework.pdf",
-    generator: generateRiskRegister,
-    status: "pending",
-  },
-  {
-    name: "Compliance Roadmap Framework",
-    bucket: "elevateqcs-resourcesdocs-startups",
-    fileName: "RMO-DLV-005-Startup-Compliance-Roadmap-Framework.pdf",
-    generator: generateComplianceRoadmap,
-    status: "pending",
-  },
-  {
-    name: "Pre-ISO 9001 Self-Assessment Checklist Framework",
-    bucket: "elevateqcs-resourcesdocs-startups",
-    fileName: "RMO-DLV-006-Pre-ISO-Self-Assessment-Checklist-Framework.pdf",
-    generator: generatePreIsoAssessment,
-    status: "pending",
-  },
-  {
-    name: "Investor Compliance Summary Pack Framework",
-    bucket: "elevateqcs-resourcesdocs-startups",
-    fileName: "RMO-DLV-007-Investor-Compliance-Summary-Pack-Framework.pdf",
-    generator: generateInvestorCompliancePack,
-    status: "pending",
-  },
+const FILE_TASKS: FileTask[] = [
+  // ── GovCon PDFs ──
+  { name: "FAR Compliance Matrix (PDF)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-001-FAR-Compliance-Matrix-Framework.pdf", generator: generateFarComplianceMatrix, contentType: "application/pdf", status: "pending" },
+  { name: "Proposal Compliance Checklist (PDF)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-002-Proposal-Compliance-Checklist-Framework.pdf", generator: generateProposalChecklist, contentType: "application/pdf", status: "pending" },
+  { name: "CMMC 2.0 Gap Assessment (PDF)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-006-CMMC-2.0-Gap-Assessment-Checklist-Framework.pdf", generator: generateCmmcGapAssessment, contentType: "application/pdf", status: "pending" },
+  { name: "CTIP 2026 Audit Readiness (PDF)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-009-CTIP-2026-Audit-Readiness-Checklist-Framework.pdf", generator: generateCtipAuditChecklist, contentType: "application/pdf", status: "pending" },
+  // ── GovCon DOCX ──
+  { name: "FAR Compliance Matrix (DOCX)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-001-FAR-Compliance-Matrix-Framework.docx", generator: generateFarComplianceMatrixDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  { name: "Proposal Compliance Checklist (DOCX)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-002-Proposal-Compliance-Checklist-Framework.docx", generator: generateProposalChecklistDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  { name: "CMMC 2.0 Gap Assessment (DOCX)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-006-CMMC-2.0-Gap-Assessment-Checklist-Framework.docx", generator: generateCmmcGapAssessmentDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  { name: "CTIP 2026 Audit Readiness (DOCX)", bucket: "elevateqcs-resourcesdocs-govcon", fileName: "EFC-DLV-009-CTIP-2026-Audit-Readiness-Checklist-Framework.docx", generator: generateCtipAuditChecklistDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  // ── Startup PDFs ──
+  { name: "Standard Operating Procedure (PDF)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-001-Startup-SOP-Framework.pdf", generator: generateStartupSop, contentType: "application/pdf", status: "pending" },
+  { name: "Operational Risk Register (PDF)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-004-Startup-Risk-Register-Framework.pdf", generator: generateRiskRegister, contentType: "application/pdf", status: "pending" },
+  { name: "Compliance Roadmap (PDF)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-005-Startup-Compliance-Roadmap-Framework.pdf", generator: generateComplianceRoadmap, contentType: "application/pdf", status: "pending" },
+  { name: "Pre-ISO 9001 Self-Assessment (PDF)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-006-Pre-ISO-Self-Assessment-Checklist-Framework.pdf", generator: generatePreIsoAssessment, contentType: "application/pdf", status: "pending" },
+  { name: "Investor Compliance Pack (PDF)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-007-Investor-Compliance-Summary-Pack-Framework.pdf", generator: generateInvestorCompliancePack, contentType: "application/pdf", status: "pending" },
+  // ── Startup DOCX ──
+  { name: "Standard Operating Procedure (DOCX)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-001-Startup-SOP-Framework.docx", generator: generateStartupSopDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  { name: "Operational Risk Register (DOCX)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-004-Startup-Risk-Register-Framework.docx", generator: generateRiskRegisterDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  { name: "Compliance Roadmap (DOCX)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-005-Startup-Compliance-Roadmap-Framework.docx", generator: generateComplianceRoadmapDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  { name: "Pre-ISO 9001 Self-Assessment (DOCX)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-006-Pre-ISO-Self-Assessment-Checklist-Framework.docx", generator: generatePreIsoAssessmentDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
+  { name: "Investor Compliance Pack (DOCX)", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-007-Investor-Compliance-Summary-Pack-Framework.docx", generator: generateInvestorCompliancePackDocx, contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", status: "pending" },
 ];
 
 export default function GenerateResources() {
-  const [tasks, setTasks] = useState<PdfTask[]>(PDF_TASKS);
+  const [tasks, setTasks] = useState<FileTask[]>(FILE_TASKS);
   const [running, setRunning] = useState(false);
 
-  const updateTask = (index: number, update: Partial<PdfTask>) => {
+  const updateTask = (index: number, update: Partial<FileTask>) => {
     setTasks((prev) => prev.map((t, i) => (i === index ? { ...t, ...update } : t)));
   };
 
@@ -108,24 +81,18 @@ export default function GenerateResources() {
       updateTask(i, { status: "uploading" });
 
       try {
-        // Generate the PDF blob
-        const blob = tasks[i].generator();
+        const blob = await Promise.resolve(tasks[i].generator());
 
-        // Delete existing file first (ignore errors)
-        await supabase.storage
-          .from(tasks[i].bucket)
-          .remove([tasks[i].fileName]);
+        await supabase.storage.from(tasks[i].bucket).remove([tasks[i].fileName]);
 
-        // Upload new file
         const { error } = await supabase.storage
           .from(tasks[i].bucket)
           .upload(tasks[i].fileName, blob, {
-            contentType: "application/pdf",
+            contentType: tasks[i].contentType,
             upsert: true,
           });
 
         if (error) throw error;
-
         updateTask(i, { status: "done" });
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : "Unknown error";
@@ -134,7 +101,7 @@ export default function GenerateResources() {
     }
 
     setRunning(false);
-    toast.success("All PDFs generated and uploaded successfully.");
+    toast.success("All files generated and uploaded successfully.");
   };
 
   const completedCount = tasks.filter((t) => t.status === "done").length;
@@ -143,9 +110,9 @@ export default function GenerateResources() {
     <Layout>
       <section className="pt-32 pb-24 bg-secondary/30">
         <div className="container-wide">
-          <h1 className="mb-4">Resource PDF Generator</h1>
+          <h1 className="mb-4">Resource File Generator</h1>
           <p className="text-muted-foreground mb-8">
-            Generate all 9 branded Professional Framework PDFs and upload them to
+            Generate all {tasks.length} branded Professional Framework files (PDF + DOCX) and upload them to
             storage, replacing existing files.
           </p>
 
@@ -158,7 +125,7 @@ export default function GenerateResources() {
             {running ? (
               <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Generating & Uploading…</>
             ) : (
-              <><Upload className="mr-2 h-4 w-4" /> Generate & Upload All PDFs</>
+              <><Upload className="mr-2 h-4 w-4" /> Generate & Upload All Files</>
             )}
           </Button>
 

@@ -39,15 +39,12 @@ export class BrandedPdf {
   renderCover() {
     const { doc, w, h, m, config } = this;
 
-    // Navy background
     doc.setFillColor(...NAVY);
     doc.rect(0, 0, w, h, "F");
 
-    // Top accent bar
     doc.setFillColor(...ACCENT);
     doc.rect(0, 0, w, 3, "F");
 
-    // Brand name
     doc.setFont("helvetica", "bold");
     doc.setFontSize(28);
     doc.setTextColor(...WHITE);
@@ -58,25 +55,21 @@ export class BrandedPdf {
     doc.setTextColor(180, 195, 215);
     doc.text("Elevate Quality Compliance Solutions LLC", m, 60);
 
-    // Accent divider
     doc.setDrawColor(...ACCENT);
     doc.setLineWidth(0.8);
     doc.line(m, 70, m + 45, 70);
 
-    // Doc code
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
     doc.setTextColor(...ACCENT);
     doc.text(config.docCode, m, 88);
 
-    // Title
     doc.setFont("helvetica", "bold");
     doc.setFontSize(24);
     doc.setTextColor(...WHITE);
     const titleLines = doc.splitTextToSize(config.title, this.cw);
     doc.text(titleLines, m, 100);
 
-    // Subtitle
     const titleBottom = 100 + titleLines.length * 9;
     doc.setFont("helvetica", "normal");
     doc.setFontSize(11);
@@ -84,20 +77,17 @@ export class BrandedPdf {
     const subLines = doc.splitTextToSize(config.subtitle, this.cw * 0.8);
     doc.text(subLines, m, titleBottom + 6);
 
-    // Version block
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9);
     doc.setTextColor(140, 155, 175);
     doc.text(`Version ${config.version}  |  ${config.date}  |  elevateqcs.com`, m, h - 55);
 
-    // Bottom info
     doc.setFontSize(8);
     doc.setTextColor(120, 135, 155);
     doc.text("Professional Framework — For Informational Purposes Only", m, h - 40);
     doc.text("info@elevateqcs.com  |  elevateqcs.com", m, h - 34);
     doc.text("Delaware, USA  |  Global Operations", m, h - 28);
 
-    // Bottom accent bar
     doc.setFillColor(...ACCENT);
     doc.rect(0, h - 3, w, 3, "F");
   }
@@ -108,16 +98,14 @@ export class BrandedPdf {
     this.pageNum++;
     this.renderHeader();
     this.renderFooter();
-    return 30; // starting Y after header
+    return 30;
   }
 
   renderHeader() {
     const { doc, w, m, config } = this;
-    // Thin accent line
     doc.setFillColor(...ACCENT);
     doc.rect(0, 0, w, 1.5, "F");
 
-    // Header bar
     doc.setFillColor(248, 250, 252);
     doc.rect(0, 1.5, w, 14, "F");
     doc.setDrawColor(...BORDER);
@@ -132,7 +120,8 @@ export class BrandedPdf {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(7);
     doc.setTextColor(...SLATE);
-    doc.text(`${config.docCode} — ${config.title}`, m + 30, 10);
+    const headerTitle = doc.splitTextToSize(`${config.docCode} — ${config.title}`, 90)[0];
+    doc.text(headerTitle, m + 30, 10);
 
     doc.text(`v${config.version} | ${config.date}`, w - m, 10, { align: "right" });
   }
@@ -161,7 +150,6 @@ export class BrandedPdf {
     this.doc.setTextColor(...NAVY);
     this.doc.text(text, this.m, y);
 
-    // Accent underline
     this.doc.setDrawColor(...ACCENT);
     this.doc.setLineWidth(0.5);
     this.doc.line(this.m, y + 2, this.m + 40, y + 2);
@@ -176,45 +164,63 @@ export class BrandedPdf {
     this.doc.setFontSize(10.5);
     this.doc.setTextColor(...NAVY);
     this.doc.text(text, this.m, y);
-    return y + 6;
+    return y + 7;
   }
 
   // ─── BODY TEXT ───
   bodyText(text: string, y: number, fontSize = 9.5): number {
-    y = this.checkPage(y, 10);
+    y = this.checkPage(y, 12);
     this.doc.setFont("helvetica", "normal");
     this.doc.setFontSize(fontSize);
     this.doc.setTextColor(...SLATE);
+    const lineH = fontSize * 0.5;
     const lines = this.doc.splitTextToSize(text, this.cw);
-    this.doc.text(lines, this.m, y);
-    return y + lines.length * (fontSize * 0.42) + 3;
+    for (let i = 0; i < lines.length; i++) {
+      y = this.checkPage(y, lineH + 1);
+      this.doc.text(lines[i], this.m, y);
+      y += lineH;
+    }
+    return y + 4;
   }
 
   // ─── INSTRUCTION BOX ───
   instructionBox(text: string, y: number): number {
-    y = this.checkPage(y, 20);
-    const boxH = 16;
-    this.doc.setFillColor(239, 246, 255); // light blue
+    const fontSize = 8;
+    const lineH = 4;
+    const pad = 5;
+    this.doc.setFont("helvetica", "normal");
+    this.doc.setFontSize(fontSize);
+    const lines = this.doc.splitTextToSize(text, this.cw - pad * 2);
+    const boxH = lines.length * lineH + pad * 2;
+
+    y = this.checkPage(y, boxH + 4);
+
+    this.doc.setFillColor(239, 246, 255);
     this.doc.setDrawColor(...ACCENT);
     this.doc.setLineWidth(0.3);
     this.doc.roundedRect(this.m, y, this.cw, boxH, 1, 1, "FD");
 
-    this.doc.setFont("helvetica", "normal");
-    this.doc.setFontSize(8);
     this.doc.setTextColor(30, 64, 175);
-    const lines = this.doc.splitTextToSize(text, this.cw - 8);
-    this.doc.text(lines, this.m + 4, y + 5);
+    for (let i = 0; i < lines.length; i++) {
+      this.doc.text(lines[i], this.m + pad, y + pad + i * lineH + 3);
+    }
     return y + boxH + 5;
   }
 
-  // ─── FORM FIELDS (labeled input boxes) ───
+  // ─── FORM FIELDS ───
   formFields(fields: { label: string; width?: number }[], y: number): number {
-    y = this.checkPage(y, 18);
-    let x = this.m;
     const defaultW = this.cw / 2 - 2;
 
-    fields.forEach((f, i) => {
+    for (let i = 0; i < fields.length; i++) {
+      const f = fields[i];
       const fw = f.width || defaultW;
+      const col = fw >= this.cw ? 0 : i % 2;
+      const x = col === 0 ? this.m : this.m + defaultW + 4;
+
+      if (col === 0) {
+        y = this.checkPage(y, 16);
+      }
+
       this.doc.setFont("helvetica", "bold");
       this.doc.setFontSize(7.5);
       this.doc.setTextColor(...NAVY);
@@ -225,58 +231,114 @@ export class BrandedPdf {
       this.doc.setLineWidth(0.2);
       this.doc.roundedRect(x, y + 1, fw, 8, 0.5, 0.5, "FD");
 
-      x += fw + 4;
-      if ((i + 1) % 2 === 0) {
-        x = this.m;
+      if (col === 1 || fw >= this.cw) {
         y += 16;
       }
-    });
+    }
 
-    if (fields.length % 2 !== 0) y += 16;
+    if (fields.length % 2 !== 0 && (fields[fields.length - 1].width || defaultW) < this.cw) {
+      y += 16;
+    }
     return y + 2;
   }
 
-  // ─── TABLE ───
+  // ─── DYNAMIC-HEIGHT TABLE ───
   table(headers: string[], rows: string[][], y: number, colWidths?: number[]): number {
     const { doc, m, cw } = this;
     const cols = headers.length;
     const widths = colWidths || headers.map(() => cw / cols);
-    const rowH = 8;
-    const headerH = 9;
+    const cellPadX = 2;
+    const cellPadY = 2.5;
+    const fontSize = 7;
+    const lineH = 3.2;
+    const headerFontSize = 7;
+    const headerLineH = 3.4;
 
-    y = this.checkPage(y, headerH + rowH * 2);
+    // ─── Measure header row height ───
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(headerFontSize);
+    let maxHeaderLines = 1;
+    headers.forEach((h, i) => {
+      const lines = doc.splitTextToSize(h, widths[i] - cellPadX * 2);
+      if (lines.length > maxHeaderLines) maxHeaderLines = lines.length;
+    });
+    const headerH = maxHeaderLines * headerLineH + cellPadY * 2;
 
-    // Header row
+    y = this.checkPage(y, headerH + lineH + cellPadY * 2 + 4);
+
+    // ─── Draw header ───
     let x = m;
     doc.setFillColor(...NAVY);
     doc.rect(m, y, cw, headerH, "F");
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(7);
+    doc.setFontSize(headerFontSize);
     doc.setTextColor(...WHITE);
     headers.forEach((h, i) => {
-      doc.text(h, x + 2, y + 6, { maxWidth: widths[i] - 4 });
+      const lines = doc.splitTextToSize(h, widths[i] - cellPadX * 2);
+      for (let li = 0; li < lines.length; li++) {
+        doc.text(lines[li], x + cellPadX, y + cellPadY + 2.5 + li * headerLineH);
+      }
       x += widths[i];
     });
     y += headerH;
 
-    // Data rows
+    // ─── Draw data rows ───
+    doc.setFontSize(fontSize);
     rows.forEach((row, ri) => {
+      // Measure this row's height
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(fontSize);
+      let maxLines = 1;
+      row.forEach((cell, ci) => {
+        const lines = doc.splitTextToSize(cell, widths[ci] - cellPadX * 2);
+        if (lines.length > maxLines) maxLines = lines.length;
+      });
+      const rowH = Math.max(maxLines * lineH + cellPadY * 2, 7);
+
       y = this.checkPage(y, rowH + 2);
+
+      // Check if this is a section header row (first cell empty, second cell is ALL CAPS)
+      const isSectionRow = row[0] === "" && row[1] && row[1] === row[1].toUpperCase() && row[1].length > 5 && row.slice(2).every(c => c === "");
+
       x = m;
-      const bg = ri % 2 === 0 ? LIGHT_GREY : WHITE;
-      doc.setFillColor(...bg);
+      if (isSectionRow) {
+        doc.setFillColor(230, 237, 246);
+      } else {
+        const bg = ri % 2 === 0 ? LIGHT_GREY : WHITE;
+        doc.setFillColor(...bg);
+      }
       doc.rect(m, y, cw, rowH, "F");
       doc.setDrawColor(...BORDER);
       doc.setLineWidth(0.1);
       doc.line(m, y + rowH, m + cw, y + rowH);
 
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(7);
-      doc.setTextColor(...SLATE);
-      row.forEach((cell, ci) => {
-        doc.text(cell, x + 2, y + 5.5, { maxWidth: widths[ci] - 4 });
-        x += widths[ci];
-      });
+      // Draw vertical separators
+      let sepX = m;
+      for (let ci = 0; ci < cols - 1; ci++) {
+        sepX += widths[ci];
+        doc.setDrawColor(225, 230, 238);
+        doc.setLineWidth(0.08);
+        doc.line(sepX, y, sepX, y + rowH);
+      }
+
+      if (isSectionRow) {
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(7);
+        doc.setTextColor(...NAVY);
+        doc.text(row[1], m + cellPadX, y + rowH / 2 + 1);
+      } else {
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(fontSize);
+        doc.setTextColor(...SLATE);
+        row.forEach((cell, ci) => {
+          const lines = doc.splitTextToSize(cell, widths[ci] - cellPadX * 2);
+          for (let li = 0; li < lines.length; li++) {
+            doc.text(lines[li], x + cellPadX, y + cellPadY + 2.5 + li * lineH);
+          }
+          x += widths[ci];
+        });
+      }
+
       y += rowH;
     });
 
@@ -342,7 +404,7 @@ export class BrandedPdf {
 
   // ─── DISCLAIMER ───
   disclaimer(y: number): number {
-    y = this.checkPage(y, 25);
+    y = this.checkPage(y, 30);
     this.doc.setDrawColor(...BORDER);
     this.doc.setLineWidth(0.2);
     this.doc.line(this.m, y, this.w - this.m, y);
@@ -368,15 +430,16 @@ export class BrandedPdf {
   // ─── BULLET LIST ───
   bulletList(items: string[], y: number): number {
     items.forEach((item) => {
-      y = this.checkPage(y, 8);
+      y = this.checkPage(y, 10);
       this.doc.setFont("helvetica", "normal");
       this.doc.setFontSize(8.5);
-      this.doc.setTextColor(...SLATE);
       this.doc.setTextColor(...ACCENT);
       this.doc.text("•", this.m + 2, y);
       this.doc.setTextColor(...SLATE);
       const lines = this.doc.splitTextToSize(item, this.cw - 10);
-      this.doc.text(lines, this.m + 7, y);
+      for (let i = 0; i < lines.length; i++) {
+        this.doc.text(lines[i], this.m + 7, y + i * 4);
+      }
       y += lines.length * 4 + 2;
     });
     return y;
