@@ -53,6 +53,10 @@ import SectorAIDeepTech from "./pages/sectors/AIDeepTech";
 import SectorAdvancedManufacturing from "./pages/sectors/AdvancedManufacturing";
 import SectorEUExposed from "./pages/sectors/EUExposed";
 import RFP from "./pages/RFP";
+import Tools from "./pages/Tools";
+import GovConReadiness from "./pages/tools/GovConReadiness";
+import ComplianceFrameworkBuilder from "./pages/tools/ComplianceFrameworkBuilder";
+import QMSGapAnalysis from "./pages/tools/QMSGapAnalysis";
 
 const queryClient = new QueryClient();
 
