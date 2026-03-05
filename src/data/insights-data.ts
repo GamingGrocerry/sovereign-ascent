@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, TrendingUp, Shield, Target, LucideIcon } from "lucide-react";
+import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, LucideIcon } from "lucide-react";
 
 export interface Article {
   slug: string;
@@ -35,6 +35,9 @@ import ctipCs3dCompliance from "./articles/ctip-cs3d-compliance";
 import cmmc2026SupplyChainFlowdowns from "./articles/cmmc-2026-supply-chain-flowdowns";
 import oversoldUnderDelivered from "./articles/oversold-under-delivered-compliance-gap";
 import logisticsCtipComplianceMistakes from "./articles/logistics-ctip-compliance-mistakes";
+import subcontractorDecisionMatrix from "./articles/subcontractor-decision-matrix";
+import crossJurisdictionalLiability from "./articles/cross-jurisdictional-liability";
+import subcontractorAuditReview from "./articles/subcontractor-audit-review";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -56,6 +59,9 @@ import imgCtipCs3d from "@/assets/insight-ctip-cs3d-compliance.jpg";
 import imgCmmcFlowdowns from "@/assets/insight-cmmc-supply-chain-flowdowns.jpg";
 import imgComplianceGap from "@/assets/insight-compliance-capability-gap.jpg";
 import imgLogisticsCtip from "@/assets/insight-logistics-ctip-compliance.jpg";
+import imgDecisionMatrix from "@/assets/insight-subcontractor-decision-matrix.jpg";
+import imgCrossJurisdictional from "@/assets/insight-cross-jurisdictional-liability.jpg";
+import imgAuditReview from "@/assets/insight-subcontractor-audit-review.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -95,10 +101,19 @@ oversoldUnderDelivered.icon = Target;
 oversoldUnderDelivered.image = imgComplianceGap;
 logisticsCtipComplianceMistakes.icon = AlertCircle;
 logisticsCtipComplianceMistakes.image = imgLogisticsCtip;
+subcontractorDecisionMatrix.icon = BarChart3;
+subcontractorDecisionMatrix.image = imgDecisionMatrix;
+crossJurisdictionalLiability.icon = TrendingUp;
+crossJurisdictionalLiability.image = imgCrossJurisdictional;
+subcontractorAuditReview.icon = AlertCircle;
+subcontractorAuditReview.image = imgAuditReview;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  subcontractorDecisionMatrix,
+  crossJurisdictionalLiability,
+  subcontractorAuditReview,
   logisticsCtipComplianceMistakes,
   oversoldUnderDelivered,
   cmmc2026SupplyChainFlowdowns,
