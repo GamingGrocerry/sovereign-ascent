@@ -95,6 +95,7 @@ oversoldUnderDelivered.image = imgComplianceGap;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  oversoldUnderDelivered,
   cmmc2026SupplyChainFlowdowns,
   ctipCs3dCompliance,
   alliant3OperationalReadiness,
