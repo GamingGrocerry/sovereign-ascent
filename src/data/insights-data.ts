@@ -34,6 +34,7 @@ import alliant3OperationalReadiness from "./articles/alliant3-operational-readin
 import ctipCs3dCompliance from "./articles/ctip-cs3d-compliance";
 import cmmc2026SupplyChainFlowdowns from "./articles/cmmc-2026-supply-chain-flowdowns";
 import oversoldUnderDelivered from "./articles/oversold-under-delivered-compliance-gap";
+import logisticsCtipComplianceMistakes from "./articles/logistics-ctip-compliance-mistakes";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -54,6 +55,7 @@ import imgAlliant3Readiness from "@/assets/insight-alliant3-readiness.jpg";
 import imgCtipCs3d from "@/assets/insight-ctip-cs3d-compliance.jpg";
 import imgCmmcFlowdowns from "@/assets/insight-cmmc-supply-chain-flowdowns.jpg";
 import imgComplianceGap from "@/assets/insight-compliance-capability-gap.jpg";
+import imgLogisticsCtip from "@/assets/insight-logistics-ctip-compliance.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -91,10 +93,13 @@ cmmc2026SupplyChainFlowdowns.icon = Shield;
 cmmc2026SupplyChainFlowdowns.image = imgCmmcFlowdowns;
 oversoldUnderDelivered.icon = Target;
 oversoldUnderDelivered.image = imgComplianceGap;
+logisticsCtipComplianceMistakes.icon = AlertCircle;
+logisticsCtipComplianceMistakes.image = imgLogisticsCtip;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  logisticsCtipComplianceMistakes,
   oversoldUnderDelivered,
   cmmc2026SupplyChainFlowdowns,
   ctipCs3dCompliance,
