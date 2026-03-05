@@ -42,6 +42,7 @@ const navItems = [
   },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
+  { label: "Tools", href: "/tools" },
   {
     label: "Resources",
     href: "/resources",
