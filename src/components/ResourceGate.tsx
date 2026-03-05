@@ -119,6 +119,33 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
     return ext;
   };
 
+  const [downloadingFile, setDownloadingFile] = useState<string | null>(null);
+
+  const handleDownload = useCallback(async (file: ResourceFile) => {
+    setDownloadingFile(file.name);
+    try {
+      const { data, error } = await supabase.storage
+        .from(bucketName)
+        .download(file.name);
+      if (error) throw error;
+      const url = URL.createObjectURL(data);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = file.name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch {
+      toast({
+        title: "Download Failed",
+        description: "Please try again or contact info@elevateqcs.com.",
+        variant: "destructive",
+      });
+    }
+    setDownloadingFile(null);
+  }, [bucketName, toast]);
+
   const getFileIcon = (name: string) => {
     const ext = getFileExtension(name);
     const colorMap: Record<string, string> = {
