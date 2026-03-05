@@ -42,6 +42,7 @@ const navItems = [
   },
   { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
+  { label: "Tools", href: "/tools" },
   {
     label: "Resources",
     href: "/resources",
@@ -315,6 +316,19 @@ export function Header() {
               )}
             >
               Insights
+            </Link>
+
+            <Link
+              to="/tools"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
+                location.pathname.startsWith("/tools")
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Tools
             </Link>
 
             {/* Industries Group */}

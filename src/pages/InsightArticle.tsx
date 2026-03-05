@@ -10,6 +10,7 @@ import NotFound from "./NotFound";
 import { ArticleContent } from "@/components/ArticleContent";
 import { ReadinessScorecard } from "@/components/ReadinessScorecard";
 import { GlossaryCallout } from "@/components/GlossaryCallout";
+import { ToolsCallout } from "@/components/ToolsCallout";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
@@ -276,6 +277,7 @@ export default function InsightArticle() {
             </div>
             <aside className="lg:w-72 shrink-0">
               <div className="lg:sticky lg:top-24 space-y-6">
+                <ToolsCallout />
                 <GlossaryCallout />
               </div>
             </aside>
