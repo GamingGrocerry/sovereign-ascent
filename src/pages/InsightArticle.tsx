@@ -9,6 +9,7 @@ import insightsFeatured from "@/assets/insights-featured.jpg";
 import NotFound from "./NotFound";
 import { ArticleContent } from "@/components/ArticleContent";
 import { ReadinessScorecard } from "@/components/ReadinessScorecard";
+import { GlossaryCallout } from "@/components/GlossaryCallout";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
