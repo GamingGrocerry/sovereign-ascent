@@ -57,6 +57,7 @@ import Tools from "./pages/Tools";
 import GovConReadiness from "./pages/tools/GovConReadiness";
 import ComplianceFrameworkBuilder from "./pages/tools/ComplianceFrameworkBuilder";
 import QMSGapAnalysis from "./pages/tools/QMSGapAnalysis";
+import Capabilities from "./pages/Capabilities";
 
 const queryClient = new QueryClient();
 
