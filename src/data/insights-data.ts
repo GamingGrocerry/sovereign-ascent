@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, TrendingUp, Shield, LucideIcon } from "lucide-react";
+import { AlertCircle, BookOpen, TrendingUp, Shield, Target, LucideIcon } from "lucide-react";
 
 export interface Article {
   slug: string;
@@ -33,6 +33,7 @@ import startupComplianceFunding from "./articles/startup-compliance-funding";
 import alliant3OperationalReadiness from "./articles/alliant3-operational-readiness";
 import ctipCs3dCompliance from "./articles/ctip-cs3d-compliance";
 import cmmc2026SupplyChainFlowdowns from "./articles/cmmc-2026-supply-chain-flowdowns";
+import oversoldUnderDelivered from "./articles/oversold-under-delivered-compliance-gap";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -52,6 +53,7 @@ import imgStartupComplianceFunding from "@/assets/insight-startup-compliance-fun
 import imgAlliant3Readiness from "@/assets/insight-alliant3-readiness.jpg";
 import imgCtipCs3d from "@/assets/insight-ctip-cs3d-compliance.jpg";
 import imgCmmcFlowdowns from "@/assets/insight-cmmc-supply-chain-flowdowns.jpg";
+import imgComplianceGap from "@/assets/insight-compliance-capability-gap.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -87,10 +89,13 @@ ctipCs3dCompliance.icon = AlertCircle;
 ctipCs3dCompliance.image = imgCtipCs3d;
 cmmc2026SupplyChainFlowdowns.icon = Shield;
 cmmc2026SupplyChainFlowdowns.image = imgCmmcFlowdowns;
+oversoldUnderDelivered.icon = Target;
+oversoldUnderDelivered.image = imgComplianceGap;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  oversoldUnderDelivered,
   cmmc2026SupplyChainFlowdowns,
   ctipCs3dCompliance,
   alliant3OperationalReadiness,

@@ -8,6 +8,7 @@ import { ShareButton } from "@/components/ShareButton";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import NotFound from "./NotFound";
 import { ArticleContent } from "@/components/ArticleContent";
+import { ReadinessScorecard } from "@/components/ReadinessScorecard";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
@@ -265,6 +266,9 @@ export default function InsightArticle() {
         <div className="container-narrow">
           <div className="prose prose-lg max-w-none article-content">
             <ArticleContent content={article.content} />
+            {article.slug === "oversold-under-delivered-compliance-gap" && (
+              <ReadinessScorecard />
+            )}
           </div>
         </div>
       </section>
