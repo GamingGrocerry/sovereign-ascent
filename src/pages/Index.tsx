@@ -129,8 +129,8 @@ export default function Index() {
         }}
       />
 
-      {/* Hero Section — Compact */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section — Governance & Quality Architecture */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:scale-105"
           style={{ backgroundImage: `url(${heroArchitecture})` }}
@@ -138,31 +138,77 @@ export default function Index() {
         <div className="absolute inset-0 image-overlay" />
         <div className="hidden sm:block absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
         <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
-        
-        <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-16 sm:py-24 text-center max-w-7xl mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-4 animate-fade-up">
-              Quality & Compliance Advisory
+
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-16 sm:py-24 max-w-7xl mx-auto">
+          {/* Top — Headline & Intro */}
+          <div className="max-w-3xl mb-10 sm:mb-14 animate-fade-up">
+            <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-4">
+              Governance & Quality Architecture
             </p>
-            <h1 className="text-primary-foreground mb-3 sm:mb-5 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-5xl !leading-tight">
-              Operational Risk That Survives Scrutiny — Before It Costs You
+            <h1 className="text-primary-foreground mb-4 sm:mb-6 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-5xl !leading-tight">
+              The Blueprint for Predictable Performance.
             </h1>
-            <p className="text-primary-foreground/80 !text-xs sm:!text-base md:!text-xl font-light !leading-relaxed max-w-3xl mx-auto mb-2 sm:mb-4 animate-fade-up-delay-2">
-              We architect governance infrastructure that strengthens internal controls, 
-              institutionalizes compliance discipline, and aligns operations with contractual 
-              and regulatory requirements — so growth doesn't create hidden risk.
+            <p className="text-primary-foreground/80 !text-xs sm:!text-base md:!text-lg font-light !leading-relaxed max-w-2xl">
+              We don't just draft policies; we design the Control Architecture that anchors 
+              your enterprise. By harmonizing high-level Governance & Strategy with the 
+              granular realities of Quality & Operational Infrastructure, we build systems 
+              that do more than pass an audit — they institutionalize excellence.
             </p>
-            <p className="text-primary-foreground/50 !text-[10px] sm:!text-sm font-light tracking-wide max-w-2xl mx-auto mb-5 sm:mb-8 animate-fade-up-delay-2">
-              Built for regulated, contract-driven environments where operational gaps carry financial consequence.
-            </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 animate-fade-up-delay-3 px-2 sm:px-0">
-              <Button variant="hero" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
+          </div>
+
+          {/* Pillars Grid */}
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-10 sm:mb-14 animate-fade-up-delay-1">
+            {[
+              {
+                title: "Integrated Control Environments",
+                desc: "We move organizations away from compliance silos. By aligning your QMS (ISO 9001, AS9100, ISO 13485) directly with corporate governance, every operational process serves a strategic objective.",
+              },
+              {
+                title: "Scalable Governance Frameworks",
+                desc: "Built for high-growth firms and deep-tech innovators. We architect your infrastructure so that doubling headcount or entering a new federal market doesn't break your internal controls.",
+              },
+              {
+                title: "The Audit-Ready Culture",
+                desc: "We shift the burden of proof from a pre-audit scramble to Continuous Readiness. Our documentation solutions ensure evidence is a natural byproduct of your workflow, not an afterthought.",
+              },
+              {
+                title: "Operational Ownership",
+                desc: "A system is only as strong as its adoption. We focus on frictionless governance — designing SOPs and control points that empower teams to execute with precision without sacrificing speed.",
+              },
+            ].map((pillar) => (
+              <div
+                key={pillar.title}
+                className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-sm p-5 sm:p-6 hover:bg-primary-foreground/10 transition-colors"
+              >
+                <h3 className="text-primary-foreground text-sm sm:text-base font-semibold mb-2">
+                  {pillar.title}
+                </h3>
+                <p className="text-primary-foreground/70 text-xs sm:text-sm font-light leading-relaxed">
+                  {pillar.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Value Statement + CTA */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 animate-fade-up-delay-2">
+            <blockquote className="max-w-2xl border-l-2 border-accent pl-5 sm:pl-6">
+              <p className="text-primary-foreground/90 font-serif text-sm sm:text-base md:text-lg font-light leading-relaxed italic">
+                "In highly regulated sectors, your Quality System is your most valuable 
+                financial asset. We ensure your architecture is built for longevity, 
+                transparency, and investor-grade reliability — transforming governance 
+                from a cost center into a core competitive advantage."
+              </p>
+            </blockquote>
+
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <Button variant="hero" size="lg" asChild className="!text-xs sm:!text-base !px-4 sm:!px-8">
                 <Link to="/contact">
                   Request a Confidential Consultation
                   <ArrowRight className="ml-2 shrink-0" size={16} />
                 </Link>
               </Button>
-              <Button variant="hero-outline" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
+              <Button variant="hero-outline" size="lg" asChild className="!text-xs sm:!text-base !px-4 sm:!px-8">
                 <Link to="/services">
                   Explore Our Services
                 </Link>
