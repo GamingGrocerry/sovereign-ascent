@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Lock, Mail, Download, FileText } from "lucide-react";
+import { Lock, Mail, Download, FileText, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
@@ -119,6 +119,33 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
     return ext;
   };
 
+  const [downloadingFile, setDownloadingFile] = useState<string | null>(null);
+
+  const handleDownload = useCallback(async (file: ResourceFile) => {
+    setDownloadingFile(file.name);
+    try {
+      const { data, error } = await supabase.storage
+        .from(bucketName)
+        .download(file.name);
+      if (error) throw error;
+      const url = URL.createObjectURL(data);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = file.name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch {
+      toast({
+        title: "Download Failed",
+        description: "Please try again or contact info@elevateqcs.com.",
+        variant: "destructive",
+      });
+    }
+    setDownloadingFile(null);
+  }, [bucketName, toast]);
+
   const getFileIcon = (name: string) => {
     const ext = getFileExtension(name);
     const colorMap: Record<string, string> = {
@@ -213,12 +240,11 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
         ) : files.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {files.map((file) => (
-              <a
+              <button
                 key={file.name}
-                href={file.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative card-elevated p-0 overflow-hidden hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-1"
+                onClick={() => handleDownload(file)}
+                disabled={downloadingFile === file.name}
+                className="group relative card-elevated p-0 overflow-hidden hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-1 text-left w-full disabled:opacity-70"
               >
                 {/* Top color bar */}
                 <div className={`h-1.5 w-full bg-gradient-to-r ${getFileIcon(file.name).split(" ").slice(0, 2).join(" ")}`} />
@@ -241,11 +267,15 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
 
                   {/* Download CTA */}
                   <div className="flex items-center text-accent text-sm font-medium opacity-70 group-hover:opacity-100 transition-opacity">
-                    <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-                    Download Framework
+                    {downloadingFile === file.name ? (
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    ) : (
+                      <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                    )}
+                    {downloadingFile === file.name ? "Downloading..." : "Download Framework"}
                   </div>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
         ) : (
