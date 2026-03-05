@@ -22,7 +22,9 @@ export function generateReport(data: ReportData): void {
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', sans-serif; color: #1a2332; line-height: 1.6; padding: 40px; max-width: 800px; margin: 0 auto; }
   .header { border-bottom: 2px solid #0078ff; padding-bottom: 24px; margin-bottom: 32px; }
-  .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #0c1b2e; }
+  .logo { display: flex; align-items: center; gap: 16px; }
+  .logo img { height: 48px; width: 48px; object-fit: contain; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #0c1b2e; }
   .subtitle { font-size: 11px; color: #5a6c82; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; }
   h1 { font-family: 'Playfair Display', serif; font-size: 28px; margin: 24px 0 8px; color: #0c1b2e; }
   h2 { font-family: 'Playfair Display', serif; font-size: 20px; margin: 28px 0 12px; color: #0c1b2e; border-bottom: 1px solid #dce3eb; padding-bottom: 8px; }
