@@ -101,6 +101,12 @@ oversoldUnderDelivered.icon = Target;
 oversoldUnderDelivered.image = imgComplianceGap;
 logisticsCtipComplianceMistakes.icon = AlertCircle;
 logisticsCtipComplianceMistakes.image = imgLogisticsCtip;
+subcontractorDecisionMatrix.icon = BarChart3;
+subcontractorDecisionMatrix.image = imgDecisionMatrix;
+crossJurisdictionalLiability.icon = TrendingUp;
+crossJurisdictionalLiability.image = imgCrossJurisdictional;
+subcontractorAuditReview.icon = AlertCircle;
+subcontractorAuditReview.image = imgAuditReview;
 
 export const featuredArticle = costOfNonCompliance;
 
