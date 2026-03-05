@@ -9,8 +9,21 @@ interface ReportData {
   date: string;
 }
 
-export function generateReport(data: ReportData): void {
-  const logoUrl = window.location.origin + '/logos/elevatequcs-report-logo.png';
+export async function generateReport(data: ReportData): Promise<void> {
+  // Convert logo to base64 so it embeds in the standalone HTML file
+  let logoDataUri = '';
+  try {
+    const response = await fetch('/logos/elevatequcs-report-logo.png');
+    const blob = await response.blob();
+    logoDataUri = await new Promise<string>((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.readAsDataURL(blob);
+    });
+  } catch {
+    // Fallback: no logo if fetch fails
+  }
+
   const html = `
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +59,7 @@ export function generateReport(data: ReportData): void {
 </head>
 <body>
 <div class="header">
-  <div class="logo"><img src="${logoUrl}" alt="ElevateQCS" /><span class="logo-text">ElevateQCS</span></div>
+  <div class="logo">${logoDataUri ? `<img src="${logoDataUri}" alt="ElevateQCS" />` : ''}<span class="logo-text">ElevateQCS</span></div>
   <div class="subtitle">Quality & Compliance Advisory</div>
 </div>
 
@@ -89,8 +102,8 @@ ${data.roadmap.map((r) => `<div class="roadmap-phase"><strong>${r.phase}</strong
 </body>
 </html>`;
 
-  const blob = new Blob([html], { type: "text/html" });
-  const url = URL.createObjectURL(blob);
+  const fileBlob = new Blob([html], { type: "text/html" });
+  const url = URL.createObjectURL(fileBlob);
   const a = document.createElement("a");
   a.href = url;
   a.download = `${data.toolName.replace(/\s+/g, "-").toLowerCase()}-${data.companyName.replace(/\s+/g, "-").toLowerCase()}-${data.date}.html`;
