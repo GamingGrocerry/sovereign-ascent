@@ -95,9 +95,9 @@ export function Header() {
       )}
     >
       <div className="container-wide">
-        <nav className="flex items-center justify-between h-18 py-4">
+        <nav className="flex items-center h-18 py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group -ml-4">
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
             <img 
               src={showDarkHeader ? "/logos/elevatequcs-icon-dark.png" : "/logos/elevatequcs-icon-light.png"}
               alt="ElevateQCS"
@@ -113,8 +113,8 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          {/* Desktop Navigation - starts after logo */}
+          <div className="hidden lg:flex items-center gap-6 ml-8">
             {navItems.map((item) => (
               <div 
                 key={item.href + item.label}
@@ -231,8 +231,8 @@ export function Header() {
             ))}
           </div>
 
-          {/* Search + CTA */}
-          <div className="hidden lg:flex items-center gap-4 -mr-4">
+          {/* Search + CTA - pushed to far right */}
+          <div className="hidden lg:flex items-center gap-4 ml-auto">
             <Button
               variant={showDarkHeader ? "hero" : "cta"}
               size="default"
