@@ -97,7 +97,7 @@ export function Header() {
       <div className="container-wide">
         <nav className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group -ml-2">
             <img 
               src={showDarkHeader ? "/logos/elevatequcs-icon-dark.png" : "/logos/elevatequcs-icon-light.png"}
               alt="ElevateQCS"
@@ -232,7 +232,7 @@ export function Header() {
           </div>
 
           {/* Search + CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 -mr-2">
             <Button
               variant={showDarkHeader ? "hero" : "cta"}
               size="default"
