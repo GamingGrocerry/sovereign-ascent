@@ -89,6 +89,8 @@ ctipCs3dCompliance.icon = AlertCircle;
 ctipCs3dCompliance.image = imgCtipCs3d;
 cmmc2026SupplyChainFlowdowns.icon = Shield;
 cmmc2026SupplyChainFlowdowns.image = imgCmmcFlowdowns;
+oversoldUnderDelivered.icon = Target;
+oversoldUnderDelivered.image = imgComplianceGap;
 
 export const featuredArticle = costOfNonCompliance;
 
