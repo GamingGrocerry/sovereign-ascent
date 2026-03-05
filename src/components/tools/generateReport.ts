@@ -46,7 +46,7 @@ export function generateReport(data: ReportData): void {
 </head>
 <body>
 <div class="header">
-  <div class="logo">ElevateQCS</div>
+  <div class="logo"><img src="${logoUrl}" alt="ElevateQCS" /><span class="logo-text">ElevateQCS</span></div>
   <div class="subtitle">Quality & Compliance Advisory</div>
 </div>
 
