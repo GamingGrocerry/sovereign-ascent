@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Most subcontractors are never told where they ranked. They simply stop hearing from the prime. Learn the five-dimension decision matrix that determines contract readiness.",
   readTime: "9 min read",
-  date: "March 6, 2026",
+  date: "March 5, 2026",
   metaDescription:
     "Prime contractors use structured internal decision matrices to rank subcontractor risk across five dimensions. Learn the hidden scorecard that determines whether you win or lose federal contracts.",
   imageAlt:

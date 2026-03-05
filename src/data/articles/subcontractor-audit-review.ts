@@ -7,7 +7,7 @@ const article: Article = {
   excerpt:
     "Most subcontractor audits are informal — and that is precisely why companies misunderstand them. Learn the five areas primes quietly examine and why evidence matters more than theory.",
   readTime: "8 min read",
-  date: "March 6, 2026",
+  date: "March 5, 2026",
   metaDescription:
     "Prime contractors conduct quiet compliance reviews before awarding subcontracts. Learn the 5 governance areas they examine and what separates companies that pass from those that fail.",
   imageAlt:
