@@ -101,7 +101,8 @@ export function IndustryPageLayout({
               ))}
             </div>
             <aside className="lg:w-72 shrink-0 lg:pt-16">
-              <div className="lg:sticky lg:top-24">
+              <div className="lg:sticky lg:top-24 space-y-6">
+                <ToolsCallout />
                 <GlossaryCallout />
               </div>
             </aside>
