@@ -13,10 +13,7 @@ import { z } from "zod";
 const STORAGE_KEY = "eqcs_tools_access";
 
 const leadSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Please enter a valid email address").max(255),
-  company: z.string().trim().min(1, "Company is required").max(200),
-  industry: z.string().min(1, "Please select an industry"),
 });
 
 const industries = [
@@ -53,7 +50,7 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
     e.preventDefault();
     setErrors({});
 
-    const result = leadSchema.safeParse({ name, email, company, industry });
+    const result = leadSchema.safeParse({ email });
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.errors.forEach((err) => {
@@ -71,10 +68,10 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
     setIsSubmitting(true);
     try {
       const validData = {
-        name: result.data.name as string,
+        name: name.trim() || "",
         email: result.data.email as string,
-        company: result.data.company as string,
-        industry: result.data.industry as string,
+        company: company.trim() || "",
+        industry: industry || "",
       };
 
       await supabase.from("assessment_leads").insert({
@@ -115,22 +112,20 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
 
         <form onSubmit={handleSubmit} className="space-y-4 mt-2">
           <div className="space-y-1.5">
-            <Label htmlFor="gate-name">Full Name *</Label>
-            <Input id="gate-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Jane Smith" className="bg-secondary/30" />
-            {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
-          </div>
-          <div className="space-y-1.5">
             <Label htmlFor="gate-email">Business Email *</Label>
             <Input id="gate-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="jane@company.com" className="bg-secondary/30" />
             {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="gate-company">Company *</Label>
-            <Input id="gate-company" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="Acme Corp" className="bg-secondary/30" />
-            {errors.company && <p className="text-xs text-destructive">{errors.company}</p>}
+            <Label htmlFor="gate-name">Full Name</Label>
+            <Input id="gate-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Jane Smith" className="bg-secondary/30" />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="gate-industry">Industry *</Label>
+            <Label htmlFor="gate-company">Company</Label>
+            <Input id="gate-company" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="Acme Corp" className="bg-secondary/30" />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="gate-industry">Industry</Label>
             <Select value={industry} onValueChange={setIndustry}>
               <SelectTrigger className="bg-secondary/30">
                 <SelectValue placeholder="Select your industry" />
@@ -141,7 +136,6 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
                 ))}
               </SelectContent>
             </Select>
-            {errors.industry && <p className="text-xs text-destructive">{errors.industry}</p>}
           </div>
 
           <div className="flex items-start gap-3 pt-2">
