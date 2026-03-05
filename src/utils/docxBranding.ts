@@ -36,7 +36,7 @@ const thinBorder = {
 
 export class BrandedDocx {
   config: DocxConfig;
-  children: Paragraph[] | (Paragraph | Table)[] = [];
+  children: (Paragraph | Table)[] = [];
 
   constructor(config: DocxConfig) {
     this.config = config;
