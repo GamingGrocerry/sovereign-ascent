@@ -41,7 +41,7 @@ export function generateFarComplianceMatrix(): Blob {
   y = pdf.sectionHeading("4  FAR Compliance Matrix", y);
 
   const headers = ["#", "FAR Clause / Title", "Core Requirement", "Status", "Evidence", "Notes / Owner"];
-  const widths = [8, 38, 50, 22, 18, 38];
+  const widths = [10, 36, 48, 24, 16, 40];
 
   const rows = [
     ["", "PART 3 — ETHICS & IMPROPER BUSINESS PRACTICES", "", "", "", ""],
