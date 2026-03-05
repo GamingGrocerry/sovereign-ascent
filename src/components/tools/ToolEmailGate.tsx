@@ -70,16 +70,23 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
 
     setIsSubmitting(true);
     try {
+      const validData = {
+        name: result.data.name as string,
+        email: result.data.email as string,
+        company: result.data.company as string,
+        industry: result.data.industry as string,
+      };
+
       await supabase.from("assessment_leads").insert({
-        name: result.data.name,
-        email: result.data.email,
-        company: result.data.company,
-        industry: result.data.industry,
+        name: validData.name,
+        email: validData.email,
+        company: validData.company,
+        industry: validData.industry,
         consent: true,
       });
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        name: result.data.name,
+        name: validData.name,
         email: result.data.email,
         company: result.data.company,
         industry: result.data.industry,
