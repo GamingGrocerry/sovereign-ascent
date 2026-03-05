@@ -55,6 +55,7 @@ import imgAlliant3Readiness from "@/assets/insight-alliant3-readiness.jpg";
 import imgCtipCs3d from "@/assets/insight-ctip-cs3d-compliance.jpg";
 import imgCmmcFlowdowns from "@/assets/insight-cmmc-supply-chain-flowdowns.jpg";
 import imgComplianceGap from "@/assets/insight-compliance-capability-gap.jpg";
+import imgLogisticsCtip from "@/assets/insight-logistics-ctip-compliance.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
