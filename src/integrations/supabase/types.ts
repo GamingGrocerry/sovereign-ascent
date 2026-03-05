@@ -14,6 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
+      assessment_leads: {
+        Row: {
+          answers_json: Json | null
+          company: string
+          consent: boolean
+          created_at: string
+          date_completed: string | null
+          email: string
+          id: string
+          industry: string
+          name: string
+          score: number | null
+          tier: string | null
+          time_to_complete: number | null
+          tool_used: string | null
+        }
+        Insert: {
+          answers_json?: Json | null
+          company?: string
+          consent?: boolean
+          created_at?: string
+          date_completed?: string | null
+          email: string
+          id?: string
+          industry?: string
+          name: string
+          score?: number | null
+          tier?: string | null
+          time_to_complete?: number | null
+          tool_used?: string | null
+        }
+        Update: {
+          answers_json?: Json | null
+          company?: string
+          consent?: boolean
+          created_at?: string
+          date_completed?: string | null
+          email?: string
+          id?: string
+          industry?: string
+          name?: string
+          score?: number | null
+          tier?: string | null
+          time_to_complete?: number | null
+          tool_used?: string | null
+        }
+        Relationships: []
+      }
       resource_leads: {
         Row: {
           created_at: string
