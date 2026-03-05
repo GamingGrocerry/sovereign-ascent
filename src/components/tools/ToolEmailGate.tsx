@@ -13,10 +13,7 @@ import { z } from "zod";
 const STORAGE_KEY = "eqcs_tools_access";
 
 const leadSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Please enter a valid email address").max(255),
-  company: z.string().trim().min(1, "Company is required").max(200),
-  industry: z.string().min(1, "Please select an industry"),
 });
 
 const industries = [
