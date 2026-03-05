@@ -11,6 +11,7 @@ import { ArticleContent } from "@/components/ArticleContent";
 import { ReadinessScorecard } from "@/components/ReadinessScorecard";
 import { GlossaryCallout } from "@/components/GlossaryCallout";
 import { ToolsCallout } from "@/components/ToolsCallout";
+import { LogisticsRiskAssessment } from "@/components/LogisticsRiskAssessment";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
