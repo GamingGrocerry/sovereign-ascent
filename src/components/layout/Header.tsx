@@ -232,7 +232,7 @@ export function Header() {
           </div>
 
           {/* Search + CTA */}
-          <div className="hidden lg:flex items-center gap-4 -mr-2">
+          <div className="hidden lg:flex items-center gap-4 -mr-4">
             <Button
               variant={showDarkHeader ? "hero" : "cta"}
               size="default"
