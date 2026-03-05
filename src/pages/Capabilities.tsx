@@ -302,7 +302,7 @@ export default function Capabilities() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
                 onClick={scrollToDownload}
               >
                 <Download className="mr-2 h-4 w-4" />
