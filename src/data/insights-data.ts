@@ -35,6 +35,9 @@ import ctipCs3dCompliance from "./articles/ctip-cs3d-compliance";
 import cmmc2026SupplyChainFlowdowns from "./articles/cmmc-2026-supply-chain-flowdowns";
 import oversoldUnderDelivered from "./articles/oversold-under-delivered-compliance-gap";
 import logisticsCtipComplianceMistakes from "./articles/logistics-ctip-compliance-mistakes";
+import subcontractorDecisionMatrix from "./articles/subcontractor-decision-matrix";
+import crossJurisdictionalLiability from "./articles/cross-jurisdictional-liability";
+import subcontractorAuditReview from "./articles/subcontractor-audit-review";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
