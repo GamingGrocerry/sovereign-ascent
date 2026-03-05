@@ -33,6 +33,7 @@ import startupComplianceFunding from "./articles/startup-compliance-funding";
 import alliant3OperationalReadiness from "./articles/alliant3-operational-readiness";
 import ctipCs3dCompliance from "./articles/ctip-cs3d-compliance";
 import cmmc2026SupplyChainFlowdowns from "./articles/cmmc-2026-supply-chain-flowdowns";
+import oversoldUnderDelivered from "./articles/oversold-under-delivered-compliance-gap";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
