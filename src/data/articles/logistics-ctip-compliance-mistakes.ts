@@ -42,7 +42,7 @@ Without a formal, auditable "Employer Pays" policy, logistics providers carry la
 
 Logistics operations, particularly those involving international freight and cross-border transportation, frequently involve employer-provided housing and document control arrangements. Two specific violations recur with alarming regularity:
 
-- **Document confiscation**: Retaining worker passports, identification documents, or immigration papers — even under the pretense of "safekeeping" — constitutes a trafficking indicator under federal regulation
+- **Document access denial**: Denying workers access to their passports, identification documents, or immigration papers — even under the pretense of "safekeeping" — constitutes a trafficking indicator under [FAR 22.17](https://www.acquisition.gov/far/subpart-22.17) and related federal regulation
 - **Substandard housing**: Employer-provided accommodations that fail to meet minimum safety and habitability standards represent both a CTIP violation and a broader [regulatory compliance failure](/insights/cost-of-non-compliance)
 
 These violations often originate not with the primary contractor, but within sub-tier labor arrangements that the prime logistics provider has failed to audit.
