@@ -69,6 +69,7 @@ import CPSRFinancialIntegrity from "./pages/tools/CPSRFinancialIntegrity";
 import SupplyChainRiskScan from "./pages/tools/SupplyChainRiskScan";
 import ProfitabilityLeakageTracker from "./pages/tools/ProfitabilityLeakageTracker";
 import Capabilities from "./pages/Capabilities";
+import ResourcesPOE from "./pages/ResourcesPOE";
 import GenerateResources from "./pages/admin/GenerateResources";
 
 const queryClient = new QueryClient();
@@ -102,6 +103,8 @@ const App = () => (
           <Route path="/resources/govcon" element={<ResourcesGovcon />} />
           <Route path="/resources/high-growth" element={<ResourcesStartup />} />
           <Route path="/resources/startup" element={<ResourcesStartup />} />
+          <Route path="/resources/program-execution" element={<ResourcesPOE />} />
+          <Route path="/resources/poe" element={<ResourcesPOE />} />
           <Route path="/acronyms" element={<Acronyms />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/defense" element={<IndustryDefense />} />

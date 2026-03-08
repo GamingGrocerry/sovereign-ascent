@@ -17,6 +17,14 @@ import {
   generatePreIsoAssessment,
   generateInvestorCompliancePack,
 } from "@/utils/startupPdfs";
+import {
+  generateCapaSubmission,
+  generateMobilizationPlan,
+  generateNcrFieldLog,
+  generateOconusSafetyManual,
+  generateCtipSurveillancePack,
+  generatePwsRiskMapping,
+} from "@/utils/poePdfs";
 
 interface PdfTask {
   name: string;
@@ -37,6 +45,12 @@ const PDF_TASKS: PdfTask[] = [
   { name: "Compliance Roadmap Framework", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-005-Startup-Compliance-Roadmap-Framework.pdf", generator: generateComplianceRoadmap, status: "pending" },
   { name: "Pre-ISO 9001 Self-Assessment Checklist Framework", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-006-Pre-ISO-Self-Assessment-Checklist-Framework.pdf", generator: generatePreIsoAssessment, status: "pending" },
   { name: "Investor Compliance Summary Pack Framework", bucket: "elevateqcs-resourcesdocs-startups", fileName: "RMO-DLV-007-Investor-Compliance-Summary-Pack-Framework.pdf", generator: generateInvestorCompliancePack, status: "pending" },
+  { name: "CAPA Submission Framework", bucket: "elevateqcs-resourcesdocs-poe", fileName: "POE-DLV-001-CAPA-Submission-Framework.pdf", generator: generateCapaSubmission, status: "pending" },
+  { name: "LOGCAP VI Mobilization & 96-Hour Readiness Plan", bucket: "elevateqcs-resourcesdocs-poe", fileName: "POE-DLV-002-LOGCAP-Mobilization-96-Hour-Readiness-Plan.pdf", generator: generateMobilizationPlan, status: "pending" },
+  { name: "NCR Field Log & Resolution Tracker", bucket: "elevateqcs-resourcesdocs-poe", fileName: "POE-DLV-003-NCR-Field-Log-Resolution-Tracker.pdf", generator: generateNcrFieldLog, status: "pending" },
+  { name: "OCONUS Site Safety (OSHA 2026) Manual Template", bucket: "elevateqcs-resourcesdocs-poe", fileName: "POE-DLV-004-OCONUS-Site-Safety-Manual-Template.pdf", generator: generateOconusSafetyManual, status: "pending" },
+  { name: "Sub-tier CTIP Surveillance & Audit Pack", bucket: "elevateqcs-resourcesdocs-poe", fileName: "POE-DLV-005-CTIP-Surveillance-Audit-Pack.pdf", generator: generateCtipSurveillancePack, status: "pending" },
+  { name: "PWS Risk Mapping Matrix", bucket: "elevateqcs-resourcesdocs-poe", fileName: "POE-DLV-006-PWS-Risk-Mapping-Matrix.pdf", generator: generatePwsRiskMapping, status: "pending" },
 ];
 
 export default function GenerateResources() {
@@ -76,7 +90,7 @@ export default function GenerateResources() {
         <div className="container-wide">
           <h1 className="mb-4">Resource PDF Generator</h1>
           <p className="text-muted-foreground mb-8">
-            Generate all 9 branded Professional Framework PDFs and upload them to storage, replacing existing files.
+            Generate all 15 branded Professional Framework PDFs and upload them to storage, replacing existing files.
           </p>
           <Button onClick={handleGenerateAll} disabled={running} className="bg-accent hover:bg-accent/90 text-accent-foreground mb-12" size="lg">
             {running ? (

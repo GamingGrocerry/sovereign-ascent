@@ -16,7 +16,7 @@ interface ResourceFile {
 }
 
 interface ResourceGateProps {
-  type: "govcon" | "startup";
+  type: "govcon" | "startup" | "poe";
   bucketName: string;
   title: string;
   subtitle: string;

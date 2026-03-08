@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Rocket, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Rocket, CheckCircle, Crosshair } from "lucide-react";
 import { ResourceDisclaimer } from "@/components/ResourceDisclaimer";
 import resourcesHero from "@/assets/resources-hero.jpg";
 import resourcesGovcon from "@/assets/resources-govcon.jpg";
 import resourcesStartup from "@/assets/resources-startup.jpg";
+import resourcesPoe from "@/assets/resources-poe.jpg";
 
 const categories = [
   {
@@ -33,6 +34,19 @@ const categories = [
       "Sustainability & corporate due diligence (CS3D)",
       "Investor-ready governance structures",
       "Risk & escalation management",
+    ],
+  },
+  {
+    title: "Program & Operational Execution",
+    description: "Professional frameworks for active site sustainment, LOGCAP V/VI readiness, and rapid recovery from Prime-issued findings (CAR/NCR). Designed for the high-pressure environment of OCONUS contracting.",
+    href: "/resources/program-execution",
+    image: resourcesPoe,
+    icon: Crosshair,
+    includes: [
+      "CAPA submission & corrective action response",
+      "LOGCAP mobilization & 96-hour readiness",
+      "NCR field logging & resolution tracking",
+      "OCONUS safety, CTIP surveillance & PWS risk mapping",
     ],
   },
 ];
