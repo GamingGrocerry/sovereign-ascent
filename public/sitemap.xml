@@ -23,8 +23,9 @@
 
   <!-- Resources -->
   <url><loc>https://elevateqcs.com/resources</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://elevateqcs.com/resources/govcon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://elevateqcs.com/resources/startup</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://elevateqcs.com/resources/enterprise-federal</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://elevateqcs.com/resources/high-growth</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://elevateqcs.com/resources/program-execution</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Industries -->
   <url><loc>https://elevateqcs.com/industries</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -72,7 +73,6 @@
   <url><loc>https://elevateqcs.com/tools/surge-capacity-stress-test</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://elevateqcs.com/tools/rfo-business-judgment</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://elevateqcs.com/tools/cpsr-financial-integrity</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://elevateqcs.com/tools/supply-chain-risk-scan</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://elevateqcs.com/tools/profitability-leakage-tracker</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Insights -->
