@@ -9,6 +9,7 @@ import { Lock, Shield } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 
 const STORAGE_KEY = "eqcs_tools_access";
 

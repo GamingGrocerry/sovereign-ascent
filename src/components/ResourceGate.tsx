@@ -6,6 +6,7 @@ import { Lock, Mail, Download, FileText, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 
 const emailSchema = z.string().trim().email("Please enter a valid email address").max(255);
 
