@@ -14,6 +14,7 @@ for (const [path, mod] of Object.entries(assetModules)) {
   const filename = path.split("/assets/")[1];
   if (filename) {
     imageImports[`/assets/${filename}`] = mod as string;
+    imageImports[filename] = mod as string; // Also index by bare filename
   }
 }
 
