@@ -126,6 +126,8 @@ const App = () => (
           <Route path="/tools/govcon-readiness" element={<GovConReadiness />} />
           <Route path="/tools/compliance-framework-builder" element={<ComplianceFrameworkBuilder />} />
           <Route path="/tools/qms-gap-analysis" element={<QMSGapAnalysis />} />
+          <Route path="/tools/car-gravity-calculator" element={<CARGravityCalculator />} />
+          <Route path="/tools/virtual-spot-check" element={<VirtualSpotCheck />} />
           <Route path="/capabilities" element={<Capabilities />} />
           <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

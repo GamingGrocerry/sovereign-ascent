@@ -28,6 +28,20 @@ const tools = [
     href: "/tools/qms-gap-analysis",
     icon: BarChart3,
   },
+  {
+    title: "CAR Gravity Calculator",
+    description: "Received a finding? Assess the severity of your Corrective Action Request and calculate the likelihood of receiving a Cure Notice based on finding source, repeat status, impact scope, and response history.",
+    time: "2–3 minutes",
+    href: "/tools/car-gravity-calculator",
+    icon: Siren,
+  },
+  {
+    title: "Virtual Spot-Check Quiz",
+    description: "Test your ability to identify compliant vs. non-compliant site conditions across 8 real-world audit scenarios. Get your Forensic Readiness score and compare against DCMA auditor standards.",
+    time: "3–5 minutes",
+    href: "/tools/virtual-spot-check",
+    icon: Eye,
+  },
 ];
 
 const faqs = [
