@@ -21,6 +21,8 @@ In LOGCAP (Logistics Civil Augmentation Program) and similar performance-based c
 
 ## The Five Categories of PWS Risk Language
 
+![Performance Work Statement contract document with red highlighted risk clauses showing hidden cost drivers and ambiguous language traps in government procurement](pws-risk-language-matrix.jpg "The five categories of PWS risk language that separate profitable contracts from financial exposure")
+
 ### 1. Discretionary Authority Phrases
 
 **Watch for:** "At the discretion of the Contracting Officer," "as directed by the COR," "as determined by the Government."

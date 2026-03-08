@@ -21,6 +21,8 @@ The bridge between them is **operational integration**: embedding PWS requiremen
 
 ## Where the Standards Diverge
 
+![Two parallel steel bridges converging to a single point representing the operational integration between ISO 9001 quality management systems and LOGCAP performance work statement requirements](iso-logcap-convergence.jpg "Bridging ISO 9001 and LOGCAP: operational integration eliminates the gap between quality system compliance and contract performance")
+
 | Dimension | ISO 9001 | LOGCAP PWS |
 |---|---|---|
 | **Focus** | Quality management system effectiveness | Specific deliverable performance |

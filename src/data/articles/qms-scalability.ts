@@ -100,6 +100,8 @@ If your organization is approaching or anticipating a growth phase, consider the
 4. Assess whether your current data collection approach will scale with projected growth
 5. Develop a QMS evolution roadmap that aligns with your business growth strategy
 
+**Assess your current QMS maturity:** Take the [QMS Gap Analysis](/tools/qms-gap-analysis) to evaluate your quality management system across six critical dimensions. For guidance on bridging ISO 9001 with contract performance requirements, read [ISO 9001 vs. LOGCAP Performance Standards](/insights/iso-logcap-bridge).
+
 ---
 
 *This analysis draws from patterns observed across contractor organizations at various stages of growth. For guidance specific to your organization's QMS scalability planning, [contact our advisory team](/contact) or email us at [info@elevateqcs.com](mailto:info@elevateqcs.com).*

@@ -21,6 +21,8 @@ The subcontractor who assumes their stateside [quality management system](/insig
 
 ## The Five Friction Points
 
+![OCONUS austere desert compound at dusk with concrete barriers and temporary structures showing the regulatory governance challenges of overseas government contracting operations](oconus-austere-compound.jpg "Austere site operations expose the gap between stateside compliance assumptions and overseas operational realities")
+
 ### 1. Supply Chain Disruption
 
 Stateside procurement assumes reliable vendor networks, predictable lead times, and standard [receiving inspection](/insights/forensic-auditor-supply-chain) capabilities. Austere sites challenge every one of these assumptions:

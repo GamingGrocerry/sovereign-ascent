@@ -40,6 +40,8 @@ For LOGCAP and similar contingency operations contracts, the PWS typically requi
 
 ## The Six Austere Site Safety Challenges
 
+![Industrial safety hard hat, safety glasses, and fall protection harness on concrete surface representing OSHA-equivalent personal protective equipment requirements for OCONUS austere site operations](osha-austere-safety-equipment.jpg "Austere site safety demands creative adaptation of stateside OSHA standards to resource-constrained environments")
+
 ### 1. Heat Stress Management
 
 At locations where temperatures routinely exceed 120°F (49°C), heat stress management is not an OSHA recommendation — it is a life-safety requirement. Effective heat stress programs at austere sites require:

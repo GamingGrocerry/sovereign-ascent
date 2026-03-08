@@ -67,6 +67,8 @@ CTIP compliance is not merely a regulatory obligation—it reflects an organizat
 
 The [cost of developing](/insights/cost-of-non-compliance) a robust CTIP program is modest compared to the cost of defending against an enforcement action. More importantly, effective anti-trafficking measures align organizational practices with fundamental ethical standards that transcend regulatory requirements.
 
+**Assess your CTIP readiness:** Take the [Labor Ethics Stress Test](/tools/labor-ethics-stress-test) to evaluate your team's ability to identify trafficking indicators in field scenarios. For a deeper analysis of operational CTIP requirements, read [Beyond Recruitment: The Operational Reality of CTIP](/insights/ctip-beyond-recruitment).
+
 ---
 
 *This analysis reflects publicly available enforcement trends and regulatory guidance. For a confidential assessment of your organization's CTIP compliance posture, [contact our advisory team](/contact) or email us at [info@elevateqcs.com](mailto:info@elevateqcs.com).*

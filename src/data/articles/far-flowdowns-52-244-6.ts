@@ -21,6 +21,8 @@ For subcontractors, this clause is both a protection and a trap. It protects by 
 
 ## What FAR 52.244-6 Requires
 
+![Cascading contract documents connected by chains flowing through multiple tiers representing mandatory FAR 52.244-6 clause flow-down requirements from prime contractor to subcontractor supply chain](far-flowdown-cascade.jpg "FAR 52.244-6 creates a mandatory compliance cascade from the Government through every tier of the supply chain")
+
 The clause mandates flow-down of specific FAR provisions including:
 
 ### Always Required

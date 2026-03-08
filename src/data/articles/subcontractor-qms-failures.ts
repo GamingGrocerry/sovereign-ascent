@@ -121,6 +121,8 @@ Subcontractors who invest in management system implementation position themselve
 
 The [operational maturity model](/insights/iso9001-operational-maturity) for subcontractors is clear: organizations that treat quality as infrastructure—investing in QMS development before it becomes a crisis—sustain growth. Organizations that treat it as overhead—deferring investment until forced—cycle through contracts and relationships without building lasting competitive position.
 
+**Evaluate your readiness:** Use the [GovCon Readiness Score](/tools/govcon-readiness) to assess whether your governance structures meet Prime Contractor expectations. For insight into how Primes evaluate subcontractor risk, read [Prime Contractors Are Quietly Ranking Your Risk](/insights/subcontractor-decision-matrix) and [Value Over Price: Why Primes Pay More](/insights/value-over-price).
+
 ---
 
 *This analysis reflects patterns observed across prime-subcontractor relationships in regulated industries. For a confidential assessment of your organization's quality system readiness, [contact our advisory team](/contact) or email us at [info@elevateqcs.com](mailto:info@elevateqcs.com).*

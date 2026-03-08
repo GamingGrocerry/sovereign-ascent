@@ -21,6 +21,8 @@ The core change: non-statutory "red tape" has been stripped from the FAR itself 
 
 ## What Changed: The Three-Layer Architecture
 
+![FAR 2026 three-layer regulatory architecture showing statutory requirements, Practitioner Albums, and FAR Companion governance structure for federal procurement reform](far-three-layer-architecture.jpg "The FAR's new three-layer regulatory architecture separates statutory requirements from guidance and training materials")
+
 ### Layer 1: The FAR (Statutory Requirements)
 
 The FAR now contains only requirements derived directly from statute. These are non-negotiable legal mandates. Key retained requirements include:

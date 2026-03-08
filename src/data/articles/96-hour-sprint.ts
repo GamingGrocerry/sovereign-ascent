@@ -21,6 +21,8 @@ Subcontractors who treat mobilization as a "ramp-up period" discover too late th
 
 ## Why 96 Hours Breaks Most Subcontractors
 
+![Aerial view of military logistics deployment staging area with organized cargo containers ready for rapid 96-hour LOGCAP mobilization operations](96-hour-deployment-staging.jpg "Pre-positioned logistics infrastructure is the difference between passing and failing the 96-hour readiness test")
+
 ### The Personnel Problem
 
 Deploying qualified personnel to [OCONUS locations](/insights/oconus-sustainment) within 96 hours requires:
