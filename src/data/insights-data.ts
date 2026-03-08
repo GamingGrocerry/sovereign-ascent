@@ -169,6 +169,7 @@ const categoryOrder = [
   "Operations",
   "Decision Making",
   "Risk Management",
+  "Quality Systems",
 ];
 
 export const categories = [
