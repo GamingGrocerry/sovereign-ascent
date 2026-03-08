@@ -59,6 +59,10 @@ import ComplianceFrameworkBuilder from "./pages/tools/ComplianceFrameworkBuilder
 import QMSGapAnalysis from "./pages/tools/QMSGapAnalysis";
 import CARGravityCalculator from "./pages/tools/CARGravityCalculator";
 import VirtualSpotCheck from "./pages/tools/VirtualSpotCheck";
+import PWSRiskHighlighter from "./pages/tools/PWSRiskHighlighter";
+import MaturityPremiumCalculator from "./pages/tools/MaturityPremiumCalculator";
+import LaborEthicsStressTest from "./pages/tools/LaborEthicsStressTest";
+import AustereSafetyChecklist from "./pages/tools/AustereSafetyChecklist";
 import Capabilities from "./pages/Capabilities";
 import GenerateResources from "./pages/admin/GenerateResources";
 
