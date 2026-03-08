@@ -127,7 +127,7 @@ Organizations at lower maturity levels face an urgent need to redesign their pro
 
 ### What is the FAR Overhaul (RFO) of 2026?
 
-The Revolutionary FAR Overhaul, effective February 10, 2026, restructured the Federal Acquisition Regulation by removing non-statutory prescriptive requirements and moving them into non-regulatory "Practitioner Albums" and the "FAR Companion." The FAR now contains only statute-based requirements, shifting federal procurement to a principle-based governance model.
+The FAR Overhaul, effective February 10, 2026, restructured the Federal Acquisition Regulation by removing non-statutory prescriptive requirements and moving them into non-regulatory "Practitioner Albums" and the "FAR Companion." The FAR now contains only statute-based requirements, shifting federal procurement to a principle-based governance model.
 
 ### What are Practitioner Albums?
 
