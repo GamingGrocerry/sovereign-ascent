@@ -36,6 +36,19 @@ const categories = [
       "Risk & escalation management",
     ],
   },
+  {
+    title: "Program & Operational Execution",
+    description: "Professional frameworks for active site sustainment, LOGCAP V/VI readiness, and rapid recovery from Prime-issued findings (CAR/NCR). Designed for the high-pressure environment of OCONUS contracting.",
+    href: "/resources/program-execution",
+    image: resourcesPoe,
+    icon: Crosshair,
+    includes: [
+      "CAPA submission & corrective action response",
+      "LOGCAP mobilization & 96-hour readiness",
+      "NCR field logging & resolution tracking",
+      "OCONUS safety, CTIP surveillance & PWS risk mapping",
+    ],
+  },
 ];
 
 export default function Resources() {

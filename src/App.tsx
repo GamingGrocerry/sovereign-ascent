@@ -103,6 +103,8 @@ const App = () => (
           <Route path="/resources/govcon" element={<ResourcesGovcon />} />
           <Route path="/resources/high-growth" element={<ResourcesStartup />} />
           <Route path="/resources/startup" element={<ResourcesStartup />} />
+          <Route path="/resources/program-execution" element={<ResourcesPOE />} />
+          <Route path="/resources/poe" element={<ResourcesPOE />} />
           <Route path="/acronyms" element={<Acronyms />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/defense" element={<IndustryDefense />} />
