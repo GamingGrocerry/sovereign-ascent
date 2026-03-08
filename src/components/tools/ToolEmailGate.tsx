@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Lock, Shield } from "lucide-react";
+import { Lock, Shield, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
@@ -35,9 +35,10 @@ const industries = [
 interface ToolEmailGateProps {
   open: boolean;
   onUnlock: (data: { name: string; email: string; company: string; industry: string }) => void;
+  onClose?: () => void;
 }
 
-export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
+export function ToolEmailGate({ open, onUnlock, onClose }: ToolEmailGateProps) {
   const { toast } = useToast();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -75,22 +76,37 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
         industry: industry || "",
       };
 
-      await supabase.from("assessment_leads").insert({
-        name: validData.name,
-        email: validData.email,
-        company: validData.company,
-        industry: validData.industry,
-        consent: true,
+      // Check if this email already exists (returning user)
+      const { data: exists } = await supabase.rpc("check_assessment_email" as any, {
+        _email: validData.email,
       });
 
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        ...validData,
-        ts: Date.now(),
-      }));
+      if (exists) {
+        // Returning user — grant access without re-inserting
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          ...validData,
+          ts: Date.now(),
+        }));
+        onUnlock(validData);
+        toast({ title: "Welcome Back", description: "Your access has been restored." });
+      } else {
+        await supabase.from("assessment_leads").insert({
+          name: validData.name,
+          email: validData.email,
+          company: validData.company,
+          industry: validData.industry,
+          consent: true,
+        });
 
-      onUnlock(validData);
-      sendTransactionalEmail({ type: "tools", email: validData.email, name: validData.name, company: validData.company, industry: validData.industry });
-      toast({ title: "Access Granted", description: "All diagnostic tools are now unlocked." });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          ...validData,
+          ts: Date.now(),
+        }));
+
+        onUnlock(validData);
+        sendTransactionalEmail({ type: "tools", email: validData.email, name: validData.name, company: validData.company, industry: validData.industry });
+        toast({ title: "Access Granted", description: "All diagnostic tools are now unlocked." });
+      }
     } catch {
       toast({ title: "Submission Error", description: "Please try again or contact info@elevateqcs.com.", variant: "destructive" });
     }
@@ -98,8 +114,15 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
   };
 
   return (
-    <Dialog open={open}>
-      <DialogContent className="sm:max-w-lg" onPointerDownOutside={(e) => e.preventDefault()}>
+    <Dialog open={open} onOpenChange={(isOpen) => { if (!isOpen && onClose) onClose(); }}>
+      <DialogContent className="sm:max-w-lg">
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Close"
+        >
+          <X className="h-4 w-4" />
+        </button>
         <DialogHeader>
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center">
