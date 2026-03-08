@@ -1,15 +1,112 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, ChevronRight } from "lucide-react";
+import { ArrowRight, Clock, ChevronRight, ChevronLeft } from "lucide-react";
 import { featuredArticle, articles, categories } from "@/data/insights-data";
 import insightsLibrary from "@/assets/insights-library.jpg";
 import insightsFeatured from "@/assets/insights-featured.jpg";
 import auditPrecision from "@/assets/audit-precision.jpg";
 
 const BASE_URL = "https://elevateqcs.com";
+
+function HighlightCarousel() {
+  const highlightArticles = articles.slice(0, 8);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const next = useCallback(() => setActive((i) => (i + 1) % highlightArticles.length), [highlightArticles.length]);
+  const prev = useCallback(() => setActive((i) => (i - 1 + highlightArticles.length) % highlightArticles.length), [highlightArticles.length]);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(next, 3000);
+    return () => clearInterval(timer);
+  }, [paused, next]);
+
+  const article = highlightArticles[active];
+
+  return (
+    <section className="py-10 bg-background border-b border-border">
+      <div className="container-wide">
+        <div className="flex items-center justify-between mb-6">
+          <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium">Highlights</p>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={prev}
+              className="w-8 h-8 rounded-sm border border-border flex items-center justify-center hover:bg-secondary/50 transition-colors"
+              aria-label="Previous highlight"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={next}
+              className="w-8 h-8 rounded-sm border border-border flex items-center justify-center hover:bg-secondary/50 transition-colors"
+              aria-label="Next highlight"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        <Link
+          to={`/insights/${article.slug}`}
+          className="relative rounded-sm overflow-hidden group block"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <div className="relative h-[280px] md:h-[340px]">
+            <img
+              src={article.image || insightsFeatured}
+              alt={article.imageAlt || article.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50" />
+            <div className="absolute inset-0 flex items-center p-8 md:p-12">
+              <div className="max-w-xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-block bg-accent/20 text-accent text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm">
+                    {article.category}
+                  </span>
+                  <span className="text-primary-foreground/50 text-xs flex items-center gap-1">
+                    <Clock className="w-3 h-3" />
+                    {article.readTime}
+                  </span>
+                </div>
+                <h2 className="text-primary-foreground text-xl md:text-2xl lg:text-3xl mb-3 leading-tight">
+                  {article.title}
+                </h2>
+                <p className="text-primary-foreground/70 text-sm mb-4 line-clamp-2 max-w-lg">
+                  {article.excerpt}
+                </p>
+                <span className="inline-flex items-center text-accent text-sm font-medium group-hover:underline">
+                  Read article
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </span>
+              </div>
+            </div>
+          </div>
+        </Link>
+
+        {/* Pill indicators */}
+        <div className="flex items-center justify-center gap-1.5 mt-4">
+          {highlightArticles.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === active ? "w-8 bg-accent" : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+              }`}
+              aria-label={`Go to highlight ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Insights() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -104,48 +201,8 @@ export default function Insights() {
         </div>
       </section>
 
-      {/* Featured Article */}
-      <section className="py-16 bg-background">
-        <div className="container-wide">
-          <Link
-            to={`/insights/${featuredArticle.slug}`}
-            className="relative rounded-sm overflow-hidden group block"
-          >
-            <img
-              src={featuredArticle.image || insightsFeatured}
-              alt={featuredArticle.imageAlt || featuredArticle.title}
-              className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60" />
-            <div className="absolute inset-0 flex items-center">
-              <div className="container-wide">
-                <div className="max-w-xl">
-                  <span className="inline-block bg-accent/20 text-accent text-xs uppercase tracking-wide px-3 py-1 rounded-sm mb-4">
-                    Featured Analysis
-                  </span>
-                  <h2 className="text-primary-foreground text-3xl md:text-4xl mb-4">
-                    {featuredArticle.title}
-                  </h2>
-                  <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                    {featuredArticle.excerpt}
-                  </p>
-                  <div className="flex items-center gap-6">
-                    <span className="inline-flex items-center text-accent font-medium group-hover:underline">
-                      Read full analysis
-                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                    </span>
-                    <span className="text-primary-foreground/50 text-sm flex items-center gap-2">
-                      <Clock className="w-3 h-3" />
-                      {featuredArticle.readTime}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
+      {/* Highlight Carousel */}
+      <HighlightCarousel />
 
       {/* Categories */}
       <section className="py-8 bg-background border-b border-border">
