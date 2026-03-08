@@ -122,7 +122,7 @@ Flow-down clauses are contractual provisions that require compliance requirement
 
 ### How do you assess supply chain compliance risk?
 
-Apply a risk-based scoping approach that evaluates suppliers based on criticality of function, sensitivity of information handled, geographic risk, labor force vulnerability, and compliance track record. Allocate monitoring resources proportionally to the risk profile of each supply chain relationship. Use the [Supply Chain Risk Designation Scan](/tools/supply-chain-risk-scan) to identify which technologies in your stack are under active national security scrutiny.
+Apply a risk-based scoping approach that evaluates suppliers based on criticality of function, sensitivity of information handled, geographic risk, labor force vulnerability, and compliance track record. Allocate monitoring resources proportionally to the risk profile of each supply chain relationship.
   `,
 };
 
