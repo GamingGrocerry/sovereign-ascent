@@ -69,6 +69,7 @@ import CPSRFinancialIntegrity from "./pages/tools/CPSRFinancialIntegrity";
 import SupplyChainRiskScan from "./pages/tools/SupplyChainRiskScan";
 import ProfitabilityLeakageTracker from "./pages/tools/ProfitabilityLeakageTracker";
 import Capabilities from "./pages/Capabilities";
+import ResourcesPOE from "./pages/ResourcesPOE";
 import GenerateResources from "./pages/admin/GenerateResources";
 
 const queryClient = new QueryClient();
