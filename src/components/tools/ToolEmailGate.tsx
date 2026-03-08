@@ -77,7 +77,7 @@ export function ToolEmailGate({ open, onUnlock, onClose }: ToolEmailGateProps) {
       };
 
       // Check if this email already exists (returning user)
-      const { data: exists } = await supabase.rpc("check_assessment_email", {
+      const { data: exists } = await supabase.rpc("check_assessment_email" as any, {
         _email: validData.email,
       });
 
