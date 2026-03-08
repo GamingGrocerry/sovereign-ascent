@@ -88,6 +88,7 @@ export function ToolEmailGate({ open, onUnlock }: ToolEmailGateProps) {
       }));
 
       onUnlock(validData);
+      sendTransactionalEmail({ type: "tools", email: validData.email, name: validData.name, company: validData.company, industry: validData.industry });
       toast({ title: "Access Granted", description: "All diagnostic tools are now unlocked." });
     } catch {
       toast({ title: "Submission Error", description: "Please try again or contact info@elevateqcs.com.", variant: "destructive" });

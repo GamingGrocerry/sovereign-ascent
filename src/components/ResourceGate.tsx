@@ -93,6 +93,7 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
 
       localStorage.setItem(storageKey, "true");
       setIsUnlocked(true);
+      sendTransactionalEmail({ type: "resources", email: result.data });
       toast({
         title: "Access Granted",
         description: "You now have access to our Professional Frameworks.",
