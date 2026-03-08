@@ -86,9 +86,22 @@ function buildEmail(payload: EmailPayload): { subject: string; html: string } {
               ${content}
             </td>
           </tr>
+          <!-- Disclaimer -->
+          <tr>
+            <td style="padding:24px 40px 0 40px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top:1px solid #E5E7EB;">
+                <tr>
+                  <td style="padding:20px 0 0 0;font-family:Inter,Arial,Helvetica,sans-serif;font-size:10px;color:#9CA3AF;line-height:1.7;">
+                    <strong style="color:#6B7280;font-size:10px;letter-spacing:0.05em;">DISCLAIMER</strong><br/>
+                    This communication is provided by Elevate Quality Compliance Solutions LLC for informational purposes only. It does not constitute legal, regulatory, or professional advice. Users are solely responsible for ensuring compliance with applicable laws and regulations. Assessment results, frameworks, and diagnostic reports are advisory in nature and should not be relied upon as a substitute for qualified legal or regulatory counsel. For tailored advisory services, contact <a href="mailto:info@elevateqcs.com" style="color:#C9A96E;text-decoration:none;">info@elevateqcs.com</a>.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
           <!-- Footer divider -->
           <tr>
-            <td align="center" style="padding:0 40px;">
+            <td align="center" style="padding:20px 40px 0 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="48">
                 <tr><td style="height:1px;background:linear-gradient(90deg,#C9A96E,#C9A96E00);font-size:0;line-height:0;">&nbsp;</td></tr>
               </table>
@@ -96,7 +109,7 @@ function buildEmail(payload: EmailPayload): { subject: string; html: string } {
           </tr>
           <!-- Footer -->
           <tr>
-            <td style="padding:24px 40px 36px 40px;">
+            <td style="padding:20px 40px 36px 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr>
                   <td align="center" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:11px;color:#8A8F98;line-height:1.8;">
