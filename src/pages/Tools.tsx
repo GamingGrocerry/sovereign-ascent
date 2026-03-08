@@ -179,7 +179,7 @@ export default function Tools() {
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">Assess Your Readiness</p>
-            <h2 className="mb-6">Fourteen Diagnostics. One Registration.</h2>
+            <h2 className="mb-6">Thirteen Diagnostics. One Registration.</h2>
             <p className="text-lg">
               Register once to unlock all tools. Each assessment produces a downloadable report with your score, classification tier, and recommended compliance roadmap.
             </p>
