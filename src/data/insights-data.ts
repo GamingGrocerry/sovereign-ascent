@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, LucideIcon } from "lucide-react";
+import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, LucideIcon } from "lucide-react";
 
 export interface Article {
   slug: string;
@@ -38,6 +38,10 @@ import logisticsCtipComplianceMistakes from "./articles/logistics-ctip-complianc
 import subcontractorDecisionMatrix from "./articles/subcontractor-decision-matrix";
 import crossJurisdictionalLiability from "./articles/cross-jurisdictional-liability";
 import subcontractorAuditReview from "./articles/subcontractor-audit-review";
+import ncrVsCar from "./articles/ncr-vs-car";
+import locCrisisResponse from "./articles/loc-crisis-response";
+import capaLoop from "./articles/capa-loop";
+import forensicAuditorSupplyChain from "./articles/forensic-auditor-supply-chain";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -62,6 +66,10 @@ import imgLogisticsCtip from "@/assets/insight-logistics-ctip-compliance.jpg";
 import imgDecisionMatrix from "@/assets/insight-subcontractor-decision-matrix.jpg";
 import imgCrossJurisdictional from "@/assets/insight-cross-jurisdictional-liability.jpg";
 import imgAuditReview from "@/assets/insight-subcontractor-audit-review.jpg";
+import imgNcrVsCar from "@/assets/insight-ncr-vs-car.jpg";
+import imgLocCrisis from "@/assets/insight-loc-crisis.jpg";
+import imgCapaLoop from "@/assets/insight-capa-loop.jpg";
+import imgForensicAuditor from "@/assets/insight-forensic-auditor.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -107,10 +115,22 @@ crossJurisdictionalLiability.icon = TrendingUp;
 crossJurisdictionalLiability.image = imgCrossJurisdictional;
 subcontractorAuditReview.icon = AlertCircle;
 subcontractorAuditReview.image = imgAuditReview;
+ncrVsCar.icon = Siren;
+ncrVsCar.image = imgNcrVsCar;
+locCrisisResponse.icon = Siren;
+locCrisisResponse.image = imgLocCrisis;
+capaLoop.icon = Repeat;
+capaLoop.image = imgCapaLoop;
+forensicAuditorSupplyChain.icon = Search;
+forensicAuditorSupplyChain.image = imgForensicAuditor;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  forensicAuditorSupplyChain,
+  capaLoop,
+  locCrisisResponse,
+  ncrVsCar,
   subcontractorDecisionMatrix,
   crossJurisdictionalLiability,
   subcontractorAuditReview,
@@ -149,6 +169,7 @@ const categoryOrder = [
   "Operations",
   "Decision Making",
   "Risk Management",
+  "Quality Systems",
 ];
 
 export const categories = [
