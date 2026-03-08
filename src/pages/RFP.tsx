@@ -161,6 +161,10 @@ export default function RFP() {
         body,
       });
 
+      const contactName = formDataObj.get("contact-name") as string;
+      const emailVal = formDataObj.get("email") as string;
+      const orgName2 = formDataObj.get("org-name") as string;
+      sendTransactionalEmail({ type: "rfp", email: emailVal, name: contactName, company: orgName2 });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
