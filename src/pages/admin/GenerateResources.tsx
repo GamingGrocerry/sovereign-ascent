@@ -90,7 +90,7 @@ export default function GenerateResources() {
         <div className="container-wide">
           <h1 className="mb-4">Resource PDF Generator</h1>
           <p className="text-muted-foreground mb-8">
-            Generate all 9 branded Professional Framework PDFs and upload them to storage, replacing existing files.
+            Generate all 15 branded Professional Framework PDFs and upload them to storage, replacing existing files.
           </p>
           <Button onClick={handleGenerateAll} disabled={running} className="bg-accent hover:bg-accent/90 text-accent-foreground mb-12" size="lg">
             {running ? (
