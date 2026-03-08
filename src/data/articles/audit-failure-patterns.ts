@@ -82,6 +82,8 @@ If your organization recognizes these patterns, consider these actionable steps:
 4. Scale your [supplier oversight mechanisms](/insights/supply-chain-compliance) to match your current supply chain complexity
 5. Invest in internal auditor competency—not just training, but mentoring and calibration exercises
 
+**Test your audit readiness:** Take the [Virtual Spot-Check Quiz](/tools/virtual-spot-check) to measure your ability to identify compliant vs. non-compliant site conditions against DCMA auditor standards. For corrective action management, explore [NCR vs. CAR: Surviving Non-Conformance](/insights/ncr-vs-car) and [The CAPA Loop](/insights/capa-loop).
+
 ---
 
 *These patterns are drawn from analysis across multiple industry sectors and quality management frameworks. For guidance specific to your organization's audit preparation needs, [contact our advisory team](/contact) or email us at [info@elevateqcs.com](mailto:info@elevateqcs.com).*

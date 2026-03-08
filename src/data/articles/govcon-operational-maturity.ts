@@ -97,6 +97,8 @@ This forward-leaning posture is what distinguishes organizations that grow their
 
 ---
 
+**Quantify your maturity advantage:** Use the [Maturity Premium ROI Calculator](/tools/maturity-premium-calculator) to estimate how much additional value your operational maturity generates for Prime Contractors. For a deeper understanding of how the 2026 FAR changes affect your compliance architecture, read [The Revolutionary FAR Overhaul of 2026](/insights/far-overhaul-2026).
+
 *Don't walk into a DCAA or Prime audit unprepared. Access our [GovCon Professional Frameworks](/resources/govcon) to standardize your compliance roadmap today, or [contact our advisory team](/contact) to discuss your specific operational readiness needs. You can also reach us directly at [info@elevateqcs.com](mailto:info@elevateqcs.com).*
 
 *Note: External links in this article direct you to official government and DoD-affiliated resources. ElevateQCS does not endorse the content of external websites and is not affiliated with the organizations linked above.*
