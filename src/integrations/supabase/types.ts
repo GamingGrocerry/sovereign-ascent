@@ -88,6 +88,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      check_assessment_email: { Args: { _email: string }; Returns: boolean }
       check_resource_email: { Args: { _email: string }; Returns: boolean }
     }
     Enums: {
