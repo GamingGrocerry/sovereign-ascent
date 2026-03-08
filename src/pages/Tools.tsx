@@ -92,13 +92,6 @@ const tools = [
     icon: ScanSearch,
   },
   {
-    title: "Supply Chain Risk Designation Scan",
-    description: "Select your tech stack — AI models, cloud providers, hardware origins — and see which components are under active national security scrutiny and need a rip-and-replace strategy.",
-    time: "2–4 minutes",
-    href: "/tools/supply-chain-risk-scan",
-    icon: Network,
-  },
-  {
     title: "Post-Award Profitability Leakage Tracker",
     description: "Calculate how much profit is being consumed by inefficient manual governance and prove that investing in Digital Governance actually increases your net margin.",
     time: "3–5 minutes",
