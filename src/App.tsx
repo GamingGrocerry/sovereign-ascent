@@ -63,6 +63,11 @@ import PWSRiskHighlighter from "./pages/tools/PWSRiskHighlighter";
 import MaturityPremiumCalculator from "./pages/tools/MaturityPremiumCalculator";
 import LaborEthicsStressTest from "./pages/tools/LaborEthicsStressTest";
 import AustereSafetyChecklist from "./pages/tools/AustereSafetyChecklist";
+import SurgeCapacityStressTest from "./pages/tools/SurgeCapacityStressTest";
+import RFOBusinessJudgment from "./pages/tools/RFOBusinessJudgment";
+import CPSRFinancialIntegrity from "./pages/tools/CPSRFinancialIntegrity";
+import SupplyChainRiskScan from "./pages/tools/SupplyChainRiskScan";
+import ProfitabilityLeakageTracker from "./pages/tools/ProfitabilityLeakageTracker";
 import Capabilities from "./pages/Capabilities";
 import GenerateResources from "./pages/admin/GenerateResources";
 
