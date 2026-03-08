@@ -59,6 +59,10 @@ import ComplianceFrameworkBuilder from "./pages/tools/ComplianceFrameworkBuilder
 import QMSGapAnalysis from "./pages/tools/QMSGapAnalysis";
 import CARGravityCalculator from "./pages/tools/CARGravityCalculator";
 import VirtualSpotCheck from "./pages/tools/VirtualSpotCheck";
+import PWSRiskHighlighter from "./pages/tools/PWSRiskHighlighter";
+import MaturityPremiumCalculator from "./pages/tools/MaturityPremiumCalculator";
+import LaborEthicsStressTest from "./pages/tools/LaborEthicsStressTest";
+import AustereSafetyChecklist from "./pages/tools/AustereSafetyChecklist";
 import Capabilities from "./pages/Capabilities";
 import GenerateResources from "./pages/admin/GenerateResources";
 
@@ -128,6 +132,10 @@ const App = () => (
           <Route path="/tools/qms-gap-analysis" element={<QMSGapAnalysis />} />
           <Route path="/tools/car-gravity-calculator" element={<CARGravityCalculator />} />
           <Route path="/tools/virtual-spot-check" element={<VirtualSpotCheck />} />
+          <Route path="/tools/pws-risk-highlighter" element={<PWSRiskHighlighter />} />
+          <Route path="/tools/maturity-premium-calculator" element={<MaturityPremiumCalculator />} />
+          <Route path="/tools/labor-ethics-stress-test" element={<LaborEthicsStressTest />} />
+          <Route path="/tools/austere-safety-checklist" element={<AustereSafetyChecklist />} />
           <Route path="/capabilities" element={<Capabilities />} />
           <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
