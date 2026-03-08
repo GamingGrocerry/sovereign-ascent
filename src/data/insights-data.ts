@@ -115,10 +115,22 @@ crossJurisdictionalLiability.icon = TrendingUp;
 crossJurisdictionalLiability.image = imgCrossJurisdictional;
 subcontractorAuditReview.icon = AlertCircle;
 subcontractorAuditReview.image = imgAuditReview;
+ncrVsCar.icon = Siren;
+ncrVsCar.image = imgNcrVsCar;
+locCrisisResponse.icon = Siren;
+locCrisisResponse.image = imgLocCrisis;
+capaLoop.icon = Repeat;
+capaLoop.image = imgCapaLoop;
+forensicAuditorSupplyChain.icon = Search;
+forensicAuditorSupplyChain.image = imgForensicAuditor;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  forensicAuditorSupplyChain,
+  capaLoop,
+  locCrisisResponse,
+  ncrVsCar,
   subcontractorDecisionMatrix,
   crossJurisdictionalLiability,
   subcontractorAuditReview,
