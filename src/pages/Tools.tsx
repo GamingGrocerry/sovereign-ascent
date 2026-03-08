@@ -42,6 +42,34 @@ const tools = [
     href: "/tools/virtual-spot-check",
     icon: Eye,
   },
+  {
+    title: "PWS Risk Highlighter",
+    description: "Analyse sample Performance Work Statement paragraphs with interactive hotspots. Click highlighted phrases to reveal hidden contractual risks, financial exposure, and negotiation recommendations.",
+    time: "3–5 minutes",
+    href: "/tools/pws-risk-highlighter",
+    icon: FileSearch,
+  },
+  {
+    title: "Maturity Premium ROI Calculator",
+    description: "Calculate how much more you could charge — and how much oversight cost you could eliminate — by elevating your operational maturity rating. Data-backed ROI analysis.",
+    time: "2–3 minutes",
+    href: "/tools/maturity-premium-calculator",
+    icon: TrendingUp,
+  },
+  {
+    title: "Labor Ethics Stress Test",
+    description: "Face 6 real-world CTIP scenarios and test your team's ability to identify trafficking indicators under FAR 52.222-50. Receive a pass/fail grade with immediate feedback.",
+    time: "3–5 minutes",
+    href: "/tools/labor-ethics-stress-test",
+    icon: ShieldAlert,
+  },
+  {
+    title: "Austere Environment Safety Checklist",
+    description: "Check off your current site safety features across 8 categories and 44 items. Generate a printable gap report for your Site Safety and Health Officer (SSHO).",
+    time: "4–6 minutes",
+    href: "/tools/austere-safety-checklist",
+    icon: HardHat,
+  },
 ];
 
 const faqs = [
