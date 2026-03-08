@@ -15,7 +15,7 @@ const article: Article = {
   content: `
 ## The Most Significant FAR Change in Decades
 
-On February 10, 2026, the federal procurement landscape underwent its most significant structural shift since the Federal Acquisition Streamlining Act of 1994. The Revolutionary FAR Overhaul (RFO) did not simply revise existing rules. It fundamentally changed how rules are structured, applied, and enforced.
+On February 10, 2026, the federal procurement landscape underwent its most significant structural shift since the Federal Acquisition Streamlining Act of 1994. The FAR Overhaul (RFO) did not simply revise existing rules. It fundamentally changed how rules are structured, applied, and enforced.
 
 The core change: non-statutory "red tape" has been stripped from the FAR itself and moved into non-regulatory "Practitioner Albums" and the "FAR Companion." What remains in the FAR are principle-based requirements that give Contracting Officers — and contractors — more discretion. More room to innovate. And significantly more risk for organizations that cannot document how they exercise that discretion.
 
