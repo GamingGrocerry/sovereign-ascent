@@ -50,6 +50,7 @@ const navItems = [
       { label: "All Frameworks", href: "/resources" },
       { label: "Enterprise & Federal Compliance", href: "/resources/enterprise-federal" },
       { label: "High-Growth & Regulated Markets", href: "/resources/high-growth" },
+      { label: "Program & Operational Execution", href: "/resources/program-execution" },
     ]
   },
   { 
