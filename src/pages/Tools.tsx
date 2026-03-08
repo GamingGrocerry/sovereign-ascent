@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Shield, BarChart3, Layers, ChevronRight, Siren, Eye } from "lucide-react";
+import { ArrowRight, Clock, Shield, BarChart3, Layers, ChevronRight, Siren, Eye, FileSearch, TrendingUp, ShieldAlert, HardHat } from "lucide-react";
 import toolsHero from "@/assets/tools-hero.jpg";
 
 const tools = [
