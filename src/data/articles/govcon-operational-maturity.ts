@@ -121,7 +121,7 @@ Major Prime contractors are already requiring Cybersecurity Maturity Model Certi
 
 ### What is the relationship between compliance investment and government contract profitability?
 
-Proactive compliance investment typically costs two to four times less than reactive remediation for equivalent outcomes. Organizations with mature GovCon QMS architectures and compliance programs report significantly fewer audit findings, higher competitive win rates, and stronger relationships with Prime contractors — all factors that directly improve profitability on government contracts.
+Proactive compliance investment typically costs two to four times less than reactive remediation for equivalent outcomes. Organizations with mature GovCon QMS architectures and compliance programs report significantly fewer audit findings, higher competitive win rates, and stronger relationships with Prime contractors — all factors that directly improve profitability on government contracts. Use the [Post-Award Profitability Leakage Tracker](/tools/profitability-leakage-tracker) to calculate exactly how much profit your manual governance processes are consuming.
   `,
 };
 

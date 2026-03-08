@@ -132,7 +132,7 @@ Pre-build modular templates for Quality Management Plans, Safety and Health Plan
 
 ### How does mobilization performance affect future contract opportunities?
 
-First-week assessment results establish the Prime's perception of your operational capability and directly influence CPARS ratings, option year exercise decisions, and re-competition evaluations.
+First-week assessment results establish the Prime's perception of your operational capability and directly influence CPARS ratings, option year exercise decisions, and re-competition evaluations. Use the [LOGCAP Surge Capacity Stress Test](/tools/surge-capacity-stress-test) to identify your mobilization bottlenecks before they become contract liabilities.
   `,
 };
 

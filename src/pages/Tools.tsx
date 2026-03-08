@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Shield, BarChart3, Layers, ChevronRight, Siren, Eye, FileSearch, TrendingUp, ShieldAlert, HardHat } from "lucide-react";
+import { ArrowRight, Clock, Shield, BarChart3, Layers, ChevronRight, Siren, Eye, FileSearch, TrendingUp, ShieldAlert, HardHat, Zap, Scale, ScanSearch, Network, DollarSign } from "lucide-react";
 import toolsHero from "@/assets/tools-hero.jpg";
 
 const tools = [
@@ -69,6 +69,41 @@ const tools = [
     time: "4–6 minutes",
     href: "/tools/austere-safety-checklist",
     icon: HardHat,
+  },
+  {
+    title: "LOGCAP Surge Capacity Stress Test",
+    description: "Input your current warm-status assets — labor pools, equipment fleets, logistics partners — and discover whether you can meet the mandatory 96-hour LOGCAP deployment window.",
+    time: "3–5 minutes",
+    href: "/tools/surge-capacity-stress-test",
+    icon: Zap,
+  },
+  {
+    title: "RFO Business Judgment Matrix",
+    description: "Five procurement scenarios where the correct answer isn't in the manual. Test whether your team can document 'Defensible Logic' under the 2026 FAR overhaul standards.",
+    time: "4–6 minutes",
+    href: "/tools/rfo-business-judgment",
+    icon: Scale,
+  },
+  {
+    title: "CPSR Financial Integrity Shield",
+    description: "A mock-audit of your purchasing workflow. Identify Material Weaknesses in price justification, debarment screening, and fair & reasonable determinations before DCMA does.",
+    time: "3–5 minutes",
+    href: "/tools/cpsr-financial-integrity",
+    icon: ScanSearch,
+  },
+  {
+    title: "Supply Chain Risk Designation Scan",
+    description: "Select your tech stack — AI models, cloud providers, hardware origins — and see which components are under active national security scrutiny and need a rip-and-replace strategy.",
+    time: "2–4 minutes",
+    href: "/tools/supply-chain-risk-scan",
+    icon: Network,
+  },
+  {
+    title: "Post-Award Profitability Leakage Tracker",
+    description: "Calculate how much profit is being consumed by inefficient manual governance and prove that investing in Digital Governance actually increases your net margin.",
+    time: "3–5 minutes",
+    href: "/tools/profitability-leakage-tracker",
+    icon: DollarSign,
   },
 ];
 
@@ -151,7 +186,7 @@ export default function Tools() {
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">Assess Your Readiness</p>
-            <h2 className="mb-6">Nine Diagnostics. One Registration.</h2>
+            <h2 className="mb-6">Fourteen Diagnostics. One Registration.</h2>
             <p className="text-lg">
               Register once to unlock all tools. Each assessment produces a downloadable report with your score, classification tier, and recommended compliance roadmap.
             </p>

@@ -171,7 +171,7 @@ The most common failure is inadequate documentation of cost and price analysis. 
 
 ### How often should I conduct an internal CPSR assessment?
 
-At minimum, conduct an annual internal CPSR simulation using DCMA guidebook criteria. High-volume purchasing operations or organizations preparing for their first CPSR should consider semi-annual assessments. Each assessment should review 15–20 randomly selected purchase orders across different value thresholds.
+At minimum, conduct an annual internal CPSR simulation using DCMA guidebook criteria. High-volume purchasing operations or organizations preparing for their first CPSR should consider semi-annual assessments. Each assessment should review 15–20 randomly selected purchase orders across different value thresholds. Run the [CPSR Financial Integrity Shield](/tools/cpsr-financial-integrity) to identify Material Weaknesses before your next review.
 
 ### What flow-down clauses are required in subcontract purchase orders?
 

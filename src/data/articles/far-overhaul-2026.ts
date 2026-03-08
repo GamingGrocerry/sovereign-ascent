@@ -141,7 +141,7 @@ The Business Judgment standard requires contractors to exercise and document sou
 
 ### How does the RFO affect subcontractors?
 
-Subcontractors face increased documentation burden, potential flow-down complexity from Primes incorporating Album provisions, and the need to redesign processes around judgment-based decision-making. Organizations with mature quality systems that already produce documented decision rationale have a structural advantage.
+Subcontractors face increased documentation burden, potential flow-down complexity from Primes incorporating Album provisions, and the need to redesign processes around judgment-based decision-making. Organizations with mature quality systems that already produce documented decision rationale have a structural advantage. Take the [RFO Business Judgment Matrix](/tools/rfo-business-judgment) to test whether your team can document "Defensible Logic" under the new standards.
 
 ### When does the RFO take effect?
 
