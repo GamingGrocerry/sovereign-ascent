@@ -141,6 +141,11 @@ const App = () => (
           <Route path="/tools/maturity-premium-calculator" element={<MaturityPremiumCalculator />} />
           <Route path="/tools/labor-ethics-stress-test" element={<LaborEthicsStressTest />} />
           <Route path="/tools/austere-safety-checklist" element={<AustereSafetyChecklist />} />
+          <Route path="/tools/surge-capacity-stress-test" element={<SurgeCapacityStressTest />} />
+          <Route path="/tools/rfo-business-judgment" element={<RFOBusinessJudgment />} />
+          <Route path="/tools/cpsr-financial-integrity" element={<CPSRFinancialIntegrity />} />
+          <Route path="/tools/supply-chain-risk-scan" element={<SupplyChainRiskScan />} />
+          <Route path="/tools/profitability-leakage-tracker" element={<ProfitabilityLeakageTracker />} />
           <Route path="/capabilities" element={<Capabilities />} />
           <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
