@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Rocket, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Rocket, CheckCircle, Crosshair } from "lucide-react";
 import { ResourceDisclaimer } from "@/components/ResourceDisclaimer";
 import resourcesHero from "@/assets/resources-hero.jpg";
 import resourcesGovcon from "@/assets/resources-govcon.jpg";
 import resourcesStartup from "@/assets/resources-startup.jpg";
+import resourcesPoe from "@/assets/resources-poe.jpg";
 
 const categories = [
   {
