@@ -207,7 +207,7 @@ export const articles: Article[] = [
   complianceDecisionFramework,
   documentationBestPractices,
   supplyChainCompliance,
-];
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export const allArticles: Article[] = [costOfNonCompliance, ...articles];
 
