@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { supabase } from "@/integrations/supabase/client";
+import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -160,6 +161,10 @@ export default function RFP() {
         body,
       });
 
+      const contactName = formDataObj.get("contact-name") as string;
+      const emailVal = formDataObj.get("email") as string;
+      const orgName2 = formDataObj.get("org-name") as string;
+      sendTransactionalEmail({ type: "rfp", email: emailVal, name: contactName, company: orgName2 });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {

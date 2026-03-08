@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Shield, Lock, FileText, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 import contactInterior from "@/assets/contact-interior.jpg";
 
 const inquiryTypes = [
@@ -68,6 +69,7 @@ export default function Contact() {
         body,
       });
       
+      sendTransactionalEmail({ type: "contact", email: formData.email, name: formData.name, company: formData.organization, inquiryType: formData.inquiryType });
       toast({
         title: "Inquiry Received",
         description: "We will respond within 48 business hours. Thank you for your interest in ElevateQCS.",
