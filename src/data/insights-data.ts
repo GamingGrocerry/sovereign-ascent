@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, LucideIcon } from "lucide-react";
+import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, FileText, Lock, Zap, Scale, Hammer, LucideIcon } from "lucide-react";
 
 export interface Article {
   slug: string;
@@ -15,7 +15,7 @@ export interface Article {
   content: string;
 }
 
-// Import all articles — each file is individually editable via GitHub
+// Import all articles
 import costOfNonCompliance from "./articles/cost-of-non-compliance";
 import auditFailurePatterns from "./articles/audit-failure-patterns";
 import ctipEnforcementTrends from "./articles/ctip-enforcement-trends";
@@ -42,6 +42,17 @@ import ncrVsCar from "./articles/ncr-vs-car";
 import locCrisisResponse from "./articles/loc-crisis-response";
 import capaLoop from "./articles/capa-loop";
 import forensicAuditorSupplyChain from "./articles/forensic-auditor-supply-chain";
+import farOverhaul2026 from "./articles/far-overhaul-2026";
+import pwsWhisperer from "./articles/pws-whisperer";
+import sprint96Hour from "./articles/96-hour-sprint";
+import oconusSustainment from "./articles/oconus-sustainment";
+import farFlowdowns from "./articles/far-flowdowns-52-244-6";
+import oshaOconus from "./articles/osha-oconus-safety";
+import isoLogcapBridge from "./articles/iso-logcap-bridge";
+import ctipBeyondRecruitment from "./articles/ctip-beyond-recruitment";
+import valueOverPrice from "./articles/value-over-price";
+import logisticsPaperTrail from "./articles/logistics-paper-trail";
+import siteSecurityPerimeter from "./articles/site-security-perimeter";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -70,6 +81,17 @@ import imgNcrVsCar from "@/assets/insight-ncr-vs-car.jpg";
 import imgLocCrisis from "@/assets/insight-loc-crisis.jpg";
 import imgCapaLoop from "@/assets/insight-capa-loop.jpg";
 import imgForensicAuditor from "@/assets/insight-forensic-auditor.jpg";
+import imgFarOverhaul from "@/assets/insight-far-overhaul-2026.jpg";
+import imgPwsWhisperer from "@/assets/insight-pws-whisperer.jpg";
+import img96HourSprint from "@/assets/insight-96-hour-sprint.jpg";
+import imgOconusSustainment from "@/assets/insight-oconus-sustainment.jpg";
+import imgFarFlowdowns from "@/assets/insight-far-flowdowns.jpg";
+import imgOshaOconus from "@/assets/insight-osha-oconus.jpg";
+import imgIsoLogcap from "@/assets/insight-iso-logcap-bridge.jpg";
+import imgCtipBeyond from "@/assets/insight-ctip-beyond-recruitment.jpg";
+import imgValueOverPrice from "@/assets/insight-value-over-price.jpg";
+import imgLogisticsPaperTrail from "@/assets/insight-logistics-paper-trail.jpg";
+import imgSiteSecurity from "@/assets/insight-site-security-perimeter.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -123,14 +145,47 @@ capaLoop.icon = Repeat;
 capaLoop.image = imgCapaLoop;
 forensicAuditorSupplyChain.icon = Search;
 forensicAuditorSupplyChain.image = imgForensicAuditor;
+farOverhaul2026.icon = Scale;
+farOverhaul2026.image = imgFarOverhaul;
+pwsWhisperer.icon = Search;
+pwsWhisperer.image = imgPwsWhisperer;
+sprint96Hour.icon = Zap;
+sprint96Hour.image = img96HourSprint;
+oconusSustainment.icon = AlertCircle;
+oconusSustainment.image = imgOconusSustainment;
+farFlowdowns.icon = FileText;
+farFlowdowns.image = imgFarFlowdowns;
+oshaOconus.icon = Hammer;
+oshaOconus.image = imgOshaOconus;
+isoLogcapBridge.icon = BookOpen;
+isoLogcapBridge.image = imgIsoLogcap;
+ctipBeyondRecruitment.icon = AlertCircle;
+ctipBeyondRecruitment.image = imgCtipBeyond;
+valueOverPrice.icon = Target;
+valueOverPrice.image = imgValueOverPrice;
+logisticsPaperTrail.icon = FileText;
+logisticsPaperTrail.image = imgLogisticsPaperTrail;
+siteSecurityPerimeter.icon = Lock;
+siteSecurityPerimeter.image = imgSiteSecurity;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  valueOverPrice,
+  siteSecurityPerimeter,
+  logisticsPaperTrail,
   forensicAuditorSupplyChain,
+  ctipBeyondRecruitment,
   capaLoop,
+  isoLogcapBridge,
+  oshaOconus,
   locCrisisResponse,
+  farFlowdowns,
   ncrVsCar,
+  oconusSustainment,
+  sprint96Hour,
+  pwsWhisperer,
+  farOverhaul2026,
   subcontractorDecisionMatrix,
   crossJurisdictionalLiability,
   subcontractorAuditReview,
@@ -160,7 +215,7 @@ export function getArticleBySlug(slug: string): Article | undefined {
   return allArticles.find((a) => a.slug === slug);
 }
 
-// Build categories dynamically — counts reflect the filterable article list (excludes featured)
+// Build categories dynamically
 const categoryOrder = [
   "Risk Analysis",
   "Audit Insights",
@@ -170,6 +225,8 @@ const categoryOrder = [
   "Decision Making",
   "Risk Management",
   "Quality Systems",
+  "Safety & Health",
+  "Strategic Positioning",
 ];
 
 export const categories = [
