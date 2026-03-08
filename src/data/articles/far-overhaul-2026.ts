@@ -3,7 +3,7 @@ import type { Article } from "../insights-data";
 const article: Article = {
   slug: "far-overhaul-2026",
   category: "Regulatory Landscape",
-  title: "The FAR Overhaul (RFO) of 2026: From Rulebook to Principle-Based Governance",
+  title: "The Revolutionary FAR Overhaul (RFO) of 2026: From Rulebook to Principle-Based Governance",
   excerpt:
     "The February 2026 FAR overhaul stripped non-statutory red tape, shifting federal procurement to principle-based acquisition. More room to innovate — but far greater risk for subcontractors who cannot document Business Judgment.",
   readTime: "9 min read",
