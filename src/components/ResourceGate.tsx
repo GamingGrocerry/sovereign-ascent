@@ -86,19 +86,34 @@ export function ResourceGate({ type, bucketName, title, subtitle }: ResourceGate
 
     setIsSubmitting(true);
     try {
-      const { error: insertError } = await supabase
-        .from("resource_leads")
-        .insert({ email: result.data, type });
-
-      if (insertError) throw insertError;
-
-      localStorage.setItem(storageKey, "true");
-      setIsUnlocked(true);
-      sendTransactionalEmail({ type: "resources", email: result.data });
-      toast({
-        title: "Access Granted",
-        description: "You now have access to our Professional Frameworks.",
+      // Check if email already exists in resource_leads
+      const { data: exists } = await supabase.rpc("check_resource_email", {
+        _email: result.data,
       });
+
+      if (exists) {
+        // Returning user — grant access without re-inserting
+        localStorage.setItem(storageKey, "true");
+        setIsUnlocked(true);
+        toast({
+          title: "Welcome Back",
+          description: "Your access has been restored.",
+        });
+      } else {
+        const { error: insertError } = await supabase
+          .from("resource_leads")
+          .insert({ email: result.data, type });
+
+        if (insertError) throw insertError;
+
+        localStorage.setItem(storageKey, "true");
+        setIsUnlocked(true);
+        sendTransactionalEmail({ type: "resources", email: result.data });
+        toast({
+          title: "Access Granted",
+          description: "You now have access to our Professional Frameworks.",
+        });
+      }
     } catch {
       toast({
         title: "Submission Error",
