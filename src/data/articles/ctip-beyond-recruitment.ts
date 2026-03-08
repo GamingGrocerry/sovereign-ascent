@@ -21,6 +21,8 @@ The problem: **trafficking indicators in operational settings look nothing like 
 
 ## The Operational Indicators
 
+![Broken chains beside identity documents and passport representing operational CTIP forced labor indicators beyond recruitment screening under FAR 52.222-50 compliance requirements](ctip-operational-indicators.jpg "Trafficking indicators in operational settings look nothing like trafficking indicators at recruitment")
+
 ### 1. Documentation Access
 
 **The legal standard under [FAR 52.222-50](/insights/ctip-enforcement-trends):** Contractors shall not deny access to identity or immigration documents.

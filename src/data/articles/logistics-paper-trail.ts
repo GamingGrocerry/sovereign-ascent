@@ -21,6 +21,8 @@ When a government property dispute arises — and they do — the question is no
 
 ## The Legal Framework
 
+![Organized navy filing cabinets with legal folders, official stamps and shipping manifests representing logistics documentation as legal evidence for government property accountability and claims management](logistics-legal-documentation.jpg "In government logistics, every document is potential evidence in a claim or dispute")
+
 ### Government Property (FAR 52.245-1)
 
 [FAR 52.245-1](https://www.acquisition.gov/far/52.245-1) establishes contractor responsibilities for Government-furnished property (GFP) and contractor-acquired property (CAP). Key documentation requirements:

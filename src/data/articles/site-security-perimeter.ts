@@ -19,6 +19,8 @@ Site security at government contractor facilities is not a guard force problem. 
 
 ## The Security Governance Framework
 
+![Fortified security checkpoint gate with access control card reader and surveillance cameras at night representing perimeter security governance at a classified government contractor facility](security-perimeter-access.jpg "Site security governance integrates physical security, personnel clearances, information protection, and visitor management")
+
 ### Physical Security
 
 The perimeter is the visible boundary of your security program. What auditors and Government security representatives evaluate:

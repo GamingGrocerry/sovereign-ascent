@@ -23,6 +23,8 @@ The organizations that sustain profitable growth in government contracting do th
 
 ## Why Primes Pay More
 
+![Premium diamond on precision scales in a dark vault representing the maturity premium value that operationally mature government subcontractors command over lowest price competitors](maturity-premium-value.jpg "The maturity premium: why operational infrastructure commands higher pricing in government contracting")
+
 ### The Cost of Subcontractor Failure
 
 When a subcontractor fails, the Prime absorbs consequences that far exceed the subcontractor's contract value:
