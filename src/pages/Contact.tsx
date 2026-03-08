@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Shield, Lock, FileText, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 import contactInterior from "@/assets/contact-interior.jpg";
 
 const inquiryTypes = [
