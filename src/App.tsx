@@ -57,6 +57,8 @@ import Tools from "./pages/Tools";
 import GovConReadiness from "./pages/tools/GovConReadiness";
 import ComplianceFrameworkBuilder from "./pages/tools/ComplianceFrameworkBuilder";
 import QMSGapAnalysis from "./pages/tools/QMSGapAnalysis";
+import CARGravityCalculator from "./pages/tools/CARGravityCalculator";
+import VirtualSpotCheck from "./pages/tools/VirtualSpotCheck";
 import Capabilities from "./pages/Capabilities";
 import GenerateResources from "./pages/admin/GenerateResources";
 
