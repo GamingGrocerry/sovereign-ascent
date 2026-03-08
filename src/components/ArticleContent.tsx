@@ -7,7 +7,7 @@ const imageImports: Record<string, string> = {};
 
 // Dynamically import all article inline images (glob patterns must cover all asset prefixes)
 const assetModules = import.meta.glob(
-  ["@/assets/mjc-*.jpg", "@/assets/govcon-*.jpg", "@/assets/startup-*.jpg", "@/assets/alliant3-*.jpg", "@/assets/ctip-*.jpg", "@/assets/cmmc-*.jpg", "@/assets/compliance-*.jpg", "@/assets/contract-*.jpg", "@/assets/logistics-*.jpg", "@/assets/subcontractor-*.jpg", "@/assets/cross-border-*.jpg"],
+  ["@/assets/mjc-*.jpg", "@/assets/govcon-*.jpg", "@/assets/startup-*.jpg", "@/assets/alliant3-*.jpg", "@/assets/ctip-*.jpg", "@/assets/cmmc-*.jpg", "@/assets/compliance-*.jpg", "@/assets/contract-*.jpg", "@/assets/logistics-*.jpg", "@/assets/subcontractor-*.jpg", "@/assets/cross-border-*.jpg", "@/assets/far-*.jpg", "@/assets/pws-*.jpg", "@/assets/96-*.jpg", "@/assets/iso-*.jpg", "@/assets/maturity-*.jpg", "@/assets/oconus-*.jpg", "@/assets/osha-*.jpg", "@/assets/security-*.jpg"],
   { eager: true, import: "default" }
 );
 for (const [path, mod] of Object.entries(assetModules)) {
