@@ -96,7 +96,7 @@ export default function Credentials() {
     <Layout>
       <SEOHead
         title="Authority Metrics — Credentials & Experience | ElevateQCS"
-        description="9+ years navigating the defense-commercial nexus. 1,000+ forensic audit interactions. $100M+ in contract value protected. Experience measured in problems solved, not hours billed."
+        description="9+ years navigating the defense-commercial nexus. 1,000+ forensic audit interactions. $20M+ in contract value protected. Experience measured in problems solved, not hours billed."
         url="https://elevateqcs.com/credentials"
         keywords={[
           "compliance credentials",
