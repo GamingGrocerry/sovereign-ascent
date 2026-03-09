@@ -5,7 +5,6 @@ const footerLinks = {
   services: [
     { label: "Our Services", href: "/services" },
     { label: "Capabilities", href: "/capabilities" },
-    { label: "Methodology", href: "/methodology" },
     { label: "Industries", href: "/industries/defense" },
     { label: "Resources", href: "/resources" },
     { label: "Request for Proposal", href: "/rfp" },
@@ -14,6 +13,7 @@ const footerLinks = {
     { label: "About", href: "/about" },
     { label: "Credentials", href: "/credentials" },
     { label: "Governance & Independence", href: "/governance" },
+    { label: "Methodology", href: "/methodology" },
     { label: "Insights", href: "/insights" },
     { label: "Careers & Collaborations", href: "/careers" },
     { label: "FAQs", href: "/faq" },

@@ -42,7 +42,6 @@ const navItems = [
     href: "/industries",
     megaMenu: "industries",
   },
-  { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
   { label: "Tools", href: "/tools" },
   {
@@ -296,18 +295,6 @@ export function Header() {
               </Link>
             </div>
 
-            <Link
-              to="/methodology"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={cn(
-                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/methodology"
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Methodology
-            </Link>
             <Link
               to="/insights"
               onClick={() => setIsMobileMenuOpen(false)}
