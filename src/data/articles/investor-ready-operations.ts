@@ -136,7 +136,7 @@ Investors expect data-driven management. The governance architecture must includ
 
 These are the operational patterns that cause the most damage during due diligence. If any apply to your organization, address them before the raise:
 
-- **Single point of failure**: Critical processes that depend on one person's knowledge
+- **Single point of failure**: Critical processes that depend on one person's knowledge — a risk that [Agentic AI monitoring](/insights/agentic-ai-human-oversight) can partially mitigate
 - **Verbal commitments**: Customer or vendor agreements that are not documented
 - **Shadow IT**: Tools, platforms, or data stores that IT does not know about
 - **Compliance gaps**: Known regulatory obligations that have not been addressed
