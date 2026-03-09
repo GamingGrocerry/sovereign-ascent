@@ -1,8 +1,10 @@
+import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const acronyms = [
   { term: "ACO", definition: "Administrative Contracting Officer", context: "A government official responsible for administering a contract after award, including oversight of contractor performance, processing modifications, and resolving contract administration issues. Distinct from the Procuring Contracting Officer (PCO)." },
