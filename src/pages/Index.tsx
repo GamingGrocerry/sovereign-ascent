@@ -114,6 +114,14 @@ export default function Index() {
               name: "ElevateQCS",
               publisher: { "@id": "https://elevateqcs.com/#organization" },
               inLanguage: "en-US",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://elevateqcs.com/acronyms?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
             },
             {
               "@type": "WebPage",
