@@ -38,7 +38,7 @@ Five years ago, operational due diligence at Series B focused on financial contr
 - Are there policies covering conflicts of interest, data privacy, and [ethical conduct](/governance)?
 
 **Quality & Delivery Infrastructure**
-- Is there a quality management system — even a lightweight one?
+- Is there a quality management system — even a lightweight one? (See [QMS at the early stage](/insights/qms-early-stage))
 - Can the company demonstrate consistent delivery standards across customers?
 - Is there a process for handling customer complaints and service failures?
 - Are there documented procedures for the company's core value-delivery processes?
