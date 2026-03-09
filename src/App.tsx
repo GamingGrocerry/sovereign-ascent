@@ -70,6 +70,10 @@ import RFOBusinessJudgment from "./pages/tools/RFOBusinessJudgment";
 import CPSRFinancialIntegrity from "./pages/tools/CPSRFinancialIntegrity";
 
 import ProfitabilityLeakageTracker from "./pages/tools/ProfitabilityLeakageTracker";
+import EUAIActClassifier from "./pages/tools/EUAIActClassifier";
+import ISO42001Readiness from "./pages/tools/ISO42001Readiness";
+import ProjectHealthDiagnostic from "./pages/tools/ProjectHealthDiagnostic";
+import ESGTraceabilityStressTest from "./pages/tools/ESGTraceabilityStressTest";
 import Capabilities from "./pages/Capabilities";
 import ResourcesPOE from "./pages/ResourcesPOE";
 import GenerateResources from "./pages/admin/GenerateResources";
