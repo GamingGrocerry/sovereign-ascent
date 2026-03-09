@@ -4,82 +4,84 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import servicesHero from "@/assets/services-hero.jpg";
-import governanceBoardroom from "@/assets/governance-boardroom.jpg";
-import ethicsBalance from "@/assets/ethics-balance.jpg";
-import auditPrecision from "@/assets/audit-precision.jpg";
-import ctipProtection from "@/assets/ctip-protection.jpg";
-import qmsStructure from "@/assets/qms-structure.jpg";
-import servicesFramework from "@/assets/services-framework.jpg";
-import advisoryApproach from "@/assets/advisory-approach.jpg";
-import methodologyCompass from "@/assets/methodology-compass.jpg";
-import heroArchitecture from "@/assets/hero-architecture.jpg";
+import serviceGovernanceStrategy from "@/assets/service-governance-strategy.jpg";
+import serviceRiskRegulatory from "@/assets/service-risk-regulatory.jpg";
+import serviceFederalAdvisory from "@/assets/service-federal-advisory.jpg";
+import serviceSupplyChain from "@/assets/service-supply-chain.jpg";
+import serviceQualityInfrastructure from "@/assets/service-quality-infrastructure.jpg";
+import serviceRegulatoryDocs from "@/assets/service-regulatory-docs.jpg";
+import serviceAuditReadiness from "@/assets/service-audit-readiness.jpg";
+import serviceManagedCompliance from "@/assets/service-managed-compliance.jpg";
+import serviceDigitalGovernance from "@/assets/service-digital-governance.jpg";
+import serviceProjectRecovery from "@/assets/service-project-recovery.jpg";
+import serviceAiGovernance from "@/assets/service-ai-governance.jpg";
 
 const serviceGrid = [
   {
     title: "Governance & Strategy",
     description: "We design governance frameworks that align organizational structure with regulatory obligations and strategic objectives — establishing the control architecture that sustains long-term operational integrity.",
     href: "/services/governance-strategy",
-    image: governanceBoardroom,
+    image: serviceGovernanceStrategy,
   },
   {
     title: "Risk, Regulatory & Compliance",
     description: "We map regulatory landscapes, quantify compliance risk, and build structured control environments that transform regulatory exposure into defensible operational discipline.",
     href: "/services/risk-regulatory-compliance",
-    image: ethicsBalance,
+    image: serviceRiskRegulatory,
   },
   {
     title: "Federal & Public Sector Advisory",
     description: "We support government contractors and public-sector-aligned organizations in stabilizing operations, meeting contractual compliance obligations, and scaling with institutional maturity.",
     href: "/services/federal-public-sector",
-    image: heroArchitecture,
+    image: serviceFederalAdvisory,
   },
   {
     title: "Supply Chain, Human Rights & Due Diligence",
     description: "We structure human rights programs, supply chain due diligence frameworks, and ethical labor compliance systems aligned with FAR 52.222-50, EU CS3D, and international standards.",
     href: "/services/supply-chain-human-rights",
-    image: ctipProtection,
+    image: serviceSupplyChain,
   },
   {
     title: "Quality & Operational Infrastructure",
     description: "We architect quality management systems and operational control frameworks that function in real workflows — designed for scalability, auditability, and internal ownership.",
     href: "/services/quality-operational-infrastructure",
-    image: qmsStructure,
+    image: serviceQualityInfrastructure,
   },
   {
     title: "Regulatory Documentation & Administrative Solutions",
     description: "We develop documentation systems, standard operating procedures, and administrative frameworks that ensure regulatory evidence is organized, accessible, and audit-ready.",
     href: "/services/regulatory-documentation",
-    image: servicesFramework,
+    image: serviceRegulatoryDocs,
   },
   {
     title: "Audit, Inspection & Certification Readiness",
     description: "We prepare organizations for third-party assessments, customer audits, and certification reviews by organizing evidence, strengthening control narratives, and structuring corrective action.",
     href: "/services/audit-certification-readiness",
-    image: auditPrecision,
+    image: serviceAuditReadiness,
   },
   {
     title: "Managed Compliance & Governance Services",
     description: "We provide ongoing compliance management, governance monitoring, and regulatory maintenance services for organizations requiring sustained advisory support beyond project-based engagements.",
     href: "/services/managed-compliance",
-    image: advisoryApproach,
+    image: serviceManagedCompliance,
   },
   {
     title: "Digital Governance & Technology Enablement",
     description: "We advise on the integration of governance, risk, and compliance technologies — ensuring digital transformation efforts are aligned with regulatory requirements and operational controls.",
     href: "/services/digital-governance",
-    image: methodologyCompass,
+    image: serviceDigitalGovernance,
   },
   {
     title: "Project Recovery & Distressed Asset Advisory",
     description: "We deploy rapid-response teams into distressed programs — performing forensic subcontractor audits, resetting documentation and QA flows, and restoring operational control within 30 days.",
     href: "/services/project-recovery",
-    image: heroArchitecture,
+    image: serviceProjectRecovery,
   },
   {
     title: "AI Governance & Algorithmic Quality",
     description: "We apply quality management discipline to AI systems — ensuring data pipelines, model outputs, and algorithmic decisions are audit-ready and compliant with the EU AI Act and emerging standards.",
     href: "/services/ai-governance",
-    image: servicesFramework,
+    image: serviceAiGovernance,
   },
 ];
 
@@ -215,7 +217,7 @@ export default function Services() {
       {/* Credibility Section */}
       <section className="relative h-[450px] overflow-hidden">
         <img 
-          src={advisoryApproach} 
+          src={serviceManagedCompliance} 
           alt="Executive advisory environment representing institutional depth and measured counsel" 
           className="w-full h-full object-cover"
         />
