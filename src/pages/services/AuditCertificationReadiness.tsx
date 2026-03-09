@@ -53,6 +53,18 @@ export default function AuditCertificationReadiness() {
           ],
         },
       ]}
+      caseStudy={{
+        sector: "Commercial SaaS / Series B",
+        title: "From Zero Certification to ISO 27001 in 14 Weeks",
+        situation: "A Series B enterprise SaaS company was losing $2.4M in annual pipeline to competitors who held ISO 27001 certification. Their largest prospect — a Fortune 500 financial services firm — required certification as a procurement prerequisite. The internal team had no quality infrastructure and a 16-week deadline before the contract opportunity expired.",
+        approach: "We deployed a focused readiness team to build the information security management system from foundation. We conducted a gap assessment in week one, prioritized 47 control gaps by audit risk severity, and built the documentation architecture in parallel with control implementation. Mock audits were conducted at weeks 8 and 12 to pressure-test evidence coherence.",
+        outcome: "The company achieved ISO 27001 certification on the first attempt in 14 weeks — two weeks ahead of the contract deadline. The Fortune 500 deal closed within 30 days of certification. The ISMS infrastructure also satisfied due diligence requirements for their Series C round six months later.",
+        metrics: [
+          { label: "Pipeline Unlocked", value: "$2.4M+" },
+          { label: "Certification Timeline", value: "14 Weeks" },
+          { label: "First-Attempt Pass", value: "Zero Findings" },
+        ],
+      }}
       people={{
         title: "Advisors Who Have Been on Both Sides of the Audit Table",
         paragraphs: [

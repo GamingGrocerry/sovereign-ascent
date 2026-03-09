@@ -8,7 +8,7 @@ export default function RegulatoryDocumentation() {
         title: "Regulatory Documentation & Administrative Solutions | ElevateQCS",
         description: "We develop documentation systems, SOPs, and administrative frameworks that ensure regulatory evidence is organized, accessible, and audit-ready.",
         url: "https://elevateqcs.com/services/regulatory-documentation",
-        keywords: ["regulatory documentation", "SOP development", "document control", "administrative compliance", "audit documentation"],
+        keywords: ["regulatory documentation", "SOP development", "document control", "administrative compliance", "audit documentation", "SOW scrubbing"],
       }}
       hero={{
         label: "Regulatory Documentation & Administrative Solutions",
@@ -53,6 +53,18 @@ export default function RegulatoryDocumentation() {
           ],
         },
       ]}
+      caseStudy={{
+        sector: "Green Energy / Commercial Infrastructure",
+        title: "SOW Scrubbing Prevents $3.2M in Contractual Exposure",
+        situation: "A mid-size renewable energy contractor had signed a $47M EPC contract with ambiguous scope definitions and poorly structured deliverable milestones. Three months into execution, the general contractor began issuing change orders that the client's documentation couldn't defend against. Legal counsel estimated $3.2M in unrecoverable costs if the documentation gaps weren't addressed before the next payment milestone.",
+        approach: "We performed a forensic SOW scrub — line-by-line analysis of the statement of work against actual deliverables, contractual flowdowns, and regulatory obligations. We rebuilt the documentation architecture to create defensible evidence chains linking every deliverable to contractual requirements. We also restructured the change order process with standardized documentation templates that captured scope deviations in real time.",
+        outcome: "The rebuilt documentation package successfully defended against $3.2M in disputed change orders. The client's change order response time dropped from 14 days to 3 days. The restructured SOW documentation became the template for all subsequent EPC contracts, reducing contractual friction across the portfolio.",
+        metrics: [
+          { label: "Exposure Prevented", value: "$3.2M" },
+          { label: "Response Time", value: "14 → 3 Days" },
+          { label: "Disputed Change Orders Defended", value: "100%" },
+        ],
+      }}
       people={{
         title: "Precision in Every Record",
         paragraphs: [

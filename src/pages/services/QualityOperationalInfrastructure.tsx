@@ -53,6 +53,18 @@ export default function QualityOperationalInfrastructure() {
           ],
         },
       ]}
+      caseStudy={{
+        sector: "Advanced Manufacturing / Pre-IPO",
+        title: "QMS Redesign Eliminates 34% Scrap Rate Before IPO Due Diligence",
+        situation: "A precision manufacturing company targeting an IPO was hemorrhaging $1.8M annually in scrap and rework costs. Their legacy quality system — a collection of tribal knowledge and undocumented processes — had generated 23 customer complaints in the prior quarter. Investment bankers flagged operational risk as the primary valuation discount, estimating a $15M reduction in enterprise value.",
+        approach: "We conducted a forensic process audit across three production lines, mapping 142 process steps and identifying 31 undocumented decision points where quality failures originated. We redesigned the QMS architecture around risk-based thinking, implemented statistical process controls at critical-to-quality stages, and built a real-time nonconformance tracking system that linked shop floor data to management review.",
+        outcome: "Within 6 months, scrap rates dropped from 34% to 8%. Customer complaints fell to 2 per quarter. The redesigned QMS satisfied due diligence requirements, and the IPO valuation team removed the operational risk discount — restoring an estimated $12M in enterprise value.",
+        metrics: [
+          { label: "Scrap Reduction", value: "34% → 8%" },
+          { label: "Valuation Recovered", value: "~$12M" },
+          { label: "Complaints Reduced", value: "92%" },
+        ],
+      }}
       people={{
         title: "Engineers of Operational Discipline",
         paragraphs: [

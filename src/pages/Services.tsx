@@ -241,6 +241,37 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Entry Services Highlight */}
+      <section className="py-20 bg-secondary/20">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-12">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Where to Start
+            </p>
+            <h2 className="mb-4">Most Clients Begin Here</h2>
+            <p className="text-muted-foreground">
+              Not sure which service fits? These entry-point engagements deliver measurable results quickly — and often reveal the broader governance needs.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+            <Link to="/services/audit-certification-readiness" className="card-elevated p-8 group hover:border-accent/30 transition-all duration-300">
+              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Request an Audit-Readiness Stress Test</h3>
+              <p className="text-muted-foreground text-sm mb-4">Assess your compliance posture against applicable standards before scrutiny arrives. Most engagements begin within 5 business days.</p>
+              <span className="inline-flex items-center text-accent text-sm font-medium">
+                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+            <Link to="/services/regulatory-documentation" className="card-elevated p-8 group hover:border-accent/30 transition-all duration-300">
+              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Request a Project Friction Assessment</h3>
+              <p className="text-muted-foreground text-sm mb-4">Forensic SOW scrubbing and documentation analysis to identify contractual exposure, margin leakage, and evidence gaps.</p>
+              <span className="inline-flex items-center text-accent text-sm font-medium">
+                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-28 bg-background">
         <div className="container-narrow text-center">

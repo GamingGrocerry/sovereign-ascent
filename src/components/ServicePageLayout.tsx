@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronRight, Clock } from "lucide-react";
+import { ArrowRight, ChevronRight, Clock, TrendingUp, DollarSign, ShieldCheck } from "lucide-react";
 import { allArticles, type Article } from "@/data/insights-data";
 import { GlossaryCallout } from "@/components/GlossaryCallout";
 import { ToolsCallout } from "@/components/ToolsCallout";
@@ -10,6 +10,15 @@ import { ToolsCallout } from "@/components/ToolsCallout";
 interface Capability {
   title: string;
   items: string[];
+}
+
+interface CaseStudy {
+  sector: string;
+  title: string;
+  situation: string;
+  approach: string;
+  outcome: string;
+  metrics: { label: string; value: string }[];
 }
 
 interface ServicePageProps {
@@ -30,6 +39,7 @@ interface ServicePageProps {
     paragraphs: string[];
   };
   capabilities: Capability[];
+  caseStudy?: CaseStudy;
   people: {
     title: string;
     paragraphs: string[];
@@ -42,6 +52,7 @@ export default function ServicePageLayout({
   hero,
   credibility,
   capabilities,
+  caseStudy,
   people,
   relatedInsightSlugs,
 }: ServicePageProps) {
@@ -144,6 +155,48 @@ export default function ServicePageLayout({
           </div>
         </div>
       </section>
+
+      {/* Commercial Case Study */}
+      {caseStudy && (
+        <section className="py-28 lg:py-36 bg-primary relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5" />
+          <div className="container-wide relative z-10">
+            <div className="max-w-3xl mb-12">
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+                {caseStudy.sector} — Case Study
+              </p>
+              <h2 className="text-primary-foreground gold-accent pb-4">{caseStudy.title}</h2>
+            </div>
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2 space-y-8">
+                <div>
+                  <h4 className="text-accent text-sm uppercase tracking-wider mb-3">The Situation</h4>
+                  <p className="text-primary-foreground/80 leading-relaxed">{caseStudy.situation}</p>
+                </div>
+                <div>
+                  <h4 className="text-accent text-sm uppercase tracking-wider mb-3">Our Approach</h4>
+                  <p className="text-primary-foreground/80 leading-relaxed">{caseStudy.approach}</p>
+                </div>
+                <div>
+                  <h4 className="text-accent text-sm uppercase tracking-wider mb-3">The Outcome</h4>
+                  <p className="text-primary-foreground/80 leading-relaxed">{caseStudy.outcome}</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                {caseStudy.metrics.map((metric, i) => (
+                  <div key={i} className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-sm p-6">
+                    <div className="flex items-center gap-3 mb-2">
+                      {i === 0 ? <TrendingUp className="w-5 h-5 text-accent" /> : i === 1 ? <DollarSign className="w-5 h-5 text-accent" /> : <ShieldCheck className="w-5 h-5 text-accent" />}
+                      <span className="text-primary-foreground/60 text-xs uppercase tracking-wider">{metric.label}</span>
+                    </div>
+                    <p className="text-primary-foreground text-2xl font-serif font-semibold">{metric.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* People & Expertise */}
       <section className="py-28 lg:py-36 bg-background section-luxury">
