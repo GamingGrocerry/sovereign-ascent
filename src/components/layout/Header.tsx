@@ -6,29 +6,29 @@ import { SearchBar } from "@/components/SearchBar";
 import { cn } from "@/lib/utils";
 
 const servicesMegaMenu = [
-  { label: "Governance & Strategy", href: "/services/governance-strategy" },
-  { label: "Risk, Regulatory & Compliance", href: "/services/risk-regulatory-compliance" },
+  { label: "AI Governance & Algorithmic Quality", href: "/services/ai-governance" },
+  { label: "Audit & Certification Readiness", href: "/services/audit-certification-readiness" },
+  { label: "Digital Governance", href: "/services/digital-governance" },
   { label: "Federal & Public Sector Advisory", href: "/services/federal-public-sector" },
-  { label: "Supply Chain, Human Rights & Due Diligence", href: "/services/supply-chain-human-rights" },
+  { label: "Governance & Strategy", href: "/services/governance-strategy" },
+  { label: "Managed Compliance", href: "/services/managed-compliance" },
+  { label: "Project Recovery & Distressed Assets", href: "/services/project-recovery" },
   { label: "Quality & Operational Infrastructure", href: "/services/quality-operational-infrastructure" },
   { label: "Regulatory Documentation", href: "/services/regulatory-documentation" },
-  { label: "Audit & Certification Readiness", href: "/services/audit-certification-readiness" },
-  { label: "Managed Compliance", href: "/services/managed-compliance" },
-  { label: "Digital Governance", href: "/services/digital-governance" },
-  { label: "Project Recovery & Distressed Assets", href: "/services/project-recovery" },
-  { label: "AI Governance & Algorithmic Quality", href: "/services/ai-governance" },
+  { label: "Risk, Regulatory & Compliance", href: "/services/risk-regulatory-compliance" },
+  { label: "Supply Chain, Human Rights & Due Diligence", href: "/services/supply-chain-human-rights" },
 ];
 
 const industriesMegaMenu = [
+  { label: "Advanced Manufacturing", href: "/industries/advanced-manufacturing" },
+  { label: "AI & Deep Tech", href: "/industries/ai-deep-tech" },
+  { label: "Climate & Energy", href: "/industries/climate-energy" },
+  { label: "Cybersecurity", href: "/industries/cybersecurity" },
   { label: "Defense & Aerospace", href: "/industries/defense" },
   { label: "Federal IT & Systems Integration", href: "/industries/federal-it" },
-  { label: "Medical Devices & Life Sciences", href: "/industries/medical-devices" },
-  { label: "AI & Deep Tech", href: "/industries/ai-deep-tech" },
-  { label: "Advanced Manufacturing", href: "/industries/advanced-manufacturing" },
-  { label: "Cybersecurity", href: "/industries/cybersecurity" },
   { label: "Infrastructure & Engineering", href: "/industries/infrastructure" },
   { label: "International Development", href: "/industries/international-development" },
-  { label: "Climate & Energy", href: "/industries/climate-energy" },
+  { label: "Medical Devices & Life Sciences", href: "/industries/medical-devices" },
 ];
 
 const navItems = [

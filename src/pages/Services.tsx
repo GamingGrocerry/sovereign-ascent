@@ -18,16 +18,22 @@ import serviceAiGovernance from "@/assets/service-ai-governance.jpg";
 
 const serviceGrid = [
   {
-    title: "Governance & Strategy",
-    description: "We design governance frameworks that align organizational structure with regulatory obligations and strategic objectives — establishing the control architecture that sustains long-term operational integrity.",
-    href: "/services/governance-strategy",
-    image: serviceGovernanceStrategy,
+    title: "AI Governance & Algorithmic Quality",
+    description: "We apply quality management discipline to AI systems — ensuring data pipelines, model outputs, and algorithmic decisions are audit-ready and compliant with the EU AI Act and emerging standards.",
+    href: "/services/ai-governance",
+    image: serviceAiGovernance,
   },
   {
-    title: "Risk, Regulatory & Compliance",
-    description: "We map regulatory landscapes, quantify compliance risk, and build structured control environments that transform regulatory exposure into defensible operational discipline.",
-    href: "/services/risk-regulatory-compliance",
-    image: serviceRiskRegulatory,
+    title: "Audit, Inspection & Certification Readiness",
+    description: "We prepare organizations for third-party assessments, customer audits, and certification reviews by organizing evidence, strengthening control narratives, and structuring corrective action.",
+    href: "/services/audit-certification-readiness",
+    image: serviceAuditReadiness,
+  },
+  {
+    title: "Digital Governance & Technology Enablement",
+    description: "We advise on the integration of governance, risk, and compliance technologies — ensuring digital transformation efforts are aligned with regulatory requirements and operational controls.",
+    href: "/services/digital-governance",
+    image: serviceDigitalGovernance,
   },
   {
     title: "Federal & Public Sector Advisory",
@@ -36,10 +42,22 @@ const serviceGrid = [
     image: serviceFederalAdvisory,
   },
   {
-    title: "Supply Chain, Human Rights & Due Diligence",
-    description: "We structure human rights programs, supply chain due diligence frameworks, and ethical labor compliance systems aligned with FAR 52.222-50, EU CS3D, and international standards.",
-    href: "/services/supply-chain-human-rights",
-    image: serviceSupplyChain,
+    title: "Governance & Strategy",
+    description: "We design governance frameworks that align organizational structure with regulatory obligations and strategic objectives — establishing the control architecture that sustains long-term operational integrity.",
+    href: "/services/governance-strategy",
+    image: serviceGovernanceStrategy,
+  },
+  {
+    title: "Managed Compliance & Governance Services",
+    description: "We provide ongoing compliance management, governance monitoring, and regulatory maintenance services for organizations requiring sustained advisory support beyond project-based engagements.",
+    href: "/services/managed-compliance",
+    image: serviceManagedCompliance,
+  },
+  {
+    title: "Project Recovery & Distressed Asset Advisory",
+    description: "We deploy rapid-response teams into distressed programs — performing forensic subcontractor audits, resetting documentation and QA flows, and restoring operational control within 30 days.",
+    href: "/services/project-recovery",
+    image: serviceProjectRecovery,
   },
   {
     title: "Quality & Operational Infrastructure",
@@ -54,34 +72,16 @@ const serviceGrid = [
     image: serviceRegulatoryDocs,
   },
   {
-    title: "Audit, Inspection & Certification Readiness",
-    description: "We prepare organizations for third-party assessments, customer audits, and certification reviews by organizing evidence, strengthening control narratives, and structuring corrective action.",
-    href: "/services/audit-certification-readiness",
-    image: serviceAuditReadiness,
+    title: "Risk, Regulatory & Compliance",
+    description: "We map regulatory landscapes, quantify compliance risk, and build structured control environments that transform regulatory exposure into defensible operational discipline.",
+    href: "/services/risk-regulatory-compliance",
+    image: serviceRiskRegulatory,
   },
   {
-    title: "Managed Compliance & Governance Services",
-    description: "We provide ongoing compliance management, governance monitoring, and regulatory maintenance services for organizations requiring sustained advisory support beyond project-based engagements.",
-    href: "/services/managed-compliance",
-    image: serviceManagedCompliance,
-  },
-  {
-    title: "Digital Governance & Technology Enablement",
-    description: "We advise on the integration of governance, risk, and compliance technologies — ensuring digital transformation efforts are aligned with regulatory requirements and operational controls.",
-    href: "/services/digital-governance",
-    image: serviceDigitalGovernance,
-  },
-  {
-    title: "Project Recovery & Distressed Asset Advisory",
-    description: "We deploy rapid-response teams into distressed programs — performing forensic subcontractor audits, resetting documentation and QA flows, and restoring operational control within 30 days.",
-    href: "/services/project-recovery",
-    image: serviceProjectRecovery,
-  },
-  {
-    title: "AI Governance & Algorithmic Quality",
-    description: "We apply quality management discipline to AI systems — ensuring data pipelines, model outputs, and algorithmic decisions are audit-ready and compliant with the EU AI Act and emerging standards.",
-    href: "/services/ai-governance",
-    image: serviceAiGovernance,
+    title: "Supply Chain, Human Rights & Due Diligence",
+    description: "We structure human rights programs, supply chain due diligence frameworks, and ethical labor compliance systems aligned with FAR 52.222-50, EU CS3D, and international standards.",
+    href: "/services/supply-chain-human-rights",
+    image: serviceSupplyChain,
   },
 ];
 

@@ -23,16 +23,10 @@ const stats = [
 
 const coreServices = [
   {
-    title: "Governance & Strategy",
-    description: "Governance frameworks that align organizational structure with regulatory obligations and strategic objectives.",
-    href: "/services/governance-strategy",
-    image: serviceGovernanceStrategy,
-  },
-  {
-    title: "Risk, Regulatory & Compliance",
-    description: "Structured control environments that transform regulatory exposure into defensible operational discipline.",
-    href: "/services/risk-regulatory-compliance",
-    image: serviceRiskRegulatory,
+    title: "Audit, Inspection & Certification Readiness",
+    description: "Organized evidence, strengthened control narratives, and structured corrective action for assessment readiness.",
+    href: "/services/audit-certification-readiness",
+    image: serviceAuditReadiness,
   },
   {
     title: "Federal & Public Sector Advisory",
@@ -41,10 +35,10 @@ const coreServices = [
     image: serviceFederalAdvisory,
   },
   {
-    title: "Supply Chain, Human Rights & Due Diligence",
-    description: "Human rights programs and supply chain due diligence aligned with FAR 52.222-50, EU CS3D, and international standards.",
-    href: "/services/supply-chain-human-rights",
-    image: serviceSupplyChain,
+    title: "Governance & Strategy",
+    description: "Governance frameworks that align organizational structure with regulatory obligations and strategic objectives.",
+    href: "/services/governance-strategy",
+    image: serviceGovernanceStrategy,
   },
   {
     title: "Quality & Operational Infrastructure",
@@ -53,10 +47,16 @@ const coreServices = [
     image: serviceQualityInfrastructure,
   },
   {
-    title: "Audit, Inspection & Certification Readiness",
-    description: "Organized evidence, strengthened control narratives, and structured corrective action for assessment readiness.",
-    href: "/services/audit-certification-readiness",
-    image: serviceAuditReadiness,
+    title: "Risk, Regulatory & Compliance",
+    description: "Structured control environments that transform regulatory exposure into defensible operational discipline.",
+    href: "/services/risk-regulatory-compliance",
+    image: serviceRiskRegulatory,
+  },
+  {
+    title: "Supply Chain, Human Rights & Due Diligence",
+    description: "Human rights programs and supply chain due diligence aligned with FAR 52.222-50, EU CS3D, and international standards.",
+    href: "/services/supply-chain-human-rights",
+    image: serviceSupplyChain,
   },
 ];
 
