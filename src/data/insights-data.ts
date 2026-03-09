@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, FileText, Lock, Zap, Scale, Hammer, LucideIcon } from "lucide-react";
+import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, FileText, Lock, Zap, Scale, Hammer, Layers, Eye, LucideIcon } from "lucide-react";
 
 export interface Article {
   slug: string;
