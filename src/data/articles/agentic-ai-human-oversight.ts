@@ -158,7 +158,7 @@ The organizations leading in supply chain orchestration share common characteris
 1. **They use AI for monitoring but not for decision-making**: AI detects and alerts. Humans analyze and decide.
 2. **They invest equally in human capability and technology**: For every dollar spent on AI monitoring tools, they invest a dollar in developing the human judgment capabilities that make those tools useful.
 3. **They define clear orchestration boundaries**: Every type of finding, alert, and decision has a designated owner — AI, human analyst, or senior leader.
-4. **They test the handoffs**: Regular exercises that simulate AI-detected issues and assess whether the escalation protocol functions effectively.
+4. **They test the handoffs**: Regular exercises that simulate AI-detected issues and assess whether the escalation protocol functions effectively — similar to the discipline required in [ESG verification architecture](/insights/esg-performance-metric).
 
 ## Frequently Asked Questions
 
