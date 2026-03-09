@@ -296,18 +296,6 @@ export function Header() {
             </div>
 
             <Link
-              to="/methodology"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={cn(
-                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
-                location.pathname === "/methodology"
-                  ? "text-accent"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Methodology
-            </Link>
-            <Link
               to="/insights"
               onClick={() => setIsMobileMenuOpen(false)}
               className={cn(
