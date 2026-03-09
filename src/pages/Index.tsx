@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3, Shield, Layers, Clock, Activity } from "lucide-react";
+import { ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3, Shield, Layers, Clock, Activity, Siren, Eye, FileSearch, TrendingUp, ShieldAlert, HardHat, Zap, Scale, ScanSearch, DollarSign } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import trustVault from "@/assets/trust-vault.jpg";
 import advisoryApproach from "@/assets/advisory-approach.jpg";
