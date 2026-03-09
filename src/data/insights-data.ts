@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, FileText, Lock, Zap, Scale, Hammer, LucideIcon } from "lucide-react";
+import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, FileText, Lock, Zap, Scale, Hammer, Layers, Eye, LucideIcon } from "lucide-react";
 
 export interface Article {
   slug: string;
@@ -53,6 +53,13 @@ import ctipBeyondRecruitment from "./articles/ctip-beyond-recruitment";
 import valueOverPrice from "./articles/value-over-price";
 import logisticsPaperTrail from "./articles/logistics-paper-trail";
 import siteSecurityPerimeter from "./articles/site-security-perimeter";
+import invisibleContractorRisk from "./articles/invisible-contractor-risk";
+import beyondIsoFieldOps from "./articles/beyond-iso-field-ops";
+import recovery96Hour from "./articles/96-hour-recovery";
+import esgPerformanceMetric from "./articles/esg-performance-metric";
+import contractualFrictionAudit from "./articles/contractual-friction-audit";
+import investorReadyOperations from "./articles/investor-ready-operations";
+import agenticAiHumanOversight from "./articles/agentic-ai-human-oversight";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -92,6 +99,13 @@ import imgCtipBeyond from "@/assets/insight-ctip-beyond-recruitment.jpg";
 import imgValueOverPrice from "@/assets/insight-value-over-price.jpg";
 import imgLogisticsPaperTrail from "@/assets/insight-logistics-paper-trail.jpg";
 import imgSiteSecurity from "@/assets/insight-site-security-perimeter.jpg";
+import imgInvisibleContractor from "@/assets/insight-invisible-contractor-risk.jpg";
+import imgBeyondIso from "@/assets/insight-beyond-iso-field-ops.jpg";
+import img96HourRecovery from "@/assets/insight-96-hour-recovery.jpg";
+import imgEsgPerformance from "@/assets/insight-esg-performance-metric.jpg";
+import imgContractualFriction from "@/assets/insight-contractual-friction-audit.jpg";
+import imgInvestorReady from "@/assets/insight-investor-ready-ops.jpg";
+import imgAgenticAi from "@/assets/insight-agentic-ai-oversight.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -167,10 +181,31 @@ logisticsPaperTrail.icon = FileText;
 logisticsPaperTrail.image = imgLogisticsPaperTrail;
 siteSecurityPerimeter.icon = Lock;
 siteSecurityPerimeter.image = imgSiteSecurity;
+invisibleContractorRisk.icon = Eye;
+invisibleContractorRisk.image = imgInvisibleContractor;
+beyondIsoFieldOps.icon = BookOpen;
+beyondIsoFieldOps.image = imgBeyondIso;
+recovery96Hour.icon = Zap;
+recovery96Hour.image = img96HourRecovery;
+esgPerformanceMetric.icon = Shield;
+esgPerformanceMetric.image = imgEsgPerformance;
+contractualFrictionAudit.icon = Target;
+contractualFrictionAudit.image = imgContractualFriction;
+investorReadyOperations.icon = TrendingUp;
+investorReadyOperations.image = imgInvestorReady;
+agenticAiHumanOversight.icon = Layers;
+agenticAiHumanOversight.image = imgAgenticAi;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  invisibleContractorRisk,
+  beyondIsoFieldOps,
+  recovery96Hour,
+  esgPerformanceMetric,
+  contractualFrictionAudit,
+  investorReadyOperations,
+  agenticAiHumanOversight,
   valueOverPrice,
   siteSecurityPerimeter,
   logisticsPaperTrail,
