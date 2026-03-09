@@ -148,7 +148,7 @@ The Two-Page standard limits every field-facing procedure to two pages. Page one
 
 ---
 
-*A quality management system that cannot survive contact with the field is not a system — it is a document. The organizations that treat quality as an operational discipline rather than a certification event are the ones that perform when it matters.*
+*A quality management system that cannot survive contact with the field is not a system — it is a document. The organizations that treat quality as an operational discipline rather than a certification event are the ones that perform when it matters. For [investor-ready companies](/insights/investor-ready-operations), this field-to-office alignment is precisely what due diligence evaluates.*
 
 For a confidential QMS field-effectiveness assessment, contact ElevateQCS at [info@elevateqcs.com](mailto:info@elevateqcs.com).
 `,
