@@ -131,7 +131,7 @@ The root cause is almost never technical. It is structural — the way quality, 
 
 - **NCR Recurrence Rate**: Are the same findings appearing after corrective action?
 - **Schedule Variance**: Is the project returning to its planned timeline?
-- **Client Confidence Score**: Subjective assessment from the Contracting Officer's Representative
+- **Client Confidence Score**: Subjective assessment from the [Contracting Officer's Representative](/acronyms)
 
 ## When Recovery Is Not Possible
 
