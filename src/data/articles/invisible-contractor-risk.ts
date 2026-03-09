@@ -108,7 +108,7 @@ Every Tier-3 engagement — even indirect ones — should produce a retrievable 
 
 ### The Cost Argument
 
-Reactive Tier-3 compliance — responding to failures after they cascade — costs between 2x and 4x more than proactive monitoring. The cost differential includes:
+Reactive Tier-3 compliance — responding to failures after they cascade — costs between [2x and 4x more](/insights/cost-of-non-compliance) than proactive monitoring. The cost differential includes:
 
 - **Stop-work delays**: Every day of production interruption carries direct financial consequences
 - **Corrective action overhead**: Emergency remediation requires surge resources at premium rates
