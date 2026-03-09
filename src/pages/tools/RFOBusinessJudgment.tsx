@@ -262,7 +262,7 @@ export default function RFOBusinessJudgment() {
 
           {started && !results && <ScenarioShell onComplete={handleComplete} />}
 
-          {results && userData && (
+          {results && (
             <ResultsPage
               toolName="RFO Business Judgment Matrix"
               score={results.score}
@@ -278,7 +278,9 @@ export default function RFOBusinessJudgment() {
                 { title: "The Compliance Decision Framework", slug: "compliance-decision-framework" },
                 { title: "Documentation Best Practices for Government Contractors", slug: "documentation-best-practices" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

@@ -241,7 +241,7 @@ export default function SurgeCapacityStressTest() {
             <AssessmentShell title="Surge Capacity Stress Test" estimatedTime="3–5 min" questions={questions} onComplete={handleComplete} />
           )}
 
-          {results && tierInfo && userData && (
+          {results && tierInfo && (
             <ResultsPage
               toolName="LOGCAP VI Surge Capacity Stress Test"
               score={results.score}
@@ -255,11 +255,11 @@ export default function SurgeCapacityStressTest() {
                 { phase: "Operational (90–180 days)", description: "Conduct tabletop mobilization exercises simulating 96-hour deployment scenarios. Validate QMS deployment packages at test sites." },
               ]}
               recommendedActions={[
-                `Immediately address your primary bottleneck: ${results.bottleneck}`,
-                "Build a pre-screened personnel roster with current medical and security clearances",
-                "Establish TCN visa processing pipelines with embassy-level relationships in key deployment regions",
-                "Pre-position deployable QMS packages with site-activation checklists",
-                "Conduct quarterly tabletop mobilization exercises to validate 96-hour readiness",
+                `Fatal Flaw: Your primary bottleneck (${results.bottleneck}) would cause mission failure within the first 48 hours of a deployment order.`,
+                "Fatal Flaw: Relying on just-in-time personnel sourcing instead of pre-screened rosters with current medical and security clearances.",
+                "Fatal Flaw: Assuming TCN visa processing can be expedited during surge — embassy timelines are fixed and non-negotiable.",
+                "Fatal Flaw: Deploying without pre-positioned QMS packages, guaranteeing Day 1 non-conformances that cascade into CARs.",
+                "Fatal Flaw: Operating without formalized logistics partner agreements, leaving your supply chain to ad hoc arrangements under pressure.",
               ]}
               relatedInsights={[
                 { title: "The 96-Hour Sprint: Why Subcontractors Fail the Readiness Test", slug: "96-hour-sprint" },
@@ -267,7 +267,9 @@ export default function SurgeCapacityStressTest() {
                 { title: "ISO to LOGCAP: Bridging the Civilian–Military Quality Divide", slug: "iso-logcap-bridge" },
                 { title: "Site Security and Perimeter Control Under LOGCAP", slug: "site-security-perimeter" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

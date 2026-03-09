@@ -232,7 +232,7 @@ export default function CPSRFinancialIntegrity() {
             <AssessmentShell title="CPSR Financial Integrity Shield" estimatedTime="3–5 min" questions={questions} onComplete={handleComplete} />
           )}
 
-          {results && tierInfo && userData && (
+          {results && tierInfo && (
             <ResultsPage
               toolName="CPSR Financial Integrity Shield"
               score={results.score}
@@ -246,11 +246,11 @@ export default function CPSRFinancialIntegrity() {
                 { phase: "Sustainment (90+ days)", description: "Implement a digital procurement system with integrated audit trails. Conduct internal purchasing system reviews quarterly." },
               ]}
               recommendedActions={[
-                "Implement automated SAM.gov exclusion screening before every purchase order",
-                "Create documented price analysis templates for all procurement types",
-                "Map FAR/DFARS flow-down clause requirements to standardized PO templates",
-                "Establish formal delegation of procurement authority with documented thresholds",
-                "Build a digital procurement audit trail system for cradle-to-grave traceability",
+                "Fatal Flaw: Issuing purchase orders without documented fair & reasonable price determinations — the #1 CPSR disapproval trigger.",
+                "Fatal Flaw: Failing to screen SAM.gov exclusion lists before each procurement, exposing your organisation to debarment liability.",
+                "Fatal Flaw: Using informal procurement authority delegations that would not survive a DCMA audit trail review.",
+                "Fatal Flaw: Missing FAR/DFARS flow-down clauses in subcontract POs, creating cascading non-compliance through your supply chain.",
+                "Fatal Flaw: Relying on paper-based procurement records that cannot produce cradle-to-grave audit evidence on demand.",
               ]}
               relatedInsights={[
                 { title: "The Forensic Auditor's View: Supply Chain Transparency", slug: "forensic-auditor-supply-chain" },
@@ -258,7 +258,9 @@ export default function CPSRFinancialIntegrity() {
                 { title: "Subcontractor Audit Evidence That Survives Review", slug: "subcontractor-audit-review" },
                 { title: "What U.S. Primes Actually Expect From Subcontractors", slug: "govcon-prime-expectations" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

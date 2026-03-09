@@ -265,7 +265,7 @@ export default function ComplianceFrameworkBuilder() {
             />
           )}
 
-          {results && userData && (
+          {results && (
             <ResultsPage
               toolName="Compliance Framework Builder"
               tier={results.tier}
@@ -284,17 +284,19 @@ export default function ComplianceFrameworkBuilder() {
               findings={results.findings}
               roadmap={results.roadmap}
               recommendedActions={[
-                "Review the recommended frameworks and prioritise those marked as 'Critical'.",
-                "Engage advisory support to scope the Phase 1 governance foundation.",
-                "Align internal teams on the phased implementation timeline.",
-                "Establish a compliance calendar for certification milestones.",
+                "Fatal Flaw: Assuming a single ISO certification covers all regulatory obligations for your industry and geography.",
+                "Fatal Flaw: Building compliance frameworks in isolation without mapping cross-jurisdictional overlap and conflict.",
+                "Fatal Flaw: Treating compliance as a one-time project rather than a continuously maintained governance architecture.",
+                "Fatal Flaw: Failing to phase implementation, resulting in resource exhaustion and incomplete controls across all frameworks.",
               ]}
               relatedInsights={[
                 { title: "The Real Cost of Non-Compliance in Regulated Industries", slug: "cost-of-non-compliance" },
                 { title: "Multi-Jurisdictional Compliance for International Operations", slug: "multi-jurisdictional-compliance" },
                 { title: "ISO 9001 as an Operational Maturity Engine", slug: "iso9001-operational-maturity" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>
