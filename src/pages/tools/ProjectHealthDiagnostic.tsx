@@ -222,15 +222,9 @@ export default function ProjectHealthDiagnostic() {
   const handleComplete = async (answers: Record<string, string | string[]>) => {
     const r = calculateResults(answers);
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: r.score,
-        tier: r.tier,
-        tool_used: "Project Health Diagnostic",
-        date_completed: new Date().toISOString(),
-        answers_json: answers as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "Project Health Diagnostic", score: r.score, tier: r.tier, date_completed: new Date().toISOString(), answers_json: answers }); } catch {}
+    }
   };
 
   return (
