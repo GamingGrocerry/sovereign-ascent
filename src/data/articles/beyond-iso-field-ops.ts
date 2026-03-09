@@ -45,7 +45,7 @@ Most QMS architectures are top-down: corporate writes procedures, field follows 
 
 ## The Sovereignty Model: Making Quality Independent of Production
 
-The core problem with most QMS implementations is structural. Quality is embedded within production — quality personnel report to operations managers, quality metrics are subordinated to schedule metrics, and quality decisions are overridden when they conflict with delivery timelines.
+The core problem with most QMS implementations is structural. Quality is embedded within production — quality personnel report to operations managers, quality metrics are subordinated to schedule metrics, and quality decisions are overridden when they conflict with delivery timelines. This structural weakness is what leads to the [subcontractor QMS failures](/insights/subcontractor-qms-failures) that cascade through supply chains.
 
 The Sovereignty Model inverts this relationship. Quality operates as an independent function with its own authority, its own reporting line, and its own performance metrics. This does not mean quality slows production. It means quality decisions are made on quality criteria — not production pressure.
 
