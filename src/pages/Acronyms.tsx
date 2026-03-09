@@ -1,8 +1,10 @@
+import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const acronyms = [
   { term: "ACO", definition: "Administrative Contracting Officer", context: "A government official responsible for administering a contract after award, including oversight of contractor performance, processing modifications, and resolving contract administration issues. Distinct from the Procuring Contracting Officer (PCO)." },
@@ -127,6 +129,30 @@ const grouped = sortedAcronyms.reduce<Record<string, typeof acronyms>>((acc, ite
 const letters = Object.keys(grouped).sort();
 
 export default function Acronyms() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredAcronyms = useMemo(() => {
+    if (!searchQuery.trim()) return sortedAcronyms;
+    const query = searchQuery.toLowerCase();
+    return sortedAcronyms.filter(
+      (item) =>
+        item.term.toLowerCase().includes(query) ||
+        item.definition.toLowerCase().includes(query) ||
+        item.context.toLowerCase().includes(query)
+    );
+  }, [searchQuery]);
+
+  const filteredGrouped = useMemo(() => {
+    return filteredAcronyms.reduce<Record<string, typeof acronyms>>((acc, item) => {
+      const letter = item.term[0].toUpperCase();
+      if (!acc[letter]) acc[letter] = [];
+      acc[letter].push(item);
+      return acc;
+    }, {});
+  }, [filteredAcronyms]);
+
+  const filteredLetters = Object.keys(filteredGrouped).sort();
+
   return (
     <Layout>
       <SEOHead
@@ -179,48 +205,100 @@ export default function Acronyms() {
         </div>
       </section>
 
-      {/* Quick Nav */}
+      {/* Search & Quick Nav */}
       <section className="py-6 bg-secondary/30 border-b border-border sticky top-16 z-20">
         <div className="container-wide">
-          <div className="flex flex-wrap gap-2">
-            {letters.map((letter) => (
-              <a
-                key={letter}
-                href={`#letter-${letter}`}
-                className="w-9 h-9 rounded-sm bg-card border border-border flex items-center justify-center text-sm font-semibold hover:bg-accent hover:text-accent-foreground transition-colors"
+          {/* Search Bar */}
+          <div className="relative mb-4">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Search acronyms, definitions, or context..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-10 bg-card"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Clear search"
               >
-                {letter}
-              </a>
-            ))}
+                <X className="w-4 h-4" />
+              </button>
+            )}
           </div>
+          
+          {/* Letter Navigation */}
+          <div className="flex flex-wrap gap-2">
+            {letters.map((letter) => {
+              const isActive = filteredGrouped[letter]?.length > 0;
+              return (
+                <a
+                  key={letter}
+                  href={isActive ? `#letter-${letter}` : undefined}
+                  className={`w-9 h-9 rounded-sm border flex items-center justify-center text-sm font-semibold transition-colors ${
+                    isActive
+                      ? "bg-card border-border hover:bg-accent hover:text-accent-foreground cursor-pointer"
+                      : "bg-muted/50 border-muted text-muted-foreground/40 cursor-default"
+                  }`}
+                  aria-disabled={!isActive}
+                >
+                  {letter}
+                </a>
+              );
+            })}
+          </div>
+          
+          {/* Results count */}
+          {searchQuery && (
+            <p className="text-sm text-muted-foreground mt-3">
+              {filteredAcronyms.length} {filteredAcronyms.length === 1 ? "result" : "results"} for "{searchQuery}"
+            </p>
+          )}
         </div>
       </section>
 
       {/* Glossary Content */}
       <section className="py-16 bg-background">
         <div className="container-wide max-w-4xl">
-          {letters.map((letter) => (
-            <div key={letter} id={`letter-${letter}`} className="mb-12 scroll-mt-32">
-              <h2 className="text-3xl font-serif font-bold text-accent border-b border-border pb-3 mb-6">
-                {letter}
-              </h2>
-              <dl className="space-y-6">
-                {grouped[letter].map((item) => (
-                  <div key={item.term} className="group">
-                    <dt className="text-lg font-semibold">
-                      <span className="text-accent">{item.term}</span>
-                      <span className="text-muted-foreground font-normal ml-3">
-                        — {item.definition}
-                      </span>
-                    </dt>
-                    <dd className="text-muted-foreground text-sm mt-1 ml-0 pl-0">
-                      {item.context}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+          {filteredLetters.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-lg text-muted-foreground">
+                No acronyms found matching "{searchQuery}"
+              </p>
+              <Button 
+                variant="outline" 
+                className="mt-4"
+                onClick={() => setSearchQuery("")}
+              >
+                Clear Search
+              </Button>
             </div>
-          ))}
+          ) : (
+            filteredLetters.map((letter) => (
+              <div key={letter} id={`letter-${letter}`} className="mb-12 scroll-mt-32">
+                <h2 className="text-3xl font-serif font-bold text-accent border-b border-border pb-3 mb-6">
+                  {letter}
+                </h2>
+                <dl className="space-y-6">
+                  {filteredGrouped[letter].map((item) => (
+                    <div key={item.term} className="group">
+                      <dt className="text-lg font-semibold">
+                        <span className="text-accent">{item.term}</span>
+                        <span className="text-muted-foreground font-normal ml-3">
+                          — {item.definition}
+                        </span>
+                      </dt>
+                      <dd className="text-muted-foreground text-sm mt-1 ml-0 pl-0">
+                        {item.context}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))
+          )}
         </div>
       </section>
 
