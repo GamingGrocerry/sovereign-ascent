@@ -152,33 +152,6 @@ const faqCategories = [
       },
     ],
   },
-  {
-    title: "The Institutional Logic",
-    icon: Sparkles,
-    iconColor: "text-accent",
-    faqs: [
-      {
-        question: "Why hire ElevateQCS instead of a 'Big Four' firm?",
-        answer:
-          "At a Big Four firm, you pay for the brand and get a junior associate. At ElevateQCS, you get a Principal with a decade of field-level 'Zero-Failure' experience. We don't provide a 200-page slide deck — we provide an Operational Architecture that actually works when the auditor walks in the door. You're hiring judgment, not headcount.",
-      },
-      {
-        question: "Why does 'Principal-Led' matter?",
-        answer:
-          "In traditional consulting, senior partners sell the engagement, then disappear. Your actual work is done by analysts three years out of graduate school. At ElevateQCS, the Principal who diagnoses your vulnerabilities is the same Principal who architects the solution and oversees implementation. No handoffs. No 'learn on your dime.'",
-      },
-      {
-        question: "What makes your approach different from 'compliance consultants'?",
-        answer:
-          "Most consultants give you a checklist and call it done. We architect governance infrastructure — the systems, controls, and documentation that survive auditor scrutiny, regulatory evolution, and organisational growth. We build compliance systems that work when you're not watching, not just systems that look good in a binder.",
-      },
-      {
-        question: "Why should we act now instead of waiting?",
-        answer:
-          "In 2026, the regulatory landscape is accelerating — EU AI Act enforcement begins, CMMC 2.0 is mandatory for DoD contracts, and Prime contractors are flowing down audit requirements faster than sub-tier suppliers can respond. The organisations that build governance infrastructure now will win contracts. Those that wait will spend more fixing failures than they would have spent building systems.",
-      },
-    ],
-  },
 ];
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
