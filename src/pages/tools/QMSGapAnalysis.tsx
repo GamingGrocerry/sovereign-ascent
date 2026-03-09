@@ -240,7 +240,7 @@ export default function QMSGapAnalysis() {
             />
           )}
 
-          {results && tierInfo && userData && (
+          {results && tierInfo && (
             <ResultsPage
               toolName="QMS Gap Analysis"
               score={results.score}
@@ -249,12 +249,11 @@ export default function QMSGapAnalysis() {
               tierDescription={tierInfo.desc}
               findings={results.findings}
               recommendedActions={[
-                "Establish documented standard operating procedures for all critical processes.",
-                "Implement a formal CAPA system with root cause analysis and effectiveness tracking.",
-                "Schedule and resource an internal audit programme with trained auditors.",
-                "Build competency matrices linking roles to required training and qualifications.",
-                "Create an approved supplier list with qualification criteria and periodic review cycles.",
-                "Initiate scheduled management reviews with defined agenda and documented outcomes.",
+                "Fatal Flaw: Managing processes via 'tribal knowledge' rather than version-controlled SOPs, virtually guaranteeing audit failure.",
+                "Fatal Flaw: Treating Corrective Actions (CAPAs) as paperwork exercises rather than systemic root-cause investigations.",
+                "Fatal Flaw: Failing to conduct independent internal audits, allowing blind spots to fester until an external auditor or Prime finds them.",
+                "Fatal Flaw: Operating without formal competency matrices, making it impossible to prove staff qualification during source selection.",
+                "Fatal Flaw: Using unvetted suppliers based on price alone, transferring their compliance risk directly onto your contract.",
               ]}
               relatedInsights={[
                 { title: "Building a QMS That Scales With Your Growth", slug: "qms-scalability" },
@@ -262,7 +261,9 @@ export default function QMSGapAnalysis() {
                 { title: "ISO 9001 as an Operational Maturity Engine", slug: "iso9001-operational-maturity" },
                 { title: "Subcontractor QMS Failures That Cost Contracts", slug: "subcontractor-qms-failures" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

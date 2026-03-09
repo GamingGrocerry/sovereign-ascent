@@ -263,7 +263,7 @@ export default function GovConReadiness() {
             />
           )}
 
-          {results && tierInfo && userData && (
+          {results && tierInfo && (
             <ResultsPage
               toolName="GovCon Readiness Score"
               score={results.score}
@@ -272,11 +272,11 @@ export default function GovConReadiness() {
               tierDescription={tierInfo.desc}
               findings={results.findings}
               recommendedActions={[
-                "Implement a documented anti-trafficking and forced labour policy aligned with FAR 52.222-50.",
-                "Establish a formal document retention policy with defined retention periods.",
-                "Conduct supplier due diligence and include compliance flow-down clauses in subcontracts.",
-                "Deploy role-based compliance training with documented attendance records.",
-                "Establish a confidential reporting mechanism for ethics and compliance concerns.",
+                "Fatal Flaw: Attempting to flow down FAR 52.222-50 without a verified supplier screening mechanism.",
+                "Fatal Flaw: Assuming corporate IT policies cover federal requirements without a formal gap assessment.",
+                "Fatal Flaw: Lacking an independent internal audit program, leading to 'linguistic mismatch' with government auditors.",
+                "Fatal Flaw: Relying on 'tribal knowledge' rather than a formally documented Quality Management System.",
+                "Fatal Flaw: Failing to establish an anonymous reporting channel, directly violating prime contractor expectations.",
               ]}
               relatedInsights={[
                 { title: "CTIP & CS3D: Dual Compliance for International Operators", slug: "ctip-cs3d-compliance" },
@@ -284,7 +284,9 @@ export default function GovConReadiness() {
                 { title: "What U.S. Primes Actually Expect From Subcontractors", slug: "govcon-prime-expectations" },
                 { title: "Subcontractor QMS Failures That Cost Contracts", slug: "subcontractor-qms-failures" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

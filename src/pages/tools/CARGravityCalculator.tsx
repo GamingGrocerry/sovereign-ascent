@@ -283,9 +283,9 @@ export default function CARGravityCalculator() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={showGate} onUnlock={handleUnlock} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="CAR Gravity Calculator"
               estimatedTime="2–3 minutes"
@@ -294,7 +294,7 @@ export default function CARGravityCalculator() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="CAR Gravity Calculator"
               score={results.score}
@@ -305,7 +305,9 @@ export default function CARGravityCalculator() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

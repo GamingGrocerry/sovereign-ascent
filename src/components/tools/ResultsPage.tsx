@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, ChevronRight } from "lucide-react";
+import { ArrowRight, Download, ChevronRight, Lock } from "lucide-react";
 import { generateReport } from "./generateReport";
 
 interface Finding {
@@ -25,7 +25,9 @@ interface ResultsPageProps {
   roadmap?: Roadmap[];
   recommendedActions: string[];
   relatedInsights: { title: string; slug: string }[];
-  userData: { name: string; company: string };
+  userData?: { name: string; company: string };
+  isUnlocked?: boolean;
+  onUnlock?: () => void;
 }
 
 export function ResultsPage({
@@ -40,8 +42,11 @@ export function ResultsPage({
   recommendedActions,
   relatedInsights,
   userData,
+  isUnlocked = true,
+  onUnlock,
 }: ResultsPageProps) {
   const handleDownload = async () => {
+    if (!userData) return;
     generateReport({
       toolName,
       companyName: userData.company,
@@ -74,107 +79,142 @@ export function ResultsPage({
         <p className="text-muted-foreground leading-relaxed">{tierDescription}</p>
       </div>
 
-      {/* Findings Table */}
-      <div className="card-elevated overflow-hidden mb-8">
-        <div className="p-6 border-b border-border">
-          <h3 className="!text-lg">Detailed Findings</h3>
+      {!isUnlocked ? (
+        <div className="card-elevated p-8 md:p-12 mb-8 text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-[6px] z-10 flex flex-col items-center justify-center p-6 border border-border/50">
+            <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+              <Lock className="w-8 h-8 text-accent" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Unlock Your Forensic Blueprint</h3>
+            <p className="text-muted-foreground mb-8 max-w-md mx-auto text-sm leading-relaxed">
+              Your score indicates underlying structural gaps. Enter your work email to reveal the specific fatal flaws in your current approach and unlock your detailed remediation blueprint.
+            </p>
+            <Button variant="cta" size="xl" onClick={onUnlock}>
+              Reveal Detailed Findings
+            </Button>
+          </div>
+          
+          <div className="opacity-30 blur-[4px] select-none pointer-events-none">
+            <h3 className="!text-lg mb-6 text-left">Detailed Findings</h3>
+            <div className="space-y-4 text-left">
+              <div className="h-16 bg-secondary/50 rounded w-full"></div>
+              <div className="h-16 bg-secondary/50 rounded w-full"></div>
+              <div className="h-16 bg-secondary/50 rounded w-full"></div>
+            </div>
+            <h3 className="!text-lg mb-4 mt-8 text-left">Critical Fatal Flaws</h3>
+            <ul className="space-y-3 text-left">
+              <li className="h-8 bg-secondary/50 rounded w-3/4"></li>
+              <li className="h-8 bg-secondary/50 rounded w-5/6"></li>
+              <li className="h-8 bg-secondary/50 rounded w-4/5"></li>
+            </ul>
+          </div>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-primary text-primary-foreground">
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Area</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>
-                <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Recommendation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {findings.map((f, i) => (
-                <tr key={i} className={i % 2 === 0 ? "bg-card" : "bg-secondary/20"}>
-                  <td className="px-6 py-4 font-medium">{f.area}</td>
-                  <td className="px-6 py-4 text-muted-foreground">{f.status}</td>
-                  <td className="px-6 py-4 text-muted-foreground">{f.recommendation}</td>
-                </tr>
+      ) : (
+        <>
+          {/* Findings Table */}
+          <div className="card-elevated overflow-hidden mb-8">
+            <div className="p-6 border-b border-border">
+              <h3 className="!text-lg">Detailed Findings</h3>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-primary text-primary-foreground">
+                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Area</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Status / Severity</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Consequence</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {findings.map((f, i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-card" : "bg-secondary/20"}>
+                      <td className="px-6 py-4 font-medium align-top">{f.area}</td>
+                      <td className="px-6 py-4 text-muted-foreground font-medium align-top">{f.status}</td>
+                      <td className="px-6 py-4 text-muted-foreground align-top">{f.recommendation}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Roadmap */}
+          {roadmap && roadmap.length > 0 && (
+            <div className="card-elevated p-6 md:p-8 mb-8">
+              <h3 className="!text-lg mb-6">Recommended Compliance Roadmap</h3>
+              <div className="space-y-4">
+                {roadmap.map((r, i) => (
+                  <div key={i} className="border-l-2 border-accent pl-6 py-2">
+                    <h4 className="text-sm font-semibold text-foreground mb-1">{r.phase}</h4>
+                    <p className="text-sm text-muted-foreground">{r.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Recommended Actions / Fatal Flaws */}
+          <div className="card-elevated p-6 md:p-8 mb-8">
+            <h3 className="!text-lg mb-4">Critical Execution Flaws Identified</h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Based on your profile, your organisation is highly susceptible to the following fatal errors in remediation:
+            </p>
+            <ul className="space-y-4">
+              {recommendedActions.map((action, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-xs text-destructive font-bold">!</span>
+                  </div>
+                  <span className="text-sm text-foreground font-medium">{action}</span>
+                </li>
               ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Roadmap */}
-      {roadmap && roadmap.length > 0 && (
-        <div className="card-elevated p-6 md:p-8 mb-8">
-          <h3 className="!text-lg mb-6">Recommended Compliance Roadmap</h3>
-          <div className="space-y-4">
-            {roadmap.map((r, i) => (
-              <div key={i} className="border-l-2 border-accent pl-6 py-2">
-                <h4 className="text-sm font-semibold text-foreground mb-1">{r.phase}</h4>
-                <p className="text-sm text-muted-foreground">{r.description}</p>
-              </div>
-            ))}
+            </ul>
           </div>
-        </div>
-      )}
 
-      {/* Recommended Actions */}
-      <div className="card-elevated p-6 md:p-8 mb-8">
-        <h3 className="!text-lg mb-4">Recommended Next Steps</h3>
-        <ul className="space-y-3">
-          {recommendedActions.map((action, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
-                <span className="text-xs text-accent font-bold">{i + 1}</span>
-              </div>
-              <span className="text-sm text-muted-foreground">{action}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Disclaimer */}
-      <p className="text-[10px] text-muted-foreground/60 leading-relaxed mb-8">
-        DISCLAIMER: This assessment is provided by Elevate Quality Compliance Solutions LLC for informational purposes only. It does not constitute legal, financial, regulatory, or professional advice. ElevateQCS assumes no responsibility for decisions or actions taken based on this report.
-      </p>
-
-      {/* Actions */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-8">
-        <Button variant="cta" size="lg" onClick={handleDownload}>
-          <Download className="w-4 h-4 mr-2" />
-          Download Full Report
-        </Button>
-        <Button variant="cta" size="lg" asChild>
-          <Link to="/contact">
-            Book a 15-Minute Briefing
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
-        </Button>
-      </div>
-
-      {/* Sell the Gap */}
-      <div className="card-elevated p-6 mb-12 border-l-4 border-accent">
-        <p className="text-sm font-semibold text-foreground mb-1">This diagnostic identifies the gap. Closing it requires expertise.</p>
-        <p className="text-sm text-muted-foreground">
-          Your score and findings are yours to keep. The specific mitigation steps, SOPs, and governance architecture required to resolve these gaps are delivered through a Principal-Led engagement — because every organisation's risk profile is unique.
-        </p>
-      </div>
-
-      {/* Related Insights */}
-      {relatedInsights.length > 0 && (
-        <div className="border-t border-border pt-8">
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Related Insights</h4>
-          <div className="space-y-3">
-            {relatedInsights.map((insight) => (
-              <Link
-                key={insight.slug}
-                to={`/insights/${insight.slug}`}
-                className="flex items-center gap-3 text-sm text-foreground hover:text-accent transition-colors group"
-              >
-                <ChevronRight className="w-4 h-4 text-accent group-hover:translate-x-0.5 transition-transform" />
-                {insight.title}
-              </Link>
-            ))}
+          {/* Sell the Gap */}
+          <div className="card-elevated p-6 md:p-8 mb-8 border-l-4 border-accent bg-accent/5">
+            <h3 className="!text-lg mb-2">The Principal Review</h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              This score was generated by our algorithmic risk model. Closing the gap requires executive-level intervention. To have an ElevateQCS Principal review your specific vulnerability profile and outline a defensive architecture, schedule a 15-minute diagnostic briefing.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="cta" size="lg" asChild>
+                <Link to="/contact">
+                  Book a 15-Minute Briefing
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" onClick={handleDownload}>
+                <Download className="w-4 h-4 mr-2" />
+                Download Blueprint
+              </Button>
+            </div>
           </div>
-        </div>
+
+          {/* Disclaimer */}
+          <p className="text-[10px] text-muted-foreground/60 leading-relaxed mb-8">
+            DISCLAIMER: This assessment is provided by Elevate Quality Compliance Solutions LLC for informational purposes only. It does not constitute legal, financial, regulatory, or professional advice. ElevateQCS assumes no responsibility for decisions or actions taken based on this report.
+          </p>
+
+          {/* Related Insights */}
+          {relatedInsights.length > 0 && (
+            <div className="border-t border-border pt-8">
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Related Insights</h4>
+              <div className="space-y-3">
+                {relatedInsights.map((insight) => (
+                  <Link
+                    key={insight.slug}
+                    to={`/insights/${insight.slug}`}
+                    className="flex items-center gap-3 text-sm text-foreground hover:text-accent transition-colors group"
+                  >
+                    <ChevronRight className="w-4 h-4 text-accent group-hover:translate-x-0.5 transition-transform" />
+                    {insight.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
