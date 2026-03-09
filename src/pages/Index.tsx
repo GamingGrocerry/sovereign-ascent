@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3, Shield, Layers, Clock, Activity } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import trustVault from "@/assets/trust-vault.jpg";
-import governanceBoardroom from "@/assets/governance-boardroom.jpg";
-import ethicsBalance from "@/assets/ethics-balance.jpg";
-import auditPrecision from "@/assets/audit-precision.jpg";
-import ctipProtection from "@/assets/ctip-protection.jpg";
-import qmsStructure from "@/assets/qms-structure.jpg";
 import advisoryApproach from "@/assets/advisory-approach.jpg";
+import serviceGovernanceStrategy from "@/assets/service-governance-strategy.jpg";
+import serviceRiskRegulatory from "@/assets/service-risk-regulatory.jpg";
+import serviceFederalAdvisory from "@/assets/service-federal-advisory.jpg";
+import serviceSupplyChain from "@/assets/service-supply-chain.jpg";
+import serviceQualityInfrastructure from "@/assets/service-quality-infrastructure.jpg";
+import serviceAuditReadiness from "@/assets/service-audit-readiness.jpg";
 import InsightsCarousel from "@/components/InsightsCarousel";
 
 const stats = [
@@ -25,37 +26,37 @@ const coreServices = [
     title: "Governance & Strategy",
     description: "Governance frameworks that align organizational structure with regulatory obligations and strategic objectives.",
     href: "/services/governance-strategy",
-    image: governanceBoardroom,
+    image: serviceGovernanceStrategy,
   },
   {
     title: "Risk, Regulatory & Compliance",
     description: "Structured control environments that transform regulatory exposure into defensible operational discipline.",
     href: "/services/risk-regulatory-compliance",
-    image: ethicsBalance,
+    image: serviceRiskRegulatory,
   },
   {
     title: "Federal & Public Sector Advisory",
     description: "Operational stability, contractual compliance, and institutional maturity for government contractors.",
     href: "/services/federal-public-sector",
-    image: heroArchitecture,
+    image: serviceFederalAdvisory,
   },
   {
     title: "Supply Chain, Human Rights & Due Diligence",
     description: "Human rights programs and supply chain due diligence aligned with FAR 52.222-50, EU CS3D, and international standards.",
     href: "/services/supply-chain-human-rights",
-    image: ctipProtection,
+    image: serviceSupplyChain,
   },
   {
     title: "Quality & Operational Infrastructure",
     description: "Quality management systems designed for scalability, auditability, and internal ownership.",
     href: "/services/quality-operational-infrastructure",
-    image: qmsStructure,
+    image: serviceQualityInfrastructure,
   },
   {
     title: "Audit, Inspection & Certification Readiness",
     description: "Organized evidence, strengthened control narratives, and structured corrective action for assessment readiness.",
     href: "/services/audit-certification-readiness",
-    image: auditPrecision,
+    image: serviceAuditReadiness,
   },
 ];
 
