@@ -35,7 +35,7 @@ Five years ago, operational due diligence at Series B focused on financial contr
 - Is there a documented organizational structure with clear reporting lines?
 - Are decision rights defined — who can commit the company to what?
 - Is there a board governance framework, or does the founder make every decision?
-- Are there policies covering conflicts of interest, data privacy, and ethical conduct?
+- Are there policies covering conflicts of interest, data privacy, and [ethical conduct](/governance)?
 
 **Quality & Delivery Infrastructure**
 - Is there a quality management system — even a lightweight one?
