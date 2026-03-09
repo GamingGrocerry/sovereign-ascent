@@ -2,84 +2,180 @@ import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Plus, Minus } from "lucide-react";
+import {
+  ArrowRight,
+  Plus,
+  Minus,
+  AlertTriangle,
+  Cpu,
+  Building2,
+  Shield,
+  Globe,
+  Sparkles,
+} from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const faqCategories = [
   {
+    title: "High-Stakes Recovery",
+    icon: AlertTriangle,
+    iconColor: "text-destructive",
+    faqs: [
+      {
+        question: "We are 60 days behind on a $100M build. Can you stabilize this?",
+        answer:
+          "Yes. We deploy a Forensic Stabilization protocol within 48 hours to identify sub-tier friction, SOW gaps, and the specific contractual fault lines driving margin leak. We don't just 'consult' — we realign the Chain of Command to stop the hemorrhage and rebuild a defensible delivery trajectory.",
+      },
+      {
+        question: "Do you take over the project management?",
+        answer:
+          "No. We act as the Independent Quality & Governance Lead — the executive-level oversight layer your project managers are too operationally consumed to document. We provide the 'Audit-Ready' forensic layer that ensures you don't trade short-term speed for a future Cure Notice or contract termination.",
+      },
+      {
+        question: "What if we've already received a Cure Notice or Show Cause?",
+        answer:
+          "We move to our Forensic Velocity Track. A Principal Lead is deployed within 48 hours to stabilize communications with the Contracting Officer, conduct an immediate root-cause analysis, and architect a corrective action response designed to arrest the escalation trajectory. The first 96 hours are structured as a Stabilization Sprint.",
+      },
+      {
+        question: "Can you help if we are about to lose an option year?",
+        answer:
+          "Yes. Option year evaluations are decided on documented performance, not good intentions. We conduct a rapid vulnerability mapping to identify the specific findings, open CARs, or deliverable gaps that are likely influencing the decision — and architect the defensive documentation package required to shift the narrative.",
+      },
+    ],
+  },
+  {
+    title: "AI & Digital Sovereignty",
+    icon: Cpu,
+    iconColor: "text-accent",
+    faqs: [
+      {
+        question: "Is the EU AI Act relevant if we are a U.S. company?",
+        answer:
+          "If you have a single user in the EU, or your model impacts EU citizens, or you deploy AI that affects EU market participants — yes. By August 2026, non-compliance carries fines up to €35 million or 7% of global turnover. We architect the Technical Documentation, Risk Management Systems, and Human Oversight Protocols required to maintain your market access.",
+      },
+      {
+        question: "Can you audit our AI for 'Bias' and 'Explainability'?",
+        answer:
+          "We audit the Governance Framework that manages bias — not the algorithm itself. We ensure your engineering teams have the Human-in-the-Loop controls, Algorithmic Impact Assessments, and documentation architecture that regulators now demand. The audit proves your organisation has sovereign control over the system, not that the system is 'perfect.'",
+      },
+      {
+        question: "What is 'Agentic AI Oversight' and do we need it?",
+        answer:
+          "Agentic AI systems act autonomously — executing tasks, making decisions, and interacting with external systems without direct human instruction. If your AI can take actions with real-world consequences, regulators expect documented 'kill-switch' protocols, escalation thresholds, and human-override mechanisms. We architect these controls before the regulatory inquiry arrives.",
+      },
+      {
+        question: "Do you help with ISO 42001 certification?",
+        answer:
+          "Yes. ISO 42001 is the emerging global standard for AI Management Systems. We support organisations from initial gap analysis through to certification readiness — building the governance architecture, risk management framework, and documentation required to pass an accredited audit. Use our ISO 42001 Readiness Diagnostic for an immediate assessment.",
+      },
+    ],
+  },
+  {
     title: "About Our Services",
+    icon: Building2,
+    iconColor: "text-accent",
     faqs: [
       {
         question: "Do you provide certifications?",
-        answer: "No. ElevateQCS is an independent advisory firm—we are not a certification body, accredited registrar, or regulatory agency. We support organizations in building compliance systems and preparing for assessments, but we do not issue certifications, approvals, or authorizations. Organizations seeking certification should engage directly with appropriate certification bodies.",
+        answer:
+          "No. ElevateQCS is an independent advisory firm — we are not a certification body, accredited registrar, or regulatory agency. We architect the compliance systems and prepare organisations for assessments, but we do not issue certifications, approvals, or authorizations. Organizations seeking certification engage directly with accredited certification bodies.",
       },
       {
         question: "Do you replace legal counsel?",
-        answer: "No. Our services are advisory in nature and do not constitute legal advice. While we provide guidance on compliance frameworks and regulatory requirements, we strongly recommend that clients engage qualified legal counsel for matters requiring legal interpretation or representation. We often work alongside clients' legal teams in a complementary capacity.",
+        answer:
+          "No. We are the Technical Translators for your counsel. We turn their legal 'What' into your operational 'How' — saving you thousands in legal billable hours by building the systems, documentation, and evidence packages that satisfy regulatory requirements. We work alongside your legal team in a complementary capacity.",
       },
       {
         question: "What industries do you serve?",
-        answer: "We primarily serve organizations in government contracting (both prime contractors and subcontractors) and high-growth companies entering regulated markets. Our expertise spans quality management systems, human rights and ethical labor compliance, and audit readiness across various sectors including defense, aerospace, and technology.",
+        answer:
+          "We serve high-accountability organisations in regulated environments: government contractors (prime and sub-tier), defense and aerospace, critical infrastructure, AI and deep-tech, medical devices, and high-growth companies entering regulated markets or preparing for institutional investment. Our expertise spans quality management systems, human rights and ethical labor compliance, AI governance, and audit readiness.",
       },
       {
         question: "Do you work with small organizations?",
-        answer: "Yes. We work with organizations of various sizes, from emerging companies building their first compliance systems to established enterprises refining existing frameworks. Our approach scales to organizational context—we design systems appropriate for your current stage while building in scalability for growth.",
+        answer:
+          "Yes. We work with organisations from Series A startups building their first QMS to multi-billion-dollar primes refining enterprise governance. Our approach scales to organisational context — we design systems appropriate for your current stage while building in the scalability required for growth, acquisition, or new contract vehicles.",
+      },
+    ],
+  },
+  {
+    title: "Independence & Integrity",
+    icon: Shield,
+    iconColor: "text-accent",
+    faqs: [
+      {
+        question: "Are you vendor-neutral?",
+        answer:
+          "Strictly. We don't sell software — we sell Integrity. Our recommendations are based solely on your 2026 audit-readiness, not a commission check. In the event we identify a vendor from which we may receive referral benefits, we disclose this transparently to clients during the initial engagement meeting — prior to any recommendation being formalized.",
+      },
+      {
+        question: "Do you require us to buy expensive GRC software?",
+        answer:
+          "No. We architect the governance logic first, then integrate it into your existing stack — Slack, Jira, GCC High, SharePoint, or whatever your teams already use. Systems should serve humans, not the other way around. We believe the most expensive software is the one your teams don't actually use.",
+      },
+      {
+        question: "How do you handle confidentiality?",
+        answer:
+          "Confidentiality is foundational. Every engagement begins with a comprehensive Non-Disclosure Agreement before any substantive information exchange. We do not disclose client identities, engagement details, or any proprietary information without explicit written authorization. Your competitive intelligence remains protected.",
+      },
+      {
+        question: "Will you share information with regulators or auditors?",
+        answer:
+          "No. Our obligations run to you, the client. We do not share information with regulatory bodies, certification auditors, competitors, or any other parties without your explicit written authorization. We are not an arm of any regulatory or oversight body.",
       },
     ],
   },
   {
     title: "Engagement & Process",
+    icon: Globe,
+    iconColor: "text-accent",
     faqs: [
       {
-        question: "Are engagements project-based or retainer?",
-        answer: "Most engagements are project-based with defined scope, deliverables, and timelines. This approach provides clarity on investment and outcomes. For organizations benefiting from ongoing advisory support after initial implementation, we offer retainer arrangements with periodic check-ins and advisory availability.",
-      },
-      {
         question: "How long do typical engagements last?",
-        answer: "Engagement duration varies based on scope and organizational complexity. Focused diagnostic assessments typically run 4-6 weeks. Comprehensive implementation programs may span 6-12 months. We work with you to define realistic timelines that account for your organizational capacity and priorities.",
+        answer:
+          "Standard Track engagements (full system builds) run 12–24 weeks. Velocity Track interventions (crisis stabilization) begin within 48 hours and stabilize within 96 hours, with an optional transition to the Standard Track. Focused diagnostics typically run 4–6 weeks. Duration is driven by scope and organisational complexity.",
       },
       {
-        question: "What happens after the engagement ends?",
-        answer: "Our goal is to transfer capability, not create dependency. At engagement conclusion, your teams should be equipped to operate, maintain, and improve systems independently. We provide comprehensive documentation, training, and knowledge transfer. Optional ongoing support is available but not required.",
+        question: "Are engagements project-based or retainer?",
+        answer:
+          "Project-based with defined scope, milestones, and deliverables — structured as fixed-scope 60–90 day sprints with weekly leadership alignment. We do not operate open-ended retainers. Ongoing advisory is available post-engagement on an optional basis for organisations benefiting from periodic check-ins.",
       },
       {
         question: "How does your remote model work?",
-        answer: "ElevateQCS operates as a fully remote advisory practice by design — not as a temporary arrangement. This allows us to deploy the right expertise to every engagement regardless of geography, using secure communications, structured workflows, and disciplined project management. Our remote model supports clients across the US, EU, and Middle East without the overhead that inflates advisory fees.",
+        answer:
+          "We operate via Sovereign Workflows. Using encrypted, GCC High-compliant tools, we provide Tier-1 advisory without the $2,000/day travel overhead. Our remote-by-design model allows us to deploy the right expertise to every engagement regardless of geography — supporting clients across the US, EU, and Middle East with consistent quality.",
+      },
+      {
+        question: "What happens after the engagement ends?",
+        answer:
+          "Our goal is Capability Transfer, not dependency. At engagement conclusion, your teams are equipped to operate, maintain, and improve systems independently. We provide comprehensive documentation, training, and knowledge transfer. You leave with an Internal Governance Hub — a team that can defend the system without us.",
       },
     ],
   },
   {
-    title: "Independence & Confidentiality",
+    title: "The Institutional Logic",
+    icon: Sparkles,
+    iconColor: "text-accent",
     faqs: [
       {
-        question: "Are you truly vendor-neutral?",
-        answer: "Yes. Our recommendations are based solely on our assessment of what serves your organizational needs. We maintain a vendor-neutral advisory posture across all engagements. In the event we identify a vendor, product, or service from which we may receive referral benefits or compensation, we disclose this transparently to clients during the initial engagement meeting — prior to any recommendation being formalized.",
+        question: "Why hire ElevateQCS instead of a 'Big Four' firm?",
+        answer:
+          "At a Big Four firm, you pay for the brand and get a junior associate. At ElevateQCS, you get a Principal with a decade of field-level 'Zero-Failure' experience. We don't provide a 200-page slide deck — we provide an Operational Architecture that actually works when the auditor walks in the door. You're hiring judgment, not headcount.",
       },
       {
-        question: "How do you handle confidentiality?",
-        answer: "Confidentiality is foundational to our practice. Every engagement begins with a comprehensive Non-Disclosure Agreement before any substantive information exchange. We do not disclose client identities, engagement details, or any proprietary information without explicit written authorization. Your competitive intelligence remains protected.",
+        question: "Why does 'Principal-Led' matter?",
+        answer:
+          "In traditional consulting, senior partners sell the engagement, then disappear. Your actual work is done by analysts three years out of graduate school. At ElevateQCS, the Principal who diagnoses your vulnerabilities is the same Principal who architects the solution and oversees implementation. No handoffs. No 'learn on your dime.'",
       },
       {
-        question: "Will you share information with regulators or auditors?",
-        answer: "No. Our obligations run to you, the client. We do not share information with regulatory bodies, certification auditors, competitors, or any other parties without your explicit written authorization. We are not an arm of any regulatory or oversight body.",
-      },
-    ],
-  },
-  {
-    title: "Global Operations",
-    faqs: [
-      {
-        question: "Do you work internationally?",
-        answer: "Yes. We provide advisory services globally, with experience supporting organizations operating across the US, EU, Middle East, and other regions. Our team understands the nuances of different regulatory environments and can support multi-jurisdictional compliance requirements.",
+        question: "What makes your approach different from 'compliance consultants'?",
+        answer:
+          "Most consultants give you a checklist and call it done. We architect governance infrastructure — the systems, controls, and documentation that survive auditor scrutiny, regulatory evolution, and organisational growth. We build compliance systems that work when you're not watching, not just systems that look good in a binder.",
       },
       {
-        question: "What languages do you work in?",
-        answer: "Our primary working language is English. For engagements requiring other languages, we can coordinate with qualified professionals to ensure effective communication while maintaining quality and consistency of advisory services.",
-      },
-      {
-        question: "How do you handle different regulatory frameworks?",
-        answer: "We design systems that can accommodate multiple regulatory frameworks—whether FAR/DFARS requirements, ISO standards, UK Modern Slavery Act obligations, or EU due-diligence requirements. Our approach focuses on building integrated systems rather than siloed compliance for each requirement.",
+        question: "Why should we act now instead of waiting?",
+        answer:
+          "In 2026, the regulatory landscape is accelerating — EU AI Act enforcement begins, CMMC 2.0 is mandatory for DoD contracts, and Prime contractors are flowing down audit requirements faster than sub-tier suppliers can respond. The organisations that build governance infrastructure now will win contracts. Those that wait will spend more fixing failures than they would have spent building systems.",
       },
     ],
   },
@@ -95,10 +191,12 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         className="w-full py-6 flex items-start justify-between gap-4 text-left hover:text-accent transition-colors"
       >
         <span className="text-lg font-medium">{question}</span>
-        <div className={cn(
-          "w-8 h-8 rounded-sm bg-secondary flex items-center justify-center shrink-0 transition-colors",
-          isOpen && "bg-accent"
-        )}>
+        <div
+          className={cn(
+            "w-8 h-8 rounded-sm bg-secondary flex items-center justify-center shrink-0 transition-colors",
+            isOpen && "bg-accent"
+          )}
+        >
           {isOpen ? (
             <Minus className={cn("w-4 h-4", isOpen && "text-accent-foreground")} />
           ) : (
@@ -106,13 +204,13 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           )}
         </div>
       </button>
-      <div className={cn(
-        "overflow-hidden transition-all duration-300",
-        isOpen ? "max-h-[500px] pb-6" : "max-h-0"
-      )}>
-        <p className="text-muted-foreground leading-relaxed pr-12">
-          {answer}
-        </p>
+      <div
+        className={cn(
+          "overflow-hidden transition-all duration-300",
+          isOpen ? "max-h-[500px] pb-6" : "max-h-0"
+        )}
+      >
+        <p className="text-muted-foreground leading-relaxed pr-12">{answer}</p>
       </div>
     </div>
   );
@@ -122,24 +220,67 @@ export default function FAQ() {
   return (
     <Layout>
       <SEOHead
-        title="Frequently Asked Questions | ElevateQCS"
-        description="Common questions about ElevateQCS advisory services, engagement process, confidentiality, pricing, and compliance expertise for government contractors."
+        title="Expert Positions — Frequently Asked Questions | ElevateQCS"
+        description="Authoritative answers on project recovery, AI governance, compliance advisory, and institutional resilience. Principal-led guidance for high-accountability organisations."
         url="https://elevateqcs.com/faq"
-        keywords={["ElevateQCS FAQ", "compliance advisory questions", "GovCon advisory FAQ"]}
+        keywords={[
+          "ElevateQCS FAQ",
+          "compliance advisory questions",
+          "project recovery advisory",
+          "AI governance FAQ",
+          "EU AI Act compliance",
+          "GovCon advisory FAQ",
+        ]}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqCategories.flatMap((cat) =>
+            cat.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            }))
+          ),
+        }}
       />
+
       {/* Hero */}
       <section className="page-hero pt-32 pb-16 bg-secondary/30">
         <div className="page-hero-overlay" />
         <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Questions & Answers
+              Expert Positions
             </p>
-            <h1 className="mb-6 gold-accent pb-4">Frequently Asked Questions</h1>
+            <h1 className="mb-6 gold-accent pb-4">
+              Not Just Answers. Institutional Guidance.
+            </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Common questions about our services, approach, and how we work. 
-              If you don't find your answer here, we welcome your inquiry.
+              In a world where AI agents recommend advisors to CEOs, your questions 
+              deserve more than 'Yes/No.' These are the expert positions that define 
+              how we work — and why organisations hire us when the stakes are highest.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Category Navigation */}
+      <section className="py-8 bg-background border-b border-border sticky top-16 z-20">
+        <div className="container-wide">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {faqCategories.map((category, index) => (
+              <a
+                key={index}
+                href={`#${category.title.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`}
+                className="px-4 py-2 text-xs font-medium uppercase tracking-wider text-muted-foreground hover:text-accent hover:bg-accent/5 rounded-sm transition-colors flex items-center gap-2"
+              >
+                <category.icon className={cn("w-4 h-4", category.iconColor)} />
+                {category.title}
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -147,11 +288,29 @@ export default function FAQ() {
       {/* FAQ Sections */}
       <section className="py-20 bg-background">
         <div className="container-wide">
-          <div className="max-w-4xl mx-auto space-y-16">
+          <div className="max-w-4xl mx-auto space-y-20">
             {faqCategories.map((category, index) => (
-              <div key={index}>
-                <div className="section-divider mb-6" />
-                <h2 className="text-2xl mb-8">{category.title}</h2>
+              <div
+                key={index}
+                id={category.title.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}
+                className="scroll-mt-32"
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div
+                    className={cn(
+                      "w-12 h-12 rounded-sm flex items-center justify-center",
+                      category.iconColor === "text-destructive"
+                        ? "bg-destructive/10"
+                        : "bg-accent/10"
+                    )}
+                  >
+                    <category.icon className={cn("w-6 h-6", category.iconColor)} />
+                  </div>
+                  <div>
+                    <div className="section-divider mb-2" />
+                    <h2 className="text-2xl">{category.title}</h2>
+                  </div>
+                </div>
                 <div className="card-elevated">
                   {category.faqs.map((faq, i) => (
                     <FAQItem key={i} question={faq.question} answer={faq.answer} />
@@ -163,21 +322,59 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Tiered CTA */}
       <section className="py-28 bg-secondary/30">
-        <div className="container-narrow text-center">
+        <div className="container-wide">
           <div className="section-divider mx-auto mb-8" />
-          <h2 className="mb-6">Still Have Questions?</h2>
-          <p className="text-lg mb-12 max-w-2xl mx-auto">
-            We welcome the opportunity to address your specific questions in 
-            a confidential conversation. No commitment required.
+          <h2 className="text-center mb-4">Still Have Questions?</h2>
+          <p className="text-lg text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
+            If you don't see your situation here, we welcome the opportunity to 
+            discuss your specific requirements in a confidential conversation.
           </p>
-          <Button variant="cta" size="xl" asChild>
-            <Link to="/contact">
-              Contact Us
-              <ArrowRight className="ml-2" size={18} />
-            </Link>
-          </Button>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Crisis CTA */}
+            <div className="card-elevated p-8 md:p-10 border-l-4 border-destructive">
+              <div className="flex items-center gap-3 mb-4">
+                <AlertTriangle className="w-6 h-6 text-destructive" />
+                <p className="text-xs text-destructive uppercase tracking-[0.15em] font-semibold">
+                  For Projects in Crisis
+                </p>
+              </div>
+              <h3 className="text-xl mb-3">Request Emergency Intervention</h3>
+              <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
+                Cure Notice, failed audit, AI regulatory deadline, or a project in 
+                Red Status. We deploy a Principal Lead within 48 hours.
+              </p>
+              <Button variant="cta" size="lg" className="w-full" asChild>
+                <Link to="/contact">
+                  Start Forensic Diagnostic
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Standard CTA */}
+            <div className="card-elevated p-8 md:p-10 border-l-4 border-accent">
+              <div className="flex items-center gap-3 mb-4">
+                <Building2 className="w-6 h-6 text-accent" />
+                <p className="text-xs text-accent uppercase tracking-[0.15em] font-semibold">
+                  For Growth & Certification
+                </p>
+              </div>
+              <h3 className="text-xl mb-3">Schedule Initial Conversation</h3>
+              <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
+                ISO certification, CMMC preparation, AI governance architecture, or 
+                full QMS implementation. No commitment required.
+              </p>
+              <Button variant="outline" size="lg" className="w-full" asChild>
+                <Link to="/contact">
+                  Contact Us
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
