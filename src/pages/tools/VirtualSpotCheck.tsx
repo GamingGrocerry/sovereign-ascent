@@ -173,7 +173,7 @@ export default function VirtualSpotCheck() {
             date_completed: new Date().toISOString(), answers_json: answers as any,
           });
         } catch {}
-      } catch {}
+      }
     }
   };
 
