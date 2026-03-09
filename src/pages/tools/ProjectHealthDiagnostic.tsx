@@ -188,11 +188,10 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ] : undefined;
 
   const recommendedActions = [
-    "Conduct a comprehensive project health review with cross-functional stakeholders",
-    "Perform a PWS/SOW forensic scrub to identify ambiguous language and scope exposure",
-    "Strengthen sub-tier oversight with documented performance tracking and quality holds",
-    "Implement earned value management for schedule and cost performance monitoring",
-    "Establish clear escalation protocols with defined decision authority at each level",
+    "Fatal Flaw: Conducting a 'project health review' without a forensic PWS/SOW scrub — the root cause is almost always buried in ambiguous contract language.",
+    "Fatal Flaw: Treating sub-tier performance issues as management problems rather than contractual accountability gaps requiring quality holds.",
+    "Fatal Flaw: Using schedule-based progress reporting without earned value management, making it impossible to detect cost overruns until they're irreversible.",
+    "Fatal Flaw: Escalating issues through informal channels instead of documented decision authority protocols that create defensible records.",
   ];
 
   if (healthScore < 30) {
