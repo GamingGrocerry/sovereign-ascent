@@ -79,7 +79,7 @@ export default function Index() {
   return (
     <Layout>
       <SEOHead
-        title="ElevateQCS | Quality & Compliance Advisory for Regulated Industries"
+        title="ElevateQCS | Quality & Compliance Advisory"
         description="ElevateQCS is an independent advisory firm specializing in QMS architecture, CTIP program development, and audit readiness for organizations in regulated environments and government contracting."
         url="https://elevateqcs.com"
         keywords={["CTIP as a Service", "FAR 52.222-50 implementation", "GovCon QMS architecture", "quality management system", "compliance advisory", "ISO 9001 alignment"]}
