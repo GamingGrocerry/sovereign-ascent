@@ -11,7 +11,7 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-User-agent: Baiduspider
+User-agent: BaiduSpider
 Allow: /
 
 User-agent: YandexBot
@@ -33,11 +33,20 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+User-agent: Discordbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
 # AI & LLM Crawlers
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
@@ -64,6 +73,9 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+User-agent: Meta-ExternalFetcher
+Allow: /
+
 User-agent: Bytespider
 Allow: /
 
@@ -73,11 +85,32 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-User-agent: OAI-SearchBot
+User-agent: Applebot
 Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+# Microsoft / Copilot
+User-agent: bingbot
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+# xAI / Grok
+User-agent: Grok
+Allow: /
+
+# Blocked paths — admin and internal tools only
+Disallow: /admin/
 
 # Default — allow all
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 Sitemap: https://elevateqcs.com/sitemap.xml
