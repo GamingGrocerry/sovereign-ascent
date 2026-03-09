@@ -299,15 +299,9 @@ export default function AustereSafetyChecklist() {
     };
 
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: checkedCount,
-        tier,
-        tool_used: "Austere Safety Checklist",
-        date_completed: new Date().toISOString(),
-        answers_json: { checked: Array.from(checked), criticalMissed: criticalMissed.map((i) => i.id) } as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "Austere Safety Checklist", score: checkedCount, tier, date_completed: new Date().toISOString(), answers_json: { checked: Array.from(checked), criticalMissed: criticalMissed.map((i) => i.id) } as any }); } catch {}
+    }
   };
 
   return (
