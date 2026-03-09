@@ -185,11 +185,11 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ];
 
   const recommendedActions = [
-    "Conduct a formal gap assessment against all ISO 42001 clauses",
-    "Secure executive sponsorship and allocate dedicated AIMS resources",
-    "Develop AI-specific risk assessment methodology with ethical review integration",
-    "Create lifecycle SOPs for AI development, deployment, and monitoring",
-    "Establish data governance framework with provenance tracking and bias testing",
+    "Fatal Flaw: Attempting to retrofit an existing ISO 9001 system into an AIMS without addressing AI-specific lifecycle requirements.",
+    "Fatal Flaw: Developing AI risk assessments without integrating ethical review — ISO 42001 requires human rights impact analysis, not just technical risk.",
+    "Fatal Flaw: Creating lifecycle SOPs that cover development but omit deployment monitoring and decommissioning procedures.",
+    "Fatal Flaw: Treating data governance as a checkbox rather than implementing provenance tracking with bias testing protocols.",
+    "Fatal Flaw: Assuming a Stage 1 audit can be passed without 6+ months of documented operational evidence.",
   ];
 
   if (score < 30) {
