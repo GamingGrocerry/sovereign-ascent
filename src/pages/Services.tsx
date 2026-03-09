@@ -217,7 +217,7 @@ export default function Services() {
       {/* Credibility Section */}
       <section className="relative h-[450px] overflow-hidden">
         <img 
-          src={advisoryApproach} 
+          src={serviceManagedCompliance} 
           alt="Executive advisory environment representing institutional depth and measured counsel" 
           className="w-full h-full object-cover"
         />
