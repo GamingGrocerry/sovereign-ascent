@@ -138,20 +138,6 @@ export function ResultsPage({
             </div>
           </div>
 
-          {/* Roadmap */}
-          {roadmap && roadmap.length > 0 && (
-            <div className="card-elevated p-6 md:p-8 mb-8">
-              <h3 className="!text-lg mb-6">Recommended Compliance Roadmap</h3>
-              <div className="space-y-4">
-                {roadmap.map((r, i) => (
-                  <div key={i} className="border-l-2 border-accent pl-6 py-2">
-                    <h4 className="text-sm font-semibold text-foreground mb-1">{r.phase}</h4>
-                    <p className="text-sm text-muted-foreground">{r.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Recommended Actions / Fatal Flaws */}
           <div className="card-elevated p-6 md:p-8 mb-8">
