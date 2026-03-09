@@ -53,6 +53,18 @@ export default function SupplyChainHumanRights() {
           ],
         },
       ]}
+      caseStudy={{
+        sector: "EU-Exposed Consumer Goods / Global Supply Chain",
+        title: "CS3D Readiness Program Prevents €4.2M Regulatory Exposure",
+        situation: "A European consumer goods company with a 340-supplier network across Southeast Asia was facing the EU Corporate Sustainability Due Diligence Directive (CS3D) enforcement deadline. Internal audit revealed that 78% of their Tier 2 and Tier 3 suppliers had no documented labor rights monitoring. Their legal team estimated regulatory exposure of €4.2M in potential penalties plus the risk of import restrictions on two product lines representing 30% of revenue.",
+        approach: "We designed a tiered due diligence framework that prioritized the highest-risk supplier relationships by geography, labor intensity, and revenue impact. We built standardized supplier assessment protocols, implemented grievance mechanisms at 42 critical supplier sites, and created a continuous monitoring dashboard that linked supplier audit data to CS3D reporting requirements. The program was designed for internal ownership within 12 months.",
+        outcome: "The company achieved full CS3D readiness 8 weeks before the enforcement deadline. The tiered framework reduced the active monitoring burden by 60% by focusing resources on the 47 suppliers that represented 90% of actual risk. Two major retail partners cited the program as a factor in expanding purchase orders by 15%.",
+        metrics: [
+          { label: "Regulatory Exposure Mitigated", value: "€4.2M" },
+          { label: "Supplier Coverage", value: "340 Suppliers" },
+          { label: "Revenue Impact", value: "+15% Orders" },
+        ],
+      }}
       people={{
         title: "Specialists at the Intersection of Compliance and Accountability",
         paragraphs: [
