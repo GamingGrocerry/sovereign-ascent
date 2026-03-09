@@ -353,9 +353,9 @@ export default function PWSRiskHighlighter() {
           <Link to="/tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-accent mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
-          {isUnlocked && !results && <PWSInteractive onComplete={handleComplete} />}
-          {isUnlocked && results && userData && (
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); }} />
+          {!results && <PWSInteractive onComplete={handleComplete} />}
+          {results && (
             <ResultsPage
               toolName="PWS Risk Highlighter"
               score={results.score}
@@ -366,7 +366,9 @@ export default function PWSRiskHighlighter() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>

@@ -242,9 +242,9 @@ export default function ProjectHealthDiagnostic() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Diagnostic Suite
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); }} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="Project Health Forensic Diagnostic"
               estimatedTime="3–5 minutes"
@@ -253,7 +253,7 @@ export default function ProjectHealthDiagnostic() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="Project Health Forensic Diagnostic"
               score={results.score}
@@ -265,7 +265,9 @@ export default function ProjectHealthDiagnostic() {
               roadmap={results.roadmap}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>
