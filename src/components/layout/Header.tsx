@@ -42,7 +42,6 @@ const navItems = [
     href: "/industries",
     megaMenu: "industries",
   },
-  { label: "Methodology", href: "/methodology" },
   { label: "Insights", href: "/insights" },
   { label: "Tools", href: "/tools" },
   {
