@@ -108,7 +108,7 @@ Organizations that can demonstrate ESG maturity gain access to contract opportun
 
 ### Cost Avoidance
 
-Proactive ESG compliance costs a fraction of reactive remediation:
+Proactive ESG compliance costs a fraction of reactive remediation — a pattern consistent with the broader [cost of non-compliance](/insights/cost-of-non-compliance) across regulated industries:
 
 - Regulatory fines under CS3D can reach 5% of global turnover
 - Supply chain disruptions from forced labor findings can halt operations for weeks
