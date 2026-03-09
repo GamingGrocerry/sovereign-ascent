@@ -77,9 +77,9 @@ The risk of automated responses to decontextualized data is not that they are wr
 
 ### Make Judgment Calls on Incomplete Information
 
-Supply chain decisions frequently involve incomplete information. A supplier is under investigation but not yet debarred. A regulation has been proposed but not finalized. A subcontractor's financial health shows stress signals that may or may not indicate insolvency.
+Supply chain decisions frequently involve incomplete information. A supplier is under investigation but not yet [debarred](https://sam.gov/content/exclusions). A regulation has been proposed but not finalized. A subcontractor's financial health shows stress signals that may or may not indicate insolvency.
 
-AI operates on rules. Judgment calls require weighing probabilities, assessing consequences, and accepting risk — capabilities that remain firmly in the human domain.
+AI operates on rules. Judgment calls require weighing probabilities, assessing consequences, and accepting risk — capabilities that remain firmly in the human domain. This is why organizations need both [multi-tier supply chain visibility](/insights/invisible-contractor-risk) and seasoned professionals who can interpret what the data means.
 
 ## The Orchestration Framework
 
