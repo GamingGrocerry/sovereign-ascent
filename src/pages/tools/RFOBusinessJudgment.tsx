@@ -202,17 +202,17 @@ export default function RFOBusinessJudgment() {
     });
 
     const recommendedActions = [
-      "Train all procurement staff on the RFO's three-layer architecture (FAR, Practitioner Albums, FAR Companion)",
-      "Develop Business Judgment Record templates for common procurement scenarios",
-      "Implement a 'Defensible Logic' checklist for every procurement decision above $25,000",
-      "Review and update your procurement manual to reflect principle-based (not procedural) requirements",
-      "Schedule a consultation to build your RFO Transition Roadmap",
+      "Fatal Flaw: Continuing to apply prescriptive FAR procedures under a principle-based framework — auditors now expect documented rationale, not checklist compliance.",
+      "Fatal Flaw: Failing to create Business Judgment Records for procurement decisions above $25,000, leaving your decisions indefensible during protest.",
+      "Fatal Flaw: Treating the RFO transition as a 'training update' rather than a fundamental redesign of your procurement documentation architecture.",
+      "Fatal Flaw: Assuming existing procurement manuals are compliant when they reference superseded FAR Part procedures.",
+      "Fatal Flaw: Not establishing a 'Defensible Logic' review process, meaning every procurement decision is a potential audit finding.",
     ];
 
     const r = { score: correct, maxScore: total, tier, tierColor, tierDescription, findings, recommendedActions };
     setResults(r);
 
-    if (userData) {
+    if (isUnlocked && userData) {
       await supabase.from("assessment_leads").insert({
         name: userData.name, email: userData.email, company: userData.company, industry: userData.industry,
         consent: true, tool_used: "rfo-business-judgment", score: correct, tier,
