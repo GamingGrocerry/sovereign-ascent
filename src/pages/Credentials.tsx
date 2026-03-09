@@ -46,10 +46,10 @@ const authorityMetrics = [
   },
   {
     icon: TrendingUp,
-    value: "$100M+",
+    value: "$20M+",
     headline: "Total Contract Value Protected & Stabilised",
     description:
-      "Across distressed programs, audit interventions, and governance architecture projects, ElevateQCS advisory has protected or stabilised over $100 million in contract value. This isn't advisory fee volume — it's the Assets at Risk that our forensic methodology prevented from escalating to Cure Notice, termination, or regulatory sanction.",
+      "Across distressed programs, audit interventions, and governance architecture projects, ElevateQCS advisory has protected or stabilised over $20 million in contract value. This isn't advisory fee volume — it's the Assets at Risk that our forensic methodology prevented from escalating to Cure Notice, termination, or regulatory sanction.",
     context:
       "We don't measure success in billable hours. We measure it in contracts saved and margins preserved.",
   },
