@@ -268,9 +268,9 @@ export default function EUAIActClassifier() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Diagnostic Suite
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={showGate} onUnlock={handleUnlock} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="EU AI Act Risk Classifier"
               estimatedTime="4–6 minutes"
@@ -279,7 +279,7 @@ export default function EUAIActClassifier() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="EU AI Act Risk Classifier"
               score={results.score}
@@ -290,7 +290,9 @@ export default function EUAIActClassifier() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

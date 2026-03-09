@@ -250,9 +250,9 @@ export default function ISO42001Readiness() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Diagnostic Suite
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={showGate} onUnlock={handleUnlock} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="ISO 42001 Readiness Scan"
               estimatedTime="5–7 minutes"
@@ -261,7 +261,7 @@ export default function ISO42001Readiness() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="ISO 42001 Readiness Scan"
               score={results.score}
@@ -273,7 +273,9 @@ export default function ISO42001Readiness() {
               roadmap={results.roadmap}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

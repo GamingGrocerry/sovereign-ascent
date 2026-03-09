@@ -235,9 +235,9 @@ export default function ESGTraceabilityStressTest() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Diagnostic Suite
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={showGate} onUnlock={handleUnlock} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="ESG & Supply Chain Traceability Stress Test"
               estimatedTime="4–6 minutes"
@@ -246,7 +246,7 @@ export default function ESGTraceabilityStressTest() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="ESG & Supply Chain Traceability Stress Test"
               score={results.score}
@@ -257,7 +257,9 @@ export default function ESGTraceabilityStressTest() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>
