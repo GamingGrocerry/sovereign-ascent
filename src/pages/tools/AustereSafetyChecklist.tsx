@@ -272,15 +272,14 @@ export default function AustereSafetyChecklist() {
     });
 
     const recommendedActions = [
-      "Print this Gap Report and provide it to your Site Safety and Health Officer (SSHO)",
-      "Address all critical deficiencies within 72 hours of this assessment",
-      "Schedule a formal site safety inspection with your SSHO within 14 days",
-      "Update your Activity Hazard Analyses (AHAs) for all current work activities",
-      "Conduct refresher safety training for all site personnel on identified gap areas",
+      "Fatal Flaw: Treating this gap report as informational rather than requiring immediate SSHO action within 72 hours.",
+      "Fatal Flaw: Addressing safety deficiencies without updating Activity Hazard Analyses (AHAs) for all current work activities.",
+      "Fatal Flaw: Conducting refresher training on 'general safety' instead of targeting the specific gap areas identified in this assessment.",
+      "Fatal Flaw: Assuming a formal site inspection can wait — the conditions flagged here are the exact items that trigger OSHA citations and stop-work orders.",
     ];
 
     if (criticalMissed.length > 5) {
-      recommendedActions.unshift("IMMEDIATE: Consider a safety stand-down until critical deficiencies are corrected");
+      recommendedActions.unshift("CRITICAL FATAL FLAW: Operating with this many critical deficiencies has a direct correlation with recordable incidents. A safety stand-down is warranted.");
     }
 
     const r = {
