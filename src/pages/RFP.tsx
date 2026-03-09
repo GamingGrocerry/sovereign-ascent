@@ -16,7 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Link } from "react-router-dom";
-import { ArrowRight, Upload, CheckCircle, Shield, Building2, Scale, Globe, FileCheck } from "lucide-react";
+import { ArrowRight, Upload, CheckCircle, Shield, Building2, Scale, Globe, FileCheck, Lock, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import rfpHero from "@/assets/rfp-hero.jpg";
 
@@ -24,9 +24,11 @@ const industries = [
   "Defense & Aerospace",
   "Federal IT & Systems Integration",
   "Medical Devices & Life Sciences",
-  "Artificial Intelligence & Deep Tech",
+  "AI Systems & Algorithmic Governance",
   "Advanced Manufacturing",
   "Cybersecurity",
+  "Hyperscale Data Centers & Digital Infra",
+  "Renewable Energy & Battery Supply Chain",
   "Infrastructure & Engineering",
   "Climate & Energy",
   "International Development & Overseas Contracting",
@@ -40,30 +42,35 @@ const engagementTypes = [
   "Risk, Regulatory & Compliance",
   "Federal & Public Sector Advisory",
   "Supply Chain, Human Rights & Due Diligence",
-  "Quality & Operational Infrastructure",
+  "Operational Excellence & QMS Architecture",
   "Regulatory Documentation & Administrative Solutions",
   "Audit, Inspection & Certification Readiness",
   "Managed Compliance & Governance Services",
   "Digital Governance & Technology Enablement",
+  "Project Recovery & Forensic Stabilization",
+  "AI Governance & EU AI Act Readiness",
 ];
 
 const regulatoryContextOptions = [
   "ISO 9001",
   "ISO 27001",
+  "ISO 42001 (AI Management)",
   "CMMC",
   "CTIP",
-  "CS3D",
+  "CS3D / Global Value Chain Integrity",
   "FDA / Medical Device Regulation",
   "Federal Contract Compliance",
-  "EU Human Rights Due Diligence",
+  "EU AI Act Compliance",
+  "NIST AI RMF",
+  "EU Battery Passport / ESG Traceability",
   "Other",
 ];
 
 const budgetRanges = [
-  "Under $25,000",
-  "$25,000 – $75,000",
-  "$75,000 – $150,000",
-  "$150,000+",
+  "Advisory Sprints (Under $50k)",
+  "System Architecture ($50k – $150k)",
+  "Enterprise Stabilization ($150k – $500k)",
+  "Large-Scale Program Recovery ($500k+)",
   "Not Yet Determined",
 ];
 
@@ -84,6 +91,7 @@ export default function RFP() {
   const [selectedRegulatory, setSelectedRegulatory] = useState<string[]>([]);
   const [fileName, setFileName] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [burnRate, setBurnRate] = useState<string>("");
   const toggleCheckbox = (value: string, list: string[], setList: (v: string[]) => void) => {
     setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
   };
@@ -399,6 +407,26 @@ export default function RFP() {
                       </div>
                     ))}
                   </div>
+
+                  {/* Conditional: Burn Rate question for Project Recovery */}
+                  {selectedEngagements.includes("Project Recovery & Forensic Stabilization") && (
+                    <div className="space-y-2 p-4 border border-accent/30 rounded-lg bg-accent/5 animate-fade-up">
+                      <div className="flex items-center gap-2 mb-1">
+                        <AlertTriangle className="w-4 h-4 text-accent" />
+                        <Label htmlFor="burn-rate" className="text-sm font-medium text-foreground">
+                          What is the current "Burn Rate" or monthly loss associated with this project delay?
+                        </Label>
+                      </div>
+                      <Input
+                        id="burn-rate"
+                        name="burn-rate"
+                        value={burnRate}
+                        onChange={(e) => setBurnRate(e.target.value)}
+                        placeholder="e.g., $250k/month in idle labor and equipment costs"
+                        className="bg-background"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Section D */}
@@ -500,16 +528,29 @@ export default function RFP() {
                         className="sr-only"
                       />
                     </div>
+                    {/* Security Badge */}
+                    <div className="flex items-start gap-2 mt-3 p-3 rounded-md bg-secondary/30 border border-border">
+                      <Lock className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        All uploads are encrypted via AES-256 and stored in a SOC 2 compliant environment.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Confidentiality & Submit */}
                 <div className="space-y-8">
-                  <div className="card-elevated p-6">
+                  <div className="card-elevated p-6 space-y-4">
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       All information submitted will be treated confidentially and reviewed by our leadership team.
                       Submission of this form does not constitute a binding agreement.
                     </p>
+                    <div className="flex items-start gap-2 pt-2 border-t border-border">
+                      <Shield className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        <span className="font-medium text-foreground">Conflict of Interest Notice:</span> ElevateQCS maintains strict independence. We will perform a conflict check within 24 hours of receiving your RFP.
+                      </p>
+                    </div>
                   </div>
                   <div className="text-center space-y-6">
                     <Button type="submit" variant="cta" size="xl" className="min-w-[280px]" disabled={isSubmitting}>
