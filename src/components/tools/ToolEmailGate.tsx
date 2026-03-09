@@ -185,24 +185,14 @@ export function ToolEmailGate({ open, onUnlock, onClose }: ToolEmailGateProps) {
 }
 
 export function useToolAccess() {
-  const [isUnlocked, setIsUnlocked] = useState(false);
-  const [userData, setUserData] = useState<{ name: string; email: string; company: string; industry: string } | null>(null);
+  const [userData] = useState<{ name: string; email: string; company: string; industry: string }>({
+    name: "",
+    email: "",
+    company: "",
+    industry: "",
+  });
 
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
-        const data = JSON.parse(stored);
-        setIsUnlocked(true);
-        setUserData(data);
-      } catch { /* ignore */ }
-    }
-  }, []);
+  const unlock = (_data?: { name: string; email: string; company: string; industry: string }) => {};
 
-  const unlock = (data: { name: string; email: string; company: string; industry: string }) => {
-    setIsUnlocked(true);
-    setUserData(data);
-  };
-
-  return { isUnlocked, userData, unlock };
+  return { isUnlocked: true, userData, unlock };
 }
