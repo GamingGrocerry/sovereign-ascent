@@ -124,7 +124,7 @@ Organizations that conduct Contractual Friction Audits before project launch con
 
 The Contractual Friction Audit is most powerful when applied during the proposal phase — not after contract award. During proposal development:
 
-- **Identify friction points** in the government's SOW and address them in the technical proposal
+- **Identify friction points** in the government's SOW and address them in the technical proposal, using [Acquisition.gov](https://www.acquisition.gov/) as the authoritative reference for FAR clause language
 - **Propose precision language** as part of the management approach — demonstrating the kind of discipline that evaluators want to see
 - **Price accordingly**: Requirements with high friction scores carry higher execution risk and should be priced to reflect that risk
 
