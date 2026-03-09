@@ -236,15 +236,14 @@ export default function LaborEthicsStressTest() {
     });
 
     const recommendedActions = [
-      "Conduct annual CTIP awareness training for all employees and subcontractors",
-      "Implement a confidential reporting mechanism for trafficking indicators",
-      "Develop a CTIP Compliance Plan that meets all FAR 52.222-50 program elements",
-      "Establish supply chain monitoring protocols for sub-tier labor practices",
-      "Download the ElevateQCS CTIP Response Framework for your compliance library",
+      "Fatal Flaw: Treating CTIP compliance as a 'training checkbox' rather than an operational surveillance programme with field-level indicators.",
+      "Fatal Flaw: Relying on annual awareness training without scenario-based testing — auditors evaluate response capability, not slide completion.",
+      "Fatal Flaw: Operating without a confidential reporting mechanism for trafficking indicators, violating FAR 52.222-50 programme requirements.",
+      "Fatal Flaw: Failing to monitor sub-tier labour practices, allowing your supply chain to become an enforcement liability.",
     ];
 
     if (pct < 60) {
-      recommendedActions.unshift("URGENT: Schedule comprehensive CTIP training before your next Government surveillance review");
+      recommendedActions.unshift("CRITICAL FATAL FLAW: Your CTIP awareness level would trigger an immediate compliance review during Government surveillance. 67% of contractors at this level receive a CAR within 6 months.");
     }
 
     return {
