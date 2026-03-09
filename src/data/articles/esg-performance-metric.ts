@@ -19,7 +19,7 @@ For years, ESG reporting was a communications exercise. Publish a sustainability
 
 That era ended in 2026.
 
-The [EU Corporate Sustainability Due Diligence Directive](/insights/ctip-cs3d-compliance) (CS3D) transformed ESG from a reporting obligation into a legal liability. Companies operating in or selling to EU markets must now conduct human rights and environmental due diligence across their entire value chain — with civil liability for failures. In parallel, U.S. federal contractors face intensifying CTIP obligations under [FAR 52.222-50](/insights/ctip-enforcement-trends) that extend anti-trafficking compliance to every tier of the supply chain.
+The [EU Corporate Sustainability Due Diligence Directive](https://commission.europa.eu/business-economy-euro/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en) (CS3D) transformed ESG from a reporting obligation into a legal liability. Companies operating in or selling to EU markets must now conduct human rights and environmental due diligence across their entire value chain — with civil liability for failures. In parallel, U.S. federal contractors face intensifying CTIP obligations under [FAR 52.222-50](https://www.acquisition.gov/far/52.222-50) that extend anti-trafficking compliance to every tier of the supply chain.
 
 The organizations that recognized this shift early — treating ESG as an operational discipline rather than a compliance checkbox — are now winning contracts, accessing markets, and attracting investment that their competitors cannot.
 
