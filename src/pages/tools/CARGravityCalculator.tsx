@@ -189,15 +189,15 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ];
 
   const recommendedActions = [
-    "Acknowledge the finding within 24 hours with a professional, non-defensive response",
-    "Form a cross-functional response team (Quality, Program Management, Contracts)",
-    "Conduct system-level root cause analysis — not symptom-level correction",
-    "Submit a formal corrective action plan with measurable effectiveness criteria",
-    "Implement 60–90 day effectiveness verification with objective evidence collection",
+    "Fatal Flaw: Treating the finding as a localized symptom rather than a systemic failure.",
+    "Fatal Flaw: Implementing a 'band-aid' fix without conducting a formalized 5-Whys or Ishikawa root cause analysis.",
+    "Fatal Flaw: Responding to a DCMA or Prime auditor using internal jargon instead of standard acquisition terminology.",
+    "Fatal Flaw: Failing to provide objective evidence of effectiveness verification after 60 days.",
+    "Fatal Flaw: Assuming a repeat finding won't immediately escalate to a Level III CAR or Cure Notice.",
   ];
 
   if (gravityScore >= 6) {
-    recommendedActions.unshift("URGENT: Engage executive leadership and consider external advisory support immediately");
+    recommendedActions.unshift("CRITICAL FATAL FLAW: Attempting an internal-only response at this severity level without external advisory support. 80% of firms fail the follow-up audit due to 'Linguistic Mismatch' with government standards.");
   }
 
   return {
