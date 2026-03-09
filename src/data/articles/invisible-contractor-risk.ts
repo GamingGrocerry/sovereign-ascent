@@ -30,8 +30,8 @@ This is the "Invisible Contractor" risk. It is the gap between what your complia
 Three regulatory developments have made Tier-3 visibility a board-level concern:
 
 - **CMMC flow-down requirements** under [DFARS 252.204-7021](/insights/cmmc-2026-supply-chain-flowdowns) now mandate that subcontractors at every tier handling CUI achieve the appropriate certification level before controlled information flows to them
-- **EU CS3D obligations** require due diligence across the entire value chain — not just direct commercial relationships — with civil liability exposure for failures at any tier
-- **FAR 52.222-50 CTIP requirements** extend anti-trafficking compliance to every entity performing work under the contract, regardless of contractual distance from the prime
+- **EU CS3D obligations** under the [Corporate Sustainability Due Diligence Directive](https://commission.europa.eu/business-economy-euro/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en) require due diligence across the entire value chain — not just direct commercial relationships — with civil liability exposure for failures at any tier
+- **[FAR 52.222-50](https://www.acquisition.gov/far/52.222-50) CTIP requirements** extend anti-trafficking compliance to every entity performing work under the contract, regardless of contractual distance from the prime
 
 ### The "Certification Cascade" Problem
 
