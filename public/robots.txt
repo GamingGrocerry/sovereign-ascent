@@ -114,3 +114,4 @@ Allow: /
 Disallow: /admin/
 
 Sitemap: https://elevateqcs.com/sitemap.xml
+Llms-txt: https://elevateqcs.com/llms.txt
