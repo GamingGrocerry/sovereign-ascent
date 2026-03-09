@@ -35,7 +35,7 @@ Three regulatory developments have made Tier-3 visibility a board-level concern:
 
 ### The "Certification Cascade" Problem
 
-When a Tier-3 supplier loses its ISO 9001 certification or fails a CMMC assessment, the consequences do not stay at Tier-3. They cascade upward:
+When a Tier-3 supplier loses its [ISO 9001](https://www.iso.org/standard/62085.html) certification or fails a CMMC assessment, the consequences do not stay at Tier-3. They cascade upward:
 
 1. **Tier-3 failure** → Tier-2 subcontractor loses a qualified supplier
 2. **Tier-2 disruption** → Prime's supply chain continuity is compromised
