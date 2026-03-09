@@ -29,6 +29,7 @@ ElevateQCS is a specialized advisory firm delivering governance, quality managem
 ## Industries Served
 
 - [Defense & Aerospace](https://elevateqcs.com/industries/defense): CMMC, ITAR, DFARS compliance for defense primes and subcontractors.
+- [High-Growth & Scaling Companies](https://elevateqcs.com/industries/growth-stage): Compliance infrastructure for startups and scale-ups entering regulated markets.
 - [Federal IT & Professional Services](https://elevateqcs.com/industries/federal-it): Federal contract compliance, CPARS optimization, and GovCon scaling.
 - [Manufacturing](https://elevateqcs.com/industries/manufacturing): ISO 9001, AS9100, quality infrastructure for advanced manufacturing.
 - [Medical Devices & Life Sciences](https://elevateqcs.com/industries/medical-devices): FDA QSR, ISO 13485, and medical device regulatory compliance.
@@ -109,22 +110,26 @@ ElevateQCS is a specialized advisory firm delivering governance, quality managem
 - [Surge Capacity Stress Test](https://elevateqcs.com/tools/surge-capacity-stress-test): Test organizational readiness for rapid scaling demands.
 - [Virtual Spot Check](https://elevateqcs.com/tools/virtual-spot-check): Simulate a compliance spot check audit.
 - [RFO Business Judgment](https://elevateqcs.com/tools/rfo-business-judgment): Evaluate request-for-offer business judgment factors.
+- [EU AI Act Classifier](https://elevateqcs.com/tools/eu-ai-act-classifier): Classify AI systems by EU AI Act risk tier and determine compliance obligations.
+- [ISO 42001 Readiness Assessment](https://elevateqcs.com/tools/iso-42001-readiness): Evaluate organizational readiness for AI management system certification.
+- [Project Health Diagnostic](https://elevateqcs.com/tools/project-health-diagnostic): Assess distressed project risk factors and recovery priorities.
+- [ESG Traceability Stress Test](https://elevateqcs.com/tools/esg-traceability-stress-test): Test ESG data traceability and reporting integrity across supply chains.
 
 ## Resources
 
-- [GovCon Resource Library](https://elevateqcs.com/resources/govcon): Downloadable guides, templates, and frameworks for government contractors.
-- [Startup Resource Library](https://elevateqcs.com/resources/startup): Compliance resources for high-growth startups entering regulated markets.
-- [POE Resource Library](https://elevateqcs.com/resources/poe): Portfolio of Evidence templates and documentation guides.
+- [GovCon Resource Library](https://elevateqcs.com/resources/enterprise-federal): Downloadable guides, templates, and frameworks for government contractors.
+- [Startup Resource Library](https://elevateqcs.com/resources/high-growth): Compliance resources for high-growth startups entering regulated markets.
+- [POE Resource Library](https://elevateqcs.com/resources/program-execution): Portfolio of Evidence templates and documentation guides.
 
 ## Key Pages
 
 - [About](https://elevateqcs.com/about): Our mission, heritage, and approach to quality and compliance advisory.
 - [Methodology](https://elevateqcs.com/methodology): The ElevateQCS advisory methodology and engagement framework.
-- [Engagement Model](https://elevateqcs.com/engagement-model): How we partner with clients across engagement types.
+- [Engagement Model](https://elevateqcs.com/engagement): How we partner with clients across engagement types.
 - [Who We Serve](https://elevateqcs.com/who-we-serve): Target audiences and ideal client profiles.
-- [Credentials](https://elevateqcs.com/credentials): Certifications, affiliations, and professional credentials.
+- [Credentials](https://elevateqcs.com/credentials): Authority metrics — $20M+ in contract value protected, 1,000+ forensic audit interactions, and field-tested operational architectures.
 - [Governance](https://elevateqcs.com/governance): Our internal governance framework and ethical commitments.
-- [FAQ](https://elevateqcs.com/faq): Frequently asked questions about our services and approach.
+- [FAQ](https://elevateqcs.com/faq): Expert positions on high-stakes recovery, AI governance, and institutional advisory.
 - [Acronyms & Glossary](https://elevateqcs.com/acronyms): Industry acronyms and terminology reference.
 - [Contact](https://elevateqcs.com/contact): Get in touch for consultations and engagement inquiries.
 
@@ -133,3 +138,4 @@ ElevateQCS is a specialized advisory firm delivering governance, quality managem
 - [Capabilities Statement](https://elevateqcs.com/capabilities): Formal capabilities overview for contract and procurement purposes.
 - [Careers](https://elevateqcs.com/careers): Current opportunities at ElevateQCS.
 - [RFP Intake](https://elevateqcs.com/rfp): Submit a request for proposal or engagement inquiry.
+- [Choosing the Right Service](https://elevateqcs.com/choosing-the-right-service): Guided service selection for new clients.
