@@ -69,6 +69,18 @@ const serviceGrid = [
     href: "/services/digital-governance",
     image: methodologyCompass,
   },
+  {
+    title: "Project Recovery & Distressed Asset Advisory",
+    description: "We deploy rapid-response teams into distressed programs — performing forensic subcontractor audits, resetting documentation and QA flows, and restoring operational control within 30 days.",
+    href: "/services/project-recovery",
+    image: heroArchitecture,
+  },
+  {
+    title: "AI Governance & Algorithmic Quality",
+    description: "We apply quality management discipline to AI systems — ensuring data pipelines, model outputs, and algorithmic decisions are audit-ready and compliant with the EU AI Act and emerging standards.",
+    href: "/services/ai-governance",
+    image: servicesFramework,
+  },
 ];
 
 
