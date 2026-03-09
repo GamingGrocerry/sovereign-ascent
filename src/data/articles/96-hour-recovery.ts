@@ -142,7 +142,7 @@ Not every project can be recovered. Recognize the signs that formal action is un
 - Multiple cure notices have been issued without demonstrated improvement
 - The performance gap is contractual, not operational — the organization cannot deliver what the SOW requires
 
-In these cases, the objective shifts from recovery to damage containment: protecting past performance ratings, preserving the relationship for future opportunities, and ensuring an orderly transition if the contract is terminated.
+In these cases, the objective shifts from recovery to damage containment: protecting past performance ratings, preserving the relationship for future opportunities, and ensuring an orderly transition if the contract is terminated. Organizations with [multi-tier supply chain visibility](/insights/invisible-contractor-risk) are better positioned to prevent these cascading failures in the first place.
 
 ## Frequently Asked Questions
 
