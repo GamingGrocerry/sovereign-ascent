@@ -56,7 +56,7 @@ The communication audit almost always reveals that the client's frustration is n
 
 With the communication picture clear, conduct a line-by-line SOW alignment review:
 
-- **Map every active work stream** to a specific SOW paragraph, CLIN, or deliverable requirement
+- **Map every active work stream** to a specific [SOW paragraph, CLIN](/insights/contractual-friction-audit), or deliverable requirement
 - **Identify unauthorized scope**: Work being performed that has no SOW basis (this is where cost overruns hide)
 - **Identify unperformed scope**: SOW requirements that have not been addressed (this is where client frustration originates)
 - **Document every deviation** with a clear assessment: deliberate change, scope creep, or oversight?
