@@ -158,29 +158,41 @@ export default function GovConReadiness() {
   const { isUnlocked, userData, unlock } = useToolAccess();
   const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<{ score: number; findings: { area: string; status: string; recommendation: string }[] } | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
   const [started, setStarted] = useState(false);
 
   const handleStart = () => {
-    if (!isUnlocked) {
-      setShowGate(true);
-    } else {
-      setStarted(true);
-    }
-  };
-
-  const handleUnlock = (data: { name: string; email: string; company: string; industry: string }) => {
-    unlock(data);
-    setShowGate(false);
     setStarted(true);
   };
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const result = calculateScore(answers);
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data);
+    setShowGate(false);
+    
+    if (results && answers) {
+      const tierInfo = getTier(results.score);
+      await supabase.from("assessment_leads").insert({
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        industry: data.industry,
+        consent: true,
+        tool_used: "govcon-readiness",
+        score: results.score,
+        tier: tierInfo.tier,
+        date_completed: new Date().toISOString(),
+        answers_json: answers,
+      });
+    }
+  };
+
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const result = calculateScore(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(result);
 
-    // Save to database
     const tierInfo = getTier(result.score);
-    if (userData) {
+    if (isUnlocked && userData) {
       await supabase.from("assessment_leads").insert({
         name: userData.name,
         email: userData.email,
@@ -191,7 +203,7 @@ export default function GovConReadiness() {
         score: result.score,
         tier: tierInfo.tier,
         date_completed: new Date().toISOString(),
-        answers_json: answers,
+        answers_json: submittedAnswers,
       });
     }
   };
