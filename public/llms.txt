@@ -23,6 +23,8 @@ ElevateQCS is a specialized advisory firm delivering governance, quality managem
 - [Managed Compliance Programs](https://elevateqcs.com/services/managed-compliance): Ongoing compliance management, fractional quality leadership, and continuous improvement programs.
 - [Digital Governance & Systems](https://elevateqcs.com/services/digital-governance): Digital QMS architecture, document control systems, and compliance technology integration.
 - [Regulatory Documentation](https://elevateqcs.com/services/regulatory-documentation): SOPs, work instructions, PWS analysis, and regulatory submission documentation.
+- [Project Recovery & Distressed Asset Advisory](https://elevateqcs.com/services/project-recovery): Rapid-response strike teams for distressed programs — forensic subcontractor audits, QA resets, and operational stabilization within 30 days.
+- [AI Governance & Algorithmic Quality](https://elevateqcs.com/services/ai-governance): Quality management discipline applied to AI systems — EU AI Act compliance, algorithmic audit readiness, and model governance frameworks.
 
 ## Industries Served
 
