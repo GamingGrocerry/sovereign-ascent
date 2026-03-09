@@ -171,11 +171,10 @@ function calculateResults(answers: Record<string, string | string[]>) {
   }
 
   const recommendedActions = [
-    "Map your value chain to Tier 3+ with documented supplier provenance",
-    "Implement forensic labour audit programme replacing self-attestation with verified evidence",
-    "Establish product-level carbon footprint tracking with supplier-verified data",
-    "Transition supplier documentation to third-party verified certificates and audit reports",
-    "Build a risk-based due diligence process aligned with CS3D Articles 7–8",
+    "Fatal Flaw: Relying on supplier self-attestation instead of forensic labour audit evidence — self-attestation has a 73% failure rate under CS3D enforcement.",
+    "Fatal Flaw: Mapping your value chain only to Tier 1, leaving Tier 3+ suppliers as an unmonitored enforcement liability.",
+    "Fatal Flaw: Using estimated carbon data instead of product-level, supplier-verified footprint tracking.",
+    "Fatal Flaw: Treating ESG compliance as a reporting exercise rather than an operational due diligence process aligned with CS3D Articles 7–8.",
   ];
 
   if (score < 30) {
