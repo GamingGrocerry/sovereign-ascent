@@ -249,6 +249,53 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Entry Services */}
+      <section className="py-20 bg-secondary/20">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
+              Start Here
+            </p>
+            <h2 className="mb-4">Most Clients Begin With One of These</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Whether you need to pass an upcoming audit or untangle contractual documentation, these high-impact services deliver measurable ROI in weeks — not months.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Link to="/services/audit-certification-readiness" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Audit Readiness</h3>
+              <p className="text-muted-foreground text-sm mb-4">Stress-test your compliance posture before the auditor arrives.</p>
+              <span className="inline-flex items-center text-accent text-sm font-medium">
+                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+            <Link to="/services/regulatory-documentation" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
+                <Layers className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">SOW & Documentation</h3>
+              <p className="text-muted-foreground text-sm mb-4">Forensic SOW scrubbing and documentation architecture that prevents contractual exposure.</p>
+              <span className="inline-flex items-center text-accent text-sm font-medium">
+                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+            <Link to="/services/project-recovery" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
+                <Activity className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Project Recovery</h3>
+              <p className="text-muted-foreground text-sm mb-4">96-hour strike team deployment for distressed programs.</p>
+              <span className="inline-flex items-center text-accent text-sm font-medium">
+                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Diagnostic Tools Section */}
       <section className="py-20 bg-secondary/30 section-luxury">
         <div className="container-wide">
@@ -521,52 +568,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Entry Services */}
-      <section className="py-20 bg-secondary/20">
-        <div className="container-wide">
-          <div className="text-center mb-12">
-            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Start Here
-            </p>
-            <h2 className="mb-4">Most Clients Begin With One of These</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Whether you need to pass an upcoming audit or untangle contractual documentation, these high-impact services deliver measurable ROI in weeks — not months.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Link to="/services/audit-certification-readiness" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Audit Readiness</h3>
-              <p className="text-muted-foreground text-sm mb-4">Stress-test your compliance posture before the auditor arrives.</p>
-              <span className="inline-flex items-center text-accent text-sm font-medium">
-                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-            <Link to="/services/regulatory-documentation" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
-                <Layers className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">SOW & Documentation</h3>
-              <p className="text-muted-foreground text-sm mb-4">Forensic SOW scrubbing and documentation architecture that prevents contractual exposure.</p>
-              <span className="inline-flex items-center text-accent text-sm font-medium">
-                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-            <Link to="/services/project-recovery" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
-                <Activity className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Project Recovery</h3>
-              <p className="text-muted-foreground text-sm mb-4">96-hour strike team deployment for distressed programs.</p>
-              <span className="inline-flex items-center text-accent text-sm font-medium">
-                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="py-28 lg:py-36 bg-secondary/30">
