@@ -5,7 +5,6 @@ const footerLinks = {
   services: [
     { label: "Our Services", href: "/services" },
     { label: "Capabilities", href: "/capabilities" },
-    { label: "Methodology", href: "/methodology" },
     { label: "Industries", href: "/industries/defense" },
     { label: "Resources", href: "/resources" },
     { label: "Request for Proposal", href: "/rfp" },
