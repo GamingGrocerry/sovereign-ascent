@@ -27,16 +27,28 @@ import {
   Search,
   Briefcase,
   BarChart3,
+  Wrench,
+  Brain,
+  Zap,
+  Server,
+  Battery,
+  Rocket,
+  ShieldCheck,
+  Globe,
+  GraduationCap,
+  ChevronRight,
 } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import { generateCapabilitiesPdf } from "@/components/capabilities/generateCapabilitiesPdf";
+
+/* ─── DATA ─── */
 
 const advisoryDomains = [
   {
     icon: Shield,
     title: "Governance & Quality Architecture",
     description:
-      "ElevateQCS designs enterprise-grade governance structures and Quality Management Systems (QMS) that anchor internal operations and enable sustainable compliance.",
+      "Enterprise-grade governance structures and Quality Management Systems (QMS) that anchor internal operations and enable sustainable compliance.",
     items: [
       "ISO 9001 Quality Management Systems",
       "AS9100 Aerospace Quality Systems",
@@ -75,14 +87,74 @@ const advisoryDomains = [
     footer:
       "Our advisory includes regulatory documentation architecture, internal compliance workflows, and operational controls designed to produce verifiable evidence under scrutiny.",
   },
+  {
+    icon: Wrench,
+    title: "Infrastructure Recovery & Forensic Stabilization",
+    description:
+      "When high-value programs stall or distress, we deploy forensic stabilization teams that restore operational control within 96 hours.",
+    items: [
+      "PWS/SOW forensic scrub and contractual friction analysis",
+      "Chain-of-command restoration for distressed programs",
+      "Sub-tier alignment and margin leakage prevention",
+      "Level III CAR and Cure Notice mitigation",
+    ],
+    footer:
+      "From $100M+ data center builds to LOGCAP sustainment operations, we rescue assets from sub-tier chaos and restore delivery discipline.",
+    tags: { commercial: "Rescuing distressed infrastructure assets from margin leakage and sub-tier misalignment.", govcon: "Mitigating Level III CARs and Cure Notices through rapid 96-hour stabilization." },
+  },
+  {
+    icon: Brain,
+    title: "AI Governance & Algorithmic Trust",
+    description:
+      "As AI systems move from experimentation to regulated deployment, organizations need governance architectures that satisfy the EU AI Act, NIST AI RMF, and ISO/IEC 42001.",
+    items: [
+      "EU AI Act compliance and high-risk classification mapping",
+      "ISO/IEC 42001 AI Management System design",
+      "Data lineage tracking and algorithmic bias auditing",
+      "Human-in-the-loop oversight architecture",
+    ],
+    footer:
+      "We build the audit trail required for both commercial AI product launches and federal agentic AI modernization — preventing product bans and €35M penalties.",
+    tags: { commercial: "Navigating the 2026 EU AI Act and ISO/IEC 42001 to prevent product bans and €35M fines.", govcon: "Building the audit trail required for federal agentic AI modernization programs." },
+  },
 ];
 
 const industries = [
+  {
+    icon: Server,
+    title: "AI Infrastructure (Hyperscale)",
+    description:
+      "Governance for the 100 GW of data centers being built by 2030 — addressing power compliance, cooling infrastructure ethics, and AI model deployment oversight.",
+  },
   {
     icon: Shield,
     title: "Defense & Aerospace",
     description:
       "FAR, DFARS, CMMC, ITAR, AS9100 governance structures for organizations participating in federal and defense supply chains.",
+  },
+  {
+    icon: Battery,
+    title: "Renewable Energy Supply Chain",
+    description:
+      "EU Battery Passport compliance, CS3D ethical labor due diligence, and supply chain governance for clean energy infrastructure.",
+  },
+  {
+    icon: Rocket,
+    title: "Digital Defense Tech",
+    description:
+      "Commercial startups entering the DIU (Defense Innovation Unit) ecosystem — bridging commercial velocity with defense-grade compliance.",
+  },
+  {
+    icon: Factory,
+    title: "Advanced Manufacturing",
+    description:
+      "Scalable ISO 9001 systems and operational governance for manufacturers entering international regulated supply chains.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Medical Devices & Life Sciences",
+    description:
+      "Quality and regulatory alignment with FDA, EU MDR, and ISO 13485 requirements for medical device manufacturers and suppliers.",
   },
   {
     icon: Building2,
@@ -91,28 +163,31 @@ const industries = [
       "Compliance advisory for contractors supporting federal agencies, including cybersecurity frameworks, procurement governance, and regulatory alignment.",
   },
   {
-    icon: Factory,
-    title: "Advanced Manufacturing",
-    description:
-      "Implementation of scalable ISO 9001 systems and operational governance for manufacturers entering international regulated supply chains.",
-  },
-  {
-    icon: Stethoscope,
-    title: "Medical Devices",
-    description:
-      "Quality and regulatory alignment with FDA, EU MDR, and ISO 13485 requirements for medical device manufacturers and suppliers.",
-  },
-  {
     icon: Lock,
     title: "Cybersecurity & Technology",
     description:
-      "Governance and compliance infrastructure for cybersecurity firms, software providers, and emerging technology companies operating in regulated markets.",
+      "Governance infrastructure for cybersecurity firms, software providers, and technology companies operating in regulated markets.",
+  },
+];
+
+const differentiators = [
+  {
+    icon: Brain,
+    title: "Agentic Oversight",
+    description:
+      "We don't just audit humans; we audit the governance of your AI agents. As autonomous systems proliferate, we design the oversight architectures that ensure algorithmic accountability.",
   },
   {
-    icon: Leaf,
-    title: "Energy & Climate Infrastructure",
+    icon: Globe,
+    title: "Remote-First Security",
     description:
-      "Governance systems supporting ESG oversight, environmental regulatory compliance, and operational safety requirements.",
+      "Leveraging GCC High and ISO 27001 compliant workflows for global, secure delivery. Our remote-by-design model eliminates geographic constraints without compromising data sovereignty.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Capability Transfer",
+    description:
+      "We don't create dependency. Every engagement concludes with an Internal Governance Manual and a trained team — ensuring your organization owns its compliance posture permanently.",
   },
 ];
 
@@ -133,7 +208,7 @@ const approachItems = [
     icon: Handshake,
     title: "Vendor-Neutral Advisory",
     description:
-      "ElevateQCS does not certify, accredit, or authorize compliance. We design the internal governance architecture that enables organizations to successfully pursue certification through recognized bodies. This independence ensures our advisory remains objective, technically grounded, and aligned with long-term operational stability.",
+      "ElevateQCS does not certify, accredit, or authorize compliance. We design the internal governance architecture that enables organizations to successfully pursue certification through recognized bodies.",
   },
 ];
 
@@ -164,12 +239,50 @@ const engagementModels = [
   },
 ];
 
+const coreCompetencies = [
+  "PWS/SOW Forensic Analysis",
+  "LOGCAP V/VI Mobilization & Recovery",
+  "EU AI Act Compliance & Governance",
+  "Sub-tier Operational Sovereignty",
+  "ISO 13485 & 9001 Alignment",
+  "CMMC & NIST 800-171 Readiness",
+  "CS3D Ethical Labor Due Diligence",
+  "Data Lineage & Algorithmic Auditing",
+];
+
+const institutionalLogicSteps = [
+  { label: "Defense-Grade Rigor", detail: "Proven under LOGCAP, CMMC, and zero-failure audit environments.", side: "govcon" },
+  { label: "Transferable Methodology", detail: "The same forensic discipline applies to distressed data centers, AI governance, and supply chain ethics.", side: "bridge" },
+  { label: "Commercial Velocity", detail: "Adapted for the speed, ROI expectations, and board-level reporting commercial leaders demand.", side: "commercial" },
+];
+
+const sectorContent = {
+  federal: {
+    headline: "Federal Prime / Sub Capabilities",
+    items: [
+      { title: "CMMC Level 2–3 Readiness", desc: "Full NIST 800-171 control mapping, SSP development, and POA&M remediation." },
+      { title: "FAR/DFARS Compliance Architecture", desc: "Flowdown analysis, contractual friction audits, and clause-level risk assessment." },
+      { title: "CAR & Cure Notice Recovery", desc: "96-hour stabilization for programs facing Level III CARs or termination risk." },
+      { title: "LOGCAP Mobilization Support", desc: "Governance and quality infrastructure for austere-environment sustainment operations." },
+    ],
+  },
+  commercial: {
+    headline: "Commercial / Tech Leader Capabilities",
+    items: [
+      { title: "EU AI Act & ISO 42001", desc: "High-risk classification mapping, compliance gap analysis, and governance system design." },
+      { title: "Data Center Recovery", desc: "Forensic stabilization of distressed $100M+ infrastructure builds — restoring delivery discipline." },
+      { title: "ESG & Supply Chain Integrity", desc: "CS3D readiness, Battery Passport compliance, and ethical labor due diligence programs." },
+      { title: "Investor-Ready Operations", desc: "Governance maturity frameworks that command premium valuations during due diligence." },
+    ],
+  },
+};
+
 const schemaJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "ElevateQCS",
   description:
-    "Compliance advisory firm specializing in governance systems, ISO frameworks, federal contracting compliance, and supply chain regulatory oversight.",
+    "Compliance advisory firm specializing in governance systems, infrastructure recovery, AI governance, ISO frameworks, federal contracting compliance, and supply chain regulatory oversight.",
   areaServed: "Global",
   serviceType: [
     "ISO 9001 Consulting",
@@ -177,6 +290,9 @@ const schemaJsonLd = {
     "Government Contract Compliance",
     "Supply Chain Compliance",
     "Regulatory Governance Systems",
+    "AI Governance Advisory",
+    "Infrastructure Recovery",
+    "EU AI Act Compliance",
   ],
   url: "https://elevateqcs.com",
   contactPoint: {
@@ -195,6 +311,7 @@ export default function Capabilities() {
   });
   const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [activeSector, setActiveSector] = useState<"federal" | "commercial">("federal");
   const downloadRef = useRef<HTMLDivElement>(null);
 
   const scrollToDownload = () => {
@@ -219,7 +336,6 @@ export default function Capabilities() {
         type: "capabilities-statement",
       });
 
-      // Generate and download the PDF
       generateCapabilitiesPdf(formData);
 
       toast.success("Your capabilities statement is downloading.");
@@ -232,11 +348,13 @@ export default function Capabilities() {
     }
   };
 
+  const currentSector = sectorContent[activeSector];
+
   return (
     <Layout>
       <SEOHead
-        title="Compliance Advisory & Quality Management Systems | ElevateQCS Capabilities"
-        description="ElevateQCS designs governance infrastructure and compliance systems for organizations operating in highly regulated industries including defense, advanced manufacturing, and federal contracting. ISO, CMMC, FAR, DFARS advisory."
+        title="Sovereign Quality for Distressed Infrastructure & Regulated AI | ElevateQCS"
+        description="ElevateQCS architects governance infrastructure for distressed infrastructure recovery, regulated AI governance, and federal compliance. ISO, CMMC, EU AI Act, FAR/DFARS advisory."
         url="https://elevateqcs.com/capabilities"
         keywords={[
           "compliance advisory firm",
@@ -245,7 +363,10 @@ export default function Capabilities() {
           "CMMC advisory",
           "FAR DFARS compliance consulting",
           "supply chain compliance advisory",
-          "regulatory governance consulting",
+          "EU AI Act governance",
+          "infrastructure recovery advisory",
+          "AI governance consulting",
+          "distressed project recovery",
         ]}
         jsonLd={schemaJsonLd}
       />
@@ -263,29 +384,22 @@ export default function Capabilities() {
               Capabilities Statement
             </p>
             <h1 className="text-primary-foreground mb-8 animate-fade-up-delay-1">
-              Architecting Institutional Resilience in Highly Regulated Markets
+              Sovereign Quality for Distressed Infrastructure and Regulated AI
             </h1>
             <div className="space-y-5 animate-fade-up-delay-2">
               <p className="text-primary-foreground/80 text-lg leading-relaxed">
-                ElevateQCS is a specialized compliance and governance advisory
-                firm that helps organizations operating in regulated environments
-                design the internal systems required to meet global regulatory
-                expectations.
+                ElevateQCS architects the governance infrastructure that stabilizes 
+                distressed programs, governs high-risk AI systems, and fortifies 
+                organizations operating where failure carries institutional consequence.
               </p>
               <p className="text-primary-foreground/70 leading-relaxed">
-                We architect governance frameworks, quality management systems,
-                and compliance infrastructures that protect contract value,
-                strengthen internal controls, and align operational workflows
-                with international standards.
-              </p>
-              <p className="text-primary-foreground/70 leading-relaxed">
-                Organizations operating in sectors such as defense, advanced
-                manufacturing, medical technology, and federal contracting rely
-                on structured governance to maintain operational stability and
-                regulatory credibility.
+                From the forensic recovery of stalled $100M+ infrastructure builds to 
+                the governance of agentic AI under the EU AI Act, we design the frameworks 
+                that ensure institutional survival — bridging the zero-failure rigor of 
+                defense-scale operations with the velocity demands of commercial markets.
               </p>
               <p className="text-primary-foreground/60 italic">
-                Our role is to design those systems.
+                We don't just maintain systems; we stabilize them.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-10 animate-fade-up-delay-3">
@@ -313,7 +427,72 @@ export default function Capabilities() {
         </div>
       </section>
 
-      {/* ─── STRATEGIC ADVISORY DOMAINS ─── */}
+      {/* ─── SECTOR SELECTOR (Interactive Digital Capability Statement) ─── */}
+      <section className="py-20 lg:py-28 bg-secondary/50">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
+              Tailored to Your Sector
+            </p>
+            <h2 className="mb-4">Select Your Operating Environment</h2>
+            <p className="text-muted-foreground">
+              Our advisory is structured for two distinct operating realities. 
+              Select your sector to see relevant capabilities.
+            </p>
+          </div>
+
+          {/* Toggle */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex bg-card border border-border rounded-sm overflow-hidden">
+              <button
+                onClick={() => setActiveSector("federal")}
+                className={`px-6 py-3 text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                  activeSector === "federal"
+                    ? "bg-accent text-accent-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                }`}
+              >
+                <Shield className="w-4 h-4" />
+                I am a Federal Prime / Sub
+              </button>
+              <button
+                onClick={() => setActiveSector("commercial")}
+                className={`px-6 py-3 text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                  activeSector === "commercial"
+                    ? "bg-accent text-accent-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                }`}
+              >
+                <Cpu className="w-4 h-4" />
+                I am a Commercial / Tech Leader
+              </button>
+            </div>
+          </div>
+
+          {/* Sector Content */}
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-xl font-semibold mb-8 text-center">{currentSector.headline}</h3>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {currentSector.items.map((item) => (
+                <div key={item.title} className="card-elevated p-6">
+                  <h4 className="text-base font-semibold mb-2">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Link to={activeSector === "federal" ? "/contact?track=federal" : "/contact?track=commercial"}>
+                  {activeSector === "federal" ? "Request an Audit-Readiness Stress Test" : "Request a Project Friction Assessment"}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── STRATEGIC ADVISORY DOMAINS (5 Pillars) ─── */}
       <section className="section-luxury py-24 lg:py-32">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
@@ -321,8 +500,7 @@ export default function Capabilities() {
               Strategic Advisory Domains
             </p>
             <h2>
-              Where we build the structural foundations of compliant
-              organizations
+              Five pillars of institutional resilience
             </h2>
             <div className="section-divider mt-6" />
           </div>
@@ -339,9 +517,20 @@ export default function Capabilities() {
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl mb-4">{domain.title}</h3>
                     <p className="mb-5">{domain.description}</p>
+                    {domain.tags && (
+                      <div className="grid sm:grid-cols-2 gap-3 mb-5">
+                        <div className="bg-secondary/60 border border-border rounded-sm p-3">
+                          <p className="text-xs font-medium uppercase tracking-wider text-accent mb-1">Commercial</p>
+                          <p className="text-sm text-muted-foreground">{domain.tags.commercial}</p>
+                        </div>
+                        <div className="bg-secondary/60 border border-border rounded-sm p-3">
+                          <p className="text-xs font-medium uppercase tracking-wider text-accent mb-1">GovCon</p>
+                          <p className="text-sm text-muted-foreground">{domain.tags.govcon}</p>
+                        </div>
+                      </div>
+                    )}
                     <p className="text-foreground font-medium text-sm mb-3">
-                      Our advisory supports organizations implementing or
-                      strengthening frameworks aligned with:
+                      Key competencies:
                     </p>
                     <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 mb-5">
                       {domain.items.map((item) => (
@@ -367,7 +556,71 @@ export default function Capabilities() {
         </div>
       </section>
 
-      {/* ─── INDUSTRIES ─── */}
+      {/* ─── INSTITUTIONAL LOGIC DIAGRAM ─── */}
+      <section className="py-20 lg:py-28 bg-secondary/50">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
+              The Defense-Commercial Nexus
+            </p>
+            <h2 className="mb-4">Defense-Grade Rigor. Commercial Velocity.</h2>
+            <p className="text-muted-foreground">
+              Our defense background is not red tape — it's a transferable asset. 
+              The same forensic discipline that survives DCMA scrutiny stabilizes 
+              distressed commercial infrastructure.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-0 items-stretch">
+              {institutionalLogicSteps.map((step, index) => (
+                <div key={step.label} className="relative flex flex-col items-center text-center">
+                  <div className={`w-full p-8 rounded-sm border ${
+                    step.side === "bridge" 
+                      ? "bg-accent/10 border-accent/30" 
+                      : "card-elevated"
+                  }`}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                      step.side === "govcon" ? "bg-primary text-primary-foreground" :
+                      step.side === "bridge" ? "bg-accent text-accent-foreground" :
+                      "bg-primary text-primary-foreground"
+                    }`}>
+                      <span className="text-sm font-bold">{index + 1}</span>
+                    </div>
+                    <h4 className="text-base font-semibold mb-2">{step.label}</h4>
+                    <p className="text-sm text-muted-foreground">{step.detail}</p>
+                  </div>
+                  {index < institutionalLogicSteps.length - 1 && (
+                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10">
+                      <ChevronRight className="w-5 h-5 text-accent" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CORE COMPETENCIES (AI Entity Extraction) ─── */}
+      <section className="py-16 bg-background border-y border-border">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <p className="text-accent font-medium tracking-widest uppercase text-xs mb-3">
+              Core Competencies
+            </p>
+            <h3 className="text-lg font-semibold">Structured for Regulatory Precision</h3>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+            {coreCompetencies.map((comp) => (
+              <span key={comp} className="px-4 py-2 bg-secondary/60 border border-border rounded-sm text-sm text-foreground">
+                {comp}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── INDUSTRIES (Modernized) ─── */}
       <section className="py-24 lg:py-32 bg-secondary/50">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
@@ -375,23 +628,46 @@ export default function Capabilities() {
               Industries We Support
             </p>
             <h2>
-              Specialized expertise for sectors where operational failure carries
-              regulatory consequences
+              Specialized expertise for hyper-growth sectors and regulated environments
             </h2>
             <div className="section-divider mt-6" />
             <p className="mt-6">
-              ElevateQCS supports organizations operating in highly regulated and
-              mission-critical industries.
+              ElevateQCS supports organizations operating in mission-critical industries 
+              where governance failures carry financial, legal, or operational consequence.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((ind) => (
-              <div key={ind.title} className="card-elevated p-8">
-                <div className="w-11 h-11 rounded-sm bg-accent/10 flex items-center justify-center mb-5">
+              <div key={ind.title} className="card-elevated p-6">
+                <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center mb-4">
                   <ind.icon className="h-5 w-5 text-accent" />
                 </div>
-                <h4 className="text-lg mb-3">{ind.title}</h4>
-                <p className="text-sm">{ind.description}</p>
+                <h4 className="text-base font-semibold mb-2">{ind.title}</h4>
+                <p className="text-sm text-muted-foreground">{ind.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 2026 DIFFERENTIATORS ─── */}
+      <section className="section-luxury py-24 lg:py-32">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-16">
+            <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
+              The 2026 Edge
+            </p>
+            <h2>What sets us apart in an evolving regulatory landscape</h2>
+            <div className="section-divider mt-6" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {differentiators.map((item) => (
+              <div key={item.title} className="card-elevated p-8">
+                <div className="w-11 h-11 rounded-sm bg-accent/10 flex items-center justify-center mb-5">
+                  <item.icon className="h-5 w-5 text-accent" />
+                </div>
+                <h4 className="text-lg mb-3">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>
@@ -399,7 +675,7 @@ export default function Capabilities() {
       </section>
 
       {/* ─── APPROACH ─── */}
-      <section className="section-luxury py-24 lg:py-32">
+      <section className="py-24 lg:py-32 bg-secondary/50">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
@@ -415,7 +691,7 @@ export default function Capabilities() {
                   <item.icon className="h-5 w-5 text-accent" />
                 </div>
                 <h4 className="text-lg mb-3">{item.title}</h4>
-                <p className="text-sm">{item.description}</p>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>
@@ -423,7 +699,7 @@ export default function Capabilities() {
       </section>
 
       {/* ─── ENGAGEMENT MODELS ─── */}
-      <section className="py-24 lg:py-32 bg-secondary/50">
+      <section className="section-luxury py-24 lg:py-32">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
@@ -446,7 +722,7 @@ export default function Capabilities() {
                   <model.icon className="h-5 w-5 text-accent" />
                 </div>
                 <h4 className="text-lg mb-3">{model.title}</h4>
-                <p className="text-sm">{model.description}</p>
+                <p className="text-sm text-muted-foreground">{model.description}</p>
               </div>
             ))}
           </div>
@@ -456,7 +732,7 @@ export default function Capabilities() {
       {/* ─── DOWNLOAD / LEAD CAPTURE ─── */}
       <section
         ref={downloadRef}
-        className="py-24 lg:py-32 section-luxury"
+        className="py-24 lg:py-32 bg-secondary/50"
       >
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -535,7 +811,7 @@ export default function Capabilities() {
                     setFormData({ ...formData, industry: e.target.value })
                   }
                   maxLength={100}
-                  placeholder="e.g., Defense, Manufacturing"
+                  placeholder="e.g., Defense, AI Infrastructure"
                 />
               </div>
               <div className="flex items-start gap-3 pt-2">
