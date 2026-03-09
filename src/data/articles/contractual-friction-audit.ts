@@ -91,7 +91,7 @@ For each red and yellow zone requirement, develop precision language that elimin
 
 **Before**: "The contractor shall maintain quality records."
 
-**After**: "The contractor shall maintain quality records in accordance with ISO 9001:2015 Section 7.5 (or its 2026 successor), including but not limited to: inspection reports, nonconformance logs, corrective action records, and calibration certificates. Records shall be maintained in electronic format, indexed by contract CLIN, and available for government review within 24 hours of request."
+**After**: "The contractor shall maintain quality records in accordance with [ISO 9001:2015](https://www.iso.org/standard/62085.html) Section 7.5 (or its 2026 successor), including but not limited to: inspection reports, nonconformance logs, corrective action records, and calibration certificates. Records shall be maintained in electronic format, indexed by contract CLIN, and available for government review within 24 hours of request."
 
 The precision version takes longer to write. It takes far less time to execute — because no one needs to ask what it means.
 
@@ -118,13 +118,13 @@ Organizations that conduct Contractual Friction Audits before project launch con
 
 - **Improved client relationships**: Precision documentation reduces adversarial interactions
 - **Better cost estimation**: Clear requirements enable accurate pricing — reducing the margin erosion from [underpriced ambiguity](/insights/value-over-price)
-- **Stronger past performance**: Projects that execute on time generate positive CPARS evaluations — the currency of future contract wins
+- **Stronger past performance**: Projects that execute on time generate positive [CPARS](https://www.cpars.gov/) evaluations — the currency of future contract wins
 
 ## Integration with Proposal Development
 
 The Contractual Friction Audit is most powerful when applied during the proposal phase — not after contract award. During proposal development:
 
-- **Identify friction points** in the government's SOW and address them in the technical proposal
+- **Identify friction points** in the government's SOW and address them in the technical proposal, using [Acquisition.gov](https://www.acquisition.gov/) as the authoritative reference for FAR clause language
 - **Propose precision language** as part of the management approach — demonstrating the kind of discipline that evaluators want to see
 - **Price accordingly**: Requirements with high friction scores carry higher execution risk and should be priced to reflect that risk
 
@@ -150,7 +150,7 @@ Clear requirements enable accurate pricing. Ambiguous requirements force estimat
 
 ---
 
-*Every project delay that originates in a vague requirement is a delay that was avoidable. The Contractual Friction Audit is the discipline that converts documentation ambiguity into execution clarity — and execution clarity into competitive advantage.*
+*Every project delay that originates in a vague requirement is a delay that was avoidable. The Contractual Friction Audit is the discipline that converts documentation ambiguity into execution clarity — and execution clarity into competitive advantage. When precision fails and a project hits the wall, the [96-hour recovery framework](/insights/96-hour-recovery) becomes the last line of defense.*
 
 For Contractual Friction Audit advisory, contact ElevateQCS at [info@elevateqcs.com](mailto:info@elevateqcs.com).
 `,

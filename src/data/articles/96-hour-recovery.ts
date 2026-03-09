@@ -56,7 +56,7 @@ The communication audit almost always reveals that the client's frustration is n
 
 With the communication picture clear, conduct a line-by-line SOW alignment review:
 
-- **Map every active work stream** to a specific SOW paragraph, CLIN, or deliverable requirement
+- **Map every active work stream** to a specific [SOW paragraph, CLIN](/insights/contractual-friction-audit), or deliverable requirement
 - **Identify unauthorized scope**: Work being performed that has no SOW basis (this is where cost overruns hide)
 - **Identify unperformed scope**: SOW requirements that have not been addressed (this is where client frustration originates)
 - **Document every deviation** with a clear assessment: deliberate change, scope creep, or oversight?
@@ -131,7 +131,7 @@ The root cause is almost never technical. It is structural — the way quality, 
 
 - **NCR Recurrence Rate**: Are the same findings appearing after corrective action?
 - **Schedule Variance**: Is the project returning to its planned timeline?
-- **Client Confidence Score**: Subjective assessment from the Contracting Officer's Representative
+- **Client Confidence Score**: Subjective assessment from the [Contracting Officer's Representative](/acronyms)
 
 ## When Recovery Is Not Possible
 
@@ -142,7 +142,7 @@ Not every project can be recovered. Recognize the signs that formal action is un
 - Multiple cure notices have been issued without demonstrated improvement
 - The performance gap is contractual, not operational — the organization cannot deliver what the SOW requires
 
-In these cases, the objective shifts from recovery to damage containment: protecting past performance ratings, preserving the relationship for future opportunities, and ensuring an orderly transition if the contract is terminated.
+In these cases, the objective shifts from recovery to damage containment: protecting past performance ratings, preserving the relationship for future opportunities, and ensuring an orderly transition if the contract is terminated. Organizations with [multi-tier supply chain visibility](/insights/invisible-contractor-risk) are better positioned to prevent these cascading failures in the first place.
 
 ## Frequently Asked Questions
 

@@ -30,12 +30,12 @@ This is the "Invisible Contractor" risk. It is the gap between what your complia
 Three regulatory developments have made Tier-3 visibility a board-level concern:
 
 - **CMMC flow-down requirements** under [DFARS 252.204-7021](/insights/cmmc-2026-supply-chain-flowdowns) now mandate that subcontractors at every tier handling CUI achieve the appropriate certification level before controlled information flows to them
-- **EU CS3D obligations** require due diligence across the entire value chain — not just direct commercial relationships — with civil liability exposure for failures at any tier
-- **FAR 52.222-50 CTIP requirements** extend anti-trafficking compliance to every entity performing work under the contract, regardless of contractual distance from the prime
+- **EU CS3D obligations** under the [Corporate Sustainability Due Diligence Directive](https://commission.europa.eu/business-economy-euro/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en) require due diligence across the entire value chain — not just direct commercial relationships — with civil liability exposure for failures at any tier
+- **[FAR 52.222-50](https://www.acquisition.gov/far/52.222-50) CTIP requirements** extend anti-trafficking compliance to every entity performing work under the contract, regardless of contractual distance from the prime
 
 ### The "Certification Cascade" Problem
 
-When a Tier-3 supplier loses its ISO 9001 certification or fails a CMMC assessment, the consequences do not stay at Tier-3. They cascade upward:
+When a Tier-3 supplier loses its [ISO 9001](https://www.iso.org/standard/62085.html) certification or fails a CMMC assessment, the consequences do not stay at Tier-3. They cascade upward:
 
 1. **Tier-3 failure** → Tier-2 subcontractor loses a qualified supplier
 2. **Tier-2 disruption** → Prime's supply chain continuity is compromised
@@ -83,7 +83,7 @@ The "Compliance Heartbeat" model replaces periodic checks with continuous signal
 - **Certification status monitoring**: Automated tracking of ISO, CMMC, and industry-specific certifications across the supply chain
 - **Financial health indicators**: Credit alerts, lien filings, and bankruptcy watch lists that signal supplier instability before it becomes a compliance event
 - **Workforce composition changes**: Notifications when a sub-tier supplier significantly changes its labor force composition — a leading indicator of both quality risk and [CTIP exposure](/insights/ctip-enforcement-trends)
-- **Regulatory action alerts**: Monitoring for government enforcement actions, debarment proceedings, or safety violations against any entity in the supply chain
+- **Regulatory action alerts**: Monitoring for government enforcement actions, [debarment proceedings](https://sam.gov/content/exclusions), or safety violations against any entity in the supply chain
 
 ## The "Forensic Audit" Approach to Tier-3
 
@@ -108,7 +108,7 @@ Every Tier-3 engagement — even indirect ones — should produce a retrievable 
 
 ### The Cost Argument
 
-Reactive Tier-3 compliance — responding to failures after they cascade — costs between 2x and 4x more than proactive monitoring. The cost differential includes:
+Reactive Tier-3 compliance — responding to failures after they cascade — costs between [2x and 4x more](/insights/cost-of-non-compliance) than proactive monitoring. The cost differential includes:
 
 - **Stop-work delays**: Every day of production interruption carries direct financial consequences
 - **Corrective action overhead**: Emergency remediation requires surge resources at premium rates
@@ -167,7 +167,7 @@ The EU Corporate Sustainability Due Diligence Directive requires companies to co
 
 ---
 
-*Multi-tier supply chain visibility is no longer a best practice — it is a contractual and regulatory requirement. Organizations that build this capability now will be positioned to compete in an environment where transparency is a selection criterion, not an afterthought.*
+*Multi-tier supply chain visibility is no longer a best practice — it is a contractual and regulatory requirement. Organizations that build this capability now will be positioned to compete in an environment where transparency is a selection criterion, not an afterthought. When a project does fail due to a Tier-3 gap, the [96-hour recovery framework](/insights/96-hour-recovery) becomes critical.*
 
 For a confidential assessment of your supply chain visibility posture, contact ElevateQCS at [info@elevateqcs.com](mailto:info@elevateqcs.com).
 `,

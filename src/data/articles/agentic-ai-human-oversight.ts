@@ -32,7 +32,7 @@ The human brain is exceptional at analyzing complex situations. It is poor at mo
 - **Certification monitoring**: Tracking expiration dates, assessment schedules, and renewal status across every supplier in a multi-tier supply chain
 - **Financial health surveillance**: Monitoring credit scores, lien filings, litigation activity, and other signals that predict supplier instability
 - **Quality trend analysis**: Identifying that NCR rates are increasing across three sites served by the same sub-tier supplier — a pattern that no single site manager would see
-- **Regulatory change tracking**: Monitoring federal register publications, regulatory amendments, and enforcement actions that affect supply chain obligations
+- **Regulatory change tracking**: Monitoring [Federal Register](https://www.federalregister.gov/) publications, regulatory amendments, and enforcement actions that affect supply chain obligations
 
 ### Speed of Detection
 
@@ -77,9 +77,9 @@ The risk of automated responses to decontextualized data is not that they are wr
 
 ### Make Judgment Calls on Incomplete Information
 
-Supply chain decisions frequently involve incomplete information. A supplier is under investigation but not yet debarred. A regulation has been proposed but not finalized. A subcontractor's financial health shows stress signals that may or may not indicate insolvency.
+Supply chain decisions frequently involve incomplete information. A supplier is under investigation but not yet [debarred](https://sam.gov/content/exclusions). A regulation has been proposed but not finalized. A subcontractor's financial health shows stress signals that may or may not indicate insolvency.
 
-AI operates on rules. Judgment calls require weighing probabilities, assessing consequences, and accepting risk — capabilities that remain firmly in the human domain.
+AI operates on rules. Judgment calls require weighing probabilities, assessing consequences, and accepting risk — capabilities that remain firmly in the human domain. This is why organizations need both [multi-tier supply chain visibility](/insights/invisible-contractor-risk) and seasoned professionals who can interpret what the data means.
 
 ## The Orchestration Framework
 
@@ -135,7 +135,7 @@ The orchestration framework is only as strong as its handoff protocol — the ru
 Effective human oversight in complex supply chains requires a specific type of experience:
 
 - **Multi-stakeholder navigation**: Experience managing relationships across government agencies, prime contractors, and subcontractors simultaneously
-- **Regulatory fluency**: Understanding of [FAR, DFARS](/insights/far-overhaul-2026), and agency-specific requirements at a practitioner level
+- **Regulatory fluency**: Understanding of [FAR](https://www.acquisition.gov/far/), [DFARS](/insights/far-overhaul-2026), and agency-specific requirements at a practitioner level
 - **Crisis management**: Demonstrated ability to stabilize failing programs within compressed timelines
 - **Documentation discipline**: The ability to create records that protect the organization legally while maintaining productive relationships
 
@@ -158,7 +158,7 @@ The organizations leading in supply chain orchestration share common characteris
 1. **They use AI for monitoring but not for decision-making**: AI detects and alerts. Humans analyze and decide.
 2. **They invest equally in human capability and technology**: For every dollar spent on AI monitoring tools, they invest a dollar in developing the human judgment capabilities that make those tools useful.
 3. **They define clear orchestration boundaries**: Every type of finding, alert, and decision has a designated owner — AI, human analyst, or senior leader.
-4. **They test the handoffs**: Regular exercises that simulate AI-detected issues and assess whether the escalation protocol functions effectively.
+4. **They test the handoffs**: Regular exercises that simulate AI-detected issues and assess whether the escalation protocol functions effectively — similar to the discipline required in [ESG verification architecture](/insights/esg-performance-metric).
 
 ## Frequently Asked Questions
 

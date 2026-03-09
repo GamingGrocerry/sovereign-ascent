@@ -19,7 +19,7 @@ For years, ESG reporting was a communications exercise. Publish a sustainability
 
 That era ended in 2026.
 
-The [EU Corporate Sustainability Due Diligence Directive](/insights/ctip-cs3d-compliance) (CS3D) transformed ESG from a reporting obligation into a legal liability. Companies operating in or selling to EU markets must now conduct human rights and environmental due diligence across their entire value chain — with civil liability for failures. In parallel, U.S. federal contractors face intensifying CTIP obligations under [FAR 52.222-50](/insights/ctip-enforcement-trends) that extend anti-trafficking compliance to every tier of the supply chain.
+The [EU Corporate Sustainability Due Diligence Directive](https://commission.europa.eu/business-economy-euro/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en) (CS3D) transformed ESG from a reporting obligation into a legal liability. Companies operating in or selling to EU markets must now conduct human rights and environmental due diligence across their entire value chain — with civil liability for failures. In parallel, U.S. federal contractors face intensifying CTIP obligations under [FAR 52.222-50](https://www.acquisition.gov/far/52.222-50) that extend anti-trafficking compliance to every tier of the supply chain.
 
 The organizations that recognized this shift early — treating ESG as an operational discipline rather than a compliance checkbox — are now winning contracts, accessing markets, and attracting investment that their competitors cannot.
 
@@ -39,7 +39,7 @@ CS3D applies to companies meeting specific revenue and employee thresholds — b
 
 U.S. government contracting has its own ESG framework, though it uses different terminology:
 
-- **CTIP compliance** under FAR 52.222-50 requires anti-trafficking programs for contracts over $550,000 with overseas performance
+- **CTIP compliance** under [FAR 52.222-50](https://www.acquisition.gov/far/52.222-50) requires anti-trafficking programs for contracts over $550,000 with overseas performance
 - **Environmental management** obligations under various federal clauses require contractors to document environmental practices
 - **Supply chain transparency** requirements continue to expand under both CMMC and broader acquisition reform
 
@@ -93,7 +93,7 @@ Organizations with mature [CTIP programs](/insights/ctip-beyond-recruitment) hav
 - **Worker protection protocols** designed for CTIP compliance address the core labor rights requirements of ESG frameworks
 - **Documentation and evidence standards** developed for FAR 52.222-50 compliance meet or exceed CS3D due diligence documentation requirements
 
-This is not coincidence. CTIP was among the first regulatory frameworks to require supply chain-wide due diligence — the same principle now embedded in CS3D, the German Supply Chain Act, and emerging regulations across the EU.
+This is not coincidence. CTIP was among the first regulatory frameworks to require supply chain-wide due diligence — the same principle now embedded in CS3D, the [German Supply Chain Due Diligence Act](https://www.bmas.de/EN/Europe-and-the-World/International/Supply-Chain-Act/supply-chain-act.html), and emerging regulations across the EU. Understanding the [CS3D compliance landscape](/insights/ctip-cs3d-compliance) is essential for organizations operating in both markets.
 
 ## The Competitive Advantage Calculation
 
@@ -108,7 +108,7 @@ Organizations that can demonstrate ESG maturity gain access to contract opportun
 
 ### Cost Avoidance
 
-Proactive ESG compliance costs a fraction of reactive remediation:
+Proactive ESG compliance costs a fraction of reactive remediation — a pattern consistent with the broader [cost of non-compliance](/insights/cost-of-non-compliance) across regulated industries:
 
 - Regulatory fines under CS3D can reach 5% of global turnover
 - Supply chain disruptions from forced labor findings can halt operations for weeks

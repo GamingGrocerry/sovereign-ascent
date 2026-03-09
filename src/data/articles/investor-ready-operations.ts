@@ -35,10 +35,10 @@ Five years ago, operational due diligence at Series B focused on financial contr
 - Is there a documented organizational structure with clear reporting lines?
 - Are decision rights defined — who can commit the company to what?
 - Is there a board governance framework, or does the founder make every decision?
-- Are there policies covering conflicts of interest, data privacy, and ethical conduct?
+- Are there policies covering conflicts of interest, data privacy, and [ethical conduct](/governance)?
 
 **Quality & Delivery Infrastructure**
-- Is there a quality management system — even a lightweight one?
+- Is there a quality management system — even a lightweight one? (See [QMS at the early stage](/insights/qms-early-stage))
 - Can the company demonstrate consistent delivery standards across customers?
 - Is there a process for handling customer complaints and service failures?
 - Are there documented procedures for the company's core value-delivery processes?
@@ -77,7 +77,7 @@ Each layer has documented authority limits, escalation criteria, and reporting o
 
 ### Layer 2: Quality Infrastructure
 
-You do not need ISO 9001 certification at Series B. You need evidence that quality is managed, not accidental:
+You do not need [ISO 9001](https://www.iso.org/standard/62085.html) certification at Series B. You need evidence that quality is managed, not accidental:
 
 **Core Documentation**:
 - Standard Operating Procedures for your three to five most critical processes
@@ -116,7 +116,7 @@ Investors expect data-driven management. The governance architecture must includ
 - Document the organizational structure and decision framework
 - Create SOPs for the three to five most critical processes
 - Establish a compliance calendar and complete any overdue regulatory obligations
-- Implement basic quality metrics and begin tracking trends
+- Implement basic quality metrics and begin tracking trends — the [ESG performance metrics](/insights/esg-performance-metric) framework applies equally to governance maturity
 
 ### Months 3–6 Before the Raise: Infrastructure
 
@@ -136,7 +136,7 @@ Investors expect data-driven management. The governance architecture must includ
 
 These are the operational patterns that cause the most damage during due diligence. If any apply to your organization, address them before the raise:
 
-- **Single point of failure**: Critical processes that depend on one person's knowledge
+- **Single point of failure**: Critical processes that depend on one person's knowledge — a risk that [Agentic AI monitoring](/insights/agentic-ai-human-oversight) can partially mitigate
 - **Verbal commitments**: Customer or vendor agreements that are not documented
 - **Shadow IT**: Tools, platforms, or data stores that IT does not know about
 - **Compliance gaps**: Known regulatory obligations that have not been addressed

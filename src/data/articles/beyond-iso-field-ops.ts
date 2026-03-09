@@ -15,7 +15,7 @@ const article: Article = {
   content: `
 ## The "Check-the-Box" Culture
 
-There is a pattern that repeats across industries and contract environments. An organization invests in a Quality Management System. It hires a consultant. It writes procedures. It passes the ISO 9001 audit. And then it puts the binder on a shelf.
+There is a pattern that repeats across industries and contract environments. An organization invests in a Quality Management System. It hires a consultant. It writes procedures. It passes the [ISO 9001](https://www.iso.org/standard/62085.html) audit. And then it puts the binder on a shelf.
 
 Six months later, field teams are improvising. The documented procedures do not reflect how work actually gets done. When an [NCR surfaces](/insights/ncr-vs-car), the corrective action references a process that no one follows. The QMS becomes a liability — a system that creates the appearance of control while masking operational gaps.
 
@@ -45,7 +45,7 @@ Most QMS architectures are top-down: corporate writes procedures, field follows 
 
 ## The Sovereignty Model: Making Quality Independent of Production
 
-The core problem with most QMS implementations is structural. Quality is embedded within production — quality personnel report to operations managers, quality metrics are subordinated to schedule metrics, and quality decisions are overridden when they conflict with delivery timelines.
+The core problem with most QMS implementations is structural. Quality is embedded within production — quality personnel report to operations managers, quality metrics are subordinated to schedule metrics, and quality decisions are overridden when they conflict with delivery timelines. This structural weakness is what leads to the [subcontractor QMS failures](/insights/subcontractor-qms-failures) that cascade through supply chains.
 
 The Sovereignty Model inverts this relationship. Quality operates as an independent function with its own authority, its own reporting line, and its own performance metrics. This does not mean quality slows production. It means quality decisions are made on quality criteria — not production pressure.
 
@@ -91,6 +91,7 @@ Replace the quarterly procedure review with a continuous feedback mechanism:
 
 - **Field Deviation Reports**: A simple, mobile-accessible form that allows any field team member to report a procedure that does not match operational reality — without requiring a formal [CAPA](/insights/capa-loop) process
 - **Weekly Procedure Pulse**: A 15-minute standing meeting between quality and field leadership to review deviation reports and approve interim procedure modifications
+- **Precision documentation standards**: Where the [Contractual Friction Audit](/insights/contractual-friction-audit) eliminates ambiguity in SOW language, the Two-Page standard eliminates ambiguity in operational procedures
 - **Monthly Reconciliation**: A structured review that incorporates field feedback into permanent procedure updates
 
 ### Step 4: Technology That Serves the Field
@@ -147,7 +148,7 @@ The Two-Page standard limits every field-facing procedure to two pages. Page one
 
 ---
 
-*A quality management system that cannot survive contact with the field is not a system — it is a document. The organizations that treat quality as an operational discipline rather than a certification event are the ones that perform when it matters.*
+*A quality management system that cannot survive contact with the field is not a system — it is a document. The organizations that treat quality as an operational discipline rather than a certification event are the ones that perform when it matters. For [investor-ready companies](/insights/investor-ready-operations), this field-to-office alignment is precisely what due diligence evaluates.*
 
 For a confidential QMS field-effectiveness assessment, contact ElevateQCS at [info@elevateqcs.com](mailto:info@elevateqcs.com).
 `,
