@@ -200,20 +200,24 @@ function calculateResults(answers: Record<string, string | string[]>) {
 
 export default function ESGTraceabilityStressTest() {
   const { isUnlocked, userData, unlock } = useToolAccess();
+  const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<ReturnType<typeof calculateResults> | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const r = calculateResults(answers);
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data); setShowGate(false);
+    if (results && answers) {
+      try { await supabase.from("assessment_leads").insert({ name: data.name, email: data.email, company: data.company, industry: data.industry, consent: true, tool_used: "ESG Traceability Stress Test", score: results.score, tier: results.tier, date_completed: new Date().toISOString(), answers_json: answers }); } catch {}
+    }
+  };
+
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const r = calculateResults(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: r.score,
-        tier: r.tier,
-        tool_used: "ESG Traceability Stress Test",
-        date_completed: new Date().toISOString(),
-        answers_json: answers as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "ESG Traceability Stress Test", score: r.score, tier: r.tier, date_completed: new Date().toISOString(), answers_json: submittedAnswers }); } catch {}
+    }
   };
 
   return (
