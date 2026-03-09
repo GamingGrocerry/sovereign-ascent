@@ -4,9 +4,10 @@ import { Linkedin, Mail } from "lucide-react";
 const footerLinks = {
   services: [
     { label: "Our Services", href: "/services" },
+    { label: "Audit Readiness", href: "/services/audit-certification-readiness" },
+    { label: "SOW & Documentation", href: "/services/regulatory-documentation" },
+    { label: "Project Recovery", href: "/services/project-recovery" },
     { label: "Capabilities", href: "/capabilities" },
-    { label: "Industries", href: "/industries/defense" },
-    { label: "Resources", href: "/resources" },
     { label: "Request for Proposal", href: "/rfp" },
   ],
   company: [
