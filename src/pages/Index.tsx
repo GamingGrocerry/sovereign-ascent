@@ -249,7 +249,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Diagnostic Tools Section */}
+      {/* Diagnostic Tools Section — Full Suite */}
       <section className="py-20 bg-secondary/30 section-luxury">
         <div className="container-wide">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
@@ -259,6 +259,9 @@ export default function Index() {
                 Diagnostic Tools
               </p>
               <h2 className="!text-2xl lg:!text-3xl">Assess Your Compliance Readiness</h2>
+              <p className="text-muted-foreground mt-2 max-w-2xl">
+                Professional-grade assessments that identify governance gaps, map regulatory obligations, and evaluate operational maturity — in under five minutes.
+              </p>
             </div>
             <Button variant="outline" size="sm" asChild className="self-start sm:self-auto">
               <Link to="/tools">
@@ -268,7 +271,8 @@ export default function Index() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Primary Tools — 3-card featured */}
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
             {[
               { title: "GovCon Readiness Score", desc: "Evaluate governance structures for U.S. government supply chain participation.", time: "3–5 min", href: "/tools/govcon-readiness", icon: Shield },
               { title: "Compliance Framework Builder", desc: "Receive a tailored compliance roadmap based on your regulatory environment.", time: "2–4 min", href: "/tools/compliance-framework-builder", icon: Layers },
@@ -286,6 +290,76 @@ export default function Index() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Audit Simulation */}
+          <div className="mb-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3 ml-1">Audit Simulation</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { title: "CAR Gravity Calculator", desc: "Assess corrective action severity and cure notice likelihood.", time: "2–3 min", href: "/tools/car-gravity-calculator", icon: Siren },
+                { title: "Virtual Spot-Check Quiz", desc: "Identify compliant vs. non-compliant site conditions across 8 scenarios.", time: "3–5 min", href: "/tools/virtual-spot-check", icon: Eye },
+                { title: "CPSR Financial Integrity Shield", desc: "Mock-audit your purchasing workflow for material weaknesses.", time: "3–5 min", href: "/tools/cpsr-financial-integrity", icon: ScanSearch },
+              ].map((tool) => (
+                <Link key={tool.href} to={tool.href} className="card-elevated group p-5 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                    <tool.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-semibold mb-1 group-hover:text-accent transition-colors">{tool.title}</h4>
+                    <p className="text-xs text-muted-foreground mb-2">{tool.desc}</p>
+                    <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="w-3 h-3" />{tool.time}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Strategy & Bidding */}
+          <div className="mb-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3 ml-1">Strategy & Bidding</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { title: "PWS Risk Highlighter", desc: "Reveal hidden contractual risks in Performance Work Statements.", time: "3–5 min", href: "/tools/pws-risk-highlighter", icon: FileSearch },
+                { title: "Maturity Premium ROI", desc: "Calculate pricing power from elevated operational maturity.", time: "2–3 min", href: "/tools/maturity-premium-calculator", icon: TrendingUp },
+                { title: "RFO Business Judgment", desc: "Test defensible logic under 2026 FAR overhaul standards.", time: "4–6 min", href: "/tools/rfo-business-judgment", icon: Scale },
+                { title: "Profitability Leakage", desc: "Calculate profit consumed by inefficient manual governance.", time: "3–5 min", href: "/tools/profitability-leakage-tracker", icon: DollarSign },
+              ].map((tool) => (
+                <Link key={tool.href} to={tool.href} className="card-elevated group p-5 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                    <tool.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-semibold mb-1 group-hover:text-accent transition-colors">{tool.title}</h4>
+                    <p className="text-xs text-muted-foreground mb-2">{tool.desc}</p>
+                    <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="w-3 h-3" />{tool.time}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Ethics & Safety */}
+          <div>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-3 ml-1">Ethics & Safety</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { title: "Labor Ethics Stress Test", desc: "Test your team's CTIP scenario identification under FAR 52.222-50.", time: "3–5 min", href: "/tools/labor-ethics-stress-test", icon: ShieldAlert },
+                { title: "Austere Safety Checklist", desc: "Check site safety across 8 categories and 44 items.", time: "4–6 min", href: "/tools/austere-safety-checklist", icon: HardHat },
+                { title: "Surge Capacity Stress Test", desc: "Test whether you can meet the 96-hour LOGCAP deployment window.", time: "3–5 min", href: "/tools/surge-capacity-stress-test", icon: Zap },
+              ].map((tool) => (
+                <Link key={tool.href} to={tool.href} className="card-elevated group p-5 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                    <tool.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-semibold mb-1 group-hover:text-accent transition-colors">{tool.title}</h4>
+                    <p className="text-xs text-muted-foreground mb-2">{tool.desc}</p>
+                    <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="w-3 h-3" />{tool.time}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
