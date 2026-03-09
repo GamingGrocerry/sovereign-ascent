@@ -15,7 +15,7 @@ const article: Article = {
   content: `
 ## The "Check-the-Box" Culture
 
-There is a pattern that repeats across industries and contract environments. An organization invests in a Quality Management System. It hires a consultant. It writes procedures. It passes the ISO 9001 audit. And then it puts the binder on a shelf.
+There is a pattern that repeats across industries and contract environments. An organization invests in a Quality Management System. It hires a consultant. It writes procedures. It passes the [ISO 9001](https://www.iso.org/standard/62085.html) audit. And then it puts the binder on a shelf.
 
 Six months later, field teams are improvising. The documented procedures do not reflect how work actually gets done. When an [NCR surfaces](/insights/ncr-vs-car), the corrective action references a process that no one follows. The QMS becomes a liability — a system that creates the appearance of control while masking operational gaps.
 
