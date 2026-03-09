@@ -15,6 +15,8 @@ const servicesMegaMenu = [
   { label: "Audit & Certification Readiness", href: "/services/audit-certification-readiness" },
   { label: "Managed Compliance", href: "/services/managed-compliance" },
   { label: "Digital Governance", href: "/services/digital-governance" },
+  { label: "Project Recovery & Distressed Assets", href: "/services/project-recovery" },
+  { label: "AI Governance & Algorithmic Quality", href: "/services/ai-governance" },
 ];
 
 const industriesMegaMenu = [
