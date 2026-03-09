@@ -137,17 +137,25 @@ export function ResultsPage({
       </p>
 
       {/* Actions */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-12">
+      <div className="flex flex-col sm:flex-row gap-4 mb-8">
         <Button variant="cta" size="lg" onClick={handleDownload}>
           <Download className="w-4 h-4 mr-2" />
           Download Full Report
         </Button>
         <Button variant="cta" size="lg" asChild>
           <Link to="/contact">
-            Analyse My Next Offer
+            Book a 15-Minute Briefing
             <ArrowRight className="w-4 h-4 ml-2" />
           </Link>
         </Button>
+      </div>
+
+      {/* Sell the Gap */}
+      <div className="card-elevated p-6 mb-12 border-l-4 border-accent">
+        <p className="text-sm font-semibold text-foreground mb-1">This diagnostic identifies the gap. Closing it requires expertise.</p>
+        <p className="text-sm text-muted-foreground">
+          Your score and findings are yours to keep. The specific mitigation steps, SOPs, and governance architecture required to resolve these gaps are delivered through a Principal-Led engagement — because every organisation's risk profile is unique.
+        </p>
       </div>
 
       {/* Related Insights */}
