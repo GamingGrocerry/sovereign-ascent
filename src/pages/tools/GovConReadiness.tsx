@@ -158,29 +158,41 @@ export default function GovConReadiness() {
   const { isUnlocked, userData, unlock } = useToolAccess();
   const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<{ score: number; findings: { area: string; status: string; recommendation: string }[] } | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
   const [started, setStarted] = useState(false);
 
   const handleStart = () => {
-    if (!isUnlocked) {
-      setShowGate(true);
-    } else {
-      setStarted(true);
-    }
-  };
-
-  const handleUnlock = (data: { name: string; email: string; company: string; industry: string }) => {
-    unlock(data);
-    setShowGate(false);
     setStarted(true);
   };
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const result = calculateScore(answers);
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data);
+    setShowGate(false);
+    
+    if (results && answers) {
+      const tierInfo = getTier(results.score);
+      await supabase.from("assessment_leads").insert({
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        industry: data.industry,
+        consent: true,
+        tool_used: "govcon-readiness",
+        score: results.score,
+        tier: tierInfo.tier,
+        date_completed: new Date().toISOString(),
+        answers_json: answers,
+      });
+    }
+  };
+
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const result = calculateScore(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(result);
 
-    // Save to database
     const tierInfo = getTier(result.score);
-    if (userData) {
+    if (isUnlocked && userData) {
       await supabase.from("assessment_leads").insert({
         name: userData.name,
         email: userData.email,
@@ -191,7 +203,7 @@ export default function GovConReadiness() {
         score: result.score,
         tier: tierInfo.tier,
         date_completed: new Date().toISOString(),
-        answers_json: answers,
+        answers_json: submittedAnswers,
       });
     }
   };
@@ -251,7 +263,7 @@ export default function GovConReadiness() {
             />
           )}
 
-          {results && tierInfo && userData && (
+          {results && tierInfo && (
             <ResultsPage
               toolName="GovCon Readiness Score"
               score={results.score}
@@ -260,11 +272,11 @@ export default function GovConReadiness() {
               tierDescription={tierInfo.desc}
               findings={results.findings}
               recommendedActions={[
-                "Implement a documented anti-trafficking and forced labour policy aligned with FAR 52.222-50.",
-                "Establish a formal document retention policy with defined retention periods.",
-                "Conduct supplier due diligence and include compliance flow-down clauses in subcontracts.",
-                "Deploy role-based compliance training with documented attendance records.",
-                "Establish a confidential reporting mechanism for ethics and compliance concerns.",
+                "Fatal Flaw: Attempting to flow down FAR 52.222-50 without a verified supplier screening mechanism.",
+                "Fatal Flaw: Assuming corporate IT policies cover federal requirements without a formal gap assessment.",
+                "Fatal Flaw: Lacking an independent internal audit program, leading to 'linguistic mismatch' with government auditors.",
+                "Fatal Flaw: Relying on 'tribal knowledge' rather than a formally documented Quality Management System.",
+                "Fatal Flaw: Failing to establish an anonymous reporting channel, directly violating prime contractor expectations.",
               ]}
               relatedInsights={[
                 { title: "CTIP & CS3D: Dual Compliance for International Operators", slug: "ctip-cs3d-compliance" },
@@ -272,7 +284,9 @@ export default function GovConReadiness() {
                 { title: "What U.S. Primes Actually Expect From Subcontractors", slug: "govcon-prime-expectations" },
                 { title: "Subcontractor QMS Failures That Cost Contracts", slug: "subcontractor-qms-failures" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

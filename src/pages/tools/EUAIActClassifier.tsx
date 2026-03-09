@@ -200,11 +200,11 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ];
 
   const recommendedActions = [
-    "Conduct a formal AI system inventory and classify each system under the EU AI Act risk taxonomy",
-    "Map your current governance gaps against Articles 8–15 requirements",
-    "Establish data lineage documentation and bias testing protocols",
-    "Design human-in-the-loop oversight architecture with audit trail capability",
-    "Begin conformity assessment preparation for the August 2026 enforcement deadline",
+    "Fatal Flaw: Conducting AI risk classification using internal definitions instead of the EU AI Act's legal taxonomy — your internal 'low risk' may be the Act's 'high risk'.",
+    "Fatal Flaw: Assuming no EU market exposure when extraterritorial reach applies through supply chain and data processing relationships.",
+    "Fatal Flaw: Operating AI systems without documented human-in-the-loop override capability — Article 14 makes this a compliance requirement, not a design preference.",
+    "Fatal Flaw: Treating data governance as an IT function instead of an AI-specific compliance obligation with bias testing and lineage tracking.",
+    "Fatal Flaw: Planning for the August 2026 deadline as if it's a future event — conformity assessment preparation requires 6–12 months minimum.",
   ];
 
   if (purpose === "prohibited_risk") {
@@ -233,20 +233,24 @@ function calculateResults(answers: Record<string, string | string[]>) {
 
 export default function EUAIActClassifier() {
   const { isUnlocked, userData, unlock } = useToolAccess();
+  const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<ReturnType<typeof calculateResults> | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const r = calculateResults(answers);
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data); setShowGate(false);
+    if (results && answers) {
+      try { await supabase.from("assessment_leads").insert({ name: data.name, email: data.email, company: data.company, industry: data.industry, consent: true, tool_used: "EU AI Act Risk Classifier", score: results.score, tier: results.tier, date_completed: new Date().toISOString(), answers_json: answers }); } catch {}
+    }
+  };
+
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const r = calculateResults(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: r.score,
-        tier: r.tier,
-        tool_used: "EU AI Act Risk Classifier",
-        date_completed: new Date().toISOString(),
-        answers_json: answers as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "EU AI Act Risk Classifier", score: r.score, tier: r.tier, date_completed: new Date().toISOString(), answers_json: submittedAnswers }); } catch {}
+    }
   };
 
   return (
@@ -264,9 +268,9 @@ export default function EUAIActClassifier() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Diagnostic Suite
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={showGate} onUnlock={handleUnlock} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="EU AI Act Risk Classifier"
               estimatedTime="4–6 minutes"
@@ -275,7 +279,7 @@ export default function EUAIActClassifier() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="EU AI Act Risk Classifier"
               score={results.score}
@@ -286,7 +290,9 @@ export default function EUAIActClassifier() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

@@ -188,11 +188,10 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ] : undefined;
 
   const recommendedActions = [
-    "Conduct a comprehensive project health review with cross-functional stakeholders",
-    "Perform a PWS/SOW forensic scrub to identify ambiguous language and scope exposure",
-    "Strengthen sub-tier oversight with documented performance tracking and quality holds",
-    "Implement earned value management for schedule and cost performance monitoring",
-    "Establish clear escalation protocols with defined decision authority at each level",
+    "Fatal Flaw: Conducting a 'project health review' without a forensic PWS/SOW scrub — the root cause is almost always buried in ambiguous contract language.",
+    "Fatal Flaw: Treating sub-tier performance issues as management problems rather than contractual accountability gaps requiring quality holds.",
+    "Fatal Flaw: Using schedule-based progress reporting without earned value management, making it impossible to detect cost overruns until they're irreversible.",
+    "Fatal Flaw: Escalating issues through informal channels instead of documented decision authority protocols that create defensible records.",
   ];
 
   if (healthScore < 30) {
@@ -223,15 +222,9 @@ export default function ProjectHealthDiagnostic() {
   const handleComplete = async (answers: Record<string, string | string[]>) => {
     const r = calculateResults(answers);
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: r.score,
-        tier: r.tier,
-        tool_used: "Project Health Diagnostic",
-        date_completed: new Date().toISOString(),
-        answers_json: answers as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "Project Health Diagnostic", score: r.score, tier: r.tier, date_completed: new Date().toISOString(), answers_json: answers }); } catch {}
+    }
   };
 
   return (
@@ -249,9 +242,9 @@ export default function ProjectHealthDiagnostic() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Diagnostic Suite
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); }} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="Project Health Forensic Diagnostic"
               estimatedTime="3–5 minutes"
@@ -260,7 +253,7 @@ export default function ProjectHealthDiagnostic() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="Project Health Forensic Diagnostic"
               score={results.score}
@@ -272,7 +265,9 @@ export default function ProjectHealthDiagnostic() {
               roadmap={results.roadmap}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>

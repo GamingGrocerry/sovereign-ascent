@@ -185,11 +185,11 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ];
 
   const recommendedActions = [
-    "Conduct a formal gap assessment against all ISO 42001 clauses",
-    "Secure executive sponsorship and allocate dedicated AIMS resources",
-    "Develop AI-specific risk assessment methodology with ethical review integration",
-    "Create lifecycle SOPs for AI development, deployment, and monitoring",
-    "Establish data governance framework with provenance tracking and bias testing",
+    "Fatal Flaw: Attempting to retrofit an existing ISO 9001 system into an AIMS without addressing AI-specific lifecycle requirements.",
+    "Fatal Flaw: Developing AI risk assessments without integrating ethical review — ISO 42001 requires human rights impact analysis, not just technical risk.",
+    "Fatal Flaw: Creating lifecycle SOPs that cover development but omit deployment monitoring and decommissioning procedures.",
+    "Fatal Flaw: Treating data governance as a checkbox rather than implementing provenance tracking with bias testing protocols.",
+    "Fatal Flaw: Assuming a Stage 1 audit can be passed without 6+ months of documented operational evidence.",
   ];
 
   if (score < 30) {
@@ -215,20 +215,24 @@ function calculateResults(answers: Record<string, string | string[]>) {
 
 export default function ISO42001Readiness() {
   const { isUnlocked, userData, unlock } = useToolAccess();
+  const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<ReturnType<typeof calculateResults> | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const r = calculateResults(answers);
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data); setShowGate(false);
+    if (results && answers) {
+      try { await supabase.from("assessment_leads").insert({ name: data.name, email: data.email, company: data.company, industry: data.industry, consent: true, tool_used: "ISO 42001 Readiness Scan", score: results.score, tier: results.tier, date_completed: new Date().toISOString(), answers_json: answers }); } catch {}
+    }
+  };
+
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const r = calculateResults(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: r.score,
-        tier: r.tier,
-        tool_used: "ISO 42001 Readiness Scan",
-        date_completed: new Date().toISOString(),
-        answers_json: answers as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "ISO 42001 Readiness Scan", score: r.score, tier: r.tier, date_completed: new Date().toISOString(), answers_json: submittedAnswers }); } catch {}
+    }
   };
 
   return (
@@ -246,9 +250,9 @@ export default function ISO42001Readiness() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Diagnostic Suite
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={showGate} onUnlock={handleUnlock} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="ISO 42001 Readiness Scan"
               estimatedTime="5–7 minutes"
@@ -257,7 +261,7 @@ export default function ISO42001Readiness() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="ISO 42001 Readiness Scan"
               score={results.score}
@@ -269,7 +273,9 @@ export default function ISO42001Readiness() {
               roadmap={results.roadmap}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

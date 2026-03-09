@@ -121,11 +121,11 @@ function calculateResults(userAnswers: Record<string, "compliant" | "non-complia
   }
 
   const recommendedActions = [
-    "Review each scenario explanation to understand the compliance rationale",
-    "Cross-reference findings against your own facility conditions",
-    "Conduct a physical walkthrough of your workspace using these criteria",
-    "Discuss findings with your quality team during the next management review",
-    "Consider scheduling a mock audit to test your team's readiness",
+    "Fatal Flaw: Reviewing audit scenarios in theory without conducting physical walkthroughs of your own facility using these exact criteria.",
+    "Fatal Flaw: Assuming your quality team can identify non-conformances when they haven't been trained on current DCMA surveillance standards.",
+    "Fatal Flaw: Treating mock audits as optional when external auditors use exactly these conditions to issue NCRs and CARs.",
+    "Fatal Flaw: Discussing findings in management review without mapping each one to a specific corrective action with measurable closure criteria.",
+    "Fatal Flaw: Believing audit readiness is a periodic event rather than a continuous operational discipline.",
   ];
 
   return {
@@ -165,15 +165,15 @@ export default function VirtualSpotCheck() {
     } else {
       const r = calculateResults(answers);
       setResults(r);
-      try {
-        await supabase.from("assessment_leads").update({
-          score: r.score,
-          tier: r.tier,
-          tool_used: "Virtual Spot-Check Quiz",
-          date_completed: new Date().toISOString(),
-          answers_json: answers as any,
-        }).eq("email", userData?.email ?? "");
-      } catch {}
+      if (isUnlocked && userData) {
+        try {
+          await supabase.from("assessment_leads").insert({
+            name: userData.name, email: userData.email, company: userData.company, industry: userData.industry,
+            consent: true, tool_used: "Virtual Spot-Check Quiz", score: r.score, tier: r.tier,
+            date_completed: new Date().toISOString(), answers_json: answers as any,
+          });
+        } catch {}
+      }
     }
   };
 
@@ -196,11 +196,10 @@ export default function VirtualSpotCheck() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); }} />
 
-          {isUnlocked && !results && scenario && (
+          {!results && scenario && (
             <div className="max-w-2xl mx-auto">
-              {/* Header */}
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-3">
                   <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">
@@ -213,60 +212,30 @@ export default function VirtualSpotCheck() {
                 </div>
                 <Progress value={progress} className="h-1.5" />
               </div>
-
-              {/* Category badge */}
-              <span className="inline-block text-accent text-[10px] uppercase tracking-[0.2em] font-semibold mb-4">
-                {scenario.category}
-              </span>
-
+              <span className="inline-block text-accent text-[10px] uppercase tracking-[0.2em] font-semibold mb-4">{scenario.category}</span>
               <h3 className="!text-xl md:!text-2xl mb-3">{scenario.description}</h3>
               <div className="bg-secondary/30 border border-border rounded-sm p-6 mb-8">
                 <p className="text-sm text-muted-foreground leading-relaxed">{scenario.detail}</p>
               </div>
-
               <p className="text-sm font-medium mb-4">Is this condition compliant or non-compliant?</p>
-
               <div className="space-y-3 mb-10">
-                <button
-                  onClick={() => handleAnswer("compliant")}
-                  className={`w-full flex items-center gap-4 p-4 rounded-sm border cursor-pointer transition-all duration-200 text-left ${
-                    currentAnswer === "compliant"
-                      ? "border-green-500 bg-green-50 dark:bg-green-950/20 shadow-sm"
-                      : "border-border hover:border-green-300 hover:bg-secondary/30"
-                  }`}
-                >
+                <button onClick={() => handleAnswer("compliant")} className={`w-full flex items-center gap-4 p-4 rounded-sm border cursor-pointer transition-all duration-200 text-left ${currentAnswer === "compliant" ? "border-green-500 bg-green-50 dark:bg-green-950/20 shadow-sm" : "border-border hover:border-green-300 hover:bg-secondary/30"}`}>
                   <CheckCircle2 className={`w-5 h-5 shrink-0 ${currentAnswer === "compliant" ? "text-green-600" : "text-muted-foreground/40"}`} />
                   <span className="text-sm font-medium">Compliant</span>
                 </button>
-
-                <button
-                  onClick={() => handleAnswer("non-compliant")}
-                  className={`w-full flex items-center gap-4 p-4 rounded-sm border cursor-pointer transition-all duration-200 text-left ${
-                    currentAnswer === "non-compliant"
-                      ? "border-red-500 bg-red-50 dark:bg-red-950/20 shadow-sm"
-                      : "border-border hover:border-red-300 hover:bg-secondary/30"
-                  }`}
-                >
+                <button onClick={() => handleAnswer("non-compliant")} className={`w-full flex items-center gap-4 p-4 rounded-sm border cursor-pointer transition-all duration-200 text-left ${currentAnswer === "non-compliant" ? "border-red-500 bg-red-50 dark:bg-red-950/20 shadow-sm" : "border-border hover:border-red-300 hover:bg-secondary/30"}`}>
                   <XCircle className={`w-5 h-5 shrink-0 ${currentAnswer === "non-compliant" ? "text-red-600" : "text-muted-foreground/40"}`} />
                   <span className="text-sm font-medium">Non-Compliant</span>
                 </button>
               </div>
-
-              {/* Navigation */}
               <div className="flex items-center justify-between">
-                <Button variant="outline" onClick={handlePrev} disabled={currentIndex === 0}>
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Previous
-                </Button>
-                <Button variant="cta" onClick={handleNext} disabled={!currentAnswer}>
-                  {currentIndex === scenarios.length - 1 ? "View Results" : "Next"}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Button variant="outline" onClick={handlePrev} disabled={currentIndex === 0}><ArrowLeft className="w-4 h-4 mr-2" />Previous</Button>
+                <Button variant="cta" onClick={handleNext} disabled={!currentAnswer}>{currentIndex === scenarios.length - 1 ? "View Results" : "Next"}<ArrowRight className="w-4 h-4 ml-2" /></Button>
               </div>
             </div>
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="Virtual Spot-Check Quiz — Forensic Readiness Report"
               score={results.score}
@@ -277,7 +246,9 @@ export default function VirtualSpotCheck() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>

@@ -272,15 +272,14 @@ export default function AustereSafetyChecklist() {
     });
 
     const recommendedActions = [
-      "Print this Gap Report and provide it to your Site Safety and Health Officer (SSHO)",
-      "Address all critical deficiencies within 72 hours of this assessment",
-      "Schedule a formal site safety inspection with your SSHO within 14 days",
-      "Update your Activity Hazard Analyses (AHAs) for all current work activities",
-      "Conduct refresher safety training for all site personnel on identified gap areas",
+      "Fatal Flaw: Treating this gap report as informational rather than requiring immediate SSHO action within 72 hours.",
+      "Fatal Flaw: Addressing safety deficiencies without updating Activity Hazard Analyses (AHAs) for all current work activities.",
+      "Fatal Flaw: Conducting refresher training on 'general safety' instead of targeting the specific gap areas identified in this assessment.",
+      "Fatal Flaw: Assuming a formal site inspection can wait — the conditions flagged here are the exact items that trigger OSHA citations and stop-work orders.",
     ];
 
     if (criticalMissed.length > 5) {
-      recommendedActions.unshift("IMMEDIATE: Consider a safety stand-down until critical deficiencies are corrected");
+      recommendedActions.unshift("CRITICAL FATAL FLAW: Operating with this many critical deficiencies has a direct correlation with recordable incidents. A safety stand-down is warranted.");
     }
 
     const r = {
@@ -300,15 +299,9 @@ export default function AustereSafetyChecklist() {
     };
 
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: checkedCount,
-        tier,
-        tool_used: "Austere Safety Checklist",
-        date_completed: new Date().toISOString(),
-        answers_json: { checked: Array.from(checked), criticalMissed: criticalMissed.map((i) => i.id) } as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "Austere Safety Checklist", score: checkedCount, tier, date_completed: new Date().toISOString(), answers_json: { checked: Array.from(checked), criticalMissed: criticalMissed.map((i) => i.id) } as any }); } catch {}
+    }
   };
 
   return (
@@ -324,9 +317,9 @@ export default function AustereSafetyChecklist() {
           <Link to="/tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-accent mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
-          {isUnlocked && !results && <ChecklistInteractive onComplete={handleComplete} />}
-          {isUnlocked && results && userData && (
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); }} />
+          {!results && <ChecklistInteractive onComplete={handleComplete} />}
+          {results && (
             <ResultsPage
               toolName="Austere Environment Safety Checklist"
               score={results.score}
@@ -337,7 +330,9 @@ export default function AustereSafetyChecklist() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>

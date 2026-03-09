@@ -137,25 +137,41 @@ export default function QMSGapAnalysis() {
   const { isUnlocked, userData, unlock } = useToolAccess();
   const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<{ score: number; findings: { area: string; status: string; recommendation: string }[] } | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
   const [started, setStarted] = useState(false);
 
   const handleStart = () => {
-    if (!isUnlocked) setShowGate(true);
-    else setStarted(true);
-  };
-
-  const handleUnlock = (data: { name: string; email: string; company: string; industry: string }) => {
-    unlock(data);
-    setShowGate(false);
     setStarted(true);
   };
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const result = calculateQMS(answers);
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data);
+    setShowGate(false);
+    
+    if (results && answers) {
+      const tierInfo = getQMSTier(results.score);
+      await supabase.from("assessment_leads").insert({
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        industry: data.industry,
+        consent: true,
+        tool_used: "qms-gap-analysis",
+        score: results.score,
+        tier: tierInfo.tier,
+        date_completed: new Date().toISOString(),
+        answers_json: answers,
+      });
+    }
+  };
+
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const result = calculateQMS(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(result);
 
     const tierInfo = getQMSTier(result.score);
-    if (userData) {
+    if (isUnlocked && userData) {
       await supabase.from("assessment_leads").insert({
         name: userData.name,
         email: userData.email,
@@ -166,7 +182,7 @@ export default function QMSGapAnalysis() {
         score: result.score,
         tier: tierInfo.tier,
         date_completed: new Date().toISOString(),
-        answers_json: answers,
+        answers_json: submittedAnswers,
       });
     }
   };
@@ -224,7 +240,7 @@ export default function QMSGapAnalysis() {
             />
           )}
 
-          {results && tierInfo && userData && (
+          {results && tierInfo && (
             <ResultsPage
               toolName="QMS Gap Analysis"
               score={results.score}
@@ -233,12 +249,11 @@ export default function QMSGapAnalysis() {
               tierDescription={tierInfo.desc}
               findings={results.findings}
               recommendedActions={[
-                "Establish documented standard operating procedures for all critical processes.",
-                "Implement a formal CAPA system with root cause analysis and effectiveness tracking.",
-                "Schedule and resource an internal audit programme with trained auditors.",
-                "Build competency matrices linking roles to required training and qualifications.",
-                "Create an approved supplier list with qualification criteria and periodic review cycles.",
-                "Initiate scheduled management reviews with defined agenda and documented outcomes.",
+                "Fatal Flaw: Managing processes via 'tribal knowledge' rather than version-controlled SOPs, virtually guaranteeing audit failure.",
+                "Fatal Flaw: Treating Corrective Actions (CAPAs) as paperwork exercises rather than systemic root-cause investigations.",
+                "Fatal Flaw: Failing to conduct independent internal audits, allowing blind spots to fester until an external auditor or Prime finds them.",
+                "Fatal Flaw: Operating without formal competency matrices, making it impossible to prove staff qualification during source selection.",
+                "Fatal Flaw: Using unvetted suppliers based on price alone, transferring their compliance risk directly onto your contract.",
               ]}
               relatedInsights={[
                 { title: "Building a QMS That Scales With Your Growth", slug: "qms-scalability" },
@@ -246,7 +261,9 @@ export default function QMSGapAnalysis() {
                 { title: "ISO 9001 as an Operational Maturity Engine", slug: "iso9001-operational-maturity" },
                 { title: "Subcontractor QMS Failures That Cost Contracts", slug: "subcontractor-qms-failures" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

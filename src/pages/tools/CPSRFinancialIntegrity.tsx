@@ -157,20 +157,32 @@ export default function CPSRFinancialIntegrity() {
   const { isUnlocked, userData, unlock } = useToolAccess();
   const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<ReturnType<typeof calculateScore> | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
   const [started, setStarted] = useState(false);
 
-  const handleStart = () => { if (!isUnlocked) { setShowGate(true); } else { setStarted(true); } };
-  const handleUnlock = (data: { name: string; email: string; company: string; industry: string }) => { unlock(data); setShowGate(false); setStarted(true); };
+  const handleStart = () => { setStarted(true); };
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data); setShowGate(false);
+    if (results && answers) {
+      const tierInfo = getTier(results.score, results.materialWeaknesses);
+      await supabase.from("assessment_leads").insert({
+        name: data.name, email: data.email, company: data.company, industry: data.industry,
+        consent: true, tool_used: "cpsr-financial-integrity", score: results.score, tier: tierInfo.tier,
+        date_completed: new Date().toISOString(), answers_json: answers,
+      });
+    }
+  };
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const result = calculateScore(answers);
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const result = calculateScore(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(result);
     const tierInfo = getTier(result.score, result.materialWeaknesses);
-    if (userData) {
+    if (isUnlocked && userData) {
       await supabase.from("assessment_leads").insert({
         name: userData.name, email: userData.email, company: userData.company, industry: userData.industry,
         consent: true, tool_used: "cpsr-financial-integrity", score: result.score, tier: tierInfo.tier,
-        date_completed: new Date().toISOString(), answers_json: answers,
+        date_completed: new Date().toISOString(), answers_json: submittedAnswers,
       });
     }
   };
@@ -220,7 +232,7 @@ export default function CPSRFinancialIntegrity() {
             <AssessmentShell title="CPSR Financial Integrity Shield" estimatedTime="3–5 min" questions={questions} onComplete={handleComplete} />
           )}
 
-          {results && tierInfo && userData && (
+          {results && tierInfo && (
             <ResultsPage
               toolName="CPSR Financial Integrity Shield"
               score={results.score}
@@ -234,11 +246,11 @@ export default function CPSRFinancialIntegrity() {
                 { phase: "Sustainment (90+ days)", description: "Implement a digital procurement system with integrated audit trails. Conduct internal purchasing system reviews quarterly." },
               ]}
               recommendedActions={[
-                "Implement automated SAM.gov exclusion screening before every purchase order",
-                "Create documented price analysis templates for all procurement types",
-                "Map FAR/DFARS flow-down clause requirements to standardized PO templates",
-                "Establish formal delegation of procurement authority with documented thresholds",
-                "Build a digital procurement audit trail system for cradle-to-grave traceability",
+                "Fatal Flaw: Issuing purchase orders without documented fair & reasonable price determinations — the #1 CPSR disapproval trigger.",
+                "Fatal Flaw: Failing to screen SAM.gov exclusion lists before each procurement, exposing your organisation to debarment liability.",
+                "Fatal Flaw: Using informal procurement authority delegations that would not survive a DCMA audit trail review.",
+                "Fatal Flaw: Missing FAR/DFARS flow-down clauses in subcontract POs, creating cascading non-compliance through your supply chain.",
+                "Fatal Flaw: Relying on paper-based procurement records that cannot produce cradle-to-grave audit evidence on demand.",
               ]}
               relatedInsights={[
                 { title: "The Forensic Auditor's View: Supply Chain Transparency", slug: "forensic-auditor-supply-chain" },
@@ -246,7 +258,9 @@ export default function CPSRFinancialIntegrity() {
                 { title: "Subcontractor Audit Evidence That Survives Review", slug: "subcontractor-audit-review" },
                 { title: "What U.S. Primes Actually Expect From Subcontractors", slug: "govcon-prime-expectations" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

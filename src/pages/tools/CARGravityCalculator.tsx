@@ -189,15 +189,15 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ];
 
   const recommendedActions = [
-    "Acknowledge the finding within 24 hours with a professional, non-defensive response",
-    "Form a cross-functional response team (Quality, Program Management, Contracts)",
-    "Conduct system-level root cause analysis — not symptom-level correction",
-    "Submit a formal corrective action plan with measurable effectiveness criteria",
-    "Implement 60–90 day effectiveness verification with objective evidence collection",
+    "Fatal Flaw: Treating the finding as a localized symptom rather than a systemic failure.",
+    "Fatal Flaw: Implementing a 'band-aid' fix without conducting a formalized 5-Whys or Ishikawa root cause analysis.",
+    "Fatal Flaw: Responding to a DCMA or Prime auditor using internal jargon instead of standard acquisition terminology.",
+    "Fatal Flaw: Failing to provide objective evidence of effectiveness verification after 60 days.",
+    "Fatal Flaw: Assuming a repeat finding won't immediately escalate to a Level III CAR or Cure Notice.",
   ];
 
   if (gravityScore >= 6) {
-    recommendedActions.unshift("URGENT: Engage executive leadership and consider external advisory support immediately");
+    recommendedActions.unshift("CRITICAL FATAL FLAW: Attempting an internal-only response at this severity level without external advisory support. 80% of firms fail the follow-up audit due to 'Linguistic Mismatch' with government standards.");
   }
 
   return {
@@ -219,20 +219,53 @@ function calculateResults(answers: Record<string, string | string[]>) {
 
 export default function CARGravityCalculator() {
   const { isUnlocked, userData, unlock } = useToolAccess();
+  const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<ReturnType<typeof calculateResults> | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
+  
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data);
+    setShowGate(false);
+    
+    if (results && answers) {
+      try {
+        await supabase.from("assessment_leads").insert({
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          industry: data.industry,
+          consent: true,
+          tool_used: "car-gravity-calculator",
+          score: results.score,
+          tier: results.tier,
+          date_completed: new Date().toISOString(),
+          answers_json: answers,
+        });
+      } catch {}
+    }
+  };
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const r = calculateResults(answers);
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const r = calculateResults(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: r.score,
-        tier: r.tier,
-        tool_used: "CAR Gravity Calculator",
-        date_completed: new Date().toISOString(),
-        answers_json: answers as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    
+    if (isUnlocked && userData) {
+      try {
+        await supabase.from("assessment_leads").insert({
+          name: userData.name,
+          email: userData.email,
+          company: userData.company,
+          industry: userData.industry,
+          consent: true,
+          tool_used: "car-gravity-calculator",
+          score: r.score,
+          tier: r.tier,
+          date_completed: new Date().toISOString(),
+          answers_json: submittedAnswers,
+        });
+      } catch {}
+    }
   };
 
   return (
@@ -250,9 +283,9 @@ export default function CARGravityCalculator() {
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
 
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
+          <ToolEmailGate open={showGate} onUnlock={handleUnlock} />
 
-          {isUnlocked && !results && (
+          {!results && (
             <AssessmentShell
               title="CAR Gravity Calculator"
               estimatedTime="2–3 minutes"
@@ -261,7 +294,7 @@ export default function CARGravityCalculator() {
             />
           )}
 
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="CAR Gravity Calculator"
               score={results.score}
@@ -272,7 +305,9 @@ export default function CARGravityCalculator() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

@@ -320,11 +320,11 @@ export default function PWSRiskHighlighter() {
       tierDescription,
       findings,
       recommendedActions: [
-        "Implement a structured PWS/TOR review checklist for all bid opportunities",
-        "Flag all instances of 'at the discretion of,' 'as directed by,' and 'at no additional cost' language",
-        "Calculate the financial impact of open-ended clauses before submitting your pricing",
-        "Negotiate tiered response times and defined scope boundaries during discussions",
-        "Engage contract specialists to review high-value or complex task orders before bid submission",
+        "Fatal Flaw: Submitting bids without a structured PWS/TOR review checklist — you're pricing against language you haven't fully analysed.",
+        "Fatal Flaw: Failing to calculate the financial impact of open-ended clauses like 'at no additional cost' before submitting pricing.",
+        "Fatal Flaw: Accepting 'as directed by the COR' language without distinguishing it from CO authority — only CO direction modifies contractual obligations.",
+        "Fatal Flaw: Not negotiating tiered response times and defined scope boundaries, leaving your margin exposed to unlimited performance expectations.",
+        "Fatal Flaw: Submitting high-value task orders without specialist contract review, accepting terms that erode 15–30% of your projected margin.",
       ],
       relatedInsights: [
         { title: "The PWS Whisperer: Reading Between the Lines", slug: "pws-whisperer" },
@@ -335,15 +335,9 @@ export default function PWSRiskHighlighter() {
     };
 
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: found,
-        tier,
-        tool_used: "PWS Risk Highlighter",
-        date_completed: new Date().toISOString(),
-        answers_json: { found, total } as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "PWS Risk Highlighter", score: found, tier, date_completed: new Date().toISOString(), answers_json: { found, total } as any }); } catch {}
+    }
   };
 
   return (
@@ -359,9 +353,9 @@ export default function PWSRiskHighlighter() {
           <Link to="/tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-accent mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
-          {isUnlocked && !results && <PWSInteractive onComplete={handleComplete} />}
-          {isUnlocked && results && userData && (
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); }} />
+          {!results && <PWSInteractive onComplete={handleComplete} />}
+          {results && (
             <ResultsPage
               toolName="PWS Risk Highlighter"
               score={results.score}
@@ -372,7 +366,9 @@ export default function PWSRiskHighlighter() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>

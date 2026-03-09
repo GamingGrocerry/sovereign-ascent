@@ -181,34 +181,35 @@ export default function ComplianceFrameworkBuilder() {
   const { isUnlocked, userData, unlock } = useToolAccess();
   const [showGate, setShowGate] = useState(false);
   const [results, setResults] = useState<ReturnType<typeof buildFramework> | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string | string[]> | null>(null);
   const [started, setStarted] = useState(false);
 
   const handleStart = () => {
-    if (!isUnlocked) setShowGate(true);
-    else setStarted(true);
-  };
-
-  const handleUnlock = (data: { name: string; email: string; company: string; industry: string }) => {
-    unlock(data);
-    setShowGate(false);
     setStarted(true);
   };
 
-  const handleComplete = async (answers: Record<string, string | string[]>) => {
-    const result = buildFramework(answers);
+  const handleUnlock = async (data: { name: string; email: string; company: string; industry: string }) => {
+    unlock(data);
+    setShowGate(false);
+    if (results && answers) {
+      await supabase.from("assessment_leads").insert({
+        name: data.name, email: data.email, company: data.company, industry: data.industry,
+        consent: true, tool_used: "compliance-framework-builder", tier: results.tier,
+        date_completed: new Date().toISOString(), answers_json: answers,
+      });
+    }
+  };
+
+  const handleComplete = async (submittedAnswers: Record<string, string | string[]>) => {
+    const result = buildFramework(submittedAnswers);
+    setAnswers(submittedAnswers);
     setResults(result);
 
-    if (userData) {
+    if (isUnlocked && userData) {
       await supabase.from("assessment_leads").insert({
-        name: userData.name,
-        email: userData.email,
-        company: userData.company,
-        industry: userData.industry,
-        consent: true,
-        tool_used: "compliance-framework-builder",
-        tier: result.tier,
-        date_completed: new Date().toISOString(),
-        answers_json: answers,
+        name: userData.name, email: userData.email, company: userData.company, industry: userData.industry,
+        consent: true, tool_used: "compliance-framework-builder", tier: result.tier,
+        date_completed: new Date().toISOString(), answers_json: submittedAnswers,
       });
     }
   };
@@ -264,7 +265,7 @@ export default function ComplianceFrameworkBuilder() {
             />
           )}
 
-          {results && userData && (
+          {results && (
             <ResultsPage
               toolName="Compliance Framework Builder"
               tier={results.tier}
@@ -283,17 +284,19 @@ export default function ComplianceFrameworkBuilder() {
               findings={results.findings}
               roadmap={results.roadmap}
               recommendedActions={[
-                "Review the recommended frameworks and prioritise those marked as 'Critical'.",
-                "Engage advisory support to scope the Phase 1 governance foundation.",
-                "Align internal teams on the phased implementation timeline.",
-                "Establish a compliance calendar for certification milestones.",
+                "Fatal Flaw: Assuming a single ISO certification covers all regulatory obligations for your industry and geography.",
+                "Fatal Flaw: Building compliance frameworks in isolation without mapping cross-jurisdictional overlap and conflict.",
+                "Fatal Flaw: Treating compliance as a one-time project rather than a continuously maintained governance architecture.",
+                "Fatal Flaw: Failing to phase implementation, resulting in resource exhaustion and incomplete controls across all frameworks.",
               ]}
               relatedInsights={[
                 { title: "The Real Cost of Non-Compliance in Regulated Industries", slug: "cost-of-non-compliance" },
                 { title: "Multi-Jurisdictional Compliance for International Operations", slug: "multi-jurisdictional-compliance" },
                 { title: "ISO 9001 as an Operational Maturity Engine", slug: "iso9001-operational-maturity" },
               ]}
-              userData={userData}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => setShowGate(true)}
             />
           )}
         </div>

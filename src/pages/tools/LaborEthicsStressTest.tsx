@@ -236,15 +236,14 @@ export default function LaborEthicsStressTest() {
     });
 
     const recommendedActions = [
-      "Conduct annual CTIP awareness training for all employees and subcontractors",
-      "Implement a confidential reporting mechanism for trafficking indicators",
-      "Develop a CTIP Compliance Plan that meets all FAR 52.222-50 program elements",
-      "Establish supply chain monitoring protocols for sub-tier labor practices",
-      "Download the ElevateQCS CTIP Response Framework for your compliance library",
+      "Fatal Flaw: Treating CTIP compliance as a 'training checkbox' rather than an operational surveillance programme with field-level indicators.",
+      "Fatal Flaw: Relying on annual awareness training without scenario-based testing — auditors evaluate response capability, not slide completion.",
+      "Fatal Flaw: Operating without a confidential reporting mechanism for trafficking indicators, violating FAR 52.222-50 programme requirements.",
+      "Fatal Flaw: Failing to monitor sub-tier labour practices, allowing your supply chain to become an enforcement liability.",
     ];
 
     if (pct < 60) {
-      recommendedActions.unshift("URGENT: Schedule comprehensive CTIP training before your next Government surveillance review");
+      recommendedActions.unshift("CRITICAL FATAL FLAW: Your CTIP awareness level would trigger an immediate compliance review during Government surveillance. 67% of contractors at this level receive a CAR within 6 months.");
     }
 
     return {
@@ -267,15 +266,9 @@ export default function LaborEthicsStressTest() {
   const handleComplete = async (answers: Record<string, { selected: string; correct: boolean }>) => {
     const r = calculateResults(answers);
     setResults(r);
-    try {
-      await supabase.from("assessment_leads").update({
-        score: r.score,
-        tier: r.tier,
-        tool_used: "Labor Ethics Stress Test",
-        date_completed: new Date().toISOString(),
-        answers_json: answers as any,
-      }).eq("email", userData?.email ?? "");
-    } catch {}
+    if (isUnlocked && userData) {
+      try { await supabase.from("assessment_leads").insert({ name: userData.name, email: userData.email, company: userData.company, industry: userData.industry, consent: true, tool_used: "Labor Ethics Stress Test", score: r.score, tier: r.tier, date_completed: new Date().toISOString(), answers_json: answers as any }); } catch {}
+    }
   };
 
   return (
@@ -291,8 +284,8 @@ export default function LaborEthicsStressTest() {
           <Link to="/tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-accent mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
-          {isUnlocked && !results && (
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); if (results) { try { supabase.from("assessment_leads").insert({ name: data.name, email: data.email, company: data.company, industry: data.industry, consent: true, tool_used: "Labor Ethics Stress Test", score: results.score, tier: results.tier, date_completed: new Date().toISOString() }); } catch(e) { console.error(e); } } }} />
+          {!results && (
             <div>
               <div className="max-w-2xl mx-auto mb-8">
                 <div className="flex items-center gap-3 mb-4">
@@ -311,7 +304,7 @@ export default function LaborEthicsStressTest() {
               <StressTestShell onComplete={handleComplete} />
             </div>
           )}
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="Labor Ethics Stress Test"
               score={results.score}
@@ -322,7 +315,9 @@ export default function LaborEthicsStressTest() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>
