@@ -200,11 +200,11 @@ function calculateResults(answers: Record<string, string | string[]>) {
   ];
 
   const recommendedActions = [
-    "Conduct a formal AI system inventory and classify each system under the EU AI Act risk taxonomy",
-    "Map your current governance gaps against Articles 8–15 requirements",
-    "Establish data lineage documentation and bias testing protocols",
-    "Design human-in-the-loop oversight architecture with audit trail capability",
-    "Begin conformity assessment preparation for the August 2026 enforcement deadline",
+    "Fatal Flaw: Conducting AI risk classification using internal definitions instead of the EU AI Act's legal taxonomy — your internal 'low risk' may be the Act's 'high risk'.",
+    "Fatal Flaw: Assuming no EU market exposure when extraterritorial reach applies through supply chain and data processing relationships.",
+    "Fatal Flaw: Operating AI systems without documented human-in-the-loop override capability — Article 14 makes this a compliance requirement, not a design preference.",
+    "Fatal Flaw: Treating data governance as an IT function instead of an AI-specific compliance obligation with bias testing and lineage tracking.",
+    "Fatal Flaw: Planning for the August 2026 deadline as if it's a future event — conformity assessment preparation requires 6–12 months minimum.",
   ];
 
   if (purpose === "prohibited_risk") {
