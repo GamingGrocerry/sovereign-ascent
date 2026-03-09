@@ -53,6 +53,13 @@ import ctipBeyondRecruitment from "./articles/ctip-beyond-recruitment";
 import valueOverPrice from "./articles/value-over-price";
 import logisticsPaperTrail from "./articles/logistics-paper-trail";
 import siteSecurityPerimeter from "./articles/site-security-perimeter";
+import invisibleContractorRisk from "./articles/invisible-contractor-risk";
+import beyondIsoFieldOps from "./articles/beyond-iso-field-ops";
+import recovery96Hour from "./articles/96-hour-recovery";
+import esgPerformanceMetric from "./articles/esg-performance-metric";
+import contractualFrictionAudit from "./articles/contractual-friction-audit";
+import investorReadyOperations from "./articles/investor-ready-operations";
+import agenticAiHumanOversight from "./articles/agentic-ai-human-oversight";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
