@@ -165,23 +165,27 @@ const streams: { id: string; label: string; description: string; tools: ToolDef[
 const faqs = [
   {
     q: "What is a diagnostic assessment?",
-    a: "A professional-grade evaluation that identifies governance gaps, maps regulatory obligations, and evaluates operational maturity — providing a score, classification tier, and recommended actions.",
+    a: "A professional-grade evaluation that identifies governance gaps, maps severity classifications, and surfaces the critical execution flaws most organisations overlook — providing a score, risk tier, and forensic findings.",
   },
   {
     q: "How long does each assessment take?",
     a: "Most diagnostics require between 2 and 7 minutes depending on complexity.",
   },
   {
-    q: "Do I need to register to use the tools?",
-    a: "The interactive assessment is free to complete. To download your personalised PDF report with scores and Principal Recommendations, a business email registration is required.",
+    q: "What do I see for free?",
+    a: "You receive your Score, Risk Tier, and a summary of the severity level immediately. To unlock the Detailed Findings, Fatal Flaw analysis, and your downloadable Forensic Blueprint, a business email is required.",
+  },
+  {
+    q: "Why do I need to enter my email?",
+    a: "The detailed findings and fatal flaw analysis are generated specifically for your risk profile. The email gate ensures we can deliver your personalised Forensic Blueprint and, where appropriate, offer a Principal Review of your specific vulnerability profile.",
   },
   {
     q: "Are the assessments legally binding audits?",
-    a: "No. They are advisory diagnostics designed to identify potential gaps. They do not constitute legal, regulatory, or professional advice. For full advisory services, contact ElevateQCS directly.",
+    a: "No. They are advisory diagnostics designed to identify potential gaps and critical execution flaws. They do not constitute legal, regulatory, or professional advice. For full advisory services, contact ElevateQCS directly.",
   },
   {
     q: "What happens after I complete an assessment?",
-    a: "You receive a Score and Diagnosis. The specific mitigation steps required to close your gaps are delivered through a Principal-Led engagement — because every organisation's risk profile is unique.",
+    a: "You receive your Score and Risk Tier immediately. Once unlocked, the Detailed Findings expose the specific fatal flaws in your current approach. Closing those gaps requires executive-level intervention — schedule a 15-minute Principal Diagnostic Briefing to have your vulnerability profile reviewed.",
   },
 ];
 
