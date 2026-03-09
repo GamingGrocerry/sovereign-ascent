@@ -199,6 +199,13 @@ agenticAiHumanOversight.image = imgAgenticAi;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  invisibleContractorRisk,
+  beyondIsoFieldOps,
+  recovery96Hour,
+  esgPerformanceMetric,
+  contractualFrictionAudit,
+  investorReadyOperations,
+  agenticAiHumanOversight,
   valueOverPrice,
   siteSecurityPerimeter,
   logisticsPaperTrail,
