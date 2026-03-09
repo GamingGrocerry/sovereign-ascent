@@ -8,185 +8,22 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
-import {
-  ArrowRight,
-  Download,
-  Shield,
-  Scale,
-  ClipboardCheck,
-  Building2,
-  Cpu,
-  Factory,
-  Stethoscope,
-  Lock,
-  Leaf,
-  Target,
-  Eye,
-  Handshake,
-  FileCheck,
-  Search,
-  Briefcase,
-  BarChart3,
-} from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import { generateCapabilitiesPdf } from "@/components/capabilities/generateCapabilitiesPdf";
-
-const advisoryDomains = [
-  {
-    icon: Shield,
-    title: "Governance & Quality Architecture",
-    description:
-      "ElevateQCS designs enterprise-grade governance structures and Quality Management Systems (QMS) that anchor internal operations and enable sustainable compliance.",
-    items: [
-      "ISO 9001 Quality Management Systems",
-      "AS9100 Aerospace Quality Systems",
-      "ISO 13485 Medical Device Quality Systems",
-      "ISO 31000 Risk Management",
-      "Enterprise governance and internal control environments",
-    ],
-    footer:
-      "By integrating governance strategy with operational execution, we create systems designed for longevity, auditability, and internal ownership.",
-  },
-  {
-    icon: Scale,
-    title: "Federal & Regulatory Discipline",
-    description:
-      "Organizations participating in government supply chains face complex regulatory obligations that require structured compliance infrastructure.",
-    items: [
-      "FAR and DFARS contractual obligations",
-      "CMMC and NIST 800-171 cybersecurity requirements",
-      "Federal supply chain risk management expectations",
-      "Human rights compliance including FAR 52.222-50 and EU CSDDD frameworks",
-    ],
-    footer:
-      "Our advisory translates regulatory exposure into structured governance systems that reduce operational risk while strengthening procurement readiness.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Audit & Compliance Infrastructure",
-    description:
-      "Regulatory compliance is not a single event — it is a continuous operational condition.",
-    items: [
-      "Regulatory inspections",
-      "Certification audits",
-      "Contract compliance reviews",
-      "Supplier governance evaluations",
-    ],
-    footer:
-      "Our advisory includes regulatory documentation architecture, internal compliance workflows, and operational controls designed to produce verifiable evidence under scrutiny.",
-  },
-];
-
-const industries = [
-  {
-    icon: Shield,
-    title: "Defense & Aerospace",
-    description:
-      "FAR, DFARS, CMMC, ITAR, AS9100 governance structures for organizations participating in federal and defense supply chains.",
-  },
-  {
-    icon: Building2,
-    title: "Federal IT & Systems",
-    description:
-      "Compliance advisory for contractors supporting federal agencies, including cybersecurity frameworks, procurement governance, and regulatory alignment.",
-  },
-  {
-    icon: Factory,
-    title: "Advanced Manufacturing",
-    description:
-      "Implementation of scalable ISO 9001 systems and operational governance for manufacturers entering international regulated supply chains.",
-  },
-  {
-    icon: Stethoscope,
-    title: "Medical Devices",
-    description:
-      "Quality and regulatory alignment with FDA, EU MDR, and ISO 13485 requirements for medical device manufacturers and suppliers.",
-  },
-  {
-    icon: Lock,
-    title: "Cybersecurity & Technology",
-    description:
-      "Governance and compliance infrastructure for cybersecurity firms, software providers, and emerging technology companies operating in regulated markets.",
-  },
-  {
-    icon: Leaf,
-    title: "Energy & Climate Infrastructure",
-    description:
-      "Governance systems supporting ESG oversight, environmental regulatory compliance, and operational safety requirements.",
-  },
-];
-
-const approachItems = [
-  {
-    icon: Target,
-    title: "Strategic Integration",
-    description:
-      "ElevateQCS bridges the gap between regulatory interpretation and operational implementation. Our advisory translates regulatory frameworks into governance systems that function within real organizational workflows.",
-  },
-  {
-    icon: Eye,
-    title: "Audit-Ready Culture",
-    description:
-      "Instead of preparing for audits reactively, we design systems that maintain a continuous state of compliance readiness. Organizations operating with audit-ready infrastructures reduce operational disruption and regulatory exposure.",
-  },
-  {
-    icon: Handshake,
-    title: "Vendor-Neutral Advisory",
-    description:
-      "ElevateQCS does not certify, accredit, or authorize compliance. We design the internal governance architecture that enables organizations to successfully pursue certification through recognized bodies. This independence ensures our advisory remains objective, technically grounded, and aligned with long-term operational stability.",
-  },
-];
-
-const engagementModels = [
-  {
-    icon: Briefcase,
-    title: "Governance Architecture Projects",
-    description:
-      "Design and implementation of enterprise governance frameworks and quality management systems.",
-  },
-  {
-    icon: Search,
-    title: "Compliance Gap Assessments",
-    description:
-      "Structured diagnostic reviews identifying regulatory exposure and operational compliance gaps.",
-  },
-  {
-    icon: BarChart3,
-    title: "Federal Supply Chain Readiness",
-    description:
-      "Governance preparation for organizations entering government contracting ecosystems.",
-  },
-  {
-    icon: FileCheck,
-    title: "Audit & Certification Preparation",
-    description:
-      "System architecture and documentation design supporting ISO certification and regulatory inspections.",
-  },
-];
-
-const schemaJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "ElevateQCS",
-  description:
-    "Compliance advisory firm specializing in governance systems, ISO frameworks, federal contracting compliance, and supply chain regulatory oversight.",
-  areaServed: "Global",
-  serviceType: [
-    "ISO 9001 Consulting",
-    "CMMC Readiness Advisory",
-    "Government Contract Compliance",
-    "Supply Chain Compliance",
-    "Regulatory Governance Systems",
-  ],
-  url: "https://elevateqcs.com",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "Business Inquiries",
-    email: "info@elevateqcs.com",
-  },
-};
+import { SectorSelector } from "@/components/capabilities/SectorSelector";
+import { InstitutionalLogic } from "@/components/capabilities/InstitutionalLogic";
+import {
+  advisoryDomains,
+  industries,
+  differentiators,
+  engagementModels,
+  schemaJsonLd,
+  type SectorMode,
+} from "@/components/capabilities/CapabilitiesData";
 
 export default function Capabilities() {
+  const [sectorMode, setSectorMode] = useState<SectorMode>("federal");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -218,10 +55,7 @@ export default function Capabilities() {
         email: formData.email,
         type: "capabilities-statement",
       });
-
-      // Generate and download the PDF
       generateCapabilitiesPdf(formData);
-
       toast.success("Your capabilities statement is downloading.");
       setFormData({ name: "", email: "", company: "", industry: "" });
       setConsent(false);
@@ -235,17 +69,18 @@ export default function Capabilities() {
   return (
     <Layout>
       <SEOHead
-        title="Compliance Advisory & Quality Management Systems | ElevateQCS Capabilities"
-        description="ElevateQCS designs governance infrastructure and compliance systems for organizations operating in highly regulated industries including defense, advanced manufacturing, and federal contracting. ISO, CMMC, FAR, DFARS advisory."
+        title="Sovereign Quality for Distressed Infrastructure & Regulated AI | ElevateQCS"
+        description="ElevateQCS designs governance infrastructure for distressed infrastructure recovery, regulated AI compliance, and federal contracting. ISO, CMMC, EU AI Act, FAR/DFARS advisory."
         url="https://elevateqcs.com/capabilities"
         keywords={[
           "compliance advisory firm",
           "government contracting compliance",
           "ISO 9001 consulting",
           "CMMC advisory",
+          "EU AI Act compliance",
+          "infrastructure recovery advisory",
+          "AI governance consulting",
           "FAR DFARS compliance consulting",
-          "supply chain compliance advisory",
-          "regulatory governance consulting",
         ]}
         jsonLd={schemaJsonLd}
       />
@@ -263,29 +98,23 @@ export default function Capabilities() {
               Capabilities Statement
             </p>
             <h1 className="text-primary-foreground mb-8 animate-fade-up-delay-1">
-              Architecting Institutional Resilience in Highly Regulated Markets
+              Sovereign Quality for Distressed Infrastructure and Regulated AI
             </h1>
             <div className="space-y-5 animate-fade-up-delay-2">
               <p className="text-primary-foreground/80 text-lg leading-relaxed">
-                ElevateQCS is a specialized compliance and governance advisory
-                firm that helps organizations operating in regulated environments
-                design the internal systems required to meet global regulatory
-                expectations.
+                ElevateQCS is a specialized governance and compliance advisory
+                firm that architects the internal systems required to stabilize
+                distressed assets, govern AI deployments, and meet global
+                regulatory expectations.
               </p>
               <p className="text-primary-foreground/70 leading-relaxed">
-                We architect governance frameworks, quality management systems,
+                We design governance frameworks, quality management systems,
                 and compliance infrastructures that protect contract value,
-                strengthen internal controls, and align operational workflows
-                with international standards.
-              </p>
-              <p className="text-primary-foreground/70 leading-relaxed">
-                Organizations operating in sectors such as defense, advanced
-                manufacturing, medical technology, and federal contracting rely
-                on structured governance to maintain operational stability and
-                regulatory credibility.
+                prevent margin leakage, and align operational workflows
+                with international standards — from FAR/DFARS to the EU AI Act.
               </p>
               <p className="text-primary-foreground/60 italic">
-                Our role is to design those systems.
+                Defense-grade discipline. Applied to sovereign infrastructure.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-10 animate-fade-up-delay-3">
@@ -313,6 +142,22 @@ export default function Capabilities() {
         </div>
       </section>
 
+      {/* ─── SECTOR SELECTOR ─── */}
+      <section className="py-16 lg:py-20 section-luxury">
+        <div className="container-wide">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
+              Digital Capability Statement
+            </p>
+            <h2 className="mb-4">Select Your Sector</h2>
+            <p className="text-muted-foreground">
+              Our advisory serves both federal and commercial markets. Select your context to see capabilities most relevant to your environment.
+            </p>
+          </div>
+          <SectorSelector mode={sectorMode} onChange={setSectorMode} />
+        </div>
+      </section>
+
       {/* ─── STRATEGIC ADVISORY DOMAINS ─── */}
       <section className="section-luxury py-24 lg:py-32">
         <div className="container-wide">
@@ -321,23 +166,32 @@ export default function Capabilities() {
               Strategic Advisory Domains
             </p>
             <h2>
-              Where we build the structural foundations of compliant
-              organizations
+              {sectorMode === "federal"
+                ? "Governance architecture for contract-driven, high-accountability environments"
+                : "Defense-grade systems — applied to commercial infrastructure and regulated technology"}
             </h2>
             <div className="section-divider mt-6" />
           </div>
           <div className="grid gap-10">
             {advisoryDomains.map((domain) => (
-              <div
-                key={domain.title}
-                className="card-elevated p-8 lg:p-10"
-              >
+              <div key={domain.title} className="card-elevated p-8 lg:p-10">
                 <div className="flex items-start gap-5">
                   <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-accent/10 flex items-center justify-center">
                     <domain.icon className="h-6 w-6 text-accent" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl mb-4">{domain.title}</h3>
+                    {/* Sector-specific pitch */}
+                    {(sectorMode === "federal" && domain.federalPitch) && (
+                      <div className="mb-4 px-4 py-3 rounded-md bg-primary/5 border border-primary/10">
+                        <p className="text-sm font-medium text-foreground">{domain.federalPitch}</p>
+                      </div>
+                    )}
+                    {(sectorMode === "commercial" && domain.commercialPitch) && (
+                      <div className="mb-4 px-4 py-3 rounded-md bg-accent/5 border border-accent/10">
+                        <p className="text-sm font-medium text-foreground">{domain.commercialPitch}</p>
+                      </div>
+                    )}
                     <p className="mb-5">{domain.description}</p>
                     <p className="text-foreground font-medium text-sm mb-3">
                       Our advisory supports organizations implementing or
@@ -349,13 +203,16 @@ export default function Capabilities() {
                           key={item}
                           className="flex items-start gap-2 text-muted-foreground text-sm"
                         >
-                          <span className="text-accent mt-1.5 flex-shrink-0">
-                            •
-                          </span>
+                          <span className="text-accent mt-1.5 flex-shrink-0">•</span>
                           {item}
                         </li>
                       ))}
                     </ul>
+                    {domain.keyCompetency && (
+                      <p className="text-xs font-medium text-accent mb-4">
+                        Key Competency: {domain.keyCompetency}
+                      </p>
+                    )}
                     <p className="text-muted-foreground text-sm italic border-l-2 border-accent/30 pl-4">
                       {domain.footer}
                     </p>
@@ -367,24 +224,25 @@ export default function Capabilities() {
         </div>
       </section>
 
+      {/* ─── INSTITUTIONAL LOGIC ─── */}
+      <InstitutionalLogic mode={sectorMode} />
+
       {/* ─── INDUSTRIES ─── */}
-      <section className="py-24 lg:py-32 bg-secondary/50">
+      <section className="py-24 lg:py-32 section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
               Industries We Support
             </p>
             <h2>
-              Specialized expertise for sectors where operational failure carries
-              regulatory consequences
+              Specialized expertise for the hyper-growth sectors of 2026
             </h2>
             <div className="section-divider mt-6" />
             <p className="mt-6">
-              ElevateQCS supports organizations operating in highly regulated and
-              mission-critical industries.
+              ElevateQCS supports organizations in sectors where operational failure carries regulatory, financial, or contractual consequences.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {industries.map((ind) => (
               <div key={ind.title} className="card-elevated p-8">
                 <div className="w-11 h-11 rounded-sm bg-accent/10 flex items-center justify-center mb-5">
@@ -398,18 +256,18 @@ export default function Capabilities() {
         </div>
       </section>
 
-      {/* ─── APPROACH ─── */}
-      <section className="section-luxury py-24 lg:py-32">
+      {/* ─── DIFFERENTIATORS — THE 2026 EDGE ─── */}
+      <section className="py-24 lg:py-32 bg-secondary/50">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
-              The ElevateQCS Approach
+              The 2026 Edge
             </p>
-            <h2>Governance systems designed for operational reality</h2>
+            <h2>What sets ElevateQCS apart</h2>
             <div className="section-divider mt-6" />
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {approachItems.map((item) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {differentiators.map((item) => (
               <div key={item.title} className="card-elevated p-8">
                 <div className="w-11 h-11 rounded-sm bg-accent/10 flex items-center justify-center mb-5">
                   <item.icon className="h-5 w-5 text-accent" />
@@ -423,7 +281,7 @@ export default function Capabilities() {
       </section>
 
       {/* ─── ENGAGEMENT MODELS ─── */}
-      <section className="py-24 lg:py-32 bg-secondary/50">
+      <section className="py-24 lg:py-32 section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
@@ -454,10 +312,7 @@ export default function Capabilities() {
       </section>
 
       {/* ─── DOWNLOAD / LEAD CAPTURE ─── */}
-      <section
-        ref={downloadRef}
-        className="py-24 lg:py-32 section-luxury"
-      >
+      <section ref={downloadRef} className="py-24 lg:py-32 bg-secondary/50">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -535,7 +390,7 @@ export default function Capabilities() {
                     setFormData({ ...formData, industry: e.target.value })
                   }
                   maxLength={100}
-                  placeholder="e.g., Defense, Manufacturing"
+                  placeholder="e.g., Defense, AI Infrastructure"
                 />
               </div>
               <div className="flex items-start gap-3 pt-2">
