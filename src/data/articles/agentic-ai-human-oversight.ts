@@ -32,7 +32,7 @@ The human brain is exceptional at analyzing complex situations. It is poor at mo
 - **Certification monitoring**: Tracking expiration dates, assessment schedules, and renewal status across every supplier in a multi-tier supply chain
 - **Financial health surveillance**: Monitoring credit scores, lien filings, litigation activity, and other signals that predict supplier instability
 - **Quality trend analysis**: Identifying that NCR rates are increasing across three sites served by the same sub-tier supplier — a pattern that no single site manager would see
-- **Regulatory change tracking**: Monitoring federal register publications, regulatory amendments, and enforcement actions that affect supply chain obligations
+- **Regulatory change tracking**: Monitoring [Federal Register](https://www.federalregister.gov/) publications, regulatory amendments, and enforcement actions that affect supply chain obligations
 
 ### Speed of Detection
 
