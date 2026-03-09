@@ -1,0 +1,125 @@
+# ElevateQCS
+
+> Quality & Compliance Advisory for Regulated Industries & Government Contracting
+
+ElevateQCS is a specialized advisory firm delivering governance, quality management systems (QMS), regulatory compliance, and operational maturity solutions for defense contractors, federal subcontractors, high-growth startups, and internationally regulated enterprises.
+
+## Core Services
+
+- [Governance & Strategy Advisory](https://sovereign-compliance-architect.lovable.app/services/governance-strategy): Executive-level governance frameworks, board-ready compliance architectures, and strategic advisory for regulated organizations.
+- [Quality & Operational Infrastructure](https://sovereign-compliance-architect.lovable.app/services/quality-operational-infrastructure): QMS development and implementation, ISO 9001 certification readiness, CAPA loop architecture, and operational maturity modeling.
+- [Risk & Regulatory Compliance](https://sovereign-compliance-architect.lovable.app/services/risk-regulatory-compliance): Multi-jurisdictional compliance management, cross-border regulatory mapping, and risk register development.
+- [Audit & Certification Readiness](https://sovereign-compliance-architect.lovable.app/services/audit-certification-readiness): Pre-audit preparation, surveillance audit support, certification body coordination, and NCR/CAR remediation.
+- [Supply Chain & Human Rights Compliance](https://sovereign-compliance-architect.lovable.app/services/supply-chain-human-rights): CTIP program implementation, FAR 52.222-50 compliance, EU CS3D due diligence, and forensic supply chain auditing.
+- [Federal & Public Sector Advisory](https://sovereign-compliance-architect.lovable.app/services/federal-public-sector): GovCon operational maturity, Alliant 3 readiness, FAR/DFARS flowdown compliance, and federal contract quality systems.
+- [Managed Compliance Programs](https://sovereign-compliance-architect.lovable.app/services/managed-compliance): Ongoing compliance management, fractional quality leadership, and continuous improvement programs.
+- [Digital Governance & Systems](https://sovereign-compliance-architect.lovable.app/services/digital-governance): Digital QMS architecture, document control systems, and compliance technology integration.
+- [Regulatory Documentation](https://sovereign-compliance-architect.lovable.app/services/regulatory-documentation): SOPs, work instructions, PWS analysis, and regulatory submission documentation.
+
+## Industries Served
+
+- [Defense & Aerospace](https://sovereign-compliance-architect.lovable.app/industries/defense): CMMC, ITAR, DFARS compliance for defense primes and subcontractors.
+- [Federal IT & Professional Services](https://sovereign-compliance-architect.lovable.app/industries/federal-it): Federal contract compliance, CPARS optimization, and GovCon scaling.
+- [Manufacturing](https://sovereign-compliance-architect.lovable.app/industries/manufacturing): ISO 9001, AS9100, quality infrastructure for advanced manufacturing.
+- [Medical Devices & Life Sciences](https://sovereign-compliance-architect.lovable.app/industries/medical-devices): FDA QSR, ISO 13485, and medical device regulatory compliance.
+- [AI & Deep Technology](https://sovereign-compliance-architect.lovable.app/industries/ai-deep-tech): Agentic AI oversight, algorithmic governance, and responsible AI frameworks.
+- [Cybersecurity](https://sovereign-compliance-architect.lovable.app/industries/cybersecurity): CMMC 2.0, NIST 800-171, and cybersecurity maturity programs.
+- [Climate & Energy](https://sovereign-compliance-architect.lovable.app/industries/climate-energy): ESG compliance, environmental regulatory systems, and sustainability governance.
+- [Infrastructure & Construction](https://sovereign-compliance-architect.lovable.app/industries/infrastructure): Safety management systems, OSHA compliance, and project quality assurance.
+- [International Development](https://sovereign-compliance-architect.lovable.app/industries/international-dev): OCONUS operations, austere environment compliance, and LOGCAP quality systems.
+
+## Sectors
+
+- [Federal Contractors](https://sovereign-compliance-architect.lovable.app/sectors/federal-contractors): Operational maturity and compliance for government contractors at all tiers.
+- [Defense & Aerospace](https://sovereign-compliance-architect.lovable.app/sectors/defense-aerospace): Mission-critical quality systems for the defense industrial base.
+- [Advanced Manufacturing](https://sovereign-compliance-architect.lovable.app/sectors/advanced-manufacturing): Production quality and regulatory compliance for manufacturers.
+- [Medical & Life Sciences](https://sovereign-compliance-architect.lovable.app/sectors/medical-life-sciences): Regulated product quality and safety systems.
+- [AI & Deep Tech](https://sovereign-compliance-architect.lovable.app/sectors/ai-deep-tech): Governance frameworks for emerging technology companies.
+- [EU-Exposed Organizations](https://sovereign-compliance-architect.lovable.app/sectors/eu-exposed): Cross-border compliance for companies subject to EU regulations.
+
+## Insights & Thought Leadership
+
+- [The Invisible Contractor Risk](https://sovereign-compliance-architect.lovable.app/insights/invisible-contractor-risk): Why compliance gaps in subcontractor networks create cascading liability for primes.
+- [Beyond ISO: Field Operations Compliance](https://sovereign-compliance-architect.lovable.app/insights/beyond-iso-field-ops): Bridging the gap between ISO certification and operational reality in austere environments.
+- [96-Hour Recovery Sprint](https://sovereign-compliance-architect.lovable.app/insights/96-hour-recovery): How to stabilize compliance systems after a regulatory crisis in 96 hours.
+- [ESG as a Performance Metric](https://sovereign-compliance-architect.lovable.app/insights/esg-performance-metric): Moving ESG from reporting burden to competitive advantage in regulated industries.
+- [Contractual Friction Audit](https://sovereign-compliance-architect.lovable.app/insights/contractual-friction-audit): Identifying hidden cost drivers in contract compliance requirements.
+- [Investor-Ready Operations](https://sovereign-compliance-architect.lovable.app/insights/investor-ready-operations): Building operational maturity that survives due diligence.
+- [Agentic AI and Human Oversight](https://sovereign-compliance-architect.lovable.app/insights/agentic-ai-human-oversight): Governance frameworks for autonomous AI systems in regulated environments.
+- [CMMC 2026 Supply Chain Flowdowns](https://sovereign-compliance-architect.lovable.app/insights/cmmc-2026-supply-chain-flowdowns): Preparing for CMMC certification requirements across the defense supply chain.
+- [FAR Flowdowns (52.244-6)](https://sovereign-compliance-architect.lovable.app/insights/far-flowdowns-52-244-6): Understanding FAR subcontract flowdown requirements and compliance obligations.
+- [Cost of Non-Compliance](https://sovereign-compliance-architect.lovable.app/insights/cost-of-non-compliance): The 2–4x cost variance between proactive and reactive compliance approaches.
+- [CTIP Beyond Recruitment](https://sovereign-compliance-architect.lovable.app/insights/ctip-beyond-recruitment): Combating trafficking in persons beyond recruitment screening.
+- [CTIP and CS3D Compliance](https://sovereign-compliance-architect.lovable.app/insights/ctip-cs3d-compliance): Aligning US CTIP requirements with EU Corporate Sustainability Due Diligence.
+- [GovCon Operational Maturity](https://sovereign-compliance-architect.lovable.app/insights/govcon-operational-maturity): The Federal Operational Maturity Stack™ for government contractors.
+- [Alliant 3 Operational Readiness](https://sovereign-compliance-architect.lovable.app/insights/alliant3-operational-readiness): Preparing for next-generation GWAC requirements.
+- [QMS for Early-Stage Companies](https://sovereign-compliance-architect.lovable.app/insights/qms-early-stage): Building quality management systems that scale with growth.
+- [ISO 9001 Operational Maturity](https://sovereign-compliance-architect.lovable.app/insights/iso9001-operational-maturity): Moving beyond certification to operational excellence.
+- [NCR vs. CAR](https://sovereign-compliance-architect.lovable.app/insights/ncr-vs-car): Understanding when nonconformance reports escalate to corrective action requests.
+- [CAPA Loop Architecture](https://sovereign-compliance-architect.lovable.app/insights/capa-loop): Designing effective corrective and preventive action systems.
+- [Multi-Jurisdictional Compliance](https://sovereign-compliance-architect.lovable.app/insights/multi-jurisdictional-compliance): Managing compliance across multiple regulatory jurisdictions.
+- [Supply Chain Compliance](https://sovereign-compliance-architect.lovable.app/insights/supply-chain-compliance): End-to-end supply chain visibility and compliance management.
+- [Documentation Best Practices](https://sovereign-compliance-architect.lovable.app/insights/documentation-best-practices): Building documentation systems that support audit readiness.
+- [Compliance Decision Framework](https://sovereign-compliance-architect.lovable.app/insights/compliance-decision-framework): Structured approaches to compliance investment decisions.
+- [Subcontractor QMS Failures](https://sovereign-compliance-architect.lovable.app/insights/subcontractor-qms-failures): Common quality system failures in subcontractor networks.
+- [PWS Whisperer](https://sovereign-compliance-architect.lovable.app/insights/pws-whisperer): Reading between the lines of Performance Work Statements.
+- [Forensic Auditor Supply Chain](https://sovereign-compliance-architect.lovable.app/insights/forensic-auditor-supply-chain): Deep-dive audit techniques for supply chain compliance.
+- [Audit Failure Patterns](https://sovereign-compliance-architect.lovable.app/insights/audit-failure-patterns): The most common reasons organizations fail certification audits.
+- [OCONUS Sustainment](https://sovereign-compliance-architect.lovable.app/insights/oconus-sustainment): Quality and compliance for outside-continental-US operations.
+- [OSHA OCONUS Safety](https://sovereign-compliance-architect.lovable.app/insights/osha-oconus-safety): Applying OSHA standards in austere and international environments.
+- [QMS Scalability](https://sovereign-compliance-architect.lovable.app/insights/qms-scalability): Designing quality systems that grow with organizational complexity.
+- [Startup Compliance and Funding](https://sovereign-compliance-architect.lovable.app/insights/startup-compliance-funding): How compliance maturity affects investment readiness.
+- [Value Over Price](https://sovereign-compliance-architect.lovable.app/insights/value-over-price): Why lowest-price compliance consulting creates the highest total cost.
+- [FAR Overhaul 2026](https://sovereign-compliance-architect.lovable.app/insights/far-overhaul-2026): Preparing for the Federal Acquisition Regulation modernization.
+- [GovCon Prime Expectations](https://sovereign-compliance-architect.lovable.app/insights/govcon-prime-expectations): What prime contractors actually require from subcontractor quality systems.
+- [Cross-Jurisdictional Liability](https://sovereign-compliance-architect.lovable.app/insights/cross-jurisdictional-liability): Managing legal exposure across international regulatory boundaries.
+- [ISO-LOGCAP Bridge](https://sovereign-compliance-architect.lovable.app/insights/iso-logcap-bridge): Connecting ISO quality standards with LOGCAP contract requirements.
+- [Logistics Paper Trail](https://sovereign-compliance-architect.lovable.app/insights/logistics-paper-trail): Documentation requirements for logistics and supply chain compliance.
+- [Logistics CTIP Compliance](https://sovereign-compliance-architect.lovable.app/insights/logistics-ctip-compliance-mistakes): Common CTIP compliance failures in logistics operations.
+- [CTIP Enforcement Trends](https://sovereign-compliance-architect.lovable.app/insights/ctip-enforcement-trends): Evolving enforcement patterns in trafficking prevention compliance.
+- [Subcontractor Audit Review](https://sovereign-compliance-architect.lovable.app/insights/subcontractor-audit-review): Conducting effective subcontractor quality audits.
+- [Subcontractor Decision Matrix](https://sovereign-compliance-architect.lovable.app/insights/subcontractor-decision-matrix): Framework for subcontractor qualification and selection.
+- [Site Security Perimeter](https://sovereign-compliance-architect.lovable.app/insights/site-security-perimeter): Physical security compliance for regulated facilities.
+- [LOC Crisis Response](https://sovereign-compliance-architect.lovable.app/insights/loc-crisis-response): Loss-of-certification crisis management and recovery.
+- [Oversold Under-Delivered Compliance Gap](https://sovereign-compliance-architect.lovable.app/insights/oversold-under-delivered-compliance-gap): The compliance capability gap between marketing and delivery.
+- [96-Hour Deployment Sprint](https://sovereign-compliance-architect.lovable.app/insights/96-hour-sprint): Rapid compliance system deployment methodology.
+
+## Interactive Tools
+
+- [GovCon Readiness Assessment](https://sovereign-compliance-architect.lovable.app/tools/govcon-readiness): Evaluate government contracting operational maturity.
+- [QMS Gap Analysis](https://sovereign-compliance-architect.lovable.app/tools/qms-gap-analysis): Identify quality management system gaps against ISO standards.
+- [Compliance Framework Builder](https://sovereign-compliance-architect.lovable.app/tools/compliance-framework-builder): Build a tailored compliance framework for your organization.
+- [CAR Gravity Calculator](https://sovereign-compliance-architect.lovable.app/tools/car-gravity-calculator): Assess corrective action request severity and priority.
+- [Labor Ethics Stress Test](https://sovereign-compliance-architect.lovable.app/tools/labor-ethics-stress-test): Evaluate labor practices against CTIP and human rights standards.
+- [PWS Risk Highlighter](https://sovereign-compliance-architect.lovable.app/tools/pws-risk-highlighter): Identify risk language in Performance Work Statements.
+- [Maturity Premium Calculator](https://sovereign-compliance-architect.lovable.app/tools/maturity-premium-calculator): Calculate the ROI of operational maturity investments.
+- [CPSR Financial Integrity](https://sovereign-compliance-architect.lovable.app/tools/cpsr-financial-integrity): Assess contractor purchasing system review readiness.
+- [Austere Safety Checklist](https://sovereign-compliance-architect.lovable.app/tools/austere-safety-checklist): Safety compliance checklist for austere environment operations.
+- [Profitability Leakage Tracker](https://sovereign-compliance-architect.lovable.app/tools/profitability-leakage-tracker): Identify compliance-driven profitability losses.
+- [Surge Capacity Stress Test](https://sovereign-compliance-architect.lovable.app/tools/surge-capacity-stress-test): Test organizational readiness for rapid scaling demands.
+- [Virtual Spot Check](https://sovereign-compliance-architect.lovable.app/tools/virtual-spot-check): Simulate a compliance spot check audit.
+- [RFO Business Judgment](https://sovereign-compliance-architect.lovable.app/tools/rfo-business-judgment): Evaluate request-for-offer business judgment factors.
+
+## Resources
+
+- [GovCon Resource Library](https://sovereign-compliance-architect.lovable.app/resources/govcon): Downloadable guides, templates, and frameworks for government contractors.
+- [Startup Resource Library](https://sovereign-compliance-architect.lovable.app/resources/startup): Compliance resources for high-growth startups entering regulated markets.
+- [POE Resource Library](https://sovereign-compliance-architect.lovable.app/resources/poe): Portfolio of Evidence templates and documentation guides.
+
+## Key Pages
+
+- [About](https://sovereign-compliance-architect.lovable.app/about): Our mission, heritage, and approach to quality and compliance advisory.
+- [Methodology](https://sovereign-compliance-architect.lovable.app/methodology): The ElevateQCS advisory methodology and engagement framework.
+- [Engagement Model](https://sovereign-compliance-architect.lovable.app/engagement-model): How we partner with clients across engagement types.
+- [Who We Serve](https://sovereign-compliance-architect.lovable.app/who-we-serve): Target audiences and ideal client profiles.
+- [Credentials](https://sovereign-compliance-architect.lovable.app/credentials): Certifications, affiliations, and professional credentials.
+- [Governance](https://sovereign-compliance-architect.lovable.app/governance): Our internal governance framework and ethical commitments.
+- [FAQ](https://sovereign-compliance-architect.lovable.app/faq): Frequently asked questions about our services and approach.
+- [Acronyms & Glossary](https://sovereign-compliance-architect.lovable.app/acronyms): Industry acronyms and terminology reference.
+- [Contact](https://sovereign-compliance-architect.lovable.app/contact): Get in touch for consultations and engagement inquiries.
+
+## Optional
+
+- [Capabilities Statement](https://sovereign-compliance-architect.lovable.app/capabilities): Formal capabilities overview for contract and procurement purposes.
+- [Careers](https://sovereign-compliance-architect.lovable.app/careers): Current opportunities at ElevateQCS.
+- [RFP Intake](https://sovereign-compliance-architect.lovable.app/rfp): Submit a request for proposal or engagement inquiry.
