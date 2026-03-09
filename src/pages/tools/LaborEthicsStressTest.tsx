@@ -284,7 +284,7 @@ export default function LaborEthicsStressTest() {
           <Link to="/tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-accent mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
-          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); if (results) { supabase.from("assessment_leads").insert({ name: data.name, email: data.email, company: data.company, industry: data.industry, consent: true, tool_used: "Labor Ethics Stress Test", score: results.score, tier: results.tier, date_completed: new Date().toISOString() }).catch(() => {}); } }} />
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); if (results) { try { supabase.from("assessment_leads").insert({ name: data.name, email: data.email, company: data.company, industry: data.industry, consent: true, tool_used: "Labor Ethics Stress Test", score: results.score, tier: results.tier, date_completed: new Date().toISOString() }); } catch(e) { console.error(e); } } }} />
           {!results && (
             <div>
               <div className="max-w-2xl mx-auto mb-8">
