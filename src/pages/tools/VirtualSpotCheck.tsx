@@ -121,11 +121,11 @@ function calculateResults(userAnswers: Record<string, "compliant" | "non-complia
   }
 
   const recommendedActions = [
-    "Review each scenario explanation to understand the compliance rationale",
-    "Cross-reference findings against your own facility conditions",
-    "Conduct a physical walkthrough of your workspace using these criteria",
-    "Discuss findings with your quality team during the next management review",
-    "Consider scheduling a mock audit to test your team's readiness",
+    "Fatal Flaw: Reviewing audit scenarios in theory without conducting physical walkthroughs of your own facility using these exact criteria.",
+    "Fatal Flaw: Assuming your quality team can identify non-conformances when they haven't been trained on current DCMA surveillance standards.",
+    "Fatal Flaw: Treating mock audits as optional when external auditors use exactly these conditions to issue NCRs and CARs.",
+    "Fatal Flaw: Discussing findings in management review without mapping each one to a specific corrective action with measurable closure criteria.",
+    "Fatal Flaw: Believing audit readiness is a periodic event rather than a continuous operational discipline.",
   ];
 
   return {

@@ -284,8 +284,8 @@ export default function LaborEthicsStressTest() {
           <Link to="/tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-accent mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Tools
           </Link>
-          <ToolEmailGate open={!isUnlocked} onUnlock={unlock} />
-          {isUnlocked && !results && (
+          <ToolEmailGate open={!isUnlocked && !!results} onUnlock={(data) => { unlock(data); if (results) { supabase.from("assessment_leads").insert({ name: data.name, email: data.email, company: data.company, industry: data.industry, consent: true, tool_used: "Labor Ethics Stress Test", score: results.score, tier: results.tier, date_completed: new Date().toISOString() }).catch(() => {}); } }} />
+          {!results && (
             <div>
               <div className="max-w-2xl mx-auto mb-8">
                 <div className="flex items-center gap-3 mb-4">
@@ -304,7 +304,7 @@ export default function LaborEthicsStressTest() {
               <StressTestShell onComplete={handleComplete} />
             </div>
           )}
-          {isUnlocked && results && userData && (
+          {results && (
             <ResultsPage
               toolName="Labor Ethics Stress Test"
               score={results.score}
@@ -315,7 +315,9 @@ export default function LaborEthicsStressTest() {
               findings={results.findings}
               recommendedActions={results.recommendedActions}
               relatedInsights={results.relatedInsights}
-              userData={{ name: userData.name, company: userData.company }}
+              userData={userData || { name: "", company: "" }}
+              isUnlocked={isUnlocked}
+              onUnlock={() => {}}
             />
           )}
         </div>
