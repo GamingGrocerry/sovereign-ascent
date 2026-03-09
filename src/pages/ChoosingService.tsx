@@ -13,22 +13,10 @@ import sectorEU from "@/assets/sector-eu-exposed.jpg";
 
 const sectors = [
   {
-    name: "Federal Contractors",
-    detail: "Navigating FAR/DFARS and agency-specific requirements",
-    href: "/sectors/federal-contractors",
-    image: sectorFederal,
-  },
-  {
-    name: "Defense & Aerospace Companies",
-    detail: "Requiring CMMC, AS9100, and ITAR compliance",
-    href: "/sectors/defense-aerospace",
-    image: sectorDefense,
-  },
-  {
-    name: "Medical Device & Life Sciences Startups",
-    detail: "Entering FDA and EU MDR regulated markets",
-    href: "/sectors/medical-life-sciences",
-    image: sectorMedical,
+    name: "Advanced Manufacturing Firms",
+    detail: "Scaling quality systems across operations",
+    href: "/sectors/advanced-manufacturing",
+    image: sectorManufacturing,
   },
   {
     name: "AI & Deep Tech Companies",
@@ -37,16 +25,28 @@ const sectors = [
     image: sectorAI,
   },
   {
-    name: "Advanced Manufacturing Firms",
-    detail: "Scaling quality systems across operations",
-    href: "/sectors/advanced-manufacturing",
-    image: sectorManufacturing,
+    name: "Defense & Aerospace Companies",
+    detail: "Requiring CMMC, AS9100, and ITAR compliance",
+    href: "/sectors/defense-aerospace",
+    image: sectorDefense,
   },
   {
     name: "EU-Exposed Companies",
     detail: "With human rights due diligence obligations under CS3D",
     href: "/sectors/eu-exposed",
     image: sectorEU,
+  },
+  {
+    name: "Federal Contractors",
+    detail: "Navigating FAR/DFARS and agency-specific requirements",
+    href: "/sectors/federal-contractors",
+    image: sectorFederal,
+  },
+  {
+    name: "Medical Device & Life Sciences Startups",
+    detail: "Entering FDA and EU MDR regulated markets",
+    href: "/sectors/medical-life-sciences",
+    image: sectorMedical,
   },
 ];
 

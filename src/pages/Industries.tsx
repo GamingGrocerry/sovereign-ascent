@@ -16,6 +16,30 @@ import industryClimate from "@/assets/industry-climate-energy.jpg";
 
 const industries = [
   {
+    name: "Advanced Manufacturing",
+    description: "Quality systems and operational infrastructure for manufacturing firms scaling operations while maintaining ISO 9001 and customer-specific quality requirements.",
+    href: "/industries/advanced-manufacturing",
+    image: industryManufacturing,
+  },
+  {
+    name: "Artificial Intelligence & Deep Tech",
+    description: "Governance frameworks and compliance architecture for AI companies preparing for enterprise procurement, EU AI Act, and regulatory scrutiny.",
+    href: "/industries/ai-deep-tech",
+    image: industryAI,
+  },
+  {
+    name: "Climate & Energy",
+    description: "Regulatory compliance, ESG governance, and quality systems for clean energy, climate technology, and energy infrastructure organizations.",
+    href: "/industries/climate-energy",
+    image: industryClimate,
+  },
+  {
+    name: "Cybersecurity",
+    description: "Governance and compliance frameworks for cybersecurity firms navigating CMMC, FedRAMP, SOC 2, and federal acquisition security requirements.",
+    href: "/industries/cybersecurity",
+    image: industryCybersecurity,
+  },
+  {
     name: "Defense & Aerospace",
     description: "Governance, quality, and compliance architecture for defence contractors and aerospace manufacturers operating under FAR/DFARS, CMMC, AS9100, and ITAR requirements.",
     href: "/industries/defense",
@@ -26,30 +50,6 @@ const industries = [
     description: "Compliance infrastructure for federal IT service providers and systems integrators navigating FedRAMP, FISMA, and agency-specific security requirements.",
     href: "/industries/federal-it",
     image: industryFederalIt,
-  },
-  {
-    name: "Medical Devices & Life Sciences",
-    description: "Quality management systems and regulatory infrastructure for medical device companies entering FDA, EU MDR, and ISO 13485 regulated markets.",
-    href: "/industries/medical-devices",
-    image: industryMedical,
-  },
-  {
-    name: "Artificial Intelligence & Deep Tech",
-    description: "Governance frameworks and compliance architecture for AI companies preparing for enterprise procurement, EU AI Act, and regulatory scrutiny.",
-    href: "/industries/ai-deep-tech",
-    image: industryAI,
-  },
-  {
-    name: "Advanced Manufacturing",
-    description: "Quality systems and operational infrastructure for manufacturing firms scaling operations while maintaining ISO 9001 and customer-specific quality requirements.",
-    href: "/industries/advanced-manufacturing",
-    image: industryManufacturing,
-  },
-  {
-    name: "Cybersecurity",
-    description: "Governance and compliance frameworks for cybersecurity firms navigating CMMC, FedRAMP, SOC 2, and federal acquisition security requirements.",
-    href: "/industries/cybersecurity",
-    image: industryCybersecurity,
   },
   {
     name: "Infrastructure & Engineering",
@@ -64,10 +64,10 @@ const industries = [
     image: industryIntlDev,
   },
   {
-    name: "Climate & Energy",
-    description: "Regulatory compliance, ESG governance, and quality systems for clean energy, climate technology, and energy infrastructure organizations.",
-    href: "/industries/climate-energy",
-    image: industryClimate,
+    name: "Medical Devices & Life Sciences",
+    description: "Quality management systems and regulatory infrastructure for medical device companies entering FDA, EU MDR, and ISO 13485 regulated markets.",
+    href: "/industries/medical-devices",
+    image: industryMedical,
   },
 ];
 
