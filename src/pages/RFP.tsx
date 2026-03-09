@@ -16,7 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Link } from "react-router-dom";
-import { ArrowRight, Upload, CheckCircle, Shield, Building2, Scale, Globe, FileCheck } from "lucide-react";
+import { ArrowRight, Upload, CheckCircle, Shield, Building2, Scale, Globe, FileCheck, Lock, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import rfpHero from "@/assets/rfp-hero.jpg";
 
