@@ -150,7 +150,7 @@ Clear requirements enable accurate pricing. Ambiguous requirements force estimat
 
 ---
 
-*Every project delay that originates in a vague requirement is a delay that was avoidable. The Contractual Friction Audit is the discipline that converts documentation ambiguity into execution clarity — and execution clarity into competitive advantage.*
+*Every project delay that originates in a vague requirement is a delay that was avoidable. The Contractual Friction Audit is the discipline that converts documentation ambiguity into execution clarity — and execution clarity into competitive advantage. When precision fails and a project hits the wall, the [96-hour recovery framework](/insights/96-hour-recovery) becomes the last line of defense.*
 
 For Contractual Friction Audit advisory, contact ElevateQCS at [info@elevateqcs.com](mailto:info@elevateqcs.com).
 `,
