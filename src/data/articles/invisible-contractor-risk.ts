@@ -167,7 +167,7 @@ The EU Corporate Sustainability Due Diligence Directive requires companies to co
 
 ---
 
-*Multi-tier supply chain visibility is no longer a best practice — it is a contractual and regulatory requirement. Organizations that build this capability now will be positioned to compete in an environment where transparency is a selection criterion, not an afterthought.*
+*Multi-tier supply chain visibility is no longer a best practice — it is a contractual and regulatory requirement. Organizations that build this capability now will be positioned to compete in an environment where transparency is a selection criterion, not an afterthought. When a project does fail due to a Tier-3 gap, the [96-hour recovery framework](/insights/96-hour-recovery) becomes critical.*
 
 For a confidential assessment of your supply chain visibility posture, contact ElevateQCS at [info@elevateqcs.com](mailto:info@elevateqcs.com).
 `,
