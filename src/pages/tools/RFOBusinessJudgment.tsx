@@ -167,7 +167,7 @@ export default function RFOBusinessJudgment() {
   const [results, setResults] = useState<{ score: number; maxScore: number; tier: string; tierColor: string; tierDescription: string; findings: { area: string; status: string; recommendation: string }[]; recommendedActions: string[] } | null>(null);
   const [started, setStarted] = useState(false);
 
-  const handleStart = () => { if (!isUnlocked) { setShowGate(true); } else { setStarted(true); } };
+  const handleStart = () => { setStarted(true); };
   const handleUnlock = (data: { name: string; email: string; company: string; industry: string }) => { unlock(data); setShowGate(false); setStarted(true); };
 
   const handleComplete = async (answers: Record<string, { selected: string; correct: boolean }>) => {
