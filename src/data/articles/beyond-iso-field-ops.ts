@@ -91,6 +91,7 @@ Replace the quarterly procedure review with a continuous feedback mechanism:
 
 - **Field Deviation Reports**: A simple, mobile-accessible form that allows any field team member to report a procedure that does not match operational reality — without requiring a formal [CAPA](/insights/capa-loop) process
 - **Weekly Procedure Pulse**: A 15-minute standing meeting between quality and field leadership to review deviation reports and approve interim procedure modifications
+- **Precision documentation standards**: Where the [Contractual Friction Audit](/insights/contractual-friction-audit) eliminates ambiguity in SOW language, the Two-Page standard eliminates ambiguity in operational procedures
 - **Monthly Reconciliation**: A structured review that incorporates field feedback into permanent procedure updates
 
 ### Step 4: Technology That Serves the Field
