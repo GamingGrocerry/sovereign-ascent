@@ -99,6 +99,13 @@ import imgCtipBeyond from "@/assets/insight-ctip-beyond-recruitment.jpg";
 import imgValueOverPrice from "@/assets/insight-value-over-price.jpg";
 import imgLogisticsPaperTrail from "@/assets/insight-logistics-paper-trail.jpg";
 import imgSiteSecurity from "@/assets/insight-site-security-perimeter.jpg";
+import imgInvisibleContractor from "@/assets/insight-invisible-contractor-risk.jpg";
+import imgBeyondIso from "@/assets/insight-beyond-iso-field-ops.jpg";
+import img96HourRecovery from "@/assets/insight-96-hour-recovery.jpg";
+import imgEsgPerformance from "@/assets/insight-esg-performance-metric.jpg";
+import imgContractualFriction from "@/assets/insight-contractual-friction-audit.jpg";
+import imgInvestorReady from "@/assets/insight-investor-ready-ops.jpg";
+import imgAgenticAi from "@/assets/insight-agentic-ai-oversight.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
