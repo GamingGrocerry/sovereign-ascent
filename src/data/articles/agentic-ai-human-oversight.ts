@@ -135,7 +135,7 @@ The orchestration framework is only as strong as its handoff protocol — the ru
 Effective human oversight in complex supply chains requires a specific type of experience:
 
 - **Multi-stakeholder navigation**: Experience managing relationships across government agencies, prime contractors, and subcontractors simultaneously
-- **Regulatory fluency**: Understanding of [FAR, DFARS](/insights/far-overhaul-2026), and agency-specific requirements at a practitioner level
+- **Regulatory fluency**: Understanding of [FAR](https://www.acquisition.gov/far/), [DFARS](/insights/far-overhaul-2026), and agency-specific requirements at a practitioner level
 - **Crisis management**: Demonstrated ability to stabilize failing programs within compressed timelines
 - **Documentation discipline**: The ability to create records that protect the organization legally while maintaining productive relationships
 
