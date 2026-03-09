@@ -118,7 +118,7 @@ Organizations that conduct Contractual Friction Audits before project launch con
 
 - **Improved client relationships**: Precision documentation reduces adversarial interactions
 - **Better cost estimation**: Clear requirements enable accurate pricing — reducing the margin erosion from [underpriced ambiguity](/insights/value-over-price)
-- **Stronger past performance**: Projects that execute on time generate positive CPARS evaluations — the currency of future contract wins
+- **Stronger past performance**: Projects that execute on time generate positive [CPARS](https://www.cpars.gov/) evaluations — the currency of future contract wins
 
 ## Integration with Proposal Development
 
