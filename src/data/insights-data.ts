@@ -181,6 +181,20 @@ logisticsPaperTrail.icon = FileText;
 logisticsPaperTrail.image = imgLogisticsPaperTrail;
 siteSecurityPerimeter.icon = Lock;
 siteSecurityPerimeter.image = imgSiteSecurity;
+invisibleContractorRisk.icon = Eye;
+invisibleContractorRisk.image = imgInvisibleContractor;
+beyondIsoFieldOps.icon = BookOpen;
+beyondIsoFieldOps.image = imgBeyondIso;
+recovery96Hour.icon = Zap;
+recovery96Hour.image = img96HourRecovery;
+esgPerformanceMetric.icon = Shield;
+esgPerformanceMetric.image = imgEsgPerformance;
+contractualFrictionAudit.icon = Target;
+contractualFrictionAudit.image = imgContractualFriction;
+investorReadyOperations.icon = TrendingUp;
+investorReadyOperations.image = imgInvestorReady;
+agenticAiHumanOversight.icon = Layers;
+agenticAiHumanOversight.image = imgAgenticAi;
 
 export const featuredArticle = costOfNonCompliance;
 
