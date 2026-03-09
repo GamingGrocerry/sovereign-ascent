@@ -39,7 +39,7 @@ CS3D applies to companies meeting specific revenue and employee thresholds — b
 
 U.S. government contracting has its own ESG framework, though it uses different terminology:
 
-- **CTIP compliance** under FAR 52.222-50 requires anti-trafficking programs for contracts over $550,000 with overseas performance
+- **CTIP compliance** under [FAR 52.222-50](https://www.acquisition.gov/far/52.222-50) requires anti-trafficking programs for contracts over $550,000 with overseas performance
 - **Environmental management** obligations under various federal clauses require contractors to document environmental practices
 - **Supply chain transparency** requirements continue to expand under both CMMC and broader acquisition reform
 
