@@ -157,6 +157,10 @@ const App = () => (
           <Route path="/tools/cpsr-financial-integrity" element={<CPSRFinancialIntegrity />} />
           
           <Route path="/tools/profitability-leakage-tracker" element={<ProfitabilityLeakageTracker />} />
+          <Route path="/tools/eu-ai-act-classifier" element={<EUAIActClassifier />} />
+          <Route path="/tools/iso-42001-readiness" element={<ISO42001Readiness />} />
+          <Route path="/tools/project-health-diagnostic" element={<ProjectHealthDiagnostic />} />
+          <Route path="/tools/esg-traceability-stress-test" element={<ESGTraceabilityStressTest />} />
           <Route path="/capabilities" element={<Capabilities />} />
           <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
