@@ -93,7 +93,7 @@ Organizations with mature [CTIP programs](/insights/ctip-beyond-recruitment) hav
 - **Worker protection protocols** designed for CTIP compliance address the core labor rights requirements of ESG frameworks
 - **Documentation and evidence standards** developed for FAR 52.222-50 compliance meet or exceed CS3D due diligence documentation requirements
 
-This is not coincidence. CTIP was among the first regulatory frameworks to require supply chain-wide due diligence — the same principle now embedded in CS3D, the German Supply Chain Act, and emerging regulations across the EU.
+This is not coincidence. CTIP was among the first regulatory frameworks to require supply chain-wide due diligence — the same principle now embedded in CS3D, the [German Supply Chain Due Diligence Act](https://www.bmas.de/EN/Europe-and-the-World/International/Supply-Chain-Act/supply-chain-act.html), and emerging regulations across the EU. Understanding the [CS3D compliance landscape](/insights/ctip-cs3d-compliance) is essential for organizations operating in both markets.
 
 ## The Competitive Advantage Calculation
 
