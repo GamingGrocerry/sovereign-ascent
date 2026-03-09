@@ -83,7 +83,7 @@ The "Compliance Heartbeat" model replaces periodic checks with continuous signal
 - **Certification status monitoring**: Automated tracking of ISO, CMMC, and industry-specific certifications across the supply chain
 - **Financial health indicators**: Credit alerts, lien filings, and bankruptcy watch lists that signal supplier instability before it becomes a compliance event
 - **Workforce composition changes**: Notifications when a sub-tier supplier significantly changes its labor force composition — a leading indicator of both quality risk and [CTIP exposure](/insights/ctip-enforcement-trends)
-- **Regulatory action alerts**: Monitoring for government enforcement actions, debarment proceedings, or safety violations against any entity in the supply chain
+- **Regulatory action alerts**: Monitoring for government enforcement actions, [debarment proceedings](https://sam.gov/content/exclusions), or safety violations against any entity in the supply chain
 
 ## The "Forensic Audit" Approach to Tier-3
 
