@@ -91,7 +91,7 @@ For each red and yellow zone requirement, develop precision language that elimin
 
 **Before**: "The contractor shall maintain quality records."
 
-**After**: "The contractor shall maintain quality records in accordance with ISO 9001:2015 Section 7.5 (or its 2026 successor), including but not limited to: inspection reports, nonconformance logs, corrective action records, and calibration certificates. Records shall be maintained in electronic format, indexed by contract CLIN, and available for government review within 24 hours of request."
+**After**: "The contractor shall maintain quality records in accordance with [ISO 9001:2015](https://www.iso.org/standard/62085.html) Section 7.5 (or its 2026 successor), including but not limited to: inspection reports, nonconformance logs, corrective action records, and calibration certificates. Records shall be maintained in electronic format, indexed by contract CLIN, and available for government review within 24 hours of request."
 
 The precision version takes longer to write. It takes far less time to execute — because no one needs to ask what it means.
 
