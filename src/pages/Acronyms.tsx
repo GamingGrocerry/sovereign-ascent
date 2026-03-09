@@ -129,7 +129,17 @@ const grouped = sortedAcronyms.reduce<Record<string, typeof acronyms>>((acc, ite
 const letters = Object.keys(grouped).sort();
 
 export default function Acronyms() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(() => searchParams.get("q") || "");
+
+  // Sync URL when search changes
+  useEffect(() => {
+    if (searchQuery) {
+      setSearchParams({ q: searchQuery }, { replace: true });
+    } else {
+      setSearchParams({}, { replace: true });
+    }
+  }, [searchQuery, setSearchParams]);
 
   const filteredAcronyms = useMemo(() => {
     if (!searchQuery.trim()) return sortedAcronyms;
