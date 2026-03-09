@@ -116,7 +116,7 @@ Investors expect data-driven management. The governance architecture must includ
 - Document the organizational structure and decision framework
 - Create SOPs for the three to five most critical processes
 - Establish a compliance calendar and complete any overdue regulatory obligations
-- Implement basic quality metrics and begin tracking trends
+- Implement basic quality metrics and begin tracking trends — the [ESG performance metrics](/insights/esg-performance-metric) framework applies equally to governance maturity
 
 ### Months 3–6 Before the Raise: Infrastructure
 
