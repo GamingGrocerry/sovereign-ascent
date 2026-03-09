@@ -192,7 +192,7 @@ export function useToolAccess() {
     industry: "",
   });
 
-  const unlock = () => {};
+  const unlock = (_data?: { name: string; email: string; company: string; industry: string }) => {};
 
   return { isUnlocked: true, userData, unlock };
 }
