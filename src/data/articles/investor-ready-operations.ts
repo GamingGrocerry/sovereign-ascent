@@ -77,7 +77,7 @@ Each layer has documented authority limits, escalation criteria, and reporting o
 
 ### Layer 2: Quality Infrastructure
 
-You do not need ISO 9001 certification at Series B. You need evidence that quality is managed, not accidental:
+You do not need [ISO 9001](https://www.iso.org/standard/62085.html) certification at Series B. You need evidence that quality is managed, not accidental:
 
 **Core Documentation**:
 - Standard Operating Procedures for your three to five most critical processes
