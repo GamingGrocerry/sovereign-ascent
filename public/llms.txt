@@ -94,6 +94,16 @@ ElevateQCS is a specialized advisory firm delivering governance, quality managem
 - [LOC Crisis Response](https://elevateqcs.com/insights/loc-crisis-response): Loss-of-certification crisis management and recovery.
 - [Oversold Under-Delivered Compliance Gap](https://elevateqcs.com/insights/oversold-under-delivered-compliance-gap): The compliance capability gap between marketing and delivery.
 - [96-Hour Deployment Sprint](https://elevateqcs.com/insights/96-hour-sprint): Rapid compliance system deployment methodology.
+- [CBAM Is Not Just a Carbon Tax](https://elevateqcs.com/insights/cbam-supply-chain-data-governance): Why the Carbon Border Adjustment Mechanism is fundamentally a supply chain data governance problem requiring ISO 14064 and ISO 14067 operational systems.
+- [The Carbon Data Problem](https://elevateqcs.com/insights/carbon-data-product-footprint): Why most companies cannot prove their product-level carbon footprint — Scope 3 complexity, supplier emissions transparency, and digital measurement systems.
+- [Environmental Compliance Is Becoming a Procurement Requirement](https://elevateqcs.com/insights/environmental-compliance-procurement): Environmental governance is shifting from ESG reporting to supplier eligibility under CS3D and ISO 14001 frameworks.
+- [Supply Chain Governance in Risk Management](https://elevateqcs.com/insights/supply-chain-governance-risk-management): Why modern compliance is enforced through suppliers — regulatory flow-down, due diligence, and operational risk visibility.
+- [Mid-Market Supply Chain Compliance Gaps](https://elevateqcs.com/insights/midmarket-supply-chain-compliance): Why mid-sized companies struggle with fragmented compliance responsibilities and lack of supplier monitoring systems.
+- [International Supply Chain Compliance Gap](https://elevateqcs.com/insights/international-supply-chain-compliance-gap): Overlapping regulatory frameworks across EU and global markets in environmental reporting, cybersecurity, and due diligence.
+- [Why Compliance Programs Fail Without Operational Integration](https://elevateqcs.com/insights/compliance-without-operational-integration): Most companies treat compliance as documentation rather than an operational system — governance structures, accountability, and internal controls.
+- [EU AI Act Will Affect Companies That Do Not Build AI](https://elevateqcs.com/insights/eu-ai-act-deployers): The EU AI Act impacts organizations deploying AI systems — risk classification, deployer responsibilities, and governance structures.
+- [AI Governance Is a Quality and Risk Management Issue](https://elevateqcs.com/insights/ai-governance-quality-management): Traditional quality systems were not built for AI-driven decisions — algorithm oversight, model validation, and operational accountability.
+- [Building an Operational Compliance Architecture](https://elevateqcs.com/insights/operational-compliance-architecture): Pillar article on structuring compliance governance, environmental monitoring, supply chain oversight, and AI governance for modern companies.
 
 ## Interactive Tools
 
