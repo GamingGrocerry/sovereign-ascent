@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, FileText, Lock, Zap, Scale, Hammer, Layers, Eye, LucideIcon } from "lucide-react";
+import { AlertCircle, BookOpen, TrendingUp, Shield, Target, BarChart3, Siren, Repeat, Search, FileText, Lock, Zap, Scale, Hammer, Layers, Eye, Leaf, Globe, Brain, Settings, LucideIcon } from "lucide-react";
 
 export interface Article {
   slug: string;
@@ -60,6 +60,17 @@ import esgPerformanceMetric from "./articles/esg-performance-metric";
 import contractualFrictionAudit from "./articles/contractual-friction-audit";
 import investorReadyOperations from "./articles/investor-ready-operations";
 import agenticAiHumanOversight from "./articles/agentic-ai-human-oversight";
+// New articles — March 10–13, 2026
+import cbamSupplyChainData from "./articles/cbam-supply-chain-data-governance";
+import carbonDataFootprint from "./articles/carbon-data-product-footprint";
+import environmentalComplianceProcurement from "./articles/environmental-compliance-procurement";
+import supplyChainGovernanceRisk from "./articles/supply-chain-governance-risk-management";
+import midmarketSupplyChain from "./articles/midmarket-supply-chain-compliance";
+import internationalSupplyChainGap from "./articles/international-supply-chain-compliance-gap";
+import euAiActDeployers from "./articles/eu-ai-act-deployers";
+import aiGovernanceQuality from "./articles/ai-governance-quality-management";
+import complianceOperationalIntegration from "./articles/compliance-without-operational-integration";
+import operationalComplianceArchitecture from "./articles/operational-compliance-architecture";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -106,6 +117,17 @@ import imgEsgPerformance from "@/assets/insight-esg-performance-metric.jpg";
 import imgContractualFriction from "@/assets/insight-contractual-friction-audit.jpg";
 import imgInvestorReady from "@/assets/insight-investor-ready-ops.jpg";
 import imgAgenticAi from "@/assets/insight-agentic-ai-oversight.jpg";
+// New article images
+import imgCbamSupplyChain from "@/assets/insight-cbam-supply-chain-data.jpg";
+import imgCarbonDataFootprint from "@/assets/insight-carbon-data-footprint.jpg";
+import imgEnvironmentalProcurement from "@/assets/insight-environmental-procurement.jpg";
+import imgSupplyChainGovernanceRisk from "@/assets/insight-supply-chain-governance-risk.jpg";
+import imgMidmarketSupplyChain from "@/assets/insight-midmarket-supply-chain.jpg";
+import imgInternationalSupplyChainGap from "@/assets/insight-international-supply-chain-gap.jpg";
+import imgEuAiActDeployers from "@/assets/insight-eu-ai-act-deployers.jpg";
+import imgAiGovernanceQuality from "@/assets/insight-ai-governance-quality.jpg";
+import imgComplianceOperationalIntegration from "@/assets/insight-compliance-operational-integration.jpg";
+import imgOperationalComplianceArchitecture from "@/assets/insight-operational-compliance-architecture.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -195,10 +217,41 @@ investorReadyOperations.icon = TrendingUp;
 investorReadyOperations.image = imgInvestorReady;
 agenticAiHumanOversight.icon = Layers;
 agenticAiHumanOversight.image = imgAgenticAi;
+// New articles — icons and images
+cbamSupplyChainData.icon = Leaf;
+cbamSupplyChainData.image = imgCbamSupplyChain;
+carbonDataFootprint.icon = Leaf;
+carbonDataFootprint.image = imgCarbonDataFootprint;
+environmentalComplianceProcurement.icon = Leaf;
+environmentalComplianceProcurement.image = imgEnvironmentalProcurement;
+supplyChainGovernanceRisk.icon = Globe;
+supplyChainGovernanceRisk.image = imgSupplyChainGovernanceRisk;
+midmarketSupplyChain.icon = AlertCircle;
+midmarketSupplyChain.image = imgMidmarketSupplyChain;
+internationalSupplyChainGap.icon = Globe;
+internationalSupplyChainGap.image = imgInternationalSupplyChainGap;
+euAiActDeployers.icon = Brain;
+euAiActDeployers.image = imgEuAiActDeployers;
+aiGovernanceQuality.icon = Brain;
+aiGovernanceQuality.image = imgAiGovernanceQuality;
+complianceOperationalIntegration.icon = Settings;
+complianceOperationalIntegration.image = imgComplianceOperationalIntegration;
+operationalComplianceArchitecture.icon = Layers;
+operationalComplianceArchitecture.image = imgOperationalComplianceArchitecture;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  operationalComplianceArchitecture,
+  euAiActDeployers,
+  aiGovernanceQuality,
+  cbamSupplyChainData,
+  carbonDataFootprint,
+  environmentalComplianceProcurement,
+  supplyChainGovernanceRisk,
+  midmarketSupplyChain,
+  internationalSupplyChainGap,
+  complianceOperationalIntegration,
   invisibleContractorRisk,
   beyondIsoFieldOps,
   recovery96Hour,
