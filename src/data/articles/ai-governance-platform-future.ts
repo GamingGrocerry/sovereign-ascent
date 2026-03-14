@@ -69,8 +69,6 @@ This becomes the **AI Compliance Diagnostic** — the entry point to the Elevate
 
 ![AI compliance gap analyzer scanning documents against ISO standard frameworks with diagnostic overlay](ai-compliance-gap-analyzer-diagnostic.jpg "AI Compliance Gap Analyzer — automated clause-by-clause analysis against ISO 9001, ISO 42001, ISO 27001, and ISO 14064")
 
-**Projected pricing:** $500–$3,000 per assessment, depending on scope and standards coverage.
-
 ---
 
 ## Module 2: EU Regulatory Monitoring AI
@@ -98,8 +96,6 @@ The monitoring engine tracks changes across the most consequential regulatory fr
 Organizations currently rely on legal newsletters, industry associations, and periodic advisor briefings to track regulatory change. This creates a dangerous latency — by the time most companies learn about a regulatory shift, early adopters have already begun compliance implementation.
 
 The EU Regulatory Monitoring AI converts this from a periodic awareness exercise into a **continuous intelligence service**.
-
-**Projected pricing:** $99–$299/month as a subscription intelligence service.
 
 ---
 
