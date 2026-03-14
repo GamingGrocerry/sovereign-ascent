@@ -129,6 +129,7 @@ import imgEuAiActDeployers from "@/assets/insight-eu-ai-act-deployers.jpg";
 import imgAiGovernanceQuality from "@/assets/insight-ai-governance-quality.jpg";
 import imgComplianceOperationalIntegration from "@/assets/insight-compliance-operational-integration.jpg";
 import imgOperationalComplianceArchitecture from "@/assets/insight-operational-compliance-architecture.jpg";
+import imgAiGovernancePlatform from "@/assets/insight-ai-governance-platform.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
