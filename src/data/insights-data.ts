@@ -309,6 +309,7 @@ const categoryOrder = [
   "Risk Analysis",
   "Audit Insights",
   "Regulatory Landscape",
+  "Digital Governance",
   "System Architecture",
   "Operations",
   "Decision Making",
