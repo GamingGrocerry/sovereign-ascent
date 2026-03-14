@@ -240,6 +240,8 @@ complianceOperationalIntegration.icon = Settings;
 complianceOperationalIntegration.image = imgComplianceOperationalIntegration;
 operationalComplianceArchitecture.icon = Layers;
 operationalComplianceArchitecture.image = imgOperationalComplianceArchitecture;
+aiGovernancePlatformFuture.icon = Brain;
+aiGovernancePlatformFuture.image = imgAiGovernancePlatform;
 
 export const featuredArticle = costOfNonCompliance;
 
