@@ -69,8 +69,6 @@ This becomes the **AI Compliance Diagnostic** — the entry point to the Elevate
 
 ![AI compliance gap analyzer scanning documents against ISO standard frameworks with diagnostic overlay](ai-compliance-gap-analyzer-diagnostic.jpg "AI Compliance Gap Analyzer — automated clause-by-clause analysis against ISO 9001, ISO 42001, ISO 27001, and ISO 14064")
 
-**Projected pricing:** $500–$3,000 per assessment, depending on scope and standards coverage.
-
 ---
 
 ## Module 2: EU Regulatory Monitoring AI
