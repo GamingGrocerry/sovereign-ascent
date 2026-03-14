@@ -97,8 +97,6 @@ Organizations currently rely on legal newsletters, industry associations, and pe
 
 The EU Regulatory Monitoring AI converts this from a periodic awareness exercise into a **continuous intelligence service**.
 
-**Projected pricing:** $99–$299/month as a subscription intelligence service.
-
 ---
 
 ## Module 3: AI Governance Risk Classifier
