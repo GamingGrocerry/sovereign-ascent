@@ -242,6 +242,7 @@ operationalComplianceArchitecture.image = imgOperationalComplianceArchitecture;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  aiGovernancePlatformFuture,
   operationalComplianceArchitecture,
   euAiActDeployers,
   aiGovernanceQuality,
