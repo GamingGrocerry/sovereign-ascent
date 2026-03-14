@@ -71,6 +71,7 @@ import euAiActDeployers from "./articles/eu-ai-act-deployers";
 import aiGovernanceQuality from "./articles/ai-governance-quality-management";
 import complianceOperationalIntegration from "./articles/compliance-without-operational-integration";
 import operationalComplianceArchitecture from "./articles/operational-compliance-architecture";
+import aiGovernancePlatformFuture from "./articles/ai-governance-platform-future";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -128,6 +129,7 @@ import imgEuAiActDeployers from "@/assets/insight-eu-ai-act-deployers.jpg";
 import imgAiGovernanceQuality from "@/assets/insight-ai-governance-quality.jpg";
 import imgComplianceOperationalIntegration from "@/assets/insight-compliance-operational-integration.jpg";
 import imgOperationalComplianceArchitecture from "@/assets/insight-operational-compliance-architecture.jpg";
+import imgAiGovernancePlatform from "@/assets/insight-ai-governance-platform.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -238,10 +240,13 @@ complianceOperationalIntegration.icon = Settings;
 complianceOperationalIntegration.image = imgComplianceOperationalIntegration;
 operationalComplianceArchitecture.icon = Layers;
 operationalComplianceArchitecture.image = imgOperationalComplianceArchitecture;
+aiGovernancePlatformFuture.icon = Brain;
+aiGovernancePlatformFuture.image = imgAiGovernancePlatform;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  aiGovernancePlatformFuture,
   operationalComplianceArchitecture,
   euAiActDeployers,
   aiGovernanceQuality,
@@ -308,6 +313,7 @@ const categoryOrder = [
   "Risk Analysis",
   "Audit Insights",
   "Regulatory Landscape",
+  "Digital Governance",
   "System Architecture",
   "Operations",
   "Decision Making",

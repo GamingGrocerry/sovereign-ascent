@@ -104,6 +104,7 @@ ElevateQCS is a specialized advisory firm delivering governance, quality managem
 - [EU AI Act Will Affect Companies That Do Not Build AI](https://elevateqcs.com/insights/eu-ai-act-deployers): The EU AI Act impacts organizations deploying AI systems — risk classification, deployer responsibilities, and governance structures.
 - [AI Governance Is a Quality and Risk Management Issue](https://elevateqcs.com/insights/ai-governance-quality-management): Traditional quality systems were not built for AI-driven decisions — algorithm oversight, model validation, and operational accountability.
 - [Building an Operational Compliance Architecture](https://elevateqcs.com/insights/operational-compliance-architecture): Pillar article on structuring compliance governance, environmental monitoring, supply chain oversight, and AI governance for modern companies.
+- [Five AI-Powered Governance Tools ElevateQCS Is Building Next](https://elevateqcs.com/insights/ai-governance-platform-future): ElevateQCS roadmap for an AI governance platform — AI Compliance Gap Analyzer, EU Regulatory Monitoring AI, AI Governance Risk Classifier, CBAM Emissions Calculator, and AI-Powered Audit Preparation System forming an integrated governance SaaS.
 
 ## Interactive Tools
 
