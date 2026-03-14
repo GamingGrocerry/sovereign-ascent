@@ -71,6 +71,7 @@ import euAiActDeployers from "./articles/eu-ai-act-deployers";
 import aiGovernanceQuality from "./articles/ai-governance-quality-management";
 import complianceOperationalIntegration from "./articles/compliance-without-operational-integration";
 import operationalComplianceArchitecture from "./articles/operational-compliance-architecture";
+import aiGovernancePlatformFuture from "./articles/ai-governance-platform-future";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
