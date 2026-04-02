@@ -72,6 +72,12 @@ import aiGovernanceQuality from "./articles/ai-governance-quality-management";
 import complianceOperationalIntegration from "./articles/compliance-without-operational-integration";
 import operationalComplianceArchitecture from "./articles/operational-compliance-architecture";
 import aiGovernancePlatformFuture from "./articles/ai-governance-platform-future";
+// New articles — March 18 – April 2, 2026
+import iso9001TransitionChecklist from "./articles/iso-9001-2026-transition-checklist";
+import cs3dComplianceChecklist from "./articles/cs3d-compliance-checklist";
+import euAiActNonTech from "./articles/eu-ai-act-compliance-non-tech";
+import qualityCultureIso9001 from "./articles/quality-culture-iso-9001-2026";
+import qmsGapAnalysisFramework from "./articles/qms-gap-analysis-framework";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
@@ -130,6 +136,12 @@ import imgAiGovernanceQuality from "@/assets/insight-ai-governance-quality.jpg";
 import imgComplianceOperationalIntegration from "@/assets/insight-compliance-operational-integration.jpg";
 import imgOperationalComplianceArchitecture from "@/assets/insight-operational-compliance-architecture.jpg";
 import imgAiGovernancePlatform from "@/assets/insight-ai-governance-platform.jpg";
+// New article images — March 18 – April 2
+import imgIso9001Transition from "@/assets/insight-iso-9001-2026-transition.jpg";
+import imgCs3dCompliance from "@/assets/insight-cs3d-compliance.jpg";
+import imgEuAiActNonTech from "@/assets/insight-eu-ai-act-non-tech.jpg";
+import imgQualityCulture from "@/assets/insight-quality-culture.jpg";
+import imgQmsGapAnalysis from "@/assets/insight-qms-gap-analysis.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
@@ -242,10 +254,26 @@ operationalComplianceArchitecture.icon = Layers;
 operationalComplianceArchitecture.image = imgOperationalComplianceArchitecture;
 aiGovernancePlatformFuture.icon = Brain;
 aiGovernancePlatformFuture.image = imgAiGovernancePlatform;
+// New articles — March 18 – April 2
+iso9001TransitionChecklist.icon = BookOpen;
+iso9001TransitionChecklist.image = imgIso9001Transition;
+cs3dComplianceChecklist.icon = Globe;
+cs3dComplianceChecklist.image = imgCs3dCompliance;
+euAiActNonTech.icon = Brain;
+euAiActNonTech.image = imgEuAiActNonTech;
+qualityCultureIso9001.icon = BookOpen;
+qualityCultureIso9001.image = imgQualityCulture;
+qmsGapAnalysisFramework.icon = Search;
+qmsGapAnalysisFramework.image = imgQmsGapAnalysis;
 
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  qmsGapAnalysisFramework,
+  qualityCultureIso9001,
+  euAiActNonTech,
+  cs3dComplianceChecklist,
+  iso9001TransitionChecklist,
   aiGovernancePlatformFuture,
   operationalComplianceArchitecture,
   euAiActDeployers,
