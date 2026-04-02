@@ -14,6 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      article_views: {
+        Row: {
+          slug: string
+          updated_at: string
+          view_count: number
+        }
+        Insert: {
+          slug: string
+          updated_at?: string
+          view_count?: number
+        }
+        Update: {
+          slug?: string
+          updated_at?: string
+          view_count?: number
+        }
+        Relationships: []
+      }
       assessment_leads: {
         Row: {
           answers_json: Json | null
@@ -90,6 +108,7 @@ export type Database = {
     Functions: {
       check_assessment_email: { Args: { _email: string }; Returns: boolean }
       check_resource_email: { Args: { _email: string }; Returns: boolean }
+      increment_article_view: { Args: { _slug: string }; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
