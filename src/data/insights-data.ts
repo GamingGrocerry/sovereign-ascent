@@ -269,6 +269,11 @@ qmsGapAnalysisFramework.image = imgQmsGapAnalysis;
 export const featuredArticle = costOfNonCompliance;
 
 export const articles: Article[] = [
+  qmsGapAnalysisFramework,
+  qualityCultureIso9001,
+  euAiActNonTech,
+  cs3dComplianceChecklist,
+  iso9001TransitionChecklist,
   aiGovernancePlatformFuture,
   operationalComplianceArchitecture,
   euAiActDeployers,
