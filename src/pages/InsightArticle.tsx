@@ -145,7 +145,7 @@ function RelatedCarousel({ articles: relatedArticles }: { articles: Article[] })
 export default function InsightArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
-
+  const viewCount = useArticleViews(slug);
   if (!article) return <NotFound />;
 
   const related = articles.filter((a) => a.slug !== article.slug);
