@@ -14,6 +14,8 @@ import { ToolsCallout } from "@/components/ToolsCallout";
 import { LogisticsRiskAssessment } from "@/components/LogisticsRiskAssessment";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
+import { useArticleViews } from "@/hooks/useArticleViews";
+import { Eye } from "lucide-react";
 
 const BASE_URL = "https://elevateqcs.com";
 
