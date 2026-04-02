@@ -72,6 +72,12 @@ import aiGovernanceQuality from "./articles/ai-governance-quality-management";
 import complianceOperationalIntegration from "./articles/compliance-without-operational-integration";
 import operationalComplianceArchitecture from "./articles/operational-compliance-architecture";
 import aiGovernancePlatformFuture from "./articles/ai-governance-platform-future";
+// New articles — March 18 – April 2, 2026
+import iso9001TransitionChecklist from "./articles/iso-9001-2026-transition-checklist";
+import cs3dComplianceChecklist from "./articles/cs3d-compliance-checklist";
+import euAiActNonTech from "./articles/eu-ai-act-compliance-non-tech";
+import qualityCultureIso9001 from "./articles/quality-culture-iso-9001-2026";
+import qmsGapAnalysisFramework from "./articles/qms-gap-analysis-framework";
 
 // Import article images
 import imgCostNoncompliance from "@/assets/insight-cost-noncompliance.jpg";
