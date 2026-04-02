@@ -136,6 +136,12 @@ import imgAiGovernanceQuality from "@/assets/insight-ai-governance-quality.jpg";
 import imgComplianceOperationalIntegration from "@/assets/insight-compliance-operational-integration.jpg";
 import imgOperationalComplianceArchitecture from "@/assets/insight-operational-compliance-architecture.jpg";
 import imgAiGovernancePlatform from "@/assets/insight-ai-governance-platform.jpg";
+// New article images — March 18 – April 2
+import imgIso9001Transition from "@/assets/insight-iso-9001-2026-transition.jpg";
+import imgCs3dCompliance from "@/assets/insight-cs3d-compliance.jpg";
+import imgEuAiActNonTech from "@/assets/insight-eu-ai-act-non-tech.jpg";
+import imgQualityCulture from "@/assets/insight-quality-culture.jpg";
+import imgQmsGapAnalysis from "@/assets/insight-qms-gap-analysis.jpg";
 
 // Assign icons and images
 costOfNonCompliance.image = imgCostNoncompliance;
