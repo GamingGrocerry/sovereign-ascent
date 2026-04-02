@@ -247,6 +247,12 @@ export default function InsightArticle() {
                   {article.readTime}
                 </span>
                 <time>{article.date}</time>
+                {viewCount !== null && (
+                  <span className="flex items-center gap-2">
+                    <Eye className="w-4 h-4" />
+                    {viewCount.toLocaleString()} views
+                  </span>
+                )}
               </div>
               <ShareButton
                 title={article.title}
