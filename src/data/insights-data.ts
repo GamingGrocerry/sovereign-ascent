@@ -254,6 +254,17 @@ operationalComplianceArchitecture.icon = Layers;
 operationalComplianceArchitecture.image = imgOperationalComplianceArchitecture;
 aiGovernancePlatformFuture.icon = Brain;
 aiGovernancePlatformFuture.image = imgAiGovernancePlatform;
+// New articles — March 18 – April 2
+iso9001TransitionChecklist.icon = BookOpen;
+iso9001TransitionChecklist.image = imgIso9001Transition;
+cs3dComplianceChecklist.icon = Globe;
+cs3dComplianceChecklist.image = imgCs3dCompliance;
+euAiActNonTech.icon = Brain;
+euAiActNonTech.image = imgEuAiActNonTech;
+qualityCultureIso9001.icon = BookOpen;
+qualityCultureIso9001.image = imgQualityCulture;
+qmsGapAnalysisFramework.icon = Search;
+qmsGapAnalysisFramework.image = imgQmsGapAnalysis;
 
 export const featuredArticle = costOfNonCompliance;
 
