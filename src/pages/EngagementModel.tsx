@@ -282,10 +282,9 @@ export default function EngagementModel() {
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                The full institutional build. Vulnerability mapping, sovereign 
-                architecture design, phased implementation, and capability transfer. 
-                For organisations building compliance systems that will endure 
-                regulatory cycles, not just pass the next audit.
+                The full system build. Gap assessment, system design, phased 
+                implementation, and team training. For organisations building 
+                compliance systems that last.
               </p>
               <ul className="space-y-3 mb-8">
                 {["ISO 9001 / AS9100 system builds", "CMMC Level 2 preparation", "EU AI Act governance architecture", "Full QMS implementation"].map((item) => (
