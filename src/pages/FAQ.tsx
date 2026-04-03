@@ -44,7 +44,7 @@ const faqCategories = [
     ],
   },
   {
-    title: "AI & Digital Sovereignty",
+    title: "AI Compliance",
     icon: Cpu,
     iconColor: "text-accent",
     faqs: [
