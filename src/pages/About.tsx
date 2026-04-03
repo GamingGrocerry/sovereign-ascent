@@ -11,17 +11,17 @@ const values = [
   {
     icon: Award,
     title: "Operational Clarity",
-    description: "We transform complex regulatory requirements into actionable frameworks your teams execute with confidence — reducing 'Contractual Friction' to accelerate project timelines.",
+    description: "We turn complex regulations into clear action plans your team can follow with confidence.",
   },
   {
     icon: Users,
     title: "Risk Reduction",
-    description: "Our methodologies identify, quantify, and systematically address compliance risks before they become audit findings — preventing 'Margin Leakage' caused by sub-tier misalignment.",
+    description: "We help you find and fix compliance gaps before they become expensive problems.",
   },
   {
     icon: Globe,
     title: "Discretion & Confidentiality",
-    description: "Every engagement begins with comprehensive NDAs. Your competitive intelligence and compliance posture remain protected.",
+    description: "Your business information stays private. Every engagement starts with a confidentiality agreement.",
   },
 ];
 
@@ -33,7 +33,7 @@ const differentiators = [
   },
   {
     icon: Target,
-    title: "Principal-Led Delivery",
+    title: "Senior-Led Delivery",
     description: "Initial consultations and strategic direction are conducted by ElevateQCS leadership, ensuring senior-level insight guides every engagement from day one.",
   },
   {
@@ -44,18 +44,18 @@ const differentiators = [
 ];
 
 const coreCompetencies = [
-  { icon: FileSearch, label: "PWS/SOW Forensic Analysis" },
-  { icon: Layers, label: "LOGCAP V/VI Mobilization & Recovery" },
-  { icon: Brain, label: "EU AI Act Compliance & Governance" },
-  { icon: Shield, label: "Sub-tier Operational Sovereignty" },
-  { icon: BarChart3, label: "ISO 13485 & 9001 Alignment" },
-  { icon: Zap, label: "Forensic Recovery & Distressed Assets" },
+  { icon: Shield, label: "Audit Preparation & Readiness" },
+  { icon: Layers, label: "Documentation & SOP Development" },
+  { icon: Brain, label: "AI Compliance & Governance" },
+  { icon: BarChart3, label: "ISO Certification Support" },
+  { icon: FileSearch, label: "Regulatory Compliance Programs" },
+  { icon: Zap, label: "Project Recovery Advisory" },
 ];
 
 const principalLedSteps = [
-  { step: "01", title: "Principal Scoping", description: "Senior leadership conducts all initial assessments and defines strategic direction." },
+  { step: "01", title: "Senior Scoping", description: "Senior leadership conducts all initial assessments and defines strategic direction." },
   { step: "02", title: "Specialist Deployment", description: "Vetted domain experts are engaged for technical depth — no junior handoffs." },
-  { step: "03", title: "Continuous Oversight", description: "Principal review at every milestone. Your engagement never loses senior visibility." },
+  { step: "03", title: "Continuous Oversight", description: "Senior review at every milestone. Your engagement never loses experienced visibility." },
   { step: "04", title: "Capability Transfer", description: "Knowledge is embedded into your organization. Independence is the deliverable." },
 ];
 
@@ -63,10 +63,10 @@ export default function About() {
   return (
     <Layout>
       <SEOHead
-        title="About ElevateQCS | Independent Quality & Compliance Advisory"
-        description="ElevateQCS is a principal-led advisory firm bridging Defense-scale rigor with commercial velocity. Vendor-neutral, NDA-first governance infrastructure for regulated industries and high-growth enterprises."
+        title="About ElevateQCS | Independent Compliance Consulting Firm"
+        description="ElevateQCS is an independent advisory firm that helps businesses build and maintain compliance systems. Hands-on experience from defense, aerospace, and commercial environments."
         url="https://elevateqcs.com/about"
-        keywords={["about ElevateQCS", "compliance advisory firm", "quality management advisory", "GovCon compliance", "AI governance", "forensic recovery", "LOGCAP advisory"]}
+        keywords={["about ElevateQCS", "compliance advisory firm", "quality management consultant", "independent compliance consulting", "audit preparation services"]}
       />
 
       {/* Hero */}
@@ -83,18 +83,13 @@ export default function About() {
                 About ElevateQCS
               </p>
               <h1 className="mb-6 gold-accent pb-4">
-                Where Defense Rigor Meets Commercial Velocity
+                About ElevateQCS
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed mb-4">
-                ElevateQCS is a principal-led advisory firm built on hands-on
-                experience designing, implementing, and supporting governance
-                frameworks across high-value defense programs and
-                high-velocity commercial enterprises.
-              </p>
-              <p className="text-lg text-muted-foreground/80 leading-relaxed">
-                We bridge the gap between the zero-failure rigor of Defense-scale
-                LOGCAP operations and the high-velocity demands of commercial
-                infrastructure and AI-driven industries.
+                ElevateQCS is an independent advisory firm that helps businesses 
+                build and maintain compliance systems. We combine hands-on experience 
+                from defense, aerospace, and government programs with a practical 
+                approach that works for commercial businesses of all sizes.
               </p>
             </div>
             <div className="hidden lg:block">
@@ -119,26 +114,17 @@ export default function About() {
               <h2 className="mb-8">Why We Exist</h2>
               <div className="prose prose-lg text-muted-foreground space-y-6">
                 <p>
-                  The founding insight came from observing a gap: compliance
-                  advisory that worked in theory but failed under real operational
-                  pressure. Organizations needed more than documentation — they
-                  needed systems that functioned when scrutiny arrived.
+                  We started ElevateQCS because we saw too many organizations 
+                  struggling with compliance systems that looked good on paper 
+                  but didn't work in practice.
                 </p>
                 <p>
-                  ElevateQCS's methodologies are built on nearly a decade of
-                  experience embedded within the quality and compliance ecosystems
-                  of major defense, aerospace, and government services contractors.
-                  This isn't theoretical knowledge — it's field-tested experience
-                  gained through direct participation in high-value program execution.
+                  Our approach is different — we build systems that your team 
+                  can actually use, maintain, and benefit from every day.
                 </p>
                 <p>
-                  We bridge the gap between the zero-failure rigor of Defense-scale
-                  LOGCAP operations and the high-velocity demands of commercial
-                  infrastructure and AI-driven industries.
-                </p>
-                <p>
-                  That experience exposed the distance between what compliance
-                  frameworks look like on paper and how they perform under pressure.
+                  That experience exposed the distance between what compliance 
+                  frameworks look like on paper and how they perform under pressure. 
                   ElevateQCS was built to close that gap.
                 </p>
               </div>
@@ -148,21 +134,13 @@ export default function About() {
               <h2 className="mb-8">Our Position</h2>
               <div className="prose prose-lg text-muted-foreground space-y-6">
                 <p>
-                  ElevateQCS occupies a deliberate position in the market: we
-                  are neither a certification body nor a regulatory agency. We
-                  are independent advisors who support organizations in building
-                  their own compliance capabilities.
+                  We're advisors, not auditors or certifiers. We help you build 
+                  your own compliance capabilities — the goal is for your organization 
+                  to be fully independent when our engagement ends.
                 </p>
                 <p>
-                  This distinction is fundamental. We don't just maintain systems;
-                  we stabilize them. From the forensic recovery of distressed $100M+
-                  infrastructure projects to the governance of high-risk AI models,
-                  we architect the frameworks that ensure institutional survival.
-                </p>
-                <p>
-                  We don't certify — we architect. We don't approve — we advise.
-                  We don't authorize — we support. Our role is to transfer knowledge
-                  and capability to your organization, not to create dependency.
+                  We recommend solutions based solely on what you need, and we're 
+                  transparent about any vendor relationships.
                 </p>
                 <p>
                   Our vendor-neutral stance means we recommend solutions based
@@ -190,14 +168,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Core Competencies — AI Entity Extraction optimized */}
+      {/* Core Competencies */}
       <section className="py-20 bg-secondary/20">
         <div className="container-wide">
           <div className="text-center mb-12">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               Core Competencies
             </p>
-            <h2 className="gold-accent pb-4">Domains of Practice</h2>
+            <h2 className="gold-accent pb-4">What We Do Best</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {coreCompetencies.map((comp, index) => (
@@ -228,11 +206,11 @@ export default function About() {
             <div className="max-w-2xl">
               <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-transparent mb-8" />
               <p className="text-primary-foreground text-2xl md:text-3xl font-serif font-light leading-relaxed mb-6">
-                "We don't just maintain systems; we stabilize them. We don't certify —
-                we architect. We don't approve — we advise."
+                "We help you build your own compliance capabilities. 
+                When we leave, your team runs the show independently."
               </p>
               <p className="text-accent text-sm uppercase tracking-widest">
-                Our Operational Philosophy
+                Our Philosophy
               </p>
             </div>
           </div>
@@ -262,7 +240,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Principal-Led Delivery Model — Visual Diagram */}
+      {/* Principal-Led Delivery Model */}
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5" />
         <div className="container-wide relative z-10">
@@ -270,7 +248,7 @@ export default function About() {
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               How We Deliver
             </p>
-            <h2 className="text-primary-foreground gold-accent pb-4">Principal-Led, Never Delegated</h2>
+            <h2 className="text-primary-foreground gold-accent pb-4">Senior-Led From Start to Finish</h2>
             <p className="text-primary-foreground/70 max-w-2xl mx-auto mt-4">
               Every engagement is led by senior leadership from scoping through delivery.
               No junior handoffs. No "partner once, analyst forever."
@@ -295,7 +273,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Remote by Design — Enhanced with Security Standards */}
+      {/* Remote by Design */}
       <section className="py-20 bg-secondary/30">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -321,11 +299,11 @@ export default function About() {
                 <div className="flex items-start gap-3">
                   <Lock className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="text-sm font-semibold mb-1">2026 Secure Cloud Standards</h4>
+                    <h4 className="text-sm font-semibold mb-1">Secure & Compliant Infrastructure</h4>
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                      All workflows operate within GCC High-compatible and ISO 27001-aligned
-                      infrastructure. Encrypted communications, zero-trust access controls,
-                      and auditable data handling protocols protect every engagement.
+                      All workflows operate within ISO 27001-aligned infrastructure. 
+                      Encrypted communications, secure access controls, and auditable 
+                      data handling protocols protect every engagement.
                     </p>
                   </div>
                 </div>
@@ -340,7 +318,7 @@ export default function About() {
               <div className="card-elevated p-6 text-center">
                 <Shield className="w-8 h-8 text-accent mx-auto mb-3" />
                 <h4 className="text-sm font-semibold mb-1">Secure Delivery</h4>
-                <p className="text-xs text-muted-foreground">GCC High / ISO 27001</p>
+                <p className="text-xs text-muted-foreground">Encrypted & compliant</p>
               </div>
               <div className="card-elevated p-6 text-center">
                 <Zap className="w-8 h-8 text-accent mx-auto mb-3" />
@@ -404,7 +382,6 @@ export default function About() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Federal / GovCon Track */}
             <div className="card-elevated p-10 text-center group hover:border-accent/30 transition-all duration-300">
               <div className="w-14 h-14 rounded-sm bg-primary flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-7 h-7 text-primary-foreground" />
@@ -412,20 +389,19 @@ export default function About() {
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-3">
                 Federal & GovCon
               </p>
-              <h3 className="text-xl mb-4">Audit-Readiness Stress Test</h3>
+              <h3 className="text-xl mb-4">Audit Readiness Check</h3>
               <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
-                Assess your compliance posture against DCAA, DCMA, and prime
-                contractor audit standards before scrutiny arrives.
+                Assess your compliance posture against federal audit standards 
+                before scrutiny arrives.
               </p>
               <Button variant="cta" size="lg" asChild className="w-full">
                 <Link to="/contact?track=federal">
-                  Request Stress Test
+                  Get Started
                   <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>
             </div>
 
-            {/* Commercial / Tech Track */}
             <div className="card-elevated p-10 text-center group hover:border-accent/30 transition-all duration-300">
               <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-7 h-7 text-accent" />
@@ -433,14 +409,14 @@ export default function About() {
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-3">
                 Commercial & Tech
               </p>
-              <h3 className="text-xl mb-4">Project Friction Assessment</h3>
+              <h3 className="text-xl mb-4">Free Compliance Assessment</h3>
               <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
-                Identify the contractual friction, margin leakage, and governance
-                gaps slowing your growth trajectory.
+                Identify compliance gaps and governance areas that need 
+                attention for your growth trajectory.
               </p>
               <Button variant="outline" size="lg" asChild className="w-full border-accent/30 hover:bg-accent/5">
                 <Link to="/contact?track=commercial">
-                  Request Assessment
+                  Get Started
                   <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>

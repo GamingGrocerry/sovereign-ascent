@@ -18,22 +18,28 @@ import serviceAiGovernance from "@/assets/service-ai-governance.jpg";
 
 const serviceGrid = [
   {
-    title: "AI Governance & Algorithmic Quality",
-    description: "We apply quality management discipline to AI systems — ensuring data pipelines, model outputs, and algorithmic decisions are audit-ready and compliant with the EU AI Act and emerging standards.",
+    title: "AI Compliance Advisory",
+    description: "Help your AI systems meet emerging regulations like the EU AI Act, with documentation, risk assessments, and governance frameworks.",
     href: "/services/ai-governance",
     image: serviceAiGovernance,
   },
   {
-    title: "Audit, Inspection & Certification Readiness",
-    description: "We prepare organizations for third-party assessments, customer audits, and certification reviews by organizing evidence, strengthening control narratives, and structuring corrective action.",
+    title: "Audit & Certification Preparation",
+    description: "Get ready for ISO audits, customer assessments, and regulatory inspections with organized evidence and strong processes.",
     href: "/services/audit-certification-readiness",
     image: serviceAuditReadiness,
   },
   {
-    title: "Digital Governance & Technology Enablement",
-    description: "We advise on the integration of governance, risk, and compliance technologies — ensuring digital transformation efforts are aligned with regulatory requirements and operational controls.",
+    title: "Compliance Technology Advisory",
+    description: "Get advice on selecting and implementing the right compliance and quality management software for your organization.",
     href: "/services/digital-governance",
     image: serviceDigitalGovernance,
+  },
+  {
+    title: "Documentation & SOPs",
+    description: "We create the policies, procedures, and documentation systems your organization needs to prove compliance.",
+    href: "/services/regulatory-documentation",
+    image: serviceRegulatoryDocs,
   },
   {
     title: "Federal & Public Sector Advisory",
@@ -43,43 +49,37 @@ const serviceGrid = [
   },
   {
     title: "Governance & Strategy",
-    description: "We design governance frameworks that align organizational structure with regulatory obligations and strategic objectives — establishing the control architecture that sustains long-term operational integrity.",
+    description: "Build governance frameworks that align your organization's structure with regulatory requirements and business goals.",
     href: "/services/governance-strategy",
     image: serviceGovernanceStrategy,
   },
   {
-    title: "Managed Compliance & Governance Services",
-    description: "We provide ongoing compliance management, governance monitoring, and regulatory maintenance services for organizations requiring sustained advisory support beyond project-based engagements.",
+    title: "Ongoing Compliance Support",
+    description: "Get ongoing compliance management, monitoring, and maintenance for organizations that need sustained advisory support.",
     href: "/services/managed-compliance",
     image: serviceManagedCompliance,
   },
   {
-    title: "Project Recovery & Distressed Asset Advisory",
-    description: "We deploy rapid-response teams into distressed programs — performing forensic subcontractor audits, resetting documentation and QA flows, and restoring operational control within 30 days.",
+    title: "Project Recovery",
+    description: "When projects go off track, we stabilize operations, fix documentation gaps, and restore quality controls quickly.",
     href: "/services/project-recovery",
     image: serviceProjectRecovery,
   },
   {
-    title: "Quality & Operational Infrastructure",
-    description: "We architect quality management systems and operational control frameworks that function in real workflows — designed for scalability, auditability, and internal ownership.",
+    title: "Quality Management Systems",
+    description: "We design and build quality management systems (ISO 9001, AS9100, ISO 13485) that your team can use, maintain, and improve.",
     href: "/services/quality-operational-infrastructure",
     image: serviceQualityInfrastructure,
   },
   {
-    title: "Regulatory Documentation & Administrative Solutions",
-    description: "We develop documentation systems, standard operating procedures, and administrative frameworks that ensure regulatory evidence is organized, accessible, and audit-ready.",
-    href: "/services/regulatory-documentation",
-    image: serviceRegulatoryDocs,
-  },
-  {
-    title: "Risk, Regulatory & Compliance",
-    description: "We map regulatory landscapes, quantify compliance risk, and build structured control environments that transform regulatory exposure into defensible operational discipline.",
+    title: "Risk & Regulatory Compliance",
+    description: "We map your regulatory obligations, identify compliance gaps, and build the controls you need to stay compliant.",
     href: "/services/risk-regulatory-compliance",
     image: serviceRiskRegulatory,
   },
   {
-    title: "Supply Chain, Human Rights & Due Diligence",
-    description: "We structure human rights programs, supply chain due diligence frameworks, and ethical labor compliance systems aligned with FAR 52.222-50, EU CS3D, and international standards.",
+    title: "Supply Chain Compliance",
+    description: "We help you build supply chain oversight programs, including ethical labor compliance and due diligence frameworks.",
     href: "/services/supply-chain-human-rights",
     image: serviceSupplyChain,
   },
@@ -90,10 +90,10 @@ export default function Services() {
   return (
     <Layout>
       <SEOHead
-        title="Advisory Services | ElevateQCS"
-        description="A wide range of governance, regulatory compliance, and operational advisory services for federal contractors, defense firms, and growth-stage companies in regulated industries."
+        title="Compliance Advisory Services | ISO, Audit Prep, QMS | ElevateQCS"
+        description="We help businesses solve their most complex compliance challenges — from building quality management systems to preparing for audits and navigating regulatory requirements."
         url="https://elevateqcs.com/services"
-        keywords={["compliance advisory services", "governance strategy", "federal contractor advisory", "audit readiness", "CTIP compliance", "QMS architecture", "managed compliance"]}
+        keywords={["compliance advisory services", "ISO 9001 consultant", "audit preparation services", "quality system consulting", "compliance advisory firm", "QMS consultant"]}
       />
 
       {/* Hero Section */}
@@ -111,16 +111,12 @@ export default function Services() {
             Our Services
           </p>
           <h1 className="text-primary-foreground mb-4 sm:mb-8 animate-fade-up-delay-1 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-6xl !leading-tight">
-            A Wide Range of Services. Extensive Experience. Measurable Results.
+            Our Services
           </h1>
-          <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-xl font-light !leading-relaxed max-w-4xl mx-auto mb-3 sm:mb-4 animate-fade-up-delay-2">
-            We treat regulatory complexity as an opportunity for institutional growth.
-            Our specialists combine governance expertise, regulatory depth, and operational 
-            infrastructure design to help organizations solve their most complex compliance 
-            and structural challenges.
-          </p>
-          <p className="text-primary-foreground/60 !text-[10px] sm:!text-base font-light tracking-wide max-w-3xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
-            With deep industry experience, we help companies build sustainable, defensible, and scalable systems.
+          <p className="text-primary-foreground/80 !text-xs sm:!text-lg md:!text-xl font-light !leading-relaxed max-w-4xl mx-auto mb-6 sm:mb-12 animate-fade-up-delay-2">
+            We help businesses solve their most complex compliance challenges — from 
+            building quality management systems to preparing for audits and navigating 
+            regulatory requirements.
           </p>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 animate-fade-up-delay-3 px-2 sm:px-0">
             <Button variant="hero" size="lg" asChild className="w-full sm:w-auto !text-xs sm:!text-base !px-4 sm:!px-8">
@@ -138,18 +134,16 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Independence Doctrine Banner */}
+      {/* Independence Banner */}
       <section className="py-12 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
         <div className="container-wide relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-primary-foreground">
-              <h3 className="text-xl font-serif mb-2">Vendor-Neutral Advisory</h3>
+              <h3 className="text-xl font-serif mb-2">Independent Advisory</h3>
               <p className="text-primary-foreground/70 text-sm">
-                We do not certify, approve, or authorize compliance programs, nor do we 
-                replace legal or regulatory counsel. Our role is to support organizations 
-                in building internal systems that are operationally effective, auditable, 
-                and aligned with applicable requirements.
+                We're independent advisors. We don't certify, audit, or replace your legal team. 
+                Our job is to help you build compliance systems that work.
               </p>
             </div>
             <Link 
@@ -171,12 +165,11 @@ export default function Services() {
               Our Capabilities
             </p>
             <h2 className="mb-6">
-              Services Built for Institutional Resilience
+              How We Help
             </h2>
             <p className="text-lg text-muted-foreground">
-              Each practice area is led by specialists with deep regulatory and 
-              operational experience. Select a service to learn more about our 
-              approach and capabilities.
+              Each practice area is led by experienced professionals. Select a 
+              service to learn more about our approach and capabilities.
             </p>
           </div>
 
@@ -229,12 +222,11 @@ export default function Services() {
               <h2 className="text-primary-foreground mb-6">Meeting Expectations Is Only the Beginning</h2>
               <p className="text-primary-foreground/80 text-lg leading-relaxed mb-4">
                 Our advisory relationships are built on long-term trust, measurable impact, 
-                and a commitment to public interest. We approach every engagement with the 
-                institutional rigour of a firm that understands what is at stake.
+                and a commitment to doing what's right. We approach every engagement with 
+                the care and professionalism your organization deserves.
               </p>
               <p className="text-primary-foreground/70">
-                Integrity is not a differentiator — it is a baseline. Strategic impact 
-                is where we measure ourselves.
+                Integrity is our baseline. Practical results are where we measure ourselves.
               </p>
             </div>
           </div>
@@ -250,20 +242,20 @@ export default function Services() {
             </p>
             <h2 className="mb-4">Most Clients Begin Here</h2>
             <p className="text-muted-foreground">
-              Not sure which service fits? These entry-point engagements deliver measurable results quickly — and often reveal the broader governance needs.
+              Not sure which service fits? These entry-point engagements deliver measurable results quickly.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
             <Link to="/services/audit-certification-readiness" className="card-elevated p-8 group hover:border-accent/30 transition-all duration-300">
-              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Request an Audit-Readiness Stress Test</h3>
+              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Get an Audit Readiness Check</h3>
               <p className="text-muted-foreground text-sm mb-4">Assess your compliance posture against applicable standards before scrutiny arrives. Most engagements begin within 5 business days.</p>
               <span className="inline-flex items-center text-accent text-sm font-medium">
                 Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
             <Link to="/services/regulatory-documentation" className="card-elevated p-8 group hover:border-accent/30 transition-all duration-300">
-              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Request a Project Friction Assessment</h3>
-              <p className="text-muted-foreground text-sm mb-4">Forensic SOW scrubbing and documentation analysis to identify contractual exposure, margin leakage, and evidence gaps.</p>
+              <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Get a Documentation Review</h3>
+              <p className="text-muted-foreground text-sm mb-4">Contract documentation review and analysis to identify gaps, improve clarity, and ensure compliance readiness.</p>
               <span className="inline-flex items-center text-accent text-sm font-medium">
                 Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </span>

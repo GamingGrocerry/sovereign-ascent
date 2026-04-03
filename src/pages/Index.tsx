@@ -15,64 +15,62 @@ import serviceAuditReadiness from "@/assets/service-audit-readiness.jpg";
 import InsightsCarousel from "@/components/InsightsCarousel";
 
 const stats = [
-  { value: "9+", label: "Years of Regulatory & Operational Advisory Experience" },
-  { value: "1,000+", label: "Audits Observed, Supported, and Prepared For" },
-  { value: "125+", label: "Compliance & Control Frameworks Delivered" },
-  { value: "€500K–€25M", label: "Advisory Exposure Across Project Environments" },
+  { value: "9+", label: "Years of Compliance Advisory Experience" },
+  { value: "5", label: "Industries Served: Defense, Manufacturing, Technology, Healthcare, Energy" },
 ];
 
 const coreServices = [
   {
-    title: "Audit, Inspection & Certification Readiness",
-    description: "Organized evidence, strengthened control narratives, and structured corrective action for assessment readiness.",
+    title: "Audit & Certification Preparation",
+    description: "Get ready for ISO audits, customer assessments, and regulatory inspections with organized evidence and strong processes.",
     href: "/services/audit-certification-readiness",
     image: serviceAuditReadiness,
   },
   {
     title: "Federal & Public Sector Advisory",
-    description: "Operational stability, contractual compliance, and institutional maturity for government contractors.",
+    description: "Compliance support for government contractors, subcontractors, and organizations entering the federal marketplace.",
     href: "/services/federal-public-sector",
     image: serviceFederalAdvisory,
   },
   {
     title: "Governance & Strategy",
-    description: "Governance frameworks that align organizational structure with regulatory obligations and strategic objectives.",
+    description: "Build governance frameworks that align your organization's structure with regulatory requirements and business goals.",
     href: "/services/governance-strategy",
     image: serviceGovernanceStrategy,
   },
   {
-    title: "Quality & Operational Infrastructure",
-    description: "Quality management systems designed for scalability, auditability, and internal ownership.",
+    title: "Quality Management Systems",
+    description: "We design and build quality management systems (ISO 9001, AS9100, ISO 13485) that your team can use, maintain, and improve.",
     href: "/services/quality-operational-infrastructure",
     image: serviceQualityInfrastructure,
   },
   {
-    title: "Risk, Regulatory & Compliance",
-    description: "Structured control environments that transform regulatory exposure into defensible operational discipline.",
+    title: "Risk & Regulatory Compliance",
+    description: "We map your regulatory obligations, identify compliance gaps, and build the controls you need to stay compliant.",
     href: "/services/risk-regulatory-compliance",
     image: serviceRiskRegulatory,
   },
   {
-    title: "Supply Chain, Human Rights & Due Diligence",
-    description: "Human rights programs and supply chain due diligence aligned with FAR 52.222-50, EU CS3D, and international standards.",
+    title: "Supply Chain Compliance",
+    description: "We help you build supply chain oversight programs, including ethical labor compliance and due diligence frameworks.",
     href: "/services/supply-chain-human-rights",
     image: serviceSupplyChain,
   },
 ];
 
 const ecamPhases = [
-  { icon: Search, name: "Diagnose", description: "Identify gaps with real operational impact", phaseId: "phase-01" },
-  { icon: Compass, name: "Architect", description: "Structure systems teams can use", phaseId: "phase-02" },
-  { icon: Wrench, name: "Implement", description: "Guide deployment with internal clarity", phaseId: "phase-03" },
-  { icon: Users, name: "Embed", description: "Support adoption through role-based expectations", phaseId: "phase-04" },
-  { icon: BarChart3, name: "Monitor", description: "Enable ongoing control and evidence maintenance", phaseId: "phase-05" },
+  { icon: Search, name: "Assess", description: "Understand where you stand today", phaseId: "phase-01" },
+  { icon: Compass, name: "Design", description: "Build the right system for your needs", phaseId: "phase-02" },
+  { icon: Wrench, name: "Build", description: "Put the system into practice", phaseId: "phase-03" },
+  { icon: Users, name: "Train", description: "Make sure your team can run it", phaseId: "phase-04" },
+  { icon: BarChart3, name: "Support", description: "Keep everything on track over time", phaseId: "phase-05" },
 ];
 
 const trustSignals = [
-  "Vendor-Neutral Advisory",
-  "NDA-First Engagement",
-  "Field-Tested Methodologies",
-  "Confidential & Discreet",
+  "Vendor-Neutral Advice",
+  "Confidential Engagement",
+  "Proven Methods",
+  "Discreet & Professional",
 ];
 
 export default function Index() {
@@ -80,10 +78,10 @@ export default function Index() {
   return (
     <Layout>
       <SEOHead
-        title="ElevateQCS | Quality & Compliance Advisory"
-        description="ElevateQCS is an independent advisory firm specializing in QMS architecture, CTIP program development, and audit readiness for organizations in regulated environments and government contracting."
+        title="ElevateQCS | Quality & Compliance Consulting for Regulated Industries"
+        description="ElevateQCS is an independent compliance consulting firm. We help businesses build quality management systems, prepare for audits, and meet regulatory requirements."
         url="https://elevateqcs.com"
-        keywords={["CTIP as a Service", "FAR 52.222-50 implementation", "GovCon QMS architecture", "quality management system", "compliance advisory", "ISO 9001 alignment"]}
+        keywords={["compliance consultant", "quality management consultant", "ISO 9001 help", "audit preparation services", "regulatory compliance help", "QMS consultant"]}
         jsonLd={{
           "@context": "https://schema.org",
           "@graph": [
@@ -97,14 +95,14 @@ export default function Index() {
                 "@type": "ImageObject",
                 url: "https://elevateqcs.com/logos/elevatequcs-logo-blue-hd.png",
               },
-              description: "Independent advisory firm specializing in QMS architecture, CTIP program development, and audit readiness for regulated industries and government contractors.",
+              description: "Independent compliance consulting firm helping businesses build quality management systems, prepare for audits, and meet regulatory requirements.",
               foundingDate: "2026",
               areaServed: ["US", "EU", "Middle East"],
               serviceType: [
+                "Quality Management Systems",
+                "Audit Preparation",
+                "Regulatory Compliance",
                 "Governance & Strategy",
-                "Risk, Regulatory & Compliance",
-                "Federal & Public Sector Advisory",
-                "Quality & Operational Infrastructure",
               ],
               sameAs: [],
             },
@@ -128,17 +126,17 @@ export default function Index() {
               "@type": "WebPage",
               "@id": "https://elevateqcs.com/#webpage",
               url: "https://elevateqcs.com",
-              name: "ElevateQCS | Quality & Compliance Advisory for Regulated Industries",
+              name: "ElevateQCS | Quality & Compliance Consulting for Regulated Industries",
               isPartOf: { "@id": "https://elevateqcs.com/#website" },
               about: { "@id": "https://elevateqcs.com/#organization" },
-              description: "Architecting compliance excellence for organizations in regulated environments and government contracting.",
+              description: "Quality and compliance consulting for businesses in regulated industries.",
               inLanguage: "en-US",
             },
           ],
         }}
       />
 
-      {/* Hero Section — Governance & Quality Architecture */}
+      {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:scale-105"
@@ -149,19 +147,17 @@ export default function Index() {
         <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
 
         <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-16 sm:py-24 max-w-7xl mx-auto">
-          {/* Top — Headline & Intro */}
           <div className="max-w-3xl mb-10 sm:mb-14 animate-fade-up">
             <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-4">
-              Governance & Quality Architecture
+              Quality & Compliance Advisory
             </p>
             <h1 className="text-primary-foreground mb-4 sm:mb-6 text-balance !text-xl sm:!text-3xl md:!text-5xl lg:!text-5xl !leading-tight">
-              The Blueprint for Predictable Performance.
+              Build Compliance Systems That Actually Work
             </h1>
             <p className="text-primary-foreground/80 !text-xs sm:!text-base md:!text-lg font-light !leading-relaxed max-w-2xl">
-              We don't just draft policies; we design the Control Architecture that anchors 
-              your enterprise. By harmonizing high-level Governance & Strategy with the 
-              granular realities of Quality & Operational Infrastructure, we build systems 
-              that do more than pass an audit — they institutionalize excellence.
+              We help businesses build quality management systems, prepare for audits, 
+              and meet regulatory requirements — so you can focus on growing your business 
+              instead of worrying about compliance gaps.
             </p>
           </div>
 
@@ -169,20 +165,20 @@ export default function Index() {
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-10 sm:mb-14 animate-fade-up-delay-1">
             {[
               {
-                title: "Integrated Control Environments",
-                desc: "We move organizations away from compliance silos. By aligning your QMS (ISO 9001, AS9100, ISO 13485) directly with corporate governance, every operational process serves a strategic objective.",
+                title: "Unified Compliance Systems",
+                desc: "We connect your quality, safety, and regulatory systems so everything works together — no more compliance silos or duplicated effort.",
               },
               {
-                title: "Scalable Governance Frameworks",
-                desc: "Built for high-growth firms and deep-tech innovators. We architect your infrastructure so that doubling headcount or entering a new federal market doesn't break your internal controls.",
+                title: "Systems That Grow With You",
+                desc: "Whether you're 20 people or 2,000, we build compliance infrastructure that scales without breaking or slowing you down.",
               },
               {
-                title: "The Audit-Ready Culture",
-                desc: "We shift the burden of proof from a pre-audit scramble to Continuous Readiness. Our documentation solutions ensure evidence is a natural byproduct of your workflow, not an afterthought.",
+                title: "Always Audit-Ready",
+                desc: "We design your workflows so compliance evidence is captured automatically — no more scrambling before an audit.",
               },
               {
-                title: "Operational Ownership",
-                desc: "A system is only as strong as its adoption. We focus on frictionless governance — designing SOPs and control points that empower teams to execute with precision without sacrificing speed.",
+                title: "Your Team Owns It",
+                desc: "We build systems your people actually use and understand. When we leave, your team runs the show independently.",
               },
             ].map((pillar) => (
               <div
@@ -203,23 +199,21 @@ export default function Index() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 animate-fade-up-delay-2">
             <blockquote className="max-w-2xl border-l-2 border-accent pl-5 sm:pl-6">
               <p className="text-primary-foreground/90 font-serif text-sm sm:text-base md:text-lg font-light leading-relaxed italic">
-                "In highly regulated sectors, your Quality System is your most valuable 
-                financial asset. We ensure your architecture is built for longevity, 
-                transparency, and investor-grade reliability — transforming governance 
-                from a cost center into a core competitive advantage."
+                "In regulated industries, your quality system is one of your most 
+                valuable business assets. We help you build it right."
               </p>
             </blockquote>
 
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Button variant="hero" size="lg" asChild className="!text-xs sm:!text-base !px-4 sm:!px-8">
                 <Link to="/contact">
-                  Request a Confidential Consultation
+                  Get a Free Consultation
                   <ArrowRight className="ml-2 shrink-0" size={16} />
                 </Link>
               </Button>
               <Button variant="hero-outline" size="lg" asChild className="!text-xs sm:!text-base !px-4 sm:!px-8">
                 <Link to="/services">
-                  Explore Our Services
+                  See How We Help
                 </Link>
               </Button>
             </div>
@@ -227,7 +221,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Insights — Immediately below hero */}
+      {/* Insights */}
       <section className="py-14 lg:py-20 bg-background">
         <div className="container-wide">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
@@ -254,11 +248,11 @@ export default function Index() {
         <div className="container-wide">
           <div className="text-center mb-12">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Start Here
+              Most Popular
             </p>
-            <h2 className="mb-4">Most Clients Begin With One of These</h2>
+            <h2 className="mb-4">Where Most Clients Start</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Whether you need to pass an upcoming audit or untangle contractual documentation, these high-impact services deliver measurable ROI in weeks — not months.
+              Whether you need to pass an upcoming audit or get a struggling project back on track, these services deliver results fast.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -267,7 +261,7 @@ export default function Index() {
                 <Shield className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Audit Readiness</h3>
-              <p className="text-muted-foreground text-sm mb-4">Stress-test your compliance posture before the auditor arrives.</p>
+              <p className="text-muted-foreground text-sm mb-4">Find out if you're ready for your next audit — before the auditor does.</p>
               <span className="inline-flex items-center text-accent text-sm font-medium">
                 Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -277,7 +271,7 @@ export default function Index() {
                 <Layers className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">SOW & Documentation</h3>
-              <p className="text-muted-foreground text-sm mb-4">Forensic SOW scrubbing and documentation architecture that prevents contractual exposure.</p>
+              <p className="text-muted-foreground text-sm mb-4">Get your contracts, SOPs, and compliance documents organized and audit-proof.</p>
               <span className="inline-flex items-center text-accent text-sm font-medium">
                 Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -287,7 +281,7 @@ export default function Index() {
                 <Activity className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Project Recovery</h3>
-              <p className="text-muted-foreground text-sm mb-4">96-hour strike team deployment for distressed programs.</p>
+              <p className="text-muted-foreground text-sm mb-4">Struggling project? We stabilize operations and get things back on track fast.</p>
               <span className="inline-flex items-center text-accent text-sm font-medium">
                 Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -303,9 +297,9 @@ export default function Index() {
             <div>
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-2">
                 <Activity className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />
-                Diagnostic Tools
+                Free Tools
               </p>
-              <h2 className="!text-2xl lg:!text-3xl">Assess Your Compliance Readiness</h2>
+              <h2 className="!text-2xl lg:!text-3xl">Free Compliance Assessments</h2>
             </div>
             <Button variant="outline" size="sm" asChild className="self-start sm:self-auto">
               <Link to="/tools">
@@ -319,7 +313,7 @@ export default function Index() {
             {[
               { title: "GovCon Readiness Score", desc: "Evaluate governance structures for U.S. government supply chain participation.", time: "3–5 min", href: "/tools/govcon-readiness", icon: Shield },
               { title: "Compliance Framework Builder", desc: "Receive a tailored compliance roadmap based on your regulatory environment.", time: "2–4 min", href: "/tools/compliance-framework-builder", icon: Layers },
-              { title: "QMS Gap Analysis", desc: "Assess quality management system maturity and identify contract risk implications.", time: "3–5 min", href: "/tools/qms-gap-analysis", icon: BarChart3 },
+              { title: "QMS Gap Analysis", desc: "Assess quality management system maturity and identify areas for improvement.", time: "3–5 min", href: "/tools/qms-gap-analysis", icon: BarChart3 },
             ].map((tool) => (
               <Link key={tool.href} to={tool.href} className="card-elevated group p-6">
                 <div className="w-12 h-12 rounded-sm bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
@@ -329,7 +323,7 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground mb-4">{tool.desc}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="w-3 h-3" />{tool.time}</span>
-                  <span className="text-accent text-xs font-medium inline-flex items-center">Run Diagnostic <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+                  <span className="text-accent text-xs font-medium inline-flex items-center">Run Assessment <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
                 </div>
               </Link>
             ))}
@@ -337,7 +331,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Services Overview — 6-card grid */}
+      {/* Services Overview */}
       <section className="py-28 lg:py-36 bg-secondary/30 section-luxury">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
@@ -345,12 +339,11 @@ export default function Index() {
               Our Services
             </p>
             <h2 className="mb-6">
-              A Wide Range of Services for Regulated Environments
+              How We Help
             </h2>
             <p className="text-lg">
-              From governance strategy to audit readiness, our multidisciplinary 
-              capabilities are designed for organizations where compliance is 
-              fundamental to operational viability.
+              From building your first quality system to preparing for complex audits, 
+              we offer practical advisory services for businesses in regulated industries.
             </p>
           </div>
 
@@ -397,20 +390,20 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Choosing the Right Service — brief reference */}
+      {/* Choosing the Right Service */}
       <section className="py-20 bg-background">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-                Choosing the Right Service
+                Not Sure Where to Start?
               </p>
               <h2 className="mb-6">
                 Advisory for Every Stage of Compliance Maturity
               </h2>
               <p className="text-lg mb-6">
-                Whether you're a federal contractor stabilizing operations, a defence 
-                firm preparing for certification, or a growth-stage company entering 
+                Whether you're a federal contractor stabilizing operations, a company 
+                preparing for certification, or a growth-stage business entering 
                 regulated markets — our services are structured to meet you where you are.
               </p>
               <Button variant="outline" size="lg" asChild>
@@ -440,11 +433,11 @@ export default function Index() {
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               Our Methodology
             </p>
-            <h2 className="mb-6">A Repeatable Approach to Compliance Complexity</h2>
+            <h2 className="mb-6">Our Proven Process</h2>
             <p className="text-lg text-muted-foreground">
-              The Elevate Compliance Architecture Methodology (ECAM) is a five-phase 
-              structure that brings order to compliance complexity: diagnose, architect, 
-              implement, embed, monitor.
+              Every engagement follows a clear five-step process: understand your situation, 
+              design the right system, help you implement it, train your team, and set up 
+              ongoing monitoring.
             </p>
           </div>
 
@@ -477,7 +470,7 @@ export default function Index() {
           <div className="text-center">
             <Button variant="outline" size="lg" asChild>
               <Link to="/methodology">
-                Learn About Our Methodology
+                Learn About Our Process
                 <ChevronRight className="ml-2" size={16} />
               </Link>
             </Button>
@@ -494,14 +487,12 @@ export default function Index() {
                 Our Approach
               </p>
               <h2 className="mb-6">
-                Independence & Discretion as Doctrine
+                Independent & Objective Advice
               </h2>
               <p className="text-lg mb-8">
-               ElevateQCS operates with complete vendor neutrality. Our recommendations 
-                serve your organizational interests — nothing else. In the event we 
-                identify a vendor or service from which we may receive referral 
-                benefits, we disclose this transparently during initial consultations — 
-                before any recommendation is formalized.
+                We don't sell software or certifications. We give you honest, practical 
+                advice based on what your organization actually needs. If we ever have a 
+                financial relationship with a vendor we recommend, we tell you upfront.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {trustSignals.map((signal, index) => (
@@ -545,7 +536,7 @@ export default function Index() {
       {/* Stats Bar */}
       <section className="stats-gradient py-20">
         <div className="container-wide relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 gap-8 lg:gap-12 max-w-2xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="font-serif text-4xl md:text-5xl text-primary-foreground font-semibold mb-3 transition-transform duration-300 group-hover:scale-105">
@@ -577,16 +568,16 @@ export default function Index() {
             Your compliance system shouldn't fail you when scrutiny arrives.
           </p>
           <h2 className="mb-12">
-            Ready to Build Compliance That Holds?
+            Ready to Get Started?
           </h2>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
-              Request a Confidential Consultation
+              Book a Free Consultation
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>
           <p className="text-muted-foreground text-sm mt-8">
-            All initial consultations are protected by NDA
+            All consultations are confidential
           </p>
         </div>
       </section>
