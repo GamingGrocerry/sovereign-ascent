@@ -212,16 +212,14 @@ export default function EngagementModel() {
   return (
     <Layout>
       <SEOHead
-        title="Engagement Model — Dual-Speed Advisory | ElevateQCS"
-        description="Two tracks for two realities. The Standard ECAM Track for institutional system builds. The Forensic Velocity Track for 96-hour crisis stabilisation. Choose your speed."
+        title="How We Work With You — Engagement Model | ElevateQCS"
+        description="Two engagement tracks: Standard for institutional system builds and Urgent Support for crisis situations. Choose the approach that fits your situation."
         url="https://elevateqcs.com/engagement"
         keywords={[
           "compliance engagement model",
-          "forensic velocity track",
-          "96-hour crisis stabilisation",
-          "ECAM methodology",
           "compliance consulting process",
           "project recovery advisory",
+          "quality system consulting",
         ]}
       />
 
