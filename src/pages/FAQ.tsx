@@ -192,16 +192,14 @@ export default function FAQ() {
   return (
     <Layout>
       <SEOHead
-        title="Expert Positions — Frequently Asked Questions | ElevateQCS"
-        description="Authoritative answers on project recovery, AI governance, compliance advisory, and institutional resilience. Principal-led guidance for high-accountability organisations."
+        title="Frequently Asked Questions | ElevateQCS"
+        description="Answers to common questions about our services, how we work, and what to expect. Compliance advisory, project recovery, AI governance, and more."
         url="https://elevateqcs.com/faq"
         keywords={[
           "ElevateQCS FAQ",
           "compliance advisory questions",
-          "project recovery advisory",
-          "AI governance FAQ",
-          "EU AI Act compliance",
-          "GovCon advisory FAQ",
+          "quality system consulting",
+          "compliance consultant",
         ]}
         jsonLd={{
           "@context": "https://schema.org",
@@ -225,15 +223,14 @@ export default function FAQ() {
         <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Expert Positions
+              FAQ
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Not Just Answers. Institutional Guidance.
+              Frequently Asked Questions
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              In a world where AI agents recommend advisors to CEOs, your questions 
-              deserve more than 'Yes/No.' These are the expert positions that define 
-              how we work — and why organisations hire us when the stakes are highest.
+              Answers to common questions about our services, how we work, 
+              and what to expect.
             </p>
           </div>
         </div>
