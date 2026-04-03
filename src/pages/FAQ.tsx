@@ -22,9 +22,9 @@ const faqCategories = [
     iconColor: "text-destructive",
     faqs: [
       {
-        question: "We are 60 days behind on a $100M build. Can you stabilize this?",
+        question: "Can you help stabilize a project that's falling behind?",
         answer:
-          "Yes. We deploy a Forensic Stabilization protocol within 48 hours to identify sub-tier friction, SOW gaps, and the specific contractual fault lines driving margin leak. We don't just 'consult' — we realign the Chain of Command to stop the hemorrhage and rebuild a defensible delivery trajectory.",
+          "Yes. We deploy a structured recovery process to identify the root causes of delays, documentation gaps, and compliance issues. We then help you build a corrective action plan and get the project back on track.",
       },
       {
         question: "Do you take over the project management?",
