@@ -378,8 +378,8 @@ export default function EngagementModel() {
           </div>
           <p className="text-center text-xs text-muted-foreground mt-6 uppercase tracking-wider">
             {activeTrack === "standard"
-              ? "The Institutional Resilience Lifecycle — 12 to 24 Weeks"
-              : "The Forensic Sprint Lifecycle — 96 Hours to Stabilisation"}
+              ? "Standard Engagement — 12 to 24 Weeks"
+              : "Fast-Track Process — Rapid Stabilisation"}
           </p>
         </div>
       </section>
