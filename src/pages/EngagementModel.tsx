@@ -490,9 +490,8 @@ export default function EngagementModel() {
         <div className="absolute inset-0 flex items-center justify-center text-center">
           <div className="max-w-2xl px-6">
             <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
-              The average consultant is being replaced by AI. You hire us for 
-              judgment — the ability to identify exactly where the fire is and 
-              architect the system to prevent the next one.
+              You hire us for practical judgment — the ability to identify exactly 
+              where the problems are and build the systems to prevent them.
             </p>
           </div>
         </div>
