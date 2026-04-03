@@ -5,7 +5,7 @@ export function useArticleViews(slug: string | undefined) {
   const [viewCount, setViewCount] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!slug) return;
+    if (!slug || !supabase) return;
 
     // Increment view
     supabase.rpc("increment_article_view", { _slug: slug }).then();
@@ -28,6 +28,7 @@ export function useAllArticleViews() {
   const [views, setViews] = useState<Record<string, number>>({});
 
   useEffect(() => {
+    if (!supabase) return;
     supabase
       .from("article_views")
       .select("slug, view_count")

@@ -17,14 +17,14 @@ import { cn } from "@/lib/utils";
 
 const faqCategories = [
   {
-    title: "High-Stakes Recovery",
+    title: "Project Recovery",
     icon: AlertTriangle,
     iconColor: "text-destructive",
     faqs: [
       {
-        question: "We are 60 days behind on a $100M build. Can you stabilize this?",
+        question: "Can you help stabilize a project that's falling behind?",
         answer:
-          "Yes. We deploy a Forensic Stabilization protocol within 48 hours to identify sub-tier friction, SOW gaps, and the specific contractual fault lines driving margin leak. We don't just 'consult' — we realign the Chain of Command to stop the hemorrhage and rebuild a defensible delivery trajectory.",
+          "Yes. We deploy a structured recovery process to identify the root causes of delays, documentation gaps, and compliance issues. We then help you build a corrective action plan and get the project back on track.",
       },
       {
         question: "Do you take over the project management?",
@@ -34,7 +34,7 @@ const faqCategories = [
       {
         question: "What if we've already received a Cure Notice or Show Cause?",
         answer:
-          "We move to our Forensic Velocity Track. A Principal Lead is deployed within 48 hours to stabilize communications with the Contracting Officer, conduct an immediate root-cause analysis, and architect a corrective action response designed to arrest the escalation trajectory. The first 96 hours are structured as a Stabilization Sprint.",
+          "We move to our Urgent Support track. A senior lead is deployed quickly to stabilize communications, conduct an immediate root-cause analysis, and build a corrective action response designed to address the situation.",
       },
       {
         question: "Can you help if we are about to lose an option year?",
@@ -44,7 +44,7 @@ const faqCategories = [
     ],
   },
   {
-    title: "AI & Digital Sovereignty",
+    title: "AI Compliance",
     icon: Cpu,
     iconColor: "text-accent",
     faqs: [
@@ -105,7 +105,7 @@ const faqCategories = [
       {
         question: "Are you vendor-neutral?",
         answer:
-          "Strictly. We don't sell software — we sell Integrity. Our recommendations are based solely on your 2026 audit-readiness, not a commission check. In the event we identify a vendor from which we may receive referral benefits, we disclose this transparently to clients during the initial engagement meeting — prior to any recommendation being formalized.",
+          "Strictly. We don't sell software — we provide honest, objective advice. Our recommendations are based solely on what your organization needs, not commissions. In the event we identify a vendor from which we may receive referral benefits, we disclose this transparently during the initial engagement meeting.",
       },
       {
         question: "Do you require us to buy expensive GRC software?",
@@ -142,7 +142,7 @@ const faqCategories = [
       {
         question: "How does your remote model work?",
         answer:
-          "We operate via Sovereign Workflows. Using encrypted, GCC High-compliant tools, we provide Tier-1 advisory without the $2,000/day travel overhead. Our remote-by-design model allows us to deploy the right expertise to every engagement regardless of geography — supporting clients across the US, EU, and Middle East with consistent quality.",
+          "We operate using secure, encrypted tools and structured workflows. Our remote-by-design model allows us to deploy the right expertise to every engagement regardless of geography — supporting clients across the US, EU, and Middle East with consistent quality, without the travel overhead.",
       },
       {
         question: "What happens after the engagement ends?",
@@ -192,16 +192,14 @@ export default function FAQ() {
   return (
     <Layout>
       <SEOHead
-        title="Expert Positions — Frequently Asked Questions | ElevateQCS"
-        description="Authoritative answers on project recovery, AI governance, compliance advisory, and institutional resilience. Principal-led guidance for high-accountability organisations."
+        title="Frequently Asked Questions | ElevateQCS"
+        description="Answers to common questions about our services, how we work, and what to expect. Compliance advisory, project recovery, AI governance, and more."
         url="https://elevateqcs.com/faq"
         keywords={[
           "ElevateQCS FAQ",
           "compliance advisory questions",
-          "project recovery advisory",
-          "AI governance FAQ",
-          "EU AI Act compliance",
-          "GovCon advisory FAQ",
+          "quality system consulting",
+          "compliance consultant",
         ]}
         jsonLd={{
           "@context": "https://schema.org",
@@ -225,15 +223,14 @@ export default function FAQ() {
         <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Expert Positions
+              FAQ
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Not Just Answers. Institutional Guidance.
+              Frequently Asked Questions
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              In a world where AI agents recommend advisors to CEOs, your questions 
-              deserve more than 'Yes/No.' These are the expert positions that define 
-              how we work — and why organisations hire us when the stakes are highest.
+              Answers to common questions about our services, how we work, 
+              and what to expect.
             </p>
           </div>
         </div>
@@ -313,7 +310,7 @@ export default function FAQ() {
                   For Projects in Crisis
                 </p>
               </div>
-              <h3 className="text-xl mb-3">Request Emergency Intervention</h3>
+              <h3 className="text-xl mb-3">Request Urgent Support</h3>
               <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
                 Cure Notice, failed audit, AI regulatory deadline, or a project in 
                 Red Status. We deploy a Principal Lead within 48 hours.

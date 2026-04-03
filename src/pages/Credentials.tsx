@@ -7,12 +7,9 @@ import {
   Clock,
   Search,
   Briefcase,
-  TrendingUp,
   Zap,
   Cpu,
   Shield,
-  Target,
-  Users,
 } from "lucide-react";
 import aboutPrecision from "@/assets/about-precision.jpg";
 
@@ -20,74 +17,29 @@ const authorityMetrics = [
   {
     icon: Clock,
     value: "9+",
-    headline: "Years Navigating the Defense-Commercial Nexus",
+    headline: "Years of Compliance Advisory Experience",
     description:
-      "From zero-failure military sustainment operations to high-velocity commercial builds, ElevateQCS has operated at the intersection where regulatory rigour meets market speed. This isn't theoretical advisory — it's field-tested judgment refined across environments where compliance failures carry career-ending consequences.",
+      "We bring hands-on experience from defense, aerospace, manufacturing, technology, and healthcare environments. We've helped organizations build quality systems, prepare for audits, recover troubled projects, and navigate complex regulatory requirements.",
     context:
-      "We don't teach what we read. We apply what we survived.",
-  },
-  {
-    icon: Search,
-    value: "1,000+",
-    headline: "Forensic Audit Interactions — Auditor Psychology Decoded",
-    description:
-      "Across internal assessments, DCMA reviews, Prime contractor surveillance, and third-party certification audits, ElevateQCS has accumulated over 1,000 direct audit interactions. This isn't about 'observing' audits — it's about understanding the Auditor's Psychology: what triggers escalation, what satisfies scrutiny, and where organisations consistently fail the 'hard questions.'",
-    context:
-      "We know what the auditor writes in the report. More importantly, we know what they think before they write it.",
-  },
-  {
-    icon: Briefcase,
-    value: "125+",
-    headline: "Rapid-Deployment Architectures — 40% Faster Implementation",
-    description:
-      "From QMS builds to CTIP program architecture and corrective action frameworks, ElevateQCS has delivered over 125 compliance and control systems. These aren't bespoke experiments — they are proven architectures refined across deployments, reducing implementation timelines by up to 40% compared to greenfield builds.",
-    context:
-      "Commercial clients care about speed. We deliver battle-tested blueprints, not discovery-phase exploration.",
-  },
-  {
-    icon: TrendingUp,
-    value: "$20M+",
-    headline: "Total Contract Value Protected & Stabilised",
-    description:
-      "Across distressed programs, audit interventions, and governance architecture projects, ElevateQCS advisory has protected or stabilised over $20 million in contract value. This isn't advisory fee volume — it's the Assets at Risk that our forensic methodology prevented from escalating to Cure Notice, termination, or regulatory sanction.",
-    context:
-      "We don't measure success in billable hours. We measure it in contracts saved and margins preserved.",
+      "We apply what we've learned from years of real-world compliance work.",
   },
 ];
 
 const frontierMetrics = [
   {
     icon: Zap,
-    label: "48-Hour Rapid Forensic Diagnostics",
-    description: "Root-cause identification for projects in crisis — deployed within 48 hours, stabilised within 96.",
+    label: "Rapid Problem Diagnosis",
+    description: "Root-cause identification for projects in difficulty — helping you understand what went wrong and what to do next.",
   },
   {
     icon: Cpu,
-    label: "Audit-Ready Digital Lineage Architecture",
-    description: "Governance controls for automated workflows, AI systems, and agentic decision chains.",
+    label: "AI Governance Frameworks",
+    description: "Governance controls for AI systems, automated workflows, and algorithmic decision-making.",
   },
   {
     icon: Shield,
-    label: "First-Attempt Certification Success",
-    description: "System architecture designed to pass ISO, CMMC, and regulatory certification on the first attempt.",
-  },
-];
-
-const trustStack = [
-  {
-    icon: Zap,
-    title: "The Forensic Fixer",
-    description: "Project Recovery specialisation: stabilising distressed $10M+ infrastructure assets and arresting contract death spirals.",
-  },
-  {
-    icon: Cpu,
-    title: "The System Architect",
-    description: "ISO 42001, ISO 9001, AS9100: architecting governance systems that pass certification on the first attempt and scale with growth.",
-  },
-  {
-    icon: Target,
-    title: "The Audit Guardian",
-    description: "Defensible Logic: 1,000+ audit interactions informing how to answer the 'hard questions' before the auditor asks them.",
+    label: "Efficient Certification Preparation",
+    description: "System architecture designed to help you achieve ISO, CMMC, and regulatory certification efficiently.",
   },
 ];
 
@@ -95,15 +47,15 @@ export default function Credentials() {
   return (
     <Layout>
       <SEOHead
-        title="Authority Metrics — Credentials & Experience | ElevateQCS"
-        description="9+ years navigating the defense-commercial nexus. 1,000+ forensic audit interactions. $20M+ in contract value protected. Experience measured in problems solved, not hours billed."
+        title="Our Experience — Credentials | ElevateQCS"
+        description="9+ years of compliance advisory experience across defense, manufacturing, technology, healthcare, and energy. Practical experience solving real compliance challenges."
         url="https://elevateqcs.com/credentials"
         keywords={[
           "compliance credentials",
           "advisory experience",
           "audit readiness experience",
-          "project recovery advisory",
-          "AI governance credentials",
+          "quality system consulting",
+          "compliance advisory firm",
         ]}
       />
 
@@ -117,15 +69,16 @@ export default function Credentials() {
         <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Authority Metrics
+              Our Experience
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Not What We Did. What We Solved.
+              Our Experience
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              These figures don't measure activity — they measure authority. 
-              Each metric represents problems solved, contracts protected, and 
-              systems that survived scrutiny when it mattered.
+              We bring hands-on experience from defense, aerospace, manufacturing, 
+              technology, and healthcare environments. We've helped organizations build 
+              quality systems, prepare for audits, recover troubled projects, and navigate 
+              complex regulatory requirements.
             </p>
           </div>
         </div>
@@ -142,7 +95,6 @@ export default function Credentials() {
                   index % 2 === 1 ? "lg:grid-flow-dense" : ""
                 }`}
               >
-                {/* Metric highlight */}
                 <div
                   className={`lg:col-span-4 ${
                     index % 2 === 1 ? "lg:col-start-9" : ""
@@ -162,7 +114,6 @@ export default function Credentials() {
                   </div>
                 </div>
 
-                {/* Narrative */}
                 <div
                   className={`lg:col-span-8 ${
                     index % 2 === 1 ? "lg:col-start-1" : ""
@@ -180,17 +131,34 @@ export default function Credentials() {
               </div>
             ))}
           </div>
+
+          {/* General industry experience */}
+          <div className="mt-20 max-w-3xl">
+            <h3 className="text-xl mb-6">Industries We've Worked In</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {["Defense & Aerospace", "Manufacturing", "Technology", "Healthcare", "Energy", "Government Contracting"].map((ind) => (
+                <div key={ind} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <div className="w-2 h-2 bg-accent rounded-full shrink-0" />
+                  {ind}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground mt-8">
+              We've built compliance systems across many industries and have developed efficient, 
+              reusable frameworks that speed up implementation.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* New Frontier Metrics */}
+      {/* Forward-Looking Capabilities */}
       <section className="py-20 bg-secondary/30">
         <div className="container-wide">
           <div className="max-w-3xl mb-12">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               Forward-Looking Capabilities
             </p>
-            <h2 className="mb-4">The 2026 Frontier</h2>
+            <h2 className="mb-4">What We're Building</h2>
             <p className="text-lg text-muted-foreground">
               New capabilities built on proven foundations — for Project Recovery, 
               AI Governance, and the emerging regulatory landscape.
@@ -213,85 +181,41 @@ export default function Credentials() {
         </div>
       </section>
 
-      {/* Trust Stack Grid */}
-      <section className="py-24 bg-background">
-        <div className="container-wide">
-          <div className="text-center mb-16">
-            <div className="section-divider mx-auto mb-8" />
-            <h2 className="mb-4">The Trust Stack</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Three roles. One standard of judgment. This is how authority translates 
-              into operational outcomes.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {trustStack.map((item, index) => (
-              <div
-                key={index}
-                className="card-elevated p-8 text-center border-t-4 border-accent"
-              >
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
-                  <item.icon className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-xl mb-4">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Principal's Commitment */}
-      <section className="py-16 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
-        <div className="container-wide relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <Users className="w-10 h-10 text-accent mx-auto mb-6" />
-            <h3 className="text-2xl text-primary-foreground mb-6 font-serif">
-              The Principal's Commitment
-            </h3>
-            <p className="text-primary-foreground/90 text-lg leading-relaxed mb-8">
-              We don't provide theoretical reports. We provide the operational 
-              architecture that allows you to stand in front of a regulator, a 
-              client, or a board of directors with absolute confidence in your data.
-            </p>
-            <p className="text-primary-foreground/60 text-xs leading-relaxed">
-              All figures represent cumulative advisory experience and are presented 
-              for informational context. Past engagement scope does not constitute a 
-              promise of future results.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Diagnostic Suite CTA */}
-      <section className="py-20 bg-secondary/30">
+      {/* CTA */}
+      <section className="py-20 bg-background">
         <div className="container-wide">
           <div className="card-elevated p-10 md:p-14 max-w-4xl mx-auto text-center border-l-4 border-accent">
-            <h2 className="text-2xl mb-4">See How Your Systems Measure Up</h2>
+            <h2 className="text-2xl mb-4">Ready to Work Together?</h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Our metrics are the result of rigorous, field-tested methodologies. 
-              Use our Diagnostic Suite to benchmark your own governance posture — 
-              and understand where the gaps are before the auditor finds them.
+              Our experience is built on solving real compliance challenges for real organizations. 
+              Contact us to discuss how we can help with yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="cta" size="xl" asChild>
-                <Link to="/tools">
-                  Enter the Diagnostic Suite
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="xl" asChild>
                 <Link to="/contact">
                   Request a Consultation
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
+              <Button variant="outline" size="xl" asChild>
+                <Link to="/tools">
+                  Try Our Free Assessments
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Disclaimer in footer area */}
+      <section className="py-8 bg-secondary/20">
+        <div className="container-wide">
+          <p className="text-muted-foreground/60 text-xs text-center leading-relaxed max-w-2xl mx-auto">
+            All figures represent cumulative advisory experience and are presented 
+            for informational context. Past engagement scope does not constitute a 
+            promise of future results.
+          </p>
         </div>
       </section>
     </Layout>

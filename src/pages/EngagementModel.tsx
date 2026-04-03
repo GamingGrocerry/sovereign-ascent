@@ -212,16 +212,14 @@ export default function EngagementModel() {
   return (
     <Layout>
       <SEOHead
-        title="Engagement Model — Dual-Speed Advisory | ElevateQCS"
-        description="Two tracks for two realities. The Standard ECAM Track for institutional system builds. The Forensic Velocity Track for 96-hour crisis stabilisation. Choose your speed."
+        title="How We Work With You — Engagement Model | ElevateQCS"
+        description="Two engagement tracks: Standard for institutional system builds and Urgent Support for crisis situations. Choose the approach that fits your situation."
         url="https://elevateqcs.com/engagement"
         keywords={[
           "compliance engagement model",
-          "forensic velocity track",
-          "96-hour crisis stabilisation",
-          "ECAM methodology",
           "compliance consulting process",
           "project recovery advisory",
+          "quality system consulting",
         ]}
       />
 
@@ -235,15 +233,15 @@ export default function EngagementModel() {
         <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Dual-Speed Methodology
+              Our Engagement Model
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Two Tracks. One Standard of Judgment.
+              How We Work With You
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               Not every engagement begins the same way. Some organisations need 
-              institutional architecture built over months. Others need a Principal 
-              on the ground in 48 hours. We designed for both.
+              compliance systems built over months. Others need urgent support 
+              right away. We designed for both.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="outline" size="lg" asChild>
@@ -262,11 +260,10 @@ export default function EngagementModel() {
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <div className="section-divider mb-8" />
-            <h2 className="mb-4">The Dual-Speed Model</h2>
+            <h2 className="mb-4">Two Ways to Engage</h2>
             <p className="text-lg text-muted-foreground">
-              A $500M data centre in Red Status and a startup preparing for ISO 9001 
-              do not need the same engagement. Our methodology adapts — without 
-              compromising forensic rigour.
+              A project in crisis and a startup preparing for ISO 9001 certification 
+              don't need the same engagement. Our methodology adapts to your situation.
             </p>
           </div>
 
@@ -278,17 +275,16 @@ export default function EngagementModel() {
                   <Compass className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-xl mb-0">Standard ECAM Track</h3>
+                  <h3 className="text-xl mb-0">Standard Engagement</h3>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
                     12–24 Weeks
                   </p>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                The full institutional build. Vulnerability mapping, sovereign 
-                architecture design, phased implementation, and capability transfer. 
-                For organisations building compliance systems that will endure 
-                regulatory cycles, not just pass the next audit.
+                The full system build. Gap assessment, system design, phased 
+                implementation, and team training. For organisations building 
+                compliance systems that last.
               </p>
               <ul className="space-y-3 mb-8">
                 {["ISO 9001 / AS9100 system builds", "CMMC Level 2 preparation", "EU AI Act governance architecture", "Full QMS implementation"].map((item) => (
@@ -315,17 +311,17 @@ export default function EngagementModel() {
                   <Zap className="w-6 h-6 text-destructive" />
                 </div>
                 <div>
-                  <h3 className="text-xl mb-0">Forensic Velocity Track</h3>
+                  <h3 className="text-xl mb-0">Urgent Support</h3>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
                     96 Hours
                   </p>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                The emergency intervention. Principal-led crisis triage, forensic 
-                root-cause analysis, and stabilisation architecture — deployed 
-                within 48 hours. For projects in Red Status, regulatory deadlines, 
-                or imminent contract actions.
+                The emergency intervention. Senior-led crisis assessment, 
+                root-cause analysis, and corrective action planning — deployed 
+                quickly. For projects in trouble, regulatory deadlines, or 
+                imminent contract actions.
               </p>
               <ul className="space-y-3 mb-8">
                 {["Cure Notice / Show Cause response", "Failed audit recovery", "AI regulatory deadline intervention", "Project in Red Status stabilisation"].map((item) => (
@@ -382,8 +378,8 @@ export default function EngagementModel() {
           </div>
           <p className="text-center text-xs text-muted-foreground mt-6 uppercase tracking-wider">
             {activeTrack === "standard"
-              ? "The Institutional Resilience Lifecycle — 12 to 24 Weeks"
-              : "The Forensic Sprint Lifecycle — 96 Hours to Stabilisation"}
+              ? "Standard Engagement — 12 to 24 Weeks"
+              : "Fast-Track Process — Rapid Stabilisation"}
           </p>
         </div>
       </section>
@@ -494,9 +490,8 @@ export default function EngagementModel() {
         <div className="absolute inset-0 flex items-center justify-center text-center">
           <div className="max-w-2xl px-6">
             <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
-              The average consultant is being replaced by AI. You hire us for 
-              judgment — the ability to identify exactly where the fire is and 
-              architect the system to prevent the next one.
+              You hire us for practical judgment — the ability to identify exactly 
+              where the problems are and build the systems to prevent them.
             </p>
           </div>
         </div>
@@ -543,7 +538,7 @@ export default function EngagementModel() {
                   For Projects in Crisis
                 </p>
               </div>
-              <h3 className="text-xl mb-3">Start a 96-Hour Forensic Diagnostic</h3>
+              <h3 className="text-xl mb-3">Request Urgent Support</h3>
               <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
                 You have a Cure Notice, a failed audit, a regulatory deadline, or a 
                 project in Red Status. We deploy a Principal Lead within 48 hours.
