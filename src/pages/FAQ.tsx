@@ -34,7 +34,7 @@ const faqCategories = [
       {
         question: "What if we've already received a Cure Notice or Show Cause?",
         answer:
-          "We move to our Forensic Velocity Track. A Principal Lead is deployed within 48 hours to stabilize communications with the Contracting Officer, conduct an immediate root-cause analysis, and architect a corrective action response designed to arrest the escalation trajectory. The first 96 hours are structured as a Stabilization Sprint.",
+          "We move to our Urgent Support track. A senior lead is deployed quickly to stabilize communications, conduct an immediate root-cause analysis, and build a corrective action response designed to address the situation.",
       },
       {
         question: "Can you help if we are about to lose an option year?",
