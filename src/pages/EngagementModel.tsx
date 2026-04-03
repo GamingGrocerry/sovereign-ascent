@@ -233,15 +233,15 @@ export default function EngagementModel() {
         <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-              Dual-Speed Methodology
+              Our Engagement Model
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Two Tracks. One Standard of Judgment.
+              How We Work With You
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               Not every engagement begins the same way. Some organisations need 
-              institutional architecture built over months. Others need a Principal 
-              on the ground in 48 hours. We designed for both.
+              compliance systems built over months. Others need urgent support 
+              right away. We designed for both.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="outline" size="lg" asChild>
