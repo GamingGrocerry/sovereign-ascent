@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 
 const faqCategories = [
   {
-    title: "High-Stakes Recovery",
+    title: "Project Recovery",
     icon: AlertTriangle,
     iconColor: "text-destructive",
     faqs: [
