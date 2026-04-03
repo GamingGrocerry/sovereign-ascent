@@ -28,6 +28,7 @@ export function useAllArticleViews() {
   const [views, setViews] = useState<Record<string, number>>({});
 
   useEffect(() => {
+    if (!supabase) return;
     supabase
       .from("article_views")
       .select("slug, view_count")
