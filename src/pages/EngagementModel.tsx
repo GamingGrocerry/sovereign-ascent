@@ -275,7 +275,7 @@ export default function EngagementModel() {
                   <Compass className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-xl mb-0">Standard ECAM Track</h3>
+                  <h3 className="text-xl mb-0">Standard Engagement</h3>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
                     12–24 Weeks
                   </p>
