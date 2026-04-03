@@ -142,7 +142,7 @@ const faqCategories = [
       {
         question: "How does your remote model work?",
         answer:
-          "We operate via Sovereign Workflows. Using encrypted, GCC High-compliant tools, we provide Tier-1 advisory without the $2,000/day travel overhead. Our remote-by-design model allows us to deploy the right expertise to every engagement regardless of geography — supporting clients across the US, EU, and Middle East with consistent quality.",
+          "We operate using secure, encrypted tools and structured workflows. Our remote-by-design model allows us to deploy the right expertise to every engagement regardless of geography — supporting clients across the US, EU, and Middle East with consistent quality, without the travel overhead.",
       },
       {
         question: "What happens after the engagement ends?",
