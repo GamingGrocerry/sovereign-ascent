@@ -538,7 +538,7 @@ export default function EngagementModel() {
                   For Projects in Crisis
                 </p>
               </div>
-              <h3 className="text-xl mb-3">Start a 96-Hour Forensic Diagnostic</h3>
+              <h3 className="text-xl mb-3">Request Urgent Support</h3>
               <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
                 You have a Cure Notice, a failed audit, a regulatory deadline, or a 
                 project in Red Status. We deploy a Principal Lead within 48 hours.
