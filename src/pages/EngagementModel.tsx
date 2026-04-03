@@ -260,11 +260,10 @@ export default function EngagementModel() {
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <div className="section-divider mb-8" />
-            <h2 className="mb-4">The Dual-Speed Model</h2>
+            <h2 className="mb-4">Two Ways to Engage</h2>
             <p className="text-lg text-muted-foreground">
-              A $500M data centre in Red Status and a startup preparing for ISO 9001 
-              do not need the same engagement. Our methodology adapts — without 
-              compromising forensic rigour.
+              A project in crisis and a startup preparing for ISO 9001 certification 
+              don't need the same engagement. Our methodology adapts to your situation.
             </p>
           </div>
 
