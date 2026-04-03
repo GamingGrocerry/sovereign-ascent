@@ -105,7 +105,7 @@ const faqCategories = [
       {
         question: "Are you vendor-neutral?",
         answer:
-          "Strictly. We don't sell software — we sell Integrity. Our recommendations are based solely on your 2026 audit-readiness, not a commission check. In the event we identify a vendor from which we may receive referral benefits, we disclose this transparently to clients during the initial engagement meeting — prior to any recommendation being formalized.",
+          "Strictly. We don't sell software — we provide honest, objective advice. Our recommendations are based solely on what your organization needs, not commissions. In the event we identify a vendor from which we may receive referral benefits, we disclose this transparently during the initial engagement meeting.",
       },
       {
         question: "Do you require us to buy expensive GRC software?",
