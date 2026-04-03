@@ -318,10 +318,10 @@ export default function EngagementModel() {
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                The emergency intervention. Principal-led crisis triage, forensic 
-                root-cause analysis, and stabilisation architecture — deployed 
-                within 48 hours. For projects in Red Status, regulatory deadlines, 
-                or imminent contract actions.
+                The emergency intervention. Senior-led crisis assessment, 
+                root-cause analysis, and corrective action planning — deployed 
+                quickly. For projects in trouble, regulatory deadlines, or 
+                imminent contract actions.
               </p>
               <ul className="space-y-3 mb-8">
                 {["Cure Notice / Show Cause response", "Failed audit recovery", "AI regulatory deadline intervention", "Project in Red Status stabilisation"].map((item) => (
