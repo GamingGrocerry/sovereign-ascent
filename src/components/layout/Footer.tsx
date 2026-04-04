@@ -12,7 +12,7 @@ const footerLinks = {
   ],
   company: [
     { label: "About", href: "/about" },
-    { label: "Credentials", href: "/credentials" },
+    
     { label: "Governance & Independence", href: "/governance" },
     { label: "Methodology", href: "/methodology" },
     { label: "Insights", href: "/insights" },

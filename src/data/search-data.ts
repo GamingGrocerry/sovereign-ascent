@@ -10,7 +10,7 @@ export interface SearchResult {
 const sitePages: SearchResult[] = [
   { title: "Home", description: "Operational compliance systems built for real-world execution", href: "/", category: "Pages" },
   { title: "About ElevateQCS", description: "Principal-led advisory firm built on field-tested compliance experience", href: "/about", category: "Pages" },
-  { title: "Our Credentials", description: "Experience measured in outcomes — advisory depth behind every engagement", href: "/credentials", category: "Pages" },
+  
   { title: "Services", description: "Governance, risk, compliance, federal advisory, audit readiness, and managed compliance services", href: "/services", category: "Pages" },
   { title: "Methodology", description: "Elevate Compliance Architecture Methodology (ECAM) — diagnose, architect, implement, embed, monitor", href: "/methodology", category: "Pages" },
   { title: "Engagement Model", description: "Seven-phase engagement structure from diagnosis through monitoring", href: "/engagement", category: "Pages" },
@@ -60,7 +60,7 @@ export function getPopularSuggestions(): SearchResult[] {
   return [
     sitePages.find((p) => p.href === "/services")!,
     sitePages.find((p) => p.href === "/methodology")!,
-    sitePages.find((p) => p.href === "/credentials")!,
+    
     ...articleResults.slice(0, 3),
   ];
 }

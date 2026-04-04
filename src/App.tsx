@@ -19,7 +19,7 @@ import Governance from "./pages/Governance";
 import EngagementModel from "./pages/EngagementModel";
 import FAQ from "./pages/FAQ";
 import Careers from "./pages/Careers";
-import Credentials from "./pages/Credentials";
+
 import CookiePolicy from "./pages/CookiePolicy";
 import Acronyms from "./pages/Acronyms";
 import Resources from "./pages/Resources";
@@ -104,7 +104,7 @@ const App = () => (
           <Route path="/engagement" element={<EngagementModel />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/credentials" element={<Credentials />} />
+          
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/enterprise-federal" element={<ResourcesGovcon />} />
