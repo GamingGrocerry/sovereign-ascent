@@ -12,7 +12,7 @@ import resourcesPoe from "@/assets/resources-poe.jpg";
 const categories = [
   {
     title: "Enterprise & Federal Compliance",
-    description: "Professional frameworks for organizations navigating complex regulatory landscapes, federal and state compliance obligations, audit readiness, and operational governance.",
+    description: "Templates and guides for organizations navigating complex regulatory landscapes, federal and state compliance obligations, audit readiness, and operational governance.",
     href: "/resources/enterprise-federal",
     image: resourcesGovcon,
     icon: Shield,
@@ -25,7 +25,7 @@ const categories = [
   },
   {
     title: "High-Growth & Regulated Market Operations",
-    description: "Professional frameworks for companies building scalable operations, compliance foundations, and quality management systems in regulated or rapidly evolving industries.",
+    description: "Templates and guides for companies building scalable operations, compliance foundations, and quality management systems in regulated or rapidly evolving industries.",
     href: "/resources/high-growth",
     image: resourcesStartup,
     icon: Rocket,
@@ -38,13 +38,13 @@ const categories = [
   },
   {
     title: "Program & Operational Execution",
-    description: "Professional frameworks for active site sustainment, LOGCAP V/VI readiness, and rapid recovery from Prime-issued findings (CAR/NCR). Designed for the high-pressure environment of OCONUS contracting.",
+    description: "Templates and guides for active site sustainment, LOGCAP V/VI readiness, and rapid recovery from findings (CAR/NCR). Designed for high-pressure contracting environments.",
     href: "/resources/program-execution",
     image: resourcesPoe,
     icon: Crosshair,
     includes: [
       "CAPA submission & corrective action response",
-      "LOGCAP mobilization & 96-hour readiness",
+      "LOGCAP mobilization readiness",
       "NCR field logging & resolution tracking",
       "OCONUS safety, CTIP surveillance & PWS risk mapping",
     ],
@@ -55,8 +55,8 @@ export default function Resources() {
   return (
     <Layout>
       <SEOHead
-        title="Resource Center | ElevateQCS Professional Frameworks"
-        description="Access field-tested Professional Frameworks for enterprise compliance and high-growth operations. Download templates, checklists, and guides from ElevateQCS."
+        title="Templates & Guides | ElevateQCS Resource Center"
+        description="Access field-tested templates and guides for enterprise compliance and high-growth operations. Download checklists, templates, and guides from ElevateQCS."
         url="https://elevateqcs.com/resources"
       />
 
@@ -70,7 +70,7 @@ export default function Resources() {
               Resource Center
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Professional Frameworks for Compliance Excellence
+              Templates & Guides for Compliance Excellence
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Field-tested templates, checklists, and operational guides designed to accelerate 
@@ -88,7 +88,7 @@ export default function Resources() {
             <div className="section-divider mb-8" />
             <h2 className="mb-4">Choose Your Focus Area</h2>
             <p className="text-lg text-muted-foreground">
-              Select a framework category to access our curated collection of Professional Frameworks.
+              Select a category to access our curated collection of templates and guides.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export default function Resources() {
                   </ul>
 
                   <span className="inline-flex items-center text-accent font-medium">
-                    Access Frameworks
+                    Access Templates & Guides
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
@@ -142,14 +142,14 @@ export default function Resources() {
       <section className="py-28 bg-secondary/30">
         <div className="container-narrow text-center">
           <div className="section-divider mx-auto mb-8" />
-          <h2 className="mb-6">Need Customized Frameworks?</h2>
+          <h2 className="mb-6">Need Customized Templates?</h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Our Professional Frameworks provide a starting point. For tailored solutions 
+            Our templates and guides provide a starting point. For tailored solutions 
             aligned to your specific operational and regulatory context, speak with our team.
           </p>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
-              Request a Consultation
+              Get a Free Consultation
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>

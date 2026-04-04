@@ -69,18 +69,17 @@ export default function Capabilities() {
   return (
     <Layout>
       <SEOHead
-        title="Sovereign Quality for Distressed Infrastructure & Regulated AI | ElevateQCS"
-        description="ElevateQCS designs governance infrastructure for distressed infrastructure recovery, regulated AI compliance, and federal contracting. ISO, CMMC, EU AI Act, FAR/DFARS advisory."
+        title="What We Do — Capabilities | ElevateQCS"
+        description="ElevateQCS helps businesses build governance, quality, and compliance systems that meet regulatory requirements, satisfy customer expectations, and support sustainable growth."
         url="https://elevateqcs.com/capabilities"
         keywords={[
           "compliance advisory firm",
-          "government contracting compliance",
+          "compliance consultant",
           "ISO 9001 consulting",
-          "CMMC advisory",
+          "quality management consultant",
           "EU AI Act compliance",
-          "infrastructure recovery advisory",
           "AI governance consulting",
-          "FAR DFARS compliance consulting",
+          "audit preparation services",
         ]}
         jsonLd={schemaJsonLd}
       />
@@ -98,23 +97,18 @@ export default function Capabilities() {
               Capabilities Statement
             </p>
             <h1 className="text-primary-foreground mb-8 animate-fade-up-delay-1">
-              Sovereign Quality for Distressed Infrastructure and Regulated AI
+              What We Do
             </h1>
             <div className="space-y-5 animate-fade-up-delay-2">
               <p className="text-primary-foreground/80 text-lg leading-relaxed">
-                ElevateQCS is a specialized governance and compliance advisory
-                firm that architects the internal systems required to stabilize
-                distressed assets, govern AI deployments, and meet global
-                regulatory expectations.
+                ElevateQCS helps businesses build governance, quality, and 
+                compliance systems that meet regulatory requirements, satisfy 
+                customer expectations, and support sustainable growth.
               </p>
               <p className="text-primary-foreground/70 leading-relaxed">
                 We design governance frameworks, quality management systems,
-                and compliance infrastructures that protect contract value,
-                prevent margin leakage, and align operational workflows
-                with international standards — from FAR/DFARS to the EU AI Act.
-              </p>
-              <p className="text-primary-foreground/60 italic">
-                Defense-grade discipline. Applied to sovereign infrastructure.
+                and compliance infrastructure that protect contract value
+                and align operational workflows with international standards.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-10 animate-fade-up-delay-3">
@@ -124,7 +118,7 @@ export default function Capabilities() {
                 className="bg-accent hover:bg-accent/90 text-accent-foreground"
               >
                 <Link to="/contact">
-                  Request a Consultation
+                  Get a Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -151,7 +145,7 @@ export default function Capabilities() {
             </p>
             <h2 className="mb-4">Select Your Sector</h2>
             <p className="text-muted-foreground">
-              Our advisory serves both federal and commercial markets. Select your context to see capabilities most relevant to your environment.
+              Our advisory serves both federal and commercial markets. Select your context to see the most relevant capabilities.
             </p>
           </div>
           <SectorSelector mode={sectorMode} onChange={setSectorMode} />
@@ -163,12 +157,12 @@ export default function Capabilities() {
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
-              Strategic Advisory Domains
+              Our Advisory Areas
             </p>
             <h2>
               {sectorMode === "federal"
-                ? "Governance architecture for contract-driven, high-accountability environments"
-                : "Defense-grade systems — applied to commercial infrastructure and regulated technology"}
+                ? "Governance for contract-driven, high-accountability environments"
+                : "Compliance systems for commercial infrastructure and regulated technology"}
             </h2>
             <div className="section-divider mt-6" />
           </div>
@@ -181,7 +175,6 @@ export default function Capabilities() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl mb-4">{domain.title}</h3>
-                    {/* Sector-specific pitch */}
                     {(sectorMode === "federal" && domain.federalPitch) && (
                       <div className="mb-4 px-4 py-3 rounded-md bg-primary/5 border border-primary/10">
                         <p className="text-sm font-medium text-foreground">{domain.federalPitch}</p>
@@ -194,8 +187,7 @@ export default function Capabilities() {
                     )}
                     <p className="mb-5">{domain.description}</p>
                     <p className="text-foreground font-medium text-sm mb-3">
-                      Our advisory supports organizations implementing or
-                      strengthening frameworks aligned with:
+                      We help organizations with:
                     </p>
                     <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 mb-5">
                       {domain.items.map((item) => (
@@ -235,11 +227,11 @@ export default function Capabilities() {
               Industries We Support
             </p>
             <h2>
-              Specialized expertise for the hyper-growth sectors of 2026
+              Specialized expertise across regulated industries
             </h2>
             <div className="section-divider mt-6" />
             <p className="mt-6">
-              ElevateQCS supports organizations in sectors where operational failure carries regulatory, financial, or contractual consequences.
+              We support organizations in industries where compliance directly impacts the ability to operate, win contracts, and grow.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -256,14 +248,14 @@ export default function Capabilities() {
         </div>
       </section>
 
-      {/* ─── DIFFERENTIATORS — THE 2026 EDGE ─── */}
+      {/* ─── DIFFERENTIATORS ─── */}
       <section className="py-24 lg:py-32 bg-secondary/50">
         <div className="container-wide">
           <div className="max-w-3xl mb-16">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
-              The 2026 Edge
+              Why ElevateQCS
             </p>
-            <h2>What sets ElevateQCS apart</h2>
+            <h2>What sets us apart</h2>
             <div className="section-divider mt-6" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -288,13 +280,12 @@ export default function Capabilities() {
               Engagement Models
             </p>
             <h2>
-              Structured advisory programs aligned with regulatory expectations
+              How we work with you
             </h2>
             <div className="section-divider mt-6" />
             <p className="mt-6">
-              Organizations engage ElevateQCS through structured advisory
-              programs designed to align governance infrastructure with
-              regulatory expectations.
+              We offer structured advisory programs designed to match your 
+              compliance objectives and organizational needs.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-8">
@@ -322,12 +313,11 @@ export default function Capabilities() {
               <h2 className="mb-6">ElevateQCS Capabilities Statement (PDF)</h2>
               <div className="section-divider mb-8" />
               <p className="mb-4">
-                Our full capabilities statement provides an overview of our
-                advisory domains, regulatory expertise, and engagement models.
+                Our capabilities statement provides an overview of our
+                advisory areas, expertise, and engagement models.
               </p>
               <p className="text-muted-foreground">
-                Download the official ElevateQCS capabilities statement used by
-                organizations evaluating advisory partnerships.
+                Enter your email to download.
               </p>
             </div>
 
@@ -390,7 +380,7 @@ export default function Capabilities() {
                     setFormData({ ...formData, industry: e.target.value })
                   }
                   maxLength={100}
-                  placeholder="e.g., Defense, AI Infrastructure"
+                  placeholder="e.g., Defense, Manufacturing, Technology"
                 />
               </div>
               <div className="flex items-start gap-3 pt-2">
@@ -425,15 +415,11 @@ export default function Capabilities() {
       <section className="py-12 border-t border-border">
         <div className="container-narrow">
           <p className="text-xs text-muted-foreground leading-relaxed">
-            <strong>DISCLAIMER:</strong> The materials provided by ElevateQCS,
-            including tools, templates, frameworks, reports, or publications, are
-            provided for informational purposes only. They do not constitute
-            legal advice, financial advice, regulatory certification, or formal
-            compliance advisory. Organizations should conduct independent due
-            diligence and consult appropriate professional advisors before
-            implementing any governance or compliance program. Use of these
-            materials does not establish an advisory relationship with
-            ElevateQCS.
+            ElevateQCS is an independent advisory firm. The materials provided 
+            are for informational purposes only and do not constitute legal advice, 
+            regulatory certification, or formal compliance advisory. Organizations 
+            should consult appropriate professional advisors before implementing 
+            any governance or compliance program.
           </p>
         </div>
       </section>

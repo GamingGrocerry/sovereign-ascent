@@ -12,10 +12,10 @@ import methodologyCompass from "@/assets/methodology-compass.jpg";
 const phases = [
   {
     number: "01",
-    name: "Diagnose",
+    name: "Assess",
     icon: Search,
-    title: "Identify Gaps With Real Operational Impact",
-    description: "We begin with a comprehensive assessment of your existing compliance infrastructure, organizational context, and risk landscape — focused on what matters most to real operations.",
+    title: "Understand where you stand today",
+    description: "We start by reviewing your current compliance setup — your documentation, processes, risks, and team readiness. The goal is to understand what's working and what needs attention.",
     activities: [
       "Stakeholder interviews and documentation review",
       "Gap analysis against applicable standards",
@@ -26,10 +26,10 @@ const phases = [
   },
   {
     number: "02",
-    name: "Architect",
+    name: "Design",
     icon: Compass,
-    title: "Structure Systems That Operational Teams Can Use",
-    description: "Based on diagnostic findings, we design a compliance framework tailored to your organizational structure, culture, and operational requirements — built for use, not for filing.",
+    title: "Build the right system for your needs",
+    description: "Based on what we find, we design a compliance framework that fits your organization — your structure, your culture, and your operational requirements.",
     activities: [
       "Process architecture and workflow design",
       "Policy and procedure framework development",
@@ -40,10 +40,10 @@ const phases = [
   },
   {
     number: "03",
-    name: "Implement",
+    name: "Build",
     icon: Wrench,
-    title: "Guide Deployment With Internal Clarity",
-    description: "We support the phased implementation of your compliance framework with hands-on guidance and change management support — ensuring teams understand what's expected.",
+    title: "Put the system into practice",
+    description: "We help you roll out the new system step by step — writing documentation, configuring tools, and making sure everyone knows what's expected.",
     activities: [
       "Pilot program execution",
       "Documentation development and refinement",
@@ -54,10 +54,10 @@ const phases = [
   },
   {
     number: "04",
-    name: "Embed",
+    name: "Train",
     icon: Users,
-    title: "Support Adoption Through Role-Based Expectation Setting",
-    description: "We work to embed compliance practices into your organizational culture, ensuring sustainable adoption beyond initial implementation through clear role-based expectations.",
+    title: "Make sure your team can run it",
+    description: "We train your team to own and operate the system independently — with clear expectations for every role and the confidence to maintain it without us.",
     activities: [
       "Training program execution",
       "Competency assessment and development",
@@ -68,10 +68,10 @@ const phases = [
   },
   {
     number: "05",
-    name: "Monitor",
+    name: "Support",
     icon: BarChart3,
-    title: "Enable Ongoing Control and Evidence Maintenance",
-    description: "We establish monitoring mechanisms that provide ongoing visibility into compliance performance and support continuous improvement — so your systems stay effective over time.",
+    title: "Keep everything on track over time",
+    description: "We set up monitoring so you can see how your compliance system is performing — and catch issues before they become problems.",
     activities: [
       "KPI development and tracking",
       "Internal audit program support",
@@ -106,10 +106,10 @@ export default function Methodology() {
   return (
     <Layout>
       <SEOHead
-        title="ECAM Compliance Architecture Methodology | ElevateQCS"
-        description="A five-phase compliance architecture methodology: Diagnose, Architect, Implement, Embed, Monitor. Built for operational reality, not theoretical perfection."
+        title="Our Process — ECAM Methodology | ElevateQCS"
+        description="A clear five-step process for building compliance systems: Assess, Design, Build, Train, and Support. Practical methodology built for real organizations."
         url="https://elevateqcs.com/methodology"
-        keywords={["ECAM methodology", "compliance architecture", "quality management methodology"]}
+        keywords={["compliance methodology", "compliance process", "quality management methodology", "compliance consulting process"]}
       />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
@@ -122,16 +122,14 @@ export default function Methodology() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
-                Our Methodology
+                Our Process
               </p>
               <h1 className="mb-6 gold-accent pb-4">
-                A Repeatable Approach to Compliance Complexity
+                Our Process
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                ECAM — Elevate Compliance Architecture Methodology — is not a 
-                certifiable standard. It is a structured, repeatable architecture 
-                approach that brings order to compliance complexity and is designed 
-                for operational reality.
+                ECAM is our five-step process for building compliance systems. 
+                It gives every engagement a clear structure from start to finish.
               </p>
             </div>
             <div className="hidden lg:block">
@@ -166,9 +164,8 @@ export default function Methodology() {
               <div className="section-divider mb-8" />
               <h2 className="mb-6">Guiding Principles</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                ECAM is built on principles that differentiate our approach from 
-                traditional consulting methodologies — focusing on what works in 
-                practice, not just in documentation.
+                Our process is built on principles that focus on what works in 
+                practice — not just in documentation.
               </p>
               <ul className="space-y-4">
                 {principles.map((principle, index) => (
@@ -202,11 +199,10 @@ export default function Methodology() {
             <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">
               The Framework
             </p>
-            <h2 className="mb-6">Five Phases of Compliance Architecture</h2>
+            <h2 className="mb-6">Five Steps to Compliance Maturity</h2>
             <p className="text-lg text-muted-foreground">
-              Each phase builds upon the previous, creating a structured path 
-              from current state to sustainable compliance maturity. The focus 
-              is on real use — not checklists.
+              Each phase builds on the previous one — creating a clear path 
+              from where you are today to where you need to be.
             </p>
           </div>
 
@@ -310,7 +306,7 @@ export default function Methodology() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center max-w-3xl px-6">
             <p className="text-primary-foreground text-2xl md:text-3xl font-serif font-light mb-6">
-              "Structured methodology transforms compliance from burden to operational advantage"
+              "A clear process turns compliance from a burden into a business advantage"
             </p>
             <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
           </div>
@@ -321,16 +317,15 @@ export default function Methodology() {
       <section className="py-28 bg-background">
         <div className="container-narrow text-center">
           <div className="section-divider mx-auto mb-8" />
-          <h2 className="mb-6">Apply ECAM to Your Organization</h2>
+          <h2 className="mb-6">Ready to Get Started?</h2>
           <p className="text-lg mb-12 max-w-2xl mx-auto">
-            Our methodology adapts to your organizational context, timeline, 
-            and compliance objectives. Let's discuss how ECAM can support your 
-            compliance journey.
+            Our process adapts to your organization's size, industry, 
+            and compliance objectives. Let's discuss how we can help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="xl" asChild>
               <Link to="/contact">
-                Request a Confidential Consultation
+                Book a Free Consultation
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>

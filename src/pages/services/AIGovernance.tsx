@@ -5,24 +5,24 @@ export default function AIGovernance() {
   return (
     <ServicePageLayout
       seo={{
-        title: "AI Governance & Algorithmic Quality | ElevateQCS",
-        description: "We apply quality management discipline to AI systems — ensuring data pipelines, model outputs, and algorithmic decisions are audit-ready and compliant with the EU AI Act and emerging ethical standards.",
+        title: "AI Compliance Advisory | ElevateQCS",
+        description: "Help your AI systems meet emerging regulations like the EU AI Act, with documentation, risk assessments, and governance frameworks. Practical AI compliance for non-tech and tech organizations.",
         url: "https://elevateqcs.com/services/ai-governance",
-        keywords: ["AI governance advisory", "algorithmic quality", "EU AI Act compliance", "AI audit readiness", "algorithmic accountability", "responsible AI", "AI risk management", "model governance", "AI compliance framework"],
+        keywords: ["AI compliance advisory", "EU AI Act compliance", "AI governance", "AI audit readiness", "responsible AI", "AI risk management", "AI compliance framework", "ISO 42001"],
       }}
       hero={{
-        label: "AI Governance & Algorithmic Quality",
-        headline: "Quality Infrastructure for the Algorithmic Age",
-        description: "We bring the same quality management discipline that governs physical operations to AI systems — ensuring data pipelines, model outputs, and algorithmic decisions are documented, auditable, and compliant with the EU AI Act, NIST AI RMF, and emerging regulatory frameworks. Whether you are a defense contractor deploying autonomous systems or a commercial firm scaling AI-driven decisions, we structure the governance that keeps your algorithms accountable.",
+        label: "AI Compliance Advisory",
+        headline: "Practical AI Governance for Regulated Organizations",
+        description: "We help organizations meet emerging AI regulations — the EU AI Act, NIST AI RMF, and ISO/IEC 42001 — with documentation, risk assessments, and governance frameworks that work in practice. Whether you build AI systems or just use them, we structure the compliance you need.",
         image: heroImg,
       }}
       credibility={{
-        title: "QMS Principles Applied to Algorithmic Systems",
+        title: "Quality Management Principles Applied to AI Systems",
         paragraphs: [
-          "The EU AI Act is now in full force. Organizations deploying AI systems face the same regulatory scrutiny that manufacturers faced with ISO 9001 — except the consequences of non-compliance are accelerating faster than most compliance teams can respond.",
-          "The challenge is not technical. Most AI governance failures are documentation failures. Organizations cannot demonstrate how models were trained, how decisions are made, or how bias is monitored. The 'black box' problem is not an engineering problem — it is a quality systems problem.",
-          "Our AI Governance practice applies proven quality infrastructure principles to algorithmic systems. We treat AI models as controlled processes, data pipelines as supply chains, and model outputs as products requiring inspection and acceptance criteria.",
-          "This approach works for both GovCon environments deploying AI within DFARS and CMMC frameworks and commercial firms navigating EU AI Act classification, NIST AI RMF alignment, and investor scrutiny of algorithmic risk exposure.",
+          "The EU AI Act is now in force. Organizations deploying AI systems face regulatory scrutiny that most compliance teams aren't yet prepared for.",
+          "The challenge is usually not technical. Most AI governance failures are documentation failures. Organizations cannot demonstrate how models were trained, how decisions are made, or how bias is monitored.",
+          "Our AI compliance practice applies proven quality management principles to AI systems — creating the documentation, oversight structures, and monitoring processes that regulators expect.",
+          "This works for both federal environments deploying AI within DFARS and CMMC frameworks and commercial firms navigating EU AI Act classification and ISO/IEC 42001 certification.",
         ],
       }}
       capabilities={[
@@ -36,9 +36,9 @@ export default function AIGovernance() {
           ],
         },
         {
-          title: "Algorithmic Quality Management System",
+          title: "AI Quality Management System",
           items: [
-            "AI-specific QMS design treating models as controlled processes",
+            "AI-specific QMS design for model lifecycle management",
             "Data pipeline documentation and traceability architecture",
             "Model validation, verification, and acceptance criteria frameworks",
             "Continuous monitoring and drift detection governance protocols",
@@ -57,7 +57,7 @@ export default function AIGovernance() {
           title: "Human Oversight & Accountability Structures",
           items: [
             "Human-in-the-loop and human-on-the-loop governance design",
-            "Escalation protocols for algorithmic decision failures",
+            "Escalation protocols for AI decision failures",
             "Board-level AI governance committee frameworks",
             "Accountability chains from model deployment to organizational leadership",
           ],
@@ -68,7 +68,7 @@ export default function AIGovernance() {
             "Governance frameworks for autonomous decision-making systems",
             "Safety and containment protocols for agentic AI deployments",
             "Interoperability governance for multi-agent system environments",
-            "Defense and national security AI compliance frameworks (DoD AI Ethics Principles)",
+            "Defense and national security AI compliance frameworks",
           ],
         },
         {
@@ -82,11 +82,11 @@ export default function AIGovernance() {
         },
       ]}
       people={{
-        title: "Quality Professionals Who Understand AI Systems",
+        title: "Our Team Brings Practical AI Governance Experience",
         paragraphs: [
-          "Our AI governance team combines deep quality management expertise with practical understanding of how AI systems are built, deployed, and regulated. We do not approach algorithmic governance as a theoretical exercise — we build the operational frameworks that make AI systems auditable.",
-          "We understand that AI governance must integrate with existing quality, compliance, and risk management systems — not create parallel bureaucracies. Our frameworks are designed to extend your current QMS to cover algorithmic processes without disrupting operational tempo.",
-          "Our work is vendor-neutral. We do not recommend specific AI tools or platforms. We structure the governance architecture that ensures whatever technology you deploy meets regulatory, contractual, and ethical requirements.",
+          "Our AI governance team combines quality management expertise with practical understanding of how AI systems are built, deployed, and regulated. We build the operational frameworks that make AI systems auditable.",
+          "We ensure AI governance integrates with your existing quality and compliance systems — not as a parallel bureaucracy, but as a natural extension of your current management system.",
+          "Our work is vendor-neutral. We don't recommend specific AI tools or platforms. We structure the governance that ensures whatever technology you deploy meets regulatory and contractual requirements.",
         ],
       }}
       relatedInsightSlugs={[
