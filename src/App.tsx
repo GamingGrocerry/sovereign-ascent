@@ -104,7 +104,7 @@ const App = () => (
           <Route path="/engagement" element={<EngagementModel />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/credentials" element={<Credentials />} />
+          
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/enterprise-federal" element={<ResourcesGovcon />} />

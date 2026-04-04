@@ -143,7 +143,7 @@ ElevateQCS is a specialized advisory firm delivering governance, quality managem
 - [Methodology](https://elevateqcs.com/methodology): The ElevateQCS advisory methodology and engagement framework.
 - [Engagement Model](https://elevateqcs.com/engagement): How we partner with clients across engagement types.
 - [Who We Serve](https://elevateqcs.com/who-we-serve): Target audiences and ideal client profiles.
-- [Credentials](https://elevateqcs.com/credentials): Authority metrics — $20M+ in contract value protected, 1,000+ forensic audit interactions, and field-tested operational architectures.
+
 - [Governance](https://elevateqcs.com/governance): Our internal governance framework and ethical commitments.
 - [FAQ](https://elevateqcs.com/faq): Expert positions on high-stakes recovery, AI governance, and institutional advisory.
 - [Acronyms & Glossary](https://elevateqcs.com/acronyms): Industry acronyms and terminology reference.

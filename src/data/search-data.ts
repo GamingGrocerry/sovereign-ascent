@@ -60,7 +60,7 @@ export function getPopularSuggestions(): SearchResult[] {
   return [
     sitePages.find((p) => p.href === "/services")!,
     sitePages.find((p) => p.href === "/methodology")!,
-    sitePages.find((p) => p.href === "/credentials")!,
+    
     ...articleResults.slice(0, 3),
   ];
 }
