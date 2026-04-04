@@ -164,6 +164,8 @@ const App = () => (
           <Route path="/tools/project-health-diagnostic" element={<ProjectHealthDiagnostic />} />
           <Route path="/tools/esg-traceability-stress-test" element={<ESGTraceabilityStressTest />} />
           <Route path="/capabilities" element={<Capabilities />} />
+          <Route path="/who-we-serve" element={<WhoWeServe />} />
+          <Route path="/govcon" element={<GovCon />} />
           <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
