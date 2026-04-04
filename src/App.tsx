@@ -19,7 +19,7 @@ import Governance from "./pages/Governance";
 import EngagementModel from "./pages/EngagementModel";
 import FAQ from "./pages/FAQ";
 import Careers from "./pages/Careers";
-import Credentials from "./pages/Credentials";
+
 import CookiePolicy from "./pages/CookiePolicy";
 import Acronyms from "./pages/Acronyms";
 import Resources from "./pages/Resources";
