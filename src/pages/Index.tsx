@@ -14,10 +14,6 @@ import serviceQualityInfrastructure from "@/assets/service-quality-infrastructur
 import serviceAuditReadiness from "@/assets/service-audit-readiness.jpg";
 import InsightsCarousel from "@/components/InsightsCarousel";
 
-const stats = [
-  { value: "9+", label: "Years of Compliance Advisory Experience" },
-  { value: "5", label: "Industries Served: Defense, Manufacturing, Technology, Healthcare, Energy" },
-];
 
 const coreServices = [
   {
@@ -533,23 +529,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="stats-gradient py-20">
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-2 gap-8 lg:gap-12 max-w-2xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="font-serif text-4xl md:text-5xl text-primary-foreground font-semibold mb-3 transition-transform duration-300 group-hover:scale-105">
-                  {stat.value}
-                </div>
-                <div className="text-primary-foreground/70 text-sm leading-tight">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
 
       {/* Final CTA Section */}
