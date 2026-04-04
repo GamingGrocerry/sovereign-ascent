@@ -14,10 +14,6 @@ import serviceQualityInfrastructure from "@/assets/service-quality-infrastructur
 import serviceAuditReadiness from "@/assets/service-audit-readiness.jpg";
 import InsightsCarousel from "@/components/InsightsCarousel";
 
-const stats = [
-  { value: "9+", label: "Years of Compliance Advisory Experience" },
-  { value: "5", label: "Industries Served: Defense, Manufacturing, Technology, Healthcare, Energy" },
-];
 
 const coreServices = [
   {
