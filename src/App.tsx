@@ -77,6 +77,8 @@ import ESGTraceabilityStressTest from "./pages/tools/ESGTraceabilityStressTest";
 import Capabilities from "./pages/Capabilities";
 import ResourcesPOE from "./pages/ResourcesPOE";
 import GenerateResources from "./pages/admin/GenerateResources";
+import GovCon from "./pages/GovCon";
+import WhoWeServe from "./pages/WhoWeServe";
 
 const queryClient = new QueryClient();
 
