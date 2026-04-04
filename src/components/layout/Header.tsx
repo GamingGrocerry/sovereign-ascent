@@ -59,7 +59,6 @@ const navItems = [
     href: "/about",
     dropdown: [
       { label: "Our Firm", href: "/about" },
-      { label: "Credentials", href: "/credentials" },
       { label: "Governance & Independence", href: "/governance" },
       { label: "Engagement Model", href: "/engagement" },
       { label: "FAQs", href: "/faq" },
