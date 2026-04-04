@@ -548,14 +548,6 @@ export default function Index() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Button variant="hero-outline" size="lg" asChild>
-              <Link to="/credentials">
-                See Our Full Credentials
-                <ChevronRight className="ml-2" size={16} />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
 
