@@ -8,8 +8,8 @@ export default function ResourcesGovcon() {
   return (
     <Layout>
       <SEOHead
-        title="Enterprise & Federal Compliance Frameworks | ElevateQCS Resource Center"
-        description="Access Professional Frameworks for enterprise and federal compliance including FAR/DFARS templates, CTIP program guides, audit readiness checklists, and governance architecture."
+        title="Enterprise & Federal Compliance Templates & Guides | ElevateQCS Resource Center"
+        description="Access templates and guides for enterprise and federal compliance including FAR/DFARS templates, CTIP program guides, audit readiness checklists, and governance architecture."
         url="https://elevateqcs.com/resources/enterprise-federal"
       />
 
@@ -23,10 +23,10 @@ export default function ResourcesGovcon() {
               Enterprise & Federal Compliance
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              Enterprise & Federal Compliance Frameworks
+              Enterprise & Federal Compliance Templates & Guides
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Professional frameworks for organizations navigating complex regulatory landscapes, 
+              Templates and guides for organizations navigating complex regulatory landscapes, 
               federal and state compliance obligations, audit readiness, and operational governance.
             </p>
           </div>
@@ -36,8 +36,8 @@ export default function ResourcesGovcon() {
       <ResourceGate
         type="govcon"
         bucketName="elevateqcs-resourcesdocs-govcon"
-        title="Access Enterprise & Federal Frameworks"
-        subtitle="Enter your business email to access our curated library of enterprise and federal compliance Professional Frameworks."
+        title="Access Enterprise & Federal Templates"
+        subtitle="Enter your business email to access our curated library of enterprise and federal compliance templates and guides."
       />
 
       <ResourceDisclaimer />

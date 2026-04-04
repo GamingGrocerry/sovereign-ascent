@@ -6,17 +6,17 @@ import { SearchBar } from "@/components/SearchBar";
 import { cn } from "@/lib/utils";
 
 const servicesMegaMenu = [
-  { label: "AI Governance & Algorithmic Quality", href: "/services/ai-governance" },
-  { label: "Audit & Certification Readiness", href: "/services/audit-certification-readiness" },
-  { label: "Digital Governance", href: "/services/digital-governance" },
+  { label: "AI Compliance Advisory", href: "/services/ai-governance" },
+  { label: "Audit & Certification Preparation", href: "/services/audit-certification-readiness" },
+  { label: "Compliance Technology Advisory", href: "/services/digital-governance" },
+  { label: "Documentation & SOPs", href: "/services/regulatory-documentation" },
   { label: "Federal & Public Sector Advisory", href: "/services/federal-public-sector" },
   { label: "Governance & Strategy", href: "/services/governance-strategy" },
-  { label: "Managed Compliance", href: "/services/managed-compliance" },
-  { label: "Project Recovery & Distressed Assets", href: "/services/project-recovery" },
-  { label: "Quality & Operational Infrastructure", href: "/services/quality-operational-infrastructure" },
-  { label: "Regulatory Documentation", href: "/services/regulatory-documentation" },
-  { label: "Risk, Regulatory & Compliance", href: "/services/risk-regulatory-compliance" },
-  { label: "Supply Chain, Human Rights & Due Diligence", href: "/services/supply-chain-human-rights" },
+  { label: "Ongoing Compliance Support", href: "/services/managed-compliance" },
+  { label: "Project Recovery", href: "/services/project-recovery" },
+  { label: "Quality Management Systems", href: "/services/quality-operational-infrastructure" },
+  { label: "Risk & Regulatory Compliance", href: "/services/risk-regulatory-compliance" },
+  { label: "Supply Chain Compliance & Due Diligence", href: "/services/supply-chain-human-rights" },
 ];
 
 const industriesMegaMenu = [
@@ -48,7 +48,7 @@ const navItems = [
     label: "Resources",
     href: "/resources",
     dropdown: [
-      { label: "All Frameworks", href: "/resources" },
+      { label: "All Templates & Guides", href: "/resources" },
       { label: "Enterprise & Federal Compliance", href: "/resources/enterprise-federal" },
       { label: "High-Growth & Regulated Markets", href: "/resources/high-growth" },
       { label: "Program & Operational Execution", href: "/resources/program-execution" },
@@ -184,15 +184,6 @@ export function Header() {
                           </Link>
                         ))}
                       </div>
-                      <div className="border-t border-border mt-4 pt-4">
-                        <Link
-                          to="/choosing-the-right-service"
-                          className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
-                        >
-                          Choosing the Right Service
-                          <ChevronDown className="w-3 h-3 ml-1 -rotate-90" />
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 )}
@@ -240,7 +231,7 @@ export function Header() {
               size="default"
               asChild
             >
-              <Link to="/contact">Request Consultation</Link>
+              <Link to="/contact">Get a Free Consultation</Link>
             </Button>
             <SearchBar isDark={showDarkHeader} />
           </div>
@@ -281,18 +272,6 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/choosing-the-right-service"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={cn(
-                  "block text-sm py-2 pl-4 font-medium transition-colors",
-                  location.pathname === "/choosing-the-right-service"
-                    ? "text-accent"
-                    : "text-accent/70 hover:text-accent"
-                )}
-              >
-                Choosing the Right Service →
-              </Link>
             </div>
 
             <Link
@@ -357,7 +336,7 @@ export function Header() {
             <div className="py-2">
               <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Resources</p>
               {[
-                { label: "All Frameworks", href: "/resources" },
+                { label: "All Templates & Guides", href: "/resources" },
                 { label: "Enterprise & Federal Compliance", href: "/resources/enterprise-federal" },
                 { label: "High-Growth & Regulated Markets", href: "/resources/high-growth" },
               ].map((item) => (
@@ -407,7 +386,7 @@ export function Header() {
             <div className="pt-4">
               <Button variant="cta" size="lg" className="w-full" asChild>
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Request Consultation
+                  Get a Free Consultation
                 </Link>
               </Button>
             </div>
