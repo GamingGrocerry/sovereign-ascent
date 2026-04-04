@@ -5,22 +5,22 @@ export default function QualityOperationalInfrastructure() {
   return (
     <ServicePageLayout
       seo={{
-        title: "Quality & Operational Infrastructure | ElevateQCS",
-        description: "We architect quality management systems and operational control frameworks designed for scalability, auditability, and internal ownership in regulated environments.",
+        title: "Quality Management Systems | ElevateQCS",
+        description: "We design and build quality management systems (ISO 9001, AS9100, ISO 13485) that your team can use, maintain, and improve. Practical QMS consulting.",
         url: "https://elevateqcs.com/services/quality-operational-infrastructure",
-        keywords: ["QMS architecture", "quality management system", "ISO 9001", "AS9100", "operational infrastructure", "process design"],
+        keywords: ["QMS consulting", "quality management system", "ISO 9001 consultant", "AS9100", "quality system consulting", "QMS consultant"],
       }}
       hero={{
-        label: "Quality & Operational Infrastructure",
-        headline: "Quality Systems Designed for How Organizations Actually Operate",
-        description: "We architect quality management systems and operational control frameworks that function in real workflows — designed for scalability, auditability, and internal ownership, not shelf compliance.",
+        label: "Quality Management Systems",
+        headline: "Quality Systems Your Team Will Actually Use",
+        description: "We design and build quality management systems that work in real operations — not just on paper. Built for scalability, auditability, and internal ownership.",
         image: heroImg,
       }}
       credibility={{
-        title: "Systems That Work Under Pressure — Not Just on Paper",
+        title: "Systems That Work Under Pressure",
         paragraphs: [
-          "A quality management system is only as strong as its integration into daily operations. Systems that exist primarily in documentation — disconnected from the workflows they are meant to govern — fail under audit, create operational friction, and erode the credibility they were designed to establish.",
-          "Our quality practice is built on the principle that every control, process, and procedure must be designed for the people who will use it. We architect systems that operational teams adopt because they clarify expectations, reduce ambiguity, and create measurable accountability.",
+          "A quality management system is only as strong as its integration into daily operations. Systems that exist primarily in documentation — disconnected from the workflows they're meant to govern — fail under audit and create operational friction.",
+          "We build systems that operational teams adopt because they clarify expectations, reduce ambiguity, and create measurable accountability.",
           "We bring experience across ISO 9001, AS9100, ISO 13485, and sector-specific quality frameworks — with a consistent focus on building systems that scale with the organizations they serve.",
         ],
       }}
@@ -53,23 +53,11 @@ export default function QualityOperationalInfrastructure() {
           ],
         },
       ]}
-      caseStudy={{
-        sector: "Advanced Manufacturing / Pre-IPO",
-        title: "QMS Redesign Eliminates 34% Scrap Rate Before IPO Due Diligence",
-        situation: "A precision manufacturing company targeting an IPO was hemorrhaging $1.8M annually in scrap and rework costs. Their legacy quality system — a collection of tribal knowledge and undocumented processes — had generated 23 customer complaints in the prior quarter. Investment bankers flagged operational risk as the primary valuation discount, estimating a $15M reduction in enterprise value.",
-        approach: "We conducted a forensic process audit across three production lines, mapping 142 process steps and identifying 31 undocumented decision points where quality failures originated. We redesigned the QMS architecture around risk-based thinking, implemented statistical process controls at critical-to-quality stages, and built a real-time nonconformance tracking system that linked shop floor data to management review.",
-        outcome: "Within 6 months, scrap rates dropped from 34% to 8%. Customer complaints fell to 2 per quarter. The redesigned QMS satisfied due diligence requirements, and the IPO valuation team removed the operational risk discount — restoring an estimated $12M in enterprise value.",
-        metrics: [
-          { label: "Scrap Reduction", value: "34% → 8%" },
-          { label: "Valuation Recovered", value: "~$12M" },
-          { label: "Complaints Reduced", value: "92%" },
-        ],
-      }}
       people={{
-        title: "Engineers of Operational Discipline",
+        title: "Our Team Brings Practical Quality Experience",
         paragraphs: [
-          "Our quality infrastructure specialists combine deep technical knowledge of international standards with practical experience in manufacturing, defence, medical device, and technology environments. We understand that quality systems must be technically rigorous and operationally intuitive.",
-          "We work alongside quality managers, operations leaders, and executive teams to build systems that create genuine internal value — reducing waste, improving consistency, and establishing the operational discipline that customers, auditors, and regulators expect.",
+          "Our quality specialists combine deep technical knowledge of international standards with practical experience in manufacturing, defence, medical device, and technology environments.",
+          "We work alongside quality managers, operations leaders, and executive teams to build systems that create genuine internal value — reducing waste, improving consistency, and establishing the operational discipline that customers and auditors expect.",
           "Our approach prioritizes internal ownership. We build systems designed to be maintained and improved by the teams who use them — not by external consultants.",
         ],
       }}

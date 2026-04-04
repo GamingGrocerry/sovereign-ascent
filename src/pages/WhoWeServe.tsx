@@ -2,53 +2,37 @@ import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Building2, Rocket, AlertTriangle, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Building2, Rocket, Briefcase, AlertTriangle, CheckCircle } from "lucide-react";
 import whoWeServeHero from "@/assets/who-we-serve-hero.jpg";
 import whoWeServeQuote from "@/assets/who-we-serve-quote.jpg";
 
 const audiences = [
   {
     icon: Building2,
-    title: "Prime Contractors",
-    description: "Close the gap between contractual compliance expectations and operational systems. Teams needing defensible compliance systems before audits, contract milestones, or regulatory assessments.",
+    title: "Government Contractors",
+    description: "Federal contractors and subcontractors who need defensible compliance systems before audits, contract milestones, or regulatory assessments.",
     risks: [
-      "DCMA quality system reviews and surveillance audits",
-      "FAR 52.222-50 CTIP compliance requirements",
+      "Quality system reviews and surveillance audits",
+      "Anti-trafficking compliance requirements (CTIP)",
       "ISO 9001/AS9100 certification maintenance",
       "Subcontractor compliance flow-down obligations",
       "Customer quality clauses and contract-specific requirements",
     ],
     support: [
-      "Quality management system architecture aligned with regulatory expectations",
+      "Quality management system architecture aligned with federal requirements",
       "CTIP program development and implementation support",
       "Pre-audit readiness assessment and gap remediation",
       "Corrective action planning and root cause analysis",
       "Internal audit program development",
     ],
-  },
-  {
-    icon: Shield,
-    title: "Subcontractors & Suppliers",
-    description: "Prepare internal controls and evidence structures to satisfy prime and customer requirements. Organizations needing structured compliance readiness to meet prime contractor expectations.",
-    risks: [
-      "Prime contractor audit exposure and flow-down compliance",
-      "Quality requirements without internal QMS infrastructure",
-      "CTIP program requirements as a supply chain participant",
-      "Customer questionnaires and compliance assessments",
-      "Resource constraints affecting compliance investment",
-    ],
-    support: [
-      "Right-sized QMS development for organizational scale",
-      "Flow-down compliance mapping and gap analysis",
-      "CTIP policy and program development",
-      "Documentation systems that support growth",
-      "Training programs for compliance ownership",
-    ],
+    note: "For detailed federal contracting advisory, visit our ",
+    noteLink: "/govcon",
+    noteLinkText: "GovCon page",
   },
   {
     icon: Rocket,
-    title: "High-Growth Regulated Companies",
-    description: "Establish scalable compliance foundations that support growth, funding, and enterprise footprints. Companies preparing for enterprise customers or regulated markets.",
+    title: "Growing Businesses",
+    description: "Companies entering regulated markets or preparing for enterprise customers who need scalable compliance foundations that support growth and funding.",
     risks: [
       "Scaling operations without scalable compliance systems",
       "Entering regulated markets without regulatory experience",
@@ -64,16 +48,35 @@ const audiences = [
       "Training and capability transfer for internal ownership",
     ],
   },
+  {
+    icon: Briefcase,
+    title: "Established Companies",
+    description: "Mid-size organizations that need to upgrade or formalize existing quality systems to meet evolving regulatory requirements or new market expectations.",
+    risks: [
+      "Legacy quality systems that no longer meet current standards",
+      "New regulatory requirements from expanding into additional markets",
+      "Customer audits revealing gaps in formalized processes",
+      "Difficulty integrating multiple compliance obligations",
+      "Internal teams stretched thin managing compliance alongside operations",
+    ],
+    support: [
+      "Quality system modernization and gap closure",
+      "Multi-standard integration (ISO 9001, AS9100, ISO 13485)",
+      "Documentation restructuring and process standardization",
+      "Internal audit capability development",
+      "Transition planning for updated standards (e.g., ISO 9001:2026)",
+    ],
+  },
 ];
 
 export default function WhoWeServe() {
   return (
     <Layout>
       <SEOHead
-        title="Who We Serve | ElevateQCS"
-        description="ElevateQCS serves prime contractors, subcontractors, and high-growth companies needing defensible compliance systems, audit readiness, and operational governance."
+        title="Who We Work With | ElevateQCS"
+        description="ElevateQCS works with government contractors, growing businesses, and established companies in regulated industries who need practical compliance systems that actually work."
         url="https://elevateqcs.com/who-we-serve"
-        keywords={["GovCon compliance advisory", "prime contractor compliance", "subcontractor quality systems"]}
+        keywords={["compliance consulting clients", "quality management consulting", "regulated industry compliance", "compliance help for businesses"]}
       />
       {/* Hero */}
       <section className="page-hero pt-32 pb-24 bg-secondary/30">
@@ -88,12 +91,12 @@ export default function WhoWeServe() {
               Our Clients
             </p>
             <h1 className="mb-6 gold-accent pb-4">
-              We Serve Organizations Where Compliance Risk Meets Operational Demand
+              Who We Work With
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We work with organizations operating in regulated and high-scrutiny 
-              environments — those where compliance is not optional but fundamental 
-              to operational viability and competitive positioning.
+              We work with organizations in regulated industries — where getting 
+              compliance right directly impacts your ability to win contracts, 
+              pass audits, and grow your business.
             </p>
           </div>
         </div>
@@ -107,9 +110,7 @@ export default function WhoWeServe() {
               Our clients share common characteristics: they operate in environments 
               where regulatory compliance, customer oversight, and operational 
               discipline directly impact their ability to win and execute contracts. 
-              Whether navigating regulatory requirements or building 
-              compliance infrastructure for the first time, they need practical, 
-              implementable solutions — not theoretical frameworks.
+              They need practical, implementable solutions — not theoretical frameworks.
             </p>
           </div>
         </div>
@@ -132,6 +133,14 @@ export default function WhoWeServe() {
                       <p className="text-muted-foreground">
                         {audience.description}
                       </p>
+                      {"note" in audience && audience.note && (
+                        <p className="text-sm text-accent mt-4">
+                          {audience.note}
+                          <Link to={audience.noteLink!} className="underline hover:text-accent/80">
+                            {audience.noteLinkText}
+                          </Link>.
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -205,8 +214,8 @@ export default function WhoWeServe() {
         <div className="absolute inset-0 flex items-center justify-center text-center">
           <div className="max-w-2xl px-6">
             <p className="text-foreground text-xl md:text-2xl font-serif font-light leading-relaxed">
-              We serve organizations where compliance is not optional — it's 
-              fundamental to operational viability.
+              We work with organizations where compliance directly impacts 
+              the ability to operate, grow, and win business.
             </p>
           </div>
         </div>
@@ -216,15 +225,14 @@ export default function WhoWeServe() {
       <section className="py-28 bg-secondary/30">
         <div className="container-narrow text-center">
           <div className="section-divider mx-auto mb-8" />
-          <h2 className="mb-6">Ready to Discuss Your Needs?</h2>
+          <h2 className="mb-6">Ready to Get Started?</h2>
           <p className="text-lg mb-12 max-w-2xl mx-auto">
-            If you recognize your organization in these descriptions, we'd welcome 
-            the opportunity to discuss how our advisory services might support 
-            your compliance objectives.
+            If your organization needs practical compliance support, 
+            we'd welcome the opportunity to discuss how we can help.
           </p>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
-              Request a Confidential Consultation
+              Get a Free Consultation
               <ArrowRight className="ml-2" size={18} />
             </Link>
           </Button>

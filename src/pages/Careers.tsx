@@ -102,15 +102,15 @@ export default function Careers() {
               <div className="section-divider mb-8" />
               <h2 className="mb-6">Why Work With Us</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Working with ElevateQCS means engaging with challenging, 
-                high-stakes compliance matters for organizations where the 
-                work genuinely matters. It means operating with complete 
-                independence and integrity.
+                Working with us means engaging with meaningful compliance 
+                challenges for organizations where the work makes a real 
+                difference. It means operating with complete independence 
+                and integrity.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We offer the intellectual rigor of institutional consulting 
-                with the agility and client proximity of a focused advisory 
-                practice. Every project involves direct senior engagement and 
+                We offer the focus and client proximity of a specialized advisory 
+                practice with the depth and rigor of institutional consulting. 
+                Every project involves direct senior engagement and 
                 meaningful responsibility.
               </p>
             </div>
