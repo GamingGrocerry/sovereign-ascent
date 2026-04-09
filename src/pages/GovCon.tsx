@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, FileCheck, Lock, Users, Scale, HardHat, Briefcase } from "lucide-react";
+import { ArrowRight, Shield, FileCheck, Lock, Users, Scale, HardHat, Briefcase, Clock, Siren, ScanSearch, Zap, ShieldAlert, Eye } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 
 const services = [
@@ -17,6 +17,58 @@ const services = [
   { icon: Shield, title: "CTIP Program Development (FAR 52.222-50)", desc: "Anti-trafficking compliance programs for federal contractors." },
   { icon: HardHat, title: "LOGCAP & OCONUS Operations Support", desc: "Operational compliance for contingency logistics and overseas sustainment." },
   { icon: Briefcase, title: "AS9100 Quality System Implementation", desc: "Aerospace quality management system design and certification readiness." },
+];
+
+const govconTools = [
+  {
+    title: "GovCon Readiness Score",
+    description: "Evaluate governance structures required for U.S. government supply chains. Assess anti-trafficking policies, code of conduct, supplier compliance, and quality documentation.",
+    time: "3–5 min",
+    href: "/tools/govcon-readiness",
+    icon: Shield,
+  },
+  {
+    title: "CAR Gravity Calculator",
+    description: "Assess finding severity and calculate the likelihood of a Cure Notice. Your finding is scored — but the specific mitigation steps require a consultation.",
+    time: "2–3 min",
+    href: "/tools/car-gravity-calculator",
+    icon: Siren,
+  },
+  {
+    title: "CPSR Financial Integrity Shield",
+    description: "A mock-audit of your purchasing workflow. Identify weaknesses in price justification, debarment screening, and fair & reasonable determinations before your next review.",
+    time: "3–5 min",
+    href: "/tools/cpsr-financial-integrity",
+    icon: ScanSearch,
+  },
+  {
+    title: "LOGCAP Surge Capacity Stress Test",
+    description: "Input your warm-status assets and discover whether you can meet mandatory deployment windows. Failures here mean you're not ready — we can show you what readiness looks like.",
+    time: "3–5 min",
+    href: "/tools/surge-capacity-stress-test",
+    icon: Zap,
+  },
+  {
+    title: "RFO Business Judgment Matrix",
+    description: "Five procurement scenarios where the correct answer isn't in the manual. Test whether your team can document defensible logic under current FAR standards.",
+    time: "4–6 min",
+    href: "/tools/rfo-business-judgment",
+    icon: Scale,
+  },
+  {
+    title: "Labor Ethics Stress Test",
+    description: "Face 6 real-world CTIP scenarios and test your team's ability to identify trafficking indicators under FAR 52.222-50. Immediate feedback — remediation guidance available through consultation.",
+    time: "3–5 min",
+    href: "/tools/labor-ethics-stress-test",
+    icon: ShieldAlert,
+  },
+  {
+    title: "Austere Environment Safety Checklist",
+    description: "Check off current site safety features across 8 categories and 44 items. Generate a gap report for your safety officer.",
+    time: "4–6 min",
+    href: "/tools/austere-safety-checklist",
+    icon: HardHat,
+  },
 ];
 
 export default function GovCon() {
@@ -74,6 +126,45 @@ export default function GovCon() {
             <p className="text-sm text-muted-foreground">
               Looking for compliance terminology? Visit our <Link to="/acronyms" className="text-accent underline hover:text-accent/80">Acronyms & Glossary</Link> page.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* GovCon Assessment Tools */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-16">
+            <div className="section-divider mb-8" />
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">Free Assessments</p>
+            <h2 className="mb-6">GovCon Compliance Tools</h2>
+            <p className="text-lg text-muted-foreground">
+              Free assessments for government contractors navigating FAR, DFARS, CMMC, and federal audit environments. Each one takes just a few minutes.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {govconTools.map((tool) => (
+              <Link
+                key={tool.href}
+                to={tool.href}
+                className="card-elevated group p-8 flex flex-col"
+              >
+                <div className="w-14 h-14 rounded-sm bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <tool.icon className="w-7 h-7 text-accent" />
+                </div>
+                <h3 className="!text-lg mb-3 group-hover:text-accent transition-colors">{tool.title}</h3>
+                <p className="text-sm text-muted-foreground mb-6 flex-1">{tool.description}</p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Clock className="w-3.5 h-3.5" />
+                    {tool.time}
+                  </div>
+                  <span className="inline-flex items-center text-accent text-sm font-medium">
+                    Start Assessment
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
