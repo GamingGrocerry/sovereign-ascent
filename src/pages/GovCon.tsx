@@ -130,6 +130,45 @@ export default function GovCon() {
         </div>
       </section>
 
+      {/* GovCon Assessment Tools */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container-wide">
+          <div className="max-w-3xl mb-16">
+            <div className="section-divider mb-8" />
+            <p className="text-accent uppercase tracking-[0.2em] text-xs font-medium mb-4">Free Assessments</p>
+            <h2 className="mb-6">GovCon Compliance Tools</h2>
+            <p className="text-lg text-muted-foreground">
+              Free assessments for government contractors navigating FAR, DFARS, CMMC, and federal audit environments. Each one takes just a few minutes.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {govconTools.map((tool) => (
+              <Link
+                key={tool.href}
+                to={tool.href}
+                className="card-elevated group p-8 flex flex-col"
+              >
+                <div className="w-14 h-14 rounded-sm bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <tool.icon className="w-7 h-7 text-accent" />
+                </div>
+                <h3 className="!text-lg mb-3 group-hover:text-accent transition-colors">{tool.title}</h3>
+                <p className="text-sm text-muted-foreground mb-6 flex-1">{tool.description}</p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Clock className="w-3.5 h-3.5" />
+                    {tool.time}
+                  </div>
+                  <span className="inline-flex items-center text-accent text-sm font-medium">
+                    Start Assessment
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form */}
       <section className="py-24 bg-secondary/30">
         <div className="container-wide">
