@@ -44,6 +44,7 @@ const navItems = [
   },
   { label: "Insights", href: "/insights" },
   { label: "Tools", href: "/tools" },
+  { label: "Glossary", href: "/glossary" },
   {
     label: "Resources",
     href: "/resources",
@@ -297,6 +298,19 @@ export function Header() {
               )}
             >
               Tools
+            </Link>
+
+            <Link
+              to="/glossary"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={cn(
+                "block text-sm font-medium tracking-wide uppercase py-3 transition-colors",
+                location.pathname === "/glossary"
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Glossary
             </Link>
 
             {/* Industries Group */}
