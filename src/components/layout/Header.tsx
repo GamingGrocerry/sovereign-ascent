@@ -86,6 +86,8 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [urgencyDismissed, setUrgencyDismissed] = useState(false);
+  const [urgencyIndex, setUrgencyIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,8 +97,16 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUrgencyIndex((prev) => (prev + 1) % urgencyMessages.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
   const isHomePage = location.pathname === "/";
   const showDarkHeader = isHomePage && !isScrolled;
+  const showUrgencyPills = isHomePage && !isScrolled && !urgencyDismissed;
 
   return (
     <header
@@ -261,6 +271,29 @@ export function Header() {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
+
+        {/* Urgency Pills - only on hero */}
+        {showUrgencyPills && (
+          <div className="hidden lg:flex items-center justify-end gap-2 pb-3 -mr-4">
+            <Link
+              to={urgencyMessages[urgencyIndex].href}
+              className="inline-flex items-center gap-1.5 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/15 rounded-full px-4 py-1.5 text-[11px] text-primary-foreground/70 hover:bg-primary-foreground/15 transition-all group"
+            >
+              <span className="text-accent">⚡</span>
+              <span>{urgencyMessages[urgencyIndex].text}</span>
+              <span className="text-accent font-medium underline group-hover:no-underline ml-0.5 whitespace-nowrap">
+                {urgencyMessages[urgencyIndex].linkText}
+              </span>
+            </Link>
+            <button
+              onClick={() => setUrgencyDismissed(true)}
+              className="text-primary-foreground/30 hover:text-primary-foreground/70 transition-colors p-1"
+              aria-label="Dismiss announcements"
+            >
+              <X className="w-3 h-3" />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Mobile Menu */}
