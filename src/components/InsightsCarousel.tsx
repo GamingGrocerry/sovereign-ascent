@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { allArticles } from "@/data/insights-data";
+import { EQCSArrow } from "@/components/EQCSArrow";
 
 const carouselArticles = allArticles.slice(0, 4);
 
@@ -68,8 +69,8 @@ export default function InsightsCarousel() {
                   <Clock className="w-3 h-3" />
                   {article.readTime}
                 </div>
-                <span className="text-accent text-xs font-medium inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  Read <ChevronRight className="w-3 h-3 ml-0.5" />
+                <span className="text-accent text-xs font-medium inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Read <EQCSArrow variant="mini" size={10} color="navy" />
                 </span>
               </div>
             </div>
