@@ -5,6 +5,19 @@ import { Button } from "@/components/ui/button";
 import { SearchBar } from "@/components/SearchBar";
 import { cn } from "@/lib/utils";
 
+const urgencyMessages = [
+  {
+    text: "ISO 9001:2026 publishes September 2026 — Transition deadline: late 2029.",
+    linkText: "Start your gap assessment →",
+    href: "/tools/qms-gap-analysis",
+  },
+  {
+    text: "EU AI Act deployer obligations now enforceable for organizations using AI systems.",
+    linkText: "Check your obligations →",
+    href: "/tools/compliance-framework-builder",
+  },
+];
+
 const servicesMegaMenu = [
   { label: "AI Compliance Advisory", href: "/services/ai-governance" },
   { label: "Audit & Certification Preparation", href: "/services/audit-certification-readiness" },
