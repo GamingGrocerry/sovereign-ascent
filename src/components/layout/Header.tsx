@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SearchBar } from "@/components/SearchBar";
 import { cn } from "@/lib/utils";
+import { EQCSArrow } from "@/components/EQCSArrow";
 
 const urgencyMessages = [
   {
@@ -237,7 +238,7 @@ export function Header() {
                           className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
                         >
                           All Industries
-                          <ChevronDown className="w-3 h-3 ml-1 -rotate-90" />
+                          <EQCSArrow variant="mini" size={10} color="navy" className="ml-1" />
                         </Link>
                       </div>
                     </div>
@@ -387,7 +388,7 @@ export function Header() {
                     : "text-accent/70 hover:text-accent"
                 )}
               >
-                All Industries →
+                All Industries
               </Link>
             </div>
 

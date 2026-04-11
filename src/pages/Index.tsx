@@ -2,7 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight, Search, Compass, Wrench, Users, BarChart3, Shield, Layers, Clock, Activity } from "lucide-react";
+import { Search, Compass, Wrench, Users, BarChart3, Shield, Layers, Clock, Activity } from "lucide-react";
+import { EQCSArrow } from "@/components/EQCSArrow";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import trustVault from "@/assets/trust-vault.jpg";
 import advisoryApproach from "@/assets/advisory-approach.jpg";
@@ -142,6 +143,14 @@ export default function Index() {
         <div className="hidden sm:block absolute top-8 left-8 w-24 h-24 border-l border-t border-primary-foreground/20" />
         <div className="hidden sm:block absolute bottom-8 right-8 w-24 h-24 border-r border-b border-primary-foreground/20" />
 
+        {/* Ghost Hero Arrow */}
+        <div className="absolute bottom-16 right-12 sm:right-24 lg:right-32">
+          <EQCSArrow variant="ghost" size={200} className="hidden sm:block" />
+        </div>
+        <div className="absolute top-1/3 right-8">
+          <EQCSArrow variant="ghost" size={120} className="block sm:hidden" />
+        </div>
+
         <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 py-16 sm:py-24 max-w-7xl mx-auto">
           <div className="max-w-3xl mb-10 sm:mb-14 animate-fade-up">
             <p className="text-primary-foreground/60 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs mb-3 sm:mb-4">
@@ -204,7 +213,7 @@ export default function Index() {
               <Button variant="hero" size="lg" asChild className="!text-xs sm:!text-base !px-4 sm:!px-8">
                 <Link to="/contact">
                   Get a Free Consultation
-                  <ArrowRight className="ml-2 shrink-0" size={16} />
+                  <EQCSArrow variant="mini" color="white" className="ml-2" />
                 </Link>
               </Button>
               <Button variant="hero-outline" size="lg" asChild className="!text-xs sm:!text-base !px-4 sm:!px-8">
@@ -230,7 +239,7 @@ export default function Index() {
             <Button variant="outline" size="sm" asChild className="self-start sm:self-auto">
               <Link to="/insights">
                 View All
-                <ChevronRight className="ml-1" size={14} />
+                <EQCSArrow variant="mini" color="navy" className="ml-1" />
               </Link>
             </Button>
           </div>
@@ -252,34 +261,37 @@ export default function Index() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Link to="/services/audit-certification-readiness" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
+            <Link to="/services/audit-certification-readiness" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300 relative overflow-hidden">
+              <EQCSArrow variant="corner" color="navy" className="absolute -bottom-2 -right-2" />
               <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Audit Readiness</h3>
               <p className="text-muted-foreground text-sm mb-4">Find out if you're ready for your next audit — before the auditor does.</p>
-              <span className="inline-flex items-center text-accent text-sm font-medium">
-                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <span className="inline-flex items-center text-accent text-sm font-medium gap-1.5">
+                Learn More <EQCSArrow variant="mini" color="navy" className="group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
-            <Link to="/services/regulatory-documentation" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
+            <Link to="/services/regulatory-documentation" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300 relative overflow-hidden">
+              <EQCSArrow variant="corner" color="navy" className="absolute -bottom-2 -right-2" />
               <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
                 <Layers className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">SOW & Documentation</h3>
               <p className="text-muted-foreground text-sm mb-4">Get your contracts, SOPs, and compliance documents organized and audit-proof.</p>
-              <span className="inline-flex items-center text-accent text-sm font-medium">
-                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <span className="inline-flex items-center text-accent text-sm font-medium gap-1.5">
+                Learn More <EQCSArrow variant="mini" color="navy" className="group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
-            <Link to="/services/project-recovery" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300">
+            <Link to="/services/project-recovery" className="card-elevated p-8 text-center group hover:border-accent/30 transition-all duration-300 relative overflow-hidden">
+              <EQCSArrow variant="corner" color="navy" className="absolute -bottom-2 -right-2" />
               <div className="w-12 h-12 rounded-sm bg-primary flex items-center justify-center mx-auto mb-4">
                 <Activity className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Project Recovery</h3>
               <p className="text-muted-foreground text-sm mb-4">Struggling project? We stabilize operations and get things back on track fast.</p>
-              <span className="inline-flex items-center text-accent text-sm font-medium">
-                Learn More <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <span className="inline-flex items-center text-accent text-sm font-medium gap-1.5">
+                Learn More <EQCSArrow variant="mini" color="navy" className="group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
           </div>
@@ -300,7 +312,7 @@ export default function Index() {
             <Button variant="outline" size="sm" asChild className="self-start sm:self-auto">
               <Link to="/tools">
                 All Tools
-                <ChevronRight className="ml-1" size={14} />
+                <EQCSArrow variant="mini" color="navy" className="ml-1" />
               </Link>
             </Button>
           </div>
@@ -311,7 +323,8 @@ export default function Index() {
               { title: "Compliance Framework Builder", desc: "Receive a tailored compliance roadmap based on your regulatory environment.", time: "2–4 min", href: "/tools/compliance-framework-builder", icon: Layers },
               { title: "QMS Gap Analysis", desc: "Assess quality management system maturity and identify areas for improvement.", time: "3–5 min", href: "/tools/qms-gap-analysis", icon: BarChart3 },
             ].map((tool) => (
-              <Link key={tool.href} to={tool.href} className="card-elevated group p-6">
+              <Link key={tool.href} to={tool.href} className="card-elevated group p-6 relative overflow-hidden">
+                <EQCSArrow variant="corner" color="navy" className="absolute -bottom-2 -right-2" />
                 <div className="w-12 h-12 rounded-sm bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <tool.icon className="w-6 h-6 text-accent" />
                 </div>
@@ -319,7 +332,7 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground mb-4">{tool.desc}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="w-3 h-3" />{tool.time}</span>
-                  <span className="text-accent text-xs font-medium inline-flex items-center">Run Assessment <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+                  <span className="text-accent text-xs font-medium inline-flex items-center gap-1">Run Assessment <EQCSArrow variant="mini" size={10} color="navy" className="group-hover:translate-x-0.5 transition-transform" /></span>
                 </div>
               </Link>
             ))}
@@ -348,7 +361,7 @@ export default function Index() {
               <Link
                 key={index}
                 to={service.href}
-                className="card-elevated group overflow-hidden"
+                className="card-elevated group overflow-hidden relative"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img 
@@ -359,6 +372,8 @@ export default function Index() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 </div>
+                {/* Corner anchor arrow */}
+                <EQCSArrow variant="corner" color="navy" className="absolute -bottom-2 -right-2" />
                 <div className="p-6">
                   <h3 className="text-lg mb-3 group-hover:text-accent transition-colors">
                     {service.title}
@@ -366,9 +381,9 @@ export default function Index() {
                   <p className="text-muted-foreground text-sm mb-4">
                     {service.description}
                   </p>
-                  <span className="inline-flex items-center text-accent text-sm font-medium">
+                  <span className="inline-flex items-center text-accent text-sm font-medium gap-1.5">
                     Learn more
-                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    <EQCSArrow variant="mini" color="navy" className="group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </Link>
@@ -379,7 +394,7 @@ export default function Index() {
             <Button variant="outline" size="lg" asChild>
               <Link to="/services">
                 View All Services
-                <ChevronRight className="ml-2" size={16} />
+                <EQCSArrow variant="mini" color="navy" className="ml-2" />
               </Link>
             </Button>
           </div>
@@ -405,7 +420,7 @@ export default function Index() {
               <Button variant="outline" size="lg" asChild>
                   <Link to="/choosing-the-right-service">
                   Explore How We Can Help
-                  <ChevronRight className="ml-2" size={16} />
+                  <EQCSArrow variant="mini" color="navy" className="ml-2" />
                 </Link>
               </Button>
             </div>
@@ -457,7 +472,9 @@ export default function Index() {
                   </p>
                 </button>
                 {index < ecamPhases.length - 1 && (
-                  <div className="hidden md:block w-8 lg:w-12 h-px bg-gradient-to-r from-border to-accent/30 mx-2" />
+                  <div className="hidden md:flex items-center mx-2">
+                    <EQCSArrow variant="mini" size={10} color="navy" className="opacity-30" />
+                  </div>
                 )}
               </div>
             ))}
@@ -467,7 +484,7 @@ export default function Index() {
             <Button variant="outline" size="lg" asChild>
               <Link to="/methodology">
                 Learn About Our Process
-                <ChevronRight className="ml-2" size={16} />
+                <EQCSArrow variant="mini" color="navy" className="ml-2" />
               </Link>
             </Button>
           </div>
@@ -496,7 +513,7 @@ export default function Index() {
                     key={index}
                     className="flex items-center gap-3 text-sm text-foreground"
                   >
-                    <div className="w-2 h-2 bg-gradient-to-br from-accent to-accent/60 rounded-full" />
+                    <EQCSArrow variant="mini" size={10} color="navy" />
                     {signal}
                   </div>
                 ))}
@@ -519,8 +536,9 @@ export default function Index() {
                     checkbox—it's the architecture upon which operational 
                     credibility is built."
                   </p>
-                  <footer className="text-primary-foreground/60 text-xs uppercase tracking-wider">
-                    — ElevateQCS Founding Principles
+                  <footer className="text-primary-foreground/60 text-xs uppercase tracking-wider flex items-center gap-2">
+                    <EQCSArrow variant="mini" size={10} color="white" />
+                    ElevateQCS Founding Principles
                   </footer>
                 </blockquote>
               </div>
@@ -544,7 +562,7 @@ export default function Index() {
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">
               Book a Free Consultation
-              <ArrowRight className="ml-2" size={18} />
+              <EQCSArrow variant="mini" color="white" className="ml-2" />
             </Link>
           </Button>
           <p className="text-muted-foreground text-sm mt-8">

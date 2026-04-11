@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail } from "lucide-react";
+import { EQCSArrow } from "@/components/EQCSArrow";
 
 const footerLinks = {
   services: [
@@ -126,14 +127,16 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Bar with arrow divider */}
       <div className="border-t border-primary-foreground/10">
         <div className="container-wide py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-primary-foreground/60 text-sm text-center md:text-left">
+            <div className="text-primary-foreground/60 text-sm text-center md:text-left inline-flex items-center gap-2">
+              <EQCSArrow variant="mini" size={10} color="white" className="opacity-40" />
               © 2026 Elevate Quality Compliance Solutions LLC. All rights reserved.
             </div>
-            <div className="text-primary-foreground/60 text-sm">
+            <div className="text-primary-foreground/60 text-sm inline-flex items-center gap-2">
+              <EQCSArrow variant="mini" size={10} color="white" className="opacity-40" />
               Jurisdiction: Delaware, USA | Global Operations
             </div>
           </div>
