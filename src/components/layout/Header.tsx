@@ -120,7 +120,7 @@ export function Header() {
       )}
     >
       <div className="container-wide">
-        <nav className="flex items-center justify-between h-18 py-4">
+        <nav className="flex items-center justify-between h-18 py-4 relative z-10">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group -ml-4">
             <img 
