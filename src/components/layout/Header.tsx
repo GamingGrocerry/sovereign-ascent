@@ -44,6 +44,7 @@ const navItems = [
   },
   { label: "Insights", href: "/insights" },
   { label: "Tools", href: "/tools" },
+  { label: "Glossary", href: "/glossary" },
   {
     label: "Resources",
     href: "/resources",

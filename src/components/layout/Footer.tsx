@@ -25,6 +25,7 @@ const footerLinks = {
     { label: "Accessibility", href: "/accessibility" },
     { label: "Cookie Policy", href: "/cookie-policy" },
     { label: "Acronyms & Glossary", href: "/acronyms" },
+    { label: "Glossary", href: "/glossary" },
   ],
 };
 

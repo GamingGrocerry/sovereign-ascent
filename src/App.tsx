@@ -79,6 +79,7 @@ import ResourcesPOE from "./pages/ResourcesPOE";
 import GenerateResources from "./pages/admin/GenerateResources";
 import GovCon from "./pages/GovCon";
 import WhoWeServe from "./pages/WhoWeServe";
+import Glossary from "./pages/Glossary";
 
 const queryClient = new QueryClient();
 
@@ -166,6 +167,7 @@ const App = () => (
           <Route path="/capabilities" element={<Capabilities />} />
           <Route path="/who-we-serve" element={<WhoWeServe />} />
           <Route path="/govcon" element={<GovCon />} />
+          <Route path="/glossary" element={<Glossary />} />
           <Route path="/admin/generate-resources" element={<GenerateResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
