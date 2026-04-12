@@ -156,23 +156,51 @@ export default function RFP() {
         }
       }
 
-      // Remove file from Netlify form data, append backend reference
-      formDataObj.delete("file-upload");
-      if (uploadedFileName) {
-        formDataObj.set("uploaded-file", uploadedFileName);
-      }
+      // Collect all form fields
+      const rfpData: Record<string, string> = {};
+      formDataObj.forEach((value, key) => {
+        if (key !== "file-upload") rfpData[key] = value as string;
+      });
+      rfpData["engagement-types"] = selectedEngagements.join(", ");
+      rfpData["regulatory-context"] = selectedRegulatory.join(", ");
+      if (uploadedFileName) rfpData["uploaded-file"] = uploadedFileName;
 
-      const body = new URLSearchParams(formDataObj as any).toString();
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+      // Save to database
+      const { error: dbError } = await supabase.from("rfp_submissions").insert({
+        org_name: rfpData["org-name"] || "",
+        website: rfpData["website"] || null,
+        industry: rfpData["industry"] || null,
+        org_size: rfpData["org-size"] || null,
+        hq_location: rfpData["hq-location"] || null,
+        regions: rfpData["regions"] || null,
+        contact_name: rfpData["contact-name"] || "",
+        title: rfpData["title"] || null,
+        email: rfpData["email"] || "",
+        phone: rfpData["phone"] || null,
+        contact_method: rfpData["contact-method"] || null,
+        engagement_types: rfpData["engagement-types"] || null,
+        regulatory_context: rfpData["regulatory-context"] || null,
+        project_scope: rfpData["scope"] || null,
+        budget_range: rfpData["budget"] || null,
+        timeline: rfpData["timeline"] || null,
+        burn_rate: rfpData["burn-rate"] || null,
+        uploaded_file: uploadedFileName || null,
+        conflict_check: false,
+        additional_notes: rfpData["reg-notes"] || null,
       });
 
-      const contactName = formDataObj.get("contact-name") as string;
-      const emailVal = formDataObj.get("email") as string;
-      const orgName2 = formDataObj.get("org-name") as string;
-      sendTransactionalEmail({ type: "rfp", email: emailVal, name: contactName, company: orgName2 });
+      if (dbError) throw dbError;
+
+      const contactNameVal = rfpData["contact-name"];
+      const emailVal = rfpData["email"];
+      const orgNameVal = rfpData["org-name"];
+      sendTransactionalEmail({
+        type: "rfp",
+        email: emailVal,
+        name: contactNameVal,
+        company: orgNameVal,
+        formData: rfpData,
+      });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
@@ -296,10 +324,7 @@ export default function RFP() {
                 </p>
               </div>
 
-              <form name="rfp" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-16">
-                <input type="hidden" name="form-name" value="rfp" />
-                <input type="hidden" name="engagement-types" value="" />
-                <input type="hidden" name="regulatory-context" value="" />
+              <form onSubmit={handleSubmit} className="space-y-16">
                 {/* Section A */}
                 <div className="space-y-6">
                   <div className="border-b border-border pb-3 mb-2">
