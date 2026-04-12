@@ -15,10 +15,13 @@ interface EmailPayload {
   company?: string;
   industry?: string;
   inquiryType?: string;
+  message?: string;
+  formData?: Record<string, string>;
 }
 
 const SITE_URL = "https://elevateqcs.com";
 const FROM_EMAIL = "ElevateQCS <notify@elevateqcs.com>";
+const ADMIN_EMAIL = "info@elevateqcs.com";
 
 function buildEmail(payload: EmailPayload): { subject: string; html: string } {
   const { type, name } = payload;
@@ -60,19 +63,15 @@ function buildEmail(payload: EmailPayload): { subject: string; html: string } {
   <![endif]-->
 </head>
 <body style="margin:0;padding:0;background-color:#F4F5F7;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;width:100%;">
-  <!-- Outer wrapper table for background color -->
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#F4F5F7;">
     <tr>
       <td align="center" style="padding:32px 16px;">
-        <!-- Inner content table - max 600px -->
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;width:100%;background-color:#FFFFFF;border-radius:8px;overflow:hidden;">
-          <!-- Logo -->
           <tr>
             <td align="center" style="padding:36px 40px 20px 40px;">
               <img src="${SITE_URL}/logos/email-logo.png" alt="ElevateQCS" width="180" height="auto" style="display:block;border:0;outline:none;max-width:180px;" />
             </td>
           </tr>
-          <!-- Gold divider -->
           <tr>
             <td align="center" style="padding:0 40px 28px 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="48">
@@ -80,13 +79,11 @@ function buildEmail(payload: EmailPayload): { subject: string; html: string } {
               </table>
             </td>
           </tr>
-          <!-- Main content -->
           <tr>
             <td style="padding:0 40px 40px 40px;">
               ${content}
             </td>
           </tr>
-          <!-- Disclaimer -->
           <tr>
             <td style="padding:24px 40px 0 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top:1px solid #E5E7EB;">
@@ -99,7 +96,6 @@ function buildEmail(payload: EmailPayload): { subject: string; html: string } {
               </table>
             </td>
           </tr>
-          <!-- Footer divider -->
           <tr>
             <td align="center" style="padding:20px 40px 0 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="48">
@@ -107,7 +103,6 @@ function buildEmail(payload: EmailPayload): { subject: string; html: string } {
               </table>
             </td>
           </tr>
-          <!-- Footer -->
           <tr>
             <td style="padding:20px 40px 36px 40px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -234,6 +229,103 @@ function buildEmail(payload: EmailPayload): { subject: string; html: string } {
   }
 }
 
+function buildAdminNotification(payload: EmailPayload): { subject: string; html: string } | null {
+  const { type, name, email, company, inquiryType, message, formData } = payload;
+
+  const escapeHtml = (str: string | undefined | null) => {
+    if (!str) return "—";
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  };
+
+  const row = (label: string, value: string | undefined | null) =>
+    `<tr><td style="padding:6px 12px;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:600;color:#374151;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:6px 12px;font-family:Inter,Arial,sans-serif;font-size:13px;color:#55575d;line-height:1.6;">${escapeHtml(value)}</td></tr>`;
+
+  const adminWrapper = (title: string, rows: string) => `
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /></head>
+<body style="margin:0;padding:0;background-color:#F4F5F7;font-family:Inter,Arial,sans-serif;">
+  <table role="presentation" width="100%" style="background-color:#F4F5F7;">
+    <tr><td align="center" style="padding:32px 16px;">
+      <table role="presentation" width="600" style="max-width:600px;width:100%;background:#FFFFFF;border-radius:8px;overflow:hidden;">
+        <tr><td style="background-color:#0a2d5e;padding:24px 32px;">
+          <span style="font-family:Georgia,serif;font-size:20px;color:#FFFFFF;font-weight:400;">${title}</span>
+        </td></tr>
+        <tr><td style="padding:24px 32px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #E5E7EB;border-radius:4px;">
+            ${rows}
+          </table>
+        </td></tr>
+        <tr><td style="padding:0 32px 24px;font-size:11px;color:#9CA3AF;">
+          This is an automated notification from elevateqcs.com. Do not reply to this email.
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+
+  switch (type) {
+    case "contact": {
+      return {
+        subject: `[Contact Form] New inquiry from ${name || email}`,
+        html: adminWrapper("New Contact Form Submission", `
+          ${row("Name", name)}
+          ${row("Email", email)}
+          ${row("Organization", company)}
+          ${row("Inquiry Type", inquiryType)}
+          ${row("Message", message)}
+        `),
+      };
+    }
+
+    case "rfp": {
+      const fd = formData || {};
+      return {
+        subject: `[RFP Submission] New proposal from ${fd["org-name"] || company || email}`,
+        html: adminWrapper("New RFP Submission", `
+          ${row("Organization", fd["org-name"] || company)}
+          ${row("Website", fd["website"])}
+          ${row("Industry", fd["industry"])}
+          ${row("Org Size", fd["org-size"])}
+          ${row("HQ Location", fd["hq-location"])}
+          ${row("Operating Regions", fd["regions"])}
+          ${row("Contact Name", fd["contact-name"] || name)}
+          ${row("Title/Role", fd["title"])}
+          ${row("Email", email)}
+          ${row("Phone", fd["phone"])}
+          ${row("Contact Method", fd["contact-method"])}
+          ${row("Engagement Types", fd["engagement-types"])}
+          ${row("Regulatory Context", fd["regulatory-context"])}
+          ${row("Project Scope", fd["scope"])}
+          ${row("Budget Range", fd["budget"])}
+          ${row("Timeline", fd["timeline"])}
+          ${row("Start Date", fd["start-date"])}
+          ${row("Burn Rate", fd["burn-rate"])}
+          ${row("Uploaded File", fd["uploaded-file"])}
+          ${row("Additional Notes", fd["reg-notes"])}
+        `),
+      };
+    }
+
+    case "resources":
+    case "tools": {
+      return {
+        subject: `[${type === "resources" ? "Resource Access" : "Tool Registration"}] ${email}`,
+        html: adminWrapper(`New ${type === "resources" ? "Resource Access" : "Tool Registration"}`, `
+          ${row("Email", email)}
+          ${row("Name", name)}
+          ${row("Company", company)}
+          ${row("Industry", industry)}
+        `),
+      };
+    }
+
+    default:
+      return null;
+  }
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -256,6 +348,7 @@ serve(async (req) => {
 
     const { subject, html } = buildEmail(payload);
 
+    // Send confirmation email to the user
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -275,6 +368,32 @@ serve(async (req) => {
     if (!res.ok) {
       console.error("Resend API error:", data);
       throw new Error(`Resend API error [${res.status}]: ${JSON.stringify(data)}`);
+    }
+
+    // Send admin notification to info@elevateqcs.com
+    const adminEmail = buildAdminNotification(payload);
+    if (adminEmail) {
+      try {
+        const adminRes = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${RESEND_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: FROM_EMAIL,
+            to: [ADMIN_EMAIL],
+            subject: adminEmail.subject,
+            html: adminEmail.html,
+          }),
+        });
+        const adminData = await adminRes.json();
+        if (!adminRes.ok) {
+          console.error("Admin notification error:", adminData);
+        }
+      } catch (adminErr) {
+        console.error("Failed to send admin notification:", adminErr);
+      }
     }
 
     return new Response(JSON.stringify({ success: true, id: data.id }), {

@@ -80,6 +80,36 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          inquiry_type: string | null
+          message: string
+          name: string
+          organization: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          inquiry_type?: string | null
+          message: string
+          name: string
+          organization?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          inquiry_type?: string | null
+          message?: string
+          name?: string
+          organization?: string | null
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           created_at: string
@@ -116,6 +146,81 @@ export type Database = {
           email?: string
           id?: string
           type?: string
+        }
+        Relationships: []
+      }
+      rfp_submissions: {
+        Row: {
+          additional_notes: string | null
+          budget_range: string | null
+          burn_rate: string | null
+          conflict_check: boolean | null
+          contact_method: string | null
+          contact_name: string
+          created_at: string
+          email: string
+          engagement_types: string | null
+          hq_location: string | null
+          id: string
+          industry: string | null
+          org_name: string
+          org_size: string | null
+          phone: string | null
+          project_scope: string | null
+          regions: string | null
+          regulatory_context: string | null
+          timeline: string | null
+          title: string | null
+          uploaded_file: string | null
+          website: string | null
+        }
+        Insert: {
+          additional_notes?: string | null
+          budget_range?: string | null
+          burn_rate?: string | null
+          conflict_check?: boolean | null
+          contact_method?: string | null
+          contact_name: string
+          created_at?: string
+          email: string
+          engagement_types?: string | null
+          hq_location?: string | null
+          id?: string
+          industry?: string | null
+          org_name: string
+          org_size?: string | null
+          phone?: string | null
+          project_scope?: string | null
+          regions?: string | null
+          regulatory_context?: string | null
+          timeline?: string | null
+          title?: string | null
+          uploaded_file?: string | null
+          website?: string | null
+        }
+        Update: {
+          additional_notes?: string | null
+          budget_range?: string | null
+          burn_rate?: string | null
+          conflict_check?: boolean | null
+          contact_method?: string | null
+          contact_name?: string
+          created_at?: string
+          email?: string
+          engagement_types?: string | null
+          hq_location?: string | null
+          id?: string
+          industry?: string | null
+          org_name?: string
+          org_size?: string | null
+          phone?: string | null
+          project_scope?: string | null
+          regions?: string | null
+          regulatory_context?: string | null
+          timeline?: string | null
+          title?: string | null
+          uploaded_file?: string | null
+          website?: string | null
         }
         Relationships: []
       }

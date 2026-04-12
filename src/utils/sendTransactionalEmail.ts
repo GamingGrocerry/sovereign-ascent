@@ -9,6 +9,8 @@ interface SendEmailParams {
   company?: string;
   industry?: string;
   inquiryType?: string;
+  message?: string;
+  formData?: Record<string, string>;
 }
 
 export async function sendTransactionalEmail(params: SendEmailParams): Promise<void> {
