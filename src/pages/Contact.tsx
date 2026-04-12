@@ -15,6 +15,7 @@ import {
 import { Shield, Lock, FileText, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
+import { supabase } from "@/integrations/supabase/client";
 import contactInterior from "@/assets/contact-interior.jpg";
 
 const inquiryTypes = [
@@ -60,16 +61,24 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      const form = e.target as HTMLFormElement;
-      const body = new URLSearchParams(new FormData(form) as any).toString();
-      
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+      const { error: dbError } = await supabase.from("contact_submissions").insert({
+        name: formData.name,
+        email: formData.email,
+        organization: formData.organization || null,
+        inquiry_type: formData.inquiryType || null,
+        message: formData.message,
       });
-      
-      sendTransactionalEmail({ type: "contact", email: formData.email, name: formData.name, company: formData.organization, inquiryType: formData.inquiryType });
+
+      if (dbError) throw dbError;
+
+      sendTransactionalEmail({
+        type: "contact",
+        email: formData.email,
+        name: formData.name,
+        company: formData.organization,
+        inquiryType: formData.inquiryType,
+        message: formData.message,
+      });
       toast({
         title: "Inquiry Received",
         description: "We will respond within 48 business hours. Thank you for your interest in ElevateQCS.",
@@ -145,13 +154,9 @@ export default function Contact() {
               <div className="section-divider mb-8" />
               <h2 className="mb-8">Start the Conversation</h2>
               <form 
-                name="contact" 
-                method="POST" 
-                data-netlify="true" 
                 onSubmit={handleSubmit} 
                 className="space-y-8"
               >
-                <input type="hidden" name="form-name" value="contact" />
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
