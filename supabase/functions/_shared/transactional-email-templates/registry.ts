@@ -9,10 +9,9 @@ export interface TemplateEntry {
   previewData?: Record<string, any>
 }
 
-// Import templates here as they are created
-// Example:
-// import { template as contactConfirmation } from './contact-confirmation.tsx'
+// Import templates
+import { template as contactConfirmation } from './contact-confirmation.tsx'
 
 export const TEMPLATES: Record<string, TemplateEntry> = {
-  // 'contact-confirmation': contactConfirmation,
+  'contact-confirmation': contactConfirmation,
 }
