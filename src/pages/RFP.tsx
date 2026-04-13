@@ -194,11 +194,34 @@ export default function RFP() {
       const id = crypto.randomUUID();
       const contactNameVal = rfpData["contact-name"];
       const emailVal = rfpData["email"];
+      // Send user confirmation
       sendTransactionalEmail({
         templateName: "contact-confirmation",
         recipientEmail: emailVal,
         idempotencyKey: `rfp-confirm-${id}`,
-        templateData: { name: contactNameVal },
+        templateData: { name: contactNameVal, formType: "RFP submission" },
+      });
+      // Send admin notification
+      sendTransactionalEmail({
+        templateName: "admin-form-notification",
+        recipientEmail: "info@elevateqcs.com",
+        idempotencyKey: `rfp-admin-${id}`,
+        templateData: {
+          formType: "RFP",
+          name: contactNameVal,
+          email: emailVal,
+          organization: rfpData["org-name"],
+          phone: rfpData["phone"],
+          inquiryType: rfpData["engagement-types"],
+          fields: [
+            rfpData["industry"] && `Industry: ${rfpData["industry"]}`,
+            rfpData["org-size"] && `Size: ${rfpData["org-size"]}`,
+            rfpData["regulatory-context"] && `Regulatory: ${rfpData["regulatory-context"]}`,
+            rfpData["budget"] && `Budget: ${rfpData["budget"]}`,
+            rfpData["timeline"] && `Timeline: ${rfpData["timeline"]}`,
+            rfpData["scope"] && `Scope: ${rfpData["scope"]}`,
+          ].filter(Boolean).join('\n'),
+        },
       });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });

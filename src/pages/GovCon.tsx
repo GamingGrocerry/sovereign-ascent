@@ -6,6 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 import { ArrowRight, Shield, FileCheck, Lock, Users, Scale, HardHat, Briefcase, Clock, Siren, ScanSearch, Zap, ShieldAlert, Eye } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 
@@ -72,7 +75,67 @@ const govconTools = [
 ];
 
 export default function GovCon() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", org: "", role: "", contract: "", description: "", contactMethod: "email" });
+
+  const handleGovConSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const id = crypto.randomUUID();
+      const { error: dbError } = await supabase.from("contact_submissions").insert({
+        id,
+        name: form.name,
+        email: form.email,
+        organization: form.org || null,
+        inquiry_type: "federal-advisory",
+        message: [
+          form.role && `Role: ${form.role}`,
+          form.contract && `Contract/Program: ${form.contract}`,
+          form.description,
+        ].filter(Boolean).join('\n'),
+      });
+      if (dbError) throw dbError;
+
+      sendTransactionalEmail({
+        templateName: "contact-confirmation",
+        recipientEmail: form.email,
+        idempotencyKey: `govcon-confirm-${id}`,
+        templateData: { name: form.name, formType: "federal advisory inquiry" },
+      });
+      sendTransactionalEmail({
+        templateName: "admin-form-notification",
+        recipientEmail: "info@elevateqcs.com",
+        idempotencyKey: `govcon-admin-${id}`,
+        templateData: {
+          formType: "GovCon / Federal Advisory",
+          name: form.name,
+          email: form.email,
+          organization: form.org,
+          inquiryType: "Federal Advisory",
+          message: form.description,
+          fields: [
+            form.role && `Role: ${form.role}`,
+            form.contract && `Contract/Program: ${form.contract}`,
+          ].filter(Boolean).join('\n'),
+        },
+      });
+
+      toast({
+        title: "Inquiry Received",
+        description: "We will respond within 2 business days. Thank you for your interest.",
+      });
+      setForm({ name: "", email: "", org: "", role: "", contract: "", description: "", contactMethod: "email" });
+    } catch {
+      toast({
+        title: "Submission Error",
+        description: "Please try again or email us directly at info@elevateqcs.com.",
+        variant: "destructive",
+      });
+    }
+    setIsSubmitting(false);
+  };
 
   return (
     <Layout>
@@ -181,7 +244,7 @@ export default function GovCon() {
               </p>
               <p className="text-xs text-muted-foreground">All inquiries are treated confidentially.</p>
             </div>
-            <form className="card-elevated p-8 lg:p-10 space-y-5" onSubmit={(e) => { e.preventDefault(); }}>
+            <form className="card-elevated p-8 lg:p-10 space-y-5" onSubmit={handleGovConSubmit}>
               <div className="space-y-2">
                 <Label>Name <span className="text-destructive">*</span></Label>
                 <Input required value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} placeholder="Full name" />
@@ -206,8 +269,8 @@ export default function GovCon() {
                 <Label>Description of Requirements <span className="text-destructive">*</span></Label>
                 <Textarea required value={form.description} onChange={(e) => setForm({...form, description: e.target.value})} placeholder="Briefly describe your compliance needs" rows={4} />
               </div>
-              <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" size="lg">
-                Submit Federal Inquiry
+              <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" size="lg" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Federal Inquiry"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </form>

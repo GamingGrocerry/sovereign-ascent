@@ -19,12 +19,18 @@ import { supabase } from "@/integrations/supabase/client";
 import contactInterior from "@/assets/contact-interior.jpg";
 
 const inquiryTypes = [
-  { value: "compliance-architecture", label: "Compliance & Management System Architecture" },
-  { value: "human-rights", label: "Human Rights & Ethical Labor Compliance" },
-  { value: "audit-readiness", label: "Audit Readiness & Corrective Action Advisory" },
-  { value: "education", label: "Education & Capability Development" },
+  { value: "ai-compliance-advisory", label: "AI Compliance Advisory" },
+  { value: "audit-certification", label: "Audit & Certification Preparation" },
+  { value: "compliance-technology", label: "Compliance Technology Advisory" },
+  { value: "documentation-sops", label: "Documentation & SOPs" },
+  { value: "federal-public-sector", label: "Federal & Public Sector Advisory" },
+  { value: "governance-strategy", label: "Governance & Strategy" },
+  { value: "ongoing-compliance", label: "Ongoing Compliance Support" },
+  { value: "project-recovery", label: "Project Recovery" },
+  { value: "quality-management", label: "Quality Management Systems" },
+  { value: "risk-regulatory", label: "Risk & Regulatory Compliance" },
+  { value: "supply-chain", label: "Supply Chain Compliance" },
   { value: "general", label: "General Inquiry" },
-  { value: "work-with-us", label: "Work With ElevateQCS" },
 ];
 
 const trustPoints = [
@@ -73,11 +79,26 @@ export default function Contact() {
 
       if (dbError) throw dbError;
 
+      // Send user confirmation
       sendTransactionalEmail({
         templateName: "contact-confirmation",
         recipientEmail: formData.email,
         idempotencyKey: `contact-confirm-${id}`,
-        templateData: { name: formData.name },
+        templateData: { name: formData.name, formType: "contact inquiry" },
+      });
+      // Send admin notification
+      sendTransactionalEmail({
+        templateName: "admin-form-notification",
+        recipientEmail: "info@elevateqcs.com",
+        idempotencyKey: `contact-admin-${id}`,
+        templateData: {
+          formType: "Contact",
+          name: formData.name,
+          email: formData.email,
+          organization: formData.organization,
+          inquiryType: formData.inquiryType,
+          message: formData.message,
+        },
       });
       toast({
         title: "Inquiry Received",
