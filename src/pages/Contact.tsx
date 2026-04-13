@@ -61,7 +61,9 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
+      const id = crypto.randomUUID();
       const { error: dbError } = await supabase.from("contact_submissions").insert({
+        id,
         name: formData.name,
         email: formData.email,
         organization: formData.organization || null,
@@ -72,12 +74,10 @@ export default function Contact() {
       if (dbError) throw dbError;
 
       sendTransactionalEmail({
-        type: "contact",
-        email: formData.email,
-        name: formData.name,
-        company: formData.organization,
-        inquiryType: formData.inquiryType,
-        message: formData.message,
+        templateName: "contact-confirmation",
+        recipientEmail: formData.email,
+        idempotencyKey: `contact-confirm-${id}`,
+        templateData: { name: formData.name },
       });
       toast({
         title: "Inquiry Received",
