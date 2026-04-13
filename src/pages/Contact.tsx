@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Shield, Lock, FileText, Mail } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 import { supabase } from "@/integrations/supabase/client";
 import contactInterior from "@/assets/contact-interior.jpg";
@@ -52,7 +52,7 @@ const trustPoints = [
 ];
 
 export default function Contact() {
-  const { toast } = useToast();
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -67,6 +67,10 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) {
+        throw new Error("Backend connection unavailable. Please try again later.");
+      }
+
       const id = crypto.randomUUID();
       const { error: dbError } = await supabase.from("contact_submissions").insert({
         id,
@@ -77,16 +81,19 @@ export default function Contact() {
         message: formData.message,
       });
 
-      if (dbError) throw dbError;
+      if (dbError) {
+        console.error("DB insert error:", dbError);
+        throw new Error(`Database error: ${dbError.message}`);
+      }
 
-      // Send user confirmation
+      // Send user confirmation (fire-and-forget)
       sendTransactionalEmail({
         templateName: "contact-confirmation",
         recipientEmail: formData.email,
         idempotencyKey: `contact-confirm-${id}`,
         templateData: { name: formData.name, formType: "contact inquiry" },
       });
-      // Send admin notification
+      // Send admin notification (fire-and-forget)
       sendTransactionalEmail({
         templateName: "admin-form-notification",
         recipientEmail: "info@elevateqcs.com",
@@ -100,8 +107,8 @@ export default function Contact() {
           message: formData.message,
         },
       });
-      toast({
-        title: "Inquiry Received",
+
+      toast.success("Inquiry Received", {
         description: "We will respond within 48 business hours. Thank you for your interest in ElevateQCS.",
       });
       
@@ -112,11 +119,10 @@ export default function Contact() {
         inquiryType: "",
         message: "",
       });
-    } catch {
-      toast({
-        title: "Submission Error",
-        description: "Please try again or email us directly at info@elevateqcs.com.",
-        variant: "destructive",
+    } catch (err: any) {
+      console.error("Contact form submission failed:", err);
+      toast.error("Submission Error", {
+        description: err?.message || "Please try again or email us directly at info@elevateqcs.com.",
       });
     }
     
@@ -233,7 +239,7 @@ export default function Contact() {
                         ))}
                       </SelectContent>
                     </Select>
-                    <input type="hidden" name="inquiry-type" value={formData.inquiryType} />
+                    
                   </div>
                 </div>
 
