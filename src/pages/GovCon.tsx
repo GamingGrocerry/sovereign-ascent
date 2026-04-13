@@ -99,10 +99,10 @@ export default function GovCon() {
       if (dbError) throw dbError;
 
       sendTransactionalEmail({
-        templateName: "contact-confirmation",
+        templateName: "govcon-confirmation",
         recipientEmail: form.email,
         idempotencyKey: `govcon-confirm-${id}`,
-        templateData: { name: form.name, formType: "federal advisory inquiry" },
+        templateData: { name: form.name },
       });
       sendTransactionalEmail({
         templateName: "admin-form-notification",

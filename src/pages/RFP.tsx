@@ -196,10 +196,10 @@ export default function RFP() {
       const emailVal = rfpData["email"];
       // Send user confirmation
       sendTransactionalEmail({
-        templateName: "contact-confirmation",
+        templateName: "rfp-confirmation",
         recipientEmail: emailVal,
         idempotencyKey: `rfp-confirm-${id}`,
-        templateData: { name: contactNameVal, formType: "RFP submission" },
+        templateData: { name: contactNameVal },
       });
       // Send admin notification
       sendTransactionalEmail({
