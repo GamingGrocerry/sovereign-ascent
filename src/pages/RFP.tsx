@@ -191,15 +191,14 @@ export default function RFP() {
 
       if (dbError) throw dbError;
 
+      const id = crypto.randomUUID();
       const contactNameVal = rfpData["contact-name"];
       const emailVal = rfpData["email"];
-      const orgNameVal = rfpData["org-name"];
       sendTransactionalEmail({
-        type: "rfp",
-        email: emailVal,
-        name: contactNameVal,
-        company: orgNameVal,
-        formData: rfpData,
+        templateName: "contact-confirmation",
+        recipientEmail: emailVal,
+        idempotencyKey: `rfp-confirm-${id}`,
+        templateData: { name: contactNameVal },
       });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });

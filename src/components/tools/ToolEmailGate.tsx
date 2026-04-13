@@ -104,7 +104,13 @@ export function ToolEmailGate({ open, onUnlock, onClose }: ToolEmailGateProps) {
         }));
 
         onUnlock(validData);
-        sendTransactionalEmail({ type: "tools", email: validData.email, name: validData.name, company: validData.company, industry: validData.industry });
+        const id = crypto.randomUUID();
+        sendTransactionalEmail({
+          templateName: "contact-confirmation",
+          recipientEmail: validData.email,
+          idempotencyKey: `tool-confirm-${id}`,
+          templateData: { name: validData.name },
+        });
         toast({ title: "Access Granted", description: "All diagnostic tools are now unlocked." });
       }
     } catch {
