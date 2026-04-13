@@ -1,19 +1,13 @@
 import { supabase } from "@/integrations/supabase/client";
 
-type EmailType = "resources" | "tools" | "contact" | "rfp";
-
-interface SendEmailParams {
-  type: EmailType;
-  email: string;
-  name?: string;
-  company?: string;
-  industry?: string;
-  inquiryType?: string;
-  message?: string;
-  formData?: Record<string, string>;
+interface SendTransactionalEmailParams {
+  templateName: string;
+  recipientEmail: string;
+  idempotencyKey: string;
+  templateData?: Record<string, string>;
 }
 
-export async function sendTransactionalEmail(params: SendEmailParams): Promise<void> {
+export async function sendTransactionalEmail(params: SendTransactionalEmailParams): Promise<void> {
   try {
     const { error } = await supabase.functions.invoke("send-transactional-email", {
       body: params,
