@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Clock } from "lucide-reac
 import { Progress } from "@/components/ui/progress";
 import { ToolEmailGate, useToolAccess } from "@/components/tools/ToolEmailGate";
 import { ResultsPage } from "@/components/tools/ResultsPage";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 
 interface Scenario {
   id: string;

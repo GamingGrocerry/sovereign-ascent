@@ -7,7 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowLeft, ArrowRight, HardHat, AlertTriangle } from "lucide-react";
 import { ToolEmailGate, useToolAccess } from "@/components/tools/ToolEmailGate";
 import { ResultsPage } from "@/components/tools/ResultsPage";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 
 interface ChecklistCategory {
   id: string;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";

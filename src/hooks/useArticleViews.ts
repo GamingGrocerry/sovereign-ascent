@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 
 export function useArticleViews(slug: string | undefined) {
   const [viewCount, setViewCount] = useState<number | null>(null);

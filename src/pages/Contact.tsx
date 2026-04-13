@@ -15,7 +15,7 @@ import {
 import { Shield, Lock, FileText, Mail } from "lucide-react";
 import { toast } from "sonner";
 import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 import contactInterior from "@/assets/contact-interior.jpg";
 
 const inquiryTypes = [

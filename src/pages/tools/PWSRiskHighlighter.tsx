@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, AlertTriangle, Info, Download, ChevronRight } from "lucide-react";
 import { ToolEmailGate, useToolAccess } from "@/components/tools/ToolEmailGate";
 import { ResultsPage } from "@/components/tools/ResultsPage";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 
 interface Hotspot {
   id: string;
