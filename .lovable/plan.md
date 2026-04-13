@@ -1,70 +1,55 @@
 
 
-## Diagnosis
+# Plan: Reset Form Emails & Fix Custom Domain Submission Error
 
-Three root issues are causing email failures:
+## Root Cause Analysis
 
-1. **Email domain DNS is drifted** — The `notify.elevateqcs.com` domain was previously verified but DNS records no longer match. Every email send fails with `domain_not_verified`. You need to fix this in **Cloud > Emails > Manage Domains** by clicking "Verify Domain" to re-check, or updating your DNS records at your domain provider to match. This is the #1 blocker — nothing sends until this is resolved.
+**"Submission Error" on elevateqcs.com but not Lovable domain:**
+The published site on your custom domain is likely serving a stale build from before the recent Resend migration changes. The edge functions were updated to use Resend, but the published site may not have the latest code. Additionally, `index.html` still contains **legacy Netlify hidden forms** (lines 153-185) that are leftover from the old hosting setup and should be removed as cleanup.
 
-2. **GovCon form has no backend** — The form on `/govcon` currently does nothing on submit (`e.preventDefault()` with no database insert or email trigger). It needs the same treatment as Contact and RFP.
+**Email template sharing:**
+Currently, all forms (Contact, RFP, GovCon, Resources) share the same two email templates (`contact-confirmation` and `admin-form-notification`). Each form type should have its own dedicated confirmation email.
 
-3. **No admin notification to info@elevateqcs.com** — Currently only a user-facing "thank you" template exists (`contact-confirmation`). There is no template that sends form details to your team inbox.
+---
 
-4. **Contact form dropdown is outdated** — The current inquiry types don't match your 11 service lines on the Services page.
+## Implementation Steps
 
-## Plan
+### Step 1 — Remove Netlify remnants from index.html
+Delete the two hidden Netlify forms (lines 153-185 in `index.html`) — these are dead code from the old hosting setup.
 
-### Step 1: Fix email domain (user action required)
-Go to **Cloud > Emails > Manage Domains** and click **Verify Domain** to re-verify `notify.elevateqcs.com`. If it fails, check that the NS records at your domain provider still point to `ns3.lovable.cloud` and `ns4.lovable.cloud`.
+### Step 2 — Create dedicated email templates
+Create separate user-facing confirmation templates for each form type, all keeping the same branded design (logo, accent bar, legal disclaimer) but with form-specific messaging:
 
-### Step 2: Create admin notification template
-Create a new `admin-form-notification.tsx` template that sends a structured email to `info@elevateqcs.com` with:
-- Form type (Contact / RFP / GovCon)
-- All submitted fields in a clean layout
-- Branded with ElevateQCS navy/gold styling
-- Register with `to: "info@elevateqcs.com"` so it always goes to the team inbox
+- **`contact-confirmation.tsx`** — Keep existing, refine copy to be Contact-specific
+- **`rfp-confirmation.tsx`** — New template: "We've received your Request for Proposal" with RFP-specific messaging (confidential review, 1-2 business day response)
+- **`govcon-confirmation.tsx`** — New template: "We've received your federal advisory inquiry" with GovCon-specific messaging
+- **`admin-form-notification.tsx`** — Keep as-is (works for all forms, already differentiates via `formType` prop)
 
-### Step 3: Update the "thank you" confirmation template
-Enhance `contact-confirmation.tsx` to be a proper branded confirmation with:
-- ElevateQCS logo (from the `email-assets` storage bucket)
-- Navy/slate color palette matching the site
-- "If you did not submit this inquiry, please disregard" disclaimer
-- Works for all form types (Contact, RFP, GovCon)
+### Step 3 — Update template registry
+Add `rfp-confirmation` and `govcon-confirmation` to `registry.ts`.
 
-### Step 4: Wire up the GovCon form
-- Save submissions to `contact_submissions` table (with inquiry_type = "federal-advisory")
-- Trigger both the admin notification and user confirmation emails
-- Add proper loading/success/error states
+### Step 4 — Update form submission handlers
+- **Contact.tsx** — Already uses `contact-confirmation` (no change needed)
+- **RFP.tsx** — Switch from `contact-confirmation` to `rfp-confirmation`
+- **GovCon.tsx** — Switch from `contact-confirmation` to `govcon-confirmation`
+- **ResourceGate.tsx** — Keep using `contact-confirmation` (it's a simple email gate, not a form inquiry)
 
-### Step 5: Update Contact form dropdown
-Replace the current 6 inquiry types with the 11 service lines from the Services page:
-- AI Compliance Advisory
-- Audit & Certification Preparation
-- Compliance Technology Advisory
-- Documentation & SOPs
-- Federal & Public Sector Advisory
-- Governance & Strategy
-- Ongoing Compliance Support
-- Project Recovery
-- Quality Management Systems
-- Risk & Regulatory Compliance
-- Supply Chain Compliance
-- General Inquiry
+### Step 5 — Deploy edge functions
+Redeploy `send-transactional-email` so the new templates are available.
 
-### Step 6: Wire admin notifications to all forms
-Update Contact, RFP, and GovCon forms to invoke both:
-1. `admin-form-notification` → info@elevateqcs.com
-2. `contact-confirmation` → the submitter
+### Step 6 — Re-publish
+After all changes, re-publish the site so elevateqcs.com gets the latest build with the Resend-based email system and the Netlify form cleanup.
 
-### Step 7: Deploy edge functions
-Redeploy `send-transactional-email` with the new templates registered.
+---
 
-### Technical details
-- New file: `supabase/functions/_shared/transactional-email-templates/admin-form-notification.tsx`
-- Updated: `registry.ts` (add admin template)
-- Updated: `contact-confirmation.tsx` (branded redesign)
-- Updated: `src/pages/Contact.tsx` (dropdown + dual email)
-- Updated: `src/pages/GovCon.tsx` (full form backend)
-- Updated: `src/pages/RFP.tsx` (add admin notification)
-- Edge function redeploy required after template changes
+## Files Changed
+
+| File | Change |
+|------|--------|
+| `index.html` | Remove Netlify hidden forms (lines 153-185) |
+| `supabase/functions/_shared/transactional-email-templates/rfp-confirmation.tsx` | New template |
+| `supabase/functions/_shared/transactional-email-templates/govcon-confirmation.tsx` | New template |
+| `supabase/functions/_shared/transactional-email-templates/registry.ts` | Add 2 new template entries |
+| `src/pages/RFP.tsx` | Use `rfp-confirmation` template |
+| `src/pages/GovCon.tsx` | Use `govcon-confirmation` template |
 
