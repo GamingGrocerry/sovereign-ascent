@@ -7,7 +7,7 @@ import { TEMPLATES } from '../_shared/transactional-email-templates/registry.ts'
 // To update, re-run the email domain setup flow.
 const SITE_NAME = "ElevateQCS"
 // FROM_DOMAIN is the domain shown in the From: header — must be verified with Resend.
-const FROM_DOMAIN = "elevateqcs.com"
+const FROM_DOMAIN = 'elevateqcs.com'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -307,7 +307,7 @@ Deno.serve(async (req) => {
     payload: {
       message_id: messageId,
       to: effectiveRecipient,
-      from: `${SITE_NAME} <noreply@${FROM_DOMAIN}>`,
+      from: 'ElevateQCS <noreply@elevateqcs.com>',
       subject: resolvedSubject,
       html,
       text: plainText,
