@@ -15,7 +15,7 @@ import {
 import type { TemplateEntry } from './registry.ts'
 
 const SITE_NAME = "ElevateQCS"
-const LOGO_URL = "https://jengmprjjwtgettqasuk.supabase.co/storage/v1/object/public/email-assets/elevatequcs-logo-blue.svg"
+const LOGO_URL = "https://jengmprjjwtgettqasuk.supabase.co/storage/v1/object/public/email-assets/logo.png"
 
 interface ContactConfirmationProps {
   name?: string
