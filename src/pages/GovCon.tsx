@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 import { sendTransactionalEmail } from "@/utils/sendTransactionalEmail";
 import { ArrowRight, Shield, FileCheck, Lock, Users, Scale, HardHat, Briefcase, Clock, Siren, ScanSearch, Zap, ShieldAlert, Eye } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";

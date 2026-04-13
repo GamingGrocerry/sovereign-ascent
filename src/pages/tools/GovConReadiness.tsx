@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 import { ToolEmailGate, useToolAccess } from "@/components/tools/ToolEmailGate";
 import { AssessmentShell, type AssessmentQuestion } from "@/components/tools/AssessmentShell";
 import { ResultsPage } from "@/components/tools/ResultsPage";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 
 const questions: AssessmentQuestion[] = [
   {

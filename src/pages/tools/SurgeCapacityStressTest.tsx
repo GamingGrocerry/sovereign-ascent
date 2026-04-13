@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, AlertTriangle } from "luc
 import { ToolEmailGate, useToolAccess } from "@/components/tools/ToolEmailGate";
 import { ResultsPage } from "@/components/tools/ResultsPage";
 import { AssessmentShell, type AssessmentQuestion } from "@/components/tools/AssessmentShell";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 
 const questions: AssessmentQuestion[] = [
   {

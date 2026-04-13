@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowLeft, ArrowRight, DollarSign, TrendingUp, ChevronRight, Download } from "lucide-react";
 import { ToolEmailGate, useToolAccess } from "@/components/tools/ToolEmailGate";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 import { generateReport } from "@/components/tools/generateReport";
 
 interface CalculatorInputs {

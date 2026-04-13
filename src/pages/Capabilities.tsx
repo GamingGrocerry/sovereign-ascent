@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/lib/supabaseClient";
 import { ArrowRight, Download } from "lucide-react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import { generateCapabilitiesPdf } from "@/components/capabilities/generateCapabilitiesPdf";
