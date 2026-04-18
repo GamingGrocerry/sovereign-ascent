@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect width="120" height="120" fill="#FFFFFF"/>
-  <text x="22" y="95" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="90" font-style="italic" fill="#0A192F">E</text>
-  <polyline points="82,38 90,22 98,38" fill="none" stroke="#0A192F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="90" y1="22" x2="90" y2="48" stroke="#0A192F" stroke-width="3" stroke-linecap="round"/>
-</svg>
